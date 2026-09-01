@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: routing-bootstrap
+split: dev
+locale: en
+examples:
+  - id: route-plan-code
+    prompt: Plan a code change for this software bug.
+    expectedCategory: software-engineering
+    expectedAtoms: [atom-plan-code-change]
+    mustNotRoute: [atom-translate-document]
+  - id: route-translate-document
+    prompt: Translate this document into Chinese.
+    expectedCategory: documents-communication
+    expectedAtoms: [atom-translate-document]
+    mustNotRoute: [atom-implement-code-change]
+  - id: route-audit-source
+    prompt: Audit this source code for vulnerabilities.
+    expectedCategory: security-trust
+    expectedAtoms: [atom-audit-source-security]
+    mustNotRoute: [atom-plan-code-change]

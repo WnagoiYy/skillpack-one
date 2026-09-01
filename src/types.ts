@@ -1,5 +1,5 @@
 export type Locale = "en" | "zh" | "zh-CN" | (string & {});
-export type Localized<T> = Record<Locale, T> & { en: T };
+export type Localized<T> = { en: T; [locale: string]: T };
 
 export type SkillKind = "atom" | "category" | "meta";
 export type Risk =

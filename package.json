@@ -9,7 +9,7 @@
     "node": ">=24.0.0"
   },
   "bin": {
-    "sos": "./dist/cli.js"
+    "sos": "./dist/src/cli.js"
   },
   "files": [
     ".agents/skills",

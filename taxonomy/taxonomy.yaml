@@ -1,0 +1,193 @@
+schemaVersion: 1
+version: 0.1.0
+nodes:
+  - id: software-engineering
+    label:
+      en: Software engineering
+      zh-CN: 软件工程
+    description:
+      en: Create, change, verify, ship, or operate executable software artifacts.
+      zh-CN: 创建、修改、验证、发布或运行可执行的软件产物。
+    includes:
+      - creating or changing source code
+      - debugging and testing software behavior
+      - designing software architecture
+    excludes:
+      - general research that does not change software
+      - visual design without implementation
+    boundaryExamples:
+      - A security review routes to security-trust first even when the artifact is code.
+    keywords:
+      en: [code, software, bug, test, refactor, repository, api, application]
+      zh-CN: [代码, 软件, 修复, 测试, 重构, 仓库, 接口, 应用]
+  - id: research-knowledge
+    label:
+      en: Research and knowledge
+      zh-CN: 研究与知识
+    description:
+      en: Discover, synthesize, cite, or maintain knowledge and evidence.
+      zh-CN: 发现、综合、引用或维护知识与证据。
+    includes:
+      - evidence-backed research
+      - literature and knowledge synthesis
+      - knowledge-base organization
+    excludes:
+      - implementing source code as the primary outcome
+      - producing a polished business document without research
+    boundaryExamples:
+      - A researched report routes here for evidence gathering, then to documents for production.
+    keywords:
+      en: [research, evidence, sources, literature, knowledge, citation, investigate]
+      zh-CN: [研究, 证据, 来源, 文献, 知识, 引用, 调研]
+  - id: data-analytics
+    label:
+      en: Data and analytics
+      zh-CN: 数据与分析
+    description:
+      en: Transform, query, model, calculate, or visualize structured data.
+      zh-CN: 转换、查询、建模、计算或可视化结构化数据。
+    includes:
+      - spreadsheet and database analysis
+      - statistical or quantitative modeling
+      - structured-data visualization
+    excludes:
+      - prose-only research synthesis
+      - operating a production data service
+    boundaryExamples:
+      - Creating a chart from a dataset routes here; styling a brand illustration routes to design-media.
+    keywords:
+      en: [data, spreadsheet, database, sql, statistics, chart, metrics, analysis]
+      zh-CN: [数据, 表格, 数据库, 统计, 图表, 指标, 分析]
+  - id: documents-communication
+    label:
+      en: Documents and communication
+      zh-CN: 文档与沟通
+    description:
+      en: Create or transform human-readable documents, presentations, and messages.
+      zh-CN: 创建或转换供人阅读的文档、演示和消息。
+    includes:
+      - writing and editing documents
+      - translation and summarization
+      - presentations and external messages
+    excludes:
+      - executable source-code changes
+      - image or video production as the primary artifact
+    boundaryExamples:
+      - Data analysis routes to data-analytics before its narrative is turned into a report here.
+    keywords:
+      en: [document, pdf, word, slide, presentation, translate, memo, report, email]
+      zh-CN: [文档, PDF, Word, 幻灯片, 演示, 翻译, 报告, 邮件]
+  - id: design-media
+    label:
+      en: Design and media
+      zh-CN: 设计与媒体
+    description:
+      en: Design interfaces or create and transform visual, audio, and video media.
+      zh-CN: 设计界面或创建、转换图像、音频和视频媒体。
+    includes:
+      - user interface and experience design
+      - image, audio, and video generation or editing
+      - diagrams whose primary purpose is visual communication
+    excludes:
+      - frontend implementation when code is the primary artifact
+      - data charts whose correctness is the primary goal
+    boundaryExamples:
+      - A UI specification routes here; coding the specified UI routes to software-engineering.
+    keywords:
+      en: [design, ui, ux, image, video, audio, diagram, visual, layout]
+      zh-CN: [设计, 界面, 体验, 图像, 视频, 音频, 图表, 视觉, 布局]
+  - id: business-growth
+    label:
+      en: Business and growth
+      zh-CN: 商业与增长
+    description:
+      en: Improve markets, sales, marketing, finance, and business decisions.
+      zh-CN: 改善市场、销售、营销、财务和商业决策。
+    includes:
+      - market and competitor analysis
+      - marketing, sales, and growth workflows
+      - business and investment analysis
+    excludes:
+      - generic evidence research with no business decision
+      - personal task tracking
+    boundaryExamples:
+      - Market research belongs here while the underlying web evidence collection may use research atoms.
+    keywords:
+      en: [business, market, sales, marketing, seo, customer, investment, finance, growth]
+      zh-CN: [商业, 市场, 销售, 营销, 客户, 投资, 财务, 增长]
+  - id: automation-operations
+    label:
+      en: Automation and operations
+      zh-CN: 自动化与运营
+    description:
+      en: Connect systems, schedule work, deploy services, and operate repeatable workflows.
+      zh-CN: 连接系统、调度工作、部署服务并运行可重复流程。
+    includes:
+      - workflow automation and orchestration
+      - deployment and infrastructure operations
+      - recurring jobs and monitoring
+    excludes:
+      - one-off code implementation without an operational outcome
+      - personal reminders with no system integration
+    boundaryExamples:
+      - Writing deployment code may use software atoms, but operating the deployment routes here.
+    keywords:
+      en: [automation, workflow, deploy, operations, monitor, schedule, integration, cloud]
+      zh-CN: [自动化, 工作流, 部署, 运维, 监控, 定时, 集成, 云]
+  - id: personal-productivity
+    label:
+      en: Personal productivity
+      zh-CN: 个人效率
+    description:
+      en: Manage an individual's tasks, notes, calendar, memory, and attention.
+      zh-CN: 管理个人任务、笔记、日历、记忆和注意力。
+    includes:
+      - task and calendar management
+      - personal notes and memory
+      - individual planning routines
+    excludes:
+      - organization-wide workflow automation
+      - shared knowledge governance
+    boundaryExamples:
+      - A personal recurring reminder routes here; a cross-system scheduled pipeline routes to automation-operations.
+    keywords:
+      en: [task, todo, calendar, reminder, notes, memory, productivity, personal]
+      zh-CN: [任务, 待办, 日历, 提醒, 笔记, 记忆, 效率, 个人]
+  - id: security-trust
+    label:
+      en: Security and trust
+      zh-CN: 安全与信任
+    description:
+      en: Identify, prevent, or govern security, privacy, safety, and integrity risks.
+      zh-CN: 识别、预防或治理安全、隐私、可靠性和完整性风险。
+    includes:
+      - security audits and threat analysis
+      - permission and secret review
+      - trust and provenance verification
+    excludes:
+      - ordinary functional debugging
+      - quality review without a security or trust property
+    boundaryExamples:
+      - Vulnerability review routes here even when source code is inspected.
+    keywords:
+      en: [security, vulnerability, threat, audit, permission, secret, privacy, provenance]
+      zh-CN: [安全, 漏洞, 威胁, 审计, 权限, 密钥, 隐私, 来源]
+  - id: skill-agent-governance
+    label:
+      en: Skill and agent governance
+      zh-CN: Skill 与 Agent 治理
+    description:
+      en: Classify, compose, evaluate, release, and evolve agent capabilities and harnesses.
+      zh-CN: 分类、组合、评测、发布和进化 Agent 能力与 Harness。
+    includes:
+      - creating and classifying Agent Skills
+      - evaluating routing and task completion
+      - governed self-improvement and rollback
+    excludes:
+      - using a domain Skill to perform its normal task
+      - generic model training unrelated to skills
+    boundaryExamples:
+      - Improving a coding Skill routes here; using that Skill to edit code routes to software-engineering.
+    keywords:
+      en: [skill, agent, mcp, harness, routing, evaluation, taxonomy, self-improving]
+      zh-CN: [技能, 智能体, MCP, Harness, 路由, 评测, 分类, 自优化]
