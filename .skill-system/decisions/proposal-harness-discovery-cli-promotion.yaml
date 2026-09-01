@@ -1,0 +1,70 @@
+schemaVersion: 1
+id: proposal-harness-discovery-cli-promotion
+action: promote
+proposal: proposal-harness-discovery-cli
+proposalDigest: sha256:1aa770d0337e93b6bae41d56e3ebc7b5c6ef68836b5fccfead80dc7ea855037d
+baseRevision: 278958abde34927e769921c609afe3e2004e1e3d
+candidateRevision: 812c9a2f5eb0f25124dc3e929b8186013f591d93
+rollbackRevision: 278958abde34927e769921c609afe3e2004e1e3d
+reviewedBy: repository-bootstrap-policy
+recordedAt: 2026-09-01T18:54:07.236Z
+evaluation:
+  passed: true
+  failures: []
+  routing:
+    - dataset: routing-adversarial
+      split: adversarial
+      locale: en
+      protected: true
+      examples: 8
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-bootstrap
+      split: dev
+      locale: en
+      protected: false
+      examples: 3
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-en-test
+      split: test
+      locale: en
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-zh-cn-test
+      split: test
+      locale: zh-CN
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []

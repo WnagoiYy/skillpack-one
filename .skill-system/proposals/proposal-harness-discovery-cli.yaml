@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: proposal-harness-discovery-cli
+createdAt: 2026-09-01T18:53:49Z
+targetSkill: category-skill-agent-governance
+baseRevision: 278958abde34927e769921c609afe3e2004e1e3d
+candidateRevision: 812c9a2f5eb0f25124dc3e929b8186013f591d93
+rollbackRevision: 278958abde34927e769921c609afe3e2004e1e3d
+observation: Pi and Codex discovery were implemented and tested, but the CLI did not expose discovery as a standalone user-verifiable operation.
+allowedFiles:
+  - README.md
+  - README.zh-CN.md
+  - docs/harnesses.md
+  - docs/zh-CN/harnesses.md
+  - src/cli.ts
+  - tests/harness.test.ts
+changedFiles:
+  - README.md
+  - README.zh-CN.md
+  - docs/harnesses.md
+  - docs/zh-CN/harnesses.md
+  - src/cli.ts
+  - tests/harness.test.ts
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+approvals: []
