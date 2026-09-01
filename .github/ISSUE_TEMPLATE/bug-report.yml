@@ -1,0 +1,31 @@
+name: Bug report
+description: Report routing, validation, catalog, evaluation, or harness behavior.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include the command, prompt, dataset ID, revision, and harness/model identity when applicable. Remove secrets.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I have not included credentials or private data.
+          required: true

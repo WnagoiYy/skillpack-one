@@ -33,6 +33,7 @@
     "skills:generate": "tsx scripts/generate-skill-projections.ts",
     "skills:check": "tsx scripts/generate-skill-projections.ts --check",
     "check": "npm run typecheck && npm run skills:check && npm test",
+    "ci": "npm run check && npm run build && npm run sos -- gate",
     "sos": "tsx src/cli.ts"
   },
   "dependencies": {

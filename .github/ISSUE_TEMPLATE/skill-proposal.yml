@@ -1,0 +1,45 @@
+name: Skill proposal
+description: Propose an atomic Skill, category boundary, pack, or governed improvement.
+title: "[Skill]: "
+labels: [skill-proposal]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Change kind
+      options:
+        - Atomic Skill
+        - Category boundary
+        - Capability pack
+        - Meta/evolution change
+        - Evaluation case
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: User need and expected artifact
+      description: Describe the outcome independently of a specific tool.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Scope and non-goals
+      description: State what belongs here, what does not, and the nearest competing capability.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Tests and evidence
+      description: Include positive, negative, ambiguous, multilingual, or task-completion cases as appropriate.
+    validations:
+      required: true
+  - type: textarea
+    id: permissions
+    attributes:
+      label: Permissions and side effects
+      description: Describe network, filesystem, shell, secrets, and external communication needs.
+    validations:
+      required: true
