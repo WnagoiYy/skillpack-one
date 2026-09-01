@@ -1,0 +1,70 @@
+schemaVersion: 1
+id: proposal-node24-action-runtime-promotion
+action: promote
+proposal: proposal-node24-action-runtime
+proposalDigest: sha256:ee4a21ef23d8861d9616d3d1c6c6f69b53fb106bbc25b19d63d94da2397277ec
+baseRevision: ab8a95d69bfaca3cdd6c252aff5fb5f19277a2f3
+candidateRevision: 012cae0a0d1b8fba819d90f4939cb90de8b94e7e
+rollbackRevision: ab8a95d69bfaca3cdd6c252aff5fb5f19277a2f3
+reviewedBy: repository-bootstrap-policy
+recordedAt: 2026-09-01T18:57:54.546Z
+evaluation:
+  passed: true
+  failures: []
+  routing:
+    - dataset: routing-adversarial
+      split: adversarial
+      locale: en
+      protected: true
+      examples: 8
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-bootstrap
+      split: dev
+      locale: en
+      protected: false
+      examples: 3
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-en-test
+      split: test
+      locale: en
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-zh-cn-test
+      split: test
+      locale: zh-CN
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []

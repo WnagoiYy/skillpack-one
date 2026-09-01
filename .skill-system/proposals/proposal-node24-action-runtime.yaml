@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: proposal-node24-action-runtime
+createdAt: 2026-09-01T18:57:38Z
+targetSkill: category-skill-agent-governance
+baseRevision: ab8a95d69bfaca3cdd6c252aff5fb5f19277a2f3
+candidateRevision: 012cae0a0d1b8fba819d90f4939cb90de8b94e7e
+rollbackRevision: ab8a95d69bfaca3cdd6c252aff5fb5f19277a2f3
+observation: The first successful GitHub Actions run warned that checkout v4 and setup-node v4 used the deprecated Node 20 action runtime.
+allowedFiles:
+  - .github/workflows/ci.yml
+changedFiles:
+  - .github/workflows/ci.yml
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+approvals: []
