@@ -2,6 +2,12 @@
 
 All notable changes are recorded here. The format follows Keep a Changelog and versions follow Semantic Versioning.
 
+## [0.1.0-alpha.5] - 2026-09-02
+
+### Fixed
+
+- `train propose` now inherits the target Skill's declared permission envelope instead of using a lower placeholder baseline; targets without a contract still receive the least-authority default.
+
 ## [0.1.0-alpha.4] - 2026-09-02
 
 ### Added
@@ -20,3 +26,4 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 - Unknown-license content remains metadata-only.
 
 [0.1.0-alpha.4]: https://github.com/WnagoiYy/self-organizing-skills/releases/tag/v0.1.0-alpha.4
+[0.1.0-alpha.5]: https://github.com/WnagoiYy/self-organizing-skills/releases/tag/v0.1.0-alpha.5
