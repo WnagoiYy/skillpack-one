@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agenticshelf-mcp-870c9513df
+type: mcp-server
+name: Agentic Shelf
+summary: "Hosted MCP for e-commerce: live product catalog, stock, and pricing
+  for AI agents."
+author: vboykoCTO
+source:
+  repository: https://github.com/vboykoCTO/agentic-shelf
+  revision: 870c9513df7b0b8e2336ead7820913b91cb91273463d08673896ade8f667cc23
+  path: ai.agenticshelf/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticshelf%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agenticshelf
+  - agentic
+  - shelf
+  - hosted
+  - commerce
+  - live
+  - product
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:870c9513df7b0b8e2336ead7820913b91cb91273463d08673896ade8f667cc23
+freshness: current

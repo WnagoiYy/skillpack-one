@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-uncertainty-and-units-fb4539cb
+type: skill
+name: uncertainty-and-units
+summary: Agent Skill uncertainty-and-units from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/uncertainty-and-units
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/uncertainty-and-units
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - uncertainty
+  - and
+  - units
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:fb4539cb32ac5575737b48048a94f94b1e2d541deb16b120ebb80adaa7953b08
+freshness: current

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-getsentry-skills-skill-writer-0781b064
+type: skill
+name: skill-writer
+summary: Agent Skill skill-writer from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/skill-writer
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/skill-writer
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - skill
+  - writer
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:0781b064a25155e6558fb12209116f703368d02d32d33248f57378ebc7670cdd
+freshness: current

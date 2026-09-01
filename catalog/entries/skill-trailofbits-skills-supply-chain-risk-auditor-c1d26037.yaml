@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-supply-chain-risk-auditor-c1d26037
+type: skill
+name: supply-chain-risk-auditor
+summary: Agent Skill supply-chain-risk-auditor from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - supply
+  - chain
+  - risk
+  - auditor
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:c1d2603728dd51932e8f1b62982032551f0d535ae821e99a4d48353b9b25eb4e
+freshness: current

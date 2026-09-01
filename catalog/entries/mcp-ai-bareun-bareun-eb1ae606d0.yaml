@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bareun-bareun-eb1ae606d0
+type: mcp-server
+name: Bareun — Korean NLP & Spell/Grammar Checking
+summary: "Korean NLP MCP server: morphological analysis, tokenization, spell &
+  grammar checking (Bareun)"
+author: gih2yun
+source:
+  repository: https://github.com/gih2yun/bareun-mcp
+  revision: eb1ae606d0b5d9e113f204ef373ec8ac1c84c496a52c7495342d7112af892dd3
+  path: ai.bareun/bareun@3.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bareun%2Fbareun/versions/3.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bareun
+  - korean
+  - nlp
+  - spell
+  - grammar
+  - checking
+  - morphological
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:eb1ae606d0b5d9e113f204ef373ec8ac1c84c496a52c7495342d7112af892dd3
+freshness: current

@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-addyosmani-agent-skills-observability-and-instrumentation-559214ec
+type: skill
+name: observability-and-instrumentation
+summary: Agent Skill observability-and-instrumentation from addyosmani/agent-skills.
+author: addyosmani
+source:
+  repository: https://github.com/addyosmani/agent-skills
+  revision: d2c37ef6225dd8726cdd369a8030307f48592d26
+  path: skills/observability-and-instrumentation
+  url: https://github.com/addyosmani/agent-skills/tree/d2c37ef6225dd8726cdd369a8030307f48592d26/skills/observability-and-instrumentation
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - observability
+  - and
+  - instrumentation
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:559214ece2c0af6e417f1c2bb56b22bcdf362b7d274c80afe35a696aca5ca872
+freshness: current

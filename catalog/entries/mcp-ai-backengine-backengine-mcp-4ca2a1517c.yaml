@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-backengine-backengine-mcp-4ca2a1517c
+type: mcp-server
+name: ai.backengine/backengine-mcp
+summary: Surface customer & prospect context from Slack, email, transcripts and
+  tickets in any MCP client.
+author: BackEngine-ai
+source:
+  repository: https://github.com/BackEngine-ai/backengine-mcp
+  revision: 4ca2a1517c19ab6efc5d936268597027bbae5aefc3fe6e6a05beac7a604a2cd1
+  path: ai.backengine/backengine-mcp@8.1.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.backengine%2Fbackengine-mcp/versions/8.1.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - backengine
+  - surface
+  - customer
+  - prospect
+  - context
+  - slack
+  - email
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:4ca2a1517c19ab6efc5d936268597027bbae5aefc3fe6e6a05beac7a604a2cd1
+freshness: current

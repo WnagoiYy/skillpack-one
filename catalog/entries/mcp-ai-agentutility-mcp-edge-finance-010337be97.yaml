@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentutility-mcp-edge-finance-010337be97
+type: mcp-server
+name: AgentUtility Edge Finance
+summary: MCP server for the @agentutility edge-finance cluster — pay-per-call
+  x402 tools, no API keys, USDC…
+author: rooz21
+source:
+  repository: https://github.com/rooz21/x402
+  revision: 010337be97bf5951aca99dcfdfbfd1b32d36e1642fab766b04287c7d22e5c440
+  path: ai.agentutility/mcp-edge-finance@0.18.8
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentutility%2Fmcp-edge-finance/versions/0.18.8
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentutility
+  - edge
+  - finance
+  - cluster
+  - pay
+  - per
+  - call
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:010337be97bf5951aca99dcfdfbfd1b32d36e1642fab766b04287c7d22e5c440
+freshness: current

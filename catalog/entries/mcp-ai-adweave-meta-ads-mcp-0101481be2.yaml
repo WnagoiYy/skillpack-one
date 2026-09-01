@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-adweave-meta-ads-mcp-0101481be2
+type: mcp-server
+name: AdWeave — Meta Ads MCP Server
+summary: Meta Ads MCP server with 47 tools for campaigns, creatives, audiences,
+  and insights.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 0101481be2aafb8bac6b78f325e224c31ee35d685100daf6bb5340adb16576f7
+  path: ai.adweave/meta-ads-mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.adweave%2Fmeta-ads-mcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - adweave
+  - meta
+  - ads
+  - tools
+  - campaigns
+  - creatives
+  - audiences
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0101481be2aafb8bac6b78f325e224c31ee35d685100daf6bb5340adb16576f7
+freshness: current

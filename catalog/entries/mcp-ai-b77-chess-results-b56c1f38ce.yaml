@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-b77-chess-results-b56c1f38ce
+type: mcp-server
+name: Chess Results
+summary: Live chess tournament results and up-to-date player ratings in chat.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: b56c1f38ce6efeee650339e1fa92a72c9ee5582467678d3adb28d7a4af485888
+  path: ai.b77/chess-results@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Fchess-results/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - chess
+  - results
+  - live
+  - tournament
+  - date
+  - player
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:b56c1f38ce6efeee650339e1fa92a72c9ee5582467678d3adb28d7a4af485888
+freshness: current

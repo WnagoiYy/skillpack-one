@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-b77-web-analytics-a43f062fda
+type: mcp-server
+name: Web Analytics
+summary: Ask about your website traffic in chat.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: a43f062fdaef857b252dec98d956640d5057e885f7191624295a2c6276f65a77
+  path: ai.b77/web-analytics@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Fweb-analytics/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - web
+  - analytics
+  - ask
+  - about
+  - website
+  - traffic
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:a43f062fdaef857b252dec98d956640d5057e885f7191624295a2c6276f65a77
+freshness: current

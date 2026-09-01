@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-atlasverified-atlas-mcp-d2da1d9d5f
+type: mcp-server
+name: ai.atlasverified/atlas-mcp
+summary: "AI-powered organic supply chain verification: certification, OFAC, FDA
+  import checks."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d2da1d9d5fec857a4f0837fa042f7261fb74af8c93fc5525812f3fc7b624586a
+  path: ai.atlasverified/atlas-mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.atlasverified%2Fatlas-mcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - atlasverified
+  - atlas
+  - powered
+  - organic
+  - supply
+  - chain
+  - verification
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d2da1d9d5fec857a4f0837fa042f7261fb74af8c93fc5525812f3fc7b624586a
+freshness: current

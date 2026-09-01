@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-market-research-reports-f3535d6e
+type: skill
+name: market-research-reports
+summary: Agent Skill market-research-reports from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/market-research-reports
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/market-research-reports
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - market
+  - research
+  - reports
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:f3535d6efb007b47fe9e587646304dbf8d50af529d6d74d013ee7281c2382841
+freshness: current

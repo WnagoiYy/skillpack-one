@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-deinai-creator-skill-v2-d6297b831c
+type: mcp-server
+name: Creator SKILL v2 — Influencer Discovery
+summary: "SKILL-02 (not SKILL-01): AI influencer search on TikTok, Instagram &
+  YouTube. sk_live_ token."
+author: deinai
+source:
+  repository: https://github.com/deinai/skill-service
+  revision: d6297b831cc7ecf27455dee9848f57641b8f969b6248e43f3f4efed63e5257a5
+  path: ai.deinai/creator-skill-v2@0.2.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.deinai%2Fcreator-skill-v2/versions/0.2.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - deinai
+  - creator
+  - skill
+  - influencer
+  - discovery
+  - not
+  - search
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d6297b831cc7ecf27455dee9848f57641b8f969b6248e43f3f4efed63e5257a5
+freshness: current

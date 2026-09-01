@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ag-hood-name-service-31bc511aa8
+type: mcp-server
+name: hood. — .hood name service
+summary: Resolve .hood names on Robinhood Chain — forward/reverse, text records,
+  availability & pricing.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 31bc511aa8aa535df23ac2ca6924924a3233d5112546f39f24075f59cb838f5e
+  path: ag.hood/name-service@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ag.hood%2Fname-service/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - hood
+  - name
+  - service
+  - resolve
+  - names
+  - robinhood
+  - chain
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:31bc511aa8aa535df23ac2ca6924924a3233d5112546f39f24075f59cb838f5e
+freshness: current

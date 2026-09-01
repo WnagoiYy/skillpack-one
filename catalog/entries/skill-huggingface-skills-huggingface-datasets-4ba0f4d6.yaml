@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-huggingface-skills-huggingface-datasets-4ba0f4d6
+type: skill
+name: huggingface-datasets
+summary: Agent Skill huggingface-datasets from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/huggingface-datasets
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/huggingface-datasets
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - huggingface
+  - datasets
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:4ba0f4d6fbe9756c4c438e6ac4054c0a6bd89cec9b4d20b16353b67c34f54d52
+freshness: current

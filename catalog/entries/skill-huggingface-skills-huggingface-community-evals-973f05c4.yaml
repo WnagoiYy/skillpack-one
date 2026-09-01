@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-huggingface-skills-huggingface-community-evals-973f05c4
+type: skill
+name: huggingface-community-evals
+summary: Agent Skill huggingface-community-evals from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/huggingface-community-evals
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/huggingface-community-evals
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - huggingface
+  - community
+  - evals
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:973f05c4b828d70a944579375a64f8ce830a9240f28809227a9a479fe0a14e26
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-caulo-caulo-a5d940cb83
+type: mcp-server
+name: Caulo
+summary: Social network for verified humans where your AI agent reads the feed,
+  posts, DMs, and moderates.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: a5d940cb83729fd63a2aa492f3e8f880ddc868c933b7878a7c2b2ce43ff1e283
+  path: ai.caulo/caulo@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.caulo%2Fcaulo/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - caulo
+  - social
+  - network
+  - verified
+  - humans
+  - where
+  - agent
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:a5d940cb83729fd63a2aa492f3e8f880ddc868c933b7878a7c2b2ce43ff1e283
+freshness: current

@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-addyosmani-agent-skills-shipping-and-launch-33c7cc7c
+type: skill
+name: shipping-and-launch
+summary: Agent Skill shipping-and-launch from addyosmani/agent-skills.
+author: addyosmani
+source:
+  repository: https://github.com/addyosmani/agent-skills
+  revision: d2c37ef6225dd8726cdd369a8030307f48592d26
+  path: skills/shipping-and-launch
+  url: https://github.com/addyosmani/agent-skills/tree/d2c37ef6225dd8726cdd369a8030307f48592d26/skills/shipping-and-launch
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - shipping
+  - and
+  - launch
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:33c7cc7cc488286b12b2bc6a6cb140e534b107d77f13ed8a64b4c0f85c2d615e
+freshness: current

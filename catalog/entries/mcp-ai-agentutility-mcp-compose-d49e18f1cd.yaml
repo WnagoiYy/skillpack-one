@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentutility-mcp-compose-d49e18f1cd
+type: mcp-server
+name: AgentUtility Compose
+summary: MCP server for the @agentutility compose cluster — pay-per-call x402
+  tools, no API keys, USDC on…
+author: rooz21
+source:
+  repository: https://github.com/rooz21/x402
+  revision: d49e18f1cd81d87bc84de0f60e03682d1ee059f5353ba6a0f7b9b1d13c78bcaf
+  path: ai.agentutility/mcp-compose@0.13.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentutility%2Fmcp-compose/versions/0.13.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentutility
+  - compose
+  - cluster
+  - pay
+  - per
+  - call
+  - x402
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d49e18f1cd81d87bc84de0f60e03682d1ee059f5353ba6a0f7b9b1d13c78bcaf
+freshness: current

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-getsentry-skills-doc-coauthoring-db52e2c5
+type: skill
+name: doc-coauthoring
+summary: Agent Skill doc-coauthoring from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/doc-coauthoring
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/doc-coauthoring
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - doc
+  - coauthoring
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:db52e2c5e7e37f40803e07aa781c426d0e8f0007819fea10be24cb55563e3721
+freshness: current

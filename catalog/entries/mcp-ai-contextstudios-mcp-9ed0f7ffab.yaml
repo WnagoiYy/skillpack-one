@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-contextstudios-mcp-9ed0f7ffab
+type: mcp-server
+name: Context Studios MCP
+summary: "AI agency API: free tools for glossary, comparisons, blog, guides,
+  estimates and consulting"
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 9ed0f7ffabe570c4bea3112458af2d52f3a1ce362c7f671ad1dd0415111f0b47
+  path: ai.contextstudios/mcp@2.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.contextstudios%2Fmcp/versions/2.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - contextstudios
+  - context
+  - studios
+  - agency
+  - api
+  - free
+  - tools
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:9ed0f7ffabe570c4bea3112458af2d52f3a1ce362c7f671ad1dd0415111f0b47
+freshness: current

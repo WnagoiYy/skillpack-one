@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-dataforb2b-dataforb2b-1628d1a91b
+type: mcp-server
+name: DataForB2B
+summary: Search and enrich B2B people & companies — 70+ filters (funding,
+  linkedin, industry, country, ...).
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 1628d1a91bb6ebb9609d808e81742a37c4104ac56c02bdc96245f69653d0aa00
+  path: ai.dataforb2b/dataforb2b@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.dataforb2b%2Fdataforb2b/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - dataforb2b
+  - search
+  - enrich
+  - b2b
+  - people
+  - companies
+  - filters
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1628d1a91bb6ebb9609d808e81742a37c4104ac56c02bdc96245f69653d0aa00
+freshness: current

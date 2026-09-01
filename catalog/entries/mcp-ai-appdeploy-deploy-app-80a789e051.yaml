@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-appdeploy-deploy-app-80a789e051
+type: mcp-server
+name: AppDeploy
+summary: AppDeploy turns app ideas described in AI chat into live full-stack web
+  applications
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 80a789e051ef79aba3f57bce3ecceaf88b636777c4642b14c6812b36402c4771
+  path: ai.appdeploy/deploy-app@2.6.13
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.appdeploy%2Fdeploy-app/versions/2.6.13
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - appdeploy
+  - deploy
+  - app
+  - turns
+  - ideas
+  - described
+  - chat
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:80a789e051ef79aba3f57bce3ecceaf88b636777c4642b14c6812b36402c4771
+freshness: current

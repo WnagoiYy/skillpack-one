@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-pacsomatic-85b7b541
+type: skill
+name: pacsomatic
+summary: Agent Skill pacsomatic from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/pacsomatic
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/pacsomatic
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - pacsomatic
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:85b7b541134128b331f476aa93df1f2c8e79d4c375c8430ba8fce471243d3de1
+freshness: current

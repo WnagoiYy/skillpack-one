@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-childanxiety-library-08a2dc2f87
+type: mcp-server
+name: ai.childanxiety/library
+summary: Clinician-reviewed library on anxiety, OCD, and phobias in children ages 5–12.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 08a2dc2f87ac80d1b3fc3fc3e49b8f217f8ff3c075a274620a649c91c37cf296
+  path: ai.childanxiety/library@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.childanxiety%2Flibrary/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - childanxiety
+  - library
+  - clinician
+  - reviewed
+  - anxiety
+  - ocd
+  - phobias
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:08a2dc2f87ac80d1b3fc3fc3e49b8f217f8ff3c075a274620a649c91c37cf296
+freshness: current

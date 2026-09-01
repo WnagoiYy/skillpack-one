@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-buildwithorbit-orbit-c2daf0d007
+type: mcp-server
+name: Orbit
+summary: "Turn any task into the right API calls: discover, evaluate, and
+  integrate public APIs."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: c2daf0d007a48a22bf03dc65ceab2db9b65d9856e629465e5709aab32881893e
+  path: ai.buildwithorbit/orbit@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.buildwithorbit%2Forbit/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - buildwithorbit
+  - orbit
+  - turn
+  - any
+  - task
+  - into
+  - right
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c2daf0d007a48a22bf03dc65ceab2db9b65d9856e629465e5709aab32881893e
+freshness: current

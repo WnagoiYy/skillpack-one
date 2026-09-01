@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: mcp-ai-anzenna-anzenna-c86559579c
+type: mcp-server
+name: ai.anzenna/anzenna
+summary: MCP server for Anzenna
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: c86559579c430c5ff8faab5eaf8952786809cd91486227442b10be971fea13cb
+  path: ai.anzenna/anzenna@0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.anzenna%2Fanzenna/versions/0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - anzenna
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c86559579c430c5ff8faab5eaf8952786809cd91486227442b10be971fea13cb
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-clarx-mcp-161b5b3353
+type: mcp-server
+name: ai.clarx/mcp
+summary: Score agent manifests, generate CI workflows, and pull Clarx scan
+  findings into your IDE.
+author: Gernika-Labs
+source:
+  repository: https://github.com/Gernika-Labs/clarx-cloud
+  revision: 161b5b335354ac3a0f78bd7fb44a841cfe02c28add394213462d5be45b684c14
+  path: ai.clarx/mcp@0.2.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.clarx%2Fmcp/versions/0.2.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - clarx
+  - score
+  - agent
+  - manifests
+  - generate
+  - workflows
+  - pull
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:161b5b335354ac3a0f78bd7fb44a841cfe02c28add394213462d5be45b684c14
+freshness: current

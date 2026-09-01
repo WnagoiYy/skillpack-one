@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-bgpt-paper-search-97bc8469
+type: skill
+name: bgpt-paper-search
+summary: Agent Skill bgpt-paper-search from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/bgpt-paper-search
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/bgpt-paper-search
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - bgpt
+  - paper
+  - search
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:97bc8469717557d8e1fcc6208ec39f1b3286ab16429953ab218521e44bc72ba9
+freshness: current

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-anthropics-skills-canvas-design-12d74bd3
+type: skill
+name: canvas-design
+summary: Agent Skill canvas-design from anthropics/skills.
+author: anthropics
+source:
+  repository: https://github.com/anthropics/skills
+  revision: 3b3fad96af16a10759d930941b4520ba0c40edae
+  path: skills/canvas-design
+  url: https://github.com/anthropics/skills/tree/3b3fad96af16a10759d930941b4520ba0c40edae/skills/canvas-design
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - canvas
+  - design
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:12d74bd37892a07e38da50a0c7fe84ed41ea14f49f602abb6658dbef5a532bee
+freshness: current

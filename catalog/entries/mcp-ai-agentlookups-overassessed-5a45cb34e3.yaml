@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentlookups-overassessed-5a45cb34e3
+type: mcp-server
+name: ai.agentlookups/overassessed
+summary: Maryland property-assessment fairness checks vs similar homes, with
+  appeal windows and links.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 5a45cb34e31faee894f0b8ea733a20e1835cec67e4504e369179367b01e9513c
+  path: ai.agentlookups/overassessed@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentlookups%2Foverassessed/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentlookups
+  - overassessed
+  - maryland
+  - property
+  - assessment
+  - fairness
+  - checks
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:5a45cb34e31faee894f0b8ea733a20e1835cec67e4504e369179367b01e9513c
+freshness: current

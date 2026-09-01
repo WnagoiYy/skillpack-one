@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-anthropics-skills-internal-comms-d39c34fb
+type: skill
+name: internal-comms
+summary: Agent Skill internal-comms from anthropics/skills.
+author: anthropics
+source:
+  repository: https://github.com/anthropics/skills
+  revision: 3b3fad96af16a10759d930941b4520ba0c40edae
+  path: skills/internal-comms
+  url: https://github.com/anthropics/skills/tree/3b3fad96af16a10759d930941b4520ba0c40edae/skills/internal-comms
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - internal
+  - comms
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:d39c34fbc484408ef5a22141d19813673b7d13733a5dbf543dd7948d5427450a
+freshness: current

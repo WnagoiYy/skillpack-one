@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agenticterminal-directory-76d87e32de
+type: mcp-server
+name: Agentic Terminal Directory
+summary: Verified merchants accepting agentic payments on
+  Lightning/L402/BOLT12/USDT — search, verify, pay.
+author: observer-protocol
+source:
+  repository: https://github.com/observer-protocol/at-directory
+  revision: 76d87e32dec0ff7b90a56df093f684a28804f91bb8e0a2c78632e58d67fcffab
+  path: ai.agenticterminal/directory@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticterminal%2Fdirectory/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agenticterminal
+  - directory
+  - agentic
+  - terminal
+  - verified
+  - merchants
+  - accepting
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:76d87e32dec0ff7b90a56df093f684a28804f91bb8e0a2c78632e58d67fcffab
+freshness: current

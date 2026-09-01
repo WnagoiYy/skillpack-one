@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-pyzotero-c733330b
+type: skill
+name: pyzotero
+summary: Agent Skill pyzotero from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/pyzotero
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/pyzotero
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - pyzotero
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:c733330bc8499b8ca54d456a375a842b21ed422e112fd95a688a01d32da1bdc0
+freshness: current

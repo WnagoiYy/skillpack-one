@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-diffdock-7c470c15
+type: skill
+name: diffdock
+summary: Agent Skill diffdock from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/diffdock
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/diffdock
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - diffdock
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:7c470c15b3ec406444afc543e24df27a48b6373cf762e15582394eb10b2d6681
+freshness: current

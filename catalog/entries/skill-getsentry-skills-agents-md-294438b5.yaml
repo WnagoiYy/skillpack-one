@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-getsentry-skills-agents-md-294438b5
+type: skill
+name: agents-md
+summary: Agent Skill agents-md from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/agents-md
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/agents-md
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - agents
+  - md
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:294438b50dce4b50fc33d304cfa545983806be67acc9bfc6bde87cd6f641ac5c
+freshness: current

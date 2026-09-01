@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: skill-gohypergiant-agent-skills-accelint-ac-to-playwright-bdb2b494
+type: skill
+name: accelint-ac-to-playwright
+summary: Agent Skill accelint-ac-to-playwright from gohypergiant/agent-skills.
+author: gohypergiant
+source:
+  repository: https://github.com/gohypergiant/agent-skills
+  revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0
+  path: skills/accelint-ac-to-playwright
+  url: https://github.com/gohypergiant/agent-skills/tree/e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0/skills/accelint-ac-to-playwright
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - accelint
+  - ac
+  - to
+  - playwright
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:bdb2b494ae068db664680662c3c1696fb5fa635254901cace10284de182aed19
+freshness: current

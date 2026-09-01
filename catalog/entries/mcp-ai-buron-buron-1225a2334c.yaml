@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-buron-buron-1225a2334c
+type: mcp-server
+name: Buron
+summary: "Marketing-measurement MCP: dashboards, cross-channel queries,
+  integrations, and knowledge files."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 1225a2334c35ba91db5bdec2bb1019f6a00955d00315f6c817142876b30055ab
+  path: ai.buron/buron@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.buron%2Fburon/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - buron
+  - marketing
+  - measurement
+  - dashboards
+  - cross
+  - channel
+  - queries
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1225a2334c35ba91db5bdec2bb1019f6a00955d00315f6c817142876b30055ab
+freshness: current

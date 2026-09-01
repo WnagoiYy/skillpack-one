@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-gohypergiant-agent-skills-accelint-ts-documentation-2d27b7d5
+type: skill
+name: accelint-ts-documentation
+summary: Agent Skill accelint-ts-documentation from gohypergiant/agent-skills.
+author: gohypergiant
+source:
+  repository: https://github.com/gohypergiant/agent-skills
+  revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0
+  path: skills/accelint-ts-documentation
+  url: https://github.com/gohypergiant/agent-skills/tree/e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0/skills/accelint-ts-documentation
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - accelint
+  - ts
+  - documentation
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:2d27b7d56a3f8d245c8f067be78b8291bb054c8225f13602d3d775263e9af760
+freshness: current

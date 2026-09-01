@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-cloudflare-skills-agents-sdk-6931a5bf
+type: skill
+name: agents-sdk
+summary: Agent Skill agents-sdk from cloudflare/skills.
+author: cloudflare
+source:
+  repository: https://github.com/cloudflare/skills
+  revision: f96bff754e428838818017f75817f0f9428acd48
+  path: skills/agents-sdk
+  url: https://github.com/cloudflare/skills/tree/f96bff754e428838818017f75817f0f9428acd48/skills/agents-sdk
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - agents
+  - sdk
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:6931a5bff4bca9345d8f68d5ef6788788a14764036eae3cd05f865ae2f81cfa9
+freshness: current

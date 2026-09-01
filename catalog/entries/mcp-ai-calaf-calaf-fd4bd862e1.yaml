@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-calaf-calaf-fd4bd862e1
+type: mcp-server
+name: Calaf
+summary: "Run your Calaf recruiting book from chat: firms, people, pipeline,
+  calendar, notes, and prep."
+author: gallaghern51-art
+source:
+  repository: https://github.com/gallaghern51-art/calaf-mcp
+  revision: fd4bd862e1e6f619de4c9fb66f6ce5b19f919f9f9b99a99b7241a1247ea997a7
+  path: ai.calaf/calaf@1.8.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.calaf%2Fcalaf/versions/1.8.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - calaf
+  - run
+  - recruiting
+  - book
+  - chat
+  - firms
+  - people
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:fd4bd862e1e6f619de4c9fb66f6ce5b19f919f9f9b99a99b7241a1247ea997a7
+freshness: current

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-constant-time-analysis-7ac49afd
+type: skill
+name: constant-time-analysis
+summary: Agent Skill constant-time-analysis from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/constant-time-analysis/skills/constant-time-analysis
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/constant-time-analysis/skills/constant-time-analysis
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - constant
+  - time
+  - analysis
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:7ac49afd7c1fde092697de31d5e0318a98ca94b42be213ab49111181c144b3b2
+freshness: current

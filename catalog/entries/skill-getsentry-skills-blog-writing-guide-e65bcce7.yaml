@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-getsentry-skills-blog-writing-guide-e65bcce7
+type: skill
+name: blog-writing-guide
+summary: Agent Skill blog-writing-guide from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/blog-writing-guide
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/blog-writing-guide
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - blog
+  - writing
+  - guide
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:e65bcce72b0662c5a83e068b34ad6371fa710418d9390d812be600224d39235a
+freshness: current

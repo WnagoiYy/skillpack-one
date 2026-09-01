@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: mcp-ai-citybook-citybook-a8d1e17475
+type: mcp-server
+name: Citybook
+summary: Live Calgary events for AI agents.
+author: yeunge-pawlo
+source:
+  repository: https://github.com/yeunge-pawlo/citybook
+  revision: a8d1e17475a066f2b944551110bfd320e99581c3620ffcc72495e74c5c4c9a1c
+  path: ai.citybook/citybook@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.citybook%2Fcitybook/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - citybook
+  - live
+  - calgary
+  - events
+  - agents
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:a8d1e17475a066f2b944551110bfd320e99581c3620ffcc72495e74c5c4c9a1c
+freshness: current

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-getsentry-skills-prompt-optimizer-d6cf95b0
+type: skill
+name: prompt-optimizer
+summary: Agent Skill prompt-optimizer from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/prompt-optimizer
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/prompt-optimizer
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - prompt
+  - optimizer
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:d6cf95b036ff72f3b51f21182105d4de12370041f396d80afb793bfbd0f7670d
+freshness: current

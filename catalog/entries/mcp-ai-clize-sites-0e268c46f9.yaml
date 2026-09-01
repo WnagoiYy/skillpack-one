@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-clize-sites-0e268c46f9
+type: mcp-server
+name: Sites by Clize
+summary: "Ship a real marketing site from your coding agent: domain, HTTPS and a
+  working inbox."
+author: cooldk
+source:
+  repository: https://github.com/cooldk/clize-cli
+  revision: 0e268c46f9185d3162bee43dd448ea28db434ed97f050cb1f4cc02316cc56ba8
+  path: ai.clize/sites@0.32.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.clize%2Fsites/versions/0.32.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - clize
+  - sites
+  - ship
+  - real
+  - marketing
+  - site
+  - coding
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0e268c46f9185d3162bee43dd448ea28db434ed97f050cb1f4cc02316cc56ba8
+freshness: current

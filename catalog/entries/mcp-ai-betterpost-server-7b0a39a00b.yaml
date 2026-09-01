@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-betterpost-server-7b0a39a00b
+type: mcp-server
+name: BetterPost
+summary: Finds timely sources across news, social, and the web and writes posts
+  worth publishing.
+author: betterpost
+source:
+  repository: https://github.com/betterpost/betterpost-plugin
+  revision: 7b0a39a00be9e2c2fd45d78517a4fd806d3554edc0816a915c79329b4eaa528b
+  path: ai.betterpost/server@2.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.betterpost%2Fserver/versions/2.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - betterpost
+  - finds
+  - timely
+  - sources
+  - across
+  - news
+  - social
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:7b0a39a00be9e2c2fd45d78517a4fd806d3554edc0816a915c79329b4eaa528b
+freshness: current

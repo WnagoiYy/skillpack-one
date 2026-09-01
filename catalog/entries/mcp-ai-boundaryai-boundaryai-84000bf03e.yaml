@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-boundaryai-boundaryai-84000bf03e
+type: mcp-server
+name: ai.boundaryai/boundaryai
+summary: "Deterministic runtime safety for AI agents: scan PII, gate tool
+  actions, verify LLM output."
+author: skvcool-rgb
+source:
+  repository: https://github.com/skvcool-rgb/BoundaryAI
+  revision: 84000bf03ec332620255e72dbf04c50d70f97ae646870c6e98fcbd93520e75ef
+  path: ai.boundaryai/boundaryai@0.7.31
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.boundaryai%2Fboundaryai/versions/0.7.31
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - boundaryai
+  - deterministic
+  - runtime
+  - safety
+  - agents
+  - scan
+  - pii
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:84000bf03ec332620255e72dbf04c50d70f97ae646870c6e98fcbd93520e75ef
+freshness: current

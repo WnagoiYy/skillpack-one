@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentxray-mcp-ac6097c8b2
+type: mcp-server
+name: ai.agentxray/mcp
+summary: "Amazon sellers: real per-unit profit from your own settlement data,
+  plus drafts you approve."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: ac6097c8b22d67d12bcddbd49424bd901b5775374cf27da2c79b055526c78ede
+  path: ai.agentxray/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentxray%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentxray
+  - amazon
+  - sellers
+  - real
+  - per
+  - unit
+  - profit
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:ac6097c8b22d67d12bcddbd49424bd901b5775374cf27da2c79b055526c78ede
+freshness: current

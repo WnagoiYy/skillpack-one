@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-scvi-tools-461da816
+type: skill
+name: scvi-tools
+summary: Agent Skill scvi-tools from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/scvi-tools
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/scvi-tools
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - scvi
+  - tools
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:461da8165590776b89be41f076371629ce9469aa08b5e175435a7c3dfba65bdb
+freshness: current

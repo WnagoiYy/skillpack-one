@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: skill-gohypergiant-agent-skills-accelint-tanstack-query-best-practices-0d0047d2
+type: skill
+name: accelint-tanstack-query-best-practices
+summary: Agent Skill accelint-tanstack-query-best-practices from
+  gohypergiant/agent-skills.
+author: gohypergiant
+source:
+  repository: https://github.com/gohypergiant/agent-skills
+  revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0
+  path: skills/accelint-tanstack-query-best-practices
+  url: https://github.com/gohypergiant/agent-skills/tree/e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0/skills/accelint-tanstack-query-best-practices
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - accelint
+  - tanstack
+  - query
+  - best
+  - practices
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:0d0047d293c59e17b08158e16d6721c33d2d7d0c5148229c1ae11de887303d3b
+freshness: current

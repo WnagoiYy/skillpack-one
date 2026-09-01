@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-auralogs-auralogs-9def507616
+type: mcp-server
+name: Auralogs
+summary: "Read-only access to Auralogs production logs: search logs, inspect
+  errors, review AI analyses."
+author: auralogs-ai
+source:
+  repository: https://github.com/auralogs-ai/auralogs-mcp
+  revision: 9def5076166c4079ecd2aef5326a4378aa1f83c04724b38b7dae6fb30a791850
+  path: ai.auralogs/auralogs@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.auralogs%2Fauralogs/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - auralogs
+  - read
+  - only
+  - access
+  - production
+  - logs
+  - search
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:9def5076166c4079ecd2aef5326a4378aa1f83c04724b38b7dae6fb30a791850
+freshness: current

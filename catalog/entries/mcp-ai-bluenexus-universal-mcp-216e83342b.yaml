@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bluenexus-universal-mcp-216e83342b
+type: mcp-server
+name: BlueNexus Universal MCP
+summary: Connect your AI to all your data - 200+ sources, intelligently
+  filtered, compliance-ready.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 216e83342b3263475b60872aacce50c32e17b5736f2aa85521901d2da3aad24f
+  path: ai.bluenexus/universal-mcp@1.18.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bluenexus%2Funiversal-mcp/versions/1.18.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bluenexus
+  - universal
+  - connect
+  - all
+  - data
+  - "200"
+  - sources
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:216e83342b3263475b60872aacce50c32e17b5736f2aa85521901d2da3aad24f
+freshness: current

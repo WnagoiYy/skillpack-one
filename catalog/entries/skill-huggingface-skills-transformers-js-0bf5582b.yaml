@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-huggingface-skills-transformers-js-0bf5582b
+type: skill
+name: transformers-js
+summary: Agent Skill transformers-js from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/transformers-js
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/transformers-js
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - transformers
+  - js
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:0bf5582b707c181b2c431b1bfb0be7f5a52cceec72e48953bfd5ee7cf4488ef4
+freshness: current

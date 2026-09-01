@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentutility-mcp-wordmint-9ee82067b0
+type: mcp-server
+name: AgentUtility Wordmint
+summary: MCP server for the @agentutility wordmint cluster — pay-per-call x402
+  tools, no API keys, USDC on…
+author: rooz21
+source:
+  repository: https://github.com/rooz21/x402
+  revision: 9ee82067b098840be87868b2232a52b3dabb803f41f54edfd0fe2911f0e447a8
+  path: ai.agentutility/mcp-wordmint@0.16.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentutility%2Fmcp-wordmint/versions/0.16.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentutility
+  - wordmint
+  - cluster
+  - pay
+  - per
+  - call
+  - x402
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:9ee82067b098840be87868b2232a52b3dabb803f41f54edfd0fe2911f0e447a8
+freshness: current

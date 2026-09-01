@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-auxen-auxen-211902ee66
+type: mcp-server
+name: Auxen
+summary: Provision private AI model endpoints on dedicated GPUs (Llama, Qwen,
+  Mistral). Pay per minute.
+author: auxen-ai
+source:
+  repository: https://github.com/auxen-ai/auxen-mcp
+  revision: 211902ee664aee52b90b4ecd69861e68ab86dec3cd095932071a999606ea4514
+  path: ai.auxen/auxen@1.0.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.auxen%2Fauxen/versions/1.0.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - auxen
+  - provision
+  - private
+  - model
+  - endpoints
+  - dedicated
+  - gpus
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:211902ee664aee52b90b4ecd69861e68ab86dec3cd095932071a999606ea4514
+freshness: current

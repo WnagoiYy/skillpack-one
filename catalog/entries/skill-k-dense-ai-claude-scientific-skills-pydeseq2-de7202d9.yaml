@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-pydeseq2-de7202d9
+type: skill
+name: pydeseq2
+summary: Agent Skill pydeseq2 from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/pydeseq2
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/pydeseq2
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - pydeseq2
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:de7202d97766a55ea13f3af093fd0ce47fd75ce705d645e3cf090108405172c2
+freshness: current

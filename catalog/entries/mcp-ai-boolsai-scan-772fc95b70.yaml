@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-boolsai-scan-772fc95b70
+type: mcp-server
+name: Boolsai Scan
+summary: Live tech-stack scan of any public site — vendors, account IDs,
+  scripts, JSON-LD. 2 tools.
+author: Boolsai-ai
+source:
+  repository: https://github.com/Boolsai-ai/mcp
+  revision: 772fc95b705cf03984a1aafd901093b1407d670d482a1e31bfbe4374530a6eab
+  path: ai.boolsai/scan@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.boolsai%2Fscan/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - boolsai
+  - scan
+  - live
+  - tech
+  - stack
+  - any
+  - public
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:772fc95b705cf03984a1aafd901093b1407d670d482a1e31bfbe4374530a6eab
+freshness: current

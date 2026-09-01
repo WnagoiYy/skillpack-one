@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-molfeat-375894d7
+type: skill
+name: molfeat
+summary: Agent Skill molfeat from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/molfeat
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/molfeat
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - molfeat
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:375894d7b4256e121bf79c455e8fb3a21931ba51e40743ca8dba298051f4f0c5
+freshness: current

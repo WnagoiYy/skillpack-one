@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-b77-fibalo-0a70b165b3
+type: mcp-server
+name: Fibalo
+summary: "Query and add to your Fibalo bookkeeping: documents, bank
+  transactions, suppliers, access."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 0a70b165b39fcb9033c7f20e60427f8e87eca5df95631ffbd7630d4c07c95487
+  path: ai.b77/fibalo@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Ffibalo/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - fibalo
+  - query
+  - add
+  - bookkeeping
+  - documents
+  - bank
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0a70b165b39fcb9033c7f20e60427f8e87eca5df95631ffbd7630d4c07c95487
+freshness: current

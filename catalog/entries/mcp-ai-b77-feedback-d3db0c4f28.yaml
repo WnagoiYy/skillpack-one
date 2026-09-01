@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-b77-feedback-d3db0c4f28
+type: mcp-server
+name: Feedback
+summary: Capture feature requests and bug reports from chat into a searchable,
+  AI-categorized backlog.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d3db0c4f28823857e0acbd1d9358964c1590b9392cceb93766c38f631dcd82e5
+  path: ai.b77/feedback@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Ffeedback/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - feedback
+  - capture
+  - feature
+  - requests
+  - bug
+  - reports
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d3db0c4f28823857e0acbd1d9358964c1590b9392cceb93766c38f631dcd82e5
+freshness: current

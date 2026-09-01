@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-burpsuite-project-parser-77ed0d6d
+type: skill
+name: burpsuite-project-parser
+summary: Agent Skill burpsuite-project-parser from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/burpsuite-project-parser/skills/burpsuite-project-parser
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/burpsuite-project-parser/skills/burpsuite-project-parser
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - burpsuite
+  - project
+  - parser
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:77ed0d6d6c65c7b323032b4b181a96b33018c957a90386caced8cf0c82dd1e0c
+freshness: current

@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-spec-to-code-compliance-963ce245
+type: skill
+name: spec-to-code-compliance
+summary: Agent Skill spec-to-code-compliance from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/spec-to-code-compliance/skills/spec-to-code-compliance
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/spec-to-code-compliance/skills/spec-to-code-compliance
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - spec
+  - to
+  - code
+  - compliance
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:963ce245c6c5249a123efb807592f199fda644b90cf572bf21ed793c0ba36df3
+freshness: current

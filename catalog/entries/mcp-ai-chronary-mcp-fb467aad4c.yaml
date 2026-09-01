@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-chronary-mcp-fb467aad4c
+type: mcp-server
+name: Chronary
+summary: "Calendar API for AI agents: events, availability, Google/Microsoft
+  setup, scheduling, and iCal."
+author: Chronary
+source:
+  repository: https://github.com/Chronary/chronary-mcp
+  revision: fb467aad4cd9862f90a8877dccd729e14cf1c75e58a67ca872fef8de861dbe6b
+  path: ai.chronary/mcp@1.5.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.chronary%2Fmcp/versions/1.5.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - chronary
+  - calendar
+  - api
+  - agents
+  - events
+  - availability
+  - google
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:fb467aad4cd9862f90a8877dccd729e14cf1c75e58a67ca872fef8de861dbe6b
+freshness: current

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-mutation-testing-e9d155c5
+type: skill
+name: mutation-testing
+summary: Agent Skill mutation-testing from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/mutation-testing/skills/mutation-testing
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/mutation-testing/skills/mutation-testing
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mutation
+  - testing
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:e9d155c54992157b63c8c9942a2a034c57c0f66e56a4eacea9349fe848ca58ba
+freshness: current

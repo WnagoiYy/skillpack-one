@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-benchling-integration-ba42906f
+type: skill
+name: benchling-integration
+summary: Agent Skill benchling-integration from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/benchling-integration
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/benchling-integration
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - benchling
+  - integration
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:ba42906fdaffb2511b2ea7d6d705baef6bfab5e9134a6d35291640f5a3313311
+freshness: current

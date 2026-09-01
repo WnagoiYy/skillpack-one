@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-getsentry-skills-commit-a42b87ee
+type: skill
+name: commit
+summary: Agent Skill commit from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/commit
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/commit
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - commit
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:a42b87eeece756f6c9b8f604ae985f4ca096f7345ac224868d79678d4fb548f2
+freshness: current

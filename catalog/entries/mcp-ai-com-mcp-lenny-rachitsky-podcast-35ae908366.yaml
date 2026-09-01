@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-com-mcp-lenny-rachitsky-podcast-35ae908366
+type: mcp-server
+name: Lenny Rachitsky Podcast Transcripts MCP Server
+summary: MCP server for structured access to Lenny Rachitsky podcast
+  transcripts. For content creators.
+author: la-rebelion
+source:
+  repository: https://github.com/la-rebelion/hapimcp
+  revision: 35ae908366f20b38ac85c8dafa147647013e0e81992ec37bb4b2bc107e165fbd
+  path: ai.com.mcp/lenny-rachitsky-podcast@0.6.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.com.mcp%2Flenny-rachitsky-podcast/versions/0.6.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - com
+  - lenny
+  - rachitsky
+  - podcast
+  - transcripts
+  - structured
+  - access
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:35ae908366f20b38ac85c8dafa147647013e0e81992ec37bb4b2bc107e165fbd
+freshness: current

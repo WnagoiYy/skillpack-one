@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-atlaso-mcp-3a3eeebf0d
+type: mcp-server
+name: ai.atlaso/mcp
+summary: AI memory layer — one shared, persistent memory across every AI tool
+  you connect.
+author: atlaso-labs
+source:
+  repository: https://github.com/atlaso-labs/mcp
+  revision: 3a3eeebf0d6f10b5c1c1f4e741715b6623f244cbb73f6bf58e673b6b363bfbc4
+  path: ai.atlaso/mcp@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.atlaso%2Fmcp/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - atlaso
+  - memory
+  - layer
+  - one
+  - shared
+  - persistent
+  - across
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:3a3eeebf0d6f10b5c1c1f4e741715b6623f244cbb73f6bf58e673b6b363bfbc4
+freshness: current

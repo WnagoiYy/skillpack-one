@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-anomalyarmor-armor-mcp-6a7a4cc65b
+type: mcp-server
+name: AnomalyArmor
+summary: "Data observability tools for engineering teams: alerts, freshness,
+  schema drift, lineage, quality."
+author: anomalyarmor
+source:
+  repository: https://github.com/anomalyarmor/agents
+  revision: 6a7a4cc65b8ecf581909522f06ff41e18be2367ac8bf7edaadb849d65306fdab
+  path: ai.anomalyarmor/armor-mcp@0.6.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.anomalyarmor%2Farmor-mcp/versions/0.6.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - anomalyarmor
+  - armor
+  - data
+  - observability
+  - tools
+  - engineering
+  - teams
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:6a7a4cc65b8ecf581909522f06ff41e18be2367ac8bf7edaadb849d65306fdab
+freshness: current

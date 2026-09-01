@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-getsentry-skills-sred-project-organizer-76235f12
+type: skill
+name: sred-project-organizer
+summary: Agent Skill sred-project-organizer from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/sred-project-organizer
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/sred-project-organizer
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - sred
+  - project
+  - organizer
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:76235f1248b6f6eedc5e3cd6cfa6726103f3dfffbfb223299d8cfa603b944a52
+freshness: current

@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-adoraads-beauty-4a2ab953db
+type: mcp-server
+name: ai.adoraads/beauty
+summary: AI-native beauty ads, sponsored product discovery, and brand recommendations.
+author: DIGIBIZ360-COM
+source:
+  repository: https://github.com/DIGIBIZ360-COM/adoraads
+  revision: 4a2ab953db6b6a7c276064d0bcc8803a2c55c6ea0e5081925aee6cbaf394ee8b
+  path: ai.adoraads/beauty@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.adoraads%2Fbeauty/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - adoraads
+  - beauty
+  - native
+  - ads
+  - sponsored
+  - product
+  - discovery
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:4a2ab953db6b6a7c276064d0bcc8803a2c55c6ea0e5081925aee6cbaf394ee8b
+freshness: current

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-getsentry-skills-find-bugs-8bb54a98
+type: skill
+name: find-bugs
+summary: Agent Skill find-bugs from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/find-bugs
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/find-bugs
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - find
+  - bugs
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:8bb54a98fc87d13993ad413ad7ef087ab371256ff6a1c9f60491bc50fe4e8501
+freshness: current

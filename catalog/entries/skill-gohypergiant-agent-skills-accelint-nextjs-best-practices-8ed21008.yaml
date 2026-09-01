@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: skill-gohypergiant-agent-skills-accelint-nextjs-best-practices-8ed21008
+type: skill
+name: accelint-nextjs-best-practices
+summary: Agent Skill accelint-nextjs-best-practices from gohypergiant/agent-skills.
+author: gohypergiant
+source:
+  repository: https://github.com/gohypergiant/agent-skills
+  revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0
+  path: skills/accelint-nextjs-best-practices
+  url: https://github.com/gohypergiant/agent-skills/tree/e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0/skills/accelint-nextjs-best-practices
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - accelint
+  - nextjs
+  - best
+  - practices
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:8ed21008f59ae366bf13cb2c1f96906b44c5955cbec619a4d330ed140a391e8e
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-clarid-hmda-f7aabbdd0d
+type: mcp-server
+name: Clarid HMDA Validator
+summary: Validate HMDA LAR files against CFPB edit checks for community banks
+  and credit unions.
+author: clarid-ai
+source:
+  repository: https://github.com/clarid-ai/compliance-checker
+  revision: f7aabbdd0dce9afd3e0bca2684319b97dbf79b7d775dbbdd715d46f64c40b08b
+  path: ai.clarid/hmda@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.clarid%2Fhmda/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - clarid
+  - hmda
+  - validator
+  - validate
+  - lar
+  - files
+  - against
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f7aabbdd0dce9afd3e0bca2684319b97dbf79b7d775dbbdd715d46f64c40b08b
+freshness: current

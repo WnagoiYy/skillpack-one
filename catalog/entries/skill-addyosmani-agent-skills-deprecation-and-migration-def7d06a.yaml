@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-addyosmani-agent-skills-deprecation-and-migration-def7d06a
+type: skill
+name: deprecation-and-migration
+summary: Agent Skill deprecation-and-migration from addyosmani/agent-skills.
+author: addyosmani
+source:
+  repository: https://github.com/addyosmani/agent-skills
+  revision: d2c37ef6225dd8726cdd369a8030307f48592d26
+  path: skills/deprecation-and-migration
+  url: https://github.com/addyosmani/agent-skills/tree/d2c37ef6225dd8726cdd369a8030307f48592d26/skills/deprecation-and-migration
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - deprecation
+  - and
+  - migration
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:def7d06a4f1aa7a23517d85c625745798edec05f72e4bb12e6f90cc44cbf1d4b
+freshness: current

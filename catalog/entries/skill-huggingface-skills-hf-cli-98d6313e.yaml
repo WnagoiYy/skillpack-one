@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-huggingface-skills-hf-cli-98d6313e
+type: skill
+name: hf-cli
+summary: Agent Skill hf-cli from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/hf-cli
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/hf-cli
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - hf
+  - cli
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:98d6313e1e5f062254e4dc26379db35be1d723510c69a84af9740c24c4d54241
+freshness: current

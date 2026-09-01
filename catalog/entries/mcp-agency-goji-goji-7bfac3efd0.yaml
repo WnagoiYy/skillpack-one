@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-agency-goji-goji-7bfac3efd0
+type: mcp-server
+name: agency.goji/goji
+summary: Answers on AEO, SEO, web and brand from GOJI's published material.
+  Melbourne, Australia.
+author: goji-agency
+source:
+  repository: https://github.com/goji-agency/goji-mcp
+  revision: 7bfac3efd06143bd674ad413206c61e179ec82b1ff6c713375ad09ba7324c479
+  path: agency.goji/goji@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/agency.goji%2Fgoji/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agency
+  - goji
+  - answers
+  - aeo
+  - seo
+  - web
+  - brand
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:7bfac3efd06143bd674ad413206c61e179ec82b1ff6c713375ad09ba7324c479
+freshness: current

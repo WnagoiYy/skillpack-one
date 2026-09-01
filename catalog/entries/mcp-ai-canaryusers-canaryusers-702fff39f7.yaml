@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-canaryusers-canaryusers-702fff39f7
+type: mcp-server
+name: ai.canaryusers/canaryusers
+summary: A flock of AI users tests your deployed app and reports where real
+  people get stuck, with fixes.
+author: CanaryUsers-ai
+source:
+  repository: https://github.com/CanaryUsers-ai/canaryusers-mcp
+  revision: 702fff39f7b81476fc4e658ff7ea692fcd4bb3b52198d9279b70a48f03c05e1c
+  path: ai.canaryusers/canaryusers@1.2.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.canaryusers%2Fcanaryusers/versions/1.2.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - canaryusers
+  - flock
+  - users
+  - tests
+  - deployed
+  - app
+  - reports
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:702fff39f7b81476fc4e658ff7ea692fcd4bb3b52198d9279b70a48f03c05e1c
+freshness: current

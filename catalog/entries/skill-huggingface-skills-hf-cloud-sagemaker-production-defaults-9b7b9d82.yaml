@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: skill-huggingface-skills-hf-cloud-sagemaker-production-defaults-9b7b9d82
+type: skill
+name: hf-cloud-sagemaker-production-defaults
+summary: Agent Skill hf-cloud-sagemaker-production-defaults from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/hf-cloud-sagemaker-production-defaults
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/hf-cloud-sagemaker-production-defaults
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - hf
+  - cloud
+  - sagemaker
+  - production
+  - defaults
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:9b7b9d82595484e23d24d646b7770d0bda4497a5694343e6c27e5fcdb3eba533
+freshness: current

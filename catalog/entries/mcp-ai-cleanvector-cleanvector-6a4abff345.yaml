@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-cleanvector-cleanvector-6a4abff345
+type: mcp-server
+name: CleanVector
+summary: Generate vector art, vectorize images, and return SVG, PNG, and logo
+  kits to AI agents.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 6a4abff3452308b7e5efa10745e2c8e62c43260f73464f8bad4eb944c6f4db1f
+  path: ai.cleanvector/cleanvector@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cleanvector%2Fcleanvector/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cleanvector
+  - generate
+  - vector
+  - art
+  - vectorize
+  - images
+  - return
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:6a4abff3452308b7e5efa10745e2c8e62c43260f73464f8bad4eb944c6f4db1f
+freshness: current

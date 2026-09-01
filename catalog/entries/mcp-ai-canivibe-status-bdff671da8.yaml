@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-canivibe-status-bdff671da8
+type: mcp-server
+name: Can I Vibe? — AI coding provider status
+summary: "Live status and health checks for AI coding providers: Claude, Cursor,
+  Copilot, Codex and more."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: bdff671da8e4b4f0c124248846f9772242100387f49b645849f825dfcbb94dc4
+  path: ai.canivibe/status@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.canivibe%2Fstatus/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - canivibe
+  - status
+  - can
+  - vibe
+  - coding
+  - provider
+  - live
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:bdff671da8e4b4f0c124248846f9772242100387f49b645849f825dfcbb94dc4
+freshness: current

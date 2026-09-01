@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-anthropics-skills-theme-factory-517caeb9
+type: skill
+name: theme-factory
+summary: Agent Skill theme-factory from anthropics/skills.
+author: anthropics
+source:
+  repository: https://github.com/anthropics/skills
+  revision: 3b3fad96af16a10759d930941b4520ba0c40edae
+  path: skills/theme-factory
+  url: https://github.com/anthropics/skills/tree/3b3fad96af16a10759d930941b4520ba0c40edae/skills/theme-factory
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - theme
+  - factory
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:517caeb9e0b3d2ce67c9c0e7d3485d9ce1f1058441c98b1978c103f74ef27130
+freshness: current

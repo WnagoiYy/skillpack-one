@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: mcp-ai-autoblocks-contextlayer-mcp-34e47d62ba
+type: mcp-server
+name: ai.autoblocks/contextlayer-mcp
+summary: Personal context management for AI assistants
+author: autoblocksai
+source:
+  repository: https://github.com/autoblocksai/ctxl
+  revision: 34e47d62ba815a7d44dba477d07a255dcf45b0f743ed6f37ec3a2ea8c5d5f6ab
+  path: ai.autoblocks/contextlayer-mcp@0.0.3
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.autoblocks%2Fcontextlayer-mcp/versions/0.0.3
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - autoblocks
+  - contextlayer
+  - personal
+  - context
+  - management
+  - assistants
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:34e47d62ba815a7d44dba477d07a255dcf45b0f743ed6f37ec3a2ea8c5d5f6ab
+freshness: current

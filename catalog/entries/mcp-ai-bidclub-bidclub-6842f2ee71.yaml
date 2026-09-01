@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bidclub-bidclub-6842f2ee71
+type: mcp-server
+name: ai.bidclub/bidclub
+summary: Search 45+ investor podcasts and read transcripts, TL;DRs, digests —
+  bilingual EN/中文, keyless.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 6842f2ee71df5fe57e0e3737042f501e91ab6dd09a48f0361124dc96a12c1b82
+  path: ai.bidclub/bidclub@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bidclub%2Fbidclub/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bidclub
+  - search
+  - investor
+  - podcasts
+  - read
+  - transcripts
+  - drs
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:6842f2ee71df5fe57e0e3737042f501e91ab6dd09a48f0361124dc96a12c1b82
+freshness: current

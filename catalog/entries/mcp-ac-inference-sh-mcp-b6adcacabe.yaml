@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ac-inference-sh-mcp-b6adcacabe
+type: mcp-server
+name: inference.sh
+summary: run any ai model. compose agents, stack knowledge, connect tools. one
+  api, pay per run.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: b6adcacabe4982a5621580a57372d5f616aa4b655562d57dc7e6c0bb948d7e3e
+  path: ac.inference.sh/mcp@2.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ac.inference.sh%2Fmcp/versions/2.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - inference
+  - run
+  - any
+  - model
+  - compose
+  - agents
+  - stack
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:b6adcacabe4982a5621580a57372d5f616aa4b655562d57dc7e6c0bb948d7e3e
+freshness: current

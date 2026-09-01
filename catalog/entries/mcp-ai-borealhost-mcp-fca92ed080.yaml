@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-borealhost-mcp-fca92ed080
+type: mcp-server
+name: BorealHost
+summary: Agent-native web hosting — deploy sites, manage DNS, register domains,
+  scale infrastructure
+author: alainsvrd
+source:
+  repository: https://github.com/alainsvrd/borealhost-mcp
+  revision: fca92ed0800050e06dae855147c7a65b6fd9bf46e3f679d6d630224da14e1cb7
+  path: ai.borealhost/mcp@0.4.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.borealhost%2Fmcp/versions/0.4.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - borealhost
+  - agent
+  - native
+  - web
+  - hosting
+  - deploy
+  - sites
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:fca92ed0800050e06dae855147c7a65b6fd9bf46e3f679d6d630224da14e1cb7
+freshness: current

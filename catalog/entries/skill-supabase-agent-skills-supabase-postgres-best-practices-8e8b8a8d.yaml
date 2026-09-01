@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: skill-supabase-agent-skills-supabase-postgres-best-practices-8e8b8a8d
+type: skill
+name: supabase-postgres-best-practices
+summary: Agent Skill supabase-postgres-best-practices from supabase/agent-skills.
+author: supabase
+source:
+  repository: https://github.com/supabase/agent-skills
+  revision: 8331f910845103c08d51f6ca1d86ebb7d1f745e3
+  path: skills/supabase-postgres-best-practices
+  url: https://github.com/supabase/agent-skills/tree/8331f910845103c08d51f6ca1d86ebb7d1f745e3/skills/supabase-postgres-best-practices
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - supabase
+  - postgres
+  - best
+  - practices
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:8e8b8a8de806b8acb444737c66670543a98ed53e7df471cb1e82c9d01373c24b
+freshness: current

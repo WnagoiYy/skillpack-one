@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-dataecho-mcp-622ca8750d
+type: mcp-server
+name: ai.dataecho/mcp
+summary: Deploy files, sites, and Dockerfile apps to live URLs + private drives
+  for agent memory.
+author: mohocp
+source:
+  repository: https://github.com/mohocp/dataecho
+  revision: 622ca8750d28e41109baa86ffaf4baa572200821104e36c27b31d84149792528
+  path: ai.dataecho/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.dataecho%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - dataecho
+  - deploy
+  - files
+  - sites
+  - dockerfile
+  - apps
+  - live
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:622ca8750d28e41109baa86ffaf4baa572200821104e36c27b31d84149792528
+freshness: current

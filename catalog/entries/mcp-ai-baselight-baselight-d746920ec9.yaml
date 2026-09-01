@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-baselight-baselight-d746920ec9
+type: mcp-server
+name: ai.baselight/baselight
+summary: Query Baselight's public catalog of 70,000+ datasets — finance,
+  demographics, sports, and more.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d746920ec9f39c28171d9e50f7fdf91d01c691dfbf93d9ffcdc162b0909113dc
+  path: ai.baselight/baselight@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.baselight%2Fbaselight/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - baselight
+  - query
+  - public
+  - catalog
+  - "000"
+  - datasets
+  - finance
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d746920ec9f39c28171d9e50f7fdf91d01c691dfbf93d9ffcdc162b0909113dc
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-chatthing-chat-thing-f1e4eefd3d
+type: mcp-server
+name: Chat Thing
+summary: Build and manage AI-native customer support agents from Claude or any
+  MCP client.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: f1e4eefd3d2a4c423a6fdd3cee752f155a56f6dfde28196c02d07c71da20e913
+  path: ai.chatthing/chat-thing@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.chatthing%2Fchat-thing/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - chatthing
+  - chat
+  - thing
+  - build
+  - manage
+  - native
+  - customer
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f1e4eefd3d2a4c423a6fdd3cee752f155a56f6dfde28196c02d07c71da20e913
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentdm-agentdm-e6f6c34b94
+type: mcp-server
+name: "AgentDM: Agent to Agent Communication Platform"
+summary: Agent communication platform for agent to agent messaging via MCP.
+  Messages, channels, skills.
+author: agentdmai
+source:
+  repository: https://github.com/agentdmai/agentdm
+  revision: e6f6c34b9422eca2ce6d26fe74490a121036c78a292d1ff9190fb1218569dada
+  path: ai.agentdm/agentdm@2.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentdm%2Fagentdm/versions/2.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentdm
+  - agent
+  - communication
+  - platform
+  - messaging
+  - via
+  - messages
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:e6f6c34b9422eca2ce6d26fe74490a121036c78a292d1ff9190fb1218569dada
+freshness: current

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-constant-time-testing-4e1379e9
+type: skill
+name: constant-time-testing
+summary: Agent Skill constant-time-testing from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/testing-handbook-skills/skills/constant-time-testing
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/testing-handbook-skills/skills/constant-time-testing
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - constant
+  - time
+  - testing
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:4e1379e9035546fb9c26e120fa9046fc9cd0ee2c84b98febb3fac8dc6d67858d
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-clize-domains-699897fd26
+type: mcp-server
+name: Agent Domains
+summary: Domains your AI agent can buy, point and monitor, with four-layer
+  health checks and alerts.
+author: cooldk
+source:
+  repository: https://github.com/cooldk/clize-cli
+  revision: 699897fd26d20bac2809378682226091ca22f48a9b2d77cdbb869537770b42ef
+  path: ai.clize/domains@0.32.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.clize%2Fdomains/versions/0.32.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - clize
+  - domains
+  - agent
+  - can
+  - buy
+  - point
+  - monitor
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:699897fd26d20bac2809378682226091ca22f48a9b2d77cdbb869537770b42ef
+freshness: current

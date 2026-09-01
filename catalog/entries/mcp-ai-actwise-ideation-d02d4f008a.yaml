@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-actwise-ideation-d02d4f008a
+type: mcp-server
+name: ai.actwise/ideation
+summary: Actwise Ideation helps founders benchmark startup and product ideas
+  before they build.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d02d4f008a4007033063e538647bafe0c5971643c1f60f1c44fc18c96b371110
+  path: ai.actwise/ideation@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.actwise%2Fideation/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - actwise
+  - ideation
+  - helps
+  - founders
+  - benchmark
+  - startup
+  - product
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d02d4f008a4007033063e538647bafe0c5971643c1f60f1c44fc18c96b371110
+freshness: current

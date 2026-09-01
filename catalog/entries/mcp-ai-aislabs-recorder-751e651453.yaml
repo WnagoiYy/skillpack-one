@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-aislabs-recorder-751e651453
+type: mcp-server
+name: AIS Agent Flight Recorder — dead-man alerts & resume for AI agents
+summary: "Dead-man switch for AI agents & cron jobs: heartbeat with state
+  capsule, alerts + resume links"
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 751e65145340332e69e1194fe112a91d74c370f36f032fd53a6c8c0baa7b89d9
+  path: ai.aislabs/recorder@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.aislabs%2Frecorder/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - aislabs
+  - recorder
+  - ais
+  - agent
+  - flight
+  - dead
+  - man
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:751e65145340332e69e1194fe112a91d74c370f36f032fd53a6c8c0baa7b89d9
+freshness: current

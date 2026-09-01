@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-crayonz-mcp-c8ae9a9d95
+type: mcp-server
+name: ai.crayonz/mcp
+summary: "Design custom apparel from chat: AI art on tees and hoodies, then a
+  checkout link to buy."
+author: iitian-vibes
+source:
+  repository: https://github.com/iitian-vibes/AIDesign
+  revision: c8ae9a9d9573734e888a72cc480232663957017d1325b3daecfd35a2c592c43d
+  path: ai.crayonz/mcp@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.crayonz%2Fmcp/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - crayonz
+  - design
+  - custom
+  - apparel
+  - chat
+  - art
+  - tees
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c8ae9a9d9573734e888a72cc480232663957017d1325b3daecfd35a2c592c43d
+freshness: current

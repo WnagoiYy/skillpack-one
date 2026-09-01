@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-alphacreek-alphacreek-mcp-906301974f
+type: mcp-server
+name: AlphaCreek SEC Filings MCP
+summary: Access SEC filings efficiently (10-K, 10-Q, etc), save time and tokens,
+  and get cited answers.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 906301974f8e0f3d6550ca68f9d0309efb0c47b6f218cd3f4ebb6539609c2c6a
+  path: ai.alphacreek/alphacreek-mcp@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.alphacreek%2Falphacreek-mcp/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - alphacreek
+  - sec
+  - filings
+  - access
+  - efficiently
+  - etc
+  - save
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:906301974f8e0f3d6550ca68f9d0309efb0c47b6f218cd3f4ebb6539609c2c6a
+freshness: current

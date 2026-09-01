@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentutility-mcp-prooflayer-a743b0fd0f
+type: mcp-server
+name: AgentUtility Prooflayer
+summary: MCP server for the @agentutility prooflayer cluster — pay-per-call x402
+  tools, no API keys, USDC…
+author: rooz21
+source:
+  repository: https://github.com/rooz21/x402
+  revision: a743b0fd0f2824d6e97d7163d96b3d05b45b7335e72329bdadf4246dff3ece16
+  path: ai.agentutility/mcp-prooflayer@0.2.4
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentutility%2Fmcp-prooflayer/versions/0.2.4
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentutility
+  - prooflayer
+  - cluster
+  - pay
+  - per
+  - call
+  - x402
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:a743b0fd0f2824d6e97d7163d96b3d05b45b7335e72329bdadf4246dff3ece16
+freshness: current

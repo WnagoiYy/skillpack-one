@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-ankimcp-anki-mcp-server-8c4905a2ec
+type: mcp-server
+name: Anki MCP Server
+summary: "MCP server for Anki flashcards: adaptive review, notes, media, and
+  deck management via AnkiConnect."
+author: ankimcp
+source:
+  repository: https://github.com/ankimcp/anki-mcp-server
+  revision: 8c4905a2eca8f2aefc41a072bdf3e2ee84c30ce239c2b61da0e256adb6656751
+  path: ai.ankimcp/anki-mcp-server@0.24.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.ankimcp%2Fanki-mcp-server/versions/0.24.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - ankimcp
+  - anki
+  - flashcards
+  - adaptive
+  - review
+  - notes
+  - media
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:8c4905a2eca8f2aefc41a072bdf3e2ee84c30ce239c2b61da0e256adb6656751
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-customdomain-mcp-fe8191c4a2
+type: mcp-server
+name: ai.customdomain/mcp
+summary: "Custom domains for SaaS and AI agents: search, register, connect DNS,
+  and issue HTTPS over MCP."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: fe8191c4a2720072628f317d0637f6e47c76a748ccfdc590fb135e94b73cc662
+  path: ai.customdomain/mcp@0.4.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.customdomain%2Fmcp/versions/0.4.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - customdomain
+  - custom
+  - domains
+  - saas
+  - agents
+  - search
+  - register
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:fe8191c4a2720072628f317d0637f6e47c76a748ccfdc590fb135e94b73cc662
+freshness: current

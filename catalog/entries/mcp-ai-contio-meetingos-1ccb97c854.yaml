@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-contio-meetingos-1ccb97c854
+type: mcp-server
+name: Contio MeetingOS
+summary: "Contio MeetingOS: meetings, transcripts, action items, agendas,
+  calendar, and project management."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 1ccb97c854d63261e55f497c4324f87808c260783f26a29592af049bd5fda04d
+  path: ai.contio/meetingos@1.0.4
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.contio%2Fmeetingos/versions/1.0.4
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - contio
+  - meetingos
+  - meetings
+  - transcripts
+  - action
+  - items
+  - agendas
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1ccb97c854d63261e55f497c4324f87808c260783f26a29592af049bd5fda04d
+freshness: current

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-statistical-analysis-20f60337
+type: skill
+name: statistical-analysis
+summary: Agent Skill statistical-analysis from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/statistical-analysis
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/statistical-analysis
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - statistical
+  - analysis
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:20f603379ac2cdb8ba26fa5a880ce5e3162f727eb6f5e3d92c770ea9c20e7978
+freshness: current

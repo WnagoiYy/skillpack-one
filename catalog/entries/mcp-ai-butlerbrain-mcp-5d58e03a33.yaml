@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-butlerbrain-mcp-5d58e03a33
+type: mcp-server
+name: ai.butlerbrain/mcp
+summary: Persistent memory for AI assistants. Save once; recall from Claude,
+  ChatGPT, or any MCP client.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 5d58e03a3370278c60b7fbe524404c21234d77f8ec84abe92bf205bf70a54444
+  path: ai.butlerbrain/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.butlerbrain%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - butlerbrain
+  - persistent
+  - memory
+  - assistants
+  - save
+  - once
+  - recall
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:5d58e03a3370278c60b7fbe524404c21234d77f8ec84abe92bf205bf70a54444
+freshness: current

@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-biddeed-biddeed-mcp-7be8a7f9fb
+type: mcp-server
+name: BidDeed MCP
+summary: AI-powered foreclosure auction intelligence for Florida counties via MCP tools.
+author: breverdbidder
+source:
+  repository: https://github.com/breverdbidder/cli-anything-biddeed
+  revision: 7be8a7f9fba391a19b9b20ab86107a64ec15e3a226dd84add3cf5cfb11d8a4ab
+  path: ai.biddeed/biddeed-mcp@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.biddeed%2Fbiddeed-mcp/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - biddeed
+  - powered
+  - foreclosure
+  - auction
+  - intelligence
+  - florida
+  - counties
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:7be8a7f9fba391a19b9b20ab86107a64ec15e3a226dd84add3cf5cfb11d8a4ab
+freshness: current

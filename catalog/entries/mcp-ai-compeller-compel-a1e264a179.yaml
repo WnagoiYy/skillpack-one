@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-compeller-compel-a1e264a179
+type: mcp-server
+name: Compeller
+summary: Create and track AI music videos and audio-reactive visuals from songs.
+author: Compellerai
+source:
+  repository: https://github.com/Compellerai/compeller-mcp
+  revision: a1e264a179d380ce6f8b6ed4f68cb602d8af72508dc3bdfaaed9c40cec04999c
+  path: ai.compeller/compel@0.5.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.compeller%2Fcompel/versions/0.5.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - compeller
+  - compel
+  - create
+  - track
+  - music
+  - videos
+  - audio
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:a1e264a179d380ce6f8b6ed4f68cb602d8af72508dc3bdfaaed9c40cec04999c
+freshness: current

@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-anthropics-skills-web-artifacts-builder-e8f27114
+type: skill
+name: web-artifacts-builder
+summary: Agent Skill web-artifacts-builder from anthropics/skills.
+author: anthropics
+source:
+  repository: https://github.com/anthropics/skills
+  revision: 3b3fad96af16a10759d930941b4520ba0c40edae
+  path: skills/web-artifacts-builder
+  url: https://github.com/anthropics/skills/tree/3b3fad96af16a10759d930941b4520ba0c40edae/skills/web-artifacts-builder
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - web
+  - artifacts
+  - builder
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:e8f27114d1ee7a4fff2e6e7a7ea94bcb14dabba696ff982e5f12f62400dd37f0
+freshness: current

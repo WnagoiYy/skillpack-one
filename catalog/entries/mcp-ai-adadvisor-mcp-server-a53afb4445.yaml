@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-adadvisor-mcp-server-a53afb4445
+type: mcp-server
+name: AdAdvisor MCP Server
+summary: Query Meta Ads performance data — accounts, campaigns, ad sets, ads,
+  metrics & settings.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: a53afb444534b7807ad9b3aa906dc532cf8d74756a6df5720f49b1dd14c6c6d1
+  path: ai.adadvisor/mcp-server@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.adadvisor%2Fmcp-server/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - adadvisor
+  - query
+  - meta
+  - ads
+  - performance
+  - data
+  - accounts
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:a53afb444534b7807ad9b3aa906dc532cf8d74756a6df5720f49b1dd14c6c6d1
+freshness: current

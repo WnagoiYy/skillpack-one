@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agenticfabricationnetwork-ufp-afacc64871
+type: mcp-server
+name: Agentic Fabrication Network (AFN)
+summary: "Turn designs into shipped parts: quote 3D printing, CNC, and decals,
+  then check out."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: afacc64871d8fd617696d7788276e8a07a754fa4e514290f734e4d7b8ce09e78
+  path: ai.agenticfabricationnetwork/ufp@0.1.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticfabricationnetwork%2Fufp/versions/0.1.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agenticfabricationnetwork
+  - ufp
+  - agentic
+  - fabrication
+  - network
+  - afn
+  - turn
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:afacc64871d8fd617696d7788276e8a07a754fa4e514290f734e4d7b8ce09e78
+freshness: current

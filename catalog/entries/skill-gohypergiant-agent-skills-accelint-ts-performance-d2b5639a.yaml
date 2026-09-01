@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-gohypergiant-agent-skills-accelint-ts-performance-d2b5639a
+type: skill
+name: accelint-ts-performance
+summary: Agent Skill accelint-ts-performance from gohypergiant/agent-skills.
+author: gohypergiant
+source:
+  repository: https://github.com/gohypergiant/agent-skills
+  revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0
+  path: skills/accelint-ts-performance
+  url: https://github.com/gohypergiant/agent-skills/tree/e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0/skills/accelint-ts-performance
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - accelint
+  - ts
+  - performance
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:d2b5639a05999025160e2be18fc4b65267cb91ef682ea5edb8d0a095b5e9b726
+freshness: current

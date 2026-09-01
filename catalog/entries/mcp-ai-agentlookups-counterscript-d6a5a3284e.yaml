@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentlookups-counterscript-d6a5a3284e
+type: mcp-server
+name: CounterScript - Drug Price Benchmarks
+summary: "Free US drug-price benchmarks from federal data (CMS NADAC): a
+  benchmark, not a price anyone owes."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d6a5a3284e7c850de01a425d29f718898afff8b6310ba7579ae8d3a93ff78f9f
+  path: ai.agentlookups/counterscript@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentlookups%2Fcounterscript/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentlookups
+  - counterscript
+  - drug
+  - price
+  - benchmarks
+  - free
+  - federal
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d6a5a3284e7c850de01a425d29f718898afff8b6310ba7579ae8d3a93ff78f9f
+freshness: current

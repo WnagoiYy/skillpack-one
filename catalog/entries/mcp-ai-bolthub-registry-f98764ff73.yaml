@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bolthub-registry-f98764ff73
+type: mcp-server
+name: bolthub Marketplace
+summary: Discover and call every paid API on the bolthub marketplace with
+  automatic L402 Lightning payments.
+author: signaltech-org
+source:
+  repository: https://github.com/signaltech-org/bolthub-sdk
+  revision: f98764ff730f9ba87bd6895c18487fe03a010fd6439e2789bf502699274849db
+  path: ai.bolthub/registry@0.1.6
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bolthub%2Fregistry/versions/0.1.6
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bolthub
+  - registry
+  - marketplace
+  - discover
+  - call
+  - every
+  - paid
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f98764ff730f9ba87bd6895c18487fe03a010fd6439e2789bf502699274849db
+freshness: current

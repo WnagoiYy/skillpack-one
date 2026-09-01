@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-anthropics-skills-webapp-testing-395b4804
+type: skill
+name: webapp-testing
+summary: Agent Skill webapp-testing from anthropics/skills.
+author: anthropics
+source:
+  repository: https://github.com/anthropics/skills
+  revision: 3b3fad96af16a10759d930941b4520ba0c40edae
+  path: skills/webapp-testing
+  url: https://github.com/anthropics/skills/tree/3b3fad96af16a10759d930941b4520ba0c40edae/skills/webapp-testing
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - webapp
+  - testing
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:395b4804e85186e63e2e9da94037249ae3d067c1f06a44c8772f94ca651e5c12
+freshness: current

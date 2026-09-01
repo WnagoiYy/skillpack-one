@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-askmiles-catalog-798eb615f9
+type: mcp-server
+name: ai.askmiles/catalog
+summary: "Miles' public credit-card catalog: facts, transfer partners,
+  valuations. Keyless, read-only."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 798eb615f9ddacfc7361d9934cd7639dde499a4f58c10bd74d31180ef926c38a
+  path: ai.askmiles/catalog@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.askmiles%2Fcatalog/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - askmiles
+  - catalog
+  - miles
+  - public
+  - credit
+  - card
+  - facts
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:798eb615f9ddacfc7361d9934cd7639dde499a4f58c10bd74d31180ef926c38a
+freshness: current

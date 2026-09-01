@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-callmcp-server-c2cc664837
+type: mcp-server
+name: ai.callmcp/server
+summary: One MCP tool contract for telephony — any call provider, hosted, local,
+  or BYOK.
+author: CallMCP
+source:
+  repository: https://github.com/CallMCP/callmcp
+  revision: c2cc664837a52725ce3dec152e9b334c52d50265af8b284b8a81201bd25ce57e
+  path: ai.callmcp/server@0.1.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.callmcp%2Fserver/versions/0.1.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - callmcp
+  - one
+  - tool
+  - contract
+  - telephony
+  - any
+  - call
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c2cc664837a52725ce3dec152e9b334c52d50265af8b284b8a81201bd25ce57e
+freshness: current

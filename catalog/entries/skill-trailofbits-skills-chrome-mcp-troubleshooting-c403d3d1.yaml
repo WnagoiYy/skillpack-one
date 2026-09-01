@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-chrome-mcp-troubleshooting-c403d3d1
+type: skill
+name: chrome-mcp-troubleshooting
+summary: Agent Skill chrome-mcp-troubleshooting from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/claude-in-chrome-troubleshooting/skills/chrome-mcp-troubleshooting
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/claude-in-chrome-troubleshooting/skills/chrome-mcp-troubleshooting
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - chrome
+  - mcp
+  - troubleshooting
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:c403d3d151ff1f37ade755781a24070dcc3516ac6ff49707935cd3287b4788ff
+freshness: current

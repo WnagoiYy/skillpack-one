@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-clize-clize-aaf88976e5
+type: mcp-server
+name: Clize
+summary: "Real-world actions for AI coding agents: domains, email, deploys,
+  payments, media, and SEO/GEO."
+author: cooldk
+source:
+  repository: https://github.com/cooldk/clize-cli
+  revision: aaf88976e5dba13b443a50b79d1c2f63dc71f5612af8c2436037ffce6adea923
+  path: ai.clize/clize@0.32.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.clize%2Fclize/versions/0.32.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - clize
+  - real
+  - world
+  - actions
+  - coding
+  - agents
+  - domains
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:aaf88976e5dba13b443a50b79d1c2f63dc71f5612af8c2436037ffce6adea923
+freshness: current

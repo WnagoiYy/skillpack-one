@@ -5,6 +5,7 @@ import { Command } from "commander";
 import { loadContracts, loadTaxonomy } from "./registry.js";
 import { routeRequest } from "./router.js";
 import { lintTaxonomy, validateRepository } from "./validation.js";
+import { catalogStats, collectCatalog, loadCatalog } from "./catalog/catalog.js";
 
 export function buildProgram(): Command {
   const program = new Command()
@@ -45,6 +46,23 @@ export function buildProgram(): Command {
       const errors = lintTaxonomy(document);
       process.stdout.write(`${JSON.stringify({ errors }, null, 2)}\n`);
       if (errors.length > 0) process.exitCode = 1;
+    });
+
+  const catalog = program.command("catalog").description("Collect and inspect upstream capabilities");
+  catalog
+    .command("collect")
+    .description("Refresh metadata without executing upstream code")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (options: { root: string }) => {
+      const result = await collectCatalog(path.resolve(options.root));
+      process.stdout.write(`${JSON.stringify({ ...catalogStats(result.entries), sources: result.sources }, null, 2)}\n`);
+    });
+  catalog
+    .command("stats")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (options: { root: string }) => {
+      const entries = await loadCatalog(path.resolve(options.root));
+      process.stdout.write(`${JSON.stringify(catalogStats(entries), null, 2)}\n`);
     });
 
   return program;

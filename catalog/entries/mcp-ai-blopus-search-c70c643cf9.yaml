@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-blopus-search-c70c643cf9
+type: mcp-server
+name: Web Search API for all your agents and LLMs
+summary: Live web search, image search, topic filters and full-text fetch over
+  our own crawled index.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: c70c643cf980791a2e48d7e9539a233b587eda8758d73a30cd7fcc3de38035fc
+  path: ai.blopus/search@1.28.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.blopus%2Fsearch/versions/1.28.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - blopus
+  - search
+  - web
+  - api
+  - all
+  - agents
+  - llms
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c70c643cf980791a2e48d7e9539a233b587eda8758d73a30cd7fcc3de38035fc
+freshness: current

@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-gohypergiant-agent-skills-accelint-onboard-openspec-21a87817
+type: skill
+name: accelint-onboard-openspec
+summary: Agent Skill accelint-onboard-openspec from gohypergiant/agent-skills.
+author: gohypergiant
+source:
+  repository: https://github.com/gohypergiant/agent-skills
+  revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0
+  path: skills/accelint-onboard-openspec
+  url: https://github.com/gohypergiant/agent-skills/tree/e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0/skills/accelint-onboard-openspec
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - accelint
+  - onboard
+  - openspec
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:21a87817d424d7bc346440c4410cb7b1f8378f124386eb19cac3f0da6ae39850
+freshness: current

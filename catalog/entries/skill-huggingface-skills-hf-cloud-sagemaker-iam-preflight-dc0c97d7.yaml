@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: skill-huggingface-skills-hf-cloud-sagemaker-iam-preflight-dc0c97d7
+type: skill
+name: hf-cloud-sagemaker-iam-preflight
+summary: Agent Skill hf-cloud-sagemaker-iam-preflight from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/hf-cloud-sagemaker-iam-preflight
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/hf-cloud-sagemaker-iam-preflight
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - hf
+  - cloud
+  - sagemaker
+  - iam
+  - preflight
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:dc0c97d71037495d2c56fc9a6d6b6326adf984bb1afb1f7f69b504fffed51add
+freshness: current

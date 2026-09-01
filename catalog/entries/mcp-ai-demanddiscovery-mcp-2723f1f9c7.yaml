@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-demanddiscovery-mcp-2723f1f9c7
+type: mcp-server
+name: Demand Discovery AI
+summary: Validate startup ideas with real people asking for them, each quote
+  linked to its source.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 2723f1f9c792af416fdd034d1c1547c18c62569b73943e81686e7c4ccf197097
+  path: ai.demanddiscovery/mcp@1.3.26
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.demanddiscovery%2Fmcp/versions/1.3.26
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - demanddiscovery
+  - demand
+  - discovery
+  - validate
+  - startup
+  - ideas
+  - real
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:2723f1f9c792af416fdd034d1c1547c18c62569b73943e81686e7c4ccf197097
+freshness: current

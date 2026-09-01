@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-beatbandit-beatbandit-ed4479bf19
+type: mcp-server
+name: BeatBandit MCP
+summary: AI story development, screenplay editing, review, media, and export
+  tools for BeatBandit projects.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: ed4479bf19287ca4a6b5599ae5c4f4fbbfc925f9a274ada10f68be644f1afc21
+  path: ai.beatbandit/beatbandit@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.beatbandit%2Fbeatbandit/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - beatbandit
+  - story
+  - development
+  - screenplay
+  - editing
+  - review
+  - media
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:ed4479bf19287ca4a6b5599ae5c4f4fbbfc925f9a274ada10f68be644f1afc21
+freshness: current

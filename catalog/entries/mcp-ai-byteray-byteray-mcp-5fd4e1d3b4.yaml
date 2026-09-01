@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-byteray-byteray-mcp-5fd4e1d3b4
+type: mcp-server
+name: ByteRay AI
+summary: "Hunt zero-days by talking to binaries. 40+ tools. Hosted, OAuth + SSO,
+  invite: hi@byteray.ai"
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 5fd4e1d3b4a1074f04ce64e9fada686e98e2e47789d4a1731d4913da09744fba
+  path: ai.byteray/byteray-mcp@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.byteray%2Fbyteray-mcp/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - byteray
+  - hunt
+  - zero
+  - days
+  - talking
+  - binaries
+  - tools
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:5fd4e1d3b4a1074f04ce64e9fada686e98e2e47789d4a1731d4913da09744fba
+freshness: current

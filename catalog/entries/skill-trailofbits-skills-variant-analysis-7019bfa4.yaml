@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-variant-analysis-7019bfa4
+type: skill
+name: variant-analysis
+summary: Agent Skill variant-analysis from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/variant-analysis/skills/variant-analysis
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/variant-analysis/skills/variant-analysis
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - variant
+  - analysis
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:7019bfa4c6925489ce6ef490d44518d44240e080915d3d61937f8558e9519a25
+freshness: current

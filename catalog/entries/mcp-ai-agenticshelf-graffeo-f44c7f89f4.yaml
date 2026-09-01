@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agenticshelf-graffeo-f44c7f89f4
+type: mcp-server
+name: Graffeo Coffee Roasting
+summary: Live MCP catalog for Graffeo Coffee Roasting - Simply the World's
+  Finest Coffee since 1935.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: f44c7f89f4ee3cbb0b02bb7cf017678e5006d6a0a6d5af149b666af5f3e61399
+  path: ai.agenticshelf/graffeo@1.0.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticshelf%2Fgraffeo/versions/1.0.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agenticshelf
+  - graffeo
+  - coffee
+  - roasting
+  - live
+  - catalog
+  - simply
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f44c7f89f4ee3cbb0b02bb7cf017678e5006d6a0a6d5af149b666af5f3e61399
+freshness: current

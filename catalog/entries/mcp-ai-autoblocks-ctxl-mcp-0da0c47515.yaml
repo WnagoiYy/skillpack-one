@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: mcp-ai-autoblocks-ctxl-mcp-0da0c47515
+type: mcp-server
+name: ai.autoblocks/ctxl-mcp
+summary: Personal context management for AI assistants
+author: autoblocksai
+source:
+  repository: https://github.com/autoblocksai/ctxl
+  revision: 0da0c47515d8e67058ca5bedef87b6a04faf3ccf5031c4a398610ebd37074bf4
+  path: ai.autoblocks/ctxl-mcp@0.0.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.autoblocks%2Fctxl-mcp/versions/0.0.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - autoblocks
+  - ctxl
+  - personal
+  - context
+  - management
+  - assistants
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0da0c47515d8e67058ca5bedef87b6a04faf3ccf5031c4a398610ebd37074bf4
+freshness: current

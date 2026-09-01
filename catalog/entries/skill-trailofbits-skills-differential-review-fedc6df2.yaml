@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-differential-review-fedc6df2
+type: skill
+name: differential-review
+summary: Agent Skill differential-review from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/differential-review/skills/differential-review
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/differential-review/skills/differential-review
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - differential
+  - review
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:fedc6df2a27f1b4d1c8d2c90c54bc4dbbc2d5b28ef87179112f1fef0a2a55890
+freshness: current

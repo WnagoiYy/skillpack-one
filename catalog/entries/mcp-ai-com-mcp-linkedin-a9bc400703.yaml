@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-com-mcp-linkedin-a9bc400703
+type: mcp-server
+name: LinkedIn MCP Server
+summary: LinkedIn API as MCP tools to retrieve profile data and publish content.
+  Powered by HAPI MCP.
+author: la-rebelion
+source:
+  repository: https://github.com/la-rebelion/hapimcp
+  revision: a9bc400703a573951602c311c3088251e582c0b721fb215fef2701d5753b20b0
+  path: ai.com.mcp/linkedin@1.0.0+0.7.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.com.mcp%2Flinkedin/versions/1.0.0%2B0.7.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - com
+  - linkedin
+  - api
+  - tools
+  - retrieve
+  - profile
+  - data
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:a9bc400703a573951602c311c3088251e582c0b721fb215fef2701d5753b20b0
+freshness: current

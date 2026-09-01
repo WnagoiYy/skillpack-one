@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-alpic-mcp-alpic-mcp-ed099c1a73
+type: mcp-server
+name: Alpic
+summary: Manage your projects, debug deployments, and check analytics for any
+  MCP server you host with Alpic.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: ed099c1a734d2f749bee0ede28ada5c6d8ef5d8bd9f6a92c86a12859a340f171
+  path: ai.alpic.mcp/alpic-mcp@0.0.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.alpic.mcp%2Falpic-mcp/versions/0.0.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - alpic
+  - manage
+  - projects
+  - debug
+  - deployments
+  - check
+  - analytics
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:ed099c1a734d2f749bee0ede28ada5c6d8ef5d8bd9f6a92c86a12859a340f171
+freshness: current

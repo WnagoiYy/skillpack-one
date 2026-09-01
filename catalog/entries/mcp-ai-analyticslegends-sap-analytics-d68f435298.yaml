@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-analyticslegends-sap-analytics-d68f435298
+type: mcp-server
+name: Analytics Legends — SAP Analytics Intelligence
+summary: "AI agent for SAP analytics: firms, day rates, contract radar, news,
+  concepts, studies"
+author: analyticslegends
+source:
+  repository: https://github.com/analyticslegends/analytics-legends-mcp
+  revision: d68f435298d242970cf39f83b493e344dc03b236479919e7e94ac594e02d27f2
+  path: ai.analyticslegends/sap-analytics@1.0.6
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.analyticslegends%2Fsap-analytics/versions/1.0.6
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - analyticslegends
+  - sap
+  - analytics
+  - legends
+  - intelligence
+  - agent
+  - firms
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d68f435298d242970cf39f83b493e344dc03b236479919e7e94ac594e02d27f2
+freshness: current

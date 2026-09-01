@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-creativescope-creative-intelligence-bbf2764352
+type: mcp-server
+name: CreativeScope — Mobile Game Ad Creative Intelligence
+summary: "Mobile-game ad creative intelligence across SDK ad networks: search,
+  rankings, AI hook analysis."
+author: creativescope
+source:
+  repository: https://github.com/creativescope/creativescope-mcp
+  revision: bbf2764352838e3a8c01b7cb4fcbdb85ad7bda78971d0f63e450cd45ba4dd2a3
+  path: ai.creativescope/creative-intelligence@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.creativescope%2Fcreative-intelligence/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - creativescope
+  - creative
+  - intelligence
+  - mobile
+  - game
+  - across
+  - sdk
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:bbf2764352838e3a8c01b7cb4fcbdb85ad7bda78971d0f63e450cd45ba4dd2a3
+freshness: current

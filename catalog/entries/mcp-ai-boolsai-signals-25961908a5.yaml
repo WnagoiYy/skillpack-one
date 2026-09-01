@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-boolsai-signals-25961908a5
+type: mcp-server
+name: Boolsai Signals
+summary: Quant-research MCP — tradeable signals from public-company website
+  stack changes. 7 tools.
+author: Boolsai-ai
+source:
+  repository: https://github.com/Boolsai-ai/mcp
+  revision: 25961908a5309336a8df3d327b21afddbe674158b2703a7f10302288cc7c61c0
+  path: ai.boolsai/signals@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.boolsai%2Fsignals/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - boolsai
+  - signals
+  - quant
+  - research
+  - tradeable
+  - public
+  - company
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:25961908a5309336a8df3d327b21afddbe674158b2703a7f10302288cc7c61c0
+freshness: current

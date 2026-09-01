@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-huggingface-skills-huggingface-paper-publisher-6b74ec66
+type: skill
+name: huggingface-paper-publisher
+summary: Agent Skill huggingface-paper-publisher from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/huggingface-paper-publisher
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/huggingface-paper-publisher
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - huggingface
+  - paper
+  - publisher
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:6b74ec6614165a14b503f6e5d45ae9b3a95daf6005545d21036968a5fbb86120
+freshness: current

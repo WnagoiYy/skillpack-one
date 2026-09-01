@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentic-news-mcp-28244bedf9
+type: mcp-server
+name: Agentic News
+summary: AI-powered news intelligence — 21 tools for personalized monitoring,
+  briefings, and semantic search
+author: u00dxk2
+source:
+  repository: https://github.com/u00dxk2/agentic-news
+  revision: 28244bedf98fc4af6d37396612b0c6d27c741dbc4ea920846361aa00aae1dd6a
+  path: ai.agentic-news/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentic-news%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentic
+  - news
+  - powered
+  - intelligence
+  - tools
+  - personalized
+  - monitoring
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:28244bedf98fc4af6d37396612b0c6d27c741dbc4ea920846361aa00aae1dd6a
+freshness: current

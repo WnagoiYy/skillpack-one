@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-aislabs-gateway-0a742d578e
+type: mcp-server
+name: AIS Gateway — the campus front desk for AIS MCP buildings
+summary: "Front desk for the AIS MCP campus: lists our buildings (CVE, Flight
+  Recorder), prices, how to pay"
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 0a742d578e0e5d63c1daf0da5f7a3b51202732ea5cded42fb5fb9023079bc666
+  path: ai.aislabs/gateway@0.5.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.aislabs%2Fgateway/versions/0.5.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - aislabs
+  - gateway
+  - ais
+  - campus
+  - front
+  - desk
+  - buildings
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0a742d578e0e5d63c1daf0da5f7a3b51202732ea5cded42fb5fb9023079bc666
+freshness: current

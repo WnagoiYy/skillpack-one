@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-neuropixels-analysis-43c58fed
+type: skill
+name: neuropixels-analysis
+summary: Agent Skill neuropixels-analysis from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/neuropixels-analysis
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/neuropixels-analysis
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - neuropixels
+  - analysis
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:43c58fedb3bce6802f71a9a92a45bdb52f19f53f13776e68e763351567d7df2e
+freshness: current

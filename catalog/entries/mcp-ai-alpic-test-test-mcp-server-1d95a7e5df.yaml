@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: mcp-ai-alpic-test-test-mcp-server-1d95a7e5df
+type: mcp-server
+name: ai.alpic.test/test-mcp-server
+summary: Alpic Test MCP Server - great server!
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 1d95a7e5dff1d66c81ee09363f8f236dd42d6fc1602c43930cb538233374b5c9
+  path: ai.alpic.test/test-mcp-server@0.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.alpic.test%2Ftest-mcp-server/versions/0.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - alpic
+  - test
+  - great
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1d95a7e5dff1d66c81ee09363f8f236dd42d6fc1602c43930cb538233374b5c9
+freshness: current

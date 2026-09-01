@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-cookiy-cookiy-f8828b0fb6
+type: mcp-server
+name: Cookiy
+summary: AI user research via studies, interviews, recruitment, reports, and
+  quantitative surveys.
+author: cookiy-ai
+source:
+  repository: https://github.com/cookiy-ai/cookiy-skill
+  revision: f8828b0fb6093519477151959b370279a8152b5c725ff5577ea658fd62f0438f
+  path: ai.cookiy/cookiy@1.7.19
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cookiy%2Fcookiy/versions/1.7.19
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cookiy
+  - user
+  - research
+  - via
+  - studies
+  - interviews
+  - recruitment
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f8828b0fb6093519477151959b370279a8152b5c725ff5577ea658fd62f0438f
+freshness: current

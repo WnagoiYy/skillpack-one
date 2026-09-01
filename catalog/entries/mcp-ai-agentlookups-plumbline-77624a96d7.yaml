@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentlookups-plumbline-77624a96d7
+type: mcp-server
+name: Plumbline - Contractor License Checks
+summary: Free contractor-license checks from official state records; a no-match
+  never proves unlicensed.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 77624a96d76e15a551a5edabd9b5703379462a33410cbd6850bcfaf393cb98e5
+  path: ai.agentlookups/plumbline@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentlookups%2Fplumbline/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentlookups
+  - plumbline
+  - contractor
+  - license
+  - checks
+  - free
+  - official
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:77624a96d76e15a551a5edabd9b5703379462a33410cbd6850bcfaf393cb98e5
+freshness: current

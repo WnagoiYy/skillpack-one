@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: skill-addyosmani-agent-skills-browser-testing-with-devtools-dd63dad0
+type: skill
+name: browser-testing-with-devtools
+summary: Agent Skill browser-testing-with-devtools from addyosmani/agent-skills.
+author: addyosmani
+source:
+  repository: https://github.com/addyosmani/agent-skills
+  revision: d2c37ef6225dd8726cdd369a8030307f48592d26
+  path: skills/browser-testing-with-devtools
+  url: https://github.com/addyosmani/agent-skills/tree/d2c37ef6225dd8726cdd369a8030307f48592d26/skills/browser-testing-with-devtools
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - browser
+  - testing
+  - with
+  - devtools
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:dd63dad0250646698a8772fccafe185a945658251eb51f8d26c2c5f880028970
+freshness: current

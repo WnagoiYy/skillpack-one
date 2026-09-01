@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentutility-mcp-mediakit-b382f5cb85
+type: mcp-server
+name: AgentUtility Mediakit
+summary: MCP server for the @agentutility mediakit cluster — pay-per-call x402
+  tools, no API keys, USDC on…
+author: rooz21
+source:
+  repository: https://github.com/rooz21/x402
+  revision: b382f5cb851454176f955f90196e5478d3cc1507ad6d268cf3ce4147872ea81c
+  path: ai.agentutility/mcp-mediakit@0.11.9
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentutility%2Fmcp-mediakit/versions/0.11.9
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentutility
+  - mediakit
+  - cluster
+  - pay
+  - per
+  - call
+  - x402
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:b382f5cb851454176f955f90196e5478d3cc1507ad6d268cf3ce4147872ea81c
+freshness: current

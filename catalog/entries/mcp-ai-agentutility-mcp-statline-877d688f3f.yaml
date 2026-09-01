@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentutility-mcp-statline-877d688f3f
+type: mcp-server
+name: AgentUtility Statline
+summary: MCP server for the @agentutility statline cluster — pay-per-call x402
+  tools, no API keys, USDC on…
+author: rooz21
+source:
+  repository: https://github.com/rooz21/x402
+  revision: 877d688f3fb8d4013a4fb5792d7480fa09c38bc507c0efe612c1fd3bc7fcfb43
+  path: ai.agentutility/mcp-statline@0.1.3
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentutility%2Fmcp-statline/versions/0.1.3
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentutility
+  - statline
+  - cluster
+  - pay
+  - per
+  - call
+  - x402
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:877d688f3fb8d4013a4fb5792d7480fa09c38bc507c0efe612c1fd3bc7fcfb43
+freshness: current

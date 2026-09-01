@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-d50-d50-platform-18b3461ccd
+type: mcp-server
+name: D50 AI — Sales, Marketing & Hiring Automation
+summary: "246 tools to run sales, marketing & hiring: CRM, leads, AI calling,
+  content, recruiting & SEO."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 18b3461ccd9f27cdd7fc59a00a1db166f458baf1005ef7c97e4b9a849c6727dc
+  path: ai.d50/d50-platform@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.d50%2Fd50-platform/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - d50
+  - platform
+  - sales
+  - marketing
+  - hiring
+  - automation
+  - "246"
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:18b3461ccd9f27cdd7fc59a00a1db166f458baf1005ef7c97e4b9a849c6727dc
+freshness: current

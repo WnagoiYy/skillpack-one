@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-basethread-basethread-6eee1c4f16
+type: mcp-server
+name: ai.basethread/basethread
+summary: One shared context your team's AI tools read & write over MCP. No
+  re-explaining. Free.
+author: navbuildz
+source:
+  repository: https://github.com/navbuildz/basethread-mcp
+  revision: 6eee1c4f16654804c4ba34fc28185964c81773331a29e31349bb0d6650c777a5
+  path: ai.basethread/basethread@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.basethread%2Fbasethread/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - basethread
+  - one
+  - shared
+  - context
+  - team
+  - tools
+  - read
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:6eee1c4f16654804c4ba34fc28185964c81773331a29e31349bb0d6650c777a5
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-dealfilter-mcp-f21a69323a
+type: mcp-server
+name: DealFilter
+summary: "AI deal pipeline for IT freelancers in DACH: analyze, list and manage
+  project inquiries."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: f21a69323a7100c3c9972d2f6342f940d77b7458d5b78f1754ba49395e208f4e
+  path: ai.dealfilter/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.dealfilter%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - dealfilter
+  - deal
+  - pipeline
+  - freelancers
+  - dach
+  - analyze
+  - list
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f21a69323a7100c3c9972d2f6342f940d77b7458d5b78f1754ba49395e208f4e
+freshness: current

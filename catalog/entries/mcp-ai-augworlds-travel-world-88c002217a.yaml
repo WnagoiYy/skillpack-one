@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-augworlds-travel-world-88c002217a
+type: mcp-server
+name: Travel World
+summary: "Agent-native travel platform: read-only flight, hotel, and brand tools
+  over MCP. OAuth sign-in."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 88c002217a2190d896be4b2d94195fb29a82affc02a78fe9b867ade5195f81ed
+  path: ai.augworlds/travel-world@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.augworlds%2Ftravel-world/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - augworlds
+  - travel
+  - world
+  - agent
+  - native
+  - platform
+  - read
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:88c002217a2190d896be4b2d94195fb29a82affc02a78fe9b867ade5195f81ed
+freshness: current

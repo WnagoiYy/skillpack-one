@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: mcp-ai-b77-nightscout-197ba46f20
+type: mcp-server
+name: Nightscout
+summary: Your Nightscout glucose data, conversational.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 197ba46f205df1c0a05e672feadca4d31a666afa00c427c644c99254548e6144
+  path: ai.b77/nightscout@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Fnightscout/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - nightscout
+  - glucose
+  - data
+  - conversational
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:197ba46f205df1c0a05e672feadca4d31a666afa00c427c644c99254548e6144
+freshness: current

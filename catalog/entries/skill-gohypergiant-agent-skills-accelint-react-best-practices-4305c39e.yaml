@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: skill-gohypergiant-agent-skills-accelint-react-best-practices-4305c39e
+type: skill
+name: accelint-react-best-practices
+summary: Agent Skill accelint-react-best-practices from gohypergiant/agent-skills.
+author: gohypergiant
+source:
+  repository: https://github.com/gohypergiant/agent-skills
+  revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0
+  path: skills/accelint-react-best-practices
+  url: https://github.com/gohypergiant/agent-skills/tree/e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0/skills/accelint-react-best-practices
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - accelint
+  - react
+  - best
+  - practices
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:4305c39e58aeddfb362a028d2bbea66147fa293bde9cea49ad873fe06c0ae64b
+freshness: current

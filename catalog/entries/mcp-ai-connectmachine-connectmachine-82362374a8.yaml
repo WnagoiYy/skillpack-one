@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-connectmachine-connectmachine-82362374a8
+type: mcp-server
+name: ConnectMachine
+summary: Manage your ConnectMachine contacts, networks, events, and digital
+  business cards.
+author: connectmachine
+source:
+  repository: https://github.com/connectmachine/mcp-server
+  revision: 82362374a8f9fd78d2f72d97ffbcd5f57b953ec8734d5a4450714110e77b7e4b
+  path: ai.connectmachine/connectmachine@1.0.8
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.connectmachine%2Fconnectmachine/versions/1.0.8
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - connectmachine
+  - manage
+  - contacts
+  - networks
+  - events
+  - digital
+  - business
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:82362374a8f9fd78d2f72d97ffbcd5f57b953ec8734d5a4450714110e77b7e4b
+freshness: current

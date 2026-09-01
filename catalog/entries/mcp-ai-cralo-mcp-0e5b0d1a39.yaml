@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-cralo-mcp-0e5b0d1a39
+type: mcp-server
+name: Cralo
+summary: Pay-per-use tool marketplace for AI agents. Search, price-check, and
+  call APIs via MCP.
+author: amrnth
+source:
+  repository: https://github.com/amrnth/opentooler
+  revision: 0e5b0d1a390e18c06d8265a6a948ac50b4de888d174bbbcc4115e56722da53a6
+  path: ai.cralo/mcp@0.4.4
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cralo%2Fmcp/versions/0.4.4
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cralo
+  - pay
+  - per
+  - use
+  - tool
+  - marketplace
+  - agents
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0e5b0d1a390e18c06d8265a6a948ac50b4de888d174bbbcc4115e56722da53a6
+freshness: current

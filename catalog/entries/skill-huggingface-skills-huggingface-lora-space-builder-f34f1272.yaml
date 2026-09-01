@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: skill-huggingface-skills-huggingface-lora-space-builder-f34f1272
+type: skill
+name: huggingface-lora-space-builder
+summary: Agent Skill huggingface-lora-space-builder from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/huggingface-lora-space-builder
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/huggingface-lora-space-builder
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - huggingface
+  - lora
+  - space
+  - builder
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:f34f12728c0337c943d11f431325e75973c076f578bcc0f51004cb8d8c5768f4
+freshness: current

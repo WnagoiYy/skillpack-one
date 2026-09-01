@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-gohypergiant-agent-skills-accelint-architecture-doc-ec6b44b0
+type: skill
+name: accelint-architecture-doc
+summary: Agent Skill accelint-architecture-doc from gohypergiant/agent-skills.
+author: gohypergiant
+source:
+  repository: https://github.com/gohypergiant/agent-skills
+  revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0
+  path: skills/accelint-architecture-doc
+  url: https://github.com/gohypergiant/agent-skills/tree/e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0/skills/accelint-architecture-doc
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - accelint
+  - architecture
+  - doc
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:ec6b44b0365f4cbb9755d2dfa17a8b189b1b30b1e1cfcf8d07c3b2496c045548
+freshness: current

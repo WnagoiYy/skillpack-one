@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-aliengiraffe-spotdb-fd1c3a8a0a
+type: mcp-server
+name: ai.aliengiraffe/spotdb
+summary: Ephemeral data sandbox for AI workflows with guardrails and security
+author: aliengiraffe
+source:
+  repository: https://github.com/aliengiraffe/spotdb
+  revision: fd1c3a8a0a41f986afb029ad496df559d0c1f78248f33aa59f9495a6cae9f0b8
+  path: ai.aliengiraffe/spotdb@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.aliengiraffe%2Fspotdb/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - aliengiraffe
+  - spotdb
+  - ephemeral
+  - data
+  - sandbox
+  - workflows
+  - guardrails
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:fd1c3a8a0a41f986afb029ad496df559d0c1f78248f33aa59f9495a6cae9f0b8
+freshness: current

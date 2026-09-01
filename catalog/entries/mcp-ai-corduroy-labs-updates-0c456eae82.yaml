@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-corduroy-labs-updates-0c456eae82
+type: mcp-server
+name: ai.corduroy-labs/updates
+summary: "Corduroy Labs studio updates over MCP: list_updates and get_update,
+  backed by the site's JSON Feed."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 0c456eae82e9577bcb1c9812b48d1e5bdfca87e2da5a24f24e897ee8124f4360
+  path: ai.corduroy-labs/updates@0.1.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.corduroy-labs%2Fupdates/versions/0.1.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - corduroy
+  - labs
+  - updates
+  - studio
+  - over
+  - list
+  - get
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0c456eae82e9577bcb1c9812b48d1e5bdfca87e2da5a24f24e897ee8124f4360
+freshness: current

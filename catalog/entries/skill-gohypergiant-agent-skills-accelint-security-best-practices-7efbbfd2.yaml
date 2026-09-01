@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: skill-gohypergiant-agent-skills-accelint-security-best-practices-7efbbfd2
+type: skill
+name: accelint-security-best-practices
+summary: Agent Skill accelint-security-best-practices from gohypergiant/agent-skills.
+author: gohypergiant
+source:
+  repository: https://github.com/gohypergiant/agent-skills
+  revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0
+  path: skills/accelint-security-best-practices
+  url: https://github.com/gohypergiant/agent-skills/tree/e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0/skills/accelint-security-best-practices
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - accelint
+  - security
+  - best
+  - practices
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:7efbbfd2c01678719fb6dbc756fd5c5e924150d68b83461663602e4c82909afe
+freshness: current

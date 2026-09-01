@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-addyosmani-agent-skills-doubt-driven-development-83118a85
+type: skill
+name: doubt-driven-development
+summary: Agent Skill doubt-driven-development from addyosmani/agent-skills.
+author: addyosmani
+source:
+  repository: https://github.com/addyosmani/agent-skills
+  revision: d2c37ef6225dd8726cdd369a8030307f48592d26
+  path: skills/doubt-driven-development
+  url: https://github.com/addyosmani/agent-skills/tree/d2c37ef6225dd8726cdd369a8030307f48592d26/skills/doubt-driven-development
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - doubt
+  - driven
+  - development
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:83118a851245be940e325fe1ac2becff0a2b3b8a7b4553829e530a16f56a4909
+freshness: current

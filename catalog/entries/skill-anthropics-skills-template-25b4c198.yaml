@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-anthropics-skills-template-25b4c198
+type: skill
+name: template
+summary: Agent Skill template from anthropics/skills.
+author: anthropics
+source:
+  repository: https://github.com/anthropics/skills
+  revision: 3b3fad96af16a10759d930941b4520ba0c40edae
+  path: template
+  url: https://github.com/anthropics/skills/tree/3b3fad96af16a10759d930941b4520ba0c40edae/template
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - template
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:25b4c19895b9fcb760685177cc8084e0f783a30cbb994cfdbe20db16f2cddcdd
+freshness: current

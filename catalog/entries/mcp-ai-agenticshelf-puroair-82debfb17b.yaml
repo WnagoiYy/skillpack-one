@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agenticshelf-puroair-82debfb17b
+type: mcp-server
+name: PuroAir
+summary: Breathe with Confidence. Live MCP catalog for PuroAir HEPA air
+  purifiers - stock, pricing, details.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 82debfb17b095ac514b9e1de8497b2c5a5f995bb7ebc82f4f6bc942c5305892a
+  path: ai.agenticshelf/puroair@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticshelf%2Fpuroair/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agenticshelf
+  - puroair
+  - breathe
+  - confidence
+  - live
+  - catalog
+  - hepa
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:82debfb17b095ac514b9e1de8497b2c5a5f995bb7ebc82f4f6bc942c5305892a
+freshness: current

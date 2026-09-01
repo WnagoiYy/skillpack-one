@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agenttrust-mcp-server-efd541bba9
+type: mcp-server
+name: AgentTrust — Identity & Trust for A2A Agents
+summary: Identity, trust, and A2A orchestration for autonomous AI agents.
+  Official A2A partner.
+author: agenttrust
+source:
+  repository: https://github.com/agenttrust/mcp-server
+  revision: efd541bba9302bbe98b3704c2ba7e8e007d4ec2f6bd8e4da0843c29e6d23be2a
+  path: ai.agenttrust/mcp-server@1.1.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenttrust%2Fmcp-server/versions/1.1.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agenttrust
+  - identity
+  - trust
+  - a2a
+  - agents
+  - orchestration
+  - autonomous
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:efd541bba9302bbe98b3704c2ba7e8e007d4ec2f6bd8e4da0843c29e6d23be2a
+freshness: current

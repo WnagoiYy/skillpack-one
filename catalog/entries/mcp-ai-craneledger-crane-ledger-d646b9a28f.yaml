@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-craneledger-crane-ledger-d646b9a28f
+type: mcp-server
+name: Crane Ledger
+summary: Headless API-first double-entry accounting & bookkeeping engine. 84 MCP
+  tools over HTTP.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d646b9a28f5e08e26c215e0bfffcdd319625b3248140031ab9042e9e40d6b4c7
+  path: ai.craneledger/crane-ledger@0.1.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.craneledger%2Fcrane-ledger/versions/0.1.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - craneledger
+  - crane
+  - ledger
+  - headless
+  - api
+  - first
+  - double
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d646b9a28f5e08e26c215e0bfffcdd319625b3248140031ab9042e9e40d6b4c7
+freshness: current

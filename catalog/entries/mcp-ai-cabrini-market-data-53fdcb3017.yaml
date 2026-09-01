@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-cabrini-market-data-53fdcb3017
+type: mcp-server
+name: Cabrini Market Data
+summary: US equity data for AI agents — 23 years intraday + daily, SEC filings.
+  x402 USDC payments.
+author: nlapi
+source:
+  repository: https://github.com/nlapi/cabrini-py
+  revision: 53fdcb3017f4687ea61f32bea7a09cab52a8e83f998be8aa77a382c22e564bcf
+  path: ai.cabrini/market-data@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cabrini%2Fmarket-data/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cabrini
+  - market
+  - data
+  - equity
+  - agents
+  - years
+  - intraday
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:53fdcb3017f4687ea61f32bea7a09cab52a8e83f998be8aa77a382c22e564bcf
+freshness: current

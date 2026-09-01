@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-addyosmani-agent-skills-performance-optimization-af6981a8
+type: skill
+name: performance-optimization
+summary: Agent Skill performance-optimization from addyosmani/agent-skills.
+author: addyosmani
+source:
+  repository: https://github.com/addyosmani/agent-skills
+  revision: d2c37ef6225dd8726cdd369a8030307f48592d26
+  path: skills/performance-optimization
+  url: https://github.com/addyosmani/agent-skills/tree/d2c37ef6225dd8726cdd369a8030307f48592d26/skills/performance-optimization
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - performance
+  - optimization
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:af6981a8629b1991b697ac4a0942db052327609c755613a7f36375e8ca8d13e2
+freshness: current

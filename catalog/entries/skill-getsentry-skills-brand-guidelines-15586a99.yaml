@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-getsentry-skills-brand-guidelines-15586a99
+type: skill
+name: brand-guidelines
+summary: Agent Skill brand-guidelines from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/brand-guidelines
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/brand-guidelines
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - brand
+  - guidelines
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:15586a9915207d295bfe92804c88a9e8866e0ac9bafcdfcf52dc986fdc2b5a05
+freshness: current

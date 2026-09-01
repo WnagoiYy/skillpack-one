@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-semgrep-025ed05b
+type: skill
+name: semgrep
+summary: Agent Skill semgrep from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/static-analysis/skills/semgrep
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/static-analysis/skills/semgrep
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - semgrep
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:025ed05bf9119935e6ffa529bfe7c9748f380645759e7b0d8fb9fadff8a3d21c
+freshness: current

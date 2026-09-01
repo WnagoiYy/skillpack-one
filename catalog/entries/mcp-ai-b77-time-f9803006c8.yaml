@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: mcp-ai-b77-time-f9803006c8
+type: mcp-server
+name: Time
+summary: A live clock for your assistant.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: f9803006c84c3660a42e6e2e1244e3f961c3efe6408b73f49b034edd9d334504
+  path: ai.b77/time@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Ftime/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - time
+  - live
+  - clock
+  - assistant
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f9803006c84c3660a42e6e2e1244e3f961c3efe6408b73f49b034edd9d334504
+freshness: current

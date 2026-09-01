@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-anthropics-skills-discernment-nudge-e073654c
+type: skill
+name: discernment-nudge
+summary: Agent Skill discernment-nudge from anthropics/skills.
+author: anthropics
+source:
+  repository: https://github.com/anthropics/skills
+  revision: 3b3fad96af16a10759d930941b4520ba0c40edae
+  path: skills/discernment-nudge
+  url: https://github.com/anthropics/skills/tree/3b3fad96af16a10759d930941b4520ba0c40edae/skills/discernment-nudge
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - discernment
+  - nudge
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:e073654c153bd3d9c014aff763babcd08d44d4b2ffb918281195147a86167c30
+freshness: current

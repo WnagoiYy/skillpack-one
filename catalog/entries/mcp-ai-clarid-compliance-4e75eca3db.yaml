@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-clarid-compliance-4e75eca3db
+type: mcp-server
+name: Clarid Compliance
+summary: Check bank marketing for FDIC, NCUA, TILA, Reg DD, Reg Z, UDAAP, and
+  Equal Housing compliance.
+author: clarid-ai
+source:
+  repository: https://github.com/clarid-ai/compliance-checker
+  revision: 4e75eca3dbfc04b17168fd3c12862717c5a27489cbad0ca6129f81f6e4c879e5
+  path: ai.clarid/compliance@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.clarid%2Fcompliance/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - clarid
+  - compliance
+  - check
+  - bank
+  - marketing
+  - fdic
+  - ncua
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:4e75eca3dbfc04b17168fd3c12862717c5a27489cbad0ca6129f81f6e4c879e5
+freshness: current

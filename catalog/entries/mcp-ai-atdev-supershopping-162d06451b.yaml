@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: mcp-ai-atdev-supershopping-162d06451b
+type: mcp-server
+name: ai.atdev/supershopping
+summary: 나만을 위한 AI 쇼핑 MCP — 상품을 자연어로 검색·비교·추천해 사용자의 효과적인 쇼핑을 돕습니다.
+author: alex-hoyeol-choi
+source:
+  repository: https://github.com/alex-hoyeol-choi/headless-commerce
+  revision: 162d06451babf7336e2ca09f4dba43882084b20950e26d53a47c32dda7ff4baa
+  path: ai.atdev/supershopping@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.atdev%2Fsupershopping/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - atdev
+  - supershopping
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:162d06451babf7336e2ca09f4dba43882084b20950e26d53a47c32dda7ff4baa
+freshness: current

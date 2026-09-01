@@ -1,0 +1,48 @@
+schemaVersion: 1
+verifiedAt: 2026-09-02T02:18:00Z
+sources:
+  - id: official-mcp-registry
+    kind: mcp-registry
+    endpoint: https://registry.modelcontextprotocol.io/v0.1/servers
+    target: 270
+    trust: official-registry
+  - id: anthropic-skills
+    kind: github-skills
+    repository: https://github.com/anthropics/skills
+    trust: official-publisher
+  - id: huggingface-skills
+    kind: github-skills
+    repository: https://github.com/huggingface/skills
+    trust: official-publisher
+  - id: trailofbits-skills
+    kind: github-skills
+    repository: https://github.com/trailofbits/skills
+    trust: verified-community
+  - id: addyosmani-agent-skills
+    kind: github-skills
+    repository: https://github.com/addyosmani/agent-skills
+    trust: verified-community
+  - id: obra-superpowers-marketplace
+    kind: github-skills
+    repository: https://github.com/obra/superpowers-marketplace
+    trust: verified-community
+  - id: cloudflare-skills
+    kind: github-skills
+    repository: https://github.com/cloudflare/skills
+    trust: official-publisher
+  - id: supabase-agent-skills
+    kind: github-skills
+    repository: https://github.com/supabase/agent-skills
+    trust: official-publisher
+  - id: sentry-skills
+    kind: github-skills
+    repository: https://github.com/getsentry/skills
+    trust: official-publisher
+  - id: scientific-skills
+    kind: github-skills
+    repository: https://github.com/K-Dense-AI/claude-scientific-skills
+    trust: verified-community
+  - id: hypergiant-agent-skills
+    kind: github-skills
+    repository: https://github.com/gohypergiant/agent-skills
+    trust: verified-community

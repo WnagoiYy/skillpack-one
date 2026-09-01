@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-advisorsai-service-navigator-63aa4ac793
+type: mcp-server
+name: Advisors AI Service Navigator
+summary: Read-only service discovery, public-page checks, and request-link preparation.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 63aa4ac79311e14115721e322d16f3adc2d70f138afcf8064790133df705522f
+  path: ai.advisorsai/service-navigator@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.advisorsai%2Fservice-navigator/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - advisorsai
+  - service
+  - navigator
+  - advisors
+  - read
+  - only
+  - discovery
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:63aa4ac79311e14115721e322d16f3adc2d70f138afcf8064790133df705522f
+freshness: current

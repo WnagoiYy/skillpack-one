@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agenticaffiliate-affiliate-networks-mcp-8bfc8f7216
+type: mcp-server
+name: Affiliate Networks MCP
+summary: Affiliate network reporting in your AI client. Bring your own keys.
+  Most adapters experimental.
+author: bobberrisford
+source:
+  repository: https://github.com/bobberrisford/affiliatemcp
+  revision: 8bfc8f7216f1082f29528b18239c308e4e93a69ebe5c6d969dd9d0c6cba85cc6
+  path: ai.agenticaffiliate/affiliate-networks-mcp@0.19.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticaffiliate%2Faffiliate-networks-mcp/versions/0.19.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agenticaffiliate
+  - affiliate
+  - networks
+  - network
+  - reporting
+  - client
+  - bring
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:8bfc8f7216f1082f29528b18239c308e4e93a69ebe5c6d969dd9d0c6cba85cc6
+freshness: current

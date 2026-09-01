@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-latex-posters-04751c6e
+type: skill
+name: latex-posters
+summary: Agent Skill latex-posters from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/latex-posters
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/latex-posters
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - latex
+  - posters
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:04751c6e0ec618c3d0c0cf624307c66b2cebb7195150a5005b32457c2459f89a
+freshness: current

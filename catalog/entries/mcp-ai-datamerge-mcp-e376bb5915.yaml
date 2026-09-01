@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-datamerge-mcp-e376bb5915
+type: mcp-server
+name: DataMerge MCP
+summary: "B2B data enrichment for 375M+ companies: legal entities, corporate
+  hierarchies, and contacts."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: e376bb59159c7551b366859872ca08eae2c0bc3e460fc97382d23f87e44f914e
+  path: ai.datamerge/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.datamerge%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - datamerge
+  - b2b
+  - data
+  - enrichment
+  - 375m
+  - companies
+  - legal
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:e376bb59159c7551b366859872ca08eae2c0bc3e460fc97382d23f87e44f914e
+freshness: current

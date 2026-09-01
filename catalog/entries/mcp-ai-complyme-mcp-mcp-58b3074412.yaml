@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-complyme-mcp-mcp-58b3074412
+type: mcp-server
+name: ai.complyme.mcp/mcp
+summary: ComplyMe.AI MCP server for legal & data protection risk analysis and audits.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 58b30744124d76dd82d7027b574955c29bb74beac6f03ad6b4180e3744c84d90
+  path: ai.complyme.mcp/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.complyme.mcp%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - complyme
+  - legal
+  - data
+  - protection
+  - risk
+  - analysis
+  - audits
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:58b30744124d76dd82d7027b574955c29bb74beac6f03ad6b4180e3744c84d90
+freshness: current

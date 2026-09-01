@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-createprints-createprints-9d22a6277d
+type: mcp-server
+name: Create Prints
+summary: Generate AI artwork and order physical wall-art prints through conversation.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 9d22a6277d19d244b507c4f9ba0b3ddcee17aed8c4f9c5a1cee2c795c8534ae9
+  path: ai.createprints/createprints@0.4.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.createprints%2Fcreateprints/versions/0.4.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - createprints
+  - create
+  - prints
+  - generate
+  - artwork
+  - order
+  - physical
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:9d22a6277d19d244b507c4f9ba0b3ddcee17aed8c4f9c5a1cee2c795c8534ae9
+freshness: current

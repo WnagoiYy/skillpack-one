@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-b77-google-news-bb8d81deed
+type: mcp-server
+name: Google News
+summary: Search and read the latest news in chat.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: bb8d81deed1df68a94ca8d805506e2b307246462f8eaf09e9abf7024511a94bb
+  path: ai.b77/google-news@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Fgoogle-news/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - google
+  - news
+  - search
+  - read
+  - latest
+  - chat
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:bb8d81deed1df68a94ca8d805506e2b307246462f8eaf09e9abf7024511a94bb
+freshness: current

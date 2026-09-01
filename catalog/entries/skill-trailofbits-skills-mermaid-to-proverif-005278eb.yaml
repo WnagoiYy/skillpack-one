@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-mermaid-to-proverif-005278eb
+type: skill
+name: mermaid-to-proverif
+summary: Agent Skill mermaid-to-proverif from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/trailmark/skills/mermaid-to-proverif
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/trailmark/skills/mermaid-to-proverif
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mermaid
+  - to
+  - proverif
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:005278eb9e3240809ddc2b9d7d8800d36ad7607f5cec084966c3e3f9a3883a54
+freshness: current

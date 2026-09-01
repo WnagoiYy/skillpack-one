@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-adramp-google-ads-d80252c892
+type: mcp-server
+name: ai.adramp/google-ads
+summary: Google Ads MCP server — manage campaigns, keywords, and metrics.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d80252c892eb1cd74fa265e938453158ab7610489ad8e8b46d57f1345e280681
+  path: ai.adramp/google-ads@1.0.3
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.adramp%2Fgoogle-ads/versions/1.0.3
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - adramp
+  - google
+  - ads
+  - manage
+  - campaigns
+  - keywords
+  - metrics
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d80252c892eb1cd74fa265e938453158ab7610489ad8e8b46d57f1345e280681
+freshness: current

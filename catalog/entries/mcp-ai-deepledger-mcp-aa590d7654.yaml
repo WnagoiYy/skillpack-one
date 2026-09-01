@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-deepledger-mcp-aa590d7654
+type: mcp-server
+name: DeepLedger — AI Accountant for QuickBooks
+summary: AI Accountant for Quickbooks- recording, reconcile, month-end close
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: aa590d7654324b7e38baa8b2c169aa59ac805c54ab8e5a9cb1d9d9540b52ccb5
+  path: ai.deepledger/mcp@1.0.4
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.deepledger%2Fmcp/versions/1.0.4
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - deepledger
+  - accountant
+  - quickbooks
+  - recording
+  - reconcile
+  - month
+  - end
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:aa590d7654324b7e38baa8b2c169aa59ac805c54ab8e5a9cb1d9d9540b52ccb5
+freshness: current

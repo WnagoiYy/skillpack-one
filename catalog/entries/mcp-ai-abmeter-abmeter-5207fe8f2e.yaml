@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-abmeter-abmeter-5207fe8f2e
+type: mcp-server
+name: ABMeter
+summary: Run A/B experiments through your AI assistant. SDKs for Ruby, Python,
+  JS, Node, React Native, Go.
+author: abmeter
+source:
+  repository: https://github.com/abmeter/abmeter
+  revision: 5207fe8f2e04dce99e7df78844eaa159d72463afeed446581b5b1827771642ec
+  path: ai.abmeter/abmeter@0.2.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.abmeter%2Fabmeter/versions/0.2.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - abmeter
+  - run
+  - experiments
+  - through
+  - assistant
+  - sdks
+  - ruby
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:5207fe8f2e04dce99e7df78844eaa159d72463afeed446581b5b1827771642ec
+freshness: current

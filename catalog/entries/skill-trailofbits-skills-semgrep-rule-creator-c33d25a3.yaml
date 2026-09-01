@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-semgrep-rule-creator-c33d25a3
+type: skill
+name: semgrep-rule-creator
+summary: Agent Skill semgrep-rule-creator from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/semgrep-rule-creator/skills/semgrep-rule-creator
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/semgrep-rule-creator/skills/semgrep-rule-creator
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - semgrep
+  - rule
+  - creator
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:c33d25a3fc376eb7c9466c74132bd6b8e4131a088bc4647275421a31ed55ca8e
+freshness: current

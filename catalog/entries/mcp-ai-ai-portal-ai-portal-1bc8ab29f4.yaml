@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-ai-portal-ai-portal-1bc8ab29f4
+type: mcp-server
+name: AI-Portal Enterprise GenAI Briefing
+summary: "Live AI data for agents: model releases, regulations (EU AI Act),
+  GenAI glossary, daily news."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 1bc8ab29f4512511bcbe12f4dec0db8f0d5f178ff3a12b5edbf1ccf98f415e7a
+  path: ai.ai-portal/ai-portal@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.ai-portal%2Fai-portal/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - portal
+  - enterprise
+  - genai
+  - briefing
+  - live
+  - data
+  - agents
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1bc8ab29f4512511bcbe12f4dec0db8f0d5f178ff3a12b5edbf1ccf98f415e7a
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-assetlog-assetlog-fc37c33e93
+type: mcp-server
+name: AssetLog
+summary: Search vehicles, real estate and jobs; manage your listings, alerts,
+  enquiries and viewings.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: fc37c33e933636381d1086b62d59979ae27fda1ae3172c225578dc6da01ef27c
+  path: ai.assetlog/assetlog@1.5.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.assetlog%2Fassetlog/versions/1.5.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - assetlog
+  - search
+  - vehicles
+  - real
+  - estate
+  - jobs
+  - manage
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:fc37c33e933636381d1086b62d59979ae27fda1ae3172c225578dc6da01ef27c
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-aviado-health-1ad88f7e27
+type: mcp-server
+name: ai.aviado/health
+summary: Supplement research, biomarker effects, drug interactions, and brand
+  quality data
+author: kipmcc
+source:
+  repository: https://github.com/kipmcc/aviado-mcp
+  revision: 1ad88f7e277d6e156c167e70db6affcb7ac2d46e856776d70fc0759346f20a3a
+  path: ai.aviado/health@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.aviado%2Fhealth/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - aviado
+  - health
+  - supplement
+  - research
+  - biomarker
+  - effects
+  - drug
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1ad88f7e277d6e156c167e70db6affcb7ac2d46e856776d70fc0759346f20a3a
+freshness: current

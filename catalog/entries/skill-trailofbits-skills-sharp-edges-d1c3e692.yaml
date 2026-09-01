@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-sharp-edges-d1c3e692
+type: skill
+name: sharp-edges
+summary: Agent Skill sharp-edges from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/sharp-edges/skills/sharp-edges
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/sharp-edges/skills/sharp-edges
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - sharp
+  - edges
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:d1c3e6925502335172f9440aa65b689ee1cfe93fbb4633a2ceaac638f17657b5
+freshness: current

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-goal-prompt-3e8a3c27
+type: skill
+name: goal-prompt
+summary: Agent Skill goal-prompt from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/goal-prompt/skills/goal-prompt
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/goal-prompt/skills/goal-prompt
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - goal
+  - prompt
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:3e8a3c279d9fd97977af4086600e458181483c78ac254c29522f335f4d2ecd47
+freshness: current

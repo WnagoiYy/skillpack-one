@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-authoryze-authoryze-21ee2054c1
+type: mcp-server
+name: Authoryze
+summary: "Give your AI agent a spending limit: approval controls and single-use
+  virtual cards."
+author: kevinfee3
+source:
+  repository: https://github.com/kevinfee3/authoryze-mcp
+  revision: 21ee2054c180bb9d6b5814fd32971adea5c8874518b9ffa03f81c5d3041319ff
+  path: ai.authoryze/authoryze@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.authoryze%2Fauthoryze/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - authoryze
+  - give
+  - agent
+  - spending
+  - limit
+  - approval
+  - controls
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:21ee2054c180bb9d6b5814fd32971adea5c8874518b9ffa03f81c5d3041319ff
+freshness: current

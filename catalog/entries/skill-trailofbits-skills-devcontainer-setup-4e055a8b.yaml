@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-devcontainer-setup-4e055a8b
+type: skill
+name: devcontainer-setup
+summary: Agent Skill devcontainer-setup from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/devcontainer-setup/skills/devcontainer-setup
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/devcontainer-setup/skills/devcontainer-setup
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - devcontainer
+  - setup
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:4e055a8b0478a9172e0576a8b89afde5d8d940e42ed9c4b92767dc33a7282306
+freshness: current

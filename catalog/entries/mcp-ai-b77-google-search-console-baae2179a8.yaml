@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-b77-google-search-console-baae2179a8
+type: mcp-server
+name: Google Search Console
+summary: Search rankings, clicks, and indexing for your site — in chat.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: baae2179a8ba0d286c951a9cb0d38e30f12c967bff9c73d80c146f864dec900c
+  path: ai.b77/google-search-console@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Fgoogle-search-console/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - google
+  - search
+  - console
+  - rankings
+  - clicks
+  - indexing
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:baae2179a8ba0d286c951a9cb0d38e30f12c967bff9c73d80c146f864dec900c
+freshness: current

@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-huggingface-skills-huggingface-local-models-4ebc737c
+type: skill
+name: huggingface-local-models
+summary: Agent Skill huggingface-local-models from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/huggingface-local-models
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/huggingface-local-models
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - huggingface
+  - local
+  - models
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:4ebc737cd36f0638d967c7a1be63f5ad24610a885fef8db7d7eb2dfd6799af5d
+freshness: current

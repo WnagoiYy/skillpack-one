@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-avasis-quant-research-219257c101
+type: mcp-server
+name: ai.avasis/quant-research
+summary: "Crypto backtest statistics: the server owns the trial count, so it
+  cannot be understated."
+author: abhayjnayakk
+source:
+  repository: https://github.com/abhayjnayakk/quant-integrity
+  revision: 219257c101f36fae44e4221786fbc2f1e20007f67245d82cc6097c8004743081
+  path: ai.avasis/quant-research@0.2.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.avasis%2Fquant-research/versions/0.2.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - avasis
+  - quant
+  - research
+  - crypto
+  - backtest
+  - statistics
+  - owns
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:219257c101f36fae44e4221786fbc2f1e20007f67245d82cc6097c8004743081
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-canvora-canvora-524200dc0d
+type: mcp-server
+name: Canvora
+summary: "Turn any idea, URL, doc, or PDF into on-brand visuals: 100+ formats,
+  native in 150+ languages"
+author: canvora
+source:
+  repository: https://github.com/canvora/canvora-mcp
+  revision: 524200dc0da061124d7f4b4c70af66f91b07b1e3971385eda6c70f0ce899717f
+  path: ai.canvora/canvora@1.2.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.canvora%2Fcanvora/versions/1.2.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - canvora
+  - turn
+  - any
+  - idea
+  - url
+  - doc
+  - pdf
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:524200dc0da061124d7f4b4c70af66f91b07b1e3971385eda6c70f0ce899717f
+freshness: current

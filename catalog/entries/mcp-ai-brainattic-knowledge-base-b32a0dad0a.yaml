@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-brainattic-knowledge-base-b32a0dad0a
+type: mcp-server
+name: brainattic
+summary: The knowledge base your AI reads and writes, under your rules — over
+  MCP, EU-hosted.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: b32a0dad0adbb3eb79e365429b3d09a62d3ad16623c7e980ae32b9cc37119893
+  path: ai.brainattic/knowledge-base@2.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.brainattic%2Fknowledge-base/versions/2.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - brainattic
+  - knowledge
+  - base
+  - reads
+  - writes
+  - under
+  - rules
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:b32a0dad0adbb3eb79e365429b3d09a62d3ad16623c7e980ae32b9cc37119893
+freshness: current

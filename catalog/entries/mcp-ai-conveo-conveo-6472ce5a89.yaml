@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-conveo-conveo-6472ce5a89
+type: mcp-server
+name: Conveo
+summary: Qualitative research platform. Design studies, analyze interviews, and
+  generate insights.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 6472ce5a894819bc2c582b28b7d68bad90e47f29a353d11c8e244b4a099ef683
+  path: ai.conveo/conveo@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.conveo%2Fconveo/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - conveo
+  - qualitative
+  - research
+  - platform
+  - design
+  - studies
+  - analyze
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:6472ce5a894819bc2c582b28b7d68bad90e47f29a353d11c8e244b4a099ef683
+freshness: current

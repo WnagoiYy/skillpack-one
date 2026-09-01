@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-agency-lona-trading-5dee98bc05
+type: mcp-server
+name: agency.lona/trading
+summary: "AI-powered trading strategy development: backtesting, market data, and
+  portfolio analysis"
+author: mindsightventures
+source:
+  repository: https://github.com/mindsightventures/lona
+  revision: 5dee98bc058c877df4d2b5f45dad417a2a4961175ef2dbd2ed38f3cd87fbfb2a
+  path: agency.lona/trading@2.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/agency.lona%2Ftrading/versions/2.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agency
+  - lona
+  - trading
+  - powered
+  - strategy
+  - development
+  - backtesting
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:5dee98bc058c877df4d2b5f45dad417a2a4961175ef2dbd2ed38f3cd87fbfb2a
+freshness: current

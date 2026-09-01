@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-aarna-atars-mcp-5da4791912
+type: mcp-server
+name: aTars MCP
+summary: Crypto market signals, technical indicators, and sentiment analysis for
+  AI agents.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 5da47919129ec3bea8a4af05fb0e40afcaeb784d798c3df28b25082638ea97df
+  path: ai.aarna/atars-mcp@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.aarna%2Fatars-mcp/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - aarna
+  - atars
+  - crypto
+  - market
+  - signals
+  - technical
+  - indicators
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:5da47919129ec3bea8a4af05fb0e40afcaeb784d798c3df28b25082638ea97df
+freshness: current

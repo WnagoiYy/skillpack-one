@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: skill-addyosmani-agent-skills-api-and-interface-design-65b474ac
+type: skill
+name: api-and-interface-design
+summary: Agent Skill api-and-interface-design from addyosmani/agent-skills.
+author: addyosmani
+source:
+  repository: https://github.com/addyosmani/agent-skills
+  revision: d2c37ef6225dd8726cdd369a8030307f48592d26
+  path: skills/api-and-interface-design
+  url: https://github.com/addyosmani/agent-skills/tree/d2c37ef6225dd8726cdd369a8030307f48592d26/skills/api-and-interface-design
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - api
+  - and
+  - interface
+  - design
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:65b474ac092cfc56e7cf60843d130a0d8775fbae751ac39fbe47520398e9cf0b
+freshness: current

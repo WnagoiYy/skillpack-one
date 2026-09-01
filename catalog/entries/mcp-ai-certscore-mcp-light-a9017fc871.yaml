@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-certscore-mcp-light-a9017fc871
+type: mcp-server
+name: CertScore.ai MCP Light
+summary: Free website privacy scanner for pre-consent cookies, trackers,
+  consent, policy, and HTTPS/TLS.
+author: ergoveritas1-alt
+source:
+  repository: https://github.com/ergoveritas1-alt/certscore.ai
+  revision: a9017fc871c98fabf05dbce9e04ece3dd89ac90eeb5343dff1bd5e24bb07d99e
+  path: ai.certscore/mcp-light@0.2.16
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.certscore%2Fmcp-light/versions/0.2.16
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - certscore
+  - light
+  - free
+  - website
+  - privacy
+  - scanner
+  - pre
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:a9017fc871c98fabf05dbce9e04ece3dd89ac90eeb5343dff1bd5e24bb07d99e
+freshness: current

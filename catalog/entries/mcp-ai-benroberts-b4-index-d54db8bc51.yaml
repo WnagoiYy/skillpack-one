@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-benroberts-b4-index-d54db8bc51
+type: mcp-server
+name: B4 Index
+summary: "Independent build-vs-buy index: score software categories
+  BUILD/BUY/BRIDGE/BEWARE."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d54db8bc5169dd88113a3703d9821e64741ac62959c8ebde3b0bc6d238967b08
+  path: ai.benroberts/b4-index@3.3.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.benroberts%2Fb4-index/versions/3.3.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - benroberts
+  - index
+  - independent
+  - build
+  - buy
+  - score
+  - software
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d54db8bc5169dd88113a3703d9821e64741ac62959c8ebde3b0bc6d238967b08
+freshness: current

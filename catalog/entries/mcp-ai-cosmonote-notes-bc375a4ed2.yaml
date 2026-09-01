@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-cosmonote-notes-bc375a4ed2
+type: mcp-server
+name: Cosmonote
+summary: Access your Cosmonote audio notes, transcriptions, summaries, and action items.
+author: cosmonote
+source:
+  repository: https://github.com/cosmonote/pocketbase
+  revision: bc375a4ed2056fa0741712ec6c1bd46a295c3651dd3687395a9980b70480b1ab
+  path: ai.cosmonote/notes@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cosmonote%2Fnotes/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cosmonote
+  - notes
+  - access
+  - audio
+  - transcriptions
+  - summaries
+  - action
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:bc375a4ed2056fa0741712ec6c1bd46a295c3651dd3687395a9980b70480b1ab
+freshness: current

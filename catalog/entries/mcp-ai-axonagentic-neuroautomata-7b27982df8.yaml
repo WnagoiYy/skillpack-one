@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-axonagentic-neuroautomata-7b27982df8
+type: mcp-server
+name: Axon NeuroAutomata
+summary: "Protein analysis: ESM-2/ESMC embeddings, mutation scoring, landscape
+  scans, ESMFold structure."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 7b27982df81a8ed6d4e7be8ce4aa8d33a42df244812d186fefb289004e437c4b
+  path: ai.axonagentic/neuroautomata@0.29.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.axonagentic%2Fneuroautomata/versions/0.29.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - axonagentic
+  - neuroautomata
+  - axon
+  - protein
+  - analysis
+  - esm
+  - esmc
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:7b27982df81a8ed6d4e7be8ce4aa8d33a42df244812d186fefb289004e437c4b
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-deskcrew-agentic-1130b5617b
+type: mcp-server
+name: ai.deskcrew/agentic
+summary: Buy a managed AI phone agent for a business, paid keylessly via
+  x402/RLUSD on the XRP Ledger.
+author: papperkash
+source:
+  repository: https://github.com/papperkash/ttf-website-v3
+  revision: 1130b5617b38c3963dd93e28f78635e1cf62f9238f47f23d03bc866d002f0781
+  path: ai.deskcrew/agentic@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.deskcrew%2Fagentic/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - deskcrew
+  - agentic
+  - buy
+  - managed
+  - phone
+  - agent
+  - business
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1130b5617b38c3963dd93e28f78635e1cf62f9238f47f23d03bc866d002f0781
+freshness: current

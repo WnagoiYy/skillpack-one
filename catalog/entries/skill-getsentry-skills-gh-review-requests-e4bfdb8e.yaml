@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-getsentry-skills-gh-review-requests-e4bfdb8e
+type: skill
+name: gh-review-requests
+summary: Agent Skill gh-review-requests from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/gh-review-requests
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/gh-review-requests
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - gh
+  - review
+  - requests
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:e4bfdb8e0fc53891040228886f102619411b0a1d2aa44188aff8c18696c2ffe8
+freshness: current

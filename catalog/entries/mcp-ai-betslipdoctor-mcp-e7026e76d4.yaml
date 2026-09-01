@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-betslipdoctor-mcp-e7026e76d4
+type: mcp-server
+name: BetSlip Doctor
+summary: Read, grade, and track a subscriber's betslips with preserved truth and
+  no wager placement.
+author: opspot-ai
+source:
+  repository: https://github.com/opspot-ai/betslipdoctor
+  revision: e7026e76d42b301d022e1035cccc0de4972f8e871337b58654c000b306a96524
+  path: ai.betslipdoctor/mcp@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.betslipdoctor%2Fmcp/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - betslipdoctor
+  - betslip
+  - doctor
+  - read
+  - grade
+  - track
+  - subscriber
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:e7026e76d42b301d022e1035cccc0de4972f8e871337b58654c000b306a96524
+freshness: current

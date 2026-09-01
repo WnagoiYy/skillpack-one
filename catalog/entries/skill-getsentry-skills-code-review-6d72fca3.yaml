@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-getsentry-skills-code-review-6d72fca3
+type: skill
+name: code-review
+summary: Agent Skill code-review from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/code-review
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/code-review
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - code
+  - review
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:6d72fca3cdaa3b607f3c81a9d3203d85f344e8840896958c25e00bad4b0c05c1
+freshness: current

@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-atlier-project-desk-7b04021a08
+type: mcp-server
+name: Project Desk
+summary: Agent-updated work tracker for builders directing AI across multiple projects.
+author: Wildsdesign
+source:
+  repository: https://github.com/Wildsdesign/Atlier
+  revision: 7b04021a0887243080c88ebce30b487ac6e7d778e12bd5bcda4bc6e6c7d8ab21
+  path: ai.atlier/project-desk@4.7.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.atlier%2Fproject-desk/versions/4.7.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - atlier
+  - project
+  - desk
+  - agent
+  - updated
+  - work
+  - tracker
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:7b04021a0887243080c88ebce30b487ac6e7d778e12bd5bcda4bc6e6c7d8ab21
+freshness: current

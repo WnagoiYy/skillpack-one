@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-addyosmani-agent-skills-source-driven-development-d38acc33
+type: skill
+name: source-driven-development
+summary: Agent Skill source-driven-development from addyosmani/agent-skills.
+author: addyosmani
+source:
+  repository: https://github.com/addyosmani/agent-skills
+  revision: d2c37ef6225dd8726cdd369a8030307f48592d26
+  path: skills/source-driven-development
+  url: https://github.com/addyosmani/agent-skills/tree/d2c37ef6225dd8726cdd369a8030307f48592d26/skills/source-driven-development
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - source
+  - driven
+  - development
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:d38acc330e8cdd8237f4fb38ed48ad6e00ef6770adb7332e1b98abf58254bae3
+freshness: current

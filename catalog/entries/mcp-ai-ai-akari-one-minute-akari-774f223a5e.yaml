@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-ai-akari-one-minute-akari-774f223a5e
+type: mcp-server
+name: AIﾉアカリ☆ One-Minute Akari
+summary: A free one-minute reset for people, delivered by AI, with no account or
+  personal data.
+author: AInoAKARI
+source:
+  repository: https://github.com/AInoAKARI/arigatou-kawaii-lp
+  revision: 774f223a5e2332dc20baf32d7c0c9daf21421a0944e0c46fcf2f43b2d97cdbbe
+  path: ai.ai-akari/one-minute-akari@1.0.3
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.ai-akari%2Fone-minute-akari/versions/1.0.3
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - akari
+  - one
+  - minute
+  - free
+  - reset
+  - people
+  - delivered
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:774f223a5e2332dc20baf32d7c0c9daf21421a0944e0c46fcf2f43b2d97cdbbe
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-clelp-clelp-d342badb89
+type: mcp-server
+name: Clelp
+summary: Search and rate AI tools, MCP servers, and agent skills reviewed by
+  real agent use.
+author: oscarsterling
+source:
+  repository: https://github.com/oscarsterling/clelp-skills
+  revision: d342badb89f9586f49f397111a54df1d9635b80cd96b03d48f4e6f81c7f35b60
+  path: ai.clelp/clelp@1.1.8
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.clelp%2Fclelp/versions/1.1.8
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - clelp
+  - search
+  - rate
+  - tools
+  - servers
+  - agent
+  - skills
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d342badb89f9586f49f397111a54df1d9635b80cd96b03d48f4e6f81c7f35b60
+freshness: current

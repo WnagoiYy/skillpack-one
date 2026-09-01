@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-delega-aws-pricing-calculator-29b014d6d7
+type: mcp-server
+name: delega.ai for AWS Pricing Calculator
+summary: Create AWS cost estimates and shareable AWS Pricing Calculator URLs.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 29b014d6d7504bd52a46bd864ac1afadcffcd3bfd0e448949b06f7b487d0e77f
+  path: ai.delega/aws-pricing-calculator@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.delega%2Faws-pricing-calculator/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - delega
+  - aws
+  - pricing
+  - calculator
+  - create
+  - cost
+  - estimates
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:29b014d6d7504bd52a46bd864ac1afadcffcd3bfd0e448949b06f7b487d0e77f
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bankee-inferventis-mcp-72a4d2e3cb
+type: mcp-server
+name: Inferventis MCP Server
+summary: Loan & mortgage calculator, compound interest, ROI, crypto prices, FX
+  conversion for AI agents.
+author: Bankee-ai
+source:
+  repository: https://github.com/Bankee-ai/inferventis
+  revision: 72a4d2e3cb2db79122f5748e812b08ee268a4071e819238a80946f4ecdbd16b2
+  path: ai.bankee/inferventis-mcp@1.0.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bankee%2Finferventis-mcp/versions/1.0.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bankee
+  - inferventis
+  - loan
+  - mortgage
+  - calculator
+  - compound
+  - interest
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:72a4d2e3cb2db79122f5748e812b08ee268a4071e819238a80946f4ecdbd16b2
+freshness: current

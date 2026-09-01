@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-apithreshold-apithreshold-f198c02e7b
+type: mcp-server
+name: APIThreshold
+summary: Quality scoring and progressive gates for AI-generated API tests.
+  Stripe/Twilio profiles. Free tier.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: f198c02e7b9f24eec56b1426196fcd143828a8e61d2d100a2422a28ecf0c85cb
+  path: ai.apithreshold/apithreshold@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.apithreshold%2Fapithreshold/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - apithreshold
+  - quality
+  - scoring
+  - progressive
+  - gates
+  - generated
+  - api
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f198c02e7b9f24eec56b1426196fcd143828a8e61d2d100a2422a28ecf0c85cb
+freshness: current

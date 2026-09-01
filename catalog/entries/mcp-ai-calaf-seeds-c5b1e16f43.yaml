@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-calaf-seeds-c5b1e16f43
+type: mcp-server
+name: Calaf Seed Tools
+summary: Author and validate Calaf workspace seeds against the app's real
+  importer. No account needed.
+author: gallaghern51-art
+source:
+  repository: https://github.com/gallaghern51-art/calaf-mcp
+  revision: c5b1e16f4326a2f9abffbcc5d362c8376f2802bc5204fff02f6f789b8ede5a3b
+  path: ai.calaf/seeds@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.calaf%2Fseeds/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - calaf
+  - seeds
+  - seed
+  - tools
+  - author
+  - validate
+  - workspace
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c5b1e16f4326a2f9abffbcc5d362c8376f2802bc5204fff02f6f789b8ede5a3b
+freshness: current

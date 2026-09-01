@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bassethound-bassethound-865f9bea9c
+type: mcp-server
+name: ai.bassethound/bassethound
+summary: "Company intelligence for AI agents: a five-layer domain dossier in one
+  sniff_domain call."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 865f9bea9cedcb81d9e3840ead87b93f1e3991e2b500b27092ecd74f36f390d2
+  path: ai.bassethound/bassethound@0.7.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bassethound%2Fbassethound/versions/0.7.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bassethound
+  - company
+  - intelligence
+  - agents
+  - five
+  - layer
+  - domain
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:865f9bea9cedcb81d9e3840ead87b93f1e3991e2b500b27092ecd74f36f390d2
+freshness: current

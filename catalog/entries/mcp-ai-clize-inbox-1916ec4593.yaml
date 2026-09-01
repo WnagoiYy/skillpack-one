@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-clize-inbox-1916ec4593
+type: mcp-server
+name: Agent Inbox
+summary: "A real email inbox for AI agents: human-approved sends,
+  untrusted-by-default inbound."
+author: cooldk
+source:
+  repository: https://github.com/cooldk/clize-cli
+  revision: 1916ec45938cc63a94388f08af542dafc76fc633fd65a2c6658dc418f7f5f153
+  path: ai.clize/inbox@0.32.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.clize%2Finbox/versions/0.32.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - clize
+  - inbox
+  - agent
+  - real
+  - email
+  - agents
+  - human
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1916ec45938cc63a94388f08af542dafc76fc633fd65a2c6658dc418f7f5f153
+freshness: current

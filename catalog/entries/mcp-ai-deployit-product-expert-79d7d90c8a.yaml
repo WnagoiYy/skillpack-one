@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-deployit-product-expert-79d7d90c8a
+type: mcp-server
+name: DeployIt Product Expert
+summary: AI product expert answering from live source code, with sources and a
+  verification status.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 79d7d90c8ac3a393c8cae19e2304cf50ba977c2172de6ed1cbdb8b0383ff9c8a
+  path: ai.deployit/product-expert@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.deployit%2Fproduct-expert/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - deployit
+  - product
+  - expert
+  - answering
+  - live
+  - source
+  - code
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:79d7d90c8ac3a393c8cae19e2304cf50ba977c2172de6ed1cbdb8b0383ff9c8a
+freshness: current

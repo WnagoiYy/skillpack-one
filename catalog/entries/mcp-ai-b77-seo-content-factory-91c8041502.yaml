@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-b77-seo-content-factory-91c8041502
+type: mcp-server
+name: SEO Content Factory
+summary: Draft SEO blog articles from topic to ready-to-review post.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 91c8041502123d6a98f2c7c486ca0d79303b552402eefdbde1a9922863cee387
+  path: ai.b77/seo-content-factory@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Fseo-content-factory/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - seo
+  - content
+  - factory
+  - draft
+  - blog
+  - articles
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:91c8041502123d6a98f2c7c486ca0d79303b552402eefdbde1a9922863cee387
+freshness: current

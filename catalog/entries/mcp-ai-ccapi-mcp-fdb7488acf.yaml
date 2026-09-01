@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-ccapi-mcp-fdb7488acf
+type: mcp-server
+name: CCAPI
+summary: Image, video, music and text generation across 100+ models through one
+  endpoint.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: fdb7488acfe8fd3a6ba4a0ab046ac1049d621171d848e4b1b743db937f30cdf0
+  path: ai.ccapi/mcp@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.ccapi%2Fmcp/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - ccapi
+  - image
+  - video
+  - music
+  - text
+  - generation
+  - across
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:fdb7488acfe8fd3a6ba4a0ab046ac1049d621171d848e4b1b743db937f30cdf0
+freshness: current

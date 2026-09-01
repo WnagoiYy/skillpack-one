@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-awardcast-federal-contracts-2203406f23
+type: mcp-server
+name: AwardCast Federal Contracts
+summary: "US federal contracting data: open solicitations, buying agencies,
+  contractors, price history."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 2203406f23caa1f19b62cb7f152b82548edc8f348b94fa552099da7b015d20c3
+  path: ai.awardcast/federal-contracts@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.awardcast%2Ffederal-contracts/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - awardcast
+  - federal
+  - contracts
+  - contracting
+  - data
+  - open
+  - solicitations
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:2203406f23caa1f19b62cb7f152b82548edc8f348b94fa552099da7b015d20c3
+freshness: current

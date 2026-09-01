@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-childpsychiatry-library-f202ddf6ac
+type: mcp-server
+name: ai.childpsychiatry/library
+summary: Clinician-reviewed library on child psychiatric evaluation and
+  medication decision-making.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: f202ddf6ac20912eb3d0db3abcb249ba0f0f4dd8c3fc15d6a9871ce00f45dd0e
+  path: ai.childpsychiatry/library@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.childpsychiatry%2Flibrary/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - childpsychiatry
+  - library
+  - clinician
+  - reviewed
+  - child
+  - psychiatric
+  - evaluation
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f202ddf6ac20912eb3d0db3abcb249ba0f0f4dd8c3fc15d6a9871ce00f45dd0e
+freshness: current

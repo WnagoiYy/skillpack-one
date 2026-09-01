@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-interpreting-culture-index-1d0534d9
+type: skill
+name: interpreting-culture-index
+summary: Agent Skill interpreting-culture-index from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/culture-index/skills/interpreting-culture-index
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/culture-index/skills/interpreting-culture-index
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - interpreting
+  - culture
+  - index
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:1d0534d965b63e22c375e481c3d430ce7fa8b291355f3b09d1b4436bf0ecd59f
+freshness: current

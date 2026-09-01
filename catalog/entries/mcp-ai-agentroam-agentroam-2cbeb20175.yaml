@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentroam-agentroam-2cbeb20175
+type: mcp-server
+name: AgentRoam
+summary: Buy travel eSIMs, gift cards and mobile top-ups with crypto — user
+  confirms before any order.
+author: adiny
+source:
+  repository: https://github.com/adiny/nomad-crypto-travel
+  revision: 2cbeb20175ca4a6d5b5b29c0bcbadad3bfd6306515f6e9645c4ac5653f69dd9d
+  path: ai.agentroam/agentroam@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentroam%2Fagentroam/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentroam
+  - buy
+  - travel
+  - esims
+  - gift
+  - cards
+  - mobile
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:2cbeb20175ca4a6d5b5b29c0bcbadad3bfd6306515f6e9645c4ac5653f69dd9d
+freshness: current

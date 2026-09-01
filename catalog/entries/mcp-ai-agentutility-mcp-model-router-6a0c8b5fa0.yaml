@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentutility-mcp-model-router-6a0c8b5fa0
+type: mcp-server
+name: AgentUtility Model Router
+summary: MCP server for the @agentutility model-router cluster — pay-per-call
+  x402 tools, no API keys, USDC…
+author: rooz21
+source:
+  repository: https://github.com/rooz21/x402
+  revision: 6a0c8b5fa0953307ac5a54105fab9c7c208d363f4bfefb428f701141ad41692e
+  path: ai.agentutility/mcp-model-router@0.1.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentutility%2Fmcp-model-router/versions/0.1.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentutility
+  - model
+  - router
+  - cluster
+  - pay
+  - per
+  - call
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:6a0c8b5fa0953307ac5a54105fab9c7c208d363f4bfefb428f701141ad41692e
+freshness: current

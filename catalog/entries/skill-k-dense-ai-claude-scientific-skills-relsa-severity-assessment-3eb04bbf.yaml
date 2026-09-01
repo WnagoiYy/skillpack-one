@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-relsa-severity-assessment-3eb04bbf
+type: skill
+name: relsa-severity-assessment
+summary: Agent Skill relsa-severity-assessment from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/relsa-severity-assessment
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/relsa-severity-assessment
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - relsa
+  - severity
+  - assessment
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:3eb04bbf1c4c29a209758881e1d2b6fd1eeb5df989c8fc9c6eedc62d6c1841c9
+freshness: current

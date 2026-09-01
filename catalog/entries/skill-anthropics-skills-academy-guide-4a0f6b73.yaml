@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-anthropics-skills-academy-guide-4a0f6b73
+type: skill
+name: academy-guide
+summary: Agent Skill academy-guide from anthropics/skills.
+author: anthropics
+source:
+  repository: https://github.com/anthropics/skills
+  revision: 3b3fad96af16a10759d930941b4520ba0c40edae
+  path: skills/academy-guide
+  url: https://github.com/anthropics/skills/tree/3b3fad96af16a10759d930941b4520ba0c40edae/skills/academy-guide
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - academy
+  - guide
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:4a0f6b730e475ef34ded12e8abddb50904ff0ecb6d1d36c7997046f938080a45
+freshness: current

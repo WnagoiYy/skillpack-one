@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-com-mcp-openai-tools-db0ce12532
+type: mcp-server
+name: OpenAI Tools MCP Server
+summary: Focused MCP server for OpenAI image/audio generation (v2.0.0). Wraps
+  endpoints via HAPI CLI.
+author: la-rebelion
+source:
+  repository: https://github.com/la-rebelion/hapimcp
+  revision: db0ce12532f0b93f3d315e7d0872a541ca15da7e4079469f25bbcc7148c6a317
+  path: ai.com.mcp/openai-tools@0.6.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.com.mcp%2Fopenai-tools/versions/0.6.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - com
+  - openai
+  - tools
+  - focused
+  - image
+  - audio
+  - generation
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:db0ce12532f0b93f3d315e7d0872a541ca15da7e4079469f25bbcc7148c6a317
+freshness: current

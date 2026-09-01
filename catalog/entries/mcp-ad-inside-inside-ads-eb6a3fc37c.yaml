@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ad-inside-inside-ads-eb6a3fc37c
+type: mcp-server
+name: Inside Ads
+summary: "Telegram ad exchange: estimate reach and cost with no account, then
+  create and run campaigns."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: eb6a3fc37c3ed3beb8bfcd24137ce2a0c00b92918fed9c41ee9e1da799e1de20
+  path: ad.inside/inside-ads@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ad.inside%2Finside-ads/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - inside
+  - ads
+  - telegram
+  - exchange
+  - estimate
+  - reach
+  - cost
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:eb6a3fc37c3ed3beb8bfcd24137ce2a0c00b92918fed9c41ee9e1da799e1de20
+freshness: current

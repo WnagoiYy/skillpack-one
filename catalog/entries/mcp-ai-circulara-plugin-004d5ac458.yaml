@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-circulara-plugin-004d5ac458
+type: mcp-server
+name: ai.circulara/plugin
+summary: Circulara Observe MCP plugin - meters your AI agents' token spend and
+  carbon, free tier.
+author: CircularRoute
+source:
+  repository: https://github.com/CircularRoute/circulara-core
+  revision: 004d5ac45885a5298b91fe67f7985b2d99af84e6d7c91cd48f3768e586f61aea
+  path: ai.circulara/plugin@0.1.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.circulara%2Fplugin/versions/0.1.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - circulara
+  - plugin
+  - observe
+  - meters
+  - agents
+  - token
+  - spend
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:004d5ac45885a5298b91fe67f7985b2d99af84e6d7c91cd48f3768e586f61aea
+freshness: current

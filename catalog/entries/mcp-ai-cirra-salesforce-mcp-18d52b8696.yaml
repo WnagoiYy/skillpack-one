@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: mcp-ai-cirra-salesforce-mcp-18d52b8696
+type: mcp-server
+name: Cirra AI Salesforce Admin MCP Server
+summary: Comprehensive Salesforce administration and management
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 18d52b869677bf60fdae2605573d786d8acb58d599251b15162a2de029a972cb
+  path: ai.cirra/salesforce-mcp@1.0.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cirra%2Fsalesforce-mcp/versions/1.0.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cirra
+  - salesforce
+  - admin
+  - comprehensive
+  - administration
+  - management
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:18d52b869677bf60fdae2605573d786d8acb58d599251b15162a2de029a972cb
+freshness: current

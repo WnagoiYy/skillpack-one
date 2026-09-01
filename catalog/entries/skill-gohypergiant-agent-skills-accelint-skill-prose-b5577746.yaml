@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-gohypergiant-agent-skills-accelint-skill-prose-b5577746
+type: skill
+name: accelint-skill-prose
+summary: Agent Skill accelint-skill-prose from gohypergiant/agent-skills.
+author: gohypergiant
+source:
+  repository: https://github.com/gohypergiant/agent-skills
+  revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0
+  path: skills/accelint-skill-prose
+  url: https://github.com/gohypergiant/agent-skills/tree/e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0/skills/accelint-skill-prose
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - accelint
+  - skill
+  - prose
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:b5577746a202511bcb6347de98bac31c710b639efa0e07d29c3343744ff4d726
+freshness: current

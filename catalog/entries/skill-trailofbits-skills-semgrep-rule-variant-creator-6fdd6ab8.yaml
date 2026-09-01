@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-semgrep-rule-variant-creator-6fdd6ab8
+type: skill
+name: semgrep-rule-variant-creator
+summary: Agent Skill semgrep-rule-variant-creator from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/semgrep-rule-variant-creator/skills/semgrep-rule-variant-creator
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/semgrep-rule-variant-creator/skills/semgrep-rule-variant-creator
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - semgrep
+  - rule
+  - variant
+  - creator
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:6fdd6ab8723d4760800209fb3edf7560f3910820c258015da74287a94ca5de20
+freshness: current

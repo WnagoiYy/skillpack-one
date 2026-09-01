@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-ai-advisors-mcp-2bcc0caee4
+type: mcp-server
+name: AI-Advisors
+summary: "Read-only AI search visibility data: citations, AEO audits, and
+  advisor insights from AI-Advisors."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 2bcc0caee4d8efc67c7460dd8eafd57a237ac0f5959a085185e977324c625c11
+  path: ai.ai-advisors/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.ai-advisors%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - advisors
+  - read
+  - only
+  - search
+  - visibility
+  - data
+  - citations
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:2bcc0caee4d8efc67c7460dd8eafd57a237ac0f5959a085185e977324c625c11
+freshness: current

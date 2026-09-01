@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-ambix-ambix-b5f2bc32a9
+type: mcp-server
+name: Ambix
+summary: Your product team's shared strategic memory — an MCP server your AI
+  tools reason over.
+author: ambix-ai
+source:
+  repository: https://github.com/ambix-ai/mcp
+  revision: b5f2bc32a925aa3a8e7103fc36ca67445d1aed704ab8a8e57603aff76b6b3b54
+  path: ai.ambix/ambix@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.ambix%2Fambix/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - ambix
+  - product
+  - team
+  - shared
+  - strategic
+  - memory
+  - tools
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:b5f2bc32a925aa3a8e7103fc36ca67445d1aed704ab8a8e57603aff76b6b3b54
+freshness: current

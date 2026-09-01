@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-buywhere-catalog-api-17fcd43b5f
+type: mcp-server
+name: ai.buywhere/catalog-api
+summary: Retired. Use io.github.BuyWhere/buywhere-mcp instead.
+author: BuyWhere
+source:
+  repository: https://github.com/BuyWhere/buywhere-mcp
+  revision: 17fcd43b5f36bac3210799c7e6fab3d9b2f2ecbe35148c9af83ac82078d87483
+  path: ai.buywhere/catalog-api@1.2.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.buywhere%2Fcatalog-api/versions/1.2.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - buywhere
+  - catalog
+  - api
+  - retired
+  - use
+  - github
+  - instead
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:17fcd43b5f36bac3210799c7e6fab3d9b2f2ecbe35148c9af83ac82078d87483
+freshness: current

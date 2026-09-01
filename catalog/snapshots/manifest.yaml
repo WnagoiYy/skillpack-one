@@ -1,0 +1,37 @@
+schemaVersion: 1
+verifiedAt: 2026-09-02T02:18:00Z
+entryCount: 658
+digest: sha256:3c403bd206a4492128a395c96db9276aefdb93027bebed2de13fbabb1c75a010
+sources:
+  - id: official-mcp-registry
+    count: 270
+  - id: anthropic-skills
+    count: 20
+    revision: 3b3fad96af16a10759d930941b4520ba0c40edae
+  - id: huggingface-skills
+    count: 26
+    revision: cead19e10754e773bad24fecef83cb64be24094e
+  - id: trailofbits-skills
+    count: 81
+    revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  - id: addyosmani-agent-skills
+    count: 25
+    revision: d2c37ef6225dd8726cdd369a8030307f48592d26
+  - id: obra-superpowers-marketplace
+    count: 0
+    revision: 1ab7b8eeef707f21565471f11d3782fac3dd1c61
+  - id: cloudflare-skills
+    count: 13
+    revision: f96bff754e428838818017f75817f0f9428acd48
+  - id: supabase-agent-skills
+    count: 2
+    revision: 8331f910845103c08d51f6ca1d86ebb7d1f745e3
+  - id: sentry-skills
+    count: 27
+    revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  - id: scientific-skills
+    count: 163
+    revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  - id: hypergiant-agent-skills
+    count: 31
+    revision: e0ec6a7f13aae8c3e5f2113143ded3e3b38becf0

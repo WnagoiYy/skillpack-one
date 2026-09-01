@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-ai-akari-agent-trust-receipt-bb42b7178e
+type: mcp-server
+name: AIﾉアカリ☆ Agent Trust Receipt
+summary: Read-only Remote MCP for externally grounded AI agent trust receipts.
+author: AInoAKARI
+source:
+  repository: https://github.com/AInoAKARI/AInoAKARI
+  revision: bb42b7178e2df6f905db2dfbe674b49e824c364242b834dce9a9cfc32e817e91
+  path: ai.ai-akari/agent-trust-receipt@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.ai-akari%2Fagent-trust-receipt/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - akari
+  - agent
+  - trust
+  - receipt
+  - read
+  - only
+  - remote
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:bb42b7178e2df6f905db2dfbe674b49e824c364242b834dce9a9cfc32e817e91
+freshness: current

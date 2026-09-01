@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentplaybooks-agentplaybooks-2fe40cb4a3
+type: mcp-server
+name: AgentPlaybooks
+summary: Manage portable AI agent playbooks, Agent Skills, MCP configurations,
+  personas, and memory.
+author: matebenyovszky
+source:
+  repository: https://github.com/matebenyovszky/agentplaybooks
+  revision: 2fe40cb4a3b23ad6e57c9281492b3f3b6cda0b6735d82e905d5e49a4f8ed207c
+  path: ai.agentplaybooks/agentplaybooks@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentplaybooks%2Fagentplaybooks/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentplaybooks
+  - manage
+  - portable
+  - agent
+  - playbooks
+  - skills
+  - configurations
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:2fe40cb4a3b23ad6e57c9281492b3f3b6cda0b6735d82e905d5e49a4f8ed207c
+freshness: current

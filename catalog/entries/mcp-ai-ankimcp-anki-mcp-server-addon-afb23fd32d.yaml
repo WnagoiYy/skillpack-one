@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-ankimcp-anki-mcp-server-addon-afb23fd32d
+type: mcp-server
+name: AnkiMCP Server
+summary: Anki addon that exposes your flashcard collection to AI assistants via
+  a local MCP server.
+author: ankimcp
+source:
+  repository: https://github.com/ankimcp/anki-mcp-server-addon
+  revision: afb23fd32db3f1616cef68d6d339d8bb09bea656d1f9d9b320a657b46420d096
+  path: ai.ankimcp/anki-mcp-server-addon@0.27.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.ankimcp%2Fanki-mcp-server-addon/versions/0.27.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - ankimcp
+  - anki
+  - addon
+  - exposes
+  - flashcard
+  - collection
+  - assistants
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:afb23fd32db3f1616cef68d6d339d8bb09bea656d1f9d9b320a657b46420d096
+freshness: current

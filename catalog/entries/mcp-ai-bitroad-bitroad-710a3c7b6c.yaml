@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bitroad-bitroad-710a3c7b6c
+type: mcp-server
+name: ai.bitroad/bitroad
+summary: "Marketplace for AI agents: buy goods and services under spending caps,
+  with returns and disputes."
+author: bitroadai
+source:
+  repository: https://github.com/bitroadai/bitroad-mcp
+  revision: 710a3c7b6cfdd1c523e7a95f29688b9c8808653af5b21dba57005560686e2139
+  path: ai.bitroad/bitroad@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bitroad%2Fbitroad/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bitroad
+  - marketplace
+  - agents
+  - buy
+  - goods
+  - services
+  - under
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:710a3c7b6cfdd1c523e7a95f29688b9c8808653af5b21dba57005560686e2139
+freshness: current

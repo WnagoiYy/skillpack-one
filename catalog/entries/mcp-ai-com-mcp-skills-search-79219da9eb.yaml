@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-com-mcp-skills-search-79219da9eb
+type: mcp-server
+name: Agent Skills Search Server
+summary: Search and discover Agent Skills from the skills.sh registry. Powered
+  by HAPI MCP server.
+author: agentskills
+source:
+  repository: https://github.com/agentskills/agentskills
+  revision: 79219da9eb0eb21cbeeaa514eadecd3945510c983ffc7472f3cc3cebfcb95349
+  path: ai.com.mcp/skills-search@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.com.mcp%2Fskills-search/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - com
+  - skills
+  - search
+  - agent
+  - discover
+  - registry
+  - powered
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:79219da9eb0eb21cbeeaa514eadecd3945510c983ffc7472f3cc3cebfcb95349
+freshness: current

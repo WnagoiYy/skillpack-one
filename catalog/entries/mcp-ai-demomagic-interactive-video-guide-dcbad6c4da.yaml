@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-demomagic-interactive-video-guide-dcbad6c4da
+type: mcp-server
+name: DemoMagic
+summary: Guides for making interactive videos & AI product demos that answer
+  viewers' questions.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: dcbad6c4da6a5406bd35ff104aec875f534d7702cbe70b15e043162907be40bf
+  path: ai.demomagic/interactive-video-guide@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.demomagic%2Finteractive-video-guide/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - demomagic
+  - interactive
+  - video
+  - guide
+  - guides
+  - making
+  - videos
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:dcbad6c4da6a5406bd35ff104aec875f534d7702cbe70b15e043162907be40bf
+freshness: current

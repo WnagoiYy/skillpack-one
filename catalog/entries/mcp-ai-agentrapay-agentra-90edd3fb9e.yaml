@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentrapay-agentra-90edd3fb9e
+type: mcp-server
+name: ai.agentrapay/agentra
+summary: Identity oracle and trust layer for autonomous AI agents. Bidirectional
+  KYA and trust scoring.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 90edd3fb9ec03ea3608788c6d8560c60f9e6f58ecdc6eb6fa17566f4736faba4
+  path: ai.agentrapay/agentra@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentrapay%2Fagentra/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentrapay
+  - agentra
+  - identity
+  - oracle
+  - trust
+  - layer
+  - autonomous
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:90edd3fb9ec03ea3608788c6d8560c60f9e6f58ecdc6eb6fa17566f4736faba4
+freshness: current

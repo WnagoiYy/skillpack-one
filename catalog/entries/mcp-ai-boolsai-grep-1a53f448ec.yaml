@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-boolsai-grep-1a53f448ec
+type: mcp-server
+name: Boolsai Grep
+summary: Parallel regex across all Boolsai scans — discover new vendor patterns,
+  niche signals. 4 tools.
+author: Boolsai-ai
+source:
+  repository: https://github.com/Boolsai-ai/mcp
+  revision: 1a53f448ecf03cd63e27b788c962c211f53617d82e40128e0ab30f3d0b419d04
+  path: ai.boolsai/grep@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.boolsai%2Fgrep/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - boolsai
+  - grep
+  - parallel
+  - regex
+  - across
+  - all
+  - scans
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1a53f448ecf03cd63e27b788c962c211f53617d82e40128e0ab30f3d0b419d04
+freshness: current

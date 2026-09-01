@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ae-propick-propick-43ddac803b
+type: mcp-server
+name: Propick Integration MCP
+summary: "Manage your real-estate stock on Propick (Dubai): bulk listing sync,
+  lookups and run reports."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 43ddac803ba85094c285f6a1cb3e29866b008757071b9c78e25a3f15410e40f8
+  path: ae.propick/propick@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ae.propick%2Fpropick/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - propick
+  - integration
+  - manage
+  - real
+  - estate
+  - stock
+  - dubai
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:43ddac803ba85094c285f6a1cb3e29866b008757071b9c78e25a3f15410e40f8
+freshness: current

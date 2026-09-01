@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-writing-lean-proofs-be68e2a1
+type: skill
+name: writing-lean-proofs
+summary: Agent Skill writing-lean-proofs from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/writing-lean-proofs/skills/writing-lean-proofs
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/writing-lean-proofs/skills/writing-lean-proofs
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - writing
+  - lean
+  - proofs
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:be68e2a139d785b21365da4e03a527283f9601a92b053dbf453347a8f68bc0ae
+freshness: current

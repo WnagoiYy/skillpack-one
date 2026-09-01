@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-anthropics-skills-frontend-design-29ad32fd
+type: skill
+name: frontend-design
+summary: Agent Skill frontend-design from anthropics/skills.
+author: anthropics
+source:
+  repository: https://github.com/anthropics/skills
+  revision: 3b3fad96af16a10759d930941b4520ba0c40edae
+  path: skills/frontend-design
+  url: https://github.com/anthropics/skills/tree/3b3fad96af16a10759d930941b4520ba0c40edae/skills/frontend-design
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - frontend
+  - design
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:29ad32fd0a162fab1f4a6e6bd17987c6293d247965d395d7fb171de2f8d97755
+freshness: current

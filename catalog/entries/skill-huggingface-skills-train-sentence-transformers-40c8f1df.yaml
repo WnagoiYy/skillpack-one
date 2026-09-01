@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-huggingface-skills-train-sentence-transformers-40c8f1df
+type: skill
+name: train-sentence-transformers
+summary: Agent Skill train-sentence-transformers from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/train-sentence-transformers
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/train-sentence-transformers
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - train
+  - sentence
+  - transformers
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:40c8f1df09912f5a3d488d660bf3fc6063ea529e42d670456ee44c94de0d7251
+freshness: current

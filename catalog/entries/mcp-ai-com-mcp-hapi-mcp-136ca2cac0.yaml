@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-com-mcp-hapi-mcp-136ca2cac0
+type: mcp-server
+name: HAPI MCP Server
+summary: "HAPI MCP server: Dynamically exposes OpenAPI REST APIs as MCP tools
+  for AI assistants"
+author: larebelion
+source:
+  repository: https://github.com/larebelion/hapimcp
+  revision: 136ca2cac01ad1ca08cff4ff35e607c14585a7ecca08177ee263dd4fb3067ee9
+  path: ai.com.mcp/hapi-mcp@0.6.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.com.mcp%2Fhapi-mcp/versions/0.6.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - com
+  - hapi
+  - dynamically
+  - exposes
+  - openapi
+  - rest
+  - apis
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:136ca2cac01ad1ca08cff4ff35e607c14585a7ecca08177ee263dd4fb3067ee9
+freshness: current

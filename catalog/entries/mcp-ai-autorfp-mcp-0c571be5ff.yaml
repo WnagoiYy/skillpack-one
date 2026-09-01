@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-autorfp-mcp-0c571be5ff
+type: mcp-server
+name: AutoRFP.ai
+summary: Search AutoRFP.ai projects, requirements, content library, and tags for
+  Q&A and analytics.
+author: AutoRFP
+source:
+  repository: https://github.com/AutoRFP/mcp
+  revision: 0c571be5ff91d775c13be57b0b0fd9aaa51eaa58b03f11d8d1ffb1bb558e7c2f
+  path: ai.autorfp/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.autorfp%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - autorfp
+  - search
+  - projects
+  - requirements
+  - content
+  - library
+  - tags
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0c571be5ff91d775c13be57b0b0fd9aaa51eaa58b03f11d8d1ffb1bb558e7c2f
+freshness: current

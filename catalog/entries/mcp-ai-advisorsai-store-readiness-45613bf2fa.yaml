@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-advisorsai-store-readiness-45613bf2fa
+type: mcp-server
+name: One-Page Readiness Check — 10 Signals, Arabic or English
+summary: "Ten machine-readable signals on one public page: the top miss if any,
+  and a receipt we re-verify."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 45613bf2fa6b329ac979e01872725133b0e07f104f4bffb0547eaf99f1c5a4c4
+  path: ai.advisorsai/store-readiness@1.0.6
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.advisorsai%2Fstore-readiness/versions/1.0.6
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - advisorsai
+  - store
+  - readiness
+  - one
+  - page
+  - check
+  - signals
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:45613bf2fa6b329ac979e01872725133b0e07f104f4bffb0547eaf99f1c5a4c4
+freshness: current

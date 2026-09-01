@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-augmentev-paseo-81e2a22e42
+type: mcp-server
+name: ai.augmentev/paseo
+summary: Confidential AI execution with a post-quantum receipt on every job —
+  verifiable by anyone.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 81e2a22e427900a3aa75bdca28fb42892db1c38073b77c053a3e6274df72f094
+  path: ai.augmentev/paseo@0.1.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.augmentev%2Fpaseo/versions/0.1.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - augmentev
+  - paseo
+  - confidential
+  - execution
+  - post
+  - quantum
+  - receipt
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:81e2a22e427900a3aa75bdca28fb42892db1c38073b77c053a3e6274df72f094
+freshness: current

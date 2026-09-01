@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-arketo-arketo-6c11b61abb
+type: mcp-server
+name: Arketo
+summary: Draw your app's architecture on a live canvas and flag the bottlenecks
+  and security gaps.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 6c11b61abb935369033a6b5ac317e8bcb08916b14fdd2df04e2748e831269e52
+  path: ai.arketo/arketo@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.arketo%2Farketo/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - arketo
+  - draw
+  - app
+  - architecture
+  - live
+  - canvas
+  - flag
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:6c11b61abb935369033a6b5ac317e8bcb08916b14fdd2df04e2748e831269e52
+freshness: current

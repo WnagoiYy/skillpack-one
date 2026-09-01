@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-bringyour-bringyour-29452d98e8
+type: mcp-server
+name: Bring Your AI
+summary: No-data MCP handoff for local Claude Code to Codex harness moves. $49 lifetime.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 29452d98e8cedd7fe71c5cd991cf6276cef3d3b6cacdd5125826c6804870aac4
+  path: ai.bringyour/bringyour@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bringyour%2Fbringyour/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bringyour
+  - bring
+  - data
+  - handoff
+  - local
+  - claude
+  - code
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:29452d98e8cedd7fe71c5cd991cf6276cef3d3b6cacdd5125826c6804870aac4
+freshness: current

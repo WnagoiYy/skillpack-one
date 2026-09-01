@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-pathogen-variant-surveillance-ef51e42d
+type: skill
+name: pathogen-variant-surveillance
+summary: Agent Skill pathogen-variant-surveillance from
+  K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/pathogen-variant-surveillance
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/pathogen-variant-surveillance
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - pathogen
+  - variant
+  - surveillance
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:ef51e42d111ebbbd1f6d5afb56b11c44d00b4eba0a992fc86163444d66ef048a
+freshness: current

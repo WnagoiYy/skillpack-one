@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-com-mcp-petstore-b78d7f6c89
+type: mcp-server
+name: Petstore MCP Server
+summary: Swagger Petstore API (v1.0.27) as MCP for testing and prototyping
+  powered by the HAPI MCP server
+author: la-rebelion
+source:
+  repository: https://github.com/la-rebelion/hapimcp
+  revision: b78d7f6c8933d3e56814bf4f0c060c5e7e92324579d6ea762e59ad501d764273
+  path: ai.com.mcp/petstore@0.6.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.com.mcp%2Fpetstore/versions/0.6.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - com
+  - petstore
+  - swagger
+  - api
+  - testing
+  - prototyping
+  - powered
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:b78d7f6c8933d3e56814bf4f0c060c5e7e92324579d6ea762e59ad501d764273
+freshness: current

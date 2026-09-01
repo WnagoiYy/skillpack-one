@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-autonomad-computeback-2fa30dfc41
+type: mcp-server
+name: ai.autonomad/computeback
+summary: "Agent Rewards Marketplace: earn $NOMD on B2B work, spend on agent
+  capabilities."
+author: Autonomad1
+source:
+  repository: https://github.com/Autonomad1/computeback-mcp
+  revision: 2fa30dfc411087203d86fec01f23cbea6bf490ce695bea8f95d054711dce070e
+  path: ai.autonomad/computeback@1.1.3
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.autonomad%2Fcomputeback/versions/1.1.3
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - autonomad
+  - computeback
+  - agent
+  - rewards
+  - marketplace
+  - earn
+  - nomd
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:2fa30dfc411087203d86fec01f23cbea6bf490ce695bea8f95d054711dce070e
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-aivonic-mcp-a18409eb0d
+type: mcp-server
+name: ai.aivonic/mcp
+summary: "Do business with Aivonic: pricing, products, check availability, book
+  a demo, request a quote."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: a18409eb0d251b976c76a7f1c4f752765e24cc8af41135472c1a57bbbc59ca48
+  path: ai.aivonic/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.aivonic%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - aivonic
+  - business
+  - pricing
+  - products
+  - check
+  - availability
+  - book
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:a18409eb0d251b976c76a7f1c4f752765e24cc8af41135472c1a57bbbc59ca48
+freshness: current

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-vector-forge-6f49e281
+type: skill
+name: vector-forge
+summary: Agent Skill vector-forge from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/trailmark/skills/vector-forge
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/trailmark/skills/vector-forge
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - vector
+  - forge
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:6f49e281bea4605361ee4d78f18f1b7200237c729bd59a21eecc9007f3d75655
+freshness: current

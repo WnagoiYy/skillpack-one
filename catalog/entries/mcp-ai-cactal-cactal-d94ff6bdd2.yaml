@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-cactal-cactal-d94ff6bdd2
+type: mcp-server
+name: Cactal
+summary: The website platform for AI agents. One API to build, host, and operate
+  real websites.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d94ff6bdd2031694377c533aa02f5503c9b1ef16884a6f04cd4925ac57d36dfc
+  path: ai.cactal/cactal@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cactal%2Fcactal/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cactal
+  - website
+  - platform
+  - agents
+  - one
+  - api
+  - build
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d94ff6bdd2031694377c533aa02f5503c9b1ef16884a6f04cd4925ac57d36dfc
+freshness: current

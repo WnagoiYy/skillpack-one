@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentlookups-greenlight-83112b87af
+type: mcp-server
+name: GreenLight - Plug-in Solar Law Registry
+summary: US plug-in solar (balcony solar) law registry with a daily UL 3700
+  certification watch.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 83112b87aff1d1036dddc4c022cea72a74051f345c3779037c9b5569d742d0d2
+  path: ai.agentlookups/greenlight@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentlookups%2Fgreenlight/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentlookups
+  - greenlight
+  - plug
+  - solar
+  - law
+  - registry
+  - balcony
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:83112b87aff1d1036dddc4c022cea72a74051f345c3779037c9b5569d742d0d2
+freshness: current

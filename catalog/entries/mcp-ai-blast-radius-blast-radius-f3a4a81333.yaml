@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-blast-radius-blast-radius-f3a4a81333
+type: mcp-server
+name: ai.blast-radius/blast-radius
+summary: Blast Radius tools for AI strategy, diligence, and market updates.
+author: kipmcc
+source:
+  repository: https://github.com/kipmcc/blast-radius-live
+  revision: f3a4a81333fee07cea872fab524f522bde462b67013562ffff2edf1bb36fd53f
+  path: ai.blast-radius/blast-radius@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.blast-radius%2Fblast-radius/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - blast
+  - radius
+  - tools
+  - strategy
+  - diligence
+  - market
+  - updates
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f3a4a81333fee07cea872fab524f522bde462b67013562ffff2edf1bb36fd53f
+freshness: current

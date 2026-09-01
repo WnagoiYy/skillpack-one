@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-creationloop-creationloop-bde8df0701
+type: mcp-server
+name: ai.creationloop/creationloop
+summary: CreationLoop is your Marketing Agent. Read the overview, offer, and
+  FAQ; apply as a design partner.
+author: marino129
+source:
+  repository: https://github.com/marino129/creationloop-mcp
+  revision: bde8df0701bfcead595209419ff5973ad842765d32d7826357e4920979a46105
+  path: ai.creationloop/creationloop@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.creationloop%2Fcreationloop/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - creationloop
+  - marketing
+  - agent
+  - read
+  - overview
+  - offer
+  - faq
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:bde8df0701bfcead595209419ff5973ad842765d32d7826357e4920979a46105
+freshness: current

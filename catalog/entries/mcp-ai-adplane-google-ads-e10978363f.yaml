@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-adplane-google-ads-e10978363f
+type: mcp-server
+name: ai.adplane/google-ads
+summary: Google Ads reporting and campaign management. Everything it creates
+  starts paused.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: e10978363f199009aac29f0cf19b3f6fa7258bfce354583597d51da457f4d90f
+  path: ai.adplane/google-ads@1.29.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.adplane%2Fgoogle-ads/versions/1.29.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - adplane
+  - google
+  - ads
+  - reporting
+  - campaign
+  - management
+  - everything
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:e10978363f199009aac29f0cf19b3f6fa7258bfce354583597d51da457f4d90f
+freshness: current

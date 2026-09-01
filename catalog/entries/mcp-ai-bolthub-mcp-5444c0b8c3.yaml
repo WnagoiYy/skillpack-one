@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bolthub-mcp-5444c0b8c3
+type: mcp-server
+name: bolthub
+summary: The bolthub API marketplace, L402 gateways, and your other MCP servers,
+  on one Lightning budget.
+author: signaltech-org
+source:
+  repository: https://github.com/signaltech-org/bolthub-sdk
+  revision: 5444c0b8c38f9aa61dadd638c027dd8487fcbe3f9b3d7aedb09950ccea9dc15b
+  path: ai.bolthub/mcp@0.7.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bolthub%2Fmcp/versions/0.7.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bolthub
+  - api
+  - marketplace
+  - l402
+  - gateways
+  - other
+  - servers
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:5444c0b8c38f9aa61dadd638c027dd8487fcbe3f9b3d7aedb09950ccea9dc15b
+freshness: current

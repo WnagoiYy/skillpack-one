@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-com-mcp-registry-f1d343d400
+type: mcp-server
+name: MCP Registry Server
+summary: Publish and discover MCP servers via the official MCP Registry. Powered
+  by HAPI MCP server.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: f1d343d400eb2d9a7ee960418d20e065727eadd8de08e203a10efd3880dcb64c
+  path: ai.com.mcp/registry@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.com.mcp%2Fregistry/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - com
+  - registry
+  - publish
+  - discover
+  - servers
+  - via
+  - official
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f1d343d400eb2d9a7ee960418d20e065727eadd8de08e203a10efd3880dcb64c
+freshness: current

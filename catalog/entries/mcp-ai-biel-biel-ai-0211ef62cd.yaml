@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-biel-biel-ai-0211ef62cd
+type: mcp-server
+name: Biel.ai
+summary: Query your product docs from AI tools. Source-cited answers from your
+  indexed documentation.
+author: TechDocsStudio
+source:
+  repository: https://github.com/TechDocsStudio/biel-mcp
+  revision: 0211ef62cd236cc1411c7cb87f315a07142f1fb7382cd9d4b92c3aa9231c097c
+  path: ai.biel/biel-ai@2.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.biel%2Fbiel-ai/versions/2.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - biel
+  - query
+  - product
+  - docs
+  - tools
+  - source
+  - cited
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0211ef62cd236cc1411c7cb87f315a07142f1fb7382cd9d4b92c3aa9231c097c
+freshness: current

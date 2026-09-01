@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-auteng-docs-c72dfb5787
+type: mcp-server
+name: AutEng MCP - Markdown Publishing & Document Share Links
+summary: Publish markdown documents as public share links with mermaid diagram
+  support. Built by AutEng.ai
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: c72dfb57876ca481eeb938126b66242b385981fea92543d898d14fb4b3d9c35e
+  path: ai.auteng/docs@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.auteng%2Fdocs/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - auteng
+  - docs
+  - markdown
+  - publishing
+  - document
+  - share
+  - links
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c72dfb57876ca481eeb938126b66242b385981fea92543d898d14fb4b3d9c35e
+freshness: current

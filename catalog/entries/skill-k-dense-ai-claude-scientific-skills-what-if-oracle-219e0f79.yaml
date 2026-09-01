@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-k-dense-ai-claude-scientific-skills-what-if-oracle-219e0f79
+type: skill
+name: what-if-oracle
+summary: Agent Skill what-if-oracle from K-Dense-AI/claude-scientific-skills.
+author: K-Dense-AI
+source:
+  repository: https://github.com/K-Dense-AI/claude-scientific-skills
+  revision: 1dd0fccf46fc3c9855c4a0c313a0c57fe4319883
+  path: skills/what-if-oracle
+  url: https://github.com/K-Dense-AI/claude-scientific-skills/tree/1dd0fccf46fc3c9855c4a0c313a0c57fe4319883/skills/what-if-oracle
+license:
+  status: detected
+  spdx: MIT
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - what
+  - if
+  - oracle
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:219e0f79662a31b95bdad404055d41dea69c8116dff8600507426d5127109316
+freshness: current

@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-dataparrot-data-parrot-d05fa67093
+type: mcp-server
+name: Data Parrot AI Revenue Analyst
+summary: Data Parrot brings AI revenue analysis of your HubSpot data into your AI tools.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d05fa670933ac4591d44d169dfd4b9146eb71b5b7b6bf1b1946d68983f4358a7
+  path: ai.dataparrot/data-parrot@1.0.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.dataparrot%2Fdata-parrot/versions/1.0.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - dataparrot
+  - data
+  - parrot
+  - revenue
+  - analyst
+  - brings
+  - analysis
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d05fa670933ac4591d44d169dfd4b9146eb71b5b7b6bf1b1946d68983f4358a7
+freshness: current

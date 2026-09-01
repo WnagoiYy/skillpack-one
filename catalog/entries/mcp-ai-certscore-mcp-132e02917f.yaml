@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-certscore-mcp-132e02917f
+type: mcp-server
+name: CertScore MCP
+summary: CertScore website risk-signal tools for scans, findings, evidence, and
+  latest-domain lookups.
+author: ergoveritas1-alt
+source:
+  repository: https://github.com/ergoveritas1-alt/certscore.ai
+  revision: 132e02917f9282f4c25a5a25b5954eb092a408e34df4ba10ee23c2ffa1387fa0
+  path: ai.certscore/mcp@0.2.4
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.certscore%2Fmcp/versions/0.2.4
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - certscore
+  - website
+  - risk
+  - signal
+  - tools
+  - scans
+  - findings
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:132e02917f9282f4c25a5a25b5954eb092a408e34df4ba10ee23c2ffa1387fa0
+freshness: current

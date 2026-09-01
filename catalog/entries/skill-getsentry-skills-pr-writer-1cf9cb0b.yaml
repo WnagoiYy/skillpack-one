@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-getsentry-skills-pr-writer-1cf9cb0b
+type: skill
+name: pr-writer
+summary: Agent Skill pr-writer from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/pr-writer
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/pr-writer
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - pr
+  - writer
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:1cf9cb0b1ca1926a912169ba31141ce3fe1b66ce57a76c7062b6c088ad69e3de
+freshness: current

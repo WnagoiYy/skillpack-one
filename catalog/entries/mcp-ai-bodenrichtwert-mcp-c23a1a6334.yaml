@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bodenrichtwert-mcp-c23a1a6334
+type: mcp-server
+name: bodenrichtwert.ai — Verlässliche Bodenrichtwerte für Mensch und KI
+summary: German land values (Bodenrichtwerte) by address, with mandatory
+  dl-de/by-2-0 attribution.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: c23a1a633438eda731a2a3558894ccc6d241c2d396c0b9b2f12fa88eb4220901
+  path: ai.bodenrichtwert/mcp@1.2.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bodenrichtwert%2Fmcp/versions/1.2.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bodenrichtwert
+  - verl
+  - ssliche
+  - bodenrichtwerte
+  - mensch
+  - und
+  - german
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c23a1a633438eda731a2a3558894ccc6d241c2d396c0b9b2f12fa88eb4220901
+freshness: current

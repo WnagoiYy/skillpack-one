@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-decisionlog-mcp-aba2e32541
+type: mcp-server
+name: Decision Log
+summary: Append-only decisions with provenance, supersession, retrieval, and
+  audited MCP actions.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: aba2e3254190839797c0d1172c224afb9d2e6361d48cc42b3ad4e39b53514430
+  path: ai.decisionlog/mcp@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.decisionlog%2Fmcp/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - decisionlog
+  - decision
+  - log
+  - append
+  - only
+  - decisions
+  - provenance
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:aba2e3254190839797c0d1172c224afb9d2e6361d48cc42b3ad4e39b53514430
+freshness: current

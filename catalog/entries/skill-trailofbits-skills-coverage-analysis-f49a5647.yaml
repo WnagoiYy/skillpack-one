@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-coverage-analysis-f49a5647
+type: skill
+name: coverage-analysis
+summary: Agent Skill coverage-analysis from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/testing-handbook-skills/skills/coverage-analysis
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/testing-handbook-skills/skills/coverage-analysis
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - coverage
+  - analysis
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:f49a56478e3123a57a414237d23dddf148041ae0e7e8692900a9bc2165cbb573
+freshness: current

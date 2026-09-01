@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-cerebrium-docs-f7b8d89e48
+type: mcp-server
+name: Cerebrium Docs
+summary: "Search the Cerebrium docs: deployment, cerebrium.toml, hardware,
+  endpoints. Also sends feedback."
+author: CerebriumAI
+source:
+  repository: https://github.com/CerebriumAI/cerebrium-skills
+  revision: f7b8d89e4864c4f9d4b8e6b8154b9b1e180fedb64d35598c24cd05eaef43653a
+  path: ai.cerebrium/docs@0.1.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cerebrium%2Fdocs/versions/0.1.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cerebrium
+  - docs
+  - search
+  - deployment
+  - toml
+  - hardware
+  - endpoints
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f7b8d89e4864c4f9d4b8e6b8154b9b1e180fedb64d35598c24cd05eaef43653a
+freshness: current

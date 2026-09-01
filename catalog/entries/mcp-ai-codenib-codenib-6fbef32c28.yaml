@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-codenib-codenib-6fbef32c28
+type: mcp-server
+name: CodeNib
+summary: Source-linked CodeGraph exploration, ranked search, and static
+  navigation for coding agents.
+author: sysevol-ai
+source:
+  repository: https://github.com/sysevol-ai/CodeNib
+  revision: 6fbef32c2874733fd6531efe37425a1b9707fb6fd4e515b4db88cbae4aadf680
+  path: ai.codenib/codenib@0.2.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.codenib%2Fcodenib/versions/0.2.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - codenib
+  - source
+  - linked
+  - codegraph
+  - exploration
+  - ranked
+  - search
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:6fbef32c2874733fd6531efe37425a1b9707fb6fd4e515b4db88cbae4aadf680
+freshness: current

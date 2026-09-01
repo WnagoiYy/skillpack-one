@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: mcp-ai-adeu-adeu-1631351397
+type: mcp-server
+name: ai.adeu/adeu
+summary: Automated DOCX Redlining Engine
+author: dealfluence
+source:
+  repository: https://github.com/dealfluence/adeu
+  revision: 1631351397b97934b746afd7f4cd9174af9cf6cfbff50d90921f5c2c0d0b2934
+  path: ai.adeu/adeu@1.7.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.adeu%2Fadeu/versions/1.7.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - adeu
+  - automated
+  - docx
+  - redlining
+  - engine
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1631351397b97934b746afd7f4cd9174af9cf6cfbff50d90921f5c2c0d0b2934
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-autoposting-autoposting-2571b1d7f6
+type: mcp-server
+name: Autoposting
+summary: Schedule, generate and publish social posts to X, LinkedIn, Instagram,
+  Threads and YouTube
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 2571b1d7f65eb6155eb0b63c15859ad068515a551dacc1a271a28e2c04fbc329
+  path: ai.autoposting/autoposting@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.autoposting%2Fautoposting/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - autoposting
+  - schedule
+  - generate
+  - publish
+  - social
+  - posts
+  - linkedin
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:2571b1d7f65eb6155eb0b63c15859ad068515a551dacc1a271a28e2c04fbc329
+freshness: current

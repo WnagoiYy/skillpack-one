@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-audit-context-building-0bd4e4ff
+type: skill
+name: audit-context-building
+summary: Agent Skill audit-context-building from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/audit-context-building/skills/audit-context-building
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/audit-context-building/skills/audit-context-building
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - audit
+  - context
+  - building
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:0bd4e4ff0a97de870adfc78f1464338e9577088009c6d4cbb98567292914bd4f
+freshness: current

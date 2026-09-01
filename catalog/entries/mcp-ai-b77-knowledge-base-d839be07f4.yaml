@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-b77-knowledge-base-d839be07f4
+type: mcp-server
+name: Knowledge Base
+summary: A searchable knowledge base your assistant reads and writes.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: d839be07f49995cb8a822fea1e8b1b6a7315222d42d3d144c1d40ab1abca5559
+  path: ai.b77/knowledge-base@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Fknowledge-base/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - knowledge
+  - base
+  - searchable
+  - assistant
+  - reads
+  - writes
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:d839be07f49995cb8a822fea1e8b1b6a7315222d42d3d144c1d40ab1abca5559
+freshness: current

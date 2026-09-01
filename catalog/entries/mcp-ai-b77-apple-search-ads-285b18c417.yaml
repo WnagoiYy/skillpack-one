@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-b77-apple-search-ads-285b18c417
+type: mcp-server
+name: Apple Search Ads
+summary: Manage Apple Ads campaigns and reporting in chat.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 285b18c41749b8ed2e92cff75d47668d83ac67228048e2d4fec6f6f01b99d35f
+  path: ai.b77/apple-search-ads@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Fapple-search-ads/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - apple
+  - search
+  - ads
+  - manage
+  - campaigns
+  - reporting
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:285b18c41749b8ed2e92cff75d47668d83ac67228048e2d4fec6f6f01b99d35f
+freshness: current

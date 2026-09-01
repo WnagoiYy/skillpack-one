@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-calendarmcp-server-f8ab5b3489
+type: mcp-server
+name: CalendarMCP
+summary: Hosted Google Calendar MCP server for AI agents. No self-hosting or
+  Google Cloud setup.
+author: Full-Vibe
+source:
+  repository: https://github.com/Full-Vibe/calendarmcp-public
+  revision: f8ab5b34895a63e2f5ad83a7dc78f7911260b954488d9a7e5e1791d1895738b9
+  path: ai.calendarmcp/server@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.calendarmcp%2Fserver/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - calendarmcp
+  - hosted
+  - google
+  - calendar
+  - agents
+  - self
+  - hosting
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:f8ab5b34895a63e2f5ad83a7dc78f7911260b954488d9a7e5e1791d1895738b9
+freshness: current

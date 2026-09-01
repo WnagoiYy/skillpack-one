@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentutility-mcp-locale-8045ed4cbd
+type: mcp-server
+name: AgentUtility Locale
+summary: MCP server for the @agentutility locale cluster — pay-per-call x402
+  tools, no API keys, USDC on…
+author: rooz21
+source:
+  repository: https://github.com/rooz21/x402
+  revision: 8045ed4cbd521c1ce3da64081e25c5cf0b7478f4b98be7749561a881a91d22ed
+  path: ai.agentutility/mcp-locale@0.8.7
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentutility%2Fmcp-locale/versions/0.8.7
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentutility
+  - locale
+  - cluster
+  - pay
+  - per
+  - call
+  - x402
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:8045ed4cbd521c1ce3da64081e25c5cf0b7478f4b98be7749561a881a91d22ed
+freshness: current

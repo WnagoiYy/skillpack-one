@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-buywhere-buywhere-mcp-b75038efa4
+type: mcp-server
+name: BuyWhere MCP
+summary: Product search, price comparison, and affiliate-ready shopping across
+  Singapore and US retailers.
+author: BuyWhere
+source:
+  repository: https://github.com/BuyWhere/buywhere-mcp
+  revision: b75038efa43fb2ef33c93071c3cdc7e5f0a91d3964691aa188304fb29bb032dc
+  path: ai.buywhere/buywhere-mcp@0.3.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.buywhere%2Fbuywhere-mcp/versions/0.3.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - buywhere
+  - product
+  - search
+  - price
+  - comparison
+  - affiliate
+  - ready
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:b75038efa43fb2ef33c93071c3cdc7e5f0a91d3964691aa188304fb29bb032dc
+freshness: current

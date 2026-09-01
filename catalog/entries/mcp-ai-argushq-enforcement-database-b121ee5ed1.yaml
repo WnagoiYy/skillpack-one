@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-argushq-enforcement-database-b121ee5ed1
+type: mcp-server
+name: ai.argushq/enforcement-database
+summary: "Search Argus HQ public FDA enforcement data: warning letters, recalls,
+  approvals, 483s."
+author: andrewjgaber-commits
+source:
+  repository: https://github.com/andrewjgaber-commits/empire-distribution
+  revision: b121ee5ed18c52f915b6819fff729a54e6ca4ab1a8e80334b58510abd8121229
+  path: ai.argushq/enforcement-database@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.argushq%2Fenforcement-database/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - argushq
+  - enforcement
+  - database
+  - search
+  - argus
+  - public
+  - fda
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:b121ee5ed18c52f915b6819fff729a54e6ca4ab1a8e80334b58510abd8121229
+freshness: current

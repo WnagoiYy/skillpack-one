@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-getsentry-skills-presentation-creator-14afb03b
+type: skill
+name: presentation-creator
+summary: Agent Skill presentation-creator from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/presentation-creator
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/presentation-creator
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - presentation
+  - creator
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:14afb03bb8bf8750742502bb2b58623861921dddcf4a99c2feea2b4624b2a9e6
+freshness: current

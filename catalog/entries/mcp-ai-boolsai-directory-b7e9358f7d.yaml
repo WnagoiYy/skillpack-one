@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-boolsai-directory-b7e9358f7d
+type: mcp-server
+name: Boolsai Directory
+summary: Indexed ecommerce site directory — vendor lookups, brands by
+  city/market/founder. 10 tools.
+author: Boolsai-ai
+source:
+  repository: https://github.com/Boolsai-ai/mcp
+  revision: b7e9358f7d067a18597694d5d285482f484157c3e32d29a9e4ca041c9c038cf5
+  path: ai.boolsai/directory@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.boolsai%2Fdirectory/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - boolsai
+  - directory
+  - indexed
+  - ecommerce
+  - site
+  - vendor
+  - lookups
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:b7e9358f7d067a18597694d5d285482f484157c3e32d29a9e4ca041c9c038cf5
+freshness: current

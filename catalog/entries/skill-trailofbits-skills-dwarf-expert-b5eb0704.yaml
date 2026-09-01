@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-dwarf-expert-b5eb0704
+type: skill
+name: dwarf-expert
+summary: Agent Skill dwarf-expert from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/dwarf-expert/skills/dwarf-expert
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/dwarf-expert/skills/dwarf-expert
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - dwarf
+  - expert
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:b5eb0704471eb343014a03a1e23d5d6ba6de8195b3b9a0e54c7a1e6b427fab1a
+freshness: current

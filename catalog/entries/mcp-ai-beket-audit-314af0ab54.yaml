@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-beket-audit-314af0ab54
+type: mcp-server
+name: ai.beket/audit
+summary: See how AI assistants answer about your brand
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 314af0ab5411383b16c3e4510255417b881fade9b66c01e24cfe64de69f18322
+  path: ai.beket/audit@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.beket%2Faudit/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - beket
+  - audit
+  - see
+  - how
+  - assistants
+  - answer
+  - about
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:314af0ab5411383b16c3e4510255417b881fade9b66c01e24cfe64de69f18322
+freshness: current

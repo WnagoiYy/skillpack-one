@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-bridgeapp-bridgeapp-fab6f43c5f
+type: mcp-server
+name: ai.bridgeapp/bridgeapp
+summary: "BridgeApp workspace over MCP: tasks, chats, threads, pages, and projects."
+author: MathAndMagic
+source:
+  repository: https://github.com/MathAndMagic/bridgeapp-plugin
+  revision: fab6f43c5f3411b11f3c9daf92ad42f76d94b85e6f64143c65919dba693dca91
+  path: ai.bridgeapp/bridgeapp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bridgeapp%2Fbridgeapp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bridgeapp
+  - workspace
+  - over
+  - tasks
+  - chats
+  - threads
+  - pages
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:fab6f43c5f3411b11f3c9daf92ad42f76d94b85e6f64143c65919dba693dca91
+freshness: current

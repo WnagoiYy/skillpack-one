@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-arclan-registry-c66a22fedd
+type: mcp-server
+name: Arclan MCP Registry
+summary: MCP server registry — validated by live handshake, scored on
+  reliability, monitored continuously.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: c66a22feddaf599dbe277bd55fac3134ec3ff10de8eb4710c3753eff552e567d
+  path: ai.arclan/registry@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.arclan%2Fregistry/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - arclan
+  - registry
+  - validated
+  - live
+  - handshake
+  - scored
+  - reliability
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c66a22feddaf599dbe277bd55fac3134ec3ff10de8eb4710c3753eff552e567d
+freshness: current

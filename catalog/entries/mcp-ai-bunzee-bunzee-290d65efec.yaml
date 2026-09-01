@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bunzee-bunzee-290d65efec
+type: mcp-server
+name: Bunzee
+summary: Turn your app idea into IA, wireframes, PRD, style guides, and dev
+  specs for coding agents.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 290d65efecbc912af829f8cb6f3497b33e1fb466d92ea8681622c27be610ddca
+  path: ai.bunzee/bunzee@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bunzee%2Fbunzee/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bunzee
+  - turn
+  - app
+  - idea
+  - into
+  - wireframes
+  - prd
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:290d65efecbc912af829f8cb6f3497b33e1fb466d92ea8681622c27be610ddca
+freshness: current

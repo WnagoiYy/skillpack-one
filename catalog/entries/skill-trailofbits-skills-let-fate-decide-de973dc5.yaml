@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-let-fate-decide-de973dc5
+type: skill
+name: let-fate-decide
+summary: Agent Skill let-fate-decide from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/let-fate-decide/skills/let-fate-decide
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/let-fate-decide/skills/let-fate-decide
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - let
+  - fate
+  - decide
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:de973dc5886b8126ab29e4b840ef51a256b8b0b2eba0bfd38967fdae26aa0d90
+freshness: current

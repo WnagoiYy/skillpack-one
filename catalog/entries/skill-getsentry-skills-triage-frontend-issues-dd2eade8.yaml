@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-getsentry-skills-triage-frontend-issues-dd2eade8
+type: skill
+name: triage-frontend-issues
+summary: Agent Skill triage-frontend-issues from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/triage-frontend-issues
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/triage-frontend-issues
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - triage
+  - frontend
+  - issues
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:dd2eade88be79d13278f0ea348905feb07ddf1d6d610d5ab1a3289443a167702
+freshness: current

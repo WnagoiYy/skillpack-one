@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-awraiter-telegram-21e9913eb3
+type: mcp-server
+name: AwrAIter — Telegram channels
+summary: "Telegram channels you administer: analytics, content plans, scheduled
+  publishing. No userbot"
+author: MediaZione
+source:
+  repository: https://github.com/MediaZione/AwrAiter
+  revision: 21e9913eb36f9a30c8634312d07ee6d27ccaf9ad1129fac690f8fbeda17c932e
+  path: ai.awraiter/telegram@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.awraiter%2Ftelegram/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - awraiter
+  - telegram
+  - channels
+  - you
+  - administer
+  - analytics
+  - content
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:21e9913eb36f9a30c8634312d07ee6d27ccaf9ad1129fac690f8fbeda17c932e
+freshness: current

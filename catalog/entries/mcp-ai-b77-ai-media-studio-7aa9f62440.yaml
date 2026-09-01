@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-b77-ai-media-studio-7aa9f62440
+type: mcp-server
+name: AI Media Studio
+summary: Generate images, videos, voiceovers, and captions from a chat prompt.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 7aa9f6244076e00dcd99aeeccb2b422ef3ee0bede54ae71cd49a0e5d3225f130
+  path: ai.b77/ai-media-studio@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Fai-media-studio/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - media
+  - studio
+  - generate
+  - images
+  - videos
+  - voiceovers
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:7aa9f6244076e00dcd99aeeccb2b422ef3ee0bede54ae71cd49a0e5d3225f130
+freshness: current

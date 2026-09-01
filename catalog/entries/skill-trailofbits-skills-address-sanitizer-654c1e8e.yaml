@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-address-sanitizer-654c1e8e
+type: skill
+name: address-sanitizer
+summary: Agent Skill address-sanitizer from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/testing-handbook-skills/skills/address-sanitizer
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/testing-handbook-skills/skills/address-sanitizer
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - address
+  - sanitizer
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:654c1e8e0b0cc0b354c0e0ad2955e69fd8ac3265428a28f462783de88c6eb18f
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-alpic-alpix-alpix-bff2c530dc
+type: mcp-server
+name: AlpiX
+summary: "A pixel wars MCP server: ask your agent to collaboratively draw pixels
+  in a huge square"
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: bff2c530dc2788b7e97cdde287c404afc204d45b66cd31d23cc30e43383ec284
+  path: ai.alpic.alpix/Alpix@0.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.alpic.alpix%2FAlpix/versions/0.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - alpic
+  - alpix
+  - pixel
+  - wars
+  - ask
+  - agent
+  - collaboratively
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:bff2c530dc2788b7e97cdde287c404afc204d45b66cd31d23cc30e43383ec284
+freshness: current

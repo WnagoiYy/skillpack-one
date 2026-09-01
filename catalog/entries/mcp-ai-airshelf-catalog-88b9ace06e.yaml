@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-airshelf-catalog-88b9ace06e
+type: mcp-server
+name: AirShelf Catalog
+summary: "Cross-vendor B2B catalog for AI agents: search, compare, find
+  equivalents, request a quote."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 88b9ace06eb4c26db43c93be254bbed6650928462e105c9dc6da6ec6ace29777
+  path: ai.airshelf/catalog@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.airshelf%2Fcatalog/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - airshelf
+  - catalog
+  - cross
+  - vendor
+  - b2b
+  - agents
+  - search
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:88b9ace06eb4c26db43c93be254bbed6650928462e105c9dc6da6ec6ace29777
+freshness: current

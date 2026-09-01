@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-dablock-visibility-index-0aebb7e78b
+type: mcp-server
+name: DABLOCK AI Visibility Index
+summary: Measured share of answer for 24 crypto and Web3 brands. An open
+  dataset, not an audit of your site.
+author: creanlab
+source:
+  repository: https://github.com/creanlab/ai-visibility-index
+  revision: 0aebb7e78be5ccee9e5e63ccf59bbd7791229a594b841ca1ae26e48a02db4a2a
+  path: ai.dablock/visibility-index@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.dablock%2Fvisibility-index/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - dablock
+  - visibility
+  - index
+  - measured
+  - share
+  - answer
+  - crypto
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0aebb7e78be5ccee9e5e63ccf59bbd7791229a594b841ca1ae26e48a02db4a2a
+freshness: current

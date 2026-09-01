@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-childadhd-library-026efbd0ff
+type: mcp-server
+name: ai.childadhd/library
+summary: Clinician-reviewed library on ADHD in children — evaluation, treatment,
+  school, parenting.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 026efbd0ff96946e5a8c39d1437cc6ffda8a85f6c26e3def87b623bdb03769d9
+  path: ai.childadhd/library@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.childadhd%2Flibrary/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - childadhd
+  - library
+  - clinician
+  - reviewed
+  - adhd
+  - children
+  - evaluation
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:026efbd0ff96946e5a8c39d1437cc6ffda8a85f6c26e3def87b623bdb03769d9
+freshness: current

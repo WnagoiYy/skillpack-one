@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-clawfetch-mcp-6740eb688b
+type: mcp-server
+name: ai.clawfetch/mcp
+summary: "Web intelligence for AI agents: fetch, render, extract, research. x402
+  micropayments, no API keys."
+author: clawfetch
+source:
+  repository: https://github.com/clawfetch/clawfetch-mcp
+  revision: 6740eb688b8c9d7ad7419366d7a2f8aff19c4f63a7a81dacf267b2db9fc226b8
+  path: ai.clawfetch/mcp@0.2.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.clawfetch%2Fmcp/versions/0.2.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - clawfetch
+  - web
+  - intelligence
+  - agents
+  - fetch
+  - render
+  - extract
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:6740eb688b8c9d7ad7419366d7a2f8aff19c4f63a7a81dacf267b2db9fc226b8
+freshness: current

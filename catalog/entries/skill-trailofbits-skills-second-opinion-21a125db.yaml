@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-second-opinion-21a125db
+type: skill
+name: second-opinion
+summary: Agent Skill second-opinion from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/second-opinion/skills/second-opinion
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/second-opinion/skills/second-opinion
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - second
+  - opinion
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:21a125db4da1b301a1c11edf18e9b5c34abc4856c716d51ccec848488fd9d548
+freshness: current

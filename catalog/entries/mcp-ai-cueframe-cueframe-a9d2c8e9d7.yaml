@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-cueframe-cueframe-a9d2c8e9d7
+type: mcp-server
+name: CueFrame
+summary: "Turn footage into finished video: content-aware reframing, captions
+  behind the subject, graphics."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: a9d2c8e9d754241ba40c0592a8f01ee32020b9d275cfa542ec8a47d01f3ce645
+  path: ai.cueframe/cueframe@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cueframe%2Fcueframe/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cueframe
+  - turn
+  - footage
+  - into
+  - finished
+  - video
+  - content
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:a9d2c8e9d754241ba40c0592a8f01ee32020b9d275cfa542ec8a47d01f3ce645
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentlookups-groundtruth-1b376d783a
+type: mcp-server
+name: GroundTruth - Environmental Records
+summary: Federal environmental records near any US location, with dates and
+  provenance; never a safety score.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 1b376d783a3618d96efa7f8034d5f7e7d73def671516108a5437a98c94ee32db
+  path: ai.agentlookups/groundtruth@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentlookups%2Fgroundtruth/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentlookups
+  - groundtruth
+  - environmental
+  - records
+  - federal
+  - near
+  - any
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1b376d783a3618d96efa7f8034d5f7e7d73def671516108a5437a98c94ee32db
+freshness: current

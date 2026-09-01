@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-b77-google-ads-48b7ac9681
+type: mcp-server
+name: Google Ads
+summary: Read and manage your Google Ads account in chat.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 48b7ac9681716697ad70e29e0ec3d318137902e45538cf462ec256aa88c7ca67
+  path: ai.b77/google-ads@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Fgoogle-ads/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - google
+  - ads
+  - read
+  - manage
+  - account
+  - chat
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:48b7ac9681716697ad70e29e0ec3d318137902e45538cf462ec256aa88c7ca67
+freshness: current

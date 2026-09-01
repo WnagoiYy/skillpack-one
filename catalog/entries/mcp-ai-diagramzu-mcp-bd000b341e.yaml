@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-diagramzu-mcp-bd000b341e
+type: mcp-server
+name: DiagramZu
+summary: Let Claude, Cursor, or ChatGPT author Mermaid diagrams your team can
+  read and share.
+author: yenchieh
+source:
+  repository: https://github.com/yenchieh/diagramzu-mcp
+  revision: bd000b341ee8bab185c0d1204b6a3a71b585decb607fe0b06a40feae4d013512
+  path: ai.diagramzu/mcp@0.0.3
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.diagramzu%2Fmcp/versions/0.0.3
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - diagramzu
+  - let
+  - claude
+  - cursor
+  - chatgpt
+  - author
+  - mermaid
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:bd000b341ee8bab185c0d1204b6a3a71b585decb607fe0b06a40feae4d013512
+freshness: current

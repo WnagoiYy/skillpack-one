@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-autonomad-travel-fd4f8e76db
+type: mcp-server
+name: ai.autonomad/travel
+summary: AI travel agent — book flights, hotels, activities, and events
+  worldwide via autonomad.ai.
+author: Autonomad1
+source:
+  repository: https://github.com/Autonomad1/autonomad1
+  revision: fd4f8e76db02cc322cadac4f2582081e3d71950ef28140c1f580a8ffaaba44d4
+  path: ai.autonomad/travel@1.4.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.autonomad%2Ftravel/versions/1.4.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - autonomad
+  - travel
+  - agent
+  - book
+  - flights
+  - hotels
+  - activities
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:fd4f8e76db02cc322cadac4f2582081e3d71950ef28140c1f580a8ffaaba44d4
+freshness: current

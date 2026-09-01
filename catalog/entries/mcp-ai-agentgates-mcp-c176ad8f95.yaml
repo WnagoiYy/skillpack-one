@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-agentgates-mcp-c176ad8f95
+type: mcp-server
+name: ai.agentgates/mcp
+summary: Confidential compute and inference sold to agents over x402 USDC, plus
+  an agent wallet over MCP.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: c176ad8f95f777ee94b6ed307ba0cabaddf21d2c90c7e4c60bc7eac25e3a14a5
+  path: ai.agentgates/mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentgates%2Fmcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agentgates
+  - confidential
+  - compute
+  - inference
+  - sold
+  - agents
+  - over
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c176ad8f95f777ee94b6ed307ba0cabaddf21d2c90c7e4c60bc7eac25e3a14a5
+freshness: current

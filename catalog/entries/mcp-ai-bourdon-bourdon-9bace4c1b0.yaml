@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bourdon-bourdon-9bace4c1b0
+type: mcp-server
+name: Bourdon
+summary: Recognition-first cross-agent memory federation. One shared memory
+  across all your agents.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 9bace4c1b07e9a849b743cfb7cbb5c0c727a872a8d65ed844ab8f8757bd6f30c
+  path: ai.bourdon/bourdon@0.19.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bourdon%2Fbourdon/versions/0.19.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bourdon
+  - recognition
+  - first
+  - cross
+  - agent
+  - memory
+  - federation
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:9bace4c1b07e9a849b743cfb7cbb5c0c727a872a8d65ed844ab8f8757bd6f30c
+freshness: current

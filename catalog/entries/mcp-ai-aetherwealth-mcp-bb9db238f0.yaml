@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-aetherwealth-mcp-bb9db238f0
+type: mcp-server
+name: Aether Wealth
+summary: "Aether Wealth MCP for AI assistants: trades, alerts, market data,
+  macro calendar & indicators."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: bb9db238f0bd5132ca859e65f7d52834dc0d6f940193bdbcf282c26c2a101b3b
+  path: ai.aetherwealth/mcp@0.2.15
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.aetherwealth%2Fmcp/versions/0.2.15
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - aetherwealth
+  - aether
+  - wealth
+  - assistants
+  - trades
+  - alerts
+  - market
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:bb9db238f0bd5132ca859e65f7d52834dc0d6f940193bdbcf282c26c2a101b3b
+freshness: current

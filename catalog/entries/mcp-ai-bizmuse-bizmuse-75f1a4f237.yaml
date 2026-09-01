@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bizmuse-bizmuse-75f1a4f237
+type: mcp-server
+name: BizMuse AI Music Video
+summary: Official BizMuse MCP for complete AI music videos from audio and 1-7
+  reference images.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 75f1a4f237b3db7f018e5676f4948e6f3a97beafb94cc770855b53e321704511
+  path: ai.bizmuse/bizmuse@0.1.6
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bizmuse%2Fbizmuse/versions/0.1.6
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bizmuse
+  - music
+  - video
+  - official
+  - complete
+  - videos
+  - audio
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:75f1a4f237b3db7f018e5676f4948e6f3a97beafb94cc770855b53e321704511
+freshness: current

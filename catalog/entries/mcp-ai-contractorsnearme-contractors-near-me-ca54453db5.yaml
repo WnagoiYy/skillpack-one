@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-contractorsnearme-contractors-near-me-ca54453db5
+type: mcp-server
+name: Contractors Near Me
+summary: Search licensed US contractors by trade or location, fetch profiles and
+  reviews, and submit leads.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: ca54453db5854e3063e2924f069583d6d4acaf390ce71d386e6d8d3b506908fb
+  path: ai.contractorsnearme/contractors-near-me@1.2.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.contractorsnearme%2Fcontractors-near-me/versions/1.2.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - contractorsnearme
+  - contractors
+  - near
+  - search
+  - licensed
+  - trade
+  - location
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:ca54453db5854e3063e2924f069583d6d4acaf390ce71d386e6d8d3b506908fb
+freshness: current

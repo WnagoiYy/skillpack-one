@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-c-review-f8056a8f
+type: skill
+name: c-review
+summary: Agent Skill c-review from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/c-review/skills/c-review
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/c-review/skills/c-review
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - c
+  - review
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:f8056a8f8b0f337aa774020d60f866bbe0f47ad3b52ab885633efc7c9ccf34c2
+freshness: current

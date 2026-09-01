@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-chinamarketing-intelligence-694653c3c9
+type: mcp-server
+name: China Marketing AI Intelligence MCP
+summary: Remote MCP server for China brand visibility, destination demand, and
+  KOL discovery workflows.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 694653c3c9b56243086a4b76b9a9b3e4d4d38cc9a17b8d1ac548d48b6debe8aa
+  path: ai.chinamarketing/intelligence@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.chinamarketing%2Fintelligence/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - chinamarketing
+  - intelligence
+  - china
+  - marketing
+  - remote
+  - brand
+  - visibility
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:694653c3c9b56243086a4b76b9a9b3e4d4d38cc9a17b8d1ac548d48b6debe8aa
+freshness: current

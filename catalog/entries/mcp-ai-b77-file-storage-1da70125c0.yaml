@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-b77-file-storage-1da70125c0
+type: mcp-server
+name: File Storage
+summary: Upload files and get public CDN links in chat.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 1da70125c0c59872b781536406874e4eb195c4a59909afb9940e3db11086387c
+  path: ai.b77/file-storage@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.b77%2Ffile-storage/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - b77
+  - file
+  - storage
+  - upload
+  - files
+  - get
+  - public
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:1da70125c0c59872b781536406874e4eb195c4a59909afb9940e3db11086387c
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-aqta-seal-e2aff621e4
+type: mcp-server
+name: ai.aqta/seal
+summary: "Verify Seal AI decision receipts: signed evidence anyone can check, no
+  account needed."
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: e2aff621e455a998e677d3359bd149fc1445c6c5b1dd104686a904a80790594b
+  path: ai.aqta/seal@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.aqta%2Fseal/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - aqta
+  - seal
+  - verify
+  - decision
+  - receipts
+  - signed
+  - evidence
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:e2aff621e455a998e677d3359bd149fc1445c6c5b1dd104686a904a80790594b
+freshness: current

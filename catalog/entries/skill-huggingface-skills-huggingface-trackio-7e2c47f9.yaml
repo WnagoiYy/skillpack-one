@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-huggingface-skills-huggingface-trackio-7e2c47f9
+type: skill
+name: huggingface-trackio
+summary: Agent Skill huggingface-trackio from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/huggingface-trackio
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/huggingface-trackio
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - huggingface
+  - trackio
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:7e2c47f9b28fc93cce016bdb3caa325d55063bddc62c9620fa46e1542c1f3557
+freshness: current

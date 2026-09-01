@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-huggingface-skills-huggingface-tool-builder-6cf60271
+type: skill
+name: huggingface-tool-builder
+summary: Agent Skill huggingface-tool-builder from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/huggingface-tool-builder
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/huggingface-tool-builder
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - huggingface
+  - tool
+  - builder
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:6cf602718c8df32808042543724adfcd733c1274bdaa99dfe46f080b008cf310
+freshness: current

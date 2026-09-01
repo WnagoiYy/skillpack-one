@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-slicing-code-context-265bd6b0
+type: skill
+name: slicing-code-context
+summary: Agent Skill slicing-code-context from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/trailmark/skills/slicing-code-context
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/trailmark/skills/slicing-code-context
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - slicing
+  - code
+  - context
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:265bd6b00509e134f777725f937c476da4d08a5e04e8a5c2507a0ea5677c7a91
+freshness: current

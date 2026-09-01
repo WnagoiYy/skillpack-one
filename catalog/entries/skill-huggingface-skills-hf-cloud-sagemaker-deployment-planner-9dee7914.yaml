@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: skill-huggingface-skills-hf-cloud-sagemaker-deployment-planner-9dee7914
+type: skill
+name: hf-cloud-sagemaker-deployment-planner
+summary: Agent Skill hf-cloud-sagemaker-deployment-planner from huggingface/skills.
+author: huggingface
+source:
+  repository: https://github.com/huggingface/skills
+  revision: cead19e10754e773bad24fecef83cb64be24094e
+  path: skills/hf-cloud-sagemaker-deployment-planner
+  url: https://github.com/huggingface/skills/tree/cead19e10754e773bad24fecef83cb64be24094e/skills/hf-cloud-sagemaker-deployment-planner
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - hf
+  - cloud
+  - sagemaker
+  - deployment
+  - planner
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:9dee7914ba17c09ccec4c8c5c450ae522e90ba985557fb4ed754542eb40820b7
+freshness: current

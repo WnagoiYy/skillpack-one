@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-com-mcp-contabo-9a82c85196
+type: mcp-server
+name: Contabo (VPS) MCP Server
+summary: Contabo API (v1.0.0) as MCP tools for cloud provisioning, and
+  management. Powered by HAPI MCP server
+author: la-rebelion
+source:
+  repository: https://github.com/la-rebelion/hapimcp
+  revision: 9a82c85196a695f172ebee33f95a0cd1ac7666c27b5d38a4430338008396cd19
+  path: ai.com.mcp/contabo@0.6.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.com.mcp%2Fcontabo/versions/0.6.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - com
+  - contabo
+  - vps
+  - api
+  - tools
+  - cloud
+  - provisioning
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:9a82c85196a695f172ebee33f95a0cd1ac7666c27b5d38a4430338008396cd19
+freshness: current

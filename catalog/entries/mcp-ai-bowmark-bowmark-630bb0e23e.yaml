@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-bowmark-bowmark-630bb0e23e
+type: mcp-server
+name: Bowmark
+summary: "Do things on live websites: prices, availability, quotes, bookings,
+  anything behind a form or login."
+author: bowmark-ai
+source:
+  repository: https://github.com/bowmark-ai/skill
+  revision: 630bb0e23e0a109cca24879bc53cc76491d11dc4f51e5acc69fea79bc72a30f1
+  path: ai.bowmark/bowmark@8.81.3
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bowmark%2Fbowmark/versions/8.81.3
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bowmark
+  - things
+  - live
+  - websites
+  - prices
+  - availability
+  - quotes
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:630bb0e23e0a109cca24879bc53cc76491d11dc4f51e5acc69fea79bc72a30f1
+freshness: current

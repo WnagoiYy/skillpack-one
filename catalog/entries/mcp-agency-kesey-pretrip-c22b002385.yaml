@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-agency-kesey-pretrip-c22b002385
+type: mcp-server
+name: Pre-Trip compliance scanner
+summary: Screen regulated-health marketing copy against source-cited rulesets,
+  all 50 states.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: c22b002385383890b412b7de70b0eb8e3686db0d86cffe0e0adf5a0c914fe449
+  path: agency.kesey/pretrip@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/agency.kesey%2Fpretrip/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - agency
+  - kesey
+  - pretrip
+  - pre
+  - trip
+  - compliance
+  - scanner
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:c22b002385383890b412b7de70b0eb8e3686db0d86cffe0e0adf5a0c914fe449
+freshness: current

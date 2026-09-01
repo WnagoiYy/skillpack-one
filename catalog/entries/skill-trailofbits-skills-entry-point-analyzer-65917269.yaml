@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-entry-point-analyzer-65917269
+type: skill
+name: entry-point-analyzer
+summary: Agent Skill entry-point-analyzer from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/entry-point-analyzer/skills/entry-point-analyzer
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/entry-point-analyzer/skills/entry-point-analyzer
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - entry
+  - point
+  - analyzer
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:65917269b3bb245f86178ba629d44d20f0f1827aa2f0929848b0110364ad09a1
+freshness: current

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-github-triage-da170eab
+type: skill
+name: github-triage
+summary: Agent Skill github-triage from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/github-triage/skills/github-triage
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/github-triage/skills/github-triage
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - github
+  - triage
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:da170eab2412f2b3dbd4eef69a990ac1c60da59e53cf90a73cb16d8096dd506c
+freshness: current

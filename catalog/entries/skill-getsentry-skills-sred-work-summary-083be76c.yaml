@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: skill-getsentry-skills-sred-work-summary-083be76c
+type: skill
+name: sred-work-summary
+summary: Agent Skill sred-work-summary from getsentry/skills.
+author: getsentry
+source:
+  repository: https://github.com/getsentry/skills
+  revision: c2f99a5b04b4cd992ec3022d7c2c3e23e938d241
+  path: skills/sred-work-summary
+  url: https://github.com/getsentry/skills/tree/c2f99a5b04b4cd992ec3022d7c2c3e23e938d241/skills/sred-work-summary
+license:
+  status: detected
+  spdx: Apache-2.0
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - sred
+  - work
+  - summary
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:083be76c22c552e49629465e5103faff80053d9c1108cb83e39bd4dcc5a0709d
+freshness: current

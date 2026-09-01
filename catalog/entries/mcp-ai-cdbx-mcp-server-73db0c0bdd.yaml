@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-cdbx-mcp-server-73db0c0bdd
+type: mcp-server
+name: ai.cdbx/mcp-server
+summary: Build Apps and run code in 30 languages — sandboxed, with persistent
+  sessions for agent loops.
+author: ChristopherHButler
+source:
+  repository: https://github.com/ChristopherHButler/cdbx.ai
+  revision: 73db0c0bdde0c718b85dadfcd1f08dcf50f21f03b433e0a08113740c4dbeeb64
+  path: ai.cdbx/mcp-server@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cdbx%2Fmcp-server/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cdbx
+  - build
+  - apps
+  - run
+  - code
+  - languages
+  - sandboxed
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:73db0c0bdde0c718b85dadfcd1f08dcf50f21f03b433e0a08113740c4dbeeb64
+freshness: current

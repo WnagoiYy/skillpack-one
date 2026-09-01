@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-artidrop-artidrop-674e83cb66
+type: mcp-server
+name: ai.artidrop/artidrop
+summary: Publish HTML, Markdown, and multi-file sites as shareable URLs
+  instantly via MCP.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 674e83cb66b0733c578f74efd5e422bf864e21111bbd8c3333091a3793ab957c
+  path: ai.artidrop/artidrop@1.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.artidrop%2Fartidrop/versions/1.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - artidrop
+  - publish
+  - html
+  - markdown
+  - multi
+  - file
+  - sites
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:674e83cb66b0733c578f74efd5e422bf864e21111bbd8c3333091a3793ab957c
+freshness: current

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: skill-trailofbits-skills-testing-handbook-generator-d95444bc
+type: skill
+name: testing-handbook-generator
+summary: Agent Skill testing-handbook-generator from trailofbits/skills.
+author: trailofbits
+source:
+  repository: https://github.com/trailofbits/skills
+  revision: 14e5a1070020c5d101e8362756f3201fb677b467
+  path: plugins/testing-handbook-skills/skills/testing-handbook-generator
+  url: https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/testing-handbook-skills/skills/testing-handbook-generator
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - testing
+  - handbook
+  - generator
+security:
+  status: unreviewed
+  executesUpstreamCode: false
+  notes: Discovered from a shallow, no-checkout Git tree; Skill instructions and
+    scripts were not executed.
+fingerprint: sha256:d95444bc05babfcc1ad1a0d906d9485b16277e167d6fcc98315c2f52164ad1c7
+freshness: current

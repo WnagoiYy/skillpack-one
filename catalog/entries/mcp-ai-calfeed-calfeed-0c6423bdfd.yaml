@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-calfeed-calfeed-0c6423bdfd
+type: mcp-server
+name: Calfeed
+summary: Turn a written schedule into a live calendar link people subscribe to
+  in Apple, Google, Outlook.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 0c6423bdfdc625318688ff567e95c01fd610ee4f035e962f83fc234f378c2df4
+  path: ai.calfeed/calfeed@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.calfeed%2Fcalfeed/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - calfeed
+  - turn
+  - written
+  - schedule
+  - into
+  - live
+  - calendar
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0c6423bdfdc625318688ff567e95c01fd610ee4f035e962f83fc234f378c2df4
+freshness: current

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-clize-storefront-060b401d5a
+type: mcp-server
+name: Agent Storefront
+summary: "Let your AI agent run a real store: checkout, orders, refunds,
+  shipping and support."
+author: cooldk
+source:
+  repository: https://github.com/cooldk/clize-cli
+  revision: 060b401d5afb54b59dd1189b2e2757247e2298929c5d71e076d3d7c593d051cc
+  path: ai.clize/storefront@0.32.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.clize%2Fstorefront/versions/0.32.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - clize
+  - storefront
+  - agent
+  - let
+  - run
+  - real
+  - store
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:060b401d5afb54b59dd1189b2e2757247e2298929c5d71e076d3d7c593d051cc
+freshness: current

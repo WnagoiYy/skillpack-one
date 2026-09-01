@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-arpi-arpi-mcp-8eae56122c
+type: mcp-server
+name: ARPI MCP
+summary: "AI-powered ECG analysis: submit ECG images and receive diagnosis
+  reports from ARPI's ECG AI."
+author: arpi-ai
+source:
+  repository: https://github.com/arpi-ai/arpi-mcp
+  revision: 8eae56122c0bd5eb6052d8682901a75815c9a474e7baf3e2583aea24698ec3d5
+  path: ai.arpi/arpi-mcp@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.arpi%2Farpi-mcp/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - arpi
+  - powered
+  - ecg
+  - analysis
+  - submit
+  - images
+  - receive
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:8eae56122c0bd5eb6052d8682901a75815c9a474e7baf3e2583aea24698ec3d5
+freshness: current

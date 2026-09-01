@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-cofoundagent-cofound-df3011d64e
+type: mcp-server
+name: Cofound
+summary: MCP-native co-founder directory your AI agent searches, screening
+  inbound pitches for you.
+author: cofound-agent
+source:
+  repository: https://github.com/cofound-agent/plugin
+  revision: df3011d64efb1679221f81a9dba6129cb8ba00e22d88a7e0e5f6c44e91b9a86d
+  path: ai.cofoundagent/cofound@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cofoundagent%2Fcofound/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cofoundagent
+  - cofound
+  - native
+  - founder
+  - directory
+  - agent
+  - searches
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:df3011d64efb1679221f81a9dba6129cb8ba00e22d88a7e0e5f6c44e91b9a86d
+freshness: current

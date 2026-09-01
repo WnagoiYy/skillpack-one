@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-bittlebits-bittlebits-6157ecfeb8
+type: mcp-server
+name: BittleBits GEO Assistant
+summary: GEO scores and content-rewrite suggestions for any web page, as MCP tools.
+author: bittlebitsai
+source:
+  repository: https://github.com/bittlebitsai/bittlebits-plugin
+  revision: 6157ecfeb84bf52a1be8447a73ac689803984c00d1142713e77f783cff18a9a6
+  path: ai.bittlebits/bittlebits@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.bittlebits%2Fbittlebits/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - bittlebits
+  - geo
+  - assistant
+  - scores
+  - content
+  - rewrite
+  - suggestions
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:6157ecfeb84bf52a1be8447a73ac689803984c00d1142713e77f783cff18a9a6
+freshness: current

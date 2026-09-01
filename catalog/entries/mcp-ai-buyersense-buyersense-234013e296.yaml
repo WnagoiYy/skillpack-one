@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: mcp-ai-buyersense-buyersense-234013e296
+type: mcp-server
+name: ai.buyersense/buyersense
+summary: MCP server for the BuyerSense API. Get buyer signals from any MCP client.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: 234013e2964f43e69ddba759576f3db601789db630a14e0969d18a6c5b4a9463
+  path: ai.buyersense/buyersense@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.buyersense%2Fbuyersense/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - buyersense
+  - api
+  - get
+  - buyer
+  - signals
+  - any
+  - client
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:234013e2964f43e69ddba759576f3db601789db630a14e0969d18a6c5b4a9463
+freshness: current

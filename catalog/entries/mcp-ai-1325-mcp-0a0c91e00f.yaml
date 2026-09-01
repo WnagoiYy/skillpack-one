@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-1325-mcp-0a0c91e00f
+type: mcp-server
+name: 1325.AI
+summary: Verified directory of 44,000+ Black-owned U.S. businesses. Search,
+  maps, loyalty rewards.
+author: 1325ai
+source:
+  repository: https://github.com/1325ai/1325ai
+  revision: 0a0c91e00fd2fc776d49f70c74b00fbeea43ba601d9dadcc7f15fb386f4b0139
+  path: ai.1325/mcp@0.1.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.1325%2Fmcp/versions/0.1.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - "1325"
+  - verified
+  - directory
+  - "000"
+  - black
+  - owned
+  - businesses
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:0a0c91e00fd2fc776d49f70c74b00fbeea43ba601d9dadcc7f15fb386f4b0139
+freshness: current

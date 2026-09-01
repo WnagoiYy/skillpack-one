@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-cueapi-mcp-9304c6d8a9
+type: mcp-server
+name: ai.cueapi/mcp
+summary: Schedule agent work and report write-once outcomes via CueAPI from any
+  MCP host.
+author: cueapi
+source:
+  repository: https://github.com/cueapi/cueapi-mcp
+  revision: 9304c6d8a902e18348f3da133a9663dd2249692571f955754ea2989024ba67cd
+  path: ai.cueapi/mcp@0.1.3
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.cueapi%2Fmcp/versions/0.1.3
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - cueapi
+  - schedule
+  - agent
+  - work
+  - report
+  - write
+  - once
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:9304c6d8a902e18348f3da133a9663dd2249692571f955754ea2989024ba67cd
+freshness: current

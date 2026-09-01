@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ac-tandem-docs-mcp-3bae5d0f2c
+type: mcp-server
+name: ac.tandem/docs-mcp
+summary: Remote MCP server for Tandem docs, install guides, SDKs, workflows, and
+  agent setup help.
+author: frumu-ai
+source:
+  repository: https://github.com/frumu-ai/tandem
+  revision: 3bae5d0f2cb1b34788e024aad08ec9f771e126a2d40a06177f0e3a0428a07c80
+  path: ac.tandem/docs-mcp@0.3.2
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ac.tandem%2Fdocs-mcp/versions/0.3.2
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - tandem
+  - docs
+  - remote
+  - install
+  - guides
+  - sdks
+  - workflows
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:3bae5d0f2cb1b34788e024aad08ec9f771e126a2d40a06177f0e3a0428a07c80
+freshness: current

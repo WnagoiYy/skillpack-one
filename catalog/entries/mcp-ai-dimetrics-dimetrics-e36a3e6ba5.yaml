@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-dimetrics-dimetrics-e36a3e6ba5
+type: mcp-server
+name: ai.dimetrics/dimetrics
+summary: HPC lease economics, datacenter power, debt linkage, and political risk
+  for miners and neoclouds.
+author: modelcontextprotocol
+source:
+  repository: https://github.com/modelcontextprotocol/registry
+  revision: e36a3e6ba56f090b280f5f059a17a141191fff83ca6a219cdecd5756c72403d2
+  path: ai.dimetrics/dimetrics@1.0.0
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.dimetrics%2Fdimetrics/versions/1.0.0
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - dimetrics
+  - hpc
+  - lease
+  - economics
+  - datacenter
+  - power
+  - debt
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:e36a3e6ba56f090b280f5f059a17a141191fff83ca6a219cdecd5756c72403d2
+freshness: current

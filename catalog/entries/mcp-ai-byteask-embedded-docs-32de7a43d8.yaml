@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-byteask-embedded-docs-32de7a43d8
+type: mcp-server
+name: ai.byteask/embedded-docs
+summary: Page-cited retrieval for embedded docs, datasheets, MISRA, CMSIS, and
+  RTOS references.
+author: ByteAsk
+source:
+  repository: https://github.com/ByteAsk/ByteAsk-Embedded-MCP
+  revision: 32de7a43d8412d17732e07c6a52f858b7445ea58be96b67fff5b75da96b5eb91
+  path: ai.byteask/embedded-docs@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.byteask%2Fembedded-docs/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - byteask
+  - embedded
+  - docs
+  - page
+  - cited
+  - retrieval
+  - datasheets
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:32de7a43d8412d17732e07c6a52f858b7445ea58be96b67fff5b75da96b5eb91
+freshness: current

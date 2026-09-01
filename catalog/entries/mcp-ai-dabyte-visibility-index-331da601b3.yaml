@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: mcp-ai-dabyte-visibility-index-331da601b3
+type: mcp-server
+name: DABYTE AI Visibility Index
+summary: Measured share of answer for 20 SaaS brands. An open dataset, not an
+  audit of your site.
+author: creanlab
+source:
+  repository: https://github.com/creanlab/ai-visibility-index
+  revision: 331da601b32ada71948b5a3f37c4d92102bb9897653682d1f9110087c78c9ab4
+  path: ai.dabyte/visibility-index@1.0.1
+  url: https://registry.modelcontextprotocol.io/v0.1/servers/ai.dabyte%2Fvisibility-index/versions/1.0.1
+license:
+  status: unknown
+verifiedAt: 2026-09-02T02:18:00Z
+capabilities:
+  - mcp
+  - dabyte
+  - visibility
+  - index
+  - measured
+  - share
+  - answer
+  - saas
+security:
+  status: metadata-reviewed
+  executesUpstreamCode: false
+  notes: Cataloged from the official MCP Registry; packages and remotes were not
+    executed.
+fingerprint: sha256:331da601b32ada71948b5a3f37c4d92102bb9897653682d1f9110087c78c9ab4
+freshness: current
