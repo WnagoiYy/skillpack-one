@@ -64,6 +64,7 @@ describe("Skill source and projections", () => {
         if (directory.name.startsWith("category-")) {
           await expect(readFile(path.join(projectionRoot, directory.name, "references", "index.en.md"), "utf8")).resolves.toContain("Atomic Skills");
           await expect(readFile(path.join(projectionRoot, directory.name, "references", "index.zh-CN.md"), "utf8")).resolves.toContain("原子 Skill");
+          await expect(readFile(path.join(projectionRoot, directory.name, "references", "index.zh.md"), "utf8")).resolves.toContain("原子 Skill");
         }
       }
     }

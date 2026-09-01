@@ -129,7 +129,9 @@ async function expectedFiles(root: string): Promise<Map<string, string>> {
       const node = taxonomy.nodes.find((candidate) => candidate.id === nodeId);
       if (!node) throw new Error(`${directory} has no taxonomy node ${nodeId}`);
       expected.set(path.join(directory, "references", "index.en.md"), renderIndex(node, contracts, "en"));
-      expected.set(path.join(directory, "references", "index.zh-CN.md"), renderIndex(node, contracts, "zh-CN"));
+      const chineseIndex = renderIndex(node, contracts, "zh-CN");
+      expected.set(path.join(directory, "references", "index.zh-CN.md"), chineseIndex);
+      expected.set(path.join(directory, "references", "index.zh.md"), chineseIndex);
     }
   }
   return expected;
