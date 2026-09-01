@@ -48,10 +48,9 @@
 
 ```text
 .codex-plugin/plugin.json       Codex 插件清单
-.agents/skills/                 唯一权威 Skill 源码
-  category-*/                   分类 Skill
-  atom-*/                       原子 Skill
-  meta-skill-governor/          元 Skill
+skill-src/                      唯一权威模板与能力契约
+skills/                         自动生成的插件 Skill 投影
+.agents/skills/                 自动生成的 Codex 项目 Skill 投影
 catalog/                        300+ 上游能力目录与快照
 taxonomy/                       分类树和边界标准
 packs/                          插件式能力包/配方
@@ -63,7 +62,7 @@ docs/                           英文文档
 docs/zh-CN/                     中文文档
 ```
 
-仓库根目录本身就是插件，清单直接指向 `.agents/skills`，避免复制或符号链接造成双重真相。
+仓库根目录本身就是插件。当前插件规范要求 Skill 投影位于 `skills/`，Codex 项目原生发现则使用 `.agents/skills/`。生成器从 `skill-src/` 确定性地产生两份投影，CI 拒绝任何漂移。契约与模板仍是唯一事实来源，两个生成目录只是兼容产物；这也避免了 Windows 上不可靠的符号链接。
 
 ## 5. 什么叫“原子 Skill”
 

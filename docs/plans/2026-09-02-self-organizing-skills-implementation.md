@@ -4,7 +4,7 @@
 
 **Goal:** Publish an English-first, Chinese-localized, Codex-compatible repository that classifies, catalogs, composes, evaluates, and safely evolves atomic Agent Skills, with 300+ attributed Skill/MCP entries and a Pi-backed evaluation path.
 
-**Architecture:** The repository root is a Codex plugin. `.agents/skills` is the canonical native Skill directory. YAML contracts feed a generated registry and category indexes. A TypeScript CLI provides validation, routing, cataloging, evaluation, training proposals, and harness adapters.
+**Architecture:** The repository root is a Codex plugin. `skill-src` is the canonical template/contract source; deterministic projections target both the plugin-required `skills` directory and the Codex project-native `.agents/skills` directory. YAML contracts feed a generated registry and category indexes. A TypeScript CLI provides validation, routing, cataloging, evaluation, training proposals, and harness adapters.
 
 **Technology:** Node.js 24, TypeScript, pnpm, Vitest, YAML, JSON Schema/Ajv, Commander, Pi coding-agent package, GitHub Actions.
 
@@ -35,13 +35,13 @@
 
 ## Task 3: Create Category, Atomic, and Meta Skills
 
-**Files:** `.agents/skills/category-*`, `.agents/skills/atom-*`, `.agents/skills/meta-skill-governor`, `scripts/generate-category-indexes.ts`, `tests/skill-layout.test.ts`
+**Files:** `skill-src/category-*`, `skill-src/atom-*`, `skill-src/meta-skill-governor`, `skills/*`, `.agents/skills/*`, `scripts/generate-skill-projections.ts`, `tests/skill-layout.test.ts`
 
 1. Write failing layout tests using Codex/Agent Skills naming and frontmatter rules.
 2. Create ten category Skills with localized indexes and boundary references.
 3. Create a small representative atom set spanning read-only, artifact creation, verification, and governed mutation.
 4. Create the meta Skill with proposal, evaluation, promotion, deprecation, and rollback procedures.
-5. Generate category indexes from `skill.contract.yaml` and fail on staleness.
+5. Generate category indexes and both compatibility projections from `skill.contract.yaml`; fail on staleness or divergence.
 6. Validate every Skill with the Codex skill validator.
 7. Commit `feat: add category atom and meta skills`.
 

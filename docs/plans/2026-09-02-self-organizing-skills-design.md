@@ -64,10 +64,9 @@ Store all capabilities in a database and expose one universal router Skill.
 
 ```text
 .codex-plugin/plugin.json           Codex plugin manifest
-.agents/skills/                     Native Codex Skills; canonical skill source
-  category-*/                       Generated or curated category Skills
-  atom-*/                           Atomic Skills
-  meta-skill-governor/              Governed evolution workflow
+skill-src/                           Canonical Skill templates and contracts
+skills/                              Generated plugin Skill projection
+.agents/skills/                      Generated native Codex project projection
 catalog/
   sources.yaml                      Upstream source definitions
   entries/                          Normalized Skill/MCP metadata
@@ -86,7 +85,7 @@ docs/                               English documentation
 docs/zh-CN/                         Chinese documentation
 ```
 
-The repository root is itself a plugin. The plugin manifest points at `.agents/skills`, so there is one canonical copy rather than a fragile symlink or generated duplicate.
+The repository root is itself a plugin. Current plugin validation requires the plugin projection at `skills/`, while Codex project discovery uses `.agents/skills/`. A deterministic generator renders both from `skill-src/`; CI rejects projection drift. Contracts and templates are the single source of truth, while generated copies are compatibility artifacts. This is more portable than symlinks on Windows and honest about both discovery contracts.
 
 ## 5. Capability model
 
