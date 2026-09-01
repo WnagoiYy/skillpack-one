@@ -1,0 +1,41 @@
+{
+  "name": "self-organizing-skills",
+  "version": "0.1.0",
+  "description": "Atomic, composable, evaluated, and safely self-improving Agent Skills for Codex and compatible harnesses.",
+  "author": {
+    "name": "WnagoiYy",
+    "email": "995496580@qq.com",
+    "url": "https://github.com/WnagoiYy"
+  },
+  "homepage": "https://github.com/WnagoiYy/self-organizing-skills",
+  "repository": "https://github.com/WnagoiYy/self-organizing-skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "agent-skills",
+    "atomic-skills",
+    "codex",
+    "evaluation",
+    "mcp",
+    "self-improving"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Self-Organizing Skills",
+    "shortDescription": "Build and govern atomic Agent Skills",
+    "longDescription": "Classify, compose, evaluate, and safely evolve atomic Agent Skills and MCP capabilities with bilingual indexes and evidence-gated releases.",
+    "developerName": "WnagoiYy",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Skill routing",
+      "Capability catalog",
+      "Evaluation",
+      "Governed evolution"
+    ],
+    "defaultPrompt": [
+      "Find the smallest skills needed for this task.",
+      "Evaluate routing and completion for this skill pack.",
+      "Propose a safe, tested improvement to these skills."
+    ],
+    "brandColor": "#5B5BD6"
+  }
+}

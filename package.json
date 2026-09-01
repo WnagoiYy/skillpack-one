@@ -1,0 +1,53 @@
+{
+  "name": "self-organizing-skills",
+  "version": "0.1.0",
+  "description": "A Codex-compatible operating system for atomic, composable, evaluated, and self-improving Agent Skills.",
+  "type": "module",
+  "private": false,
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "bin": {
+    "sos": "./dist/cli.js"
+  },
+  "files": [
+    ".agents/skills",
+    ".codex-plugin",
+    "skills",
+    "skill-src",
+    "catalog",
+    "taxonomy",
+    "packs",
+    "schemas",
+    "dist",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm test",
+    "sos": "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "commander": "15.0.0",
+    "yaml": "2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.4.0",
+    "tsx": "4.23.13",
+    "typescript": "7.0.2",
+    "vitest": "4.1.11"
+  },
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  }
+}

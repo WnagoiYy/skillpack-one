@@ -6,7 +6,7 @@
 
 **Architecture:** The repository root is a Codex plugin. `skill-src` is the canonical template/contract source; deterministic projections target both the plugin-required `skills` directory and the Codex project-native `.agents/skills` directory. YAML contracts feed a generated registry and category indexes. A TypeScript CLI provides validation, routing, cataloging, evaluation, training proposals, and harness adapters.
 
-**Technology:** Node.js 24, TypeScript, pnpm, Vitest, YAML, JSON Schema/Ajv, Commander, Pi coding-agent package, GitHub Actions.
+**Technology:** Node.js 24, TypeScript, npm, Vitest, YAML, JSON Schema/Ajv, Commander, Pi coding-agent package, GitHub Actions.
 
 ---
 

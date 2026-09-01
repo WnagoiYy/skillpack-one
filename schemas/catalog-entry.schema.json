@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://self-organizing-skills.dev/schemas/catalog-entry.schema.json",
+  "title": "Upstream capability catalog entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "type", "name", "summary", "author", "source", "license", "verifiedAt", "capabilities", "security"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 160 },
+    "type": { "enum": ["skill", "mcp-server", "plugin", "harness"] },
+    "name": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "author": { "type": "string", "minLength": 1 },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "revision", "path", "url"],
+      "properties": {
+        "repository": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "revision": { "type": "string", "pattern": "^[0-9a-fA-F]{40,64}$" },
+        "path": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri", "pattern": "^https://" }
+      }
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["declared", "detected", "unknown", "conflicting"] },
+        "spdx": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "enum": ["declared", "detected"] } }, "required": ["status"] },
+          "then": {
+            "properties": { "spdx": { "type": "string", "minLength": 1 } },
+            "required": ["spdx"]
+          }
+        }
+      ]
+    },
+    "verifiedAt": { "type": "string", "format": "date-time" },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "executesUpstreamCode"],
+      "properties": {
+        "status": { "enum": ["unreviewed", "metadata-reviewed", "statically-reviewed", "sandbox-tested", "rejected"] },
+        "executesUpstreamCode": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "fingerprint": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "duplicateCluster": { "type": "string", "minLength": 1 },
+    "freshness": { "enum": ["current", "stale", "archived", "unknown"] }
+  }
+}
