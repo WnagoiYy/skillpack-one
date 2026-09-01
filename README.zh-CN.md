@@ -62,6 +62,7 @@ npm run sos -- route "请调研三家竞争对手并输出带引用的中文报�
 npm run sos -- catalog stats
 npm run sos -- packs
 npm run sos -- harness status
+npm run sos -- harness discover --adapter pi
 ```
 
 若要以 Codex 项目级 Skill 使用，请把本仓库 `.agents/skills/` 下经过审查的目录复制到目标仓库的 `.agents/skills/`。插件包和兼容 Harness 使用 `skills/`。二者都由 `skill-src/` 生成，请勿直接编辑投影目录。

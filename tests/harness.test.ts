@@ -7,10 +7,17 @@ import { PiHarnessAdapter } from "../src/harness/pi.js";
 import { DshHarnessAdapter } from "../src/harness/dsh.js";
 import { CodexHarnessAdapter } from "../src/harness/codex.js";
 import { evaluateTaskDataset, loadTaskDataset } from "../src/eval/tasks.js";
+import { buildProgram } from "../src/cli.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 describe("harness adapters", () => {
+  it("exposes capability discovery as a first-class CLI command", () => {
+    const program = buildProgram();
+    const harness = program.commands.find((command) => command.name() === "harness");
+    expect(harness?.commands.map((command) => command.name())).toContain("discover");
+  });
+
   it("runs deterministic offline routing and task protocol checks", async () => {
     const [taxonomy, contracts] = await Promise.all([loadTaxonomy(root), loadContracts(root)]);
     const adapter = new MockHarnessAdapter(taxonomy, contracts);

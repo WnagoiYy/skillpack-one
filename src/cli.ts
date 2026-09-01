@@ -107,6 +107,22 @@ export function buildProgram(): Command {
     });
 
   harness
+    .command("discover")
+    .description("Run real Skill discovery through a pinned harness adapter")
+    .option("--root <path>", "repository root", process.cwd())
+    .option("--adapter <name>", "pi, dsh, or codex", "pi")
+    .action(async (options: { root: string; adapter: string }) => {
+      const root = path.resolve(options.root);
+      let adapter: HarnessAdapter;
+      if (options.adapter === "pi") adapter = new PiHarnessAdapter(root);
+      else if (options.adapter === "dsh") adapter = new DshHarnessAdapter();
+      else if (options.adapter === "codex") adapter = new CodexHarnessAdapter(root);
+      else throw new Error(`Unknown discovery adapter: ${options.adapter}`);
+      const capabilities = await adapter.discover();
+      process.stdout.write(`${JSON.stringify(capabilities, null, 2)}\n`);
+    });
+
+  harness
     .command("tasks")
     .option("--root <path>", "repository root", process.cwd())
     .option("--adapter <name>", "mock, pi, dsh, or codex", "mock")

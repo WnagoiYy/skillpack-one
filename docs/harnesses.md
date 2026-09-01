@@ -10,6 +10,7 @@ Run:
 
 ```sh
 npm run sos -- harness status
+npm run sos -- harness discover --adapter pi
 npm run sos -- harness tasks --adapter pi --provider <provider> --model <model>
 ```
 

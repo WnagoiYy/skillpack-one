@@ -62,6 +62,7 @@ npm run sos -- route "请调研三家竞争对手并输出带引用的中文报�
 npm run sos -- catalog stats
 npm run sos -- packs
 npm run sos -- harness status
+npm run sos -- harness discover --adapter pi
 ```
 
 For a Codex project-native installation, copy the reviewed directories under `.agents/skills/` into the target repository's `.agents/skills/`. The same generated Skills are available under `skills/` for the plugin bundle and compatible harnesses. Canonical sources live in `skill-src/`; do not edit either projection directly.

@@ -8,6 +8,7 @@ Skill 的表现同时取决于 Skill 本身和 Agent Harness。每次运行都�
 
 ```sh
 npm run sos -- harness status
+npm run sos -- harness discover --adapter pi
 npm run sos -- harness tasks --adapter pi --provider <provider> --model <model>
 ```
 
