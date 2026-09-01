@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: proposal-generic-zh-fallback
+createdAt: 2026-09-01T18:39:00Z
+targetSkill: category-skill-agent-governance
+baseRevision: 9cf29c0cc711c5caed071c45c08d49d31a7fcd62
+candidateRevision: 5309b4bf135b1236d9e3bab5759a21afc054b3ac
+rollbackRevision: 9cf29c0cc711c5caed071c45c08d49d31a7fcd62
+observation: Generic Chinese locales need an index.zh.md fallback in addition to the region-specific index.zh-CN.md projection.
+allowedFiles:
+  - scripts/generate-skill-projections.ts
+  - tests/skill-layout.test.ts
+changedFiles:
+  - scripts/generate-skill-projections.ts
+  - tests/skill-layout.test.ts
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+approvals: []
