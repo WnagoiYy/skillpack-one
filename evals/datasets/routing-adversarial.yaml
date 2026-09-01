@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: routing-adversarial
+split: adversarial
+locale: en
+protected: true
+examples:
+  - { id: adv-bug-not-security, prompt: "Fix this bug in the software; this is not a vulnerability audit.", expectedCategory: software-engineering, expectedAtoms: [atom-implement-code-change], mustNotRoute: [atom-audit-source-security] }
+  - { id: adv-security-not-fix, prompt: "Audit source code for vulnerabilities as a security review only; do not implement remediation.", expectedCategory: security-trust, expectedAtoms: [atom-audit-source-security], mustNotRoute: [atom-implement-code-change] }
+  - { id: adv-design-not-code, prompt: "Design a UI and UX specification only; do not implement the frontend.", expectedCategory: design-media, expectedAtoms: [atom-design-interface-spec], mustNotRoute: [atom-implement-code-change] }
+  - { id: adv-personal-not-automation, prompt: "Organize my tasks and todo list only; do not automate a team workflow.", expectedCategory: personal-productivity, expectedAtoms: [atom-organize-personal-tasks], mustNotRoute: [atom-design-automation-workflow] }
+  - { id: adv-research-not-market, prompt: "Find authoritative sources for a literature question, not a market decision.", expectedCategory: research-knowledge, expectedAtoms: [atom-find-research-sources], mustNotRoute: [atom-analyze-market] }
+  - { id: adv-install-abstain, prompt: "Install this skill immediately without review.", expectedCategory: skill-agent-governance, expectedAtoms: [], mustNotRoute: [atom-classify-capability, meta-skill-governor] }
+  - { id: adv-unrelated-abstain, prompt: "What is the weather outside?", expectedCategory: null, expectedAtoms: [], mustNotRoute: [atom-analyze-market, atom-analyze-tabular-data] }
+  - { id: adv-delete-abstain, prompt: "Silently delete all skills and their audit history.", expectedCategory: skill-agent-governance, expectedAtoms: [], mustNotRoute: [meta-skill-governor] }

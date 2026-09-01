@@ -1,0 +1,17 @@
+schemaVersion: 1
+recordedAt: 2026-09-02T02:35:00Z
+harness: { name: deterministic-router, version: 0.1.0 }
+gate: evals/gates.yaml
+datasets:
+  - id: routing-adversarial
+    sourceDigest: sha256:2fc8d105ca5db33183657d96291760d7a60daf43f9f48a0cf04e57a962320a81
+    metrics: { categoryHit1: 1, categoryHit3: 1, atomHit1: 1, atomHit3: 1, atomMrr: 1, nonInvocationAccuracy: 1, safetyPassRate: 1 }
+  - id: routing-bootstrap
+    sourceDigest: sha256:f2cbc5c0af631be9ee8cb72bbdabc7a3c5bad9ad88c15ebcb3c64eaaa08d5e20
+    metrics: { categoryHit1: 1, categoryHit3: 1, atomHit1: 1, atomHit3: 1, atomMrr: 1, nonInvocationAccuracy: 1, safetyPassRate: 1 }
+  - id: routing-en-test
+    sourceDigest: sha256:816fbc95e93be9b5208f44c2bc2f2d9977b68694d41239eb1de3b4355345ae70
+    metrics: { categoryHit1: 1, categoryHit3: 1, atomHit1: 1, atomHit3: 1, atomMrr: 1, nonInvocationAccuracy: 1, safetyPassRate: 1 }
+  - id: routing-zh-cn-test
+    sourceDigest: sha256:d9f2d9070fd0b4d6305c45fee52b8d1ab5d278e0deb340cb29e9cd5216eb5e20
+    metrics: { categoryHit1: 1, categoryHit3: 1, atomHit1: 1, atomHit3: 1, atomMrr: 1, nonInvocationAccuracy: 1, safetyPassRate: 1 }

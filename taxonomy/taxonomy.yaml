@@ -19,7 +19,7 @@ nodes:
       - A security review routes to security-trust first even when the artifact is code.
     keywords:
       en: [code, software, bug, test, refactor, repository, api, application]
-      zh-CN: [代码, 软件, 修复, 测试, 重构, 仓库, 接口, 应用]
+      zh-CN: [代码, 代码修改, 软件, 修复, 测试, 重构, 仓库, 接口, 应用]
   - id: research-knowledge
     label:
       en: Research and knowledge

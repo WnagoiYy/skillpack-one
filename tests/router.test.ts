@@ -171,7 +171,7 @@ describe("two-stage routing", () => {
     const implement = trace.atoms.find((candidate) => candidate.id === "atom-implement-code-change");
 
     expect(implement?.score).toBeGreaterThan(plan?.score ?? 0);
-    expect(implement?.penalties).toContain("negative:plan only");
+    expect(implement?.penalties).not.toContain("negative:plan only");
   });
 
   it("marks a cross-domain request as ambiguous while retaining ranked candidates", () => {

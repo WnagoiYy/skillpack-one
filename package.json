@@ -36,6 +36,7 @@
     "sos": "tsx src/cli.ts"
   },
   "dependencies": {
+    "@earendil-works/pi-coding-agent": "0.84.4",
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
     "commander": "15.0.0",

@@ -16,13 +16,32 @@ export interface RouteOptions {
 }
 
 const WORD_PATTERN = /[\p{L}\p{N}]+/gu;
+const STOP_WORDS = new Set(["a", "an", "and", "are", "as", "at", "be", "for", "from", "in", "is", "it", "of", "on", "or", "that", "the", "this", "to", "what", "with"]);
 
 function normalize(value: string): string {
   return value.normalize("NFKC").toLocaleLowerCase();
 }
 
 function tokens(value: string): Set<string> {
-  return new Set(normalize(value).match(WORD_PATTERN) ?? []);
+  const raw = normalize(value).match(WORD_PATTERN) ?? [];
+  return new Set(
+    raw
+      .filter((token) => !STOP_WORDS.has(token))
+      .map((token) => {
+        if (/^[a-z0-9]+$/u.test(token) && token.length > 4) {
+          if (token.endsWith("ies")) return `${token.slice(0, -3)}y`;
+          if (token.endsWith("s") && !token.endsWith("ss")) return token.slice(0, -1);
+        }
+        return token;
+      })
+  );
+}
+
+function explicitlyNegated(prompt: string, phrase: string): boolean {
+  const index = prompt.indexOf(normalize(phrase));
+  if (index < 0) return false;
+  const prefix = prompt.slice(Math.max(0, index - 24), index);
+  return /(?:\bdo\s+not\s+|\bdon't\s+|\bnot\s+|不要|不|仅)(?:\w+\s+){0,2}$/u.test(prefix);
 }
 
 function localeChain(locale: string): string[] {
@@ -130,7 +149,7 @@ function scoreContract(
 
   for (const triggerList of localizedValues(contract.routing.negativeTriggers, locale)) {
     for (const trigger of triggerList) {
-      if (phraseMatches(prompt, promptTokens, trigger)) {
+      if (phraseMatches(prompt, promptTokens, trigger) && !explicitlyNegated(prompt, trigger)) {
         score -= 6;
         penalties.push(`negative:${trigger}`);
       }

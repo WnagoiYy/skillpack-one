@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: task-completion-bootstrap
+split: tasks
+locale: en
+protected: true
+examples:
+  - id: task-plan-code
+    prompt: Plan a code change for a small repository fixture.
+    expectedCategory: software-engineering
+    expectedAtoms: [atom-plan-code-change]
+    mustNotRoute: [atom-implement-code-change]
+    task: Produce a plan naming the affected fixture file, behavior, tests, and risks without editing it.
+    rubric: [Names the exact file, States behavior and non-goals, Includes verification, Leaves the fixture unchanged]
+  - id: task-classify
+    prompt: Classify a sample broad Skill into atomic capability candidates.
+    expectedCategory: skill-agent-governance
+    expectedAtoms: [atom-classify-capability]
+    mustNotRoute: [meta-skill-governor]
+    task: Emit outcome, artifact, authority, evaluation boundary, taxonomy axes, triggers, and exclusions.
+    rubric: [One primary outcome, Explicit authority, Negative boundary, Stable candidate ID]

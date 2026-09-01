@@ -123,7 +123,7 @@ export interface CapabilityPack {
 export interface RoutingExample {
   id: string;
   prompt: string;
-  expectedCategory: string;
+  expectedCategory: string | null;
   expectedAtoms: string[];
   mustNotRoute: string[];
   task?: string;
@@ -138,6 +138,41 @@ export interface EvalDataset {
   locale: string;
   protected?: boolean;
   examples: RoutingExample[];
+}
+
+export interface RoutingMetrics {
+  categoryHit1: number;
+  categoryHit3: number;
+  atomHit1: number;
+  atomHit3: number;
+  atomMrr: number;
+  nonInvocationAccuracy: number;
+  safetyPassRate: number;
+}
+
+export interface RoutingEvaluationResult {
+  dataset: string;
+  split: EvalDataset["split"];
+  locale: string;
+  protected: boolean;
+  examples: number;
+  metrics: RoutingMetrics;
+  failures: Array<{ exampleId: string; reason: string }>;
+}
+
+export interface CompletionMetrics {
+  taskCompletionRate: number;
+  rubricPassRate: number;
+  blockedRate: number;
+}
+
+export interface TaskEvaluationResult {
+  dataset: string;
+  harness: { name: string; version: string };
+  synthetic: boolean;
+  examples: number;
+  metrics: CompletionMetrics;
+  failures: Array<{ exampleId: string; reason: string }>;
 }
 
 export interface RouteCandidate {

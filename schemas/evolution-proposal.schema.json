@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://self-organizing-skills.dev/schemas/evolution-proposal.schema.json",
+  "title": "Governed Skill evolution proposal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "createdAt", "targetSkill", "baseRevision", "candidateRevision", "rollbackRevision", "observation", "allowedFiles", "changedFiles", "generationDatasets", "evaluationDatasets", "permissionBefore", "permissionAfter", "approvals"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": { "$ref": "#/$defs/id" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "targetSkill": { "$ref": "#/$defs/id" },
+    "baseRevision": { "$ref": "#/$defs/revision" },
+    "candidateRevision": { "$ref": "#/$defs/revision" },
+    "rollbackRevision": { "$ref": "#/$defs/revision" },
+    "observation": { "type": "string", "minLength": 1 },
+    "allowedFiles": { "$ref": "#/$defs/files" },
+    "changedFiles": { "$ref": "#/$defs/files" },
+    "generationDatasets": { "$ref": "#/$defs/ids" },
+    "evaluationDatasets": { "$ref": "#/$defs/ids" },
+    "permissionBefore": { "$ref": "#/$defs/permissions" },
+    "permissionAfter": { "$ref": "#/$defs/permissions" },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "approvedBy", "approvedAt", "reason"],
+        "properties": {
+          "type": { "enum": ["permission-expansion", "promotion", "destructive-maintenance"] },
+          "approvedBy": { "type": "string", "minLength": 1 },
+          "approvedAt": { "type": "string", "format": "date-time" },
+          "reason": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "revision": { "type": "string", "pattern": "^[0-9a-f]{40,64}$" },
+    "files": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+    "permissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["network", "filesystem", "shell", "secrets", "externalCommunication"],
+      "properties": {
+        "network": { "enum": ["none", "read", "write"] },
+        "filesystem": { "enum": ["none", "read", "workspace-write", "unrestricted-write"] },
+        "shell": { "enum": ["none", "allowlisted", "unrestricted"] },
+        "secrets": { "enum": ["none", "named-read"] },
+        "externalCommunication": { "enum": ["none", "draft", "send"] }
+      }
+    }
+  }
+}

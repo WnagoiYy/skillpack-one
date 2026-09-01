@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: routing-zh-cn-test
+split: test
+locale: zh-CN
+examples:
+  - { id: zh-plan-code, prompt: "请规划代码修改，先分析再规划。", expectedCategory: software-engineering, expectedAtoms: [atom-plan-code-change], mustNotRoute: [atom-translate-document] }
+  - { id: zh-research, prompt: "请查找权威来源并收集证据。", expectedCategory: research-knowledge, expectedAtoms: [atom-find-research-sources], mustNotRoute: [atom-analyze-market] }
+  - { id: zh-data, prompt: "请分析这个表格并计算表格指标。", expectedCategory: data-analytics, expectedAtoms: [atom-analyze-tabular-data], mustNotRoute: [atom-translate-document] }
+  - { id: zh-translate, prompt: "请翻译这份文档。", expectedCategory: documents-communication, expectedAtoms: [atom-translate-document], mustNotRoute: [atom-implement-code-change] }
+  - { id: zh-ui, prompt: "请设计用户界面并创建交互规格。", expectedCategory: design-media, expectedAtoms: [atom-design-interface-spec], mustNotRoute: [atom-implement-code-change] }
+  - { id: zh-market, prompt: "请分析这个市场并做竞品分析。", expectedCategory: business-growth, expectedAtoms: [atom-analyze-market], mustNotRoute: [atom-find-research-sources] }
+  - { id: zh-automation, prompt: "请设计自动化工作流并规划系统集成。", expectedCategory: automation-operations, expectedAtoms: [atom-design-automation-workflow], mustNotRoute: [atom-organize-personal-tasks] }
+  - { id: zh-tasks, prompt: "请整理我的任务并安排待办优先级。", expectedCategory: personal-productivity, expectedAtoms: [atom-organize-personal-tasks], mustNotRoute: [atom-design-automation-workflow] }
+  - { id: zh-security, prompt: "请审计代码漏洞并做安全审查。", expectedCategory: security-trust, expectedAtoms: [atom-audit-source-security], mustNotRoute: [atom-implement-code-change] }
+  - { id: zh-governance, prompt: "请分类这个 Skill 并提取原子能力。", expectedCategory: skill-agent-governance, expectedAtoms: [atom-classify-capability], mustNotRoute: [atom-implement-code-change] }

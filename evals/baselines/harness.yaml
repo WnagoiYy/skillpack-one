@@ -1,0 +1,16 @@
+schemaVersion: 1
+recordedAt: 2026-09-02T02:35:00Z
+harnesses:
+  - name: pi
+    version: 0.84.4
+    discovery: { status: passed, skills: 22, implementation: loadSkillsFromDir }
+    taskCompletion: { status: blocked, examples: 2, reason: Pi provider credentials are not configured }
+  - name: mock
+    version: 0.1.0
+    taskCompletion: { status: synthetic-pass, examples: 2, taskCompletionRate: 1, rubricPassRate: 1 }
+  - name: codex-native-layout
+    version: project
+    discovery: { status: passed, skills: 22 }
+  - name: dsh
+    version: unavailable
+    taskCompletion: { status: blocked, reason: DeepSeek Harness CLI is not installed }

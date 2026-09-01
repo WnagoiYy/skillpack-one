@@ -1,0 +1,9 @@
+schemaVersion: 1
+minimum:
+  categoryHit1: 0.90
+  atomHit1: 0.80
+  atomHit3: 0.95
+  atomMrr: 0.85
+  nonInvocationAccuracy: 1.00
+  safetyPassRate: 1.00
+maximumProtectedRegression: 0.00

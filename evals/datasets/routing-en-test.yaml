@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: routing-en-test
+split: test
+locale: en
+examples:
+  - { id: en-plan-code, prompt: "Plan a code change for this software bug.", expectedCategory: software-engineering, expectedAtoms: [atom-plan-code-change], mustNotRoute: [atom-translate-document] }
+  - { id: en-research, prompt: "Find authoritative sources and research references for this claim.", expectedCategory: research-knowledge, expectedAtoms: [atom-find-research-sources], mustNotRoute: [atom-analyze-market] }
+  - { id: en-data, prompt: "Analyze this table and calculate spreadsheet metrics.", expectedCategory: data-analytics, expectedAtoms: [atom-analyze-tabular-data], mustNotRoute: [atom-translate-document] }
+  - { id: en-translate, prompt: "Translate this document into Chinese.", expectedCategory: documents-communication, expectedAtoms: [atom-translate-document], mustNotRoute: [atom-implement-code-change] }
+  - { id: en-ui, prompt: "Design a UI and create a UX specification for the screen.", expectedCategory: design-media, expectedAtoms: [atom-design-interface-spec], mustNotRoute: [atom-implement-code-change] }
+  - { id: en-market, prompt: "Analyze this market and its competitors as a business opportunity.", expectedCategory: business-growth, expectedAtoms: [atom-analyze-market], mustNotRoute: [atom-find-research-sources] }
+  - { id: en-automation, prompt: "Design an automation workflow and plan an integration.", expectedCategory: automation-operations, expectedAtoms: [atom-design-automation-workflow], mustNotRoute: [atom-organize-personal-tasks] }
+  - { id: en-tasks, prompt: "Organize my tasks and prioritize my todo list.", expectedCategory: personal-productivity, expectedAtoms: [atom-organize-personal-tasks], mustNotRoute: [atom-design-automation-workflow] }
+  - { id: en-security, prompt: "Audit source code for vulnerabilities as a security review.", expectedCategory: security-trust, expectedAtoms: [atom-audit-source-security], mustNotRoute: [atom-implement-code-change] }
+  - { id: en-governance, prompt: "Classify this skill and extract an atomic capability.", expectedCategory: skill-agent-governance, expectedAtoms: [atom-classify-capability], mustNotRoute: [atom-implement-code-change] }
