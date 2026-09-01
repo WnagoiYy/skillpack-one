@@ -103,6 +103,8 @@ npm run sos -- catalog stats
 
 采集固定 Git 版本并读取官方 MCP Registry 的只读接口，保存来源、归属和指纹；不会运行包、Hook、端点或 Skill 指令。修改来源前请阅读[目录方法](docs/zh-CN/catalog-methodology.md)和[第三方说明](THIRD_PARTY.md)。
 
+机器可读的 [`catalog/decomposition-map.yaml`](catalog/decomposition-map.yaml) 说明代表性上游模式如何影响每个本地原子 Skill、元 Skill 和四个能力包，同时不复制或激活上游实现。
+
 ## 后续演进
 
 - 从真实失败中扩充多语言保留路由集和可执行任务集。

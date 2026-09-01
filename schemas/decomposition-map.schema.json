@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://self-organizing-skills.dev/schemas/decomposition-map.schema.json",
+  "title": "Upstream evidence to local capability decomposition map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "snapshotDigest", "policy", "capabilityMappings", "packMappings"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "snapshotDigest": { "$ref": "#/$defs/digest" },
+    "policy": { "type": "string", "minLength": 1 },
+    "capabilityMappings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["capability", "synthesis", "evidence"],
+        "properties": {
+          "capability": { "$ref": "#/$defs/id" },
+          "synthesis": { "type": "string", "minLength": 1 },
+          "evidence": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["catalogEntry", "contribution", "usage"],
+              "properties": {
+                "catalogEntry": { "$ref": "#/$defs/id" },
+                "contribution": { "type": "string", "minLength": 1 },
+                "usage": { "const": "design-evidence-only" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "packMappings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pack", "compositionRationale", "evidence"],
+        "properties": {
+          "pack": { "$ref": "#/$defs/id" },
+          "compositionRationale": { "type": "string", "minLength": 1 },
+          "evidence": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": { "$ref": "#/$defs/id" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  }
+}

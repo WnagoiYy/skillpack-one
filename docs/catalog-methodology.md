@@ -2,6 +2,8 @@
 
 The catalog is evidence for classification and decomposition. It is not an installation list.
 
+`catalog/decomposition-map.yaml` closes the loop from collection to local design. It maps every non-category local capability and every capability pack to representative catalog entry IDs, records the contribution used during synthesis, and fixes the evidence to the catalog snapshot digest. Every mapping is `design-evidence-only`: it does not copy, install, execute, or promote upstream content.
+
 ## Current snapshot
 
 The 2026-09-02 snapshot contains 658 normalized records:

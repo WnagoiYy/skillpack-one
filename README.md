@@ -103,6 +103,8 @@ npm run sos -- catalog stats
 
 Collection uses fixed Git revisions and the read-only official MCP Registry endpoint, records attribution and fingerprints, and does not execute packages, hooks, endpoints, or Skill instructions. Review [catalog methodology](docs/catalog-methodology.md) and [third-party notices](THIRD_PARTY.md) before changing sources.
 
+The machine-readable [`catalog/decomposition-map.yaml`](catalog/decomposition-map.yaml) shows how representative upstream patterns informed each local Atom, the Meta Skill, and all four packs without copying or activating upstream implementations.
+
 ## Roadmap
 
 - Grow held-out multilingual routing and executable task suites from real failures.

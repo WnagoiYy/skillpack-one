@@ -1,0 +1,137 @@
+schemaVersion: 1
+snapshotDigest: sha256:3c403bd206a4492128a395c96db9276aefdb93027bebed2de13fbabb1c75a010
+policy: Upstream records are non-executed design evidence. The local contract is a new synthesis; no instruction body, source code, package, or asset is copied by this mapping.
+capabilityMappings:
+  - capability: atom-plan-code-change
+    synthesis: Separate implementation-ready planning from mutation so scope, files, risks, and verification can be reviewed before code changes.
+    evidence:
+      - catalogEntry: skill-addyosmani-agent-skills-planning-and-task-breakdown-1cb74a63
+        contribution: Planning and task-decomposition capability boundary.
+        usage: design-evidence-only
+      - catalogEntry: skill-gohypergiant-agent-skills-accelint-qrspi-propose-e9434f7b
+        contribution: Proposal-first lifecycle pattern.
+        usage: design-evidence-only
+  - capability: atom-implement-code-change
+    synthesis: Keep one bounded authorized mutation and its verification together while excluding broad planning and independent security review.
+    evidence:
+      - catalogEntry: skill-addyosmani-agent-skills-incremental-implementation-99c73b0d
+        contribution: Incremental implementation pattern.
+        usage: design-evidence-only
+      - catalogEntry: skill-trailofbits-skills-code-improver-8debe69b
+        contribution: Focused source improvement boundary.
+        usage: design-evidence-only
+  - capability: atom-find-research-sources
+    synthesis: Isolate authoritative source discovery and ranking from later synthesis or artifact production.
+    evidence:
+      - catalogEntry: skill-k-dense-ai-claude-scientific-skills-research-lookup-64fd7bc4
+        contribution: Research lookup as a distinct capability.
+        usage: design-evidence-only
+      - catalogEntry: skill-huggingface-skills-huggingface-papers-08cc9c02
+        contribution: Paper discovery and evidence provenance.
+        usage: design-evidence-only
+  - capability: atom-analyze-tabular-data
+    synthesis: Define reproducible calculations and data-quality caveats independently of spreadsheet editing or document presentation.
+    evidence:
+      - catalogEntry: skill-anthropics-skills-xlsx-657c7b90
+        contribution: Spreadsheet workflow modality.
+        usage: design-evidence-only
+      - catalogEntry: skill-k-dense-ai-claude-scientific-skills-statistical-analysis-20f60337
+        contribution: Statistical analysis and assumption checks.
+        usage: design-evidence-only
+  - capability: atom-translate-document
+    synthesis: Treat translation as meaning-preserving document transformation with structure and terminology constraints.
+    evidence:
+      - catalogEntry: skill-gohypergiant-agent-skills-accelint-english-manager-42c5f948
+        contribution: Language-specific editorial workflow.
+        usage: design-evidence-only
+      - catalogEntry: skill-anthropics-skills-docx-6db5d745
+        contribution: Structured document preservation requirements.
+        usage: design-evidence-only
+  - capability: atom-design-interface-spec
+    synthesis: Produce an implementation-neutral interface contract covering layout, states, interaction, and accessibility without broadening into coding.
+    evidence:
+      - catalogEntry: skill-addyosmani-agent-skills-api-and-interface-design-65b474ac
+        contribution: Explicit interface design boundary.
+        usage: design-evidence-only
+      - catalogEntry: skill-anthropics-skills-frontend-design-29ad32fd
+        contribution: Visual-system and frontend experience concerns.
+        usage: design-evidence-only
+  - capability: atom-analyze-market
+    synthesis: Combine dated evidence, assumptions, competitors, and decision relevance while keeping source discovery separately composable.
+    evidence:
+      - catalogEntry: skill-k-dense-ai-claude-scientific-skills-market-research-reports-f3535d6e
+        contribution: Market-research report structure.
+        usage: design-evidence-only
+      - catalogEntry: mcp-ai-agentutility-mcp-edge-market-068d58f817
+        contribution: Optional live market-data dependency pattern.
+        usage: design-evidence-only
+  - capability: atom-design-automation-workflow
+    synthesis: Model trigger, steps, data contracts, permissions, idempotency, observability, and recovery before binding to one automation product.
+    evidence:
+      - catalogEntry: skill-addyosmani-agent-skills-ci-cd-and-automation-29d0cc8a
+        contribution: Repeatable automation lifecycle.
+        usage: design-evidence-only
+      - catalogEntry: mcp-ai-agentutility-mcp-browser-workflow-d744626520
+        contribution: MCP-backed workflow dependency boundary.
+        usage: design-evidence-only
+  - capability: atom-organize-personal-tasks
+    synthesis: Turn commitments into a dated reviewable list without silently creating calendar events, reminders, or notifications.
+    evidence:
+      - catalogEntry: mcp-ai-calendarmcp-server-f8ab5b3489
+        contribution: Calendar integration as an optional external side effect.
+        usage: design-evidence-only
+      - catalogEntry: skill-addyosmani-agent-skills-planning-and-task-breakdown-1cb74a63
+        contribution: Task decomposition and priority ordering.
+        usage: design-evidence-only
+  - capability: atom-audit-source-security
+    synthesis: Make evidence-backed read-only findings a separate atom from implementation, remediation, and destructive scanning.
+    evidence:
+      - catalogEntry: skill-getsentry-skills-security-review-3bf92664
+        contribution: Source security review workflow.
+        usage: design-evidence-only
+      - catalogEntry: skill-trailofbits-skills-audit-augmentation-7debd264
+        contribution: Audit evidence and bounded review context.
+        usage: design-evidence-only
+  - capability: atom-classify-capability
+    synthesis: Extract one stable capability contract and its boundary without installing, activating, or promoting the source.
+    evidence:
+      - catalogEntry: skill-anthropics-skills-skill-creator-af6ef02d
+        contribution: Skill structure and creation concerns.
+        usage: design-evidence-only
+      - catalogEntry: skill-trailofbits-skills-skill-improver-5b7b9acd
+        contribution: Skill quality analysis and improvement concerns.
+        usage: design-evidence-only
+  - capability: meta-skill-governor
+    synthesis: Convert Skill maintenance into a versioned proposal, protected evaluation, approval, promotion, deprecation, and rollback lifecycle that also constrains itself.
+    evidence:
+      - catalogEntry: skill-trailofbits-skills-skill-improver-5b7b9acd
+        contribution: Iterative Skill improvement pattern.
+        usage: design-evidence-only
+      - catalogEntry: skill-gohypergiant-agent-skills-accelint-skill-manager-7a32f482
+        contribution: Skill lifecycle management pattern.
+        usage: design-evidence-only
+packMappings:
+  - pack: software-delivery
+    compositionRationale: Plan before mutation and keep independent security verification after implementation.
+    evidence:
+      - skill-addyosmani-agent-skills-planning-and-task-breakdown-1cb74a63
+      - skill-addyosmani-agent-skills-incremental-implementation-99c73b0d
+      - skill-getsentry-skills-security-review-3bf92664
+  - pack: evidence-backed-market-research
+    compositionRationale: Discover traceable evidence before producing a decision-relevant market analysis, with live market MCPs remaining optional.
+    evidence:
+      - skill-k-dense-ai-claude-scientific-skills-research-lookup-64fd7bc4
+      - skill-k-dense-ai-claude-scientific-skills-market-research-reports-f3535d6e
+      - mcp-ai-agentutility-mcp-edge-market-068d58f817
+  - pack: localized-research-brief
+    compositionRationale: Gather evidence, analyze it, translate meaning, and preserve document structure as separately replaceable stages.
+    evidence:
+      - skill-k-dense-ai-claude-scientific-skills-research-lookup-64fd7bc4
+      - skill-gohypergiant-agent-skills-accelint-english-manager-42c5f948
+      - skill-anthropics-skills-docx-6db5d745
+  - pack: safe-skill-evolution
+    compositionRationale: Classify capability boundaries, improve through tests, and retain an externally reviewable evaluation gate.
+    evidence:
+      - skill-anthropics-skills-skill-creator-af6ef02d
+      - skill-trailofbits-skills-skill-improver-5b7b9acd
+      - skill-gohypergiant-agent-skills-accelint-eval-architect-f877e92f
