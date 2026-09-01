@@ -1,0 +1,70 @@
+schemaVersion: 1
+id: proposal-upstream-decomposition-map-promotion
+action: promote
+proposal: proposal-upstream-decomposition-map
+proposalDigest: sha256:f04286bdc147a4efbc3a3ddf0539d015ec6bbf6f4abcb6a4cff5d687eb74fbeb
+baseRevision: 25db1064896789a70bbfcc29ec1d37c6124067bf
+candidateRevision: 86893675c7a83a17ae5457ac214b46d01485ca9d
+rollbackRevision: 25db1064896789a70bbfcc29ec1d37c6124067bf
+reviewedBy: repository-bootstrap-policy
+recordedAt: 2026-09-01T19:04:59.026Z
+evaluation:
+  passed: true
+  failures: []
+  routing:
+    - dataset: routing-adversarial
+      split: adversarial
+      locale: en
+      protected: true
+      examples: 8
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-bootstrap
+      split: dev
+      locale: en
+      protected: false
+      examples: 3
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-en-test
+      split: test
+      locale: en
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-zh-cn-test
+      split: test
+      locale: zh-CN
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []

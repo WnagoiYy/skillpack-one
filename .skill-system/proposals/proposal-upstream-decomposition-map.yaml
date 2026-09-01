@@ -1,0 +1,43 @@
+schemaVersion: 1
+id: proposal-upstream-decomposition-map
+createdAt: 2026-09-01T19:04:39Z
+targetSkill: atom-classify-capability
+baseRevision: 25db1064896789a70bbfcc29ec1d37c6124067bf
+candidateRevision: 86893675c7a83a17ae5457ac214b46d01485ca9d
+rollbackRevision: 25db1064896789a70bbfcc29ec1d37c6124067bf
+observation: The catalog and capability packs were independently valid, but no machine-readable artifact proved how representative upstream evidence informed every local non-category capability and pack.
+allowedFiles:
+  - README.md
+  - README.zh-CN.md
+  - catalog/decomposition-map.yaml
+  - docs/catalog-methodology.md
+  - docs/zh-CN/catalog-methodology.md
+  - schemas/decomposition-map.schema.json
+  - tests/catalog.test.ts
+changedFiles:
+  - README.md
+  - README.zh-CN.md
+  - catalog/decomposition-map.yaml
+  - docs/catalog-methodology.md
+  - docs/zh-CN/catalog-methodology.md
+  - schemas/decomposition-map.schema.json
+  - tests/catalog.test.ts
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+approvals: []
