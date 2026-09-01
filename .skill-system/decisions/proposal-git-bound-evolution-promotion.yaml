@@ -1,0 +1,70 @@
+schemaVersion: 1
+id: proposal-git-bound-evolution-promotion
+action: promote
+proposal: proposal-git-bound-evolution
+proposalDigest: sha256:ae801a6b76ab588d450c724bef80341c3a7438b07f6a6cb90c4504e8ee7ebadf
+baseRevision: 6b7c2b08f91f364fa6906f7e233374b2386e62a0
+candidateRevision: 57b8e496e817f8d363a1ca3fcccda78ce96172b0
+rollbackRevision: 6b7c2b08f91f364fa6906f7e233374b2386e62a0
+reviewedBy: repository-bootstrap-policy
+recordedAt: 2026-09-01T19:11:11.429Z
+evaluation:
+  passed: true
+  failures: []
+  routing:
+    - dataset: routing-adversarial
+      split: adversarial
+      locale: en
+      protected: true
+      examples: 8
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-bootstrap
+      split: dev
+      locale: en
+      protected: false
+      examples: 3
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-en-test
+      split: test
+      locale: en
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-zh-cn-test
+      split: test
+      locale: zh-CN
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
