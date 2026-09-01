@@ -55,6 +55,29 @@ describe("governed Skill evolution", () => {
     expect(draft.rollbackRevision).toBe(draft.baseRevision);
   });
 
+  it("preserves an existing target permission envelope in a proposal draft", () => {
+    const permissions = {
+      network: "read" as const,
+      filesystem: "workspace-write" as const,
+      shell: "allowlisted" as const,
+      secrets: "none" as const,
+      externalCommunication: "none" as const
+    };
+    const draft = buildProposalDraft({
+      id: "proposal-meta-wording",
+      createdAt: "2026-09-02T00:00:00Z",
+      targetSkill: "meta-skill-governor",
+      observation: "A wording boundary failed.",
+      baseRevision: "1111111111111111111111111111111111111111",
+      candidateRevision: "2222222222222222222222222222222222222222",
+      changedFiles: ["skill-src/meta-skill-governor/SKILL.md"],
+      permissionBefore: permissions,
+      permissionAfter: permissions
+    });
+    expect(draft.permissionBefore).toEqual(permissions);
+    expect(draft.permissionAfter).toEqual(permissions);
+  });
+
   it("binds declared changes to the canonical Git diff while ignoring generated projections", () => {
     expect(canonicalRevisionDiffFailures(
       ["scripts/generate-skill-projections.ts", "tests/skill-layout.test.ts"],

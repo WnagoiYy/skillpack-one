@@ -194,6 +194,8 @@ export function buildProgram(): Command {
       const base = options.base ?? await parentRevision(root, candidate);
       const changedFiles = await revisionChangedFiles(root, base, candidate);
       if (changedFiles.length === 0) throw new Error("Candidate revision has no canonical changed files");
+      const contracts = await loadContracts(root);
+      const targetContract = contracts.find((contract) => contract.id === options.target);
       const proposal = buildProposalDraft({
         id: options.id,
         createdAt: new Date().toISOString(),
@@ -201,13 +203,21 @@ export function buildProgram(): Command {
         observation: options.observation,
         baseRevision: base,
         candidateRevision: candidate,
-        changedFiles
+        changedFiles,
+        ...(targetContract ? {
+          permissionBefore: targetContract.permissions,
+          permissionAfter: targetContract.permissions
+        } : {})
       });
       const datasets = await loadEvalDatasets(root);
       const failures = validateProposal(proposal, Object.fromEntries(datasets.map((dataset) => [dataset.id, dataset.split])));
       if (failures.length > 0) throw new Error(`Proposal draft violates governance: ${failures.join("; ")}`);
       const output = await writeProposalDraft(root, proposal);
-      process.stdout.write(`${JSON.stringify({ proposal: output, changedFiles }, null, 2)}\n`);
+      process.stdout.write(`${JSON.stringify({
+        proposal: output,
+        changedFiles,
+        permissionSource: targetContract ? "target-contract" : "least-authority-default"
+      }, null, 2)}\n`);
     });
 
   train
