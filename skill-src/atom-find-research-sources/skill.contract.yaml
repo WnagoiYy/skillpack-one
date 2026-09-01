@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: atom-find-research-sources
+kind: atom
+version: 0.1.0
+name: { en: Find research sources, zh-CN: 查找研究来源 }
+summary: { en: Return a ranked and traceable source set for one question, zh-CN: 为一个问题返回有排序且可追溯的来源集 }
+outcomes: [Ranked traceable research source set]
+artifacts: [source-list]
+inputs: [{ name: question, type: text, required: true }]
+outputs: [{ name: sources, type: citation-list, required: true }]
+preconditions: [Network research is authorized]
+failures: [No source meets the declared evidence standard]
+sideEffects: [network-read]
+permissions: { network: read, filesystem: none, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: research-knowledge
+  lifecycle: [discover, verify]
+  modalities: [text, structured-data]
+  dependencies: [api-backed]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [find authoritative sources, research references, gather evidence], zh-CN: [查找权威来源, 搜集研究资料, 收集证据] }
+  negativeTriggers: { en: [write the final report, fabricate citations], zh-CN: [撰写最终报告, 编造引用] }
+  confusableWith: []
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-research, source-quality-task]

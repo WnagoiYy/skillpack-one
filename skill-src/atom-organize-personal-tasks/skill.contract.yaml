@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: atom-organize-personal-tasks
+kind: atom
+version: 0.1.0
+name: { en: Organize personal tasks, zh-CN: 整理个人任务 }
+summary: { en: Convert unstructured commitments into a prioritized personal task list, zh-CN: 把零散承诺整理成有优先级的个人任务清单 }
+outcomes: [Prioritized personal task list]
+artifacts: [task-list]
+inputs: [{ name: commitments, type: text, required: true }]
+outputs: [{ name: tasks, type: structured-task-list, required: true }]
+preconditions: [The commitments belong to one person's scope]
+failures: [Essential deadlines or ownership remain contradictory]
+sideEffects: [none]
+permissions: { network: none, filesystem: none, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: personal-productivity
+  lifecycle: [plan]
+  modalities: [text, structured-data]
+  dependencies: [tool-agnostic]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [organize my tasks, prioritize my todo list, turn notes into next actions], zh-CN: [整理我的任务, 安排待办优先级, 把笔记变成行动项] }
+  negativeTriggers: { en: [automate the team workflow, send reminders now], zh-CN: [自动化团队工作流, 立即发送提醒] }
+  confusableWith: [atom-design-automation-workflow]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-productivity, task-organization-task]

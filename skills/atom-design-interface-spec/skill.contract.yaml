@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: atom-design-interface-spec
+kind: atom
+version: 0.1.0
+name: { en: Design an interface specification, zh-CN: 设计界面规格 }
+summary: { en: Define an implementation-ready UI and interaction specification, zh-CN: 定义可直接实施的界面与交互规格 }
+outcomes: [Implementation-ready interface specification]
+artifacts: [ui-specification]
+inputs: [{ name: brief, type: text, required: true }]
+outputs: [{ name: specification, type: design-document, required: true }]
+preconditions: [Target users and primary task are identifiable]
+failures: [Critical product constraints are unavailable]
+sideEffects: [filesystem-write]
+permissions: { network: read, filesystem: workspace-write, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: design-media
+  lifecycle: [plan, create]
+  modalities: [image, text]
+  dependencies: [tool-agnostic]
+  risk: reversible-write
+routing:
+  positiveTriggers: { en: [design a user interface, create a UX specification, specify the screen], zh-CN: [设计用户界面, 创建交互规格, 设计页面] }
+  negativeTriggers: { en: [implement the frontend, analyze a data chart], zh-CN: [实现前端, 分析数据图表] }
+  confusableWith: [atom-implement-code-change]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-design, interface-spec-task]

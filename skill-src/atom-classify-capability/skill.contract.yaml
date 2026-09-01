@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: atom-classify-capability
+kind: atom
+version: 0.1.0
+name: { en: Classify a capability, zh-CN: 分类能力 }
+summary: { en: Produce a boundary-aware taxonomy and contract proposal for one capability, zh-CN: 为一个能力产出带边界的分类与契约提案 }
+outcomes: [Boundary-aware capability classification proposal]
+artifacts: [contract-proposal]
+inputs: [{ name: capability-evidence, type: metadata, required: true }]
+outputs: [{ name: proposal, type: skill-contract-draft, required: true }]
+preconditions: [Capability source and provenance are available]
+failures: [The primary outcome or authority boundary cannot be inferred]
+sideEffects: [filesystem-read]
+permissions: { network: read, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: skill-agent-governance
+  lifecycle: [analyze, govern]
+  modalities: [text, structured-data]
+  dependencies: [tool-agnostic]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [classify this skill, categorize an MCP server, extract an atomic capability], zh-CN: [分类这个 Skill, 分类 MCP Server, 提取原子能力] }
+  negativeTriggers: { en: [install this skill, promote this change], zh-CN: [安装这个 Skill, 发布这个变更] }
+  confusableWith: [meta-skill-governor]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-governance, classification-task]

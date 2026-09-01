@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: atom-plan-code-change
+kind: atom
+version: 0.1.0
+name: { en: Plan a code change, zh-CN: 规划代码修改 }
+summary: { en: Produce an implementation-ready plan without changing source files, zh-CN: 在不修改源码的前提下产出可实施计划 }
+outcomes: [Implementation-ready code change plan]
+artifacts: [plan]
+inputs: [{ name: request, type: text, required: true }, { name: repository, type: workspace, required: true }]
+outputs: [{ name: plan, type: markdown, required: true }]
+preconditions: [Relevant repository content is readable]
+failures: [The requested behavior cannot be located, Critical requirements remain contradictory]
+sideEffects: [filesystem-read]
+permissions: { network: none, filesystem: read, shell: allowlisted, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: software-engineering
+  lifecycle: [plan]
+  modalities: [code, text]
+  dependencies: [harness-backed]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [plan a code change, implementation plan, inspect and plan], zh-CN: [规划代码修改, 实施计划, 先分析再规划] }
+  negativeTriggers: { en: [implement the change, edit the files], zh-CN: [实现修改, 编辑文件] }
+  confusableWith: [atom-implement-code-change]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-bootstrap, plan-code-task]

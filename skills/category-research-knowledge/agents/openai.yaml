@@ -1,0 +1,7 @@
+interface:
+  display_name: Category Research Knowledge
+  short_description: Route and apply Category Research Knowledge
+  default_prompt: Use $category-research-knowledge to handle this request within
+    its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: atom-analyze-market
+kind: atom
+version: 0.1.0
+name: { en: Analyze a market, zh-CN: 分析市场 }
+summary: { en: Produce evidence-backed findings for one commercial market question, zh-CN: 为一个商业市场问题产出有证据的分析 }
+outcomes: [Decision-relevant market analysis]
+artifacts: [market-analysis]
+inputs: [{ name: decision-question, type: text, required: true }]
+outputs: [{ name: analysis, type: evidence-report, required: true }]
+preconditions: [The market boundary and decision can be stated]
+failures: [Current evidence is insufficient for the requested confidence]
+sideEffects: [network-read]
+permissions: { network: read, filesystem: none, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: business-growth
+  secondaryCategories: [research-knowledge]
+  lifecycle: [discover, analyze]
+  modalities: [text, structured-data]
+  dependencies: [api-backed]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [analyze this market, competitor analysis, market opportunity], zh-CN: [分析这个市场, 竞品分析, 市场机会] }
+  negativeTriggers: { en: [execute a trade, generic literature review], zh-CN: [执行交易, 通用文献综述] }
+  confusableWith: [atom-find-research-sources]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-business, market-analysis-task]

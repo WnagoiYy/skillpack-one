@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: atom-design-automation-workflow
+kind: atom
+version: 0.1.0
+name: { en: Design an automation workflow, zh-CN: 设计自动化工作流 }
+summary: { en: Specify one safe and observable repeatable workflow, zh-CN: 规定一个安全、可观测的可重复工作流 }
+outcomes: [Reviewable automation workflow specification]
+artifacts: [workflow-specification]
+inputs: [{ name: workflow-goal, type: text, required: true }]
+outputs: [{ name: workflow, type: structured-workflow, required: true }]
+preconditions: [Participating systems and desired outcome are known]
+failures: [Required authority cannot be bounded, Recovery cannot be defined]
+sideEffects: [filesystem-write]
+permissions: { network: read, filesystem: workspace-write, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: automation-operations
+  lifecycle: [plan]
+  modalities: [structured-data, system-state]
+  dependencies: [mcp-backed]
+  risk: reversible-write
+routing:
+  positiveTriggers: { en: [design an automation workflow, plan an integration, specify a scheduled pipeline], zh-CN: [设计自动化工作流, 规划系统集成, 设计定时流程] }
+  negativeTriggers: { en: [deploy it now, personal reminder only], zh-CN: [立即部署, 只做个人提醒] }
+  confusableWith: []
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-automation, workflow-design-task]

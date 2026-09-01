@@ -30,7 +30,9 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run typecheck && npm test",
+    "skills:generate": "tsx scripts/generate-skill-projections.ts",
+    "skills:check": "tsx scripts/generate-skill-projections.ts --check",
+    "check": "npm run typecheck && npm run skills:check && npm test",
     "sos": "tsx src/cli.ts"
   },
   "dependencies": {

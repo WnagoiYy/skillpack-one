@@ -128,7 +128,23 @@ const atoms: SkillContract[] = [
       dependencies: ["tool-agnostic"],
       risk: "read-only"
     }
-  })
+  }),
+  {
+    ...atom({ id: "meta-skill-governor" }),
+    kind: "meta",
+    taxonomy: {
+      primaryCategory: "software-engineering",
+      lifecycle: ["govern"],
+      modalities: ["system-state"],
+      dependencies: ["harness-backed"],
+      risk: "reversible-write"
+    },
+    routing: {
+      positiveTriggers: { en: ["optimize skills"], "zh-CN": ["优化 Skill"] },
+      negativeTriggers: { en: ["use a skill normally"] },
+      confusableWith: []
+    }
+  }
 ];
 
 describe("two-stage routing", () => {
@@ -166,5 +182,11 @@ describe("two-stage routing", () => {
       "security-trust"
     ]);
     expect(trace.ambiguous).toBe(true);
+  });
+
+  it("returns meta Skills separately from atomic execution candidates", () => {
+    const trace = routeRequest("优化 Skill 的路由", taxonomy, atoms, { locale: "zh-CN" });
+    expect(trace.special[0]?.id).toBe("meta-skill-governor");
+    expect(trace.atoms.some((candidate) => candidate.id === "meta-skill-governor")).toBe(false);
   });
 });

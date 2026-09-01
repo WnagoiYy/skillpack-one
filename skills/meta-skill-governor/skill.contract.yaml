@@ -1,0 +1,51 @@
+schemaVersion: 1
+id: meta-skill-governor
+kind: meta
+version: 0.1.0
+name:
+  en: Meta Skill Governor
+  zh-CN: 元 Skill 治理器
+summary:
+  en: Propose, evaluate, release, deprecate, and roll back governed Skill changes.
+  zh-CN: 提议、评测、发布、弃用和回滚受治理的 Skill 变更。
+outcomes:
+  - Auditable Skill lifecycle decision
+artifacts: [change-proposal, evaluation-record, release-decision, rollback-pointer]
+inputs:
+  - name: observation
+    type: evidence
+    required: true
+outputs:
+  - name: decision
+    type: governance-record
+    required: true
+preconditions:
+  - The active registry and protected evaluation baselines are available
+failures:
+  - The proposal expands authority without explicit approval
+  - Held-out or protected suites fail
+sideEffects: [filesystem-read, filesystem-write, shell-execution]
+permissions:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: skill-agent-governance
+  lifecycle: [govern]
+  modalities: [text, structured-data, system-state]
+  dependencies: [harness-backed]
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en: [update a skill, optimize skill routing, deprecate a skill, roll back a skill, self-improve skills]
+    zh-CN: [更新 Skill, 优化 Skill, 优化 Skill 路由, 弃用 Skill, 回滚 Skill, Skill 自优化]
+  negativeTriggers:
+    en: [use the skill normally, silently delete]
+    zh-CN: [正常使用 Skill, 静默删除]
+  confusableWith: [atom-classify-capability]
+provenance:
+  origin: local
+  license: Apache-2.0
+evaluations: [governance-protected, routing-governance]

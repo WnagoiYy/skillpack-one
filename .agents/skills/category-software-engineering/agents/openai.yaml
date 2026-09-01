@@ -1,0 +1,7 @@
+interface:
+  display_name: Category Software Engineering
+  short_description: Route and apply Category Software Engineering
+  default_prompt: Use $category-software-engineering to handle this request within
+    its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

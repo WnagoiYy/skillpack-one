@@ -1,0 +1,7 @@
+interface:
+  display_name: Category Documents Communication
+  short_description: Route and apply Category Documents Communication
+  default_prompt: Use $category-documents-communication to handle this request
+    within its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

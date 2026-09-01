@@ -99,7 +99,7 @@ function scoreCategory(prompt: string, promptTokens: Set<string>, node: Taxonomy
   return { id: node.id, score: Number(score.toFixed(4)), matched, penalties };
 }
 
-function scoreAtom(
+function scoreContract(
   prompt: string,
   promptTokens: Set<string>,
   contract: SkillContract,
@@ -164,7 +164,12 @@ export function routeRequest(
   const allAtoms = sortCandidates(
     contracts
       .filter((contract) => contract.kind === "atom")
-      .map((contract) => scoreAtom(prompt, promptTokens, contract, locale, categoryScores))
+      .map((contract) => scoreContract(prompt, promptTokens, contract, locale, categoryScores))
+  );
+  const special = sortCandidates(
+    contracts
+      .filter((contract) => contract.kind === "meta")
+      .map((contract) => scoreContract(prompt, promptTokens, contract, locale, categoryScores))
   );
 
   const first = allCategories[0];
@@ -179,6 +184,7 @@ export function routeRequest(
     locale,
     categories: allCategories.slice(0, categoryLimit),
     atoms: allAtoms.slice(0, atomLimit),
+    special: special.slice(0, atomLimit),
     ambiguous
   };
 }

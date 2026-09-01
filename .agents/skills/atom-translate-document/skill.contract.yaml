@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: atom-translate-document
+kind: atom
+version: 0.1.0
+name: { en: Translate a document, zh-CN: 翻译文档 }
+summary: { en: Translate one document while preserving meaning and structure, zh-CN: 在保持含义与结构的前提下翻译一份文档 }
+outcomes: [Meaning-preserving translated document]
+artifacts: [translated-document]
+inputs: [{ name: document, type: document, required: true }, { name: target-locale, type: locale, required: true }]
+outputs: [{ name: translation, type: document, required: true }]
+preconditions: [The source document is readable]
+failures: [Critical terminology cannot be resolved, The source is incomplete]
+sideEffects: [filesystem-read, filesystem-write]
+permissions: { network: none, filesystem: workspace-write, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: documents-communication
+  lifecycle: [transform, verify]
+  modalities: [document, text]
+  dependencies: [tool-agnostic]
+  risk: reversible-write
+routing:
+  positiveTriggers: { en: [translate this document, localize this report], zh-CN: [翻译这份文档, 本地化这份报告] }
+  negativeTriggers: { en: [translate source code, summarize only], zh-CN: [翻译源代码, 只做摘要] }
+  confusableWith: []
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-bootstrap, translation-task]

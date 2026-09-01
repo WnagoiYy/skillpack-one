@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: atom-analyze-tabular-data
+kind: atom
+version: 0.1.0
+name: { en: Analyze tabular data, zh-CN: 分析表格数据 }
+summary: { en: Answer one structured-data question with reproducible calculations, zh-CN: 用可复现计算回答一个结构化数据问题 }
+outcomes: [Reproducible tabular analysis result]
+artifacts: [analysis-result]
+inputs: [{ name: table, type: tabular-data, required: true }, { name: question, type: text, required: true }]
+outputs: [{ name: result, type: structured-analysis, required: true }]
+preconditions: [The table is readable]
+failures: [Required fields are absent, Data quality prevents a defensible answer]
+sideEffects: [filesystem-read]
+permissions: { network: none, filesystem: read, shell: allowlisted, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: data-analytics
+  lifecycle: [analyze, verify]
+  modalities: [table, structured-data]
+  dependencies: [cli-backed]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [analyze this table, calculate spreadsheet metrics, inspect this dataset], zh-CN: [分析这个表格, 计算表格指标, 检查数据集] }
+  negativeTriggers: { en: [write a prose-only report, edit production database], zh-CN: [只写报告, 修改生产数据库] }
+  confusableWith: []
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-data, tabular-analysis-task]

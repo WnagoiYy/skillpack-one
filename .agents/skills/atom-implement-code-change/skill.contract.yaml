@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: atom-implement-code-change
+kind: atom
+version: 0.1.0
+name: { en: Implement a code change, zh-CN: 实现代码修改 }
+summary: { en: Edit and verify one bounded software behavior, zh-CN: 编辑并验证一个边界清晰的软件行为 }
+outcomes: [Verified bounded software change]
+artifacts: [source-change]
+inputs: [{ name: request, type: text, required: true }, { name: repository, type: workspace, required: true }]
+outputs: [{ name: change, type: diff, required: true }, { name: verification, type: test-evidence, required: true }]
+preconditions: [The requested edit is authorized, The repository is readable and writable]
+failures: [Requirements conflict with repository constraints, Verification cannot run]
+sideEffects: [filesystem-read, filesystem-write, shell-execution]
+permissions: { network: read, filesystem: workspace-write, shell: allowlisted, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: software-engineering
+  lifecycle: [create, verify]
+  modalities: [code, system-state]
+  dependencies: [harness-backed]
+  risk: reversible-write
+routing:
+  positiveTriggers: { en: [implement the code change, fix this bug, edit the source], zh-CN: [实现代码修改, 修复这个问题, 编辑源码] }
+  negativeTriggers: { en: [plan only, security audit only], zh-CN: [只做计划, 只做安全审计] }
+  confusableWith: [atom-plan-code-change, atom-audit-source-security]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-bootstrap, implement-code-task]

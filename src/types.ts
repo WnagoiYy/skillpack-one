@@ -151,5 +151,6 @@ export interface RouteTrace {
   locale: string;
   categories: RouteCandidate[];
   atoms: RouteCandidate[];
+  special: RouteCandidate[];
   ambiguous: boolean;
 }

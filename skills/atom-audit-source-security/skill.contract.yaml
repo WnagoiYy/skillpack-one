@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: atom-audit-source-security
+kind: atom
+version: 0.1.0
+name: { en: Audit source security, zh-CN: 审计源码安全 }
+summary: { en: Return evidence-backed vulnerability findings for a bounded code surface, zh-CN: 对边界明确的代码范围返回有证据的漏洞发现 }
+outcomes: [Evidence-backed source security findings]
+artifacts: [security-findings]
+inputs: [{ name: source-scope, type: code, required: true }]
+outputs: [{ name: findings, type: security-report, required: true }]
+preconditions: [The review scope and code are readable]
+failures: [Critical execution paths are unavailable, A finding cannot be evidenced]
+sideEffects: [filesystem-read, shell-execution]
+permissions: { network: read, filesystem: read, shell: allowlisted, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: security-trust
+  secondaryCategories: [software-engineering]
+  lifecycle: [analyze, verify]
+  modalities: [code, text]
+  dependencies: [cli-backed]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [audit source code for vulnerabilities, security review, trace attacker input], zh-CN: [审计代码漏洞, 安全审查, 跟踪攻击者输入] }
+  negativeTriggers: { en: [fix a normal bug, implement remediation], zh-CN: [修复普通问题, 实现修复] }
+  confusableWith: [atom-implement-code-change]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-bootstrap, source-security-task]

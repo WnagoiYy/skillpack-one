@@ -21,10 +21,15 @@ export async function loadContracts(root: string): Promise<SkillContract[]> {
     throw error;
   }
 
-  const contracts = await Promise.all(
-    entries
-      .filter((entry) => entry.isDirectory())
-      .map((entry) => readYaml<SkillContract>(path.join(sourceRoot, entry.name, "skill.contract.yaml")))
-  );
+  const contracts: SkillContract[] = [];
+  for (const entry of entries.filter((candidate) => candidate.isDirectory())) {
+    try {
+      contracts.push(
+        await readYaml<SkillContract>(path.join(sourceRoot, entry.name, "skill.contract.yaml"))
+      );
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+    }
+  }
   return contracts.sort((left, right) => left.id.localeCompare(right.id));
 }
