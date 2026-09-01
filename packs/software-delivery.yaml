@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: software-delivery
+version: 0.1.0
+name:
+  en: Evidence-gated software delivery
+  zh-CN: 证据门禁的软件交付
+description:
+  en: Plan, implement, verify, and security-check a bounded software change.
+  zh-CN: 规划、实现、验证并安全检查一个边界明确的软件修改。
+atoms: [atom-plan-code-change, atom-implement-code-change, atom-audit-source-security]
+optionalMcps: []
+ordering:
+  - { before: atom-plan-code-change, after: atom-implement-code-change }
+  - { before: atom-implement-code-change, after: atom-audit-source-security }
+acceptanceTests: [software-delivery-smoke]

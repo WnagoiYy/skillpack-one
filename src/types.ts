@@ -115,6 +115,7 @@ export interface CapabilityPack {
   description?: Localized<string>;
   atoms: string[];
   optionalMcps: string[];
+  specialSkills?: string[];
   ordering?: Array<{ before: string; after: string }>;
   acceptanceTests: string[];
 }

@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: evidence-backed-market-research
+version: 0.1.0
+name:
+  en: Evidence-backed market research
+  zh-CN: 有证据的市场研究
+description:
+  en: Find authoritative sources before producing a decision-relevant market analysis.
+  zh-CN: 先查找权威来源，再产出支持决策的市场分析。
+atoms: [atom-find-research-sources, atom-analyze-market]
+optionalMcps: []
+ordering:
+  - { before: atom-find-research-sources, after: atom-analyze-market }
+acceptanceTests: [market-research-smoke]

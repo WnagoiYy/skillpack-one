@@ -1,0 +1,15 @@
+schemaVersion: 1
+id: safe-skill-evolution
+version: 0.1.0
+name:
+  en: Safe Skill evolution
+  zh-CN: 安全 Skill 进化
+description:
+  en: Classify a capability, then govern any proposed lifecycle change through evaluation and rollback gates.
+  zh-CN: 先分类能力，再通过评测与回滚门禁治理生命周期变更。
+atoms: [atom-classify-capability]
+specialSkills: [meta-skill-governor]
+optionalMcps: []
+ordering:
+  - { before: atom-classify-capability, after: meta-skill-governor }
+acceptanceTests: [safe-skill-evolution-protected]

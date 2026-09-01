@@ -1,0 +1,60 @@
+schemaVersion: 1
+threshold: 0.82
+clusterCount: 8
+clusters:
+  - id: duplicate-38e7e1c724
+    entries:
+      - skill-anthropics-skills-docx-6db5d745
+      - skill-k-dense-ai-claude-scientific-skills-docx-b28174d4
+    minimumSimilarity: 0.875
+    reason: Candidate duplicate based on normalized name, capability terms, and
+      summary; human contract review required.
+  - id: duplicate-3c6113f972
+    entries:
+      - skill-anthropics-skills-pptx-c294bc82
+      - skill-k-dense-ai-claude-scientific-skills-pptx-763019b3
+    minimumSimilarity: 0.875
+    reason: Candidate duplicate based on normalized name, capability terms, and
+      summary; human contract review required.
+  - id: duplicate-4e4a6bb2af
+    entries:
+      - mcp-ai-auteng-docs-c72dfb5787
+      - mcp-ai-auteng-mcp-f36fddef83
+    minimumSimilarity: 0.9033
+    reason: Candidate duplicate based on normalized name, capability terms, and
+      summary; human contract review required.
+  - id: duplicate-92088af50b
+    entries:
+      - skill-anthropics-skills-xlsx-657c7b90
+      - skill-k-dense-ai-claude-scientific-skills-xlsx-dabbb4cd
+    minimumSimilarity: 0.875
+    reason: Candidate duplicate based on normalized name, capability terms, and
+      summary; human contract review required.
+  - id: duplicate-b401e3226c
+    entries:
+      - mcp-ai-autoblocks-ctxl-f98ae285d7
+      - mcp-ai-autoblocks-ctxl-mcp-0da0c47515
+    minimumSimilarity: 1
+    reason: Candidate duplicate based on normalized name, capability terms, and
+      summary; human contract review required.
+  - id: duplicate-d6d348a8ac
+    entries:
+      - skill-anthropics-skills-brand-guidelines-e7b91ca4
+      - skill-getsentry-skills-brand-guidelines-15586a99
+    minimumSimilarity: 0.925
+    reason: Candidate duplicate based on normalized name, capability terms, and
+      summary; human contract review required.
+  - id: duplicate-daf208910f
+    entries:
+      - skill-anthropics-skills-doc-coauthoring-e7cc23e0
+      - skill-getsentry-skills-doc-coauthoring-db52e2c5
+    minimumSimilarity: 0.925
+    reason: Candidate duplicate based on normalized name, capability terms, and
+      summary; human contract review required.
+  - id: duplicate-de7343e71e
+    entries:
+      - skill-anthropics-skills-pdf-28eceb6b
+      - skill-k-dense-ai-claude-scientific-skills-pdf-6adce56a
+    minimumSimilarity: 0.875
+    reason: Candidate duplicate based on normalized name, capability terms, and
+      summary; human contract review required.

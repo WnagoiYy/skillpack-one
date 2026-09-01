@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: localized-research-brief
+version: 0.1.0
+name:
+  en: Localized research brief
+  zh-CN: 本地化研究简报
+description:
+  en: Gather traceable sources and deliver the resulting source brief in another language without losing provenance.
+  zh-CN: 收集可追溯来源，并在不丢失出处的前提下用另一种语言交付来源简报。
+atoms: [atom-find-research-sources, atom-translate-document]
+optionalMcps: []
+ordering:
+  - { before: atom-find-research-sources, after: atom-translate-document }
+acceptanceTests: [localized-research-brief-smoke]

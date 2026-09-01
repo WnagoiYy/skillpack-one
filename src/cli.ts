@@ -6,6 +6,8 @@ import { loadContracts, loadTaxonomy } from "./registry.js";
 import { routeRequest } from "./router.js";
 import { lintTaxonomy, validateRepository } from "./validation.js";
 import { catalogStats, collectCatalog, loadCatalog } from "./catalog/catalog.js";
+import { writeDuplicateClusters } from "./deduplicate.js";
+import { loadPacks, validatePack } from "./packs.js";
 
 export function buildProgram(): Command {
   const program = new Command()
@@ -63,6 +65,26 @@ export function buildProgram(): Command {
     .action(async (options: { root: string }) => {
       const entries = await loadCatalog(path.resolve(options.root));
       process.stdout.write(`${JSON.stringify(catalogStats(entries), null, 2)}\n`);
+    });
+  catalog
+    .command("deduplicate")
+    .option("--root <path>", "repository root", process.cwd())
+    .option("--threshold <number>", "similarity threshold", "0.82")
+    .action(async (options: { root: string; threshold: string }) => {
+      const clusters = await writeDuplicateClusters(path.resolve(options.root), Number(options.threshold));
+      process.stdout.write(`${JSON.stringify({ clusters: clusters.length }, null, 2)}\n`);
+    });
+
+  program
+    .command("packs")
+    .description("Validate composable capability packs")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (options: { root: string }) => {
+      const root = path.resolve(options.root);
+      const [packs, contracts] = await Promise.all([loadPacks(root), loadContracts(root)]);
+      const errors = packs.flatMap((pack) => validatePack(pack, contracts).map((error) => `${pack.id}: ${error}`));
+      process.stdout.write(`${JSON.stringify({ packs: packs.length, errors }, null, 2)}\n`);
+      if (errors.length > 0) process.exitCode = 1;
     });
 
   return program;
