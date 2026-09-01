@@ -89,6 +89,8 @@ src/                  路由、校验、采集、评估、训练和 Harness
 
 仓库已经保存一次真实的受治理进化：`proposal-generic-zh-fallback`。该候选增加了 `index.zh.md`，依次通过开发集、未参与生成的英文/中文测试集和对抗集，并写入带回滚版本的不可覆盖晋级记录。
 
+新候选可以通过 `npm run sos -- train propose -- --id <id> --target <skill-id> --observation <evidence>` 与规范 Git 差异精确绑定，再进入评估和不可覆盖的晋级决策记录。受保护数据集、基线和发布门槛不能为同时修改它们的候选背书。
+
 Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 22 个 Skill。由于本机尚未配置 Pi 模型提供商凭证，模型驱动的任务完成率仍明确标记为**未认证**。Mock 只验证协议管线，结果始终带 `synthetic: true`；DeepSeek Harness 需等兼容 CLI 版本固定后才启用。
 
 详细说明见[评估流程](docs/zh-CN/evaluation.md)、[Harness 适配](docs/zh-CN/harnesses.md)和[进化策略](docs/zh-CN/evolution-policy.md)。

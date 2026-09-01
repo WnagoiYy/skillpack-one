@@ -19,6 +19,8 @@ import { CodexHarnessAdapter } from "./harness/codex.js";
 import type { HarnessAdapter } from "./harness/types.js";
 import type { EvolutionProposal } from "./train/types.js";
 import { recordPromotion, recordRollback, validateProposal } from "./train/governance.js";
+import { buildProposalDraft, writeProposalDraft } from "./train/propose.js";
+import { currentRevision, parentRevision, revisionChangedFiles, validateProposalRevisionEvidence } from "./train/revisions.js";
 
 export function buildProgram(): Command {
   const program = new Command()
@@ -157,7 +159,7 @@ export function buildProgram(): Command {
     });
 
   const train = program.command("train").description("Validate and govern bounded Skill evolution proposals");
-  const evaluateProposal = async (root: string, proposal: EvolutionProposal) => {
+  const evaluateProposal = async (root: string, proposal: EvolutionProposal, proposalPath?: string) => {
     const [datasets, taxonomyDocument, contracts, gate] = await Promise.all([
       loadEvalDatasets(root),
       loadTaxonomy(root),
@@ -165,7 +167,10 @@ export function buildProgram(): Command {
       readYaml<{ minimum: Partial<RoutingMetrics> }>(path.join(root, "evals", "gates.yaml"))
     ]);
     const splitMap = Object.fromEntries(datasets.map((dataset) => [dataset.id, dataset.split]));
-    const validationFailures = validateProposal(proposal, splitMap);
+    const validationFailures = [
+      ...validateProposal(proposal, splitMap),
+      ...(await validateProposalRevisionEvidence(root, proposal, proposalPath))
+    ];
     const routing = await evaluateAllRoutingDatasets(root, taxonomyDocument, contracts);
     const gateFailures = routing.flatMap((result) =>
       metricGate(result.metrics, gate.minimum).map((failure) => `${result.dataset}: ${failure}`)
@@ -175,13 +180,44 @@ export function buildProgram(): Command {
   };
 
   train
+    .command("propose")
+    .description("Scaffold an append-only bounded proposal from the exact Git candidate diff")
+    .requiredOption("--id <id>", "proposal id")
+    .requiredOption("--target <skill>", "target Skill id")
+    .requiredOption("--observation <text>", "observed failure or improvement evidence")
+    .option("--base <revision>", "base Git commit; defaults to the candidate parent")
+    .option("--candidate <revision>", "candidate Git commit; defaults to HEAD")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (options: { id: string; target: string; observation: string; base?: string; candidate?: string; root: string }) => {
+      const root = path.resolve(options.root);
+      const candidate = options.candidate ?? await currentRevision(root);
+      const base = options.base ?? await parentRevision(root, candidate);
+      const changedFiles = await revisionChangedFiles(root, base, candidate);
+      if (changedFiles.length === 0) throw new Error("Candidate revision has no canonical changed files");
+      const proposal = buildProposalDraft({
+        id: options.id,
+        createdAt: new Date().toISOString(),
+        targetSkill: options.target,
+        observation: options.observation,
+        baseRevision: base,
+        candidateRevision: candidate,
+        changedFiles
+      });
+      const datasets = await loadEvalDatasets(root);
+      const failures = validateProposal(proposal, Object.fromEntries(datasets.map((dataset) => [dataset.id, dataset.split])));
+      if (failures.length > 0) throw new Error(`Proposal draft violates governance: ${failures.join("; ")}`);
+      const output = await writeProposalDraft(root, proposal);
+      process.stdout.write(`${JSON.stringify({ proposal: output, changedFiles }, null, 2)}\n`);
+    });
+
+  train
     .command("evaluate")
     .argument("<proposal>", "proposal YAML path")
     .option("--root <path>", "repository root", process.cwd())
     .action(async (proposalPath: string, options: { root: string }) => {
       const root = path.resolve(options.root);
       const proposal = await readYaml<EvolutionProposal>(path.resolve(proposalPath));
-      const evaluation = await evaluateProposal(root, proposal);
+      const evaluation = await evaluateProposal(root, proposal, path.resolve(proposalPath));
       process.stdout.write(`${JSON.stringify(evaluation, null, 2)}\n`);
       if (!evaluation.passed) process.exitCode = 1;
     });
@@ -194,7 +230,7 @@ export function buildProgram(): Command {
     .action(async (proposalPath: string, options: { root: string; reviewer: string }) => {
       const root = path.resolve(options.root);
       const proposal = await readYaml<EvolutionProposal>(path.resolve(proposalPath));
-      const evaluation = await evaluateProposal(root, proposal);
+      const evaluation = await evaluateProposal(root, proposal, path.resolve(proposalPath));
       const decision = await recordPromotion(root, proposal, evaluation, options.reviewer);
       process.stdout.write(`${JSON.stringify({ decision }, null, 2)}\n`);
     });

@@ -44,6 +44,16 @@ export function validateProposal(
     if (normalized?.startsWith("skills/") || normalized?.startsWith(".agents/skills/")) {
       errors.push(`generated Skill projection must not be edited directly: ${normalized}`);
     }
+    if (normalized === "evals/gates.yaml") errors.push("proposal must not change its release gate");
+    if (normalized?.startsWith("evals/baselines/")) errors.push(`proposal must not change protected evaluation baseline: ${normalized}`);
+    const datasetMatch = normalized?.match(/^evals\/datasets\/([^/]+)\.ya?ml$/u);
+    if (datasetMatch?.[1]) {
+      const datasetId = datasetMatch[1].toLowerCase();
+      const split = Object.entries(datasetSplits).find(([id]) => id.toLowerCase() === datasetId)?.[1];
+      if (split === "test" || split === "adversarial" || split === "tasks") {
+        errors.push(`proposal must not change protected evaluation dataset: ${datasetId}`);
+      }
+    }
   }
 
   for (const dataset of proposal.generationDatasets) {

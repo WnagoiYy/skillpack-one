@@ -89,6 +89,8 @@ src/                  router, validator, catalog, evaluator, trainer, harnesses
 
 The repository includes one real governed evolution record: `proposal-generic-zh-fallback`. The candidate added `index.zh.md`, passed isolated development plus untouched English, Chinese, and adversarial suites, and produced an append-only promotion decision with a rollback revision.
 
+New candidates can be bound to their exact canonical Git diff with `npm run sos -- train propose -- --id <id> --target <skill-id> --observation <evidence>`, then evaluated and promoted through the immutable decision log. Protected datasets, baselines, and the release gate cannot certify a candidate that changes them.
+
 Pi 0.84.4 is pinned and its real `loadSkillsFromDir` implementation discovers all 22 Skills. Model-backed task completion remains explicitly **uncertified** until Pi provider credentials are configured. The deterministic Mock adapter tests protocol plumbing only and is always marked `synthetic: true`; the optional DeepSeek Harness adapter stays disabled until a compatible CLI release is pinned.
 
 See [evaluation](docs/evaluation.md), [harnesses](docs/harnesses.md), and the [evolution policy](docs/evolution-policy.md).

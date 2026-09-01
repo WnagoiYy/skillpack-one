@@ -6,6 +6,9 @@ import { describe, expect, it } from "vitest";
 import type { EvolutionProposal } from "../src/train/types.js";
 import { protectedRegressionFailures, recordPromotion, validateProposal } from "../src/train/governance.js";
 import type { RoutingEvaluationResult } from "../src/types.js";
+import { buildProposalDraft } from "../src/train/propose.js";
+import { canonicalRevisionDiffFailures } from "../src/train/revisions.js";
+import { buildProgram } from "../src/cli.js";
 
 function proposal(overrides: Partial<EvolutionProposal> = {}): EvolutionProposal {
   return {
@@ -29,6 +32,38 @@ function proposal(overrides: Partial<EvolutionProposal> = {}): EvolutionProposal
 }
 
 describe("governed Skill evolution", () => {
+  it("exposes proposal scaffolding as a first-class CLI command", () => {
+    const train = buildProgram().commands.find((command) => command.name() === "train");
+    expect(train?.commands.map((command) => command.name())).toContain("propose");
+  });
+
+  it("builds a least-authority proposal draft from an exact candidate diff", () => {
+    const draft = buildProposalDraft({
+      id: "proposal-new-boundary",
+      createdAt: "2026-09-02T00:00:00Z",
+      targetSkill: "atom-plan-code-change",
+      observation: "A boundary failed.",
+      baseRevision: "1111111111111111111111111111111111111111",
+      candidateRevision: "2222222222222222222222222222222222222222",
+      changedFiles: ["tests/router.test.ts", "skill-src/atom-plan-code-change/SKILL.md"]
+    });
+    expect(draft.allowedFiles).toEqual([
+      "skill-src/atom-plan-code-change/SKILL.md",
+      "tests/router.test.ts"
+    ]);
+    expect(draft.permissionAfter).toEqual(draft.permissionBefore);
+    expect(draft.rollbackRevision).toBe(draft.baseRevision);
+  });
+
+  it("binds declared changes to the canonical Git diff while ignoring generated projections", () => {
+    expect(canonicalRevisionDiffFailures(
+      ["scripts/generate-skill-projections.ts", "tests/skill-layout.test.ts"],
+      [".agents/skills/category-one/references/index.zh.md", "scripts/generate-skill-projections.ts", "skills/category-one/references/index.zh.md", "tests/skill-layout.test.ts"]
+    )).toEqual([]);
+    expect(canonicalRevisionDiffFailures(["src/router.ts"], ["src/router.ts", "tests/router.test.ts"]))
+      .toContain("candidate Git diff is missing from changedFiles: tests/router.test.ts");
+  });
+
   it("protects held-out data, bounded diffs, permissions, and the meta gate", () => {
     expect(validateProposal(proposal(), { "routing-train": "train", "routing-en-test": "test", "routing-adversarial": "adversarial" })).toEqual([]);
 
@@ -40,6 +75,10 @@ describe("governed Skill evolution", () => {
       .toContain("permission expansion requires explicit permission-expansion approval: network none -> write");
     expect(validateProposal(proposal({ targetSkill: "meta-skill-governor", allowedFiles: ["skill-src/meta-skill-governor/SKILL.md", "evals/gates.yaml"], changedFiles: ["skill-src/meta-skill-governor/SKILL.md", "evals/gates.yaml"] }), { "routing-train": "train" }))
       .toContain("a meta Skill proposal must not weaken or change its own gate");
+    expect(validateProposal(proposal({ allowedFiles: ["evals/datasets/routing-adversarial.yaml"], changedFiles: ["evals/datasets/routing-adversarial.yaml"] }), { "routing-train": "train", "routing-adversarial": "adversarial" }))
+      .toContain("proposal must not change protected evaluation dataset: routing-adversarial");
+    expect(validateProposal(proposal({ allowedFiles: ["evals/gates.yaml"], changedFiles: ["evals/gates.yaml"] }), { "routing-train": "train" }))
+      .toContain("proposal must not change its release gate");
   });
 
   it("rejects any protected metric regression independently", () => {
