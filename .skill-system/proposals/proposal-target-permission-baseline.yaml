@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: proposal-target-permission-baseline
+createdAt: 2026-09-01T19:13:00.192Z
+targetSkill: meta-skill-governor
+baseRevision: edfbe694cf074a37d43029eb6c944fd9a4a12f8c
+candidateRevision: 18d50d6dd5c9c6800a846dfd83634bb14ff918a9
+rollbackRevision: edfbe694cf074a37d43029eb6c944fd9a4a12f8c
+observation: The proposal scaffold used a least-authority placeholder instead of
+  the existing target Skill permission envelope.
+allowedFiles: &a1
+  - src/cli.ts
+  - tests/trainer.test.ts
+changedFiles: *a1
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+approvals: []
