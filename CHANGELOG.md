@@ -4,8 +4,13 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 
 ## [Unreleased]
 
+## [0.1.0-alpha.10] - 2026-09-03
+
 ### Added
 
+- A release-gated npm Trusted Publishing workflow using GitHub OIDC, provenance, environment approval, exact version/tag checks, and `next`/`latest` separation.
+- Bilingual bootstrap, release, verification, and rollback guidance for npm maintainers.
+- A tested release planner that rejects repository, tag, SemVer, and prerelease-state mismatches.
 - Equivalence-aware multi-Atom Recall@3 and Full Coverage@3, plus a same-domain hard-distractor routing suite.
 - Six-stage lifecycle security reviews covering authoring, storage, retrieval, selection, execution, and evolution.
 - Typed Skill relation graphs for reviewed confusion, composition, dependency, and pack-membership evidence.
@@ -89,3 +94,4 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 [0.1.0-alpha.7]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.7
 [0.1.0-alpha.8]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.8
 [0.1.0-alpha.9]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.9
+[0.1.0-alpha.10]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.10

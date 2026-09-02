@@ -1,7 +1,8 @@
 #!/usr/bin/env node
+import { existsSync, readFileSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { Command } from "commander";
 import { loadContracts, loadTaxonomy } from "./registry.js";
 import { routeRequest } from "./router.js";
@@ -40,11 +41,26 @@ import type { JsonValue } from "./runtime/state.js";
 import { buildSkillRelationGraph, validateSkillRelationGraph } from "./relations.js";
 import { evaluateLifecycleSecurityReview, type LifecycleSecurityReview } from "./security/lifecycle.js";
 
+function installedPackageVersion(): string {
+  const moduleDirectory = path.dirname(fileURLToPath(import.meta.url));
+  const candidates = [
+    path.resolve(moduleDirectory, "..", "package.json"),
+    path.resolve(moduleDirectory, "..", "..", "package.json")
+  ];
+  for (const candidate of candidates) {
+    if (!existsSync(candidate)) continue;
+    const document = JSON.parse(readFileSync(candidate, "utf8")) as { version?: unknown };
+    if (typeof document.version === "string" && document.version.length > 0) return document.version;
+    throw new Error(`${candidate} does not declare a package version`);
+  }
+  throw new Error("skillpack-one package.json could not be located");
+}
+
 export function buildProgram(): Command {
   const program = new Command()
     .name("skillpack")
     .description("SkillPack One: the Self-Organizing Skill System registry, router, evaluator, and trainer")
-    .version("0.1.0");
+    .version(installedPackageVersion());
 
   program
     .command("route")

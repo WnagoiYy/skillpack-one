@@ -7,6 +7,9 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 describe("Codex plugin manifest", () => {
   it("points to the generated portable Skill projection", async () => {
+    const packageDocument = JSON.parse(await readFile(path.join(root, "package.json"), "utf8")) as {
+      version?: string;
+    };
     const manifest = JSON.parse(await readFile(path.join(root, ".codex-plugin", "plugin.json"), "utf8")) as {
       name?: string;
       version?: string;
@@ -16,7 +19,8 @@ describe("Codex plugin manifest", () => {
     };
 
     expect(manifest.name).toBe("skillpack-one");
-    expect(manifest.version).toMatch(/^\d+\.\d+\.\d+$/u);
+    expect(manifest.version).toBe(packageDocument.version);
+    expect(manifest.version).toMatch(/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/u);
     expect(manifest.skills).toBe("./skills/");
     expect(manifest.repository).toBe("https://github.com/WnagoiYy/skillpack-one");
     expect(manifest.interface?.displayName).toBe("SkillPack One");
@@ -30,7 +34,7 @@ describe("Codex plugin manifest", () => {
     };
 
     expect(packageDocument.name).toBe("skillpack-one");
-    expect(packageDocument.bin).toEqual({ skillpack: "./dist/src/cli.js" });
+    expect(packageDocument.bin).toEqual({ skillpack: "dist/src/cli.js" });
     expect(packageDocument.scripts?.skillpack).toBe("tsx src/cli.ts");
   });
 });
