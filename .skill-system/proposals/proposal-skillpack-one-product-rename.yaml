@@ -1,0 +1,59 @@
+schemaVersion: 1
+id: proposal-skillpack-one-product-rename
+createdAt: 2026-09-02T00:36:38.076Z
+targetSkill: category-skill-agent-governance
+baseRevision: 6866d6de336e16f32ee4f9b25bd181f46f779e7e
+candidateRevision: 355791369cc49a7159fa645a427f837586aa0e83
+rollbackRevision: 6866d6de336e16f32ee4f9b25bd181f46f779e7e
+observation: The public name should communicate one installable Skill pack while
+  preserving Self-Organizing Skill System as the internal architecture.
+allowedFiles: &a1
+  - .codex-plugin/plugin.json
+  - CHANGELOG.md
+  - README.md
+  - README.zh-CN.md
+  - docs/catalog-methodology.md
+  - docs/evaluation.md
+  - docs/evolution-policy.md
+  - docs/harnesses.md
+  - docs/plans/2026-09-02-self-organizing-skills-design.md
+  - docs/plans/2026-09-02-self-organizing-skills-implementation.md
+  - docs/zh-CN/catalog-methodology.md
+  - docs/zh-CN/evaluation.md
+  - docs/zh-CN/evolution-policy.md
+  - docs/zh-CN/harnesses.md
+  - package-lock.json
+  - package.json
+  - schemas/capability-pack.schema.json
+  - schemas/catalog-entry.schema.json
+  - schemas/decomposition-map.schema.json
+  - schemas/eval-dataset.schema.json
+  - schemas/eval-run.schema.json
+  - schemas/evolution-proposal.schema.json
+  - schemas/skill-contract.schema.json
+  - schemas/taxonomy.schema.json
+  - src/catalog/catalog.ts
+  - src/cli.ts
+  - src/harness/pi.ts
+  - tests/plugin-manifest.test.ts
+  - tests/trainer.test.ts
+changedFiles: *a1
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+approvals: []

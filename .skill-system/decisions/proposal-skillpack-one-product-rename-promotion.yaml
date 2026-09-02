@@ -1,0 +1,70 @@
+schemaVersion: 1
+id: proposal-skillpack-one-product-rename-promotion
+action: promote
+proposal: proposal-skillpack-one-product-rename
+proposalDigest: sha256:b122463a9e77076c48fb701c2af284906ba32b6a97b4ef8905bd596936dd83d3
+baseRevision: 6866d6de336e16f32ee4f9b25bd181f46f779e7e
+candidateRevision: 355791369cc49a7159fa645a427f837586aa0e83
+rollbackRevision: 6866d6de336e16f32ee4f9b25bd181f46f779e7e
+reviewedBy: WnagoiYy
+recordedAt: 2026-09-02T00:36:59.462Z
+evaluation:
+  passed: true
+  failures: []
+  routing:
+    - dataset: routing-adversarial
+      split: adversarial
+      locale: en
+      protected: true
+      examples: 8
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-bootstrap
+      split: dev
+      locale: en
+      protected: false
+      examples: 3
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-en-test
+      split: test
+      locale: en
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-zh-cn-test
+      split: test
+      locale: zh-CN
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
