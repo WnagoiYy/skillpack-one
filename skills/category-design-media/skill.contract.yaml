@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: category-design-media
+kind: category
+version: 0.1.0
+name: { en: Design and Media Router, zh-CN: 设计与媒体路由器 }
+summary: { en: Route interface and media creation to modality-specific atoms., zh-CN: 将界面和媒体创作路由到特定模态的原子能力。 }
+outcomes: [Bounded design-media category decision]
+artifacts: [category-route, localized-index]
+inputs: [{ name: request, type: user-prompt, required: true }]
+outputs: [{ name: candidates, type: category-and-atom-candidates, required: true }]
+preconditions: [The versioned taxonomy and localized index are available]
+failures: [The primary medium or perceptual outcome is unclear]
+sideEffects: [filesystem-read]
+permissions: { network: none, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: design-media
+  lifecycle: [analyze]
+  modalities: [text, structured-data]
+  dependencies: [tool-agnostic]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [design an interface, create an image, edit video, produce a diagram], zh-CN: [设计界面, 创建图像, 编辑视频, 制作图示] }
+  negativeTriggers: { en: [implement frontend code, calculate a data chart], zh-CN: [实现前端代码, 计算数据图表] }
+  confusableWith: [category-software-engineering, category-data-analytics]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-bootstrap, routing-en-test, routing-zh-cn-test, routing-adversarial]

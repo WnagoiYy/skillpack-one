@@ -1,5 +1,5 @@
 import { createRequire } from "node:module";
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import type { ErrorObject, ValidateFunction } from "ajv";
 import { loadContracts, loadTaxonomy } from "./registry.js";
@@ -73,6 +73,23 @@ export function lintTaxonomy(taxonomy: Taxonomy): string[] {
     for (const id of pathIds) completed.add(id);
   }
 
+  const maximumDepth = taxonomy.maxDepth ?? 3;
+  for (const node of canonical.values()) {
+    let depth = 1;
+    let current = node;
+    const visited = new Set([node.id]);
+    while (current.parent) {
+      const parent = canonical.get(current.parent);
+      if (!parent || visited.has(parent.id)) break;
+      visited.add(parent.id);
+      depth += 1;
+      current = parent;
+    }
+    if (depth > maximumDepth) {
+      errors.push(`taxonomy node ${node.id} exceeds maximum category depth ${maximumDepth}: depth ${depth}`);
+    }
+  }
+
   return [...new Set(errors)].sort();
 }
 
@@ -90,11 +107,43 @@ export async function validateRepository(root: string): Promise<ValidationReport
 
   const contractValidator = await schemaValidator(root, "skill-contract");
   const contracts = await loadContracts(root);
+  const sourceDirectories = (await readdir(path.join(root, "skill-src"), { withFileTypes: true }))
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort();
+  const sourceDirectorySet = new Set(sourceDirectories);
+  const contractIds = new Set(contracts.map((contract) => contract.id));
+  const taxonomyIds = new Set(taxonomy.nodes.map((node) => node.id));
+
+  for (const directory of sourceDirectories) {
+    if (!contractIds.has(directory)) {
+      errors.push(`skill-src/${directory}/skill.contract.yaml: missing required shared contract`);
+    }
+  }
+
   for (const contract of contracts) {
     const label = `skill-src/${contract.id}/skill.contract.yaml`;
     checked.push(label);
     if (!contractValidator(contract)) {
       errors.push(...formatSchemaErrors(label, contractValidator.errors));
+    }
+    if (!sourceDirectorySet.has(contract.id)) {
+      errors.push(`${label}: contract id has no matching Skill directory`);
+    }
+    if (!taxonomyIds.has(contract.taxonomy.primaryCategory)) {
+      errors.push(`${label}: unknown primary category ${contract.taxonomy.primaryCategory}`);
+    }
+    for (const secondary of contract.taxonomy.secondaryCategories ?? []) {
+      if (!taxonomyIds.has(secondary)) errors.push(`${label}: unknown secondary category ${secondary}`);
+    }
+    if (contract.kind === "category" && contract.id !== `category-${contract.taxonomy.primaryCategory}`) {
+      errors.push(`${label}: category contract id must match its primary category`);
+    }
+  }
+
+  for (const node of taxonomy.nodes) {
+    if (!contractIds.has(`category-${node.id}`)) {
+      errors.push(`taxonomy node ${node.id} has no matching Category Skill contract`);
     }
   }
 

@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: category-software-engineering
+kind: category
+version: 0.1.0
+name: { en: Software Engineering Router, zh-CN: 软件工程路由器 }
+summary: { en: Route executable software work to the smallest verified engineering atoms., zh-CN: 将可执行软件工作路由到最小且已验证的工程原子能力。 }
+outcomes: [Bounded software-engineering category decision]
+artifacts: [category-route, localized-index]
+inputs: [{ name: request, type: user-prompt, required: true }]
+outputs: [{ name: candidates, type: category-and-atom-candidates, required: true }]
+preconditions: [The versioned taxonomy and localized index are available]
+failures: [The request does not expose a stable software outcome or boundary]
+sideEffects: [filesystem-read]
+permissions: { network: none, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: software-engineering
+  lifecycle: [analyze]
+  modalities: [text, structured-data]
+  dependencies: [tool-agnostic]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [implement software, fix a bug, test code, design software architecture], zh-CN: [实现软件, 修复缺陷, 测试代码, 设计软件架构] }
+  negativeTriggers: { en: [security audit, general research, visual design only], zh-CN: [安全审计, 通用研究, 仅视觉设计] }
+  confusableWith: [category-security-trust, category-design-media]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-bootstrap, routing-en-test, routing-zh-cn-test, routing-adversarial]

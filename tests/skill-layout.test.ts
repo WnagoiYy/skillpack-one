@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
 import { describe, expect, it } from "vitest";
-import { checkSkillProjections } from "../scripts/generate-skill-projections.js";
+import { checkSkillProjections, renderIndex } from "../scripts/generate-skill-projections.js";
 import type { SkillContract } from "../src/types.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -26,7 +26,7 @@ describe("Skill source and projections", () => {
     expect(directories.filter((name) => name === "meta-skill-governor")).toHaveLength(1);
   });
 
-  it("uses valid discriminating frontmatter and atomic contracts", async () => {
+  it("uses valid discriminating frontmatter and shared contracts for every Skill", async () => {
     const directories = (await readdir(sourceRoot, { withFileTypes: true })).filter((entry) => entry.isDirectory());
     for (const directory of directories) {
       const markdown = await readFile(path.join(sourceRoot, directory.name, "SKILL.md"), "utf8");
@@ -35,13 +35,14 @@ describe("Skill source and projections", () => {
       expect(String(metadata.description).length).toBeGreaterThan(40);
       expect(String(metadata.description).length).toBeLessThanOrEqual(1024);
 
-      if (directory.name.startsWith("atom-") || directory.name === "meta-skill-governor") {
-        const contract = parse(
-          await readFile(path.join(sourceRoot, directory.name, "skill.contract.yaml"), "utf8")
-        ) as SkillContract;
-        expect(contract.id).toBe(directory.name);
-        if (contract.kind === "atom") expect(contract.outcomes).toHaveLength(1);
-      }
+      const contract = parse(
+        await readFile(path.join(sourceRoot, directory.name, "skill.contract.yaml"), "utf8")
+      ) as SkillContract;
+      expect(contract.id).toBe(directory.name);
+      if (directory.name.startsWith("category-")) expect(contract.kind).toBe("category");
+      else if (directory.name.startsWith("atom-")) expect(contract.kind).toBe("atom");
+      else expect(contract.kind).toBe("meta");
+      if (contract.kind === "atom") expect(contract.outcomes).toHaveLength(1);
     }
   });
 
@@ -62,12 +63,36 @@ describe("Skill source and projections", () => {
         expect(agentMetadata.interface?.default_prompt).toContain(`$${directory.name}`);
 
         if (directory.name.startsWith("category-")) {
+          await expect(readFile(path.join(projectionRoot, directory.name, "references", "index.md"), "utf8")).resolves.toContain("Atomic Skills");
           await expect(readFile(path.join(projectionRoot, directory.name, "references", "index.en.md"), "utf8")).resolves.toContain("Atomic Skills");
           await expect(readFile(path.join(projectionRoot, directory.name, "references", "index.zh-CN.md"), "utf8")).resolves.toContain("原子 Skill");
           await expect(readFile(path.join(projectionRoot, directory.name, "references", "index.zh.md"), "utf8")).resolves.toContain("原子 Skill");
         }
       }
     }
+  });
+
+  it("routes parent indexes through direct child Categories before Atoms", () => {
+    const parent = {
+      id: "industry",
+      label: { en: "Industry", "zh-CN": "行业" },
+      description: { en: "Broad industry requests.", "zh-CN": "行业大类请求。" },
+      includes: ["industry work"],
+      excludes: ["other work"]
+    };
+    const child = {
+      id: "industry-specialty",
+      parent: "industry",
+      label: { en: "Specialty", "zh-CN": "细分类" },
+      description: { en: "Specific industry work.", "zh-CN": "具体行业工作。" },
+      includes: ["specialty work"],
+      excludes: ["other work"]
+    };
+
+    const index = renderIndex(parent, [parent, child], [], "en");
+    expect(index).toContain("## Subcategories");
+    expect(index).toContain("`category-industry-specialty`");
+    expect(index.indexOf("## Subcategories")).toBeLessThan(index.indexOf("## Atomic Skills"));
   });
 
   it("prevents the meta Skill from bypassing its own gate", async () => {

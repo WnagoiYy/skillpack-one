@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: category-research-knowledge
+kind: category
+version: 0.1.0
+name: { en: Research and Knowledge Router, zh-CN: 研究与知识路由器 }
+summary: { en: Route evidence discovery and synthesis to focused research atoms., zh-CN: 将证据发现与综合路由到聚焦的研究原子能力。 }
+outcomes: [Bounded research-knowledge category decision]
+artifacts: [category-route, localized-index]
+inputs: [{ name: request, type: user-prompt, required: true }]
+outputs: [{ name: candidates, type: category-and-atom-candidates, required: true }]
+preconditions: [The versioned taxonomy and localized index are available]
+failures: [The evidence question or knowledge outcome is not distinguishable]
+sideEffects: [filesystem-read]
+permissions: { network: none, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: research-knowledge
+  lifecycle: [analyze]
+  modalities: [text, structured-data]
+  dependencies: [tool-agnostic]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [find sources, review literature, verify evidence, synthesize knowledge], zh-CN: [查找来源, 文献综述, 验证证据, 综合知识] }
+  negativeTriggers: { en: [implement source code, unsupported creative writing], zh-CN: [实现源代码, 无证据创意写作] }
+  confusableWith: [category-documents-communication, category-business-growth]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-bootstrap, routing-en-test, routing-zh-cn-test, routing-adversarial]

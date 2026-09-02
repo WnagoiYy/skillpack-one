@@ -2,9 +2,13 @@
 
 [简体中文](README.zh-CN.md) · **Research-grade alpha**
 
-**Install one pack. Let it find, combine, and improve the skills you need.**
+> **The SkillPack is all you need.**
+>
+> Install one pack. Let it find, combine, and improve the skills you need.
 
 SkillPack One packages the **Self-Organizing Skill System**: a Codex-compatible architecture for atomic, composable, evaluated, and safely self-improving Agent Skills.
+
+"One pack" means one installation and governance entry point—not one giant prompt and not a claim that every possible capability is already bundled. Progressive disclosure keeps the catalog broad while loading only the Category and Atomic Skills required for the current task.
 
 It turns a growing Skill/MCP ecosystem into four deliberately separate layers:
 
@@ -33,7 +37,7 @@ The project does **not** install every discovered capability. The upstream catal
 | Upstream records | 658 | 388 Agent Skills + 270 official MCP Registry servers |
 | Candidate duplicate clusters | 8 | Human-review queue; originals remain intact |
 
-Every category projection carries `index.en.md`, `index.zh-CN.md`, and generic `index.zh.md` indexes. English `SKILL.md` remains the portable discovery contract, while localized indexes preserve language-specific terminology and routing habits.
+Every category projection carries an English fallback `index.md` plus `index.en.md`, `index.zh-CN.md`, and generic `index.zh.md` variants. English `SKILL.md` remains the portable discovery contract, while localized indexes preserve language-specific terminology and routing habits.
 
 ## Core ideas
 
@@ -45,6 +49,30 @@ Every category projection carries `index.en.md`, `index.zh-CN.md`, and generic `
 - **Catalog is not trust.** Collection never executes upstream code. Unknown-license entries are metadata only; installation requires a separate security review.
 
 The design follows the current [OpenAI Agent Skills guidance](https://learn.chatgpt.com/docs/build-skills), [Codex plugin model](https://learn.chatgpt.com/docs/build-plugins), and the [official MCP Registry API](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/api/official-registry-api.md).
+
+## The philosophy: one pack, many valid implementations
+
+SkillPack One is a reference implementation of a general design philosophy. An individual, community, or organization may choose a different taxonomy, directory layout, evaluation harness, or Meta Skill topology while remaining compatible with the same foundation:
+
+1. **One shared description standard.** Every Skill is a directory with a portable `SKILL.md` containing a discriminating `name` and `description`. This repository additionally requires every first-party Category, Atomic, and Meta Skill to carry the same machine-readable `skill.contract.yaml`: inputs, outputs, outcome, artifacts, boundaries, permissions, side effects, provenance, routing signals, and evaluations.
+2. **Categories index Skills progressively.** A request first selects a Category Skill, then reads that category's `index.md` or locale-specific index, and only then loads the selected Atom. Category trees should stay shallow: no more than three Category levels is recommended—broad domain → subdomain → specific category → Atomic Skill. The Atom is the leaf and is not counted as a Category level. This implementation keeps executable Skill directories flat for Codex discovery while representing hierarchy through taxonomy parents and generated indexes; another host may use physical nested directories.
+3. **Every Skill may be generated, trained, and evolved.** A Skill may be authored by a person, recorded from a workflow, or drafted with `@skill-creator` in ChatGPT and `$skill-creator` in Codex. Here, "training" means improving descriptions, contracts, instructions, and compositions against versioned routing and task suites—not silently changing model weights. Meta Skills govern proposals, evaluation, promotion, deprecation, and rollback. They may govern the whole pack, one Category subtree, or one specific Skill, including themselves under the same gate.
+4. **Atoms have explicit responsibility boundaries.** An Atomic Skill owns one primary outcome, one dominant artifact or state transition, one permission envelope, one focused rubric, and an independently useful failure boundary. Broad end-to-end workflows belong in capability packs that compose atoms without merging them.
+5. **The foundation is shared; the taxonomy is not universal.** Different maintainers may split industries, functions, modalities, and risk domains differently. Conformance comes from portable descriptions, explicit boundaries, progressive indexes, evidence, and governed evolution—not from copying this repository's ten top-level categories.
+
+See the [classification standard](taxonomy/classification-standard.md), [evaluation policy](docs/evaluation.md), and [evolution policy](docs/evolution-policy.md) for this implementation's concrete profile.
+
+## Community and model contributions
+
+Communities and models may propose new Skills or improvements, but generation is not approval. Each contribution follows the same admission path:
+
+1. Submit provenance, license state, the shared contract, localized routing examples, permissions, and evaluation cases.
+2. Use model-assisted classification and similarity analysis to choose the narrowest category, extract the atomic responsibility, and identify overlap with existing Skills.
+3. Review security, authority, provenance, and duplicate candidates. A generating model must not be the sole approver of its own change; use an independent reviewer, a maintainer, or both according to risk.
+4. Regenerate parent/child indexes and run development, held-out, multilingual, adversarial, and task-completion suites as applicable.
+5. Promote only through an append-only decision with a rollback pointer. Merge with an existing Atom, reject, or deprecate when a proposal adds wording but no distinct reusable capability.
+
+This keeps community growth additive in useful capability rather than additive in duplicated context. See [CONTRIBUTING.md](CONTRIBUTING.md) for the review checklist.
 
 ## Quick start
 

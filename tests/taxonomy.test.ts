@@ -29,4 +29,22 @@ describe("taxonomy validation", () => {
     expect(errors).toContain("taxonomy node alpha references missing parent: missing");
     expect(errors.some((error) => error.startsWith("taxonomy cycle:"))).toBe(true);
   });
+
+  it("limits category trees to the configured three levels", () => {
+    const taxonomy: Taxonomy = {
+      schemaVersion: 1,
+      version: "0.2.0",
+      maxDepth: 3,
+      nodes: [
+        { id: "level-one", label: { en: "One" }, includes: ["one"], excludes: ["other"] },
+        { id: "level-two", parent: "level-one", label: { en: "Two" }, includes: ["two"], excludes: ["other"] },
+        { id: "level-three", parent: "level-two", label: { en: "Three" }, includes: ["three"], excludes: ["other"] },
+        { id: "level-four", parent: "level-three", label: { en: "Four" }, includes: ["four"], excludes: ["other"] }
+      ]
+    };
+
+    expect(lintTaxonomy(taxonomy)).toContain(
+      "taxonomy node level-four exceeds maximum category depth 3: depth 4"
+    );
+  });
 });

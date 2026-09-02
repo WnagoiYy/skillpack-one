@@ -104,6 +104,7 @@ export interface TaxonomyNode {
 export interface Taxonomy {
   schemaVersion: 1;
   version: string;
+  maxDepth?: number;
   nodes: TaxonomyNode[];
 }
 

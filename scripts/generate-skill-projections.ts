@@ -69,17 +69,31 @@ function localized(contract: SkillContract, locale: string): { name: string; sum
   };
 }
 
-function renderIndex(node: TaxonomyNode, contracts: SkillContract[], locale: "en" | "zh-CN"): string {
+export function renderIndex(
+  node: TaxonomyNode,
+  nodes: TaxonomyNode[],
+  contracts: SkillContract[],
+  locale: "en" | "zh-CN"
+): string {
   const heading = locale === "zh-CN" ? "原子 Skill" : "Atomic Skills";
   const description = node.description?.[locale] ?? node.description?.en ?? node.label[locale] ?? node.label.en;
   const lines = [
     `# ${node.label[locale] ?? node.label.en}: ${heading}`,
     "",
     description,
-    "",
-    `## ${heading}`,
     ""
   ];
+  const children = nodes.filter((candidate) => candidate.parent === node.id).sort((left, right) => left.id.localeCompare(right.id));
+  if (children.length > 0) {
+    lines.push(`## ${locale === "zh-CN" ? "子分类" : "Subcategories"}`, "");
+    for (const child of children) {
+      const childLabel = child.label[locale] ?? child.label.en;
+      const childDescription = child.description?.[locale] ?? child.description?.en;
+      lines.push(`- \`category-${child.id}\` — **${childLabel}**${childDescription ? `: ${childDescription}` : ""}`);
+    }
+    lines.push("");
+  }
+  lines.push(`## ${heading}`, "");
   const matching = contracts.filter(
     (contract) =>
       contract.kind === "atom" &&
@@ -128,8 +142,10 @@ async function expectedFiles(root: string): Promise<Map<string, string>> {
       const nodeId = directory.slice("category-".length);
       const node = taxonomy.nodes.find((candidate) => candidate.id === nodeId);
       if (!node) throw new Error(`${directory} has no taxonomy node ${nodeId}`);
-      expected.set(path.join(directory, "references", "index.en.md"), renderIndex(node, contracts, "en"));
-      const chineseIndex = renderIndex(node, contracts, "zh-CN");
+      const englishIndex = renderIndex(node, taxonomy.nodes, contracts, "en");
+      expected.set(path.join(directory, "references", "index.md"), englishIndex);
+      expected.set(path.join(directory, "references", "index.en.md"), englishIndex);
+      const chineseIndex = renderIndex(node, taxonomy.nodes, contracts, "zh-CN");
       expected.set(path.join(directory, "references", "index.zh-CN.md"), chineseIndex);
       expected.set(path.join(directory, "references", "index.zh.md"), chineseIndex);
     }

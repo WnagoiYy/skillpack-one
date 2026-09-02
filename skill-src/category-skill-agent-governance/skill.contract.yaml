@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: category-skill-agent-governance
+kind: category
+version: 0.1.0
+name: { en: Skill and Agent Governance Router, zh-CN: Skill 与 Agent 治理路由器 }
+summary: { en: Route capability-system creation and lifecycle work to governance atoms and Meta Skills., zh-CN: 将能力系统创建与生命周期工作路由到治理原子和元 Skill。 }
+outcomes: [Bounded skill-agent-governance category decision]
+artifacts: [category-route, localized-index]
+inputs: [{ name: request, type: user-prompt, required: true }]
+outputs: [{ name: candidates, type: category-and-atom-candidates, required: true }]
+preconditions: [The versioned taxonomy and localized index are available]
+failures: [The request concerns normal domain use rather than capability-system governance]
+sideEffects: [filesystem-read]
+permissions: { network: none, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: skill-agent-governance
+  lifecycle: [analyze, govern]
+  modalities: [text, structured-data]
+  dependencies: [tool-agnostic]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [create a skill, classify a capability, evaluate skill routing, evolve a skill system], zh-CN: [创建 Skill, 分类能力, 评测 Skill 路由, 进化 Skill 系统] }
+  negativeTriggers: { en: [use a domain skill normally, train an unrelated model], zh-CN: [正常使用领域 Skill, 训练无关模型] }
+  confusableWith: [category-software-engineering, category-security-trust]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-bootstrap, routing-en-test, routing-zh-cn-test, routing-adversarial]

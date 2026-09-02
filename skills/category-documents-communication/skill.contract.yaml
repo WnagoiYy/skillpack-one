@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: category-documents-communication
+kind: category
+version: 0.1.0
+name: { en: Documents and Communication Router, zh-CN: 文档与沟通路由器 }
+summary: { en: Route human-readable document and message work to format-specific atoms., zh-CN: 将供人阅读的文档与消息工作路由到特定格式原子能力。 }
+outcomes: [Bounded documents-communication category decision]
+artifacts: [category-route, localized-index]
+inputs: [{ name: request, type: user-prompt, required: true }]
+outputs: [{ name: candidates, type: category-and-atom-candidates, required: true }]
+preconditions: [The versioned taxonomy and localized index are available]
+failures: [The target communication artifact or audience is unclear]
+sideEffects: [filesystem-read]
+permissions: { network: none, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+taxonomy:
+  primaryCategory: documents-communication
+  lifecycle: [analyze]
+  modalities: [text, structured-data]
+  dependencies: [tool-agnostic]
+  risk: read-only
+routing:
+  positiveTriggers: { en: [write a document, translate a report, create slides, draft a message], zh-CN: [编写文档, 翻译报告, 制作幻灯片, 起草消息] }
+  negativeTriggers: { en: [implement code, create image or video], zh-CN: [实现代码, 创建图像或视频] }
+  confusableWith: [category-research-knowledge, category-design-media]
+provenance: { origin: local, license: Apache-2.0 }
+evaluations: [routing-bootstrap, routing-en-test, routing-zh-cn-test, routing-adversarial]

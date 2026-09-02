@@ -2,9 +2,13 @@
 
 [English](README.md) · **研究型 Alpha 版本**
 
-**只装一个包，让它自动寻找、组合和进化你需要的技能。**
+> **The SkillPack is all you need.**
+>
+> 只装一个包，让它自动寻找、组合和进化你需要的技能。
 
 SkillPack One 对外提供一个安装包，内部技术架构称为 **Self-Organizing Skill System**：一个兼容 Codex 的原子化、可组合、可评估、可安全自进化的 Agent Skill 系统。
+
+“一个包”指一个统一的安装与治理入口，不是把所有指令塞进一个巨大 Prompt，也不宣称当前已经包含世上所有能力。系统通过渐进式读取保留广阔目录，但每次任务只加载命中的分类 Skill 和原子 Skill。
 
 它没有把网上所有 Skill 一股脑安装进上下文，而是把生态分成四层：
 
@@ -33,7 +37,7 @@ flowchart LR
 | 上游记录 | 658 | 388 个 Agent Skills + 270 个官方 MCP Registry 服务 |
 | 疑似重复簇 | 8 | 进入人工审查队列，不自动删除来源 |
 
-每个分类投影同时提供 `index.en.md`、`index.zh-CN.md` 和通用回退 `index.zh.md`。英文 `SKILL.md` 保持跨工具发现兼容性，本地化索引则保留不同语言的表达和路由习惯。
+每个分类投影同时提供英文回退 `index.md`、`index.en.md`、`index.zh-CN.md` 和通用中文回退 `index.zh.md`。英文 `SKILL.md` 保持跨工具发现兼容性，本地化索引则保留不同语言的表达和路由习惯。
 
 ## 我采纳并固化的设计原则
 
@@ -45,6 +49,30 @@ flowchart LR
 - **被收录不等于可信。** 采集过程不执行上游代码；许可未知的条目只保存元数据，安装前必须另行安全审查。
 
 架构参考当前的 [OpenAI Agent Skills 文档](https://learn.chatgpt.com/docs/build-skills)、[Codex 插件文档](https://learn.chatgpt.com/docs/build-plugins)和[官方 MCP Registry API](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/api/official-registry-api.md)。
+
+## 设计哲学：只装一个包，但允许多种实现
+
+SkillPack One 是一套通用设计哲学的参考实现。个人、社区和组织可以采用不同的分类体系、目录结构、评测 Harness 或元 Skill 拓扑，只要遵循共同基础：
+
+1. **所有 Skill 使用同一套描述规范。** 每个 Skill 都是一个目录，并包含可移植的 `SKILL.md`，其中 `name` 与 `description` 必须能准确区分触发范围。本仓库进一步要求每个第一方分类、原子和元 Skill 使用同一份机器可读 `skill.contract.yaml`，声明输入、输出、结果、产物、边界、权限、副作用、来源、路由信号和评测。
+2. **分类 Skill 负责渐进式索引。** 请求先命中分类 Skill，再读取该层级的 `index.md` 或对应语言索引，最后才加载选中的原子 Skill。分类树建议最多三层：行业或领域大类 → 细分领域 → 具体分类 → 原子 Skill；原子 Skill 是叶节点，不计入分类层数。本实现为了兼容 Codex 发现机制，保持可执行 Skill 目录扁平，通过 taxonomy 的父子关系和生成索引表达逻辑层级；其他宿主也可以采用物理嵌套目录。
+3. **所有 Skill 都可以生成、训练和进化。** Skill 可以由人编写、从工作流录制，或在 ChatGPT 中通过 `@skill-creator`、在 Codex 中通过 `$skill-creator` 生成草案。这里的“训练”是依据版本化路由题集和任务题集，持续优化描述、契约、指令与组合，不是静默修改模型权重。元 Skill 负责提案、评测、晋级、弃用和回滚；它既可以管理整个包，也可以只管理某个分类子树或单个 Skill，并以同一门禁约束自身。
+4. **原子 Skill 的职责边界必须明确。** 一个原子 Skill 只拥有一个主要结果、一个主导产物或状态变化、一个权限包络、一个聚焦评分标准和一个可独立复用的失败边界。端到端流程应通过能力包组合原子能力，而不是重新把多个原子揉成巨型 Skill。
+5. **基础规范通用，具体分类并不唯一。** 不同维护者可以按行业、职能、模态或风险采用不同划分。是否符合这套哲学，取决于描述可移植、边界明确、索引渐进、证据可查和进化受治理，而不是照搬本仓库现有的十个一级分类。
+
+本实现的具体规则见[分类标准](taxonomy/classification-standard.zh-CN.md)、[评估流程](docs/zh-CN/evaluation.md)和[进化策略](docs/zh-CN/evolution-policy.md)。
+
+## 社区与大模型贡献
+
+社区和大模型都可以提出新 Skill 或改进方案，但“生成”不等于“审核通过”。每项贡献采用同一准入流程：
+
+1. 提交来源、许可证状态、统一能力契约、多语言路由样例、权限声明和评测案例。
+2. 使用大模型辅助分类与相似度分析，选择最窄的分类、提取原子职责，并找出与现有 Skill 的重叠。
+3. 审核安全、权限、来源和重复候选。生成变更的模型不能成为唯一审核者；应根据风险使用独立模型、维护者或两者共同审核。
+4. 重新生成父子分类索引，并按需要运行开发集、留出集、多语言集、对抗集和任务完成集。
+5. 只有生成不可覆盖的晋级决策和回滚指针后才能合入；若提案只增加表述、没有新的可复用能力，则应与现有 Atom 合并、拒绝或弃用。
+
+这样，社区增长增加的是有效能力，而不是重复上下文。详细清单见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## 快速开始
 

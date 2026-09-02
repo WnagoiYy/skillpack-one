@@ -2,6 +2,18 @@
 
 All notable changes are recorded here. The format follows Keep a Changelog and versions follow Semantic Versioning.
 
+## [Unreleased]
+
+### Added
+
+- A portable design-philosophy section and community/model admission workflow in both READMEs.
+- Shared capability contracts for all ten Category Skills.
+- Generated `index.md` fallbacks and parent-to-child Category indexing support.
+
+### Changed
+
+- Taxonomy validation now enforces a configurable maximum of three Category levels and requires one Category Skill contract for every taxonomy node.
+
 ## [0.1.0-alpha.6] - 2026-09-02
 
 ### Changed
