@@ -32,9 +32,13 @@ export interface TaskTrace {
   costUsd?: number;
 }
 
+export interface ExecutionOptions {
+  skills: "enabled" | "disabled";
+}
+
 export interface HarnessAdapter {
   discover(): Promise<HarnessCapabilities>;
   healthcheck(): Promise<HealthReport>;
   route(example: RoutingExample): Promise<HarnessResult<RouteTrace>>;
-  execute(task: TaskExample): Promise<HarnessResult<TaskTrace>>;
+  execute(task: TaskExample, options?: ExecutionOptions): Promise<HarnessResult<TaskTrace>>;
 }

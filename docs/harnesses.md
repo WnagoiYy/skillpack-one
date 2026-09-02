@@ -12,6 +12,9 @@ Run:
 npm run skillpack -- harness status
 npm run skillpack -- harness discover --adapter pi
 npm run skillpack -- harness tasks --adapter pi --provider <provider> --model <model>
+npm run skillpack -- harness tasks --adapter pi --provider <provider> --model <model> --skills disabled > without-skill.json
+npm run skillpack -- harness tasks --adapter pi --provider <provider> --model <model> --skills enabled > with-skill.json
+npm run skillpack -- harness effect without-skill.json with-skill.json
 ```
 
 Pi credentials remain in Pi's own provider configuration. The project never reads or logs credential values. If no provider is ready, the adapter returns a typed `blocked` result; it does not replace the live score with a mock score.
@@ -31,3 +34,5 @@ The DSH adapter is disabled until a compatible CLI release is explicitly pinned.
 ## Completion claims
 
 Routing gates and task-completion gates are separate. A release may pass deterministic routing while remaining uncertified for live task completion. Public reports must show blocked runs, model/provider identity, rubric failures, cost, and latency rather than omitting unavailable evidence.
+
+Skill-effect claims additionally require paired runs with and without the candidate Skill under the same dataset and harness identity. Redirect each task result to JSON, then use `harness effect`; the comparison rejects synthetic evidence and unmatched runs.

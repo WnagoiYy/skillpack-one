@@ -4,6 +4,7 @@ import type { RouteTrace, RoutingExample } from "../types.js";
 import type {
   HarnessAdapter,
   HarnessCapabilities,
+  ExecutionOptions,
   HarnessResult,
   HealthReport,
   TaskExample,
@@ -83,7 +84,7 @@ export class PiHarnessAdapter implements HarnessAdapter {
     return args;
   }
 
-  private async invoke(prompt: string): Promise<HarnessResult<string>> {
+  private async invoke(prompt: string, options: ExecutionOptions = { skills: "enabled" }): Promise<HarnessResult<string>> {
     const started = performance.now();
     const health = await this.healthcheck();
     if (!health.ready) {
@@ -100,8 +101,9 @@ export class PiHarnessAdapter implements HarnessAdapter {
         "--no-session",
         "--no-tools",
         "--approve",
-        "--skill",
-        path.join(this.root, "skills"),
+        ...(options.skills === "enabled"
+          ? ["--skill", path.join(this.root, "skills")]
+          : ["--no-skills"]),
         prompt
       ],
       this.root
@@ -125,9 +127,10 @@ export class PiHarnessAdapter implements HarnessAdapter {
     }
   }
 
-  async execute(task: TaskExample): Promise<HarnessResult<TaskTrace>> {
+  async execute(task: TaskExample, options: ExecutionOptions = { skills: "enabled" }): Promise<HarnessResult<TaskTrace>> {
     const result = await this.invoke(
-      `Use the smallest loaded Skill set to complete this task. Task: ${task.task}\nRubric:\n- ${task.rubric.join("\n- ")}`
+      `${options.skills === "enabled" ? "Use the smallest loaded Skill set" : "Do not use any Agent Skill"} to complete this task. Task: ${task.task}\nRubric:\n- ${task.rubric.join("\n- ")}`,
+      options
     );
     if (result.status !== "ok") return result;
     return {

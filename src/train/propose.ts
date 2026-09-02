@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { stringify } from "yaml";
 import type { PermissionEnvelope } from "../types.js";
-import type { EvolutionProposal } from "./types.js";
+import type { EvolutionAuthorship, EvolutionProposal } from "./types.js";
 
 const LEAST_AUTHORITY: PermissionEnvelope = {
   network: "none",
@@ -17,6 +17,7 @@ export interface ProposalDraftInput {
   createdAt: string;
   targetSkill: string;
   observation: string;
+  authorship?: EvolutionAuthorship;
   baseRevision: string;
   candidateRevision: string;
   changedFiles: string[];
@@ -38,6 +39,7 @@ export function buildProposalDraft(input: ProposalDraftInput): EvolutionProposal
     candidateRevision: input.candidateRevision,
     rollbackRevision: input.baseRevision,
     observation: input.observation,
+    ...(input.authorship ? { authorship: input.authorship } : {}),
     allowedFiles: changedFiles,
     changedFiles,
     generationDatasets: input.generationDatasets ?? ["routing-bootstrap"],

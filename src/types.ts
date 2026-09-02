@@ -121,6 +121,22 @@ export interface CapabilityPack {
   acceptanceTests: string[];
 }
 
+export interface CapabilityPackPlan {
+  pack: string;
+  name: Localized<string>;
+  skills: string[];
+  stages: string[][];
+  acceptanceTests: string[];
+}
+
+export interface PackRecommendation {
+  pack: string;
+  score: number;
+  matchedSkills: string[];
+  missingSkills: string[];
+  plan: CapabilityPackPlan;
+}
+
 export interface RoutingExample {
   id: string;
   prompt: string;
@@ -165,15 +181,38 @@ export interface CompletionMetrics {
   taskCompletionRate: number;
   rubricPassRate: number;
   blockedRate: number;
+  averageCostUsd?: number;
+  averageLatencyMs?: number;
 }
 
 export interface TaskEvaluationResult {
   dataset: string;
   harness: { name: string; version: string };
+  skillMode: "enabled" | "disabled";
   synthetic: boolean;
   examples: number;
   metrics: CompletionMetrics;
   failures: Array<{ exampleId: string; reason: string }>;
+}
+
+export interface SkillEffectMetrics {
+  taskCompletionLift: number;
+  rubricPassLift: number;
+  blockedRateChange: number;
+  averageCostUsdChange?: number;
+  averageLatencyMsChange?: number;
+}
+
+export interface SkillEffectResult {
+  schemaVersion: 1;
+  dataset: string;
+  harness: { name: string; version: string };
+  baseline: "without-skill";
+  candidate: "with-skill";
+  certifiable: boolean;
+  metrics: SkillEffectMetrics;
+  passed: boolean;
+  failures: string[];
 }
 
 export interface RouteCandidate {

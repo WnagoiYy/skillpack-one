@@ -19,10 +19,15 @@
     "catalog",
     "taxonomy",
     "packs",
+    "evals",
     "schemas",
+    "docs",
     "dist",
     "README.md",
     "README.zh-CN.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "THIRD_PARTY.md",
     "LICENSE"
   ],
   "scripts": {

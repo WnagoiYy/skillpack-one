@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadContracts } from "../src/registry.js";
-import { loadPacks, validatePack } from "../src/packs.js";
+import { compilePackPlan, loadPacks, recommendPacks, validatePack } from "../src/packs.js";
+import { loadTaxonomy } from "../src/registry.js";
+import { routeRequest } from "../src/router.js";
 import type { CapabilityPack } from "../src/types.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -32,5 +34,29 @@ describe("capability packs", () => {
     const errors = validatePack(invalid, contracts);
     expect(errors).toContain("unknown atom: atom-missing");
     expect(errors.some((error) => error.startsWith("ordering cycle:"))).toBe(true);
+  });
+
+  it("compiles stable dependency stages without merging atomic Skills", async () => {
+    const [packs, contracts] = await Promise.all([loadPacks(root), loadContracts(root)]);
+    const software = packs.find((pack) => pack.id === "software-delivery");
+    expect(software).toBeTruthy();
+    const plan = compilePackPlan(software!, contracts);
+    expect(plan.stages).toEqual([
+      ["atom-plan-code-change"],
+      ["atom-implement-code-change"],
+      ["atom-audit-source-security"]
+    ]);
+  });
+
+  it("recommends a governed pack from multi-Skill route evidence", async () => {
+    const [packs, contracts, taxonomy] = await Promise.all([loadPacks(root), loadContracts(root), loadTaxonomy(root)]);
+    const trace = routeRequest("Plan, implement, and security-review a bounded code change", taxonomy, contracts);
+    const recommendations = recommendPacks(trace, packs, contracts);
+    expect(recommendations[0]?.pack).toBe("software-delivery");
+    expect(recommendations[0]?.matchedSkills).toEqual([
+      "atom-plan-code-change",
+      "atom-implement-code-change",
+      "atom-audit-source-security"
+    ]);
   });
 });

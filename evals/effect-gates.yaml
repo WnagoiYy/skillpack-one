@@ -1,0 +1,5 @@
+schemaVersion: 1
+minimumTaskCompletionLift: 0
+minimumRubricPassLift: 0
+maximumBlockedRateIncrease: 0
+requirePositiveLift: true

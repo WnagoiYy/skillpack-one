@@ -36,6 +36,15 @@ export function validateProposal(
   datasetSplits: Record<string, EvalDataset["split"]>
 ): string[] {
   const errors: string[] = [];
+  if (proposal.authorship) {
+    if (!proposal.authorship.author.trim()) errors.push("proposal authorship requires an author identity");
+    if (proposal.authorship.mode === "human" && proposal.authorship.generator) {
+      errors.push("human-authored proposal must not declare a model generator");
+    }
+    if (proposal.authorship.mode !== "human" && !proposal.authorship.generator?.trim()) {
+      errors.push(`${proposal.authorship.mode} proposal requires a generator identity`);
+    }
+  }
   const allowed = new Set(proposal.allowedFiles.map(normalizedRelative).filter((file): file is string => Boolean(file)));
   for (const file of proposal.changedFiles) {
     const normalized = normalizedRelative(file);
@@ -124,6 +133,16 @@ export async function recordPromotion(
     throw new Error("Cannot promote a proposal that failed evaluation");
   }
   if (!reviewer.trim()) throw new Error("Promotion requires a reviewer identity");
+  const reviewerIdentity = reviewer.trim().toLocaleLowerCase();
+  if (proposal.authorship?.mode === "human" && proposal.authorship.author.trim().toLocaleLowerCase() === reviewerIdentity) {
+    throw new Error("Human-authored proposal requires an independent reviewer");
+  }
+  if (
+    proposal.authorship?.mode !== "human" &&
+    proposal.authorship?.generator?.trim().toLocaleLowerCase() === reviewerIdentity
+  ) {
+    throw new Error("Model-authored proposal cannot be approved by its generating model");
+  }
   const decisionsRoot = path.join(root, ".skill-system", "decisions");
   await mkdir(decisionsRoot, { recursive: true });
   const decisionPath = path.join(decisionsRoot, `${proposal.id}-promotion.yaml`);

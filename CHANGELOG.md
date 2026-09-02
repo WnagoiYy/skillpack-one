@@ -4,6 +4,18 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 
 ## [Unreleased]
 
+### Added
+
+- Research-backed Skill composition planning with deterministic DAG stages through `skillpack compose`.
+- Paired without-Skill/with-Skill effect gates that reject synthetic certification and negative task lift.
+- Authorship and generator provenance for new evolution proposals with independent-review enforcement.
+- English and Chinese evidence-to-decision reviews of recent Agent Skill research.
+- Evaluation assets and governance documentation in the npm package allow installed CLI gates to run outside a source checkout.
+
+### Changed
+
+- Community admission now treats submitted Skill instructions and scripts as quarantined data until injection, provenance, permission, and execution review pass.
+
 ## [0.1.0-alpha.7] - 2026-09-02
 
 ### Added

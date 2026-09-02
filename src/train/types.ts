@@ -7,6 +7,12 @@ export interface EvolutionApproval {
   reason: string;
 }
 
+export interface EvolutionAuthorship {
+  mode: "human" | "model-assisted" | "model-generated";
+  author: string;
+  generator?: string;
+}
+
 export interface EvolutionProposal {
   schemaVersion: 1;
   id: string;
@@ -16,6 +22,7 @@ export interface EvolutionProposal {
   candidateRevision: string;
   rollbackRevision: string;
   observation: string;
+  authorship?: EvolutionAuthorship;
   allowedFiles: string[];
   changedFiles: string[];
   generationDatasets: string[];

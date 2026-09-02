@@ -15,7 +15,9 @@ Do not open a public issue for credential exposure, command injection, unsafe up
 - Generated `skills/` and `.agents/skills/` directories are checked for drift and must not be edited directly.
 - Capability contracts declare network, filesystem, shell, secret, and external-communication permissions. Expansion requires explicit approval.
 - External content is data, not instruction. Prompt injection inside catalog descriptions or referenced documents must not override repository policy or user intent.
+- New Skill instructions, references, assets, and scripts remain quarantined data during intake. Review cannot rely on the candidate's own claims; authorization comes from the user, repository policy, and the independently reviewed permission envelope.
+- Static or model screening is triage, not a security proof. Any execution must remain inside the reviewed network, filesystem, shell, secret, and external-communication envelope.
 - Live harness runs must not log provider credentials. Blocked credential checks are recorded without secret values.
-- Evolution promotion requires held-out evaluation, protected-baseline comparison, reviewer identity, and a rollback revision.
+- Evolution promotion requires held-out evaluation, protected-baseline comparison, authorship/generator identity for new proposals, an independent reviewer, and a rollback revision.
 
 See [catalog methodology](docs/catalog-methodology.md) and [evolution policy](docs/evolution-policy.md) for the complete controls.

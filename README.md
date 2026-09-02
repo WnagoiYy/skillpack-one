@@ -43,10 +43,12 @@ Every category projection carries an English fallback `index.md` plus `index.en.
 
 - **Needs before tools.** Classify the requested outcome, artifact, operation, and constraints before selecting a product or protocol.
 - **One primary capability per atom.** Stable capability IDs and explicit inputs, outputs, side effects, permissions, non-goals, and tests make overlap measurable.
+- **Compose explicitly.** Multi-step requests select reviewed Capability Packs whose stable Skill subset, count, dependency order, and acceptance tests compile into an explainable DAG.
 - **Progressive disclosure.** Codex sees compact Skill metadata first, then a category index, then only the necessary atomic instructions.
 - **Plugin architecture.** The repository is a plugin bundle with a manifest, generated `skills/` projection, project-native `.agents/skills/` projection, schemas, packs, and evaluation assets.
 - **Evidence-gated evolution.** A meta Skill may propose its own changes, but cannot weaken its gate in the same proposal. Held-out datasets, permission review, immutable decisions, and rollback pointers remain outside the optimization target.
 - **Catalog is not trust.** Collection never executes upstream code. Unknown-license entries are metadata only; installation requires a separate security review.
+- **Skill lift, not Skill presence.** A Skill is useful only when a matched with-Skill run improves over the no-Skill baseline without protected regressions; synthetic protocol tests cannot certify that claim.
 
 The design follows the current [OpenAI Agent Skills guidance](https://learn.chatgpt.com/docs/build-skills), [Codex plugin model](https://learn.chatgpt.com/docs/build-plugins), and the [official MCP Registry API](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/api/official-registry-api.md).
 
@@ -89,6 +91,7 @@ Try the explainable router:
 
 ```sh
 npm run skillpack -- route "请调研三家竞争对手并输出带引用的中文报告"
+npm run skillpack -- compose "Plan, implement, and security-review a bounded code change"
 npm run skillpack -- catalog stats
 npm run skillpack -- packs
 npm run skillpack -- harness status
@@ -115,11 +118,11 @@ src/                  router, validator, catalog, evaluator, trainer, harnesses
 
 ## Evaluation and real evolution evidence
 
-`npm run skillpack -- gate` evaluates routing without collapsing metrics: category hit@1/@3, atom hit@1/@3, atom MRR, non-invocation accuracy, and safety pass rate. English, Chinese, and adversarial suites are separate. Task completion uses a different rubric and cannot be inferred from routing accuracy.
+`npm run skillpack -- gate` evaluates routing without collapsing metrics: category hit@1/@3, atom hit@1/@3, atom MRR, non-invocation accuracy, and safety pass rate. English, Chinese, and adversarial suites are separate. Task completion uses a different rubric and cannot be inferred from routing accuracy. `skillpack harness effect <without.json> <with.json>` then measures paired completion/rubric lift under the same dataset and harness identity.
 
 The repository includes one real governed evolution record: `proposal-generic-zh-fallback`. The candidate added `index.zh.md`, passed isolated development plus untouched English, Chinese, and adversarial suites, and produced an append-only promotion decision with a rollback revision.
 
-New candidates can be bound to their exact canonical Git diff with `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence>`, then evaluated and promoted through the immutable decision log. Protected datasets, baselines, and the release gate cannot certify a candidate that changes them.
+New candidates can be bound to their exact canonical Git diff with `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence> --author <identity> --authorship <human|model-assisted|model-generated> [--generator <model>]`, then evaluated and independently promoted through the immutable decision log. Protected datasets, baselines, and the release gate cannot certify a candidate that changes them.
 
 Pi 0.84.4 is pinned and its real `loadSkillsFromDir` implementation discovers all 22 Skills. Model-backed task completion remains explicitly **uncertified** until Pi provider credentials are configured. The deterministic Mock adapter tests protocol plumbing only and is always marked `synthetic: true`; the optional DeepSeek Harness adapter stays disabled until a compatible CLI release is pinned.
 
@@ -137,9 +140,14 @@ Collection uses fixed Git revisions and the read-only official MCP Registry endp
 
 The machine-readable [`catalog/decomposition-map.yaml`](catalog/decomposition-map.yaml) shows how representative upstream patterns informed each local Atom, the Meta Skill, and all four packs without copying or activating upstream implementations.
 
+## Research basis and boundaries
+
+The [Agent Skill literature review](docs/research/2026-09-02-agent-skill-literature.md) maps evidence from SkillsBench, Skill-Inject, compositional routing, structured composition, retrieval, and self-evolving Skill work to adopted, deferred, and rejected changes. It is deliberately conservative: research may improve retrieval, composition, verification, and learning loops, but it does not replace the Category → Atom → Capability Pack → Meta architecture.
+
 ## Roadmap
 
 - Grow held-out multilingual routing and executable task suites from real failures.
+- Build protected compositional datasets and certify paired live Skill lift across pinned harness/model pairs.
 - Add semantic duplicate review without turning similarity into automatic deletion.
 - Certify live Pi task-completion baselines across pinned model/provider pairs.
 - Pin and implement a compatible DeepSeek Harness adapter.

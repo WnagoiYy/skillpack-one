@@ -45,7 +45,8 @@ describe("governed Skill evolution", () => {
       observation: "A boundary failed.",
       baseRevision: "1111111111111111111111111111111111111111",
       candidateRevision: "2222222222222222222222222222222222222222",
-      changedFiles: ["tests/router.test.ts", "skill-src/atom-plan-code-change/SKILL.md"]
+      changedFiles: ["tests/router.test.ts", "skill-src/atom-plan-code-change/SKILL.md"],
+      authorship: { mode: "model-assisted", author: "maintainer", generator: "codex" }
     });
     expect(draft.allowedFiles).toEqual([
       "skill-src/atom-plan-code-change/SKILL.md",
@@ -53,6 +54,7 @@ describe("governed Skill evolution", () => {
     ]);
     expect(draft.permissionAfter).toEqual(draft.permissionBefore);
     expect(draft.rollbackRevision).toBe(draft.baseRevision);
+    expect(draft.authorship).toEqual({ mode: "model-assisted", author: "maintainer", generator: "codex" });
   });
 
   it("preserves an existing target permission envelope in a proposal draft", () => {
@@ -128,5 +130,29 @@ describe("governed Skill evolution", () => {
     expect(decision.action).toBe("promote");
     expect(decision.rollbackRevision).toBe("1111111111111111111111111111111111111111");
     await expect(recordPromotion(root, proposal(), { passed: true, failures: [] }, "reviewer@example.com")).rejects.toThrow();
+  });
+
+  it("requires review independent from the human author or generating model", async () => {
+    const humanRoot = await mkdtemp(path.join(os.tmpdir(), "skillpack-human-review-test-"));
+    await expect(recordPromotion(
+      humanRoot,
+      proposal({ authorship: { mode: "human", author: "same-reviewer" } }),
+      { passed: true, failures: [] },
+      "same-reviewer"
+    )).rejects.toThrow("independent reviewer");
+
+    const modelRoot = await mkdtemp(path.join(os.tmpdir(), "skillpack-model-review-test-"));
+    await expect(recordPromotion(
+      modelRoot,
+      proposal({ authorship: { mode: "model-assisted", author: "maintainer", generator: "codex" } }),
+      { passed: true, failures: [] },
+      "codex"
+    )).rejects.toThrow("generating model");
+    await expect(recordPromotion(
+      modelRoot,
+      proposal({ id: "proposal-independent", authorship: { mode: "model-assisted", author: "maintainer", generator: "codex" } }),
+      { passed: true, failures: [] },
+      "maintainer"
+    )).resolves.toContain("proposal-independent-promotion.yaml");
   });
 });

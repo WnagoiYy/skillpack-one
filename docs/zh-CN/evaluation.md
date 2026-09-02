@@ -20,12 +20,19 @@
 
 任务完成使用 `taskCompletionRate`、`rubricPassRate` 和 `blockedRate`。Mock 的 synthetic 结果只证明管线连通，不能认证真实质量。真实 Harness 结果必须记录 Provider、模型、Harness 版本、Rubric 证据、成本和延迟，才可成为发布基线。
 
+## 成对 Skill 效果
+
+新 Skill 准入和重要修改必须在相同数据集、样例、Harness 与版本上分别运行 `without-skill` 和 `with-skill`。`skillpack harness effect <without.json> <with.json>` 会报告任务完成率增益、Rubric 增益、阻塞率变化，以及可用时的成本和延迟变化。默认门禁拒绝负增益、阻塞增加、没有任何正质量增益、运行身份不一致，以及所有 Synthetic 认证请求。
+
+成对设计避免把基础模型自身能力误算为 Skill 功劳。路由改善仍单独报告，不能抵消负任务效果。
+
 ## 优化循环
 
 1. 从 train/dev 观察中聚类失败。
 2. 对路由元数据、Skill 表述或分类映射提出有边界的修改。
 3. 先跑 train/dev，再跑未触碰的 test 与 adversarial。
 4. 拒绝权限扩张和受保护指标退化。
-5. 只有具备回滚指针时才允许灰度上线。
+5. 在匹配的真实任务运行上，把候选与无 Skill 或当前 Skill 基线比较。
+6. 只有具备回滚指针时才允许灰度上线。
 
 Bootstrap 获得满分不代表真实世界完美，只证明初始契约与题集一致。语料必须持续吸收新失败和外部 Harness 轨迹。

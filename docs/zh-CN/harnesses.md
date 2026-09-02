@@ -10,6 +10,9 @@ Skill 的表现同时取决于 Skill 本身和 Agent Harness。每次运行都�
 npm run skillpack -- harness status
 npm run skillpack -- harness discover --adapter pi
 npm run skillpack -- harness tasks --adapter pi --provider <provider> --model <model>
+npm run skillpack -- harness tasks --adapter pi --provider <provider> --model <model> --skills disabled > without-skill.json
+npm run skillpack -- harness tasks --adapter pi --provider <provider> --model <model> --skills enabled > with-skill.json
+npm run skillpack -- harness effect without-skill.json with-skill.json
 ```
 
 凭据始终由 Pi 自己管理，本项目不会读取或输出凭据值。若没有可用 Provider，适配器返回结构化 `blocked`，绝不会用 Mock 分数冒充真实分数。
@@ -29,3 +32,5 @@ Mock 在无网络、无 API Key 条件下验证协议、数据集、路由指标
 ## 完成情况声明
 
 路由门禁与任务完成门禁彼此独立。确定性路由通过，并不代表真实模型任务已经认证。公开报告必须保留阻塞、模型/Provider、Rubric 失败、成本和延迟，不能省略缺失证据。
+
+Skill 效果还要求在相同数据集和 Harness 身份下，分别提供无候选 Skill 与启用候选 Skill 的成对运行。把两次任务结果保存为 JSON 后运行 `harness effect`；不匹配运行和 Synthetic 证据都会被拒绝认证。

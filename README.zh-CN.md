@@ -43,10 +43,12 @@ flowchart LR
 
 - **先需求、后工具。** 先判断目标结果、产物、操作和约束，再选择具体产品或协议。
 - **一个原子一个主要能力。** 稳定能力 ID，加上输入、输出、副作用、权限、非目标和测试，使重叠可计算、可审查。
+- **显式组合。** 多步骤请求只选择经过审查的能力包，把稳定 Skill 子集、数量、依赖顺序和验收测试编译成可解释 DAG。
 - **渐进式读取。** Codex 先看到精简元数据，再命中分类索引，最后只加载完成任务所需的原子 Skill。
 - **插件式架构。** 仓库本身是一个插件包，包含清单、两种 Skill 投影、Schema、能力包和评估资产。
 - **证据门禁下的进化。** 元 Skill 可以修改自己，但不能在同一个提案中削弱自己的门禁；保留测试集、权限审批、追加式决策记录和回滚指针不受优化目标控制。
 - **被收录不等于可信。** 采集过程不执行上游代码；许可未知的条目只保存元数据，安装前必须另行安全审查。
+- **看 Skill Lift，不看“有没有 Skill”。** 只有在相同任务上优于无 Skill 基线且受保护指标不退化，才能证明 Skill 有用；Synthetic 协议测试不能认证该结论。
 
 架构参考当前的 [OpenAI Agent Skills 文档](https://learn.chatgpt.com/docs/build-skills)、[Codex 插件文档](https://learn.chatgpt.com/docs/build-plugins)和[官方 MCP Registry API](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/api/official-registry-api.md)。
 
@@ -89,6 +91,7 @@ npm run ci
 
 ```sh
 npm run skillpack -- route "请调研三家竞争对手并输出带引用的中文报告"
+npm run skillpack -- compose "规划、实现并安全审查一个边界明确的代码修改"
 npm run skillpack -- catalog stats
 npm run skillpack -- packs
 npm run skillpack -- harness status
@@ -115,11 +118,11 @@ src/                  路由、校验、采集、评估、训练和 Harness
 
 ## 测试与真实进化证据
 
-`npm run skillpack -- gate` 分别评估分类命中、原子命中、MRR、不调用准确率和安全通过率，不用一个总分掩盖短板。英文、中文、对抗问题集彼此独立；任务完成率另行评估，不能用路由正确率代替。
+`npm run skillpack -- gate` 分别评估分类命中、原子命中、MRR、不调用准确率和安全通过率，不用一个总分掩盖短板。英文、中文、对抗问题集彼此独立；任务完成率另行评估，不能用路由正确率代替。`skillpack harness effect <without.json> <with.json>` 会在相同数据集与 Harness 下计算成对完成率和 Rubric 增益。
 
 仓库已经保存一次真实的受治理进化：`proposal-generic-zh-fallback`。该候选增加了 `index.zh.md`，依次通过开发集、未参与生成的英文/中文测试集和对抗集，并写入带回滚版本的不可覆盖晋级记录。
 
-新候选可以通过 `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence>` 与规范 Git 差异精确绑定，再进入评估和不可覆盖的晋级决策记录。受保护数据集、基线和发布门槛不能为同时修改它们的候选背书。
+新候选可以通过 `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence> --author <identity> --authorship <human|model-assisted|model-generated> [--generator <model>]` 与规范 Git 差异精确绑定，再进入评估和独立晋级决策记录。受保护数据集、基线和发布门槛不能为同时修改它们的候选背书。
 
 Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 22 个 Skill。由于本机尚未配置 Pi 模型提供商凭证，模型驱动的任务完成率仍明确标记为**未认证**。Mock 只验证协议管线，结果始终带 `synthetic: true`；DeepSeek Harness 需等兼容 CLI 版本固定后才启用。
 
@@ -137,9 +140,14 @@ npm run skillpack -- catalog stats
 
 机器可读的 [`catalog/decomposition-map.yaml`](catalog/decomposition-map.yaml) 说明代表性上游模式如何影响每个本地原子 Skill、元 Skill 和四个能力包，同时不复制或激活上游实现。
 
+## 论文依据与边界
+
+[Agent Skill 论文综述](docs/zh-CN/research/2026-09-02-agent-skill-literature.md)把 SkillsBench、Skill-Inject、组合路由、结构化组合、检索和自进化研究分别映射为“立即采纳、暂缓、明确不采纳”。研究可以改进检索、组合、验证与学习闭环，但不会替换 Category → Atom → Capability Pack → Meta 的项目底色。
+
 ## 后续演进
 
 - 从真实失败中扩充多语言保留路由集和可执行任务集。
+- 建立受保护的组合问题集，并在固定 Harness/模型组合上认证成对真实 Skill Lift。
 - 引入语义级重复审查，但不把相似度直接等同于自动删除。
 - 为固定的 Pi 模型/提供商组合建立真实任务完成率基线。
 - 固定可兼容的 DeepSeek Harness 版本并完成适配。

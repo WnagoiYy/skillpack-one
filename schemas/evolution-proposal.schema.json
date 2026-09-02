@@ -14,6 +14,7 @@
     "candidateRevision": { "$ref": "#/$defs/revision" },
     "rollbackRevision": { "$ref": "#/$defs/revision" },
     "observation": { "type": "string", "minLength": 1 },
+    "authorship": { "$ref": "#/$defs/authorship" },
     "allowedFiles": { "$ref": "#/$defs/files" },
     "changedFiles": { "$ref": "#/$defs/files" },
     "generationDatasets": { "$ref": "#/$defs/ids" },
@@ -51,6 +52,25 @@
         "secrets": { "enum": ["none", "named-read"] },
         "externalCommunication": { "enum": ["none", "draft", "send"] }
       }
+    },
+    "authorship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "author"],
+      "properties": {
+        "mode": { "enum": ["human", "model-assisted", "model-generated"] },
+        "author": { "type": "string", "minLength": 1 },
+        "generator": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "mode": { "enum": ["model-assisted", "model-generated"] } }, "required": ["mode"] },
+          "then": {
+            "properties": { "generator": { "type": "string", "minLength": 1 } },
+            "required": ["generator"]
+          }
+        }
+      ]
     }
   }
 }

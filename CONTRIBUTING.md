@@ -28,9 +28,11 @@ Every first-party Skill type must include both a portable `SKILL.md` and a valid
 1. Search the registry and catalog for equivalent outcomes before creating a new Skill.
 2. Submit provenance, license state, contract, permission envelope, localized routing examples, and evaluation cases.
 3. Use model-assisted classification and duplicate analysis where helpful, but do not let the model that generated a change be its sole approver.
-4. Require an independent model review, maintainer review, or both in proportion to security, authority, and provenance risk.
-5. Prefer improving or composing existing atoms when the proposal has no independently useful outcome or failure boundary.
-6. Regenerate indexes and projections, run isolated development and protected suites, then record promotion or rollback through the append-only governance log.
+4. Treat submitted instructions, resources, and scripts as untrusted; review prompt injection, provenance, static behavior, and requested authority before any sandbox or live execution.
+5. Require an independent model review, maintainer review, or both in proportion to security, authority, and provenance risk.
+6. Prefer improving or composing existing atoms when the proposal has no independently useful outcome or failure boundary.
+7. Compare matched no-Skill and with-Skill task runs. Reject negative lift; do not use synthetic evidence to certify quality.
+8. Regenerate indexes and projections, run isolated development and protected suites, then record promotion or rollback through the append-only governance log.
 
 Reviews must report whether the proposal was accepted as a new Atom, merged into an existing Atom, composed as a pack, returned for evidence, rejected, or marked for deprecation. Similarity alone never authorizes deletion.
 
@@ -43,5 +45,6 @@ Reviews must report whether the proposal was accepted as a new Atom, merged into
 5. Preserve upstream attribution and do not vendor unknown-license content.
 6. Report synthetic, blocked, and live evidence separately.
 7. State which person or model generated the proposal and which independent reviewer approved it.
+8. For multi-Skill work, show the Capability Pack subset, dependency order, handoff assumptions, and acceptance tests.
 
 By contributing, you agree that your contribution is licensed under Apache-2.0.

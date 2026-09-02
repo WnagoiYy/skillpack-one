@@ -8,6 +8,8 @@ import { DshHarnessAdapter } from "../src/harness/dsh.js";
 import { CodexHarnessAdapter } from "../src/harness/codex.js";
 import { evaluateTaskDataset, loadTaskDataset } from "../src/eval/tasks.js";
 import { buildProgram } from "../src/cli.js";
+import { compareSkillEffect } from "../src/eval/effect.js";
+import type { TaskEvaluationResult } from "../src/types.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -70,5 +72,33 @@ describe("harness adapters", () => {
     const capabilities = await adapter.discover();
     expect(capabilities.discoveredSkills).toBeGreaterThanOrEqual(22);
     expect((await adapter.healthcheck()).ready).toBe(true);
+  });
+
+  it("separates positive live Skill lift from synthetic protocol evidence", () => {
+    const baseline: TaskEvaluationResult = {
+      dataset: "task-effect",
+      harness: { name: "live", version: "1.0.0" },
+      skillMode: "disabled",
+      synthetic: false,
+      examples: 10,
+      metrics: { taskCompletionRate: 0.5, rubricPassRate: 0.6, blockedRate: 0, averageLatencyMs: 1000 },
+      failures: []
+    };
+    const candidate: TaskEvaluationResult = {
+      ...baseline,
+      skillMode: "enabled",
+      metrics: { taskCompletionRate: 0.7, rubricPassRate: 0.75, blockedRate: 0, averageLatencyMs: 900 }
+    };
+    const gate = {
+      minimumTaskCompletionLift: 0,
+      minimumRubricPassLift: 0,
+      maximumBlockedRateIncrease: 0,
+      requirePositiveLift: true
+    };
+    const effect = compareSkillEffect(baseline, candidate, gate);
+    expect(effect.passed).toBe(true);
+    expect(effect.metrics.taskCompletionLift).toBe(0.2);
+    expect(effect.metrics.averageLatencyMsChange).toBe(-100);
+    expect(compareSkillEffect({ ...baseline, synthetic: true }, { ...candidate, synthetic: true }, gate).certifiable).toBe(false);
   });
 });
