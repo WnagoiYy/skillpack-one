@@ -2,7 +2,7 @@
 
 All notable changes are recorded here. The format follows Keep a Changelog and versions follow Semantic Versioning.
 
-## [Unreleased]
+## [0.1.0-alpha.6] - 2026-09-02
 
 ### Changed
 
@@ -35,3 +35,4 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 
 [0.1.0-alpha.4]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.4
 [0.1.0-alpha.5]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.5
+[0.1.0-alpha.6]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.6
