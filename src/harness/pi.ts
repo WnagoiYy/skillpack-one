@@ -37,7 +37,7 @@ export class PiHarnessAdapter implements HarnessAdapter {
   async discover(): Promise<HarnessCapabilities> {
     const version = await this.version();
     const { loadSkillsFromDir } = await import("@earendil-works/pi-coding-agent");
-    const loaded = loadSkillsFromDir({ dir: path.join(this.root, "skills"), source: "self-organizing-skills" });
+    const loaded = loadSkillsFromDir({ dir: path.join(this.root, "skills"), source: "skillpack-one" });
     if (loaded.diagnostics.some((diagnostic) => diagnostic.type === "error")) {
       throw new Error(`Pi Skill discovery failed: ${JSON.stringify(loaded.diagnostics)}`);
     }

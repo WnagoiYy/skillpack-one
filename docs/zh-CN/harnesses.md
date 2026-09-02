@@ -7,9 +7,9 @@ Skill 的表现同时取决于 Skill 本身和 Agent Harness。每次运行都�
 仓库固定使用 `@earendil-works/pi-coding-agent` 0.84.4。适配器直接调用 Pi 导出的 `loadSkillsFromDir` 做真实 Skill 发现校验，而不是用项目自己的近似逻辑。模型路由和任务执行通过 Pi 非交互、无会话 CLI 运行，并显式加载生成的 `skills/` 投影。
 
 ```sh
-npm run sos -- harness status
-npm run sos -- harness discover --adapter pi
-npm run sos -- harness tasks --adapter pi --provider <provider> --model <model>
+npm run skillpack -- harness status
+npm run skillpack -- harness discover --adapter pi
+npm run skillpack -- harness tasks --adapter pi --provider <provider> --model <model>
 ```
 
 凭据始终由 Pi 自己管理，本项目不会读取或输出凭据值。若没有可用 Provider，适配器返回结构化 `blocked`，绝不会用 Mock 分数冒充真实分数。

@@ -1,4 +1,4 @@
-# Self-Organizing Skills Implementation Plan
+# Self-Organizing Skill System Implementation Plan
 
 > This plan turns the accepted architecture into small, test-first milestones. Each task ends in a runnable check and a focused commit.
 
@@ -29,7 +29,7 @@
 2. Implement taxonomy loading and validation.
 3. Implement weighted category and atom ranking with negative-boundary penalties.
 4. Return an explainable route trace including scores and matched contract fields.
-5. Add `sos route`, `sos validate`, and `sos taxonomy lint` commands.
+5. Add `skillpack route`, `skillpack validate`, and `skillpack taxonomy lint` commands.
 6. Run focused tests and typecheck.
 7. Commit `feat: add explainable two-stage router`.
 
@@ -77,7 +77,7 @@
 3. Implement metric aggregation without collapsing protected metrics into one score.
 4. Implement configurable release gates and regression comparisons.
 5. Create independent English, Chinese, ambiguous, adversarial, and task-completion datasets.
-6. Add `sos eval` and `sos gate`.
+6. Add `skillpack eval` and `skillpack gate`.
 7. Commit `feat: add multi-suite evaluation gates`.
 
 ## Task 7: Add harness adapters and Pi evaluation
@@ -101,7 +101,7 @@
 3. Generate bounded candidate patches to descriptions, triggers, boundaries, or taxonomy mappings.
 4. Evaluate candidates in an isolated worktree/directory without modifying the active registry.
 5. Persist signed-off decision records and promotion/rollback pointers.
-6. Add `sos train propose`, `sos train evaluate`, `sos promote`, and `sos rollback`.
+6. Add `skillpack train propose`, `skillpack train evaluate`, `skillpack promote`, and `skillpack rollback`.
 7. Commit `feat: add evidence-gated skill evolution`.
 
 ## Task 9: Documentation, security, and CI
@@ -118,7 +118,7 @@
 ## Task 10: Publish the GitHub repository
 
 1. Verify the final diff, license attribution, secrets scan, and clean test run.
-2. Create the public GitHub repository `self-organizing-skills` under the authenticated user, with issues enabled.
+2. Create the public GitHub repository `skillpack-one` under the authenticated user, with issues enabled.
 3. Push `main`, add repository topics, and verify rendered READMEs and CI.
 4. Create an initial prerelease only after CI passes.
 5. Record the published URL and exact verified revision.

@@ -1,8 +1,10 @@
-# 可自组织的 Skills
+# SkillPack One
 
 [English](README.md) · **研究型 Alpha 版本**
 
-这是一个兼容 Codex 的原子化、可组合、可评估、可安全自进化的 Agent Skill 操作系统。
+**只装一个包，让它自动寻找、组合和进化你需要的技能。**
+
+SkillPack One 对外提供一个安装包，内部技术架构称为 **Self-Organizing Skill System**：一个兼容 Codex 的原子化、可组合、可评估、可安全自进化的 Agent Skill 系统。
 
 它没有把网上所有 Skill 一股脑安装进上下文，而是把生态分成四层：
 
@@ -49,8 +51,8 @@ flowchart LR
 需要 Node.js 24 或更新版本，以及 Git。
 
 ```sh
-git clone https://github.com/WnagoiYy/self-organizing-skills.git
-cd self-organizing-skills
+git clone https://github.com/WnagoiYy/skillpack-one.git
+cd skillpack-one
 npm ci
 npm run ci
 ```
@@ -58,11 +60,11 @@ npm run ci
 体验可解释路由和状态检查：
 
 ```sh
-npm run sos -- route "请调研三家竞争对手并输出带引用的中文报告"
-npm run sos -- catalog stats
-npm run sos -- packs
-npm run sos -- harness status
-npm run sos -- harness discover --adapter pi
+npm run skillpack -- route "请调研三家竞争对手并输出带引用的中文报告"
+npm run skillpack -- catalog stats
+npm run skillpack -- packs
+npm run skillpack -- harness status
+npm run skillpack -- harness discover --adapter pi
 ```
 
 若要以 Codex 项目级 Skill 使用，请把本仓库 `.agents/skills/` 下经过审查的目录复制到目标仓库的 `.agents/skills/`。插件包和兼容 Harness 使用 `skills/`。二者都由 `skill-src/` 生成，请勿直接编辑投影目录。
@@ -85,11 +87,11 @@ src/                  路由、校验、采集、评估、训练和 Harness
 
 ## 测试与真实进化证据
 
-`npm run sos -- gate` 分别评估分类命中、原子命中、MRR、不调用准确率和安全通过率，不用一个总分掩盖短板。英文、中文、对抗问题集彼此独立；任务完成率另行评估，不能用路由正确率代替。
+`npm run skillpack -- gate` 分别评估分类命中、原子命中、MRR、不调用准确率和安全通过率，不用一个总分掩盖短板。英文、中文、对抗问题集彼此独立；任务完成率另行评估，不能用路由正确率代替。
 
 仓库已经保存一次真实的受治理进化：`proposal-generic-zh-fallback`。该候选增加了 `index.zh.md`，依次通过开发集、未参与生成的英文/中文测试集和对抗集，并写入带回滚版本的不可覆盖晋级记录。
 
-新候选可以通过 `npm run sos -- train propose -- --id <id> --target <skill-id> --observation <evidence>` 与规范 Git 差异精确绑定，再进入评估和不可覆盖的晋级决策记录。受保护数据集、基线和发布门槛不能为同时修改它们的候选背书。
+新候选可以通过 `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence>` 与规范 Git 差异精确绑定，再进入评估和不可覆盖的晋级决策记录。受保护数据集、基线和发布门槛不能为同时修改它们的候选背书。
 
 Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 22 个 Skill。由于本机尚未配置 Pi 模型提供商凭证，模型驱动的任务完成率仍明确标记为**未认证**。Mock 只验证协议管线，结果始终带 `synthetic: true`；DeepSeek Harness 需等兼容 CLI 版本固定后才启用。
 
@@ -98,9 +100,9 @@ Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 
 ## 刷新 300+ 来源目录
 
 ```sh
-npm run sos -- catalog collect
-npm run sos -- catalog deduplicate
-npm run sos -- catalog stats
+npm run skillpack -- catalog collect
+npm run skillpack -- catalog deduplicate
+npm run skillpack -- catalog stats
 ```
 
 采集固定 Git 版本并读取官方 MCP Registry 的只读接口，保存来源、归属和指纹；不会运行包、Hook、端点或 Skill 指令。修改来源前请阅读[目录方法](docs/zh-CN/catalog-methodology.md)和[第三方说明](THIRD_PARTY.md)。

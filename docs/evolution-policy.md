@@ -4,7 +4,7 @@ Self-improvement means evidence-gated maintenance, not unrestricted self-rewriti
 
 Every proposal declares a target, base revision, candidate revision, rollback revision, observed failure, allowed files, actual changed files, generation datasets, evaluation datasets, permission envelopes, and approvals. Generated `skills/` and `.agents/skills/` projections may never be edited directly.
 
-`npm run sos -- train propose -- --id <id> --target <skill-id> --observation <evidence>` scaffolds a proposal from the exact `HEAD^..HEAD` canonical Git diff. Evaluation requires `HEAD` to equal `candidateRevision`, requires the declared `changedFiles` to match that diff, and rejects tracked or unexpected untracked drift. Generated projections are reproducible artifacts and are excluded from the canonical diff.
+`npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence>` scaffolds a proposal from the exact `HEAD^..HEAD` canonical Git diff. Evaluation requires `HEAD` to equal `candidateRevision`, requires the declared `changedFiles` to match that diff, and rejects tracked or unexpected untracked drift. Generated projections are reproducible artifacts and are excluded from the canonical diff.
 
 ## Hard invariants
 

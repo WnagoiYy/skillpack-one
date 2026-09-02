@@ -1,14 +1,14 @@
 {
-  "name": "self-organizing-skills",
+  "name": "skillpack-one",
   "version": "0.1.0",
-  "description": "Atomic, composable, evaluated, and safely self-improving Agent Skills for Codex and compatible harnesses.",
+  "description": "Install one pack. Let it find, combine, and improve the skills you need.",
   "author": {
     "name": "WnagoiYy",
     "email": "995496580@qq.com",
     "url": "https://github.com/WnagoiYy"
   },
-  "homepage": "https://github.com/WnagoiYy/self-organizing-skills",
-  "repository": "https://github.com/WnagoiYy/self-organizing-skills",
+  "homepage": "https://github.com/WnagoiYy/skillpack-one",
+  "repository": "https://github.com/WnagoiYy/skillpack-one",
   "license": "Apache-2.0",
   "keywords": [
     "agent-skills",
@@ -20,9 +20,9 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Self-Organizing Skills",
-    "shortDescription": "Build and govern atomic Agent Skills",
-    "longDescription": "Classify, compose, evaluate, and safely evolve atomic Agent Skills and MCP capabilities with bilingual indexes and evidence-gated releases.",
+    "displayName": "SkillPack One",
+    "shortDescription": "One pack for the skills you need",
+    "longDescription": "Install one pack that classifies, combines, evaluates, and safely improves atomic Agent Skills and MCP capabilities through the Self-Organizing Skill System.",
     "developerName": "WnagoiYy",
     "category": "Developer Tools",
     "capabilities": [

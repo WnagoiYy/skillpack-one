@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://self-organizing-skills.dev/schemas/evolution-proposal.schema.json",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/schemas/evolution-proposal.schema.json",
   "title": "Governed Skill evolution proposal",
   "type": "object",
   "additionalProperties": false,

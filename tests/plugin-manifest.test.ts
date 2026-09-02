@@ -12,11 +12,25 @@ describe("Codex plugin manifest", () => {
       version?: string;
       skills?: string;
       repository?: string;
+      interface?: { displayName?: string };
     };
 
-    expect(manifest.name).toBe("self-organizing-skills");
+    expect(manifest.name).toBe("skillpack-one");
     expect(manifest.version).toMatch(/^\d+\.\d+\.\d+$/u);
     expect(manifest.skills).toBe("./skills/");
-    expect(manifest.repository).toBe("https://github.com/WnagoiYy/self-organizing-skills");
+    expect(manifest.repository).toBe("https://github.com/WnagoiYy/skillpack-one");
+    expect(manifest.interface?.displayName).toBe("SkillPack One");
+  });
+
+  it("publishes the SkillPack One package and CLI names", async () => {
+    const packageDocument = JSON.parse(await readFile(path.join(root, "package.json"), "utf8")) as {
+      name?: string;
+      bin?: Record<string, string>;
+      scripts?: Record<string, string>;
+    };
+
+    expect(packageDocument.name).toBe("skillpack-one");
+    expect(packageDocument.bin).toEqual({ skillpack: "./dist/src/cli.js" });
+    expect(packageDocument.scripts?.skillpack).toBe("tsx src/cli.ts");
   });
 });

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://self-organizing-skills.dev/schemas/capability-pack.schema.json",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/schemas/capability-pack.schema.json",
   "title": "Composable capability pack",
   "type": "object",
   "additionalProperties": false,

@@ -122,7 +122,7 @@ describe("governed Skill evolution", () => {
   });
 
   it("records an append-only promotion with a rollback pointer", async () => {
-    const root = await mkdtemp(path.join(os.tmpdir(), "sos-trainer-test-"));
+    const root = await mkdtemp(path.join(os.tmpdir(), "skillpack-trainer-test-"));
     const file = await recordPromotion(root, proposal(), { passed: true, failures: [] }, "reviewer@example.com");
     const decision = parse(await readFile(file, "utf8")) as { rollbackRevision?: string; action?: string };
     expect(decision.action).toBe("promote");

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://self-organizing-skills.dev/schemas/decomposition-map.schema.json",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/schemas/decomposition-map.schema.json",
   "title": "Upstream evidence to local capability decomposition map",
   "type": "object",
   "additionalProperties": false,

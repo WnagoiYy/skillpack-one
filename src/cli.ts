@@ -24,8 +24,8 @@ import { currentRevision, parentRevision, revisionChangedFiles, validateProposal
 
 export function buildProgram(): Command {
   const program = new Command()
-    .name("sos")
-    .description("Self-Organizing Skills registry, router, evaluator, and trainer")
+    .name("skillpack")
+    .description("SkillPack One: the Self-Organizing Skill System registry, router, evaluator, and trainer")
     .version("0.1.0");
 
   program

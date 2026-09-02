@@ -1,8 +1,10 @@
-# Self-Organizing Skills
+# SkillPack One
 
 [简体中文](README.zh-CN.md) · **Research-grade alpha**
 
-A Codex-compatible operating system for atomic, composable, evaluated, and safely self-improving Agent Skills.
+**Install one pack. Let it find, combine, and improve the skills you need.**
+
+SkillPack One packages the **Self-Organizing Skill System**: a Codex-compatible architecture for atomic, composable, evaluated, and safely self-improving Agent Skills.
 
 It turns a growing Skill/MCP ecosystem into four deliberately separate layers:
 
@@ -49,8 +51,8 @@ The design follows the current [OpenAI Agent Skills guidance](https://learn.chat
 Requirements: Node.js 24 or newer and Git.
 
 ```sh
-git clone https://github.com/WnagoiYy/self-organizing-skills.git
-cd self-organizing-skills
+git clone https://github.com/WnagoiYy/skillpack-one.git
+cd skillpack-one
 npm ci
 npm run ci
 ```
@@ -58,11 +60,11 @@ npm run ci
 Try the explainable router:
 
 ```sh
-npm run sos -- route "请调研三家竞争对手并输出带引用的中文报告"
-npm run sos -- catalog stats
-npm run sos -- packs
-npm run sos -- harness status
-npm run sos -- harness discover --adapter pi
+npm run skillpack -- route "请调研三家竞争对手并输出带引用的中文报告"
+npm run skillpack -- catalog stats
+npm run skillpack -- packs
+npm run skillpack -- harness status
+npm run skillpack -- harness discover --adapter pi
 ```
 
 For a Codex project-native installation, copy the reviewed directories under `.agents/skills/` into the target repository's `.agents/skills/`. The same generated Skills are available under `skills/` for the plugin bundle and compatible harnesses. Canonical sources live in `skill-src/`; do not edit either projection directly.
@@ -85,11 +87,11 @@ src/                  router, validator, catalog, evaluator, trainer, harnesses
 
 ## Evaluation and real evolution evidence
 
-`npm run sos -- gate` evaluates routing without collapsing metrics: category hit@1/@3, atom hit@1/@3, atom MRR, non-invocation accuracy, and safety pass rate. English, Chinese, and adversarial suites are separate. Task completion uses a different rubric and cannot be inferred from routing accuracy.
+`npm run skillpack -- gate` evaluates routing without collapsing metrics: category hit@1/@3, atom hit@1/@3, atom MRR, non-invocation accuracy, and safety pass rate. English, Chinese, and adversarial suites are separate. Task completion uses a different rubric and cannot be inferred from routing accuracy.
 
 The repository includes one real governed evolution record: `proposal-generic-zh-fallback`. The candidate added `index.zh.md`, passed isolated development plus untouched English, Chinese, and adversarial suites, and produced an append-only promotion decision with a rollback revision.
 
-New candidates can be bound to their exact canonical Git diff with `npm run sos -- train propose -- --id <id> --target <skill-id> --observation <evidence>`, then evaluated and promoted through the immutable decision log. Protected datasets, baselines, and the release gate cannot certify a candidate that changes them.
+New candidates can be bound to their exact canonical Git diff with `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence>`, then evaluated and promoted through the immutable decision log. Protected datasets, baselines, and the release gate cannot certify a candidate that changes them.
 
 Pi 0.84.4 is pinned and its real `loadSkillsFromDir` implementation discovers all 22 Skills. Model-backed task completion remains explicitly **uncertified** until Pi provider credentials are configured. The deterministic Mock adapter tests protocol plumbing only and is always marked `synthetic: true`; the optional DeepSeek Harness adapter stays disabled until a compatible CLI release is pinned.
 
@@ -98,9 +100,9 @@ See [evaluation](docs/evaluation.md), [harnesses](docs/harnesses.md), and the [e
 ## Refreshing the research catalog
 
 ```sh
-npm run sos -- catalog collect
-npm run sos -- catalog deduplicate
-npm run sos -- catalog stats
+npm run skillpack -- catalog collect
+npm run skillpack -- catalog deduplicate
+npm run skillpack -- catalog stats
 ```
 
 Collection uses fixed Git revisions and the read-only official MCP Registry endpoint, records attribution and fingerprints, and does not execute packages, hooks, endpoints, or Skill instructions. Review [catalog methodology](docs/catalog-methodology.md) and [third-party notices](THIRD_PARTY.md) before changing sources.

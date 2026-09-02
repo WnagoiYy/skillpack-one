@@ -43,4 +43,4 @@ Repository license detection is conservative. Apache-2.0, MIT, GPL-3.0-only, AGP
 
 ## Reproducibility
 
-`npm run sos -- catalog collect` refreshes the catalog from `catalog/sources.yaml`. The configured `verifiedAt` timestamp, fixed upstream revisions, per-entry fingerprints, and snapshot digest make changes reviewable. CI validates the committed snapshot and does not require live network access.
+`npm run skillpack -- catalog collect` refreshes the catalog from `catalog/sources.yaml`. The configured `verifiedAt` timestamp, fixed upstream revisions, per-entry fingerprints, and snapshot digest make changes reviewable. CI validates the committed snapshot and does not require live network access.

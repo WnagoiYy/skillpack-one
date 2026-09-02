@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://self-organizing-skills.dev/schemas/eval-dataset.schema.json",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/schemas/eval-dataset.schema.json",
   "title": "Skill evaluation dataset",
   "type": "object",
   "additionalProperties": false,

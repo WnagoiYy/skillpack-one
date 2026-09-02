@@ -9,9 +9,9 @@ The repository pins `@earendil-works/pi-coding-agent` 0.84.4. The adapter uses P
 Run:
 
 ```sh
-npm run sos -- harness status
-npm run sos -- harness discover --adapter pi
-npm run sos -- harness tasks --adapter pi --provider <provider> --model <model>
+npm run skillpack -- harness status
+npm run skillpack -- harness discover --adapter pi
+npm run skillpack -- harness tasks --adapter pi --provider <provider> --model <model>
 ```
 
 Pi credentials remain in Pi's own provider configuration. The project never reads or logs credential values. If no provider is ready, the adapter returns a typed `blocked` result; it does not replace the live score with a mock score.

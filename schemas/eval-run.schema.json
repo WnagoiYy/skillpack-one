@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://self-organizing-skills.dev/schemas/eval-run.schema.json",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/schemas/eval-run.schema.json",
   "title": "Skill evaluation run",
   "type": "object",
   "additionalProperties": false,

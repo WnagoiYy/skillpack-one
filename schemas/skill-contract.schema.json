@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://self-organizing-skills.dev/schemas/skill-contract.schema.json",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/schemas/skill-contract.schema.json",
   "title": "Skill capability contract",
   "type": "object",
   "additionalProperties": false,

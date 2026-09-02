@@ -94,7 +94,7 @@ function capabilityTerms(...values: Array<string | undefined>): string[] {
 
 async function fetchJson<T>(url: string, headers: Record<string, string> = {}): Promise<T> {
   const response = await fetch(url, {
-    headers: { "User-Agent": "self-organizing-skills-catalog/0.1", Accept: "application/json", ...headers }
+    headers: { "User-Agent": "skillpack-one-catalog/0.1", Accept: "application/json", ...headers }
   });
   if (!response.ok) {
     throw new Error(`HTTP ${response.status} for ${url}: ${(await response.text()).slice(0, 500)}`);
@@ -185,7 +185,7 @@ async function collectGitHubSkills(
   verifiedAt: string
 ): Promise<{ entries: CatalogEntry[]; revision: string }> {
   const { owner, repo } = githubCoordinates(source.repository);
-  const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), "sos-catalog-git-"));
+  const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), "skillpack-catalog-git-"));
   const checkout = path.join(temporaryRoot, "repository");
   try {
     await git(["clone", "--depth", "1", "--filter=blob:none", "--no-checkout", source.repository, checkout]);

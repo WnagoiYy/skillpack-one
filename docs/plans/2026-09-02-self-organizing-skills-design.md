@@ -1,4 +1,4 @@
-# Self-Organizing Skills: Architecture Design
+# Self-Organizing Skill System: Architecture Design
 
 **Status:** Accepted design baseline  
 **Date:** 2026-09-02  

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://self-organizing-skills.dev/schemas/taxonomy.schema.json",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/schemas/taxonomy.schema.json",
   "title": "Capability taxonomy",
   "type": "object",
   "additionalProperties": false,

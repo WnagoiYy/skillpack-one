@@ -2,6 +2,14 @@
 
 All notable changes are recorded here. The format follows Keep a Changelog and versions follow Semantic Versioning.
 
+## [Unreleased]
+
+### Changed
+
+- Renamed the product to **SkillPack One**, the repository and npm package to `skillpack-one`, and the CLI to `skillpack`.
+- Retained **Self-Organizing Skill System** as the internal technical architecture name.
+- Reframed the public promise as: "Install one pack. Let it find, combine, and improve the skills you need."
+
 ## [0.1.0-alpha.5] - 2026-09-02
 
 ### Fixed
@@ -25,5 +33,5 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 - GitHub Actions use immutable Node 24 action commits.
 - Unknown-license content remains metadata-only.
 
-[0.1.0-alpha.4]: https://github.com/WnagoiYy/self-organizing-skills/releases/tag/v0.1.0-alpha.4
-[0.1.0-alpha.5]: https://github.com/WnagoiYy/self-organizing-skills/releases/tag/v0.1.0-alpha.5
+[0.1.0-alpha.4]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.4
+[0.1.0-alpha.5]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.5

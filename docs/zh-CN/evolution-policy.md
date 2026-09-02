@@ -4,7 +4,7 @@
 
 每个提案都必须声明目标、基础 revision、候选 revision、回滚 revision、观察到的失败、允许文件、实际变更文件、生成数据集、评测数据集、前后权限包络和批准记录。生成的 `skills/` 与 `.agents/skills/` 投影绝不能直接修改。
 
-`npm run sos -- train propose -- --id <id> --target <skill-id> --observation <evidence>` 会依据精确的 `HEAD^..HEAD` 规范 Git 差异生成提案。评估要求 `HEAD` 等于 `candidateRevision`，要求 `changedFiles` 与 Git 差异一致，并拒绝已跟踪文件漂移或意外的未跟踪文件。生成投影是可复现产物，不计入规范差异。
+`npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence>` 会依据精确的 `HEAD^..HEAD` 规范 Git 差异生成提案。评估要求 `HEAD` 等于 `candidateRevision`，要求 `changedFiles` 与 Git 差异一致，并拒绝已跟踪文件漂移或意外的未跟踪文件。生成投影是可复现产物，不计入规范差异。
 
 ## 硬性不变量
 

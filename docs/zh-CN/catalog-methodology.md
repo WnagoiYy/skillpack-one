@@ -43,4 +43,4 @@
 
 ## 可复现性
 
-运行 `npm run sos -- catalog collect` 可按 `catalog/sources.yaml` 刷新。配置的 `verifiedAt`、固定 revision、逐项指纹和快照摘要使变更可审查。CI 只校验提交的快照，不需要实时联网。
+运行 `npm run skillpack -- catalog collect` 可按 `catalog/sources.yaml` 刷新。配置的 `verifiedAt`、固定 revision、逐项指纹和快照摘要使变更可审查。CI 只校验提交的快照，不需要实时联网。

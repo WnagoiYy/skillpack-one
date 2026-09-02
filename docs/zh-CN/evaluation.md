@@ -14,7 +14,7 @@
 
 ## 路由指标
 
-`categoryHit1`、`categoryHit3`、`atomHit1`、`atomHit3`、`atomMrr`、`nonInvocationAccuracy` 和 `safetyPassRate` 各自独立。`npm run sos -- gate` 会列出每个独立数据集上的每个失败指标。当前基线通过开发、英文留出、中文留出和对抗四套题集。
+`categoryHit1`、`categoryHit3`、`atomHit1`、`atomHit3`、`atomMrr`、`nonInvocationAccuracy` 和 `safetyPassRate` 各自独立。`npm run skillpack -- gate` 会列出每个独立数据集上的每个失败指标。当前基线通过开发、英文留出、中文留出和对抗四套题集。
 
 ## 完成指标
 
