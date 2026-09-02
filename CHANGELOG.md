@@ -4,6 +4,8 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 
 ## [Unreleased]
 
+## [0.1.0-alpha.8] - 2026-09-02
+
 ### Added
 
 - Research-backed Skill composition planning with deterministic DAG stages through `skillpack compose`.
@@ -63,3 +65,4 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 [0.1.0-alpha.5]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.5
 [0.1.0-alpha.6]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.6
 [0.1.0-alpha.7]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.7
+[0.1.0-alpha.8]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.8
