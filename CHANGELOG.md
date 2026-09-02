@@ -4,6 +4,12 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 
 ## [Unreleased]
 
+## [0.1.0-alpha.11] - 2026-09-03
+
+### Changed
+
+- Advanced the prerelease to verify the first end-to-end GitHub OIDC Trusted Publishing run after the manual npm bootstrap.
+
 ## [0.1.0-alpha.10] - 2026-09-03
 
 ### Added
@@ -95,3 +101,4 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 [0.1.0-alpha.8]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.8
 [0.1.0-alpha.9]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.9
 [0.1.0-alpha.10]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.10
+[0.1.0-alpha.11]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.11
