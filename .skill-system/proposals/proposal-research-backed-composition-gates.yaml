@@ -1,0 +1,67 @@
+schemaVersion: 1
+id: proposal-research-backed-composition-gates
+createdAt: 2026-09-02T03:48:37.876Z
+targetSkill: category-skill-agent-governance
+baseRevision: 9ecbb1fb4fce46354db90586f7ffcab6bb6073a7
+candidateRevision: dcab648282e7b66c9f6d9d0e1f8d05704ba4d9c7
+rollbackRevision: 9ecbb1fb4fce46354db90586f7ffcab6bb6073a7
+observation: Recent Agent Skill evidence shows that multi-step requests need
+  structured composition, Skill value must be measured against a no-Skill
+  baseline, and generated changes need independent review.
+authorship:
+  mode: model-assisted
+  author: WnagoiYy
+  generator: Codex
+allowedFiles: &a1
+  - CHANGELOG.md
+  - CONTRIBUTING.md
+  - README.md
+  - README.zh-CN.md
+  - SECURITY.md
+  - docs/evaluation.md
+  - docs/evolution-policy.md
+  - docs/harnesses.md
+  - docs/plans/2026-09-02-research-informed-skillpack-evolution.md
+  - docs/research/2026-09-02-agent-skill-literature.md
+  - docs/zh-CN/evaluation.md
+  - docs/zh-CN/evolution-policy.md
+  - docs/zh-CN/harnesses.md
+  - docs/zh-CN/research/2026-09-02-agent-skill-literature.md
+  - evals/effect-gates.yaml
+  - package.json
+  - schemas/evolution-proposal.schema.json
+  - schemas/skill-effect.schema.json
+  - src/cli.ts
+  - src/eval/effect.ts
+  - src/eval/tasks.ts
+  - src/harness/pi.ts
+  - src/harness/types.ts
+  - src/packs.ts
+  - src/train/governance.ts
+  - src/train/propose.ts
+  - src/train/types.ts
+  - src/types.ts
+  - tests/harness.test.ts
+  - tests/packs.test.ts
+  - tests/schemas.test.ts
+  - tests/trainer.test.ts
+changedFiles: *a1
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+approvals: []

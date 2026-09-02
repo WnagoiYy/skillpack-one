@@ -1,0 +1,70 @@
+schemaVersion: 1
+id: proposal-research-backed-composition-gates-promotion
+action: promote
+proposal: proposal-research-backed-composition-gates
+proposalDigest: sha256:f9b2d40698ebf75dcaf47857515707b53d56190ebbeac6a9f873b7279645ed12
+baseRevision: 9ecbb1fb4fce46354db90586f7ffcab6bb6073a7
+candidateRevision: dcab648282e7b66c9f6d9d0e1f8d05704ba4d9c7
+rollbackRevision: 9ecbb1fb4fce46354db90586f7ffcab6bb6073a7
+reviewedBy: WnagoiYy
+recordedAt: 2026-09-02T03:49:01.350Z
+evaluation:
+  passed: true
+  failures: []
+  routing:
+    - dataset: routing-adversarial
+      split: adversarial
+      locale: en
+      protected: true
+      examples: 8
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-bootstrap
+      split: dev
+      locale: en
+      protected: false
+      examples: 3
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-en-test
+      split: test
+      locale: en
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-zh-cn-test
+      split: test
+      locale: zh-CN
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
