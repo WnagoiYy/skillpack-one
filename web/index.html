@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f3ed" />
+    <meta name="description" content="浏览、筛选并阅读 SkillPack One 中的 Category、Atom 与 Meta Skills。" />
+    <meta property="og:title" content="SkillPack One · Skill Browser" />
+    <meta property="og:description" content="Explore the open, self-organizing SkillPack One library." />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SkillPack One · Skill Browser" />
+    <meta name="twitter:description" content="Explore the open, self-organizing SkillPack One library." />
+    <meta name="twitter:image" content="/og.png" />
+    <title>SkillPack One · Skill Browser</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#skill-detail">跳到 Skill 详情</a>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="SkillPack One 首页">
+        <span class="brand-mark" aria-hidden="true">S1</span>
+        <span>
+          <strong>SkillPack One</strong>
+          <small>Skill Browser</small>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <span class="version" id="package-version">Loading…</span>
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-locale="zh-CN">中文</button>
+          <button type="button" data-locale="en">EN</button>
+        </div>
+        <a class="repo-link" id="repo-link" href="https://github.com/WnagoiYy/skillpack-one" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow" data-i18n="eyebrow">OPEN · COMPOSABLE · EVOLVABLE</p>
+          <h1 id="page-title" data-i18n="title">一个包，找到每一种能力。</h1>
+          <p class="intro-copy" data-i18n="subtitle">浏览当前仓库的分类路由、原子能力和演进治理 Skill。分类来自开放层级，并不局限于固定的四类。</p>
+        </div>
+        <dl class="stats" aria-label="Skill library statistics">
+          <div><dt data-i18n="allSkills">全部 Skills</dt><dd id="stat-total">—</dd></div>
+          <div><dt>Category</dt><dd id="stat-category">—</dd></div>
+          <div><dt>Atom</dt><dd id="stat-atom">—</dd></div>
+          <div><dt>Meta</dt><dd id="stat-meta">—</dd></div>
+        </dl>
+      </section>
+
+      <section class="browser-shell" aria-label="Skill browser">
+        <aside class="catalog-panel">
+          <div class="catalog-controls">
+            <label class="search-field">
+              <span class="sr-only" data-i18n="searchLabel">搜索 Skill</span>
+              <span aria-hidden="true">⌕</span>
+              <input id="search-input" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="搜索名称、能力、触发词…" />
+              <kbd>/</kbd>
+            </label>
+            <div class="kind-filter" id="kind-filter" aria-label="Skill kind filter">
+              <button type="button" class="active" data-kind="all" data-i18n="all">全部</button>
+              <button type="button" data-kind="category">Category</button>
+              <button type="button" data-kind="atom">Atom</button>
+              <button type="button" data-kind="meta">Meta</button>
+            </div>
+            <label class="category-field">
+              <span data-i18n="category">能力分类</span>
+              <select id="category-select"><option value="all">全部分类</option></select>
+            </label>
+          </div>
+          <div class="catalog-summary">
+            <strong id="result-count">0</strong>
+            <span data-i18n="results">项结果</span>
+          </div>
+          <div class="skill-list" id="skill-list" role="listbox" aria-label="Skills"></div>
+          <div class="empty-state" id="empty-state" hidden>
+            <strong data-i18n="emptyTitle">没有匹配的 Skill</strong>
+            <p data-i18n="emptyBody">换一个关键词，或清除筛选条件。</p>
+            <button type="button" id="reset-filters" data-i18n="reset">重置筛选</button>
+          </div>
+        </aside>
+
+        <article class="detail-panel" id="skill-detail" tabindex="-1" aria-live="polite">
+          <div class="detail-loading" id="detail-loading">Loading Skill library…</div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>The skillpack is all you need.</span>
+      <span id="taxonomy-version"></span>
+    </footer>
+  </body>
+</html>

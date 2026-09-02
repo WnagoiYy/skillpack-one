@@ -103,6 +103,14 @@ npm ci
 npm run ci
 ```
 
+启动可视化 Skill Browser，搜索当前分类体系并查看每个 canonical 合约和 `SKILL.md`：
+
+```sh
+npm run web:serve
+```
+
+然后打开 `http://127.0.0.1:4173`。每次启动都会从 `skill-src/` 与 `taxonomy/` 重新生成静态数据；分类由开放 taxonomy 自动发现，不会写死为四类。
+
 体验可解释路由和状态检查：
 
 ```sh
@@ -141,6 +149,8 @@ paper/                英文论文草稿、中文扩展摘要与参考文献
 .skill-system/        进化提案与追加式决策记录
   knowledge/          不可执行、可索引的进化模式
 src/                  路由、校验、采集、评估、训练和 Harness
+web/                  浅色静态 Skill Browser 源码
+.openai/hosting.json  静态托管配置
 ```
 
 ## 测试与真实进化证据

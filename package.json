@@ -62,9 +62,12 @@
     "skills:generate": "tsx scripts/generate-skill-projections.ts",
     "library:generate": "tsx scripts/generate-expanded-library.ts && npm run skills:generate",
     "evidence:generate": "tsx scripts/generate-decomposition-map.ts",
+    "web:build": "tsx scripts/build-skill-browser.ts",
+    "web:check": "node --check web/app.js && npm run web:build",
+    "web:serve": "npm run web:build && tsx scripts/serve-skill-browser.ts",
     "skills:check": "tsx scripts/generate-skill-projections.ts --check",
     "check": "npm run typecheck && npm run skills:check && npm test",
-    "ci": "npm run check && npm run build && npm run skillpack -- gate",
+    "ci": "npm run check && npm run build && npm run web:check && npm run skillpack -- gate",
     "release:plan": "tsx scripts/prepare-npm-release.ts",
     "skillpack": "tsx src/cli.ts"
   },

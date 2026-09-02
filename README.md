@@ -103,6 +103,14 @@ npm ci
 npm run ci
 ```
 
+Launch the generated Skill Browser to search the current taxonomy and inspect each canonical contract and `SKILL.md`:
+
+```sh
+npm run web:serve
+```
+
+Then open `http://127.0.0.1:4173`. The static data snapshot is rebuilt from `skill-src/` and `taxonomy/` each time; categories are discovered from the open taxonomy rather than hard-coded.
+
 Try the explainable router:
 
 ```sh
@@ -141,6 +149,8 @@ paper/                English paper draft, Chinese extended abstract, bibliograp
 .skill-system/        evolution proposals and immutable decisions
   knowledge/          non-executable, indexed evolution patterns
 src/                  router, validator, catalog, evaluator, trainer, harnesses
+web/                  light static Skill Browser source
+.openai/hosting.json  static hosting configuration
 ```
 
 ## Evaluation and real evolution evidence

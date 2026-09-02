@@ -1,6 +1,7 @@
 node_modules/
 .stale-node-modules-*/
 dist/
+build/
 coverage/
 .env
 .env.*
