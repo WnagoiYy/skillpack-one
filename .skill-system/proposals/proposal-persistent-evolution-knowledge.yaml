@@ -1,0 +1,64 @@
+schemaVersion: 1
+id: proposal-persistent-evolution-knowledge
+createdAt: 2026-09-02T04:16:44.128Z
+targetSkill: category-skill-agent-governance
+baseRevision: 659cda336170defc92097a8e5e0b124e29604ba8
+candidateRevision: 132ecbddc94825cbfbe967155d8d9d558dbd6cbc
+rollbackRevision: 659cda336170defc92097a8e5e0b124e29604ba8
+observation: WikiSkill shows that raw traces, consolidated cross-iteration
+  patterns, and reversible active Skills should remain separate so rejected
+  interventions and recurring failures can inform later proposals without
+  contaminating task inference.
+authorship:
+  mode: model-assisted
+  author: WnagoiYy
+  generator: Codex
+knowledgePatterns:
+  - experience-insights-fragment-across-iterations
+allowedFiles: &a1
+  - .skill-system/knowledge/index.md
+  - .skill-system/knowledge/patterns/experience-insights-fragment-across-iterations.yaml
+  - CHANGELOG.md
+  - CONTRIBUTING.md
+  - README.md
+  - README.zh-CN.md
+  - docs/evolution-knowledge.md
+  - docs/evolution-policy.md
+  - docs/zh-CN/evolution-knowledge.md
+  - docs/zh-CN/evolution-policy.md
+  - package.json
+  - schemas/evolution-pattern.schema.json
+  - schemas/evolution-proposal.schema.json
+  - skill-src/meta-skill-governor/SKILL.md
+  - skill-src/meta-skill-governor/references/knowledge-policy.en.md
+  - skill-src/meta-skill-governor/references/knowledge-policy.zh-CN.md
+  - skill-src/meta-skill-governor/skill.contract.yaml
+  - src/cli.ts
+  - src/train/governance.ts
+  - src/train/knowledge.ts
+  - src/train/propose.ts
+  - src/train/types.ts
+  - src/validation.ts
+  - tests/knowledge.test.ts
+  - tests/schemas.test.ts
+  - tests/trainer.test.ts
+changedFiles: *a1
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+approvals: []

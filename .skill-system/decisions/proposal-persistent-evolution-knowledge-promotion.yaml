@@ -1,0 +1,72 @@
+schemaVersion: 1
+id: proposal-persistent-evolution-knowledge-promotion
+action: promote
+proposal: proposal-persistent-evolution-knowledge
+proposalDigest: sha256:84f8add451dda2324794248edb309897e8360c70bd473e88f0d99d75fe5d8108
+knowledgePatterns:
+  - experience-insights-fragment-across-iterations
+baseRevision: 659cda336170defc92097a8e5e0b124e29604ba8
+candidateRevision: 132ecbddc94825cbfbe967155d8d9d558dbd6cbc
+rollbackRevision: 659cda336170defc92097a8e5e0b124e29604ba8
+reviewedBy: WnagoiYy
+recordedAt: 2026-09-02T04:16:53.441Z
+evaluation:
+  passed: true
+  failures: []
+  routing:
+    - dataset: routing-adversarial
+      split: adversarial
+      locale: en
+      protected: true
+      examples: 8
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-bootstrap
+      split: dev
+      locale: en
+      protected: false
+      examples: 3
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-en-test
+      split: test
+      locale: en
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-zh-cn-test
+      split: test
+      locale: zh-CN
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
