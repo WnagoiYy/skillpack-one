@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-plan-cloud-deployment
+kind: atom
+version: 0.1.0
+name:
+  en: Plan a cloud deployment
+  zh-CN: 规划云部署
+summary:
+  en: Plan one cloud deployment with environments, infrastructure boundaries,
+    identity, networking, data, rollout, observability, cost, and rollback
+    without provisioning resources.
+  zh-CN: 规划一次云部署，涵盖环境、基础设施边界、身份、网络、数据、发布、可观测性、成本与回滚，但不创建资源。
+outcomes:
+  - Reviewable cloud-deployment plan
+artifacts:
+  - cloud-deployment-plan
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: cloud-deployment-plan
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: automation-operations
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - plan a cloud deployment
+      - design the production hosting rollout
+      - prepare an infrastructure deployment plan
+    zh-CN:
+      - 规划云部署
+      - 设计生产托管发布
+      - 准备基础设施部署计划
+  negativeTriggers:
+    en:
+      - provision cloud resources now
+      - release only an application package
+    zh-CN:
+      - 立即创建云资源
+      - 只发布应用包
+  confusableWith:
+    - atom-design-software-architecture
+    - atom-plan-software-release
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

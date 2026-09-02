@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-peer-review-manuscript
+kind: atom
+version: 0.1.0
+name:
+  en: Peer review a manuscript
+  zh-CN: 同行评审论文
+summary:
+  en: Review one scholarly manuscript for claim support, methods, analysis,
+    novelty context, reproducibility, ethics, and reporting quality without
+    rewriting or making editorial decisions.
+  zh-CN: 评审一篇学术论文的论断依据、方法、分析、创新背景、可复现性、伦理与报告质量，不代写或替编辑决策。
+outcomes:
+  - Evidence-located manuscript review
+artifacts:
+  - manuscript-peer-review
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: manuscript-peer-review
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: scientific-research
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - peer review this manuscript
+      - critique this research paper
+      - assess methods and claims
+    zh-CN:
+      - 同行评审论文
+      - 评议研究论文
+      - 评估方法和论断
+  negativeTriggers:
+    en:
+      - rewrite the manuscript
+      - decide journal acceptance
+    zh-CN:
+      - 重写论文
+      - 决定期刊录用
+  confusableWith:
+    - atom-review-literature
+    - atom-critique-output
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

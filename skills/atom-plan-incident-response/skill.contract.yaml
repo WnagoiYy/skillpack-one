@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-plan-incident-response
+kind: atom
+version: 0.1.0
+name:
+  en: Plan security incident response
+  zh-CN: 规划安全事件响应
+summary:
+  en: Create one security incident response plan with classification, evidence
+    preservation, containment choices, communications, recovery, and
+    post-incident learning.
+  zh-CN: 创建一份安全事件响应计划，包含分级、证据保全、遏制选择、沟通、恢复与事后学习。
+outcomes:
+  - Executable security incident plan
+artifacts:
+  - incident-response-plan
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: incident-response-plan
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: security-trust
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - plan incident response
+      - create a security breach playbook
+      - prepare for credential compromise
+    zh-CN:
+      - 规划事件响应
+      - 创建安全泄露手册
+      - 准备凭据泄露响应
+  negativeTriggers:
+    en:
+      - perform live containment now
+      - troubleshoot an ordinary outage
+    zh-CN:
+      - 立即执行线上遏制
+      - 排查普通故障
+  confusableWith:
+    - atom-triage-production-incident
+    - atom-write-operational-runbook
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

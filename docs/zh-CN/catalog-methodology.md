@@ -15,7 +15,7 @@
 
 精确数量、revision 与聚合摘要记录在 `catalog/snapshots/manifest.yaml`。
 
-独立的下载清单包含来自 22 个已声明仓库的 1,061 条 `SKILL.md` 记录，其中 21 个仓库当前含有匹配文件。内容指纹识别出 1,055 份独立指令正文与 6 个完全重复项。该清单有意比规范化通用目录更广，保存在 `catalog/upstream-skill-inventory.yaml`。
+独立的下载清单包含来自 41 个已声明仓库的 3,998 条 `SKILL.md` 记录，其中 40 个仓库当前含有匹配文件。内容指纹识别出 3,973 份独立指令正文与 25 个完全重复项。该清单有意比规范化通用目录更广，保存在 `catalog/upstream-skill-inventory.yaml`。
 
 ## 采集规则
 

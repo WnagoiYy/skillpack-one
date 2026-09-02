@@ -2,25 +2,73 @@ schemaVersion: 1
 id: category-security-trust
 kind: category
 version: 0.1.0
-name: { en: Security and Trust Router, zh-CN: 安全与信任路由器 }
-summary: { en: Route security and integrity outcomes to specialized trust atoms., zh-CN: 将安全与完整性结果路由到专门的信任原子能力。 }
-outcomes: [Bounded security-trust category decision]
-artifacts: [category-route, localized-index]
-inputs: [{ name: request, type: user-prompt, required: true }]
-outputs: [{ name: candidates, type: category-and-atom-candidates, required: true }]
-preconditions: [The versioned taxonomy and localized index are available]
-failures: [The protected asset, threat, or authority boundary cannot be identified]
-sideEffects: [filesystem-read]
-permissions: { network: none, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+name:
+  en: Security and trust Router
+  zh-CN: 安全与信任路由器
+summary:
+  en: Route security and trust requests to the smallest certified Atomic Skill.
+  zh-CN: 将安全与信任请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded security-trust category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
 taxonomy:
   primaryCategory: security-trust
-  lifecycle: [analyze]
-  modalities: [text, structured-data]
-  dependencies: [tool-agnostic]
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
   risk: read-only
 routing:
-  positiveTriggers: { en: [audit security, analyze threats, review permissions, verify provenance], zh-CN: [审计安全, 分析威胁, 审查权限, 验证来源] }
-  negativeTriggers: { en: [ordinary functional debugging, generic quality review], zh-CN: [普通功能调试, 通用质量审查] }
-  confusableWith: [category-software-engineering, category-skill-agent-governance]
-provenance: { origin: local, license: Apache-2.0 }
-evaluations: [routing-bootstrap, routing-en-test, routing-zh-cn-test, routing-adversarial]
+  positiveTriggers:
+    en:
+      - security
+      - vulnerability
+      - threat
+      - audit
+      - permission
+      - secret
+    zh-CN:
+      - 安全
+      - 漏洞
+      - 威胁
+      - 审计
+      - 权限
+      - 密钥
+  negativeTriggers:
+    en:
+      - ordinary functional debugging
+      - quality review without a security or trust property
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-capture-structured-notes
+kind: atom
+version: 0.1.0
+name:
+  en: Capture structured notes
+  zh-CN: 捕获结构化笔记
+summary:
+  en: Convert one bounded stream of supplied information into structured notes
+    with source, context, decisions, actions, links, and unresolved questions.
+  zh-CN: 将一组有限给定信息转换为结构化笔记，保留来源、上下文、决策、行动、链接与未决问题。
+outcomes:
+  - Traceable structured notes
+artifacts:
+  - structured-notes
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: structured-notes
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: personal-productivity
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - turn this into structured notes
+      - capture meeting notes
+      - organize these observations
+    zh-CN:
+      - 转换成结构化笔记
+      - 记录会议笔记
+      - 整理这些观察
+  negativeTriggers:
+    en:
+      - reorganize the whole knowledge vault
+      - research missing facts
+    zh-CN:
+      - 重组整个知识库
+      - 调研缺失事实
+  confusableWith:
+    - atom-operate-knowledge-vault
+    - atom-summarize-document
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

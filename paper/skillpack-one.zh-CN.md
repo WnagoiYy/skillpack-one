@@ -6,7 +6,7 @@
 
 Agent Skill 通过可发现的目录封装过程知识，但 Skill 规模增长以后会产生四类系统问题：大目录难以准确检索，重叠能力难以组合，社区产物跨越多个安全信任边界，自修改则可能对自己的证据过拟合并失去回滚路径。本文提出 **SkillPack One**：一个面向自组织 Agent Skill 的可移植控制平面。系统将能力分为负责渐进路由的 Category Skill、职责与权限边界明确的 Atomic Skill、把已审查偏序编译成执行计划的 Capability Pack，以及治理提案、评测、晋级、回滚和学习的 Meta Skill。所有第一方能力遵循统一机器可读契约；不同语言可以拥有本地化索引，而稳定能力 ID 保持不变。系统进一步分离原始轨迹、持久进化知识、活动 Skill 和单次长任务状态。
 
-本轮吸收 SkillRet、SkillRouter、真实环境 Skill 评测、Agent Skill Security、SkillNet 与 SkillOpt 的关键机制，增加等价感知的多 Skill Recall/Full Coverage、同领域硬干扰、安全生命周期六阶段审查、类型化 Skill 关系，以及只接受严格提升的有界进化尝试。参考实现包含 59 个 Skill 契约、4 个能力包、658 条不执行的规范化 Skill/MCP 元数据，以及 1,061 条更广的已下载 Skill 指纹清单。当前 93 条确定性合规样例全部通过，但这些结果只验证工程不变量，不证明真实模型任务增益。本文因此另外提出基于固定模型/Harness 的 no-Skill/with-Skill 成对实验协议。
+本轮吸收 SkillRet、SkillRouter、真实环境 Skill 评测、Agent Skill Security、SkillNet 与 SkillOpt 的关键机制，增加等价感知的多 Skill Recall/Full Coverage、同领域硬干扰、安全生命周期六阶段审查、类型化 Skill 关系，以及只接受严格提升的有界进化尝试。参考实现包含 100 个 Skill 契约、4 个能力包、658 条不执行的规范化 Skill/MCP 元数据，以及 3,998 条更广的已下载 Skill 指纹清单。当前 186 条确定性路由样例全部通过，但这些结果只验证工程不变量，不证明真实模型任务增益。本文因此另外提出基于固定模型/Harness 的 no-Skill/with-Skill 成对实验协议。
 
 ## 核心研究问题
 
@@ -54,9 +54,9 @@ flowchart LR
 
 ## 当前工程结果
 
-候选实现包含 22 个 Category、35 个 Atom、2 个 Meta Skill、4 个能力包、63 个关系节点和 98 条有证据关系。非执行规范化上游目录共有 658 条记录，其中 388 条 Agent Skill、270 条 MCP Server；更广的下载清单包含 1,061 条记录、1,055 份独立内容和 6 个完全重复项。问题研究、科学研究、软件开发和软件使用只是开放 taxonomy 的种子示例，并非封闭四分法。
+候选实现包含 22 个 Category、76 个 Atom、2 个 Meta Skill、4 个能力包、104 个关系节点和 166 条有证据关系。非执行规范化上游目录共有 658 条记录，其中 388 条 Agent Skill、270 条 MCP Server；更广的下载清单包含 3,998 条记录、3,973 份独立内容和 25 个完全重复项。问题研究、科学研究、软件开发和软件使用只是开放 taxonomy 的种子示例，并非封闭四分法。
 
-确定性路由在 93 条仓库样例上通过当前闸门，样例包括英文、简体中文、对抗和同领域硬干扰。指标分别报告 Category Hit@1/3、Atom Hit@1/3、MRR、Recall@3、Full Coverage@3、非调用准确率与安全通过率，不汇总成一个总分。
+确定性路由在 186 条仓库样例上通过当前闸门，样例包括英文、简体中文、对抗和同领域硬干扰。指标分别报告 Category Hit@1/3、Atom Hit@1/3、MRR、Recall@3、Full Coverage@3、非调用准确率与安全通过率，不汇总成一个总分。
 
 硬干扰开发集最初发现两个真实问题：否定语句“不要编辑源码”仍可能触发编辑 Atom，通用词 “evidence/source” 可能压过安全任务的真正结果边界。修复否定作用域与职责词以后，该四条开发集的 Category Hit@1、Atom Hit@1 和 Safety 从 0.50 提升到 1.00。该数字是测试驱动调试记录，不是留出集泛化结论。
 
@@ -73,6 +73,6 @@ flowchart LR
 
 ## 局限
 
-项目仍是研究级 alpha。第一方 Atom 数量很少，上游目录只是元数据而非已安装能力；35 条测试不足以估计真实用户分布；中文测试不能代表普遍多语言能力；关系图只能物化已声明关系；安全 Schema 只能验证记录和确定性门禁，不能证明模型 Judge 或运行时 Taint Tracking 正确；当前还没有可认证的真实 Harness Skill Lift。
+项目仍是研究级 alpha。76 个第一方 Atom 仍不足以覆盖真实世界能力长尾，上游目录只是元数据而非已安装能力；当前人工样例不足以估计真实用户分布；中文测试不能代表普遍多语言能力；关系图只能物化已声明关系；安全 Schema 只能验证记录和确定性门禁，不能证明模型 Judge 或运行时 Taint Tracking 正确；当前还没有可认证的真实 Harness Skill Lift。
 
 因此，本文的主要贡献不是“效果最好的路由器”，而是一种可替换实现、不可绕过证据与授权边界的控制平面。完整英文论文及参考文献见 [`skillpack-one.md`](skillpack-one.md)。

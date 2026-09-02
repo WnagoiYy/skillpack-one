@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-review-privacy-risk
+kind: atom
+version: 0.1.0
+name:
+  en: Review privacy risk
+  zh-CN: 评审隐私风险
+summary:
+  en: Review one bounded product, workflow, or dataset for personal-data flows,
+    purpose, minimization, retention, access, user expectations, and unresolved
+    privacy risk.
+  zh-CN: 评审一个有限产品、流程或数据集的个人数据流、目的、最小化、保留、访问、用户预期与未解决隐私风险。
+outcomes:
+  - Evidence-backed privacy-risk review
+artifacts:
+  - privacy-risk-review
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: privacy-risk-review
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: security-trust
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - review privacy risk
+      - map personal data flows
+      - assess data minimization and retention
+    zh-CN:
+      - 评审隐私风险
+      - 映射个人数据流
+      - 评估数据最小化和保留
+  negativeTriggers:
+    en:
+      - give binding legal advice
+      - audit source vulnerabilities
+    zh-CN:
+      - 提供有约束力法律意见
+      - 审计源码漏洞
+  confusableWith:
+    - atom-assess-compliance-controls
+    - atom-create-threat-model
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

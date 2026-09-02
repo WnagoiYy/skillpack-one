@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-generate-image
+kind: atom
+version: 0.1.0
+name:
+  en: Generate an image
+  zh-CN: 生成图像
+summary:
+  en: Generate one original raster image from a bounded visual brief with
+    composition, style, constraints, rights-aware references, and acceptance
+    checks.
+  zh-CN: 依据有限视觉简报生成一张原创位图，明确构图、风格、约束、权利感知参考与验收检查。
+outcomes:
+  - Brief-matched generated image
+artifacts:
+  - generated-image
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: generated-image
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: design-media
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - generate an image
+      - create an illustration from this prompt
+      - make a hero visual
+    zh-CN:
+      - 生成图像
+      - 根据提示创建插画
+      - 制作主视觉
+  negativeTriggers:
+    en:
+      - edit this existing image
+      - design a full user interface
+    zh-CN:
+      - 编辑现有图像
+      - 设计完整用户界面
+  confusableWith:
+    - atom-edit-image
+    - atom-design-interface-spec
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

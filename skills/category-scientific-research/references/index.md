@@ -13,6 +13,9 @@ Review scholarship, design studies, analyze experimental results, and prepare tr
 - `atom-manage-research-citations` — **Manage research citations**: Normalize, validate, deduplicate, and map scholarly references to claims without inventing identifiers or bibliographic facts.
   - Risk: `read-only`
   - Lifecycle: analyze, verify
+- `atom-peer-review-manuscript` — **Peer review a manuscript**: Review one scholarly manuscript for claim support, methods, analysis, novelty context, reproducibility, ethics, and reporting quality without rewriting or making editorial decisions.
+  - Risk: `read-only`
+  - Lifecycle: analyze, verify
 - `atom-review-literature` — **Review scientific literature**: Synthesize a bounded body of scholarly evidence into themes, agreements, conflicts, gaps, and traceable conclusions.
   - Risk: `read-only`
   - Lifecycle: analyze, verify

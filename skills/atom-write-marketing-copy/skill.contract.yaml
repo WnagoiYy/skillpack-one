@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-write-marketing-copy
+kind: atom
+version: 0.1.0
+name:
+  en: Write marketing copy
+  zh-CN: 撰写营销文案
+summary:
+  en: Write one evidence-grounded marketing asset for a defined audience, offer,
+    channel, and action without fabricating claims or publishing it.
+  zh-CN: 为明确受众、产品、渠道和行动撰写一份有依据的营销素材，不虚构论断或直接发布。
+outcomes:
+  - Reviewable marketing copy
+artifacts:
+  - marketing-copy
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: marketing-copy
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: business-growth
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - write landing page copy
+      - draft a marketing email
+      - create ad copy
+    zh-CN:
+      - 撰写落地页文案
+      - 起草营销邮件
+      - 创建广告文案
+  negativeTriggers:
+    en:
+      - send the campaign
+      - define the whole content strategy
+    zh-CN:
+      - 发送营销活动
+      - 定义完整内容策略
+  confusableWith:
+    - atom-draft-external-message
+    - atom-plan-content-strategy
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

@@ -48,7 +48,13 @@ function explicitlyNegated(prompt: string, phrase: string): boolean {
   return prompt.split(/[,.!?;，。！？；]/u).some((clause) => {
     if (!/(?:\bdo\s+not\b|\bdon't\b|\bnot\b|不要|不)/u.test(clause)) return false;
     const clauseTokens = tokens(clause);
-    return phraseTokens.every((token) => clauseTokens.has(token));
+    const overlap = phraseTokens.filter((token) => clauseTokens.has(token)).length;
+    // Negated clauses often replace the object with a pronoun ("do not
+    // translate it") or a related object ("do not generate a new scene").
+    // Requiring every trigger token caused the negated action to score as a
+    // positive match. A majority-or-half overlap still requires action-level
+    // evidence while handling these natural ellipses.
+    return overlap > 0 && overlap / phraseTokens.length >= 0.5;
   });
 }
 
@@ -181,7 +187,10 @@ export function routeRequest(
   const promptTokens = tokens(prompt);
   const locale = options.locale ?? detectLocale(rawPrompt);
   const categoryLimit = options.categoryLimit ?? 3;
-  const atomLimit = options.atomLimit ?? 5;
+  // Keep enough candidates for multi-Skill pack recommendation as the atomic
+  // library grows; five candidates was sufficient for the bootstrap library
+  // but could truncate a relevant ordered stage in a 70+ atom catalog.
+  const atomLimit = options.atomLimit ?? 10;
   const ambiguityDelta = options.ambiguityDelta ?? 4;
 
   const lexicalCategories = sortCandidates(

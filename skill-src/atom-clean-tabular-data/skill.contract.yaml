@@ -1,0 +1,78 @@
+schemaVersion: 1
+id: atom-clean-tabular-data
+kind: atom
+version: 0.1.0
+name:
+  en: Clean tabular data
+  zh-CN: 清洗表格数据
+summary:
+  en: Normalize one structured dataset under explicit rules while preserving raw
+    values, lineage, exceptions, and reproducible transformations.
+  zh-CN: 依据明确规则规范化一份结构化数据，同时保留原始值、血缘、异常与可复现转换。
+outcomes:
+  - Reproducibly cleaned dataset
+artifacts:
+  - cleaned-dataset
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: cleaned-dataset
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: data-analytics
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - clean this dataset
+      - clean this table
+      - normalize these columns
+      - deduplicate these rows
+    zh-CN:
+      - 清洗数据集
+      - 清洗这张表
+      - 规范化这些列
+      - 去重这些行
+  negativeTriggers:
+    en:
+      - analyze the business meaning
+      - edit workbook formatting only
+    zh-CN:
+      - 分析业务含义
+      - 只编辑工作簿格式
+  confusableWith:
+    - atom-analyze-tabular-data
+    - atom-operate-spreadsheet
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

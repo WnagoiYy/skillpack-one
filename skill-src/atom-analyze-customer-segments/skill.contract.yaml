@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-analyze-customer-segments
+kind: atom
+version: 0.1.0
+name:
+  en: Analyze customer segments
+  zh-CN: 分析客户细分
+summary:
+  en: Segment one defined customer market using traceable behavioral, needs-based,
+    or economic evidence and state the limits of each segment.
+  zh-CN: 使用可追溯的行为、需求或经济证据细分一个明确客户市场，并说明各细分边界。
+outcomes:
+  - Evidence-backed customer segmentation
+artifacts:
+  - customer-segmentation
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: customer-segmentation
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - network-read
+permissions:
+  network: read
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: business-growth
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - api-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - analyze customer segments
+      - define target customer groups
+      - segment these users by needs
+    zh-CN:
+      - 分析客户细分
+      - 定义目标客户群
+      - 按需求细分用户
+  negativeTriggers:
+    en:
+      - size the whole market
+      - write campaign copy
+    zh-CN:
+      - 测算整体市场规模
+      - 撰写营销文案
+  confusableWith:
+    - atom-analyze-market
+    - atom-write-marketing-copy
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

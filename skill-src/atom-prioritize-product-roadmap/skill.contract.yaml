@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-prioritize-product-roadmap
+kind: atom
+version: 0.1.0
+name:
+  en: Prioritize a product roadmap
+  zh-CN: 排定产品路线图
+summary:
+  en: Prioritize one bounded set of product opportunities against explicit
+    outcomes, evidence, cost, risk, dependencies, and uncertainty without
+    committing delivery dates.
+  zh-CN: 依据明确成果、证据、成本、风险、依赖与不确定性，对一组有限产品机会排序，不承诺交付日期。
+outcomes:
+  - Evidence-ranked product roadmap
+artifacts:
+  - product-roadmap
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: product-roadmap
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: product-definition
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - prioritize this product roadmap
+      - rank these feature opportunities
+      - decide what to build next
+    zh-CN:
+      - 排定产品路线图
+      - 对功能机会排序
+      - 决定下一步做什么
+  negativeTriggers:
+    en:
+      - write detailed requirements
+      - schedule engineering delivery
+    zh-CN:
+      - 编写详细需求
+      - 安排工程交付
+  confusableWith:
+    - atom-write-product-requirements
+    - atom-build-action-plan
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

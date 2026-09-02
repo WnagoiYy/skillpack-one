@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Plan Learning Path
+  short_description: Route and apply Atom Plan Learning Path
+  default_prompt: Use $atom-plan-learning-path to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

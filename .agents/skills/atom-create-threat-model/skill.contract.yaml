@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-create-threat-model
+kind: atom
+version: 0.1.0
+name:
+  en: Create a threat model
+  zh-CN: 创建威胁模型
+summary:
+  en: Create one system threat model covering assets, trust boundaries, actors,
+    abuse paths, controls, residual risk, and verification priorities.
+  zh-CN: 创建一份系统威胁模型，覆盖资产、信任边界、参与者、滥用途径、控制、残余风险和验证优先级。
+outcomes:
+  - Reviewable system threat model
+artifacts:
+  - threat-model
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: threat-model
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: security-trust
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - create a threat model
+      - map attack paths and trust boundaries
+      - assess system threats
+    zh-CN:
+      - 创建威胁模型
+      - 映射攻击路径和信任边界
+      - 评估系统威胁
+  negativeTriggers:
+    en:
+      - scan source code for vulnerabilities
+      - implement security fixes
+    zh-CN:
+      - 扫描源码漏洞
+      - 实施安全修复
+  confusableWith:
+    - atom-audit-source-security
+    - atom-design-software-architecture
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

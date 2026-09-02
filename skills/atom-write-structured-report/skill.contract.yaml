@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-write-structured-report
+kind: atom
+version: 0.1.0
+name:
+  en: Write a structured report
+  zh-CN: 编写结构化报告
+summary:
+  en: Turn verified inputs into one decision-ready report with traceable claims,
+    clear sections, limitations, and actionable conclusions.
+  zh-CN: 将已验证输入组织成一份可供决策的报告，包含可追溯论断、清晰章节、局限与可行动结论。
+outcomes:
+  - Decision-ready structured report
+artifacts:
+  - structured-report
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: structured-report
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: documents-communication
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - write a structured report
+      - turn these findings into a report
+      - prepare a decision memo
+    zh-CN:
+      - 编写结构化报告
+      - 将这些发现整理成报告
+      - 准备决策备忘录
+  negativeTriggers:
+    en:
+      - find the evidence first
+      - create presentation slides
+    zh-CN:
+      - 先查找证据
+      - 创建演示幻灯片
+  confusableWith:
+    - atom-find-research-sources
+    - atom-create-presentation
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

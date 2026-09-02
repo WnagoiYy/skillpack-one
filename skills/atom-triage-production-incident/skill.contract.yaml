@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-triage-production-incident
+kind: atom
+version: 0.1.0
+name:
+  en: Triage a production incident
+  zh-CN: 分诊生产故障
+summary:
+  en: Triage one active production incident using bounded read-only evidence to
+    establish impact, timeline, hypotheses, containment options, and the next
+    authorized action.
+  zh-CN: 使用有限只读证据分诊一个正在发生的生产故障，确定影响、时间线、假设、遏制选项与下一项获授权行动。
+outcomes:
+  - Evidence-backed incident triage
+artifacts:
+  - production-incident-triage
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: production-incident-triage
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - shell-execution
+permissions:
+  network: none
+  filesystem: read
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: automation-operations
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - cli-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - triage this production incident
+      - investigate the outage
+      - assess live service impact
+    zh-CN:
+      - 分诊生产故障
+      - 调查服务中断
+      - 评估线上影响
+  negativeTriggers:
+    en:
+      - change production without approval
+      - plan a hypothetical security incident
+    zh-CN:
+      - 未经批准修改生产
+      - 规划假设安全事件
+  confusableWith:
+    - atom-debug-software
+    - atom-plan-incident-response
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

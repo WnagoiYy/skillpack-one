@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-plan-video-production
+kind: atom
+version: 0.1.0
+name:
+  en: Plan video production
+  zh-CN: 规划视频制作
+summary:
+  en: Plan one video from audience and message through script beats, shots,
+    assets, production constraints, accessibility, review, and delivery
+    specifications.
+  zh-CN: 规划一支视频，从受众和信息到脚本节拍、镜头、素材、制作约束、无障碍、审查与交付规格。
+outcomes:
+  - Production-ready video plan
+artifacts:
+  - video-production-plan
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: video-production-plan
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: design-media
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - plan a video production
+      - create a shot list and storyboard plan
+      - prepare a product video brief
+    zh-CN:
+      - 规划视频制作
+      - 创建镜头清单和分镜计划
+      - 准备产品视频简报
+  negativeTriggers:
+    en:
+      - render the final video now
+      - generate one still image
+    zh-CN:
+      - 立即渲染最终视频
+      - 生成一张静态图
+  confusableWith:
+    - atom-create-presentation
+    - atom-generate-image
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

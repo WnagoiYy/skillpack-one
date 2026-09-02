@@ -17,7 +17,7 @@ flowchart LR
     R[用户需求] --> C[分类 Skill]
     C --> A[最小原子 Skills]
     A --> P[能力包 / 完整任务]
-    U[1,061 个 Skill 镜像 + 658 条通用目录] -. 只作证据 .-> C
+    U[3,998 个 Skill 镜像 + 658 条通用目录] -. 只作证据 .-> C
     M[元 Skill 治理器] --> C
     M --> A
     M --> P
@@ -31,10 +31,10 @@ flowchart LR
 | 层级 | 当前数量 | 作用 |
 | --- | ---: | --- |
 | 分类 Skills | 22 | 开放、分层地按真实需求分类，并处理领域边界 |
-| 原子 Skills | 35 | 小而独立、可测试、可替换的能力契约 |
+| 原子 Skills | 76 | 小而独立、可测试、可替换的能力契约 |
 | 元 Skills | 2 | 分别管理上游策展，以及提案、评估、晋级、弃用与回滚 |
 | 能力包 | 4 | 不合并原子的前提下，组成端到端任务 |
-| 已下载 Skill 清单 | 1,061 | 来自 21 个非空仓库的 1,055 份独立内容；明确标出 6 个完全重复项 |
+| 已下载 Skill 清单 | 3,998 | 来自 40 个非空仓库的 3,973 份独立内容；明确标出 25 个完全重复项 |
 | 通用上游目录 | 658 | 388 个 Agent Skills + 270 个官方 MCP Registry 服务 |
 | 疑似重复簇 | 8 | 进入人工审查队列，不自动删除来源 |
 
@@ -155,13 +155,13 @@ web/                  浅色静态 Skill Browser 源码
 
 ## 测试与真实进化证据
 
-`npm run skillpack -- gate` 分别评估分类 Hit@1/@3、原子 Hit@1/@3、MRR、等价能力感知的原子 Recall@3 与 Full Coverage@3、不调用准确率和安全通过率，不用一个总分掩盖短板。多原子请求只有在每个必需能力组都出现时才通过 Full Coverage。英文、中文、对抗和同领域硬干扰问题集彼此独立；当前 93 条人工编写样例全部通过，这只验证仓库工程一致性，不代表真实模型通用能力。任务完成率另行评估，不能用路由正确率代替。`skillpack harness effect <without.json> <with.json>` 会在相同数据集与 Harness 下计算成对完成率和 Rubric 增益。
+`npm run skillpack -- gate` 分别评估分类 Hit@1/@3、原子 Hit@1/@3、MRR、等价能力感知的原子 Recall@3 与 Full Coverage@3、不调用准确率和安全通过率，不用一个总分掩盖短板。多原子请求只有在每个必需能力组都出现时才通过 Full Coverage。英文、中文、对抗和同领域硬干扰问题集彼此独立；当前 186 条路由样例全部通过，这只验证仓库工程一致性，不代表真实模型通用能力。任务完成率另行评估，不能用路由正确率代替。`skillpack harness effect <without.json> <with.json>` 会在相同数据集与 Harness 下计算成对完成率和 Rubric 增益。
 
 仓库已经保存一次真实的受治理进化：`proposal-generic-zh-fallback`。该候选增加了 `index.zh.md`，依次通过开发集、未参与生成的英文/中文测试集和对抗集，并写入带回滚版本的不可覆盖晋级记录。
 
 新候选可以通过 `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence> --author <identity> --authorship <human|model-assisted|model-generated> [--generator <model>]` 与规范 Git 差异精确绑定，再进入评估和独立晋级决策记录。单个优化步骤可以记录有预算的 `add`、`delete`、`replace` 编辑；分数持平、受保护指标回退、超预算或声明决策与测量不一致都会失败关闭。受保护数据集、基线和发布门槛不能为同时修改它们的候选背书。
 
-Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 59 个 Skill。仓库当前包含 93 条路由样例，覆盖原有集、英文集、中文集、同领域干扰集和对抗集，并全部通过确定性路由门禁。由于本机尚未配置 Pi 模型提供商凭证，模型驱动的任务完成率仍明确标记为**未认证**。Mock 只验证协议管线，结果始终带 `synthetic: true`；DeepSeek Harness 需等兼容 CLI 版本固定后才启用。
+Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 100 个 Skill。仓库当前包含 186 条路由样例，覆盖原有集、英文集、中文集、同领域干扰集和对抗集，并全部通过确定性路由门禁。由于本机尚未配置 Pi 模型提供商凭证，模型驱动的任务完成率仍明确标记为**未认证**。Mock 只验证协议管线，结果始终带 `synthetic: true`；DeepSeek Harness 需等兼容 CLI 版本固定后才启用。
 
 详细说明见[评估流程](docs/zh-CN/evaluation.md)、[Harness 适配](docs/zh-CN/harnesses.md)和[进化策略](docs/zh-CN/evolution-policy.md)。
 

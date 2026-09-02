@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-assess-compliance-controls
+kind: atom
+version: 0.1.0
+name:
+  en: Assess compliance controls
+  zh-CN: 评估合规控制
+summary:
+  en: Assess one bounded control set against a named framework using traceable
+    evidence, design and operating effectiveness, gaps, and remediation
+    ownership.
+  zh-CN: 依据指定框架评估一组有限控制，记录可追溯证据、设计与运行有效性、缺口及整改负责人。
+outcomes:
+  - Traceable control assessment
+artifacts:
+  - compliance-control-assessment
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: compliance-control-assessment
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: security-trust
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - assess these compliance controls
+      - map evidence to SOC 2 controls
+      - review control effectiveness
+    zh-CN:
+      - 评估合规控制
+      - 将证据映射到SOC 2控制
+      - 评审控制有效性
+  negativeTriggers:
+    en:
+      - certify compliance
+      - provide legal conclusions
+    zh-CN:
+      - 认证合规
+      - 提供法律结论
+  confusableWith:
+    - atom-review-privacy-risk
+    - atom-audit-source-security
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

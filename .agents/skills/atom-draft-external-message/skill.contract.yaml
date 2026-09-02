@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-draft-external-message
+kind: atom
+version: 0.1.0
+name:
+  en: Draft an external message
+  zh-CN: 起草对外消息
+summary:
+  en: Draft one audience-specific email, announcement, or reply with a clear
+    purpose and requested action without sending it.
+  zh-CN: 起草一封面向特定受众的邮件、公告或回复，明确目的与所需行动，但不发送。
+outcomes:
+  - Reviewable external-message draft
+artifacts:
+  - message-draft
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: message-draft
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: documents-communication
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - draft this email
+      - write an external announcement
+      - prepare a customer reply
+    zh-CN:
+      - 起草邮件
+      - 撰写对外公告
+      - 准备客户回复
+  negativeTriggers:
+    en:
+      - send the message now
+      - write a long-form report
+    zh-CN:
+      - 立即发送消息
+      - 编写长篇报告
+  confusableWith:
+    - atom-write-structured-report
+    - atom-write-marketing-copy
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

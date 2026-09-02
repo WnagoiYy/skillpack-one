@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Triage Production Incident
+  short_description: Route and apply Atom Triage Production Incident
+  default_prompt: Use $atom-triage-production-incident to handle this request
+    within its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

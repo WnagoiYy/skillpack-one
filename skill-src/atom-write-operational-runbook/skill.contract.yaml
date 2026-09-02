@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-write-operational-runbook
+kind: atom
+version: 0.1.0
+name:
+  en: Write an operational runbook
+  zh-CN: 编写运维手册
+summary:
+  en: Write one executable operational runbook with triggers, prerequisites,
+    diagnostics, safe actions, stop conditions, escalation, rollback, and
+    verification.
+  zh-CN: 编写一份可执行运维手册，包含触发条件、前置条件、诊断、安全操作、停止条件、升级、回滚与验证。
+outcomes:
+  - Reviewable operational runbook
+artifacts:
+  - operational-runbook
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: operational-runbook
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: automation-operations
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - write an operational runbook
+      - document this maintenance procedure
+      - create an outage playbook
+    zh-CN:
+      - 编写运维手册
+      - 记录维护流程
+      - 创建故障处理手册
+  negativeTriggers:
+    en:
+      - execute production commands now
+      - write a security incident policy
+    zh-CN:
+      - 立即执行生产命令
+      - 编写安全事件政策
+  confusableWith:
+    - atom-triage-production-incident
+    - atom-plan-incident-response
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

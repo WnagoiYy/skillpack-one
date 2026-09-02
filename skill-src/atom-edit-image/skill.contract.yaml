@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-edit-image
+kind: atom
+version: 0.1.0
+name:
+  en: Edit an image
+  zh-CN: 编辑图像
+summary:
+  en: Apply one bounded transformation to a supplied image while preserving
+    requested identity, content, dimensions, provenance, and unedited regions.
+  zh-CN: 对一张给定图像执行有限变换，同时保留要求的主体身份、内容、尺寸、来源与未编辑区域。
+outcomes:
+  - Verified edited image
+artifacts:
+  - edited-image
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: edited-image
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: design-media
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - edit this image
+      - remove the background
+      - change this object in the photo
+    zh-CN:
+      - 编辑图像
+      - 移除背景
+      - 更改照片中的对象
+  negativeTriggers:
+    en:
+      - generate a new scene from scratch
+      - analyze chart data
+    zh-CN:
+      - 从零生成新场景
+      - 分析图表数据
+  confusableWith:
+    - atom-generate-image
+    - atom-visualize-data
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

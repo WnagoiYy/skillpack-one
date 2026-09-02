@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Design Presentation Visuals
+  short_description: Route and apply Atom Design Presentation Visuals
+  default_prompt: Use $atom-design-presentation-visuals to handle this request
+    within its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

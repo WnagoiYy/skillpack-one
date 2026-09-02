@@ -266,3 +266,452 @@ examples:
     tags:
       - expanded-library
       - en
+  - id: en-25-summarize-document
+    prompt: summarize this document. Return only the bounded outcome described by
+      this request.
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-summarize-document
+    mustNotRoute:
+      - atom-translate-document
+    tags:
+      - expanded-library
+      - en
+  - id: en-26-edit-prose
+    prompt: edit this prose. Return only the bounded outcome described by this request.
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-edit-prose
+    mustNotRoute:
+      - atom-translate-document
+    tags:
+      - expanded-library
+      - en
+  - id: en-27-write-structured-report
+    prompt: write a structured report. Return only the bounded outcome described by
+      this request.
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-write-structured-report
+    mustNotRoute:
+      - atom-find-research-sources
+    tags:
+      - expanded-library
+      - en
+  - id: en-28-create-presentation
+    prompt: create a presentation. Return only the bounded outcome described by this
+      request.
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-create-presentation
+    mustNotRoute:
+      - atom-write-structured-report
+    tags:
+      - expanded-library
+      - en
+  - id: en-29-extract-document-data
+    prompt: extract fields from this document. Return only the bounded outcome
+      described by this request.
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-extract-document-data
+    mustNotRoute:
+      - atom-summarize-document
+    tags:
+      - expanded-library
+      - en
+  - id: en-30-draft-external-message
+    prompt: draft this email. Return only the bounded outcome described by this
+      request.
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-draft-external-message
+    mustNotRoute:
+      - atom-write-structured-report
+    tags:
+      - expanded-library
+      - en
+  - id: en-31-clean-tabular-data
+    prompt: clean this dataset. Return only the bounded outcome described by this
+      request.
+    expectedCategory: data-analytics
+    expectedAtoms:
+      - atom-clean-tabular-data
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - en
+  - id: en-32-visualize-data
+    prompt: visualize this data. Return only the bounded outcome described by this
+      request.
+    expectedCategory: data-analytics
+    expectedAtoms:
+      - atom-visualize-data
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - en
+  - id: en-33-write-sql-query
+    prompt: write a SQL query. Return only the bounded outcome described by this
+      request.
+    expectedCategory: data-analytics
+    expectedAtoms:
+      - atom-write-sql-query
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - en
+  - id: en-34-design-database-schema
+    prompt: design a database schema. Return only the bounded outcome described by
+      this request.
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-design-database-schema
+    mustNotRoute:
+      - atom-plan-database-migration
+    tags:
+      - expanded-library
+      - en
+  - id: en-35-plan-database-migration
+    prompt: plan a database migration. Return only the bounded outcome described by
+      this request.
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-plan-database-migration
+    mustNotRoute:
+      - atom-design-database-schema
+    tags:
+      - expanded-library
+      - en
+  - id: en-36-validate-data-pipeline
+    prompt: validate this data pipeline. Return only the bounded outcome described
+      by this request.
+    expectedCategory: data-analytics
+    expectedAtoms:
+      - atom-validate-data-pipeline
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - en
+  - id: en-37-synthesize-user-research
+    prompt: synthesize these user interviews. Return only the bounded outcome
+      described by this request.
+    expectedCategory: product-definition
+    expectedAtoms:
+      - atom-synthesize-user-research
+    mustNotRoute:
+      - atom-design-research-study
+    tags:
+      - expanded-library
+      - en
+  - id: en-38-prioritize-product-roadmap
+    prompt: prioritize this product roadmap. Return only the bounded outcome
+      described by this request.
+    expectedCategory: product-definition
+    expectedAtoms:
+      - atom-prioritize-product-roadmap
+    mustNotRoute:
+      - atom-write-product-requirements
+    tags:
+      - expanded-library
+      - en
+  - id: en-39-plan-product-launch
+    prompt: plan this product launch. Return only the bounded outcome described by
+      this request.
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-plan-product-launch
+    mustNotRoute:
+      - atom-plan-software-release
+    tags:
+      - expanded-library
+      - en
+  - id: en-40-analyze-customer-segments
+    prompt: analyze customer segments. Return only the bounded outcome described by
+      this request.
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-analyze-customer-segments
+    mustNotRoute:
+      - atom-analyze-market
+    tags:
+      - expanded-library
+      - en
+  - id: en-41-design-pricing-strategy
+    prompt: design a pricing strategy. Return only the bounded outcome described by
+      this request.
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-design-pricing-strategy
+    mustNotRoute:
+      - atom-model-business-financials
+    tags:
+      - expanded-library
+      - en
+  - id: en-42-write-marketing-copy
+    prompt: write landing page copy. Return only the bounded outcome described by
+      this request.
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-write-marketing-copy
+    mustNotRoute:
+      - atom-draft-external-message
+    tags:
+      - expanded-library
+      - en
+  - id: en-43-audit-seo
+    prompt: audit this site for SEO. Return only the bounded outcome described by
+      this request.
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-audit-seo
+    mustNotRoute:
+      - atom-review-code-quality
+    tags:
+      - expanded-library
+      - en
+  - id: en-44-plan-content-strategy
+    prompt: plan a content strategy. Return only the bounded outcome described by
+      this request.
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-plan-content-strategy
+    mustNotRoute:
+      - atom-write-marketing-copy
+    tags:
+      - expanded-library
+      - en
+  - id: en-45-model-business-financials
+    prompt: build a business financial model. Return only the bounded outcome
+      described by this request.
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-model-business-financials
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - en
+  - id: en-46-create-threat-model
+    prompt: create a threat model. Return only the bounded outcome described by this
+      request.
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-create-threat-model
+    mustNotRoute:
+      - atom-audit-source-security
+    tags:
+      - expanded-library
+      - en
+  - id: en-47-audit-dependencies
+    prompt: audit these dependencies. Return only the bounded outcome described by
+      this request.
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-audit-dependencies
+    mustNotRoute:
+      - atom-audit-source-security
+    tags:
+      - expanded-library
+      - en
+  - id: en-48-scan-secrets
+    prompt: scan this repository for secrets. Return only the bounded outcome
+      described by this request.
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-scan-secrets
+    mustNotRoute:
+      - atom-audit-source-security
+    tags:
+      - expanded-library
+      - en
+  - id: en-49-plan-incident-response
+    prompt: plan incident response. Return only the bounded outcome described by
+      this request.
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-plan-incident-response
+    mustNotRoute:
+      - atom-triage-production-incident
+    tags:
+      - expanded-library
+      - en
+  - id: en-50-review-privacy-risk
+    prompt: review privacy risk. Return only the bounded outcome described by this
+      request.
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-review-privacy-risk
+    mustNotRoute:
+      - atom-assess-compliance-controls
+    tags:
+      - expanded-library
+      - en
+  - id: en-51-assess-compliance-controls
+    prompt: assess these compliance controls. Return only the bounded outcome
+      described by this request.
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-assess-compliance-controls
+    mustNotRoute:
+      - atom-review-privacy-risk
+    tags:
+      - expanded-library
+      - en
+  - id: en-52-design-observability
+    prompt: design observability. Return only the bounded outcome described by this
+      request.
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-design-observability
+    mustNotRoute:
+      - atom-triage-production-incident
+    tags:
+      - expanded-library
+      - en
+  - id: en-53-create-ci-pipeline
+    prompt: create a CI pipeline. Return only the bounded outcome described by this
+      request.
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-create-ci-pipeline
+    mustNotRoute:
+      - atom-design-automation-workflow
+    tags:
+      - expanded-library
+      - en
+  - id: en-54-plan-cloud-deployment
+    prompt: plan a cloud deployment. Return only the bounded outcome described by
+      this request.
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-plan-cloud-deployment
+    mustNotRoute:
+      - atom-design-software-architecture
+    tags:
+      - expanded-library
+      - en
+  - id: en-55-write-operational-runbook
+    prompt: write an operational runbook. Return only the bounded outcome described
+      by this request.
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-write-operational-runbook
+    mustNotRoute:
+      - atom-triage-production-incident
+    tags:
+      - expanded-library
+      - en
+  - id: en-56-triage-production-incident
+    prompt: triage this production incident. Return only the bounded outcome
+      described by this request.
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-triage-production-incident
+    mustNotRoute:
+      - atom-debug-software
+    tags:
+      - expanded-library
+      - en
+  - id: en-57-create-technical-diagram
+    prompt: create a system diagram. Return only the bounded outcome described by
+      this request.
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-create-technical-diagram
+    mustNotRoute:
+      - atom-design-software-architecture
+    tags:
+      - expanded-library
+      - en
+  - id: en-58-generate-image
+    prompt: generate an image. Return only the bounded outcome described by this
+      request.
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-generate-image
+    mustNotRoute:
+      - atom-edit-image
+    tags:
+      - expanded-library
+      - en
+  - id: en-59-edit-image
+    prompt: edit this image. Return only the bounded outcome described by this request.
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-edit-image
+    mustNotRoute:
+      - atom-generate-image
+    tags:
+      - expanded-library
+      - en
+  - id: en-60-plan-video-production
+    prompt: plan a video production. Return only the bounded outcome described by
+      this request.
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-plan-video-production
+    mustNotRoute:
+      - atom-create-presentation
+    tags:
+      - expanded-library
+      - en
+  - id: en-61-design-presentation-visuals
+    prompt: design the visuals for this deck. Return only the bounded outcome
+      described by this request.
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-design-presentation-visuals
+    mustNotRoute:
+      - atom-create-presentation
+    tags:
+      - expanded-library
+      - en
+  - id: en-62-schedule-personal-calendar
+    prompt: schedule these tasks on my calendar. Return only the bounded outcome
+      described by this request.
+    expectedCategory: personal-productivity
+    expectedAtoms:
+      - atom-schedule-personal-calendar
+    mustNotRoute:
+      - atom-organize-personal-tasks
+    tags:
+      - expanded-library
+      - en
+  - id: en-63-capture-structured-notes
+    prompt: turn this into structured notes. Return only the bounded outcome
+      described by this request.
+    expectedCategory: personal-productivity
+    expectedAtoms:
+      - atom-capture-structured-notes
+    mustNotRoute:
+      - atom-operate-knowledge-vault
+    tags:
+      - expanded-library
+      - en
+  - id: en-64-plan-learning-path
+    prompt: plan a learning path. Return only the bounded outcome described by this
+      request.
+    expectedCategory: personal-productivity
+    expectedAtoms:
+      - atom-plan-learning-path
+    mustNotRoute:
+      - atom-build-action-plan
+    tags:
+      - expanded-library
+      - en
+  - id: en-65-peer-review-manuscript
+    prompt: peer review this manuscript. Return only the bounded outcome described
+      by this request.
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-peer-review-manuscript
+    mustNotRoute:
+      - atom-review-literature
+    tags:
+      - expanded-library
+      - en

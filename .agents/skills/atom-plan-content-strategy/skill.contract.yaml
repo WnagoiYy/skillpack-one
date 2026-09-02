@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-plan-content-strategy
+kind: atom
+version: 0.1.0
+name:
+  en: Plan a content strategy
+  zh-CN: 规划内容策略
+summary:
+  en: Plan one coherent content program from audience needs, business outcomes,
+    themes, channels, cadence, governance, and measurable learning loops.
+  zh-CN: 依据受众需求、业务成果、主题、渠道、节奏、治理与可衡量学习闭环规划一套连贯内容计划。
+outcomes:
+  - Measurable content strategy
+artifacts:
+  - content-strategy
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: content-strategy
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - network-read
+permissions:
+  network: read
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: business-growth
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - api-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - plan a content strategy
+      - create a content program
+      - choose topics and channels
+    zh-CN:
+      - 规划内容策略
+      - 创建内容计划
+      - 选择主题和渠道
+  negativeTriggers:
+    en:
+      - write one finished article
+      - publish social posts
+    zh-CN:
+      - 撰写一篇成品文章
+      - 发布社交帖子
+  confusableWith:
+    - atom-write-marketing-copy
+    - atom-plan-product-launch
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

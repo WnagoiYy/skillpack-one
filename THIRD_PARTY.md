@@ -4,7 +4,9 @@ This repository's `catalog/` contains normalized metadata and attribution for th
 
 The fixed revisions, repositories, paths, detected license states, counts, and aggregate digest are recorded in `catalog/sources.yaml`, each `catalog/entries/*.yaml`, and `catalog/snapshots/manifest.yaml`.
 
-Current Agent Skill source namespaces include Anthropic, OpenAI, GitHub, Hugging Face, Trail of Bits, Addy Osmani, Obra, Cloudflare, Firebase, Supabase, Sentry, K-Dense AI, Hypergiant, Vercel Labs, Kepano, NextLevelBuilder, Jim Liu, Corey Haines, Othman Adi, Czlonkowski, and ZhangHanDong. MCP metadata comes from the official Model Context Protocol Registry. Each upstream work remains under its own license and copyright. A detected repository license is evidence, not legal advice; `unknown` means the content must not be copied into this project.
+Current Agent Skill source namespaces include Anthropic, OpenAI, GitHub, Google, Google Workspace, Microsoft, Microsoft Docs, AWS Samples, NVIDIA, GSAP, Hugging Face, Trail of Bits, Addy Osmani, Obra, Cloudflare, Firebase, Supabase, Sentry, K-Dense AI, Hypergiant, Vercel Labs, Kepano, NextLevelBuilder, Jim Liu, Corey Haines, Othman Adi, Czlonkowski, ZhangHanDong, Matt Pocock, Phuryn, Orchestra Research, Jeff Allan, wshobson, alirezarezvani, and the declared security and SEO collections. MCP metadata comes from the official Model Context Protocol Registry. Each upstream work remains under its own license and copyright. A detected repository license is evidence, not legal advice; `unknown` means the content must not be copied into this project.
+
+The downloaded inventory records 41 declared repositories and 3,998 `SKILL.md` paths at fixed revisions. It is a provenance and design-evidence index only. No upstream instruction body, script, dependency, hook, or endpoint is executed by collection, and no upstream content is redistributed merely because it appears in the inventory.
 
 Primary source links:
 

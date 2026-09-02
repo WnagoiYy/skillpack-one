@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-design-observability
+kind: atom
+version: 0.1.0
+name:
+  en: Design observability
+  zh-CN: 设计可观测性
+summary:
+  en: Design one system observability plan with service objectives, signals,
+    telemetry, dashboards, alerts, ownership, cost, and diagnostic workflows.
+  zh-CN: 设计一份系统可观测性计划，包含服务目标、信号、遥测、仪表板、告警、所有权、成本与诊断流程。
+outcomes:
+  - Actionable observability design
+artifacts:
+  - observability-design
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: observability-design
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: automation-operations
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - design observability
+      - define metrics logs traces and alerts
+      - create an SLO monitoring plan
+    zh-CN:
+      - 设计可观测性
+      - 定义指标日志链路和告警
+      - 创建SLO监控计划
+  negativeTriggers:
+    en:
+      - debug the current incident
+      - deploy monitoring now
+    zh-CN:
+      - 调试当前故障
+      - 立即部署监控
+  confusableWith:
+    - atom-triage-production-incident
+    - atom-design-software-architecture
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

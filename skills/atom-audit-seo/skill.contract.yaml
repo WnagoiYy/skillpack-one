@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-audit-seo
+kind: atom
+version: 0.1.0
+name:
+  en: Audit SEO
+  zh-CN: 审计搜索优化
+summary:
+  en: Audit one bounded website or content set for technical, on-page,
+    information-architecture, and evidence-backed search opportunities without
+    changing the site.
+  zh-CN: 审计一个有限网站或内容集的技术、页面、信息架构与有依据的搜索机会，不修改网站。
+outcomes:
+  - Prioritized SEO audit
+artifacts:
+  - seo-audit
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: seo-audit
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - network-read
+  - network-write
+permissions:
+  network: write
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: draft
+taxonomy:
+  primaryCategory: business-growth
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - audit this site for SEO
+      - review technical SEO
+      - find search optimization gaps
+    zh-CN:
+      - 审计网站SEO
+      - 检查技术SEO
+      - 查找搜索优化缺口
+  negativeTriggers:
+    en:
+      - implement website fixes
+      - write an article
+    zh-CN:
+      - 实施网站修复
+      - 撰写文章
+  confusableWith:
+    - atom-review-code-quality
+    - atom-plan-content-strategy
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

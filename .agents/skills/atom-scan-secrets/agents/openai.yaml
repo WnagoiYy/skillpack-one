@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Scan Secrets
+  short_description: Route and apply Atom Scan Secrets
+  default_prompt: Use $atom-scan-secrets to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

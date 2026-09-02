@@ -17,7 +17,7 @@ flowchart LR
     R[User request] --> C[Category Skill]
     C --> A[Smallest atomic Skills]
     A --> P[Capability pack / task]
-    U[1,061-Skill mirror + 658-record catalog] -. evidence only .-> C
+    U[3,998-Skill mirror + 658-record catalog] -. evidence only .-> C
     M[Meta Skill governor] --> C
     M --> A
     M --> P
@@ -31,10 +31,10 @@ The project does **not** install every discovered capability. The upstream catal
 | Layer | Current snapshot | Purpose |
 | --- | ---: | --- |
 | Category Skills | 22 | Open, hierarchical, needs-driven routing and boundary decisions |
-| Atomic Skills | 35 | Small, independently testable capability contracts |
+| Atomic Skills | 76 | Small, independently testable capability contracts |
 | Meta Skills | 2 | Upstream curation plus proposal, evaluation, promotion, deprecation, and rollback governance |
 | Capability packs | 4 | Validated compositions without merging atomic contracts |
-| Downloaded Skill inventory | 1,061 | 1,055 unique contents from 21 non-empty repositories; 6 exact duplicates are marked |
+| Downloaded Skill inventory | 3,998 | 3,973 unique contents from 40 non-empty repositories; 25 exact duplicates are marked |
 | General upstream catalog | 658 | 388 Agent Skills + 270 official MCP Registry servers |
 | Candidate duplicate clusters | 8 | Human-review queue; originals remain intact |
 
@@ -155,13 +155,13 @@ web/                  light static Skill Browser source
 
 ## Evaluation and real evolution evidence
 
-`npm run skillpack -- gate` evaluates routing without collapsing metrics: category hit@1/@3, atom hit@1/@3, atom MRR, equivalence-aware atom Recall@3 and Full Coverage@3, non-invocation accuracy, and safety pass rate. Multi-Atom requests pass Full Coverage only when every required capability group appears. English, Chinese, adversarial, and same-domain hard-distractor suites are separate. The current 93 authored examples all pass; this verifies repository conformance, not general model utility. Task completion uses a different rubric and cannot be inferred from routing accuracy. `skillpack harness effect <without.json> <with.json>` then measures paired completion/rubric lift under the same dataset and harness identity.
+`npm run skillpack -- gate` evaluates routing without collapsing metrics: category hit@1/@3, atom hit@1/@3, atom MRR, equivalence-aware atom Recall@3 and Full Coverage@3, non-invocation accuracy, and safety pass rate. Multi-Atom requests pass Full Coverage only when every required capability group appears. English, Chinese, adversarial, and same-domain hard-distractor suites are separate. The current 186 routing examples all pass; this verifies repository conformance, not general model utility. Task completion uses a different rubric and cannot be inferred from routing accuracy. `skillpack harness effect <without.json> <with.json>` then measures paired completion/rubric lift under the same dataset and harness identity.
 
 The repository includes one real governed evolution record: `proposal-generic-zh-fallback`. The candidate added `index.zh.md`, passed isolated development plus untouched English, Chinese, and adversarial suites, and produced an append-only promotion decision with a rollback revision.
 
 New candidates can be bound to their exact canonical Git diff with `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence> --author <identity> --authorship <human|model-assisted|model-generated> [--generator <model>]`, then evaluated and independently promoted through the immutable decision log. Individual optimizer steps can be recorded with bounded `add`, `delete`, or `replace` edits; ties, protected regressions, over-budget attempts, and declared decisions inconsistent with measurements fail closed. Protected datasets, baselines, and the release gate cannot certify a candidate that changes them.
 
-Pi 0.84.4 is pinned and its real `loadSkillsFromDir` implementation discovers all 59 Skills. The repository now carries 93 routing examples across original, English, Chinese, same-domain distractor, and adversarial suites; all pass the deterministic routing gate. Model-backed task completion remains explicitly **uncertified** until Pi provider credentials are configured. The deterministic Mock adapter tests protocol plumbing only and is always marked `synthetic: true`; the optional DeepSeek Harness adapter stays disabled until a compatible CLI release is pinned.
+Pi 0.84.4 is pinned and its real `loadSkillsFromDir` implementation discovers all 100 Skills. The repository now carries 186 routing examples across original, English, Chinese, same-domain distractor, and adversarial suites; all pass the deterministic routing gate. Model-backed task completion remains explicitly **uncertified** until Pi provider credentials are configured. The deterministic Mock adapter tests protocol plumbing only and is always marked `synthetic: true`; the optional DeepSeek Harness adapter stays disabled until a compatible CLI release is pinned.
 
 See [evaluation](docs/evaluation.md), [harnesses](docs/harnesses.md), and the [evolution policy](docs/evolution-policy.md).
 

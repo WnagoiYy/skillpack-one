@@ -1,0 +1,78 @@
+schemaVersion: 1
+id: atom-design-database-schema
+kind: atom
+version: 0.1.0
+name:
+  en: Design a database schema
+  zh-CN: 设计数据库模式
+summary:
+  en: Design one bounded data model with entities, keys, constraints, indexes,
+    lifecycle rules, and trade-offs without migrating live data.
+  zh-CN: 设计一个有限数据模型，包含实体、键、约束、索引、生命周期规则与权衡，不迁移线上数据。
+outcomes:
+  - Reviewable database schema
+artifacts:
+  - database-schema
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: database-schema
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: software-design
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - design a database schema
+      - design tables and relationships
+      - model these entities and relationships
+      - define tables and constraints
+    zh-CN:
+      - 设计数据库模式
+      - 设计表和关系
+      - 建模实体关系
+      - 定义表和约束
+  negativeTriggers:
+    en:
+      - migrate production data
+      - write an analytical query
+    zh-CN:
+      - 迁移生产数据
+      - 编写分析查询
+  confusableWith:
+    - atom-plan-database-migration
+    - atom-write-sql-query
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

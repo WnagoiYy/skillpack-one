@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Write Sql Query
+  short_description: Route and apply Atom Write Sql Query
+  default_prompt: Use $atom-write-sql-query to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

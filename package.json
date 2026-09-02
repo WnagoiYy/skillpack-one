@@ -1,6 +1,6 @@
 {
   "name": "skillpack-one",
-  "version": "0.1.0-alpha.12",
+  "version": "0.1.0-alpha.13",
   "description": "Install one pack. Let it find, combine, and improve the skills you need.",
   "type": "module",
   "packageManager": "npm@11.19.1",
@@ -88,5 +88,11 @@
     "skills": [
       "./skills"
     ]
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "author": ""
 }

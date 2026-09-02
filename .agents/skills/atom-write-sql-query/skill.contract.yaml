@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-write-sql-query
+kind: atom
+version: 0.1.0
+name:
+  en: Write a SQL query
+  zh-CN: 编写SQL查询
+summary:
+  en: Produce one reviewable SQL query from a known schema with explicit
+    semantics, safe parameters, edge cases, and validation notes without
+    executing it.
+  zh-CN: 基于已知模式生成一条可审查SQL查询，明确语义、安全参数、边界情况与验证说明，但不执行。
+outcomes:
+  - Reviewable SQL query
+artifacts:
+  - sql-query
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: sql-query
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - none
+permissions:
+  network: none
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: data-analytics
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - write a SQL query
+      - query these database tables
+      - translate this question into SQL
+    zh-CN:
+      - 编写SQL查询
+      - 查询这些数据库表
+      - 将问题转成SQL
+  negativeTriggers:
+    en:
+      - run the query in production
+      - redesign the database schema
+    zh-CN:
+      - 在生产执行查询
+      - 重新设计数据库模式
+  confusableWith:
+    - atom-analyze-tabular-data
+    - atom-design-database-schema
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

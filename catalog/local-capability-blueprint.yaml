@@ -12,6 +12,13 @@ categories:
   - developer-tools
   - productivity-tools
   - design-tools
+  - documents-communication
+  - data-analytics
+  - business-growth
+  - security-trust
+  - automation-operations
+  - design-media
+  - personal-productivity
 atoms:
   - id: atom-frame-problem
     category: problem-framing
@@ -270,6 +277,456 @@ atoms:
     confusableWith: [atom-design-interface-spec, atom-implement-code-change]
     permissions: browser
     steps: [Inspect the target file components styles constraints and approved specification., Map changes to reusable components and tokens., Apply bounded edits while preserving editability and accessibility., Verify key states layouts naming and the saved artifact.]
+  - id: atom-summarize-document
+    category: documents-communication
+    name: { en: Summarize a document, zh-CN: 总结文档 }
+    summary: { en: "Condense one supplied document into a faithful audience-specific summary while preserving decisions, qualifications, and unresolved points.", zh-CN: "将一份给定文档压缩为忠实且面向特定读者的摘要，保留决策、限定条件和未决事项。" }
+    outcome: Faithful document summary
+    artifact: document-summary
+    positive: { en: [summarize this document, create an executive summary, condense this report], zh-CN: [总结这份文档, 编写执行摘要, 压缩这份报告] }
+    negative: { en: [translate the document, research missing facts], zh-CN: [翻译文档, 调研缺失事实] }
+    confusableWith: [atom-translate-document, atom-review-literature]
+    permissions: file-read
+    steps: [Identify audience purpose and required level of detail., Extract claims decisions evidence caveats and open questions., Compress without adding unsupported facts or removing material qualifications., Check the summary against the source and label uncertainty.]
+  - id: atom-edit-prose
+    category: documents-communication
+    name: { en: Edit prose, zh-CN: 编辑文字 }
+    summary: { en: "Improve one bounded text for clarity, structure, tone, and correctness without changing its supported meaning or inventing facts.", zh-CN: "改进一段有限文本的清晰度、结构、语气和正确性，不改变其有依据的含义或编造事实。" }
+    outcome: Meaning-preserving edited prose
+    artifact: edited-prose
+    positive: { en: [edit this prose, improve the clarity of this text, rewrite this draft without changing meaning], zh-CN: [编辑这段文字, 提升文本清晰度, 保持原意改写草稿] }
+    negative: { en: [translate into another language, add new research], zh-CN: [翻译成另一种语言, 添加新的调研] }
+    confusableWith: [atom-translate-document, atom-write-marketing-copy]
+    permissions: workspace
+    steps: [Confirm audience tone constraints and protected terminology., Diagnose structural sentence-level and consistency problems., Make the smallest meaning-preserving edits., Return the revision plus material ambiguities that require author judgment.]
+  - id: atom-write-structured-report
+    category: documents-communication
+    name: { en: Write a structured report, zh-CN: 编写结构化报告 }
+    summary: { en: "Turn verified inputs into one decision-ready report with traceable claims, clear sections, limitations, and actionable conclusions.", zh-CN: "将已验证输入组织成一份可供决策的报告，包含可追溯论断、清晰章节、局限与可行动结论。" }
+    outcome: Decision-ready structured report
+    artifact: structured-report
+    positive: { en: [write a structured report, turn these findings into a report, prepare a decision memo], zh-CN: [编写结构化报告, 将这些发现整理成报告, 准备决策备忘录] }
+    negative: { en: [find the evidence first, create presentation slides], zh-CN: [先查找证据, 创建演示幻灯片] }
+    confusableWith: [atom-find-research-sources, atom-create-presentation]
+    permissions: workspace
+    steps: [Confirm decision audience scope and required format., Build an outline around questions evidence and decisions rather than source order., Draft with claim-to-source traceability assumptions and limitations., Check internal consistency recommendations and unresolved gaps.]
+  - id: atom-create-presentation
+    category: documents-communication
+    name: { en: Create a presentation, zh-CN: 创建演示文稿 }
+    summary: { en: "Convert approved content into a coherent slide deck with one narrative, concise slide purposes, speaker context, and verifiable structure.", zh-CN: "将已批准内容转换为连贯演示文稿，形成统一叙事、简洁页面目的、讲者上下文和可验证结构。" }
+    outcome: Coherent presentation deck
+    artifact: presentation-deck
+    positive: { en: [create a presentation, turn this report into slides, build a slide deck], zh-CN: [创建演示文稿, 将报告转成幻灯片, 制作幻灯片组] }
+    negative: { en: [invent missing evidence, only choose visual styling], zh-CN: [编造缺失证据, 只选择视觉样式] }
+    confusableWith: [atom-write-structured-report, atom-design-presentation-visuals]
+    permissions: workspace
+    steps: [Confirm audience setting duration and desired decision., Create a narrative arc and assign one purpose to each slide., Draft concise content speaker context and source notes., Verify ordering density consistency and content completeness.]
+  - id: atom-extract-document-data
+    category: documents-communication
+    name: { en: Extract document data, zh-CN: 提取文档数据 }
+    summary: { en: "Extract requested fields, tables, entities, and passages from one document into a structured result with page or section provenance.", zh-CN: "从一份文档中提取指定字段、表格、实体和段落，形成带页码或章节来源的结构化结果。" }
+    outcome: Traceable structured extraction
+    artifact: document-extraction
+    positive: { en: [extract fields from this document, pull tables from this PDF, capture named entities and passages], zh-CN: [从文档提取字段, 提取PDF表格, 抽取实体和段落] }
+    negative: { en: [summarize the whole document, infer missing values], zh-CN: [总结整份文档, 推断缺失数值] }
+    confusableWith: [atom-summarize-document, atom-analyze-tabular-data]
+    permissions: file-read
+    steps: [Define the extraction schema and evidence-location format., Read the bounded document without silently omitting unreadable regions., Extract values verbatim or normalize only by declared rules., Validate row counts field types and source locations and flag uncertainty.]
+  - id: atom-draft-external-message
+    category: documents-communication
+    name: { en: Draft an external message, zh-CN: 起草对外消息 }
+    summary: { en: "Draft one audience-specific email, announcement, or reply with a clear purpose and requested action without sending it.", zh-CN: "起草一封面向特定受众的邮件、公告或回复，明确目的与所需行动，但不发送。" }
+    outcome: Reviewable external-message draft
+    artifact: message-draft
+    positive: { en: [draft this email, write an external announcement, prepare a customer reply], zh-CN: [起草邮件, 撰写对外公告, 准备客户回复] }
+    negative: { en: [send the message now, write a long-form report], zh-CN: [立即发送消息, 编写长篇报告] }
+    confusableWith: [atom-write-structured-report, atom-write-marketing-copy]
+    permissions: workspace
+    steps: [Confirm sender audience purpose tone and required response., Lead with the essential context and requested action., Remove unsupported commitments sensitive details and ambiguous phrasing., Return a review-ready draft and do not send it.]
+  - id: atom-clean-tabular-data
+    category: data-analytics
+    name: { en: Clean tabular data, zh-CN: 清洗表格数据 }
+    summary: { en: "Normalize one structured dataset under explicit rules while preserving raw values, lineage, exceptions, and reproducible transformations.", zh-CN: "依据明确规则规范化一份结构化数据，同时保留原始值、血缘、异常与可复现转换。" }
+    outcome: Reproducibly cleaned dataset
+    artifact: cleaned-dataset
+    positive: { en: [clean this dataset, clean this table, normalize these columns, deduplicate these rows], zh-CN: [清洗数据集, 清洗这张表, 规范化这些列, 去重这些行] }
+    negative: { en: [analyze the business meaning, edit workbook formatting only], zh-CN: [分析业务含义, 只编辑工作簿格式] }
+    confusableWith: [atom-analyze-tabular-data, atom-operate-spreadsheet]
+    permissions: workspace
+    steps: [Profile schema missingness duplicates ranges and invalid encodings., Define transformation and exception rules before changing values., Preserve raw inputs and apply reproducible transformations., Validate row counts keys types distributions and unresolved anomalies.]
+  - id: atom-visualize-data
+    category: data-analytics
+    name: { en: Visualize data, zh-CN: 可视化数据 }
+    summary: { en: "Create one truthful chart or compact analytical view matched to the question, data types, units, uncertainty, and accessibility needs.", zh-CN: "依据问题、数据类型、单位、不确定性与无障碍需求创建一个真实准确的图表或紧凑分析视图。" }
+    outcome: Question-matched data visualization
+    artifact: data-visualization
+    positive: { en: [visualize this data, create a chart for these metrics, plot this dataset], zh-CN: [可视化这些数据, 为指标创建图表, 绘制数据集] }
+    negative: { en: [create a decorative illustration, analyze without a chart], zh-CN: [创建装饰插画, 只分析不制图] }
+    confusableWith: [atom-analyze-tabular-data, atom-create-technical-diagram]
+    permissions: workspace
+    steps: [State the analytical question units and comparison baseline., Choose encodings and chart form that preserve scale and uncertainty., Generate the view with readable labels source and accessibility support., Check plotted values against the underlying data and disclose transformations.]
+  - id: atom-write-sql-query
+    category: data-analytics
+    name: { en: Write a SQL query, zh-CN: 编写SQL查询 }
+    summary: { en: "Produce one reviewable SQL query from a known schema with explicit semantics, safe parameters, edge cases, and validation notes without executing it.", zh-CN: "基于已知模式生成一条可审查SQL查询，明确语义、安全参数、边界情况与验证说明，但不执行。" }
+    outcome: Reviewable SQL query
+    artifact: sql-query
+    positive: { en: [write a SQL query, query these database tables, translate this question into SQL], zh-CN: [编写SQL查询, 查询这些数据库表, 将问题转成SQL] }
+    negative: { en: [run the query in production, redesign the database schema], zh-CN: [在生产执行查询, 重新设计数据库模式] }
+    confusableWith: [atom-analyze-tabular-data, atom-design-database-schema]
+    steps: [Confirm dialect schema keys grain filters and expected output., Write parameterized SQL with explicit null duplicate and time semantics., Explain assumptions performance-sensitive joins and validation cases., Do not execute against a database without separate authorization.]
+  - id: atom-design-database-schema
+    category: software-design
+    name: { en: Design a database schema, zh-CN: 设计数据库模式 }
+    summary: { en: "Design one bounded data model with entities, keys, constraints, indexes, lifecycle rules, and trade-offs without migrating live data.", zh-CN: "设计一个有限数据模型，包含实体、键、约束、索引、生命周期规则与权衡，不迁移线上数据。" }
+    outcome: Reviewable database schema
+    artifact: database-schema
+    positive: { en: [design a database schema, design tables and relationships, model these entities and relationships, define tables and constraints], zh-CN: [设计数据库模式, 设计表和关系, 建模实体关系, 定义表和约束] }
+    negative: { en: [migrate production data, write an analytical query], zh-CN: [迁移生产数据, 编写分析查询] }
+    confusableWith: [atom-plan-database-migration, atom-write-sql-query]
+    permissions: workspace
+    steps: [Confirm workloads invariants retention and scale assumptions., Model entities relationships ownership and lifecycle., Define keys constraints indexes and transaction boundaries., Review normalization performance privacy migration implications and rejected alternatives.]
+  - id: atom-plan-database-migration
+    category: software-design
+    name: { en: Plan a database migration, zh-CN: 规划数据库迁移 }
+    summary: { en: "Create a reversible migration plan for one schema or data change with compatibility, backfill, validation, cutover, and rollback stages.", zh-CN: "为一次模式或数据变更制定可回退迁移计划，包含兼容、回填、验证、切换和回滚阶段。" }
+    outcome: Reversible database migration plan
+    artifact: database-migration-plan
+    positive: { en: [plan a database migration, migrate this schema safely, design a data backfill and cutover], zh-CN: [规划数据库迁移, 安全迁移模式, 设计数据回填和切换] }
+    negative: { en: [execute the migration now, design a brand-new schema], zh-CN: [立即执行迁移, 设计全新模式] }
+    confusableWith: [atom-design-database-schema, atom-plan-software-release]
+    permissions: workspace
+    steps: [Inventory consumers invariants volumes and compatibility windows., Split expansion backfill validation cutover and contraction into reversible stages., Define observability stop conditions reconciliation and rollback., Record approvals ownership timing and post-migration verification.]
+  - id: atom-validate-data-pipeline
+    category: data-analytics
+    name: { en: Validate a data pipeline, zh-CN: 验证数据管道 }
+    summary: { en: "Assess one data pipeline for lineage, schema contracts, freshness, completeness, correctness, and reproducibility without changing production state.", zh-CN: "评估一条数据管道的血缘、模式契约、时效、完整性、正确性与可复现性，不改变生产状态。" }
+    outcome: Evidence-backed data-pipeline validation
+    artifact: data-pipeline-validation
+    positive: { en: [validate this data pipeline, check ETL correctness, audit data freshness and lineage], zh-CN: [验证数据管道, 检查ETL正确性, 审计数据时效和血缘] }
+    negative: { en: [deploy pipeline changes, analyze one finished table], zh-CN: [部署管道变更, 分析一张成品表] }
+    confusableWith: [atom-analyze-tabular-data, atom-design-automation-workflow]
+    permissions: shell-read
+    steps: [Map sources transformations sinks schedules and ownership., Check schema contracts keys lineage freshness completeness and reconciliation., Reproduce representative runs or inspect bounded evidence without mutating production., Report failures impact confidence and verification queries.]
+  - id: atom-synthesize-user-research
+    category: product-definition
+    name: { en: Synthesize user research, zh-CN: 综合用户研究 }
+    summary: { en: "Synthesize one bounded set of interviews, observations, or feedback into traceable needs, patterns, tensions, and product implications without inventing user evidence.", zh-CN: "将一组有限访谈、观察或反馈综合为可追溯需求、模式、矛盾与产品启示，不虚构用户证据。" }
+    outcome: Traceable user-research synthesis
+    artifact: user-research-synthesis
+    positive: { en: [synthesize these user interviews, identify patterns in customer feedback, summarize user research findings], zh-CN: [综合用户访谈, 识别客户反馈模式, 总结用户研究发现] }
+    negative: { en: [design a research study, prioritize the roadmap], zh-CN: [设计研究方案, 排定产品路线图] }
+    confusableWith: [atom-design-research-study, atom-prioritize-product-roadmap]
+    permissions: file-read
+    steps: [Confirm research questions participants methods and evidence scope., Code observations consistently and retain links to source excerpts., Separate recurring needs from isolated opinions and team assumptions., Report patterns contradictions confidence limits and product implications.]
+  - id: atom-prioritize-product-roadmap
+    category: product-definition
+    name: { en: Prioritize a product roadmap, zh-CN: 排定产品路线图 }
+    summary: { en: "Prioritize one bounded set of product opportunities against explicit outcomes, evidence, cost, risk, dependencies, and uncertainty without committing delivery dates.", zh-CN: "依据明确成果、证据、成本、风险、依赖与不确定性，对一组有限产品机会排序，不承诺交付日期。" }
+    outcome: Evidence-ranked product roadmap
+    artifact: product-roadmap
+    positive: { en: [prioritize this product roadmap, rank these feature opportunities, decide what to build next], zh-CN: [排定产品路线图, 对功能机会排序, 决定下一步做什么] }
+    negative: { en: [write detailed requirements, schedule engineering delivery], zh-CN: [编写详细需求, 安排工程交付] }
+    confusableWith: [atom-write-product-requirements, atom-build-action-plan]
+    permissions: workspace
+    steps: [Confirm product outcomes planning horizon constraints and decision owner., Normalize opportunities and attach evidence beneficiaries dependencies and rough effort., Score with declared criteria and test sensitivity to uncertainty., Publish priorities non-goals sequencing assumptions and review triggers.]
+  - id: atom-plan-product-launch
+    category: business-growth
+    name: { en: Plan a product launch, zh-CN: 规划产品发布 }
+    summary: { en: "Create one cross-functional go-to-market launch plan with audience, positioning, channels, readiness gates, metrics, owners, and fallback actions.", zh-CN: "创建一份跨职能产品上市计划，包含受众、定位、渠道、就绪门槛、指标、负责人和回退措施。" }
+    outcome: Reviewable product-launch plan
+    artifact: product-launch-plan
+    positive: { en: [plan this product launch, create a go-to-market launch plan, coordinate launch readiness], zh-CN: [规划产品发布, 制定上市计划, 协调发布就绪] }
+    negative: { en: [deploy software to production, write only ad copy], zh-CN: [部署软件到生产, 只写广告文案] }
+    confusableWith: [atom-plan-software-release, atom-plan-content-strategy]
+    permissions: workspace
+    steps: [Confirm launch outcome audience market date constraints and dependencies., Define positioning offer channels journey and enablement materials., Assign readiness gates owners metrics risks and fallback actions., Establish launch-day monitoring and a post-launch learning review.]
+  - id: atom-analyze-customer-segments
+    category: business-growth
+    name: { en: Analyze customer segments, zh-CN: 分析客户细分 }
+    summary: { en: "Segment one defined customer market using traceable behavioral, needs-based, or economic evidence and state the limits of each segment.", zh-CN: "使用可追溯的行为、需求或经济证据细分一个明确客户市场，并说明各细分边界。" }
+    outcome: Evidence-backed customer segmentation
+    artifact: customer-segmentation
+    positive: { en: [analyze customer segments, define target customer groups, segment these users by needs], zh-CN: [分析客户细分, 定义目标客户群, 按需求细分用户] }
+    negative: { en: [size the whole market, write campaign copy], zh-CN: [测算整体市场规模, 撰写营销文案] }
+    confusableWith: [atom-analyze-market, atom-write-marketing-copy]
+    permissions: research
+    steps: [Define the market unit decision and available customer evidence., Select segmentation variables tied to different needs or economics., Form mutually intelligible segments and test stability actionability and bias., Describe each segment evidence size assumptions value and disqualifiers.]
+  - id: atom-design-pricing-strategy
+    category: business-growth
+    name: { en: Design a pricing strategy, zh-CN: 设计定价策略 }
+    summary: { en: "Design one pricing and packaging recommendation from value, willingness-to-pay, costs, alternatives, constraints, and testable assumptions.", zh-CN: "基于价值、支付意愿、成本、替代方案、约束与可检验假设设计一套定价和包装建议。" }
+    outcome: Testable pricing recommendation
+    artifact: pricing-strategy
+    positive: { en: [design a pricing strategy, choose pricing tiers, evaluate packaging and price], zh-CN: [设计定价策略, 选择定价档位, 评估包装和价格] }
+    negative: { en: [forecast the full company finances, publish prices immediately], zh-CN: [预测完整公司财务, 立即公布价格] }
+    confusableWith: [atom-model-business-financials, atom-compare-decisions]
+    permissions: research
+    steps: [Confirm target segments value metric objectives and pricing constraints., Gather evidence on alternatives willingness-to-pay costs and usage distribution., Design packaging guardrails and price hypotheses with explicit economics., Propose experiments decision thresholds risks and review cadence.]
+  - id: atom-write-marketing-copy
+    category: business-growth
+    name: { en: Write marketing copy, zh-CN: 撰写营销文案 }
+    summary: { en: "Write one evidence-grounded marketing asset for a defined audience, offer, channel, and action without fabricating claims or publishing it.", zh-CN: "为明确受众、产品、渠道和行动撰写一份有依据的营销素材，不虚构论断或直接发布。" }
+    outcome: Reviewable marketing copy
+    artifact: marketing-copy
+    positive: { en: [write landing page copy, draft a marketing email, create ad copy], zh-CN: [撰写落地页文案, 起草营销邮件, 创建广告文案] }
+    negative: { en: [send the campaign, define the whole content strategy], zh-CN: [发送营销活动, 定义完整内容策略] }
+    confusableWith: [atom-draft-external-message, atom-plan-content-strategy]
+    permissions: workspace
+    steps: [Confirm audience awareness offer proof channel tone and desired action., Build one message hierarchy from supported customer value and objections., Draft channel-appropriate copy with truthful specific claims., Check compliance clarity consistency and return variants only when requested.]
+  - id: atom-audit-seo
+    category: business-growth
+    name: { en: Audit SEO, zh-CN: 审计搜索优化 }
+    summary: { en: "Audit one bounded website or content set for technical, on-page, information-architecture, and evidence-backed search opportunities without changing the site.", zh-CN: "审计一个有限网站或内容集的技术、页面、信息架构与有依据的搜索机会，不修改网站。" }
+    outcome: Prioritized SEO audit
+    artifact: seo-audit
+    positive: { en: [audit this site for SEO, review technical SEO, find search optimization gaps], zh-CN: [审计网站SEO, 检查技术SEO, 查找搜索优化缺口] }
+    negative: { en: [implement website fixes, write an article], zh-CN: [实施网站修复, 撰写文章] }
+    confusableWith: [atom-review-code-quality, atom-plan-content-strategy]
+    permissions: browser
+    steps: [Confirm site scope target market constraints analytics access and audit date., Inspect crawlability indexing performance structure metadata and content evidence., Separate verified issues from hypotheses and estimate user and search impact., Prioritize fixes by impact effort dependency and a measurable validation method.]
+  - id: atom-plan-content-strategy
+    category: business-growth
+    name: { en: Plan a content strategy, zh-CN: 规划内容策略 }
+    summary: { en: "Plan one coherent content program from audience needs, business outcomes, themes, channels, cadence, governance, and measurable learning loops.", zh-CN: "依据受众需求、业务成果、主题、渠道、节奏、治理与可衡量学习闭环规划一套连贯内容计划。" }
+    outcome: Measurable content strategy
+    artifact: content-strategy
+    positive: { en: [plan a content strategy, create a content program, choose topics and channels], zh-CN: [规划内容策略, 创建内容计划, 选择主题和渠道] }
+    negative: { en: [write one finished article, publish social posts], zh-CN: [撰写一篇成品文章, 发布社交帖子] }
+    confusableWith: [atom-write-marketing-copy, atom-plan-product-launch]
+    permissions: research
+    steps: [Confirm audience journey business outcomes constraints and available evidence., Map questions themes formats channels and distribution roles., Prioritize a calendar with reuse governance quality and approval rules., Define leading and lagging metrics experiments and review cadence.]
+  - id: atom-model-business-financials
+    category: business-growth
+    name: { en: Model business financials, zh-CN: 建模业务财务 }
+    summary: { en: "Build one transparent business financial model with explicit drivers, scenarios, unit economics, cash implications, and sensitivity checks.", zh-CN: "构建一个透明业务财务模型，明确驱动因素、情景、单位经济、现金影响与敏感性检查。" }
+    outcome: Auditable business financial model
+    artifact: business-financial-model
+    positive: { en: [build a business financial model, model unit economics, forecast revenue costs and cash], zh-CN: [构建业务财务模型, 建模单位经济, 预测收入成本和现金] }
+    negative: { en: [give personalized investment advice, set product prices alone], zh-CN: [提供个性化投资建议, 单独设定产品价格] }
+    confusableWith: [atom-analyze-tabular-data, atom-design-pricing-strategy]
+    permissions: workspace
+    steps: [Define decision horizon reporting currency and model boundaries., Separate assumptions drivers formulas and observed inputs with provenance., Build base downside and upside scenarios with unit economics and cash timing., Reconcile outputs run sensitivities and label uncertainty and excluded risks.]
+  - id: atom-create-threat-model
+    category: security-trust
+    name: { en: Create a threat model, zh-CN: 创建威胁模型 }
+    summary: { en: "Create one system threat model covering assets, trust boundaries, actors, abuse paths, controls, residual risk, and verification priorities.", zh-CN: "创建一份系统威胁模型，覆盖资产、信任边界、参与者、滥用途径、控制、残余风险和验证优先级。" }
+    outcome: Reviewable system threat model
+    artifact: threat-model
+    positive: { en: [create a threat model, map attack paths and trust boundaries, assess system threats], zh-CN: [创建威胁模型, 映射攻击路径和信任边界, 评估系统威胁] }
+    negative: { en: [scan source code for vulnerabilities, implement security fixes], zh-CN: [扫描源码漏洞, 实施安全修复] }
+    confusableWith: [atom-audit-source-security, atom-design-software-architecture]
+    permissions: file-read
+    steps: [Confirm system scope assets users dependencies and security objectives., Map data flows entry points privileges and trust boundaries., Enumerate realistic threat actors abuse cases existing controls and residual risk., Prioritize mitigations validation tests assumptions and model review triggers.]
+  - id: atom-audit-dependencies
+    category: security-trust
+    name: { en: Audit software dependencies, zh-CN: 审计软件依赖 }
+    summary: { en: "Audit one bounded dependency graph for known vulnerabilities, provenance, maintenance, licensing, reachability, and upgrade risk without changing packages.", zh-CN: "审计一个有限依赖图的已知漏洞、来源、维护、许可、可达性与升级风险，不修改软件包。" }
+    outcome: Prioritized dependency-risk audit
+    artifact: dependency-audit
+    positive: { en: [audit these dependencies, review supply chain risk, check vulnerable packages], zh-CN: [审计软件依赖, 检查供应链风险, 查找易受攻击软件包] }
+    negative: { en: [upgrade packages now, audit application logic], zh-CN: [立即升级软件包, 审计应用逻辑] }
+    confusableWith: [atom-audit-source-security, atom-plan-software-release]
+    permissions: shell-read
+    steps: [Inventory direct transitive build and runtime dependencies with lockfile evidence., Check advisories provenance maintenance licensing and integrity metadata at a dated snapshot., Assess reachability exploit conditions compensating controls and upgrade compatibility., Rank actions and document verification rollback and accepted residual risk.]
+  - id: atom-scan-secrets
+    category: security-trust
+    name: { en: Scan for exposed secrets, zh-CN: 扫描泄露密钥 }
+    summary: { en: "Scan one authorized code or artifact scope for likely exposed credentials, minimize secret handling, and return redacted findings without rotating or revoking anything.", zh-CN: "扫描一个已授权代码或产物范围内可能泄露的凭据，最小化密钥处理并返回脱敏发现，不执行轮换或撤销。" }
+    outcome: Redacted secret-exposure findings
+    artifact: secret-scan-report
+    positive: { en: [scan this repository for secrets, find exposed credentials, check artifacts for API keys], zh-CN: [扫描仓库密钥, 查找泄露凭据, 检查产物API密钥] }
+    negative: { en: [rotate credentials, print secret values], zh-CN: [轮换凭据, 打印密钥值] }
+    confusableWith: [atom-audit-source-security, atom-review-privacy-risk]
+    permissions: shell-read
+    steps: [Confirm authorization paths history depth secret classes and reporting channel., Use bounded pattern entropy and context checks without transmitting candidate values., Validate likely findings while keeping values redacted and access minimal., Report locations confidence exposure window containment and separately authorized rotation steps.]
+  - id: atom-plan-incident-response
+    category: security-trust
+    name: { en: Plan security incident response, zh-CN: 规划安全事件响应 }
+    summary: { en: "Create one security incident response plan with classification, evidence preservation, containment choices, communications, recovery, and post-incident learning.", zh-CN: "创建一份安全事件响应计划，包含分级、证据保全、遏制选择、沟通、恢复与事后学习。" }
+    outcome: Executable security incident plan
+    artifact: incident-response-plan
+    positive: { en: [plan incident response, create a security breach playbook, prepare for credential compromise], zh-CN: [规划事件响应, 创建安全泄露手册, 准备凭据泄露响应] }
+    negative: { en: [perform live containment now, troubleshoot an ordinary outage], zh-CN: [立即执行线上遏制, 排查普通故障] }
+    confusableWith: [atom-triage-production-incident, atom-write-operational-runbook]
+    permissions: workspace
+    steps: [Define incident types severity authority legal constraints and response roles., Specify detection triage evidence custody containment and eradication choices., Prepare decision checkpoints internal and external communications recovery and validation., Define exercises metrics after-action review and controlled plan updates.]
+  - id: atom-review-privacy-risk
+    category: security-trust
+    name: { en: Review privacy risk, zh-CN: 评审隐私风险 }
+    summary: { en: "Review one bounded product, workflow, or dataset for personal-data flows, purpose, minimization, retention, access, user expectations, and unresolved privacy risk.", zh-CN: "评审一个有限产品、流程或数据集的个人数据流、目的、最小化、保留、访问、用户预期与未解决隐私风险。" }
+    outcome: Evidence-backed privacy-risk review
+    artifact: privacy-risk-review
+    positive: { en: [review privacy risk, map personal data flows, assess data minimization and retention], zh-CN: [评审隐私风险, 映射个人数据流, 评估数据最小化和保留] }
+    negative: { en: [give binding legal advice, audit source vulnerabilities], zh-CN: [提供有约束力法律意见, 审计源码漏洞] }
+    confusableWith: [atom-assess-compliance-controls, atom-create-threat-model]
+    permissions: file-read
+    steps: [Confirm jurisdictional context scope data subjects decisions and non-legal status., Map data elements purposes sources recipients locations retention and deletion., Test necessity proportionality notice choice access security and sensitive-data handling., Prioritize risks mitigations owner evidence gaps and specialist review needs.]
+  - id: atom-assess-compliance-controls
+    category: security-trust
+    name: { en: Assess compliance controls, zh-CN: 评估合规控制 }
+    summary: { en: "Assess one bounded control set against a named framework using traceable evidence, design and operating effectiveness, gaps, and remediation ownership.", zh-CN: "依据指定框架评估一组有限控制，记录可追溯证据、设计与运行有效性、缺口及整改负责人。" }
+    outcome: Traceable control assessment
+    artifact: compliance-control-assessment
+    positive: { en: [assess these compliance controls, map evidence to SOC 2 controls, review control effectiveness], zh-CN: [评估合规控制, 将证据映射到SOC 2控制, 评审控制有效性] }
+    negative: { en: [certify compliance, provide legal conclusions], zh-CN: [认证合规, 提供法律结论] }
+    confusableWith: [atom-review-privacy-risk, atom-audit-source-security]
+    permissions: file-read
+    steps: [Confirm framework version scope period criteria and assurance limits., Map each control objective to owner process evidence and systems., Evaluate design and operating evidence consistently and record sampling limits., Report gaps compensating controls risk owners remediation and independent-assurance needs.]
+  - id: atom-design-observability
+    category: automation-operations
+    name: { en: Design observability, zh-CN: 设计可观测性 }
+    summary: { en: "Design one system observability plan with service objectives, signals, telemetry, dashboards, alerts, ownership, cost, and diagnostic workflows.", zh-CN: "设计一份系统可观测性计划，包含服务目标、信号、遥测、仪表板、告警、所有权、成本与诊断流程。" }
+    outcome: Actionable observability design
+    artifact: observability-design
+    positive: { en: [design observability, define metrics logs traces and alerts, create an SLO monitoring plan], zh-CN: [设计可观测性, 定义指标日志链路和告警, 创建SLO监控计划] }
+    negative: { en: [debug the current incident, deploy monitoring now], zh-CN: [调试当前故障, 立即部署监控] }
+    confusableWith: [atom-triage-production-incident, atom-design-software-architecture]
+    permissions: file-read
+    steps: [Confirm critical user journeys service boundaries failure modes and objectives., Define SLIs SLOs telemetry context propagation and data retention., Design dashboards actionable alerts ownership escalation and cost controls., Validate diagnostic questions coverage cardinality privacy and continuous review.]
+  - id: atom-create-ci-pipeline
+    category: automation-operations
+    name: { en: Create a CI pipeline, zh-CN: 创建持续集成管道 }
+    summary: { en: "Create one repository-scoped continuous-integration pipeline with reproducible checks, least privilege, caching, artifacts, failure diagnostics, and verification.", zh-CN: "创建一条仓库范围持续集成管道，包含可复现检查、最小权限、缓存、产物、失败诊断与验证。" }
+    outcome: Verified CI pipeline change
+    artifact: ci-pipeline-change
+    positive: { en: [create a CI pipeline, add GitHub Actions checks, automate repository tests], zh-CN: [创建CI管道, 添加GitHub Actions检查, 自动化仓库测试] }
+    negative: { en: [deploy production infrastructure, only design a workflow diagram], zh-CN: [部署生产基础设施, 只设计流程图] }
+    confusableWith: [atom-design-automation-workflow, atom-plan-cloud-deployment]
+    permissions: code-write
+    steps: [Inspect repository commands runtimes protected resources and branch policy., Design deterministic jobs dependencies cache keys artifacts and least-privilege permissions., Implement the bounded pipeline using pinned or trusted dependencies., Validate syntax representative success and failure paths and document required secrets.]
+  - id: atom-plan-cloud-deployment
+    category: automation-operations
+    name: { en: Plan a cloud deployment, zh-CN: 规划云部署 }
+    summary: { en: "Plan one cloud deployment with environments, infrastructure boundaries, identity, networking, data, rollout, observability, cost, and rollback without provisioning resources.", zh-CN: "规划一次云部署，涵盖环境、基础设施边界、身份、网络、数据、发布、可观测性、成本与回滚，但不创建资源。" }
+    outcome: Reviewable cloud-deployment plan
+    artifact: cloud-deployment-plan
+    positive: { en: [plan a cloud deployment, design the production hosting rollout, prepare an infrastructure deployment plan], zh-CN: [规划云部署, 设计生产托管发布, 准备基础设施部署计划] }
+    negative: { en: [provision cloud resources now, release only an application package], zh-CN: [立即创建云资源, 只发布应用包] }
+    confusableWith: [atom-design-software-architecture, atom-plan-software-release]
+    permissions: workspace
+    steps: [Confirm workloads environments regions availability compliance and budget., Map compute data network identity secrets and ownership boundaries., Define infrastructure changes rollout health checks migration rollback and disaster recovery., Review capacity cost observability approvals and post-deployment verification.]
+  - id: atom-write-operational-runbook
+    category: automation-operations
+    name: { en: Write an operational runbook, zh-CN: 编写运维手册 }
+    summary: { en: "Write one executable operational runbook with triggers, prerequisites, diagnostics, safe actions, stop conditions, escalation, rollback, and verification.", zh-CN: "编写一份可执行运维手册，包含触发条件、前置条件、诊断、安全操作、停止条件、升级、回滚与验证。" }
+    outcome: Reviewable operational runbook
+    artifact: operational-runbook
+    positive: { en: [write an operational runbook, document this maintenance procedure, create an outage playbook], zh-CN: [编写运维手册, 记录维护流程, 创建故障处理手册] }
+    negative: { en: [execute production commands now, write a security incident policy], zh-CN: [立即执行生产命令, 编写安全事件政策] }
+    confusableWith: [atom-triage-production-incident, atom-plan-incident-response]
+    permissions: file-read
+    steps: [Confirm scenario operator authority systems prerequisites and safe test environment., Specify observable triggers decision tree and diagnostic evidence., Write minimal reversible actions with checkpoints stop conditions rollback and escalation., Dry-review steps for ambiguity safety completeness and outcome verification.]
+  - id: atom-triage-production-incident
+    category: automation-operations
+    name: { en: Triage a production incident, zh-CN: 分诊生产故障 }
+    summary: { en: "Triage one active production incident using bounded read-only evidence to establish impact, timeline, hypotheses, containment options, and the next authorized action.", zh-CN: "使用有限只读证据分诊一个正在发生的生产故障，确定影响、时间线、假设、遏制选项与下一项获授权行动。" }
+    outcome: Evidence-backed incident triage
+    artifact: production-incident-triage
+    positive: { en: [triage this production incident, investigate the outage, assess live service impact], zh-CN: [分诊生产故障, 调查服务中断, 评估线上影响] }
+    negative: { en: [change production without approval, plan a hypothetical security incident], zh-CN: [未经批准修改生产, 规划假设安全事件] }
+    confusableWith: [atom-debug-software, atom-plan-incident-response]
+    permissions: shell-read
+    steps: [Establish incident commander authority scope start time and user impact., Preserve a timestamped timeline and inspect only authorized telemetry and recent changes., Rank hypotheses by evidence and propose low-risk containment with explicit approval gates., Communicate current facts uncertainty next check and criteria for escalation or recovery.]
+  - id: atom-create-technical-diagram
+    category: design-media
+    name: { en: Create a technical diagram, zh-CN: 创建技术图 }
+    summary: { en: "Create one accurate, editable technical diagram from verified components and relationships with a clear viewpoint, legend, scope, and accessible labels.", zh-CN: "依据已验证组件和关系创建一份准确可编辑技术图，明确视角、图例、范围与无障碍标签。" }
+    outcome: Editable technical diagram
+    artifact: technical-diagram
+    positive: { en: [create a system diagram, draw this architecture, make a sequence diagram], zh-CN: [创建系统图, 绘制架构图, 制作时序图] }
+    negative: { en: [invent the architecture, chart numerical data], zh-CN: [创造架构, 绘制数值数据图表] }
+    confusableWith: [atom-design-software-architecture, atom-visualize-data]
+    permissions: workspace
+    steps: [Confirm audience question scope notation and verified source of truth., Choose the smallest diagram type that exposes the relevant relationships., Encode components flows boundaries states and legend in an editable format., Validate every label and connection against sources and check readability.]
+  - id: atom-generate-image
+    category: design-media
+    name: { en: Generate an image, zh-CN: 生成图像 }
+    summary: { en: "Generate one original raster image from a bounded visual brief with composition, style, constraints, rights-aware references, and acceptance checks.", zh-CN: "依据有限视觉简报生成一张原创位图，明确构图、风格、约束、权利感知参考与验收检查。" }
+    outcome: Brief-matched generated image
+    artifact: generated-image
+    positive: { en: [generate an image, create an illustration from this prompt, make a hero visual], zh-CN: [生成图像, 根据提示创建插画, 制作主视觉] }
+    negative: { en: [edit this existing image, design a full user interface], zh-CN: [编辑现有图像, 设计完整用户界面] }
+    confusableWith: [atom-edit-image, atom-design-interface-spec]
+    permissions: workspace
+    steps: [Confirm subject use dimensions composition style exclusions and acceptance criteria., Convert the brief into precise visual direction without copying protected living-artist identity., Generate the image with an approved image tool., Inspect framing text artifacts anatomy legibility and brief compliance before delivery.]
+  - id: atom-edit-image
+    category: design-media
+    name: { en: Edit an image, zh-CN: 编辑图像 }
+    summary: { en: "Apply one bounded transformation to a supplied image while preserving requested identity, content, dimensions, provenance, and unedited regions.", zh-CN: "对一张给定图像执行有限变换，同时保留要求的主体身份、内容、尺寸、来源与未编辑区域。" }
+    outcome: Verified edited image
+    artifact: edited-image
+    positive: { en: [edit this image, remove the background, change this object in the photo], zh-CN: [编辑图像, 移除背景, 更改照片中的对象] }
+    negative: { en: [generate a new scene from scratch, analyze chart data], zh-CN: [从零生成新场景, 分析图表数据] }
+    confusableWith: [atom-generate-image, atom-visualize-data]
+    permissions: workspace
+    steps: [Inspect the supplied image and confirm exact target regions and invariants., Define the transformation dimensions output format and acceptance checks., Apply the edit with an approved image tool and preserve the source., Compare before and after for unintended changes artifacts and requested fidelity.]
+  - id: atom-plan-video-production
+    category: design-media
+    name: { en: Plan video production, zh-CN: 规划视频制作 }
+    summary: { en: "Plan one video from audience and message through script beats, shots, assets, production constraints, accessibility, review, and delivery specifications.", zh-CN: "规划一支视频，从受众和信息到脚本节拍、镜头、素材、制作约束、无障碍、审查与交付规格。" }
+    outcome: Production-ready video plan
+    artifact: video-production-plan
+    positive: { en: [plan a video production, create a shot list and storyboard plan, prepare a product video brief], zh-CN: [规划视频制作, 创建镜头清单和分镜计划, 准备产品视频简报] }
+    negative: { en: [render the final video now, generate one still image], zh-CN: [立即渲染最终视频, 生成一张静态图] }
+    confusableWith: [atom-create-presentation, atom-generate-image]
+    permissions: workspace
+    steps: [Confirm audience platform duration message budget assets and delivery format., Build narrative beats script outline shot list and asset dependencies., Plan production roles schedule rights sound captions and review gates., Define technical export specifications quality checks and fallback coverage.]
+  - id: atom-design-presentation-visuals
+    category: design-media
+    name: { en: Design presentation visuals, zh-CN: 设计演示视觉 }
+    summary: { en: "Define and apply one coherent visual system for approved slide content, including hierarchy, layout, typography, color, imagery, charts, and accessibility.", zh-CN: "为已批准幻灯片内容定义并应用一套连贯视觉系统，包括层级、版式、字体、颜色、图像、图表与无障碍。" }
+    outcome: Coherent presentation visual system
+    artifact: presentation-visual-design
+    positive: { en: [design the visuals for this deck, improve slide layouts and hierarchy, create a presentation style system], zh-CN: [设计演示视觉, 改进幻灯片版式层级, 创建演示风格系统] }
+    negative: { en: [write the presentation content, invent supporting data], zh-CN: [编写演示内容, 编造支撑数据] }
+    confusableWith: [atom-create-presentation, atom-design-interface-spec]
+    permissions: workspace
+    steps: [Confirm audience venue brand constraints content lock and editable format., Define grid hierarchy type color imagery and chart treatment., Apply layouts consistently while preserving content meaning and source notes., Check contrast density alignment consistency and projection readability.]
+  - id: atom-schedule-personal-calendar
+    category: personal-productivity
+    name: { en: Schedule a personal calendar, zh-CN: 安排个人日历 }
+    summary: { en: "Turn one person's approved commitments into a conflict-aware calendar plan and create events only with explicit authority and confirmation of material details.", zh-CN: "将个人已批准事项转为避冲突日历计划，仅在明确授权并确认关键细节后创建事件。" }
+    outcome: Confirmed personal-calendar schedule
+    artifact: calendar-schedule
+    positive: { en: [schedule these tasks on my calendar, create a calendar event, find time for these commitments], zh-CN: [把任务安排到日历, 创建日历事件, 为这些事项找时间] }
+    negative: { en: [organize tasks without dates, schedule an organization-wide workflow], zh-CN: [整理无日期任务, 安排组织级工作流] }
+    confusableWith: [atom-organize-personal-tasks, atom-design-automation-workflow]
+    permissions: browser
+    steps: [Confirm timezone duration participants location recurrence flexibility and authority to write., Inspect relevant availability and preserve private event details., Propose conflict-aware slots and obtain confirmation for material ambiguity., Create only approved events then verify title time timezone participants and reminders.]
+  - id: atom-capture-structured-notes
+    category: personal-productivity
+    name: { en: Capture structured notes, zh-CN: 捕获结构化笔记 }
+    summary: { en: "Convert one bounded stream of supplied information into structured notes with source, context, decisions, actions, links, and unresolved questions.", zh-CN: "将一组有限给定信息转换为结构化笔记，保留来源、上下文、决策、行动、链接与未决问题。" }
+    outcome: Traceable structured notes
+    artifact: structured-notes
+    positive: { en: [turn this into structured notes, capture meeting notes, organize these observations], zh-CN: [转换成结构化笔记, 记录会议笔记, 整理这些观察] }
+    negative: { en: [reorganize the whole knowledge vault, research missing facts], zh-CN: [重组整个知识库, 调研缺失事实] }
+    confusableWith: [atom-operate-knowledge-vault, atom-summarize-document]
+    permissions: workspace
+    steps: [Confirm note purpose template source and destination boundaries., Separate observations decisions actions owners dates and open questions., Preserve provenance terminology links and uncertainty., Check completeness and naming then save only within the approved note scope.]
+  - id: atom-plan-learning-path
+    category: personal-productivity
+    name: { en: Plan a learning path, zh-CN: 规划学习路径 }
+    summary: { en: "Create one adaptive learning path from a learner's goal, baseline, constraints, resources, practice sequence, assessments, and review cadence.", zh-CN: "依据学习目标、基础、约束、资源、练习顺序、评估与复盘节奏创建一条自适应学习路径。" }
+    outcome: Measurable personal learning path
+    artifact: learning-path
+    positive: { en: [plan a learning path, create a study roadmap, design a self-study curriculum], zh-CN: [规划学习路径, 创建学习路线图, 设计自学课程] }
+    negative: { en: [do the homework for me, write a generic action plan], zh-CN: [替我完成作业, 编写通用行动计划] }
+    confusableWith: [atom-build-action-plan, atom-find-research-sources]
+    permissions: research
+    steps: [Confirm target competence baseline time constraints preferences and evidence of success., Decompose prerequisites concepts skills and authentic tasks., Sequence resources deliberate practice feedback and spaced review., Add diagnostic checkpoints adaptation rules and a sustainable review cadence.]
+  - id: atom-peer-review-manuscript
+    category: scientific-research
+    name: { en: Peer review a manuscript, zh-CN: 同行评审论文 }
+    summary: { en: "Review one scholarly manuscript for claim support, methods, analysis, novelty context, reproducibility, ethics, and reporting quality without rewriting or making editorial decisions.", zh-CN: "评审一篇学术论文的论断依据、方法、分析、创新背景、可复现性、伦理与报告质量，不代写或替编辑决策。" }
+    outcome: Evidence-located manuscript review
+    artifact: manuscript-peer-review
+    positive: { en: [peer review this manuscript, critique this research paper, assess methods and claims], zh-CN: [同行评审论文, 评议研究论文, 评估方法和论断] }
+    negative: { en: [rewrite the manuscript, decide journal acceptance], zh-CN: [重写论文, 决定期刊录用] }
+    confusableWith: [atom-review-literature, atom-critique-output]
+    permissions: file-read
+    steps: [Confirm review scope venue rubric confidentiality and conflict constraints., Summarize the manuscript's claims methods and contribution before judging., Locate major and minor findings with evidence and distinguish fatal issues from improvements., Check reproducibility ethics reporting and return constructive prioritized questions without an editorial verdict.]
 meta:
   id: meta-upstream-skill-curator
   category: skill-agent-governance

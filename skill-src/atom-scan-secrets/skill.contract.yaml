@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-scan-secrets
+kind: atom
+version: 0.1.0
+name:
+  en: Scan for exposed secrets
+  zh-CN: 扫描泄露密钥
+summary:
+  en: Scan one authorized code or artifact scope for likely exposed credentials,
+    minimize secret handling, and return redacted findings without rotating or
+    revoking anything.
+  zh-CN: 扫描一个已授权代码或产物范围内可能泄露的凭据，最小化密钥处理并返回脱敏发现，不执行轮换或撤销。
+outcomes:
+  - Redacted secret-exposure findings
+artifacts:
+  - secret-scan-report
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: secret-scan-report
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - shell-execution
+permissions:
+  network: none
+  filesystem: read
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: security-trust
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - cli-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - scan this repository for secrets
+      - find exposed credentials
+      - check artifacts for API keys
+    zh-CN:
+      - 扫描仓库密钥
+      - 查找泄露凭据
+      - 检查产物API密钥
+  negativeTriggers:
+    en:
+      - rotate credentials
+      - print secret values
+    zh-CN:
+      - 轮换凭据
+      - 打印密钥值
+  confusableWith:
+    - atom-audit-source-security
+    - atom-review-privacy-risk
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

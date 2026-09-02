@@ -84,3 +84,91 @@ examples:
       - atom-operate-design-tool
     mustNotRoute:
       - atom-design-interface-spec
+  - id: adv-summary-not-translation
+    prompt: Summarize this document for executives while preserving caveats; do not
+      translate it.
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-summarize-document
+    mustNotRoute:
+      - atom-translate-document
+  - id: adv-clean-not-analyze
+    prompt: Clean this dataset by normalizing columns and deduplicating rows; do not
+      interpret the business metrics.
+    expectedCategory: data-analytics
+    expectedAtoms:
+      - atom-clean-tabular-data
+    mustNotRoute:
+      - atom-analyze-tabular-data
+  - id: adv-schema-not-migration
+    prompt: Design tables, relationships, keys, and constraints for a new database;
+      do not migrate live data.
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-design-database-schema
+    mustNotRoute:
+      - atom-plan-database-migration
+  - id: adv-roadmap-not-requirements
+    prompt: Prioritize these feature opportunities by outcome, evidence, effort, and
+      risk; do not write detailed requirements.
+    expectedCategory: product-definition
+    expectedAtoms:
+      - atom-prioritize-product-roadmap
+    mustNotRoute:
+      - atom-write-product-requirements
+  - id: adv-copy-not-strategy
+    prompt: Write landing page copy for this defined audience and offer; do not
+      design the whole content strategy.
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-write-marketing-copy
+    mustNotRoute:
+      - atom-plan-content-strategy
+  - id: adv-threat-not-audit
+    prompt: Create a threat model with assets, trust boundaries, actors, and abuse
+      paths; do not scan source code.
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-create-threat-model
+    mustNotRoute:
+      - atom-audit-source-security
+  - id: adv-runbook-not-live
+    prompt: Write an operational runbook with diagnostics, stop conditions,
+      rollback, and escalation; do not execute production commands.
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-write-operational-runbook
+    mustNotRoute:
+      - atom-triage-production-incident
+  - id: adv-diagram-not-architecture
+    prompt: Draw the approved architecture as an editable technical diagram; do not
+      invent system boundaries.
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-create-technical-diagram
+    mustNotRoute:
+      - atom-design-software-architecture
+  - id: adv-image-edit-not-generate
+    prompt: Edit this supplied image by removing the background while preserving the
+      subject; do not generate a new scene.
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-edit-image
+    mustNotRoute:
+      - atom-generate-image
+  - id: adv-notes-not-vault
+    prompt: Turn this meeting transcript into structured notes with decisions and
+      actions; do not reorganize the whole knowledge vault.
+    expectedCategory: personal-productivity
+    expectedAtoms:
+      - atom-capture-structured-notes
+    mustNotRoute:
+      - atom-operate-knowledge-vault
+  - id: adv-peer-review-not-rewrite
+    prompt: Peer review this manuscript for methods, claims, and reproducibility; do
+      not rewrite it.
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-peer-review-manuscript
+    mustNotRoute:
+      - atom-edit-prose

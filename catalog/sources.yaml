@@ -1,5 +1,5 @@
 schemaVersion: 1
-verifiedAt: 2026-09-02T17:33:03Z
+verifiedAt: 2026-09-02T19:30:00Z
 sources:
   - id: official-mcp-registry
     kind: mcp-registry
@@ -94,3 +94,79 @@ sources:
     kind: github-skills
     repository: https://github.com/ZhangHanDong/makepad-skills
     trust: verified-community
+  - id: microsoft-skills
+    kind: github-skills
+    repository: https://github.com/microsoft/skills
+    trust: official-publisher
+  - id: google-skills
+    kind: github-skills
+    repository: https://github.com/google/skills
+    trust: official-publisher
+  - id: microsoftdocs-agent-skills
+    kind: github-skills
+    repository: https://github.com/MicrosoftDocs/Agent-Skills
+    trust: official-publisher
+  - id: aws-builder-skills
+    kind: github-skills
+    repository: https://github.com/aws-samples/sample-agent-skills-for-builders
+    trust: official-publisher
+  - id: anthropic-claude-code-skills
+    kind: github-skills
+    repository: https://github.com/anthropics/claude-code
+    trust: official-publisher
+  - id: google-workspace-cli-skills
+    kind: github-skills
+    repository: https://github.com/googleworkspace/cli
+    trust: official-publisher
+  - id: microsoft-cat-agent-skills
+    kind: github-skills
+    repository: https://github.com/microsoft/cat-agent-skills
+    trust: official-publisher
+  - id: gsap-skills
+    kind: github-skills
+    repository: https://github.com/greensock/gsap-skills
+    trust: official-publisher
+  - id: nvidia-skillspector
+    kind: github-skills
+    repository: https://github.com/NVIDIA/SkillSpector
+    trust: official-publisher
+  - id: obra-superpowers
+    kind: github-skills
+    repository: https://github.com/obra/superpowers
+    trust: verified-community
+  - id: mattpocock-skills
+    kind: github-skills
+    repository: https://github.com/mattpocock/skills
+    trust: popular-community
+  - id: pm-skills
+    kind: github-skills
+    repository: https://github.com/phuryn/pm-skills
+    trust: popular-community
+  - id: orchestra-ai-research-skills
+    kind: github-skills
+    repository: https://github.com/Orchestra-Research/AI-Research-SKILLs
+    trust: popular-community
+  - id: jeffallan-claude-skills
+    kind: github-skills
+    repository: https://github.com/Jeffallan/claude-skills
+    trust: popular-community
+  - id: context-engineering-skills
+    kind: github-skills
+    repository: https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering
+    trust: popular-community
+  - id: claude-seo-skills
+    kind: github-skills
+    repository: https://github.com/AgriciDaniel/claude-seo
+    trust: popular-community
+  - id: wshobson-agent-skills
+    kind: github-skills
+    repository: https://github.com/wshobson/agents
+    trust: popular-community
+  - id: alirezarezvani-claude-skills
+    kind: github-skills
+    repository: https://github.com/alirezarezvani/claude-skills
+    trust: popular-community
+  - id: anthropic-cybersecurity-skills
+    kind: github-skills
+    repository: https://github.com/mukul975/Anthropic-Cybersecurity-Skills
+    trust: popular-community

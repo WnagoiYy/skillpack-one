@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-design-presentation-visuals
+kind: atom
+version: 0.1.0
+name:
+  en: Design presentation visuals
+  zh-CN: 设计演示视觉
+summary:
+  en: Define and apply one coherent visual system for approved slide content,
+    including hierarchy, layout, typography, color, imagery, charts, and
+    accessibility.
+  zh-CN: 为已批准幻灯片内容定义并应用一套连贯视觉系统，包括层级、版式、字体、颜色、图像、图表与无障碍。
+outcomes:
+  - Coherent presentation visual system
+artifacts:
+  - presentation-visual-design
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: presentation-visual-design
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: design-media
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - design the visuals for this deck
+      - improve slide layouts and hierarchy
+      - create a presentation style system
+    zh-CN:
+      - 设计演示视觉
+      - 改进幻灯片版式层级
+      - 创建演示风格系统
+  negativeTriggers:
+    en:
+      - write the presentation content
+      - invent supporting data
+    zh-CN:
+      - 编写演示内容
+      - 编造支撑数据
+  confusableWith:
+    - atom-create-presentation
+    - atom-design-interface-spec
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial
