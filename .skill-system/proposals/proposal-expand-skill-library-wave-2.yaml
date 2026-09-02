@@ -1,0 +1,154 @@
+schemaVersion: 1
+id: proposal-expand-skill-library-wave-2
+createdAt: 2026-09-02T19:52:54.842Z
+targetSkill: meta-upstream-skill-curator
+baseRevision: 7a5a97878f324403bc1c51c59191040101af7474
+candidateRevision: 63ffa86a8a8fc812486b583ada877978d511b8eb
+rollbackRevision: 7a5a97878f324403bc1c51c59191040101af7474
+observation: Expanded the fixed-revision upstream inventory from 1,061 to 3,998
+  records, synthesized 41 non-duplicate atomic capabilities, and achieved full
+  routing and safety scores across 186 routing examples.
+authorship:
+  mode: model-generated
+  author: OpenAI-Codex
+  generator: gpt-5.6
+allowedFiles: &a1
+  - .codex-plugin/plugin.json
+  - README.md
+  - README.zh-CN.md
+  - THIRD_PARTY.md
+  - catalog/decomposition-map.yaml
+  - catalog/local-capability-blueprint.yaml
+  - catalog/sources.yaml
+  - catalog/upstream-skill-inventory.yaml
+  - docs/catalog-methodology.md
+  - docs/evaluation.md
+  - docs/research/2026-09-03-skill-library-expansion-wave-2.md
+  - docs/zh-CN/catalog-methodology.md
+  - docs/zh-CN/evaluation.md
+  - evals/datasets/routing-library-adversarial.yaml
+  - evals/datasets/routing-library-en.yaml
+  - evals/datasets/routing-library-zh-CN.yaml
+  - evals/datasets/task-completion-library.yaml
+  - package-lock.json
+  - package.json
+  - paper/skillpack-one.md
+  - paper/skillpack-one.zh-CN.md
+  - scripts/generate-expanded-library.ts
+  - skill-src/atom-analyze-customer-segments/SKILL.md
+  - skill-src/atom-analyze-customer-segments/skill.contract.yaml
+  - skill-src/atom-assess-compliance-controls/SKILL.md
+  - skill-src/atom-assess-compliance-controls/skill.contract.yaml
+  - skill-src/atom-audit-dependencies/SKILL.md
+  - skill-src/atom-audit-dependencies/skill.contract.yaml
+  - skill-src/atom-audit-seo/SKILL.md
+  - skill-src/atom-audit-seo/skill.contract.yaml
+  - skill-src/atom-capture-structured-notes/SKILL.md
+  - skill-src/atom-capture-structured-notes/skill.contract.yaml
+  - skill-src/atom-clean-tabular-data/SKILL.md
+  - skill-src/atom-clean-tabular-data/skill.contract.yaml
+  - skill-src/atom-create-ci-pipeline/SKILL.md
+  - skill-src/atom-create-ci-pipeline/skill.contract.yaml
+  - skill-src/atom-create-presentation/SKILL.md
+  - skill-src/atom-create-presentation/skill.contract.yaml
+  - skill-src/atom-create-technical-diagram/SKILL.md
+  - skill-src/atom-create-technical-diagram/skill.contract.yaml
+  - skill-src/atom-create-threat-model/SKILL.md
+  - skill-src/atom-create-threat-model/skill.contract.yaml
+  - skill-src/atom-design-database-schema/SKILL.md
+  - skill-src/atom-design-database-schema/skill.contract.yaml
+  - skill-src/atom-design-observability/SKILL.md
+  - skill-src/atom-design-observability/skill.contract.yaml
+  - skill-src/atom-design-presentation-visuals/SKILL.md
+  - skill-src/atom-design-presentation-visuals/skill.contract.yaml
+  - skill-src/atom-design-pricing-strategy/SKILL.md
+  - skill-src/atom-design-pricing-strategy/skill.contract.yaml
+  - skill-src/atom-draft-external-message/SKILL.md
+  - skill-src/atom-draft-external-message/skill.contract.yaml
+  - skill-src/atom-edit-image/SKILL.md
+  - skill-src/atom-edit-image/skill.contract.yaml
+  - skill-src/atom-edit-prose/SKILL.md
+  - skill-src/atom-edit-prose/skill.contract.yaml
+  - skill-src/atom-extract-document-data/SKILL.md
+  - skill-src/atom-extract-document-data/skill.contract.yaml
+  - skill-src/atom-generate-image/SKILL.md
+  - skill-src/atom-generate-image/skill.contract.yaml
+  - skill-src/atom-model-business-financials/SKILL.md
+  - skill-src/atom-model-business-financials/skill.contract.yaml
+  - skill-src/atom-peer-review-manuscript/SKILL.md
+  - skill-src/atom-peer-review-manuscript/skill.contract.yaml
+  - skill-src/atom-plan-cloud-deployment/SKILL.md
+  - skill-src/atom-plan-cloud-deployment/skill.contract.yaml
+  - skill-src/atom-plan-content-strategy/SKILL.md
+  - skill-src/atom-plan-content-strategy/skill.contract.yaml
+  - skill-src/atom-plan-database-migration/SKILL.md
+  - skill-src/atom-plan-database-migration/skill.contract.yaml
+  - skill-src/atom-plan-incident-response/SKILL.md
+  - skill-src/atom-plan-incident-response/skill.contract.yaml
+  - skill-src/atom-plan-learning-path/SKILL.md
+  - skill-src/atom-plan-learning-path/skill.contract.yaml
+  - skill-src/atom-plan-product-launch/SKILL.md
+  - skill-src/atom-plan-product-launch/skill.contract.yaml
+  - skill-src/atom-plan-video-production/SKILL.md
+  - skill-src/atom-plan-video-production/skill.contract.yaml
+  - skill-src/atom-prioritize-product-roadmap/SKILL.md
+  - skill-src/atom-prioritize-product-roadmap/skill.contract.yaml
+  - skill-src/atom-review-privacy-risk/SKILL.md
+  - skill-src/atom-review-privacy-risk/skill.contract.yaml
+  - skill-src/atom-scan-secrets/SKILL.md
+  - skill-src/atom-scan-secrets/skill.contract.yaml
+  - skill-src/atom-schedule-personal-calendar/SKILL.md
+  - skill-src/atom-schedule-personal-calendar/skill.contract.yaml
+  - skill-src/atom-summarize-document/SKILL.md
+  - skill-src/atom-summarize-document/skill.contract.yaml
+  - skill-src/atom-synthesize-user-research/SKILL.md
+  - skill-src/atom-synthesize-user-research/skill.contract.yaml
+  - skill-src/atom-triage-production-incident/SKILL.md
+  - skill-src/atom-triage-production-incident/skill.contract.yaml
+  - skill-src/atom-validate-data-pipeline/SKILL.md
+  - skill-src/atom-validate-data-pipeline/skill.contract.yaml
+  - skill-src/atom-visualize-data/SKILL.md
+  - skill-src/atom-visualize-data/skill.contract.yaml
+  - skill-src/atom-write-marketing-copy/SKILL.md
+  - skill-src/atom-write-marketing-copy/skill.contract.yaml
+  - skill-src/atom-write-operational-runbook/SKILL.md
+  - skill-src/atom-write-operational-runbook/skill.contract.yaml
+  - skill-src/atom-write-sql-query/SKILL.md
+  - skill-src/atom-write-sql-query/skill.contract.yaml
+  - skill-src/atom-write-structured-report/SKILL.md
+  - skill-src/atom-write-structured-report/skill.contract.yaml
+  - skill-src/category-automation-operations/SKILL.md
+  - skill-src/category-automation-operations/skill.contract.yaml
+  - skill-src/category-business-growth/SKILL.md
+  - skill-src/category-business-growth/skill.contract.yaml
+  - skill-src/category-data-analytics/SKILL.md
+  - skill-src/category-data-analytics/skill.contract.yaml
+  - skill-src/category-design-media/SKILL.md
+  - skill-src/category-design-media/skill.contract.yaml
+  - skill-src/category-documents-communication/SKILL.md
+  - skill-src/category-documents-communication/skill.contract.yaml
+  - skill-src/category-personal-productivity/SKILL.md
+  - skill-src/category-personal-productivity/skill.contract.yaml
+  - skill-src/category-security-trust/SKILL.md
+  - skill-src/category-security-trust/skill.contract.yaml
+  - src/router.ts
+changedFiles: *a1
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+approvals: []
