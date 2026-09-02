@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-operate-terminal-cli
+kind: atom
+version: 0.1.0
+name:
+  en: Operate a terminal CLI
+  zh-CN: 操作终端CLI
+summary:
+  en: Run one bounded command-line workflow with explicit working directory,
+    arguments, side-effect review, captured output, and verification.
+  zh-CN: 以明确工作目录、参数、副作用审查、输出捕获和验证运行一个有限命令行流程。
+outcomes:
+  - Verified CLI operation
+artifacts:
+  - cli-run
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: cli-run
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - shell-execution
+permissions:
+  network: none
+  filesystem: read
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: developer-tools
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - cli-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - run this CLI command
+      - operate this terminal tool
+      - execute a command-line workflow
+    zh-CN:
+      - 运行CLI命令
+      - 操作终端工具
+      - 执行命令行流程
+  negativeTriggers:
+    en:
+      - write a new CLI application
+      - run an untrusted installer
+    zh-CN:
+      - 编写新的CLI应用
+      - 运行不可信安装器
+  confusableWith:
+    - atom-implement-code-change
+    - atom-operate-git-workflow
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

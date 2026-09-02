@@ -1,0 +1,74 @@
+schemaVersion: 1
+id: category-scientific-research
+kind: category
+version: 0.1.0
+name:
+  en: Scientific research Router
+  zh-CN: 科学研究路由器
+summary:
+  en: Route scientific research requests to the smallest certified Atomic Skill.
+  zh-CN: 将科学研究请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded scientific-research category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: scientific-research
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - scientific
+      - literature review
+      - experiment
+      - study design
+      - manuscript
+      - citation
+    zh-CN:
+      - 科学研究
+      - 文献综述
+      - 实验
+      - 研究设计
+      - 论文
+      - 引用
+  negativeTriggers:
+    en:
+      - generic web research
+      - unsupported medical decisions
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

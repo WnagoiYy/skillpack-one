@@ -1,0 +1,7 @@
+interface:
+  display_name: Category Decision Review
+  short_description: Route and apply Category Decision Review
+  default_prompt: Use $category-decision-review to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

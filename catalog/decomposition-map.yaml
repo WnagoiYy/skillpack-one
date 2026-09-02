@@ -1,63 +1,27 @@
 schemaVersion: 1
 snapshotDigest: sha256:3c403bd206a4492128a395c96db9276aefdb93027bebed2de13fbabb1c75a010
-policy: Upstream records are non-executed design evidence. The local contract is a new synthesis; no instruction body, source code, package, or asset is copied by this mapping.
+inventoryDigest: sha256:bb365135965947f8795096a034ed5ba5e34bf306c28a86f50dcc2ad9ee6a03d3
+policy: Upstream records are non-executed design evidence. The local contract is
+  a new synthesis; no instruction body, source code, package, or asset is copied
+  by this mapping.
 capabilityMappings:
-  - capability: atom-plan-code-change
-    synthesis: Separate implementation-ready planning from mutation so scope, files, risks, and verification can be reviewed before code changes.
+  - capability: atom-analyze-experimental-results
+    synthesis: Analyze one experimental dataset against a declared protocol with
+      reproducible calculations, uncertainty, diagnostics, and bounded claims.
+      The local contract narrows multiple upstream patterns to one outcome and
+      keeps their instruction bodies out of the package.
     evidence:
-      - catalogEntry: skill-addyosmani-agent-skills-planning-and-task-breakdown-1cb74a63
-        contribution: Planning and task-decomposition capability boundary.
+      - inventoryEntry: upstream-scientific-skills-skills-statistical-power-skill-md-d72f23a5
+        contribution: statistical-power contributes independently fingerprinted boundary
+          and workflow design evidence.
         usage: design-evidence-only
-      - catalogEntry: skill-gohypergiant-agent-skills-accelint-qrspi-propose-e9434f7b
-        contribution: Proposal-first lifecycle pattern.
-        usage: design-evidence-only
-  - capability: atom-implement-code-change
-    synthesis: Keep one bounded authorized mutation and its verification together while excluding broad planning and independent security review.
-    evidence:
-      - catalogEntry: skill-addyosmani-agent-skills-incremental-implementation-99c73b0d
-        contribution: Incremental implementation pattern.
-        usage: design-evidence-only
-      - catalogEntry: skill-trailofbits-skills-code-improver-8debe69b
-        contribution: Focused source improvement boundary.
-        usage: design-evidence-only
-  - capability: atom-find-research-sources
-    synthesis: Isolate authoritative source discovery and ranking from later synthesis or artifact production.
-    evidence:
-      - catalogEntry: skill-k-dense-ai-claude-scientific-skills-research-lookup-64fd7bc4
-        contribution: Research lookup as a distinct capability.
-        usage: design-evidence-only
-      - catalogEntry: skill-huggingface-skills-huggingface-papers-08cc9c02
-        contribution: Paper discovery and evidence provenance.
-        usage: design-evidence-only
-  - capability: atom-analyze-tabular-data
-    synthesis: Define reproducible calculations and data-quality caveats independently of spreadsheet editing or document presentation.
-    evidence:
-      - catalogEntry: skill-anthropics-skills-xlsx-657c7b90
-        contribution: Spreadsheet workflow modality.
-        usage: design-evidence-only
-      - catalogEntry: skill-k-dense-ai-claude-scientific-skills-statistical-analysis-20f60337
-        contribution: Statistical analysis and assumption checks.
-        usage: design-evidence-only
-  - capability: atom-translate-document
-    synthesis: Treat translation as meaning-preserving document transformation with structure and terminology constraints.
-    evidence:
-      - catalogEntry: skill-gohypergiant-agent-skills-accelint-english-manager-42c5f948
-        contribution: Language-specific editorial workflow.
-        usage: design-evidence-only
-      - catalogEntry: skill-anthropics-skills-docx-6db5d745
-        contribution: Structured document preservation requirements.
-        usage: design-evidence-only
-  - capability: atom-design-interface-spec
-    synthesis: Produce an implementation-neutral interface contract covering layout, states, interaction, and accessibility without broadening into coding.
-    evidence:
-      - catalogEntry: skill-addyosmani-agent-skills-api-and-interface-design-65b474ac
-        contribution: Explicit interface design boundary.
-        usage: design-evidence-only
-      - catalogEntry: skill-anthropics-skills-frontend-design-29ad32fd
-        contribution: Visual-system and frontend experience concerns.
+      - inventoryEntry: upstream-scientific-skills-skills-experimental-design-skill-md-280c706f
+        contribution: experimental-design contributes independently fingerprinted
+          boundary and workflow design evidence.
         usage: design-evidence-only
   - capability: atom-analyze-market
-    synthesis: Combine dated evidence, assumptions, competitors, and decision relevance while keeping source discovery separately composable.
+    synthesis: Combine dated evidence, assumptions, competitors, and decision
+      relevance while keeping source discovery separately composable.
     evidence:
       - catalogEntry: skill-k-dense-ai-claude-scientific-skills-market-research-reports-f3535d6e
         contribution: Market-research report structure.
@@ -65,26 +29,19 @@ capabilityMappings:
       - catalogEntry: mcp-ai-agentutility-mcp-edge-market-068d58f817
         contribution: Optional live market-data dependency pattern.
         usage: design-evidence-only
-  - capability: atom-design-automation-workflow
-    synthesis: Model trigger, steps, data contracts, permissions, idempotency, observability, and recovery before binding to one automation product.
+  - capability: atom-analyze-tabular-data
+    synthesis: Define reproducible calculations and data-quality caveats
+      independently of spreadsheet editing or document presentation.
     evidence:
-      - catalogEntry: skill-addyosmani-agent-skills-ci-cd-and-automation-29d0cc8a
-        contribution: Repeatable automation lifecycle.
+      - catalogEntry: skill-anthropics-skills-xlsx-657c7b90
+        contribution: Spreadsheet workflow modality.
         usage: design-evidence-only
-      - catalogEntry: mcp-ai-agentutility-mcp-browser-workflow-d744626520
-        contribution: MCP-backed workflow dependency boundary.
-        usage: design-evidence-only
-  - capability: atom-organize-personal-tasks
-    synthesis: Turn commitments into a dated reviewable list without silently creating calendar events, reminders, or notifications.
-    evidence:
-      - catalogEntry: mcp-ai-calendarmcp-server-f8ab5b3489
-        contribution: Calendar integration as an optional external side effect.
-        usage: design-evidence-only
-      - catalogEntry: skill-addyosmani-agent-skills-planning-and-task-breakdown-1cb74a63
-        contribution: Task decomposition and priority ordering.
+      - catalogEntry: skill-k-dense-ai-claude-scientific-skills-statistical-analysis-20f60337
+        contribution: Statistical analysis and assumption checks.
         usage: design-evidence-only
   - capability: atom-audit-source-security
-    synthesis: Make evidence-backed read-only findings a separate atom from implementation, remediation, and destructive scanning.
+    synthesis: Make evidence-backed read-only findings a separate atom from
+      implementation, remediation, and destructive scanning.
     evidence:
       - catalogEntry: skill-getsentry-skills-security-review-3bf92664
         contribution: Source security review workflow.
@@ -92,8 +49,37 @@ capabilityMappings:
       - catalogEntry: skill-trailofbits-skills-audit-augmentation-7debd264
         contribution: Audit evidence and bounded review context.
         usage: design-evidence-only
+  - capability: atom-brainstorm-options
+    synthesis: Generate a deliberately varied set of options for one framed problem
+      without prematurely selecting or implementing one. The local contract
+      narrows multiple upstream patterns to one outcome and keeps their
+      instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-github-awesome-copilot-skills-project-workflow-analysis-blueprint-generator-skill-md-e8acb45d
+        contribution: project-workflow-analysis-blueprint-generator contributes
+          independently fingerprinted boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-openai-skills-skills-curated-figma-implement-design-skill-md-a61e7edd
+        contribution: figma-implement-design contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-build-action-plan
+    synthesis: Convert one selected direction into sequenced actions, owners,
+      dependencies, checkpoints, risks, and completion criteria. The local
+      contract narrows multiple upstream patterns to one outcome and keeps their
+      instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-github-awesome-copilot-skills-eval-driven-dev-skill-md-8593d735
+        contribution: eval-driven-dev contributes independently fingerprinted boundary
+          and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-hypergiant-agent-skills-skills-accelint-ac-to-playwright-skill-md-4ee2fada
+        contribution: accelint-ac-to-playwright contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
   - capability: atom-classify-capability
-    synthesis: Extract one stable capability contract and its boundary without installing, activating, or promoting the source.
+    synthesis: Extract one stable capability contract and its boundary without
+      installing, activating, or promoting the source.
     evidence:
       - catalogEntry: skill-anthropics-skills-skill-creator-af6ef02d
         contribution: Skill structure and creation concerns.
@@ -101,8 +87,375 @@ capabilityMappings:
       - catalogEntry: skill-trailofbits-skills-skill-improver-5b7b9acd
         contribution: Skill quality analysis and improvement concerns.
         usage: design-evidence-only
+  - capability: atom-compare-decisions
+    synthesis: Compare a bounded option set against explicit weighted criteria,
+      uncertainty, reversibility, and decision-sensitive trade-offs. The local
+      contract narrows multiple upstream patterns to one outcome and keeps their
+      instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-github-awesome-copilot-skills-eval-driven-dev-skill-md-8593d735
+        contribution: eval-driven-dev contributes independently fingerprinted boundary
+          and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-openai-skills-skills-curated-define-goal-skill-md-1004dc3a
+        contribution: define-goal contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-critique-output
+    synthesis: Evaluate one artifact against an explicit rubric and return
+      prioritized, evidence-located improvement findings without rewriting it.
+      The local contract narrows multiple upstream patterns to one outcome and
+      keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-scientific-skills-skills-research-lookup-skill-md-7fdf2737
+        contribution: research-lookup contributes independently fingerprinted boundary
+          and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-trailofbits-skills-plugins-static-analysis-skills-semgrep-skill-md-b967ad56
+        contribution: semgrep contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-debug-software
+    synthesis: Reproduce, isolate, explain, and verify one software defect before
+      proposing the smallest justified correction. The local contract narrows
+      multiple upstream patterns to one outcome and keeps their instruction
+      bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-github-awesome-copilot-skills-bug-reproduction-brief-skill-md-bda66524
+        contribution: bug-reproduction-brief contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-github-awesome-copilot-skills-flowstudio-power-automate-debug-skill-md-aea7dc03
+        contribution: flowstudio-power-automate-debug contributes independently
+          fingerprinted boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-design-api-contract
+    synthesis: Specify one API surface with operations, schemas, errors,
+      compatibility, authorization, idempotency, and examples without
+      implementing it. The local contract narrows multiple upstream patterns to
+      one outcome and keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-github-awesome-copilot-skills-anti-ui-slop-skill-md-a2db88e0
+        contribution: anti-ui-slop contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-addyosmani-agent-skills-skills-api-and-interface-design-skill-md-488ef919
+        contribution: api-and-interface-design contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-design-automation-workflow
+    synthesis: Model trigger, steps, data contracts, permissions, idempotency,
+      observability, and recovery before binding to one automation product.
+    evidence:
+      - catalogEntry: skill-addyosmani-agent-skills-ci-cd-and-automation-29d0cc8a
+        contribution: Repeatable automation lifecycle.
+        usage: design-evidence-only
+      - catalogEntry: mcp-ai-agentutility-mcp-browser-workflow-d744626520
+        contribution: MCP-backed workflow dependency boundary.
+        usage: design-evidence-only
+  - capability: atom-design-interface-spec
+    synthesis: Produce an implementation-neutral interface contract covering layout,
+      states, interaction, and accessibility without broadening into coding.
+    evidence:
+      - catalogEntry: skill-addyosmani-agent-skills-api-and-interface-design-65b474ac
+        contribution: Explicit interface design boundary.
+        usage: design-evidence-only
+      - catalogEntry: skill-anthropics-skills-frontend-design-29ad32fd
+        contribution: Visual-system and frontend experience concerns.
+        usage: design-evidence-only
+  - capability: atom-design-research-study
+    synthesis: Produce a study protocol with hypothesis, variables, sampling,
+      controls, analysis plan, ethics, and validity threats. The local contract
+      narrows multiple upstream patterns to one outcome and keeps their
+      instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-scientific-skills-skills-experimental-design-skill-md-280c706f
+        contribution: experimental-design contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-scientific-skills-skills-statistical-power-skill-md-d72f23a5
+        contribution: statistical-power contributes independently fingerprinted boundary
+          and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-design-software-architecture
+    synthesis: Produce one system design with components, responsibilities, data
+      flow, quality attributes, trade-offs, failure modes, and migration path.
+      The local contract narrows multiple upstream patterns to one outcome and
+      keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-github-awesome-copilot-skills-penpot-uiux-design-skill-md-e5182019
+        contribution: penpot-uiux-design contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-github-awesome-copilot-skills-react18-string-refs-skill-md-131ce088
+        contribution: react18-string-refs contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-find-research-sources
+    synthesis: Isolate authoritative source discovery and ranking from later
+      synthesis or artifact production.
+    evidence:
+      - catalogEntry: skill-k-dense-ai-claude-scientific-skills-research-lookup-64fd7bc4
+        contribution: Research lookup as a distinct capability.
+        usage: design-evidence-only
+      - catalogEntry: skill-huggingface-skills-huggingface-papers-08cc9c02
+        contribution: Paper discovery and evidence provenance.
+        usage: design-evidence-only
+  - capability: atom-frame-problem
+    synthesis: Turn one ambiguous request into a bounded problem statement with
+      goals, constraints, assumptions, stakeholders, and success criteria. The
+      local contract narrows multiple upstream patterns to one outcome and keeps
+      their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-hypergiant-agent-skills-skills-accelint-prompt-manager-skill-md-59b9afce
+        contribution: accelint-prompt-manager contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-openai-skills-skills-curated-define-goal-skill-md-1004dc3a
+        contribution: define-goal contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-implement-code-change
+    synthesis: Keep one bounded authorized mutation and its verification together
+      while excluding broad planning and independent security review.
+    evidence:
+      - catalogEntry: skill-addyosmani-agent-skills-incremental-implementation-99c73b0d
+        contribution: Incremental implementation pattern.
+        usage: design-evidence-only
+      - catalogEntry: skill-trailofbits-skills-code-improver-8debe69b
+        contribution: Focused source improvement boundary.
+        usage: design-evidence-only
+  - capability: atom-manage-research-citations
+    synthesis: Normalize, validate, deduplicate, and map scholarly references to
+      claims without inventing identifiers or bibliographic facts. The local
+      contract narrows multiple upstream patterns to one outcome and keeps their
+      instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-scientific-skills-skills-pyzotero-skill-md-78ea235a
+        contribution: pyzotero contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-scientific-skills-skills-citation-management-skill-md-d5734ad3
+        contribution: citation-management contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-operate-browser-workflow
+    synthesis: Complete one bounded browser procedure from observed page state with
+      explicit confirmation before consequential submission or communication.
+      The local contract narrows multiple upstream patterns to one outcome and
+      keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-baoyu-skills-skills-baoyu-post-to-x-skill-md-ddd0ab6e
+        contribution: baoyu-post-to-x contributes independently fingerprinted boundary
+          and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-hypergiant-agent-skills-skills-accelint-qrspi-propose-skill-md-502a51db
+        contribution: accelint-qrspi-propose contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-operate-design-tool
+    synthesis: Apply an approved visual specification in a named design application
+      while preserving components, constraints, accessibility, and editability.
+      The local contract narrows multiple upstream patterns to one outcome and
+      keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-openai-skills-skills-curated-figma-implement-design-skill-md-a61e7edd
+        contribution: figma-implement-design contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-openai-skills-skills-curated-figma-generate-design-skill-md-44dcad15
+        contribution: figma-generate-design contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-operate-git-workflow
+    synthesis: Execute one authorized version-control operation after inspecting
+      repository state, preserving unrelated work, and verifying the resulting
+      history. The local contract narrows multiple upstream patterns to one
+      outcome and keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-n8n-skills-skills-n8n-multi-instance-skill-md-72195676
+        contribution: n8n-multi-instance contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-github-awesome-copilot-skills-make-repo-contribution-skill-md-cbc68bc4
+        contribution: make-repo-contribution contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-operate-knowledge-vault
+    synthesis: Create or reorganize one bounded set of notes while preserving links,
+      metadata, naming conventions, and user-owned knowledge. The local contract
+      narrows multiple upstream patterns to one outcome and keeps their
+      instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-github-awesome-copilot-skills-steno-mode-skill-md-a4bf3103
+        contribution: steno-mode contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-huggingface-skills-skills-huggingface-papers-skill-md-985c2d5c
+        contribution: huggingface-papers contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-operate-spreadsheet
+    synthesis: Apply one bounded spreadsheet edit while preserving formulas,
+      formats, sheet structure, and a verifiable before-and-after state. The
+      local contract narrows multiple upstream patterns to one outcome and keeps
+      their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-scientific-skills-skills-xlsx-skill-md-b4e93000
+        contribution: xlsx contributes independently fingerprinted boundary and workflow
+          design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-anthropic-skills-skills-xlsx-skill-md-ccbfa6f6
+        contribution: xlsx contributes independently fingerprinted boundary and workflow
+          design evidence.
+        usage: design-evidence-only
+  - capability: atom-operate-terminal-cli
+    synthesis: Run one bounded command-line workflow with explicit working
+      directory, arguments, side-effect review, captured output, and
+      verification. The local contract narrows multiple upstream patterns to one
+      outcome and keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-hypergiant-agent-skills-skills-accelint-qrspi-propose-skill-md-502a51db
+        contribution: accelint-qrspi-propose contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-trailofbits-skills-plugins-static-analysis-skills-semgrep-skill-md-b967ad56
+        contribution: semgrep contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-optimize-code-performance
+    synthesis: Improve one measured software bottleneck under an explicit
+      performance budget while preserving behavior and verifying
+      before-and-after results. The local contract narrows multiple upstream
+      patterns to one outcome and keeps their instruction bodies out of the
+      package.
+    evidence:
+      - inventoryEntry: upstream-anthropic-skills-skills-skill-creator-skill-md-c08c99c4
+        contribution: skill-creator contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-github-awesome-copilot-skills-arize-prompt-optimization-skill-md-66f40e47
+        contribution: arize-prompt-optimization contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-organize-personal-tasks
+    synthesis: Turn commitments into a dated reviewable list without silently
+      creating calendar events, reminders, or notifications.
+    evidence:
+      - catalogEntry: mcp-ai-calendarmcp-server-f8ab5b3489
+        contribution: Calendar integration as an optional external side effect.
+        usage: design-evidence-only
+      - catalogEntry: skill-addyosmani-agent-skills-planning-and-task-breakdown-1cb74a63
+        contribution: Task decomposition and priority ordering.
+        usage: design-evidence-only
+  - capability: atom-plan-code-change
+    synthesis: Separate implementation-ready planning from mutation so scope, files,
+      risks, and verification can be reviewed before code changes.
+    evidence:
+      - catalogEntry: skill-addyosmani-agent-skills-planning-and-task-breakdown-1cb74a63
+        contribution: Planning and task-decomposition capability boundary.
+        usage: design-evidence-only
+      - catalogEntry: skill-gohypergiant-agent-skills-accelint-qrspi-propose-e9434f7b
+        contribution: Proposal-first lifecycle pattern.
+        usage: design-evidence-only
+  - capability: atom-plan-software-release
+    synthesis: Produce a release plan with versioning, compatibility, migration,
+      staged rollout, observability, rollback, and communication checkpoints.
+      The local contract narrows multiple upstream patterns to one outcome and
+      keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-github-awesome-copilot-skills-scaffolding-oracle-to-postgres-migration-test-project-skill-md-290b53bb
+        contribution: scaffolding-oracle-to-postgres-migration-test-project contributes
+          independently fingerprinted boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-addyosmani-agent-skills-skills-git-workflow-and-versioning-skill-md-bd2a1475
+        contribution: git-workflow-and-versioning contributes independently
+          fingerprinted boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-review-code-quality
+    synthesis: Review a bounded code change for correctness, maintainability, tests,
+      and regressions with line-located prioritized findings and no edits. The
+      local contract narrows multiple upstream patterns to one outcome and keeps
+      their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-github-awesome-copilot-skills-threat-model-analyst-skill-md-bf101018
+        contribution: threat-model-analyst contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-github-awesome-copilot-skills-ruff-recursive-fix-skill-md-bac1bff7
+        contribution: ruff-recursive-fix contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-review-literature
+    synthesis: Synthesize a bounded body of scholarly evidence into themes,
+      agreements, conflicts, gaps, and traceable conclusions. The local contract
+      narrows multiple upstream patterns to one outcome and keeps their
+      instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-scientific-skills-skills-bgpt-paper-search-skill-md-e83741bc
+        contribution: bgpt-paper-search contributes independently fingerprinted boundary
+          and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-scientific-skills-skills-scholar-evaluation-skill-md-7acb6bb4
+        contribution: scholar-evaluation contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-translate-document
+    synthesis: Treat translation as meaning-preserving document transformation with
+      structure and terminology constraints.
+    evidence:
+      - catalogEntry: skill-gohypergiant-agent-skills-accelint-english-manager-42c5f948
+        contribution: Language-specific editorial workflow.
+        usage: design-evidence-only
+      - catalogEntry: skill-anthropics-skills-docx-6db5d745
+        contribution: Structured document preservation requirements.
+        usage: design-evidence-only
+  - capability: atom-write-automated-tests
+    synthesis: Add one bounded automated test surface that proves specified behavior
+      and fails for the intended defect without changing product behavior. The
+      local contract narrows multiple upstream patterns to one outcome and keeps
+      their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-hypergiant-agent-skills-skills-accelint-skill-prose-skill-md-e37de0d9
+        contribution: accelint-skill-prose contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-addyosmani-agent-skills-skills-test-driven-development-skill-md-ee8c9dcd
+        contribution: test-driven-development contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: atom-write-product-requirements
+    synthesis: Define one product change through user problem, scope, stories,
+      constraints, acceptance criteria, metrics, and unresolved decisions. The
+      local contract narrows multiple upstream patterns to one outcome and keeps
+      their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-hypergiant-agent-skills-skills-accelint-ac-to-playwright-skill-md-4ee2fada
+        contribution: accelint-ac-to-playwright contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-github-awesome-copilot-skills-prd-skill-md-ed870a30
+        contribution: prd contributes independently fingerprinted boundary and workflow
+          design evidence.
+        usage: design-evidence-only
+  - capability: atom-write-scientific-manuscript
+    synthesis: Turn verified study evidence into a structured scholarly manuscript
+      while preserving claim-to-source and result-to-analysis traceability. The
+      local contract narrows multiple upstream patterns to one outcome and keeps
+      their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-scientific-skills-skills-peer-review-skill-md-be10d38f
+        contribution: peer-review contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-scientific-skills-skills-scientific-writing-skill-md-9d2eb888
+        contribution: scientific-writing contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
   - capability: meta-skill-governor
-    synthesis: Convert Skill maintenance into a versioned proposal, protected evaluation, approval, promotion, deprecation, and rollback lifecycle that also constrains itself.
+    synthesis: Convert Skill maintenance into a versioned proposal, protected
+      evaluation, approval, promotion, deprecation, and rollback lifecycle that
+      also constrains itself.
     evidence:
       - catalogEntry: skill-trailofbits-skills-skill-improver-5b7b9acd
         contribution: Iterative Skill improvement pattern.
@@ -110,27 +463,47 @@ capabilityMappings:
       - catalogEntry: skill-gohypergiant-agent-skills-accelint-skill-manager-7a32f482
         contribution: Skill lifecycle management pattern.
         usage: design-evidence-only
+  - capability: meta-upstream-skill-curator
+    synthesis: Discover, mirror, fingerprint, license-check, classify, deduplicate,
+      synthesize, evaluate, and admit external Skills without executing or
+      blindly copying them. The local contract narrows multiple upstream
+      patterns to one outcome and keeps their instruction bodies out of the
+      package.
+    evidence:
+      - inventoryEntry: upstream-hypergiant-agent-skills-skills-constraints-extractor-skill-md-be15e450
+        contribution: constraints-extractor contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-scientific-skills-skills-arbor-skill-md-7199ed60
+        contribution: arbor contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
 packMappings:
   - pack: software-delivery
-    compositionRationale: Plan before mutation and keep independent security verification after implementation.
+    compositionRationale: Plan before mutation and keep independent security
+      verification after implementation.
     evidence:
       - skill-addyosmani-agent-skills-planning-and-task-breakdown-1cb74a63
       - skill-addyosmani-agent-skills-incremental-implementation-99c73b0d
       - skill-getsentry-skills-security-review-3bf92664
   - pack: evidence-backed-market-research
-    compositionRationale: Discover traceable evidence before producing a decision-relevant market analysis, with live market MCPs remaining optional.
+    compositionRationale: Discover traceable evidence before producing a
+      decision-relevant market analysis, with live market MCPs remaining
+      optional.
     evidence:
       - skill-k-dense-ai-claude-scientific-skills-research-lookup-64fd7bc4
       - skill-k-dense-ai-claude-scientific-skills-market-research-reports-f3535d6e
       - mcp-ai-agentutility-mcp-edge-market-068d58f817
   - pack: localized-research-brief
-    compositionRationale: Gather evidence, analyze it, translate meaning, and preserve document structure as separately replaceable stages.
+    compositionRationale: Gather evidence, analyze it, translate meaning, and
+      preserve document structure as separately replaceable stages.
     evidence:
       - skill-k-dense-ai-claude-scientific-skills-research-lookup-64fd7bc4
       - skill-gohypergiant-agent-skills-accelint-english-manager-42c5f948
       - skill-anthropics-skills-docx-6db5d745
   - pack: safe-skill-evolution
-    compositionRationale: Classify capability boundaries, improve through tests, and retain an externally reviewable evaluation gate.
+    compositionRationale: Classify capability boundaries, improve through tests, and
+      retain an externally reviewable evaluation gate.
     evidence:
       - skill-anthropics-skills-skill-creator-af6ef02d
       - skill-trailofbits-skills-skill-improver-5b7b9acd

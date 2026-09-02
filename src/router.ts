@@ -184,15 +184,27 @@ export function routeRequest(
   const atomLimit = options.atomLimit ?? 5;
   const ambiguityDelta = options.ambiguityDelta ?? 4;
 
-  const allCategories = sortCandidates(
+  const lexicalCategories = sortCandidates(
     taxonomy.nodes.map((node) => scoreCategory(prompt, promptTokens, node, locale))
   );
-  const categoryScores = new Map(allCategories.map((candidate) => [candidate.id, candidate.score]));
+  const categoryScores = new Map(lexicalCategories.map((candidate) => [candidate.id, candidate.score]));
   const allAtoms = sortCandidates(
     contracts
       .filter((contract) => contract.kind === "atom")
       .map((contract) => scoreContract(prompt, promptTokens, contract, locale, categoryScores))
   );
+  const strongestAtom = allAtoms[0];
+  const strongestContract = strongestAtom && strongestAtom.score >= 2
+    ? contracts.find((contract) => contract.id === strongestAtom.id)
+    : undefined;
+  const allCategories = sortCandidates(lexicalCategories.map((candidate) => {
+    if (candidate.id !== strongestContract?.taxonomy.primaryCategory) return candidate;
+    return {
+      ...candidate,
+      score: Number((candidate.score + Math.max(10, strongestAtom?.score ?? 0)).toFixed(4)),
+      matched: [...candidate.matched, `atom-affinity:${strongestContract.id}`]
+    };
+  }));
   const special = sortCandidates(
     contracts
       .filter((contract) => contract.kind === "meta")

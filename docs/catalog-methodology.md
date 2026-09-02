@@ -2,7 +2,7 @@
 
 The catalog is evidence for classification and decomposition. It is not an installation list.
 
-`catalog/decomposition-map.yaml` closes the loop from collection to local design. It maps every non-category local capability and every capability pack to representative catalog entry IDs, records the contribution used during synthesis, and fixes the evidence to the catalog snapshot digest. Every mapping is `design-evidence-only`: it does not copy, install, execute, or promote upstream content.
+`catalog/decomposition-map.yaml` closes the loop from collection to local design. It maps every non-category local capability and every capability pack to representative catalog or downloaded-inventory IDs, records the contribution used during synthesis, and fixes the evidence to both snapshot digests. Every mapping is `design-evidence-only`: it does not copy, install, execute, or promote upstream content.
 
 ## Current snapshot
 
@@ -15,11 +15,15 @@ The 2026-09-02 snapshot contains 658 normalized records:
 
 Exact counts, revisions, and the aggregate digest are recorded in `catalog/snapshots/manifest.yaml`.
 
+The separate downloaded inventory contains 1,061 `SKILL.md` records from 22 declared repositories, of which 21 currently contain matching files. Content fingerprints identify 1,055 unique instruction bodies and 6 exact duplicates. The inventory is intentionally broader than the normalized catalog and is stored in `catalog/upstream-skill-inventory.yaml`.
+
 ## Collection rules
 
 ### Agent Skills
 
 The collector makes a shallow, blob-filtered, no-checkout clone and lists tracked `SKILL.md` paths from `HEAD`. It records the exact commit, repository, path, author namespace, detected repository license, and freshness. It does not run hooks, package managers, scripts, or Skill instructions.
+
+`catalog mirror-skills` maintains an ignored local Git-object cache, extracts only frontmatter metadata, computes exact-content fingerprints, marks duplicates, and applies an extensible first-pass classification. Problem solving, scientific research, software development, and software use are seed families rather than an exhaustive ontology; other families and a manual-review queue remain available.
 
 ### MCP servers
 
@@ -43,4 +47,4 @@ Repository license detection is conservative. Apache-2.0, MIT, GPL-3.0-only, AGP
 
 ## Reproducibility
 
-`npm run skillpack -- catalog collect` refreshes the catalog from `catalog/sources.yaml`. The configured `verifiedAt` timestamp, fixed upstream revisions, per-entry fingerprints, and snapshot digest make changes reviewable. CI validates the committed snapshot and does not require live network access.
+`npm run skillpack -- catalog collect` refreshes the normalized catalog. `npm run skillpack -- catalog mirror-skills --refresh` refreshes the broader downloaded inventory. The configured `verifiedAt` timestamp, fixed upstream revisions, per-entry fingerprints, and snapshot digests make changes reviewable. CI validates committed snapshots and does not require live network access.

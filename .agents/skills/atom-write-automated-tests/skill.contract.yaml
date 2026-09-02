@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-write-automated-tests
+kind: atom
+version: 0.1.0
+name:
+  en: Write automated tests
+  zh-CN: 编写自动化测试
+summary:
+  en: Add one bounded automated test surface that proves specified behavior and
+    fails for the intended defect without changing product behavior.
+  zh-CN: 添加一个有界自动测试面，证明指定行为并能针对目标缺陷失败，不改变产品行为。
+outcomes:
+  - Verified automated test change
+artifacts:
+  - test-change
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: test-change
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+  - shell-execution
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: code-quality-delivery
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - cli-backed
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - write automated tests
+      - add regression coverage
+      - create unit or integration tests
+    zh-CN:
+      - 编写自动测试
+      - 添加回归覆盖
+      - 创建单元或集成测试
+  negativeTriggers:
+    en:
+      - implement product behavior
+      - only describe a test plan
+    zh-CN:
+      - 实现产品行为
+      - 只描述测试计划
+  confusableWith:
+    - atom-implement-code-change
+    - atom-plan-code-change
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

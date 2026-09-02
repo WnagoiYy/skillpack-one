@@ -1,0 +1,74 @@
+schemaVersion: 1
+id: category-software-use
+kind: category
+version: 0.1.0
+name:
+  en: Software use Router
+  zh-CN: 软件使用路由器
+summary:
+  en: Route software use requests to the smallest certified Atomic Skill.
+  zh-CN: 将软件使用请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded software-use category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: software-use
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - use software
+      - operate tool
+      - cli
+      - browser
+      - spreadsheet
+      - obsidian
+    zh-CN:
+      - 使用软件
+      - 操作工具
+      - 命令行
+      - 浏览器
+      - 表格
+      - Obsidian
+  negativeTriggers:
+    en:
+      - building the software itself
+      - silently performing external side effects
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

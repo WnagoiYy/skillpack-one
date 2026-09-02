@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-brainstorm-options
+kind: atom
+version: 0.1.0
+name:
+  en: Brainstorm options
+  zh-CN: 头脑风暴方案
+summary:
+  en: Generate a deliberately varied set of options for one framed problem without
+    prematurely selecting or implementing one.
+  zh-CN: 针对一个已定义问题生成刻意多样的方案，不提前选择或实施。
+outcomes:
+  - Diverse option set
+artifacts:
+  - option-set
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: option-set
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - none
+permissions:
+  network: none
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: ideation-planning
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - brainstorm options
+      - generate alternative ideas
+      - explore possible approaches
+    zh-CN:
+      - 头脑风暴方案
+      - 生成不同想法
+      - 探索可选路径
+  negativeTriggers:
+    en:
+      - choose the best option
+      - create the implementation plan
+    zh-CN:
+      - 选择最佳方案
+      - 制定实施计划
+  confusableWith:
+    - atom-compare-decisions
+    - atom-build-action-plan
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

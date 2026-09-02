@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-design-research-study
+kind: atom
+version: 0.1.0
+name:
+  en: Design a research study
+  zh-CN: 设计研究方案
+summary:
+  en: Produce a study protocol with hypothesis, variables, sampling, controls,
+    analysis plan, ethics, and validity threats.
+  zh-CN: 生成含假设、变量、抽样、对照、分析计划、伦理与效度威胁的研究方案。
+outcomes:
+  - Reviewable study protocol
+artifacts:
+  - study-protocol
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: study-protocol
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - none
+permissions:
+  network: none
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: scientific-research
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - design a research study
+      - create an experiment protocol
+      - plan a scientific investigation
+    zh-CN:
+      - 设计研究
+      - 制定实验方案
+      - 规划科学调查
+  negativeTriggers:
+    en:
+      - analyze completed results
+      - make a clinical decision
+    zh-CN:
+      - 分析已完成结果
+      - 做临床决策
+  confusableWith:
+    - atom-analyze-experimental-results
+    - atom-build-action-plan
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

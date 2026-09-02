@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-analyze-experimental-results
+kind: atom
+version: 0.1.0
+name:
+  en: Analyze experimental results
+  zh-CN: 分析实验结果
+summary:
+  en: Analyze one experimental dataset against a declared protocol with
+    reproducible calculations, uncertainty, diagnostics, and bounded claims.
+  zh-CN: 按既定方案分析一个实验数据集，提供可复现计算、不确定性、诊断与有限结论。
+outcomes:
+  - Reproducible experimental analysis
+artifacts:
+  - experiment-analysis
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: experiment-analysis
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: scientific-research
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - analyze experiment results
+      - test this scientific hypothesis
+      - interpret this study dataset
+    zh-CN:
+      - 分析实验结果
+      - 检验科学假设
+      - 解读研究数据
+  negativeTriggers:
+    en:
+      - design the experiment
+      - edit the spreadsheet only
+    zh-CN:
+      - 设计实验
+      - 只编辑表格
+  confusableWith:
+    - atom-analyze-tabular-data
+    - atom-design-research-study
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

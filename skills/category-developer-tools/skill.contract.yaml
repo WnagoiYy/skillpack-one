@@ -1,0 +1,72 @@
+schemaVersion: 1
+id: category-developer-tools
+kind: category
+version: 0.1.0
+name:
+  en: Developer tools Router
+  zh-CN: 开发工具路由器
+summary:
+  en: Route developer tools requests to the smallest certified Atomic Skill.
+  zh-CN: 将开发工具请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded developer-tools category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: developer-tools
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - git workflow
+      - terminal
+      - cli
+      - browser workflow
+      - devtools
+    zh-CN:
+      - Git工作流
+      - 终端
+      - 命令行
+      - 浏览器工作流
+      - 开发者工具
+  negativeTriggers:
+    en:
+      - writing product code
+      - general office software
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

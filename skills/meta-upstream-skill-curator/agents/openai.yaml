@@ -1,0 +1,7 @@
+interface:
+  display_name: Meta Upstream Skill Curator
+  short_description: Route and apply Meta Upstream Skill Curator
+  default_prompt: Use $meta-upstream-skill-curator to handle this request within
+    its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-review-code-quality
+kind: atom
+version: 0.1.0
+name:
+  en: Review code quality
+  zh-CN: 评审代码质量
+summary:
+  en: Review a bounded code change for correctness, maintainability, tests, and
+    regressions with line-located prioritized findings and no edits.
+  zh-CN: 对有限代码变更进行正确性、可维护性、测试与回归评审，给出定位和优先级，不修改代码。
+outcomes:
+  - Prioritized code-review findings
+artifacts:
+  - code-review
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: code-review
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: code-quality-delivery
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - review this code change
+      - inspect this pull request for bugs
+      - assess code quality
+    zh-CN:
+      - 评审代码变更
+      - 检查PR中的Bug
+      - 评估代码质量
+  negativeTriggers:
+    en:
+      - fix the code
+      - perform a security audit
+    zh-CN:
+      - 修复代码
+      - 进行安全审计
+  confusableWith:
+    - atom-audit-source-security
+    - atom-critique-output
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

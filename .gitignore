@@ -10,4 +10,5 @@ coverage/
 Thumbs.db
 .skill-system/runs/
 .skill-system/sandboxes/
+.skill-system/upstream-cache/
 tmp/

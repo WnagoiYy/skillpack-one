@@ -1,0 +1,7 @@
+interface:
+  display_name: Category Developer Tools
+  short_description: Route and apply Category Developer Tools
+  default_prompt: Use $category-developer-tools to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

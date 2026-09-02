@@ -1,0 +1,268 @@
+schemaVersion: 1
+id: routing-library-en
+split: dev
+locale: en
+protected: false
+examples:
+  - id: en-01-frame-problem
+    prompt: frame this problem. Return only the bounded outcome described by this
+      request.
+    expectedCategory: problem-framing
+    expectedAtoms:
+      - atom-frame-problem
+    mustNotRoute:
+      - atom-brainstorm-options
+    tags:
+      - expanded-library
+      - en
+  - id: en-02-brainstorm-options
+    prompt: brainstorm options. Return only the bounded outcome described by this
+      request.
+    expectedCategory: ideation-planning
+    expectedAtoms:
+      - atom-brainstorm-options
+    mustNotRoute:
+      - atom-compare-decisions
+    tags:
+      - expanded-library
+      - en
+  - id: en-03-build-action-plan
+    prompt: make an action plan. Return only the bounded outcome described by this
+      request.
+    expectedCategory: ideation-planning
+    expectedAtoms:
+      - atom-build-action-plan
+    mustNotRoute:
+      - atom-plan-code-change
+    tags:
+      - expanded-library
+      - en
+  - id: en-04-compare-decisions
+    prompt: compare these options. Return only the bounded outcome described by this
+      request.
+    expectedCategory: decision-review
+    expectedAtoms:
+      - atom-compare-decisions
+    mustNotRoute:
+      - atom-brainstorm-options
+    tags:
+      - expanded-library
+      - en
+  - id: en-05-critique-output
+    prompt: critique this output. Return only the bounded outcome described by this
+      request.
+    expectedCategory: decision-review
+    expectedAtoms:
+      - atom-critique-output
+    mustNotRoute:
+      - atom-review-code-quality
+    tags:
+      - expanded-library
+      - en
+  - id: en-06-review-literature
+    prompt: review the scientific literature. Return only the bounded outcome
+      described by this request.
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-review-literature
+    mustNotRoute:
+      - atom-find-research-sources
+    tags:
+      - expanded-library
+      - en
+  - id: en-07-design-research-study
+    prompt: design a research study. Return only the bounded outcome described by
+      this request.
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-design-research-study
+    mustNotRoute:
+      - atom-analyze-experimental-results
+    tags:
+      - expanded-library
+      - en
+  - id: en-08-analyze-experimental-results
+    prompt: analyze experiment results. Return only the bounded outcome described by
+      this request.
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-analyze-experimental-results
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - en
+  - id: en-09-write-scientific-manuscript
+    prompt: write a scientific manuscript. Return only the bounded outcome described
+      by this request.
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-write-scientific-manuscript
+    mustNotRoute:
+      - atom-review-literature
+    tags:
+      - expanded-library
+      - en
+  - id: en-10-manage-research-citations
+    prompt: clean these citations. Return only the bounded outcome described by this
+      request.
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-manage-research-citations
+    mustNotRoute:
+      - atom-find-research-sources
+    tags:
+      - expanded-library
+      - en
+  - id: en-11-write-product-requirements
+    prompt: write a PRD. Return only the bounded outcome described by this request.
+    expectedCategory: product-definition
+    expectedAtoms:
+      - atom-write-product-requirements
+    mustNotRoute:
+      - atom-design-software-architecture
+    tags:
+      - expanded-library
+      - en
+  - id: en-12-design-software-architecture
+    prompt: design software architecture. Return only the bounded outcome described
+      by this request.
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-design-software-architecture
+    mustNotRoute:
+      - atom-design-api-contract
+    tags:
+      - expanded-library
+      - en
+  - id: en-13-design-api-contract
+    prompt: design an API contract. Return only the bounded outcome described by
+      this request.
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-design-api-contract
+    mustNotRoute:
+      - atom-design-software-architecture
+    tags:
+      - expanded-library
+      - en
+  - id: en-14-debug-software
+    prompt: debug this bug. Return only the bounded outcome described by this request.
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-debug-software
+    mustNotRoute:
+      - atom-implement-code-change
+    tags:
+      - expanded-library
+      - en
+  - id: en-15-write-automated-tests
+    prompt: write automated tests. Return only the bounded outcome described by this
+      request.
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-write-automated-tests
+    mustNotRoute:
+      - atom-implement-code-change
+    tags:
+      - expanded-library
+      - en
+  - id: en-16-review-code-quality
+    prompt: review this code change. Return only the bounded outcome described by
+      this request.
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-review-code-quality
+    mustNotRoute:
+      - atom-audit-source-security
+    tags:
+      - expanded-library
+      - en
+  - id: en-17-optimize-code-performance
+    prompt: optimize this bottleneck. Return only the bounded outcome described by
+      this request.
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-optimize-code-performance
+    mustNotRoute:
+      - atom-implement-code-change
+    tags:
+      - expanded-library
+      - en
+  - id: en-18-plan-software-release
+    prompt: plan a software release. Return only the bounded outcome described by
+      this request.
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-plan-software-release
+    mustNotRoute:
+      - atom-plan-code-change
+    tags:
+      - expanded-library
+      - en
+  - id: en-19-operate-git-workflow
+    prompt: use git to create a branch. Return only the bounded outcome described by
+      this request.
+    expectedCategory: developer-tools
+    expectedAtoms:
+      - atom-operate-git-workflow
+    mustNotRoute:
+      - atom-implement-code-change
+    tags:
+      - expanded-library
+      - en
+  - id: en-20-operate-terminal-cli
+    prompt: run this CLI command. Return only the bounded outcome described by this
+      request.
+    expectedCategory: developer-tools
+    expectedAtoms:
+      - atom-operate-terminal-cli
+    mustNotRoute:
+      - atom-implement-code-change
+    tags:
+      - expanded-library
+      - en
+  - id: en-21-operate-browser-workflow
+    prompt: operate this website. Return only the bounded outcome described by this
+      request.
+    expectedCategory: developer-tools
+    expectedAtoms:
+      - atom-operate-browser-workflow
+    mustNotRoute:
+      - atom-design-automation-workflow
+    tags:
+      - expanded-library
+      - en
+  - id: en-22-operate-spreadsheet
+    prompt: edit this spreadsheet. Return only the bounded outcome described by this
+      request.
+    expectedCategory: productivity-tools
+    expectedAtoms:
+      - atom-operate-spreadsheet
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - en
+  - id: en-23-operate-knowledge-vault
+    prompt: organize this Obsidian vault. Return only the bounded outcome described
+      by this request.
+    expectedCategory: productivity-tools
+    expectedAtoms:
+      - atom-operate-knowledge-vault
+    mustNotRoute:
+      - atom-organize-personal-tasks
+    tags:
+      - expanded-library
+      - en
+  - id: en-24-operate-design-tool
+    prompt: apply this design in Figma. Return only the bounded outcome described by
+      this request.
+    expectedCategory: design-tools
+    expectedAtoms:
+      - atom-operate-design-tool
+    mustNotRoute:
+      - atom-design-interface-spec
+    tags:
+      - expanded-library
+      - en

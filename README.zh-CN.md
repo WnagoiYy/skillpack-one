@@ -17,7 +17,7 @@ flowchart LR
     R[用户需求] --> C[分类 Skill]
     C --> A[最小原子 Skills]
     A --> P[能力包 / 完整任务]
-    U[658 条上游目录] -. 只作证据 .-> C
+    U[1,061 个 Skill 镜像 + 658 条通用目录] -. 只作证据 .-> C
     M[元 Skill 治理器] --> C
     M --> A
     M --> P
@@ -30,11 +30,12 @@ flowchart LR
 
 | 层级 | 当前数量 | 作用 |
 | --- | ---: | --- |
-| 分类 Skills | 10 | 第一阶段按真实需求分类，并处理领域边界 |
-| 原子 Skills | 11 | 小而独立、可测试、可替换的能力契约 |
-| 元 Skills | 1 | 管理提案、评估、晋级、弃用与回滚，也约束自身 |
+| 分类 Skills | 22 | 开放、分层地按真实需求分类，并处理领域边界 |
+| 原子 Skills | 35 | 小而独立、可测试、可替换的能力契约 |
+| 元 Skills | 2 | 分别管理上游策展，以及提案、评估、晋级、弃用与回滚 |
 | 能力包 | 4 | 不合并原子的前提下，组成端到端任务 |
-| 上游记录 | 658 | 388 个 Agent Skills + 270 个官方 MCP Registry 服务 |
+| 已下载 Skill 清单 | 1,061 | 来自 21 个非空仓库的 1,055 份独立内容；明确标出 6 个完全重复项 |
+| 通用上游目录 | 658 | 388 个 Agent Skills + 270 个官方 MCP Registry 服务 |
 | 疑似重复簇 | 8 | 进入人工审查队列，不自动删除来源 |
 
 每个分类投影同时提供英文回退 `index.md`、`index.en.md`、`index.zh-CN.md` 和通用中文回退 `index.zh.md`。英文 `SKILL.md` 保持跨工具发现兼容性，本地化索引则保留不同语言的表达和路由习惯。
@@ -64,7 +65,7 @@ SkillPack One 是一套通用设计哲学的参考实现。个人、社区和组
 2. **分类 Skill 负责渐进式索引。** 请求先命中分类 Skill，再读取该层级的 `index.md` 或对应语言索引，最后才加载选中的原子 Skill。分类树建议最多三层：行业或领域大类 → 细分领域 → 具体分类 → 原子 Skill；原子 Skill 是叶节点，不计入分类层数。本实现为了兼容 Codex 发现机制，保持可执行 Skill 目录扁平，通过 taxonomy 的父子关系和生成索引表达逻辑层级；其他宿主也可以采用物理嵌套目录。
 3. **所有 Skill 都可以生成、训练和进化。** Skill 可以由人编写、从工作流录制，或在 ChatGPT 中通过 `@skill-creator`、在 Codex 中通过 `$skill-creator` 生成草案。这里的“训练”是依据版本化路由题集和任务题集，持续优化描述、契约、指令与组合，不是静默修改模型权重。元 Skill 负责提案、评测、晋级、弃用和回滚；它既可以管理整个包，也可以只管理某个分类子树或单个 Skill，并以同一门禁约束自身。
 4. **原子 Skill 的职责边界必须明确。** 一个原子 Skill 只拥有一个主要结果、一个主导产物或状态变化、一个权限包络、一个聚焦评分标准和一个可独立复用的失败边界。端到端流程应通过能力包组合原子能力，而不是重新把多个原子揉成巨型 Skill。
-5. **基础规范通用，具体分类并不唯一。** 不同维护者可以按行业、职能、模态或风险采用不同划分。是否符合这套哲学，取决于描述可移植、边界明确、索引渐进、证据可查和进化受治理，而不是照搬本仓库现有的十个一级分类。
+5. **基础规范通用，分类体系开放。** 问题研究、科学研究、软件开发和软件使用只是种子示例，并不是封闭的四分法。本参考实现同时保留商业增长、数据分析、文档沟通、设计媒体、自动化运维、个人效率、安全信任、Skill/Agent 治理等大类。维护者还可以按行业、职能、模态或风险继续增加或拆分类别。是否符合这套哲学，取决于描述可移植、边界明确、索引渐进、证据可查和进化受治理，而不是照搬固定分类清单。
 
 本实现的具体规则见[分类标准](taxonomy/classification-standard.zh-CN.md)、[评估流程](docs/zh-CN/evaluation.md)和[进化策略](docs/zh-CN/evolution-policy.md)。
 
@@ -82,7 +83,18 @@ SkillPack One 是一套通用设计哲学的参考实现。个人、社区和组
 
 ## 快速开始
 
-需要 Node.js 24 或更新版本，以及 Git。
+需要 Node.js 24 或更新版本，以及 Git。安装已发布的预览版并一次性装入当前 Codex 项目：
+
+```sh
+npm install --global skillpack-one@next
+cd 你的-codex-项目
+skillpack install
+skillpack route "设计一个可复现的科学研究"
+```
+
+`skillpack install` 会把完整的已审查投影复制到当前项目 `.agents/skills/`。重复执行不会产生变化；发现用户已有的同名不同内容 Skill 时会拒绝静默覆盖，只有显式传入 `--force` 才会替换。
+
+若要参与仓库开发：
 
 ```sh
 git clone https://github.com/WnagoiYy/skillpack-one.git
@@ -133,27 +145,28 @@ src/                  路由、校验、采集、评估、训练和 Harness
 
 ## 测试与真实进化证据
 
-`npm run skillpack -- gate` 分别评估分类 Hit@1/@3、原子 Hit@1/@3、MRR、等价能力感知的原子 Recall@3 与 Full Coverage@3、不调用准确率和安全通过率，不用一个总分掩盖短板。多原子请求只有在每个必需能力组都出现时才通过 Full Coverage。英文、中文、对抗和同领域硬干扰问题集彼此独立；当前 35 条人工编写样例全部通过，这只验证仓库工程一致性，不代表真实模型通用能力。任务完成率另行评估，不能用路由正确率代替。`skillpack harness effect <without.json> <with.json>` 会在相同数据集与 Harness 下计算成对完成率和 Rubric 增益。
+`npm run skillpack -- gate` 分别评估分类 Hit@1/@3、原子 Hit@1/@3、MRR、等价能力感知的原子 Recall@3 与 Full Coverage@3、不调用准确率和安全通过率，不用一个总分掩盖短板。多原子请求只有在每个必需能力组都出现时才通过 Full Coverage。英文、中文、对抗和同领域硬干扰问题集彼此独立；当前 93 条人工编写样例全部通过，这只验证仓库工程一致性，不代表真实模型通用能力。任务完成率另行评估，不能用路由正确率代替。`skillpack harness effect <without.json> <with.json>` 会在相同数据集与 Harness 下计算成对完成率和 Rubric 增益。
 
 仓库已经保存一次真实的受治理进化：`proposal-generic-zh-fallback`。该候选增加了 `index.zh.md`，依次通过开发集、未参与生成的英文/中文测试集和对抗集，并写入带回滚版本的不可覆盖晋级记录。
 
 新候选可以通过 `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence> --author <identity> --authorship <human|model-assisted|model-generated> [--generator <model>]` 与规范 Git 差异精确绑定，再进入评估和独立晋级决策记录。单个优化步骤可以记录有预算的 `add`、`delete`、`replace` 编辑；分数持平、受保护指标回退、超预算或声明决策与测量不一致都会失败关闭。受保护数据集、基线和发布门槛不能为同时修改它们的候选背书。
 
-Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 22 个 Skill。由于本机尚未配置 Pi 模型提供商凭证，模型驱动的任务完成率仍明确标记为**未认证**。Mock 只验证协议管线，结果始终带 `synthetic: true`；DeepSeek Harness 需等兼容 CLI 版本固定后才启用。
+Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 59 个 Skill。仓库当前包含 93 条路由样例，覆盖原有集、英文集、中文集、同领域干扰集和对抗集，并全部通过确定性路由门禁。由于本机尚未配置 Pi 模型提供商凭证，模型驱动的任务完成率仍明确标记为**未认证**。Mock 只验证协议管线，结果始终带 `synthetic: true`；DeepSeek Harness 需等兼容 CLI 版本固定后才启用。
 
 详细说明见[评估流程](docs/zh-CN/evaluation.md)、[Harness 适配](docs/zh-CN/harnesses.md)和[进化策略](docs/zh-CN/evolution-policy.md)。
 
 [进化知识策略](docs/zh-CN/evolution-knowledge.md)说明如何把重复成功、失败、被拒绝提案和研究证据沉淀为有范围、可追溯的模式，同时避免它们成为隐藏任务指令。
 
-## 刷新 300+ 来源目录
+## 刷新开放的上游资源目录
 
 ```sh
 npm run skillpack -- catalog collect
+npm run skillpack -- catalog mirror-skills --refresh
 npm run skillpack -- catalog deduplicate
 npm run skillpack -- catalog stats
 ```
 
-采集固定 Git 版本并读取官方 MCP Registry 的只读接口，保存来源、归属和指纹；不会运行包、Hook、端点或 Skill 指令。修改来源前请阅读[目录方法](docs/zh-CN/catalog-methodology.md)和[第三方说明](THIRD_PARTY.md)。
+`catalog mirror-skills` 会把声明的 Git 仓库浅下载到被忽略的本地缓存，通过 Git 对象读取 `SKILL.md` 元数据，计算内容指纹、标出完全重复项、执行可扩展的第一轮分类，并生成可提交清单。它不会执行上游包、Hook、脚本、端点或 Skill 指令；许可证不明的内容只能作为设计证据。自动分类不是封闭本体：未命中项进入人工审查队列，维护者可继续在相同契约和评测规则下增加分类节点。修改来源前请阅读[目录方法](docs/zh-CN/catalog-methodology.md)和[第三方说明](THIRD_PARTY.md)。
 
 机器可读的 [`catalog/decomposition-map.yaml`](catalog/decomposition-map.yaml) 说明代表性上游模式如何影响每个本地原子 Skill、元 Skill 和四个能力包，同时不复制或激活上游实现。
 

@@ -1,0 +1,62 @@
+schemaVersion: 1
+id: task-completion-library
+split: dev
+locale: en
+protected: false
+examples:
+  - id: task-frame-problem
+    prompt: Frame this ambiguous retention problem.
+    expectedCategory: problem-framing
+    expectedAtoms:
+      - atom-frame-problem
+    mustNotRoute:
+      - atom-brainstorm-options
+    task: Return goals, constraints, assumptions, stakeholders, non-goals, unknowns,
+      and observable success criteria without proposing solutions.
+    rubric:
+      - Separates outcomes from means
+      - States assumptions and unknowns
+      - Defines observable success
+      - Does not propose solutions
+  - id: task-study-design
+    prompt: Design a reproducible research study.
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-design-research-study
+    mustNotRoute:
+      - atom-analyze-experimental-results
+    task: Produce a protocol with hypothesis, estimand, sampling, variables,
+      controls, analysis, missing data, ethics, and validity threats.
+    rubric:
+      - Defines hypothesis and estimand
+      - Specifies sampling and controls
+      - Predeclares analysis
+      - Addresses ethics and validity
+  - id: task-api-contract
+    prompt: Design an API contract without implementing it.
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-design-api-contract
+    mustNotRoute:
+      - atom-implement-code-change
+    task: Specify operations, schemas, validation, errors, authorization,
+      idempotency, examples, and compatibility rules.
+    rubric:
+      - Defines request and response schemas
+      - Defines error behavior
+      - Covers authorization and idempotency
+      - Includes compatibility tests
+  - id: task-git-operation
+    prompt: Operate a safe Git workflow.
+    expectedCategory: developer-tools
+    expectedAtoms:
+      - atom-operate-git-workflow
+    mustNotRoute:
+      - atom-implement-code-change
+    task: Inspect state, preserve unrelated work, run one authorized operation, and
+      verify status, diff, and history.
+    rubric:
+      - Inspects repository state
+      - Preserves unrelated changes
+      - Uses a bounded operation
+      - Verifies resulting history

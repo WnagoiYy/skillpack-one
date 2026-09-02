@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-write-scientific-manuscript
+kind: atom
+version: 0.1.0
+name:
+  en: Write a scientific manuscript
+  zh-CN: 撰写科学论文
+summary:
+  en: Turn verified study evidence into a structured scholarly manuscript while
+    preserving claim-to-source and result-to-analysis traceability.
+  zh-CN: 将已验证研究证据写成结构化学术论文，并保持论断到来源、结果到分析的可追溯性。
+outcomes:
+  - Traceable manuscript draft
+artifacts:
+  - scientific-manuscript
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: scientific-manuscript
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: scientific-research
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - write a scientific manuscript
+      - draft a research paper
+      - structure the methods and results
+    zh-CN:
+      - 撰写科学论文
+      - 起草研究文章
+      - 编写方法与结果
+  negativeTriggers:
+    en:
+      - invent missing results
+      - submit the paper externally
+    zh-CN:
+      - 编造缺失结果
+      - 对外投稿
+  confusableWith:
+    - atom-review-literature
+    - atom-translate-document
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

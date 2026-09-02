@@ -1,0 +1,72 @@
+schemaVersion: 1
+id: category-problem-framing
+kind: category
+version: 0.1.0
+name:
+  en: Problem framing Router
+  zh-CN: 问题定义路由器
+summary:
+  en: Route problem framing requests to the smallest certified Atomic Skill.
+  zh-CN: 将问题定义请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded problem-framing category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: problem-framing
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - frame problem
+      - define problem
+      - clarify scope
+      - assumptions
+      - constraints
+    zh-CN:
+      - 定义问题
+      - 澄清范围
+      - 假设
+      - 约束
+      - 成功标准
+  negativeTriggers:
+    en:
+      - generating solution options
+      - executing a domain task
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

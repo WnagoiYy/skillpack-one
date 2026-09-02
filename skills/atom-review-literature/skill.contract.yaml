@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-review-literature
+kind: atom
+version: 0.1.0
+name:
+  en: Review scientific literature
+  zh-CN: 科学文献综述
+summary:
+  en: Synthesize a bounded body of scholarly evidence into themes, agreements,
+    conflicts, gaps, and traceable conclusions.
+  zh-CN: 将有限的学术证据综合为主题、共识、冲突、空白与可追溯结论。
+outcomes:
+  - Traceable literature synthesis
+artifacts:
+  - literature-review
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: literature-review
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - network-read
+permissions:
+  network: read
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: scientific-research
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - api-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - review the scientific literature
+      - synthesize these papers
+      - identify research gaps
+    zh-CN:
+      - 综述科学文献
+      - 综合这些论文
+      - 识别研究空白
+  negativeTriggers:
+    en:
+      - only find paper links
+      - fabricate citations
+    zh-CN:
+      - 只查找论文链接
+      - 编造引用
+  confusableWith:
+    - atom-find-research-sources
+    - atom-write-scientific-manuscript
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

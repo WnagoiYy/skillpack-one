@@ -1,0 +1,7 @@
+interface:
+  display_name: Category Productivity Tools
+  short_description: Route and apply Category Productivity Tools
+  default_prompt: Use $category-productivity-tools to handle this request within
+    its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

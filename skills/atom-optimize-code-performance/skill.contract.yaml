@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-optimize-code-performance
+kind: atom
+version: 0.1.0
+name:
+  en: Optimize code performance
+  zh-CN: 优化代码性能
+summary:
+  en: Improve one measured software bottleneck under an explicit performance
+    budget while preserving behavior and verifying before-and-after results.
+  zh-CN: 在明确性能预算下改进一个已测量的软件瓶颈，保持行为并验证前后结果。
+outcomes:
+  - Measured performance improvement
+artifacts:
+  - performance-change
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: performance-change
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+  - shell-execution
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: code-quality-delivery
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - cli-backed
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - optimize this bottleneck
+      - improve measured code performance
+      - reduce this latency or memory use
+    zh-CN:
+      - 优化这个瓶颈
+      - 改进已测量性能
+      - 降低延迟或内存
+  negativeTriggers:
+    en:
+      - guess performance changes without profiling
+      - redesign the entire product
+    zh-CN:
+      - 未经分析猜测优化
+      - 重新设计整个产品
+  confusableWith:
+    - atom-implement-code-change
+    - atom-debug-software
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

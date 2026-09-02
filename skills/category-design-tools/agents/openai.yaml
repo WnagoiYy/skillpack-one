@@ -1,0 +1,7 @@
+interface:
+  display_name: Category Design Tools
+  short_description: Route and apply Category Design Tools
+  default_prompt: Use $category-design-tools to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

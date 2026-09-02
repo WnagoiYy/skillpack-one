@@ -1,0 +1,72 @@
+schemaVersion: 1
+id: category-ideation-planning
+kind: category
+version: 0.1.0
+name:
+  en: Ideation and planning Router
+  zh-CN: 构思与计划路由器
+summary:
+  en: Route ideation and planning requests to the smallest certified Atomic Skill.
+  zh-CN: 将构思与计划请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded ideation-planning category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: ideation-planning
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - brainstorm
+      - generate options
+      - action plan
+      - roadmap
+      - steps
+    zh-CN:
+      - 头脑风暴
+      - 生成方案
+      - 行动计划
+      - 路线图
+      - 步骤
+  negativeTriggers:
+    en:
+      - formal decision scoring
+      - implementation itself
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

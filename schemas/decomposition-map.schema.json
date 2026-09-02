@@ -4,10 +4,11 @@
   "title": "Upstream evidence to local capability decomposition map",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "snapshotDigest", "policy", "capabilityMappings", "packMappings"],
+  "required": ["schemaVersion", "snapshotDigest", "inventoryDigest", "policy", "capabilityMappings", "packMappings"],
   "properties": {
     "schemaVersion": { "const": 1 },
     "snapshotDigest": { "$ref": "#/$defs/digest" },
+    "inventoryDigest": { "$ref": "#/$defs/digest" },
     "policy": { "type": "string", "minLength": 1 },
     "capabilityMappings": {
       "type": "array",
@@ -25,9 +26,10 @@
             "items": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["catalogEntry", "contribution", "usage"],
+              "required": ["contribution", "usage"],
               "properties": {
                 "catalogEntry": { "$ref": "#/$defs/id" },
+                "inventoryEntry": { "$ref": "#/$defs/id" },
                 "contribution": { "type": "string", "minLength": 1 },
                 "usage": { "const": "design-evidence-only" }
               }

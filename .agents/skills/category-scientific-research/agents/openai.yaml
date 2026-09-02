@@ -1,0 +1,7 @@
+interface:
+  display_name: Category Scientific Research
+  short_description: Route and apply Category Scientific Research
+  default_prompt: Use $category-scientific-research to handle this request within
+    its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

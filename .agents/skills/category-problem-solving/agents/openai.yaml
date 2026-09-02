@@ -1,0 +1,7 @@
+interface:
+  display_name: Category Problem Solving
+  short_description: Route and apply Category Problem Solving
+  default_prompt: Use $category-problem-solving to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-operate-spreadsheet
+kind: atom
+version: 0.1.0
+name:
+  en: Operate a spreadsheet
+  zh-CN: 操作电子表格
+summary:
+  en: Apply one bounded spreadsheet edit while preserving formulas, formats, sheet
+    structure, and a verifiable before-and-after state.
+  zh-CN: 执行一个有限表格编辑，同时保留公式、格式、工作表结构及可验证的前后状态。
+outcomes:
+  - Verified spreadsheet edit
+artifacts:
+  - spreadsheet-change
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: spreadsheet-change
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: productivity-tools
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - edit this spreadsheet
+      - add formulas and formatting
+      - update these workbook cells
+    zh-CN:
+      - 编辑电子表格
+      - 添加公式和格式
+      - 更新工作簿单元格
+  negativeTriggers:
+    en:
+      - interpret business metrics
+      - perform statistical analysis
+    zh-CN:
+      - 解读业务指标
+      - 进行统计分析
+  confusableWith:
+    - atom-analyze-tabular-data
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

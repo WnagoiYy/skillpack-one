@@ -1,0 +1,72 @@
+schemaVersion: 1
+id: category-decision-review
+kind: category
+version: 0.1.0
+name:
+  en: Decision and review Router
+  zh-CN: 决策与评审路由器
+summary:
+  en: Route decision and review requests to the smallest certified Atomic Skill.
+  zh-CN: 将决策与评审请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded decision-review category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: decision-review
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - compare options
+      - decision matrix
+      - tradeoff
+      - critique
+      - evaluate output
+    zh-CN:
+      - 比较方案
+      - 决策矩阵
+      - 权衡
+      - 批判
+      - 评估产物
+  negativeTriggers:
+    en:
+      - open-ended ideation
+      - security-specific audits
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

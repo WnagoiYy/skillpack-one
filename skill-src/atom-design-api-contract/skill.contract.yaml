@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-design-api-contract
+kind: atom
+version: 0.1.0
+name:
+  en: Design an API contract
+  zh-CN: 设计API契约
+summary:
+  en: Specify one API surface with operations, schemas, errors, compatibility,
+    authorization, idempotency, and examples without implementing it.
+  zh-CN: 定义一个API的操作、模式、错误、兼容性、授权、幂等性与示例，不实施代码。
+outcomes:
+  - Implementable API contract
+artifacts:
+  - api-contract
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: api-contract
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: software-design
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - design an API contract
+      - specify endpoints and schemas
+      - define an interface protocol
+    zh-CN:
+      - 设计API契约
+      - 定义端点和模式
+      - 定义接口协议
+  negativeTriggers:
+    en:
+      - implement API handlers
+      - design the whole system
+    zh-CN:
+      - 实现API处理器
+      - 设计整个系统
+  confusableWith:
+    - atom-design-software-architecture
+    - atom-implement-code-change
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

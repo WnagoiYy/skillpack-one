@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Manage Research Citations
+  short_description: Route and apply Atom Manage Research Citations
+  default_prompt: Use $atom-manage-research-citations to handle this request
+    within its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

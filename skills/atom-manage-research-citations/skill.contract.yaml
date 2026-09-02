@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-manage-research-citations
+kind: atom
+version: 0.1.0
+name:
+  en: Manage research citations
+  zh-CN: 管理研究引用
+summary:
+  en: Normalize, validate, deduplicate, and map scholarly references to claims
+    without inventing identifiers or bibliographic facts.
+  zh-CN: 规范化、验证、去重并将学术参考文献映射到论断，不编造标识符或书目信息。
+outcomes:
+  - Validated citation set
+artifacts:
+  - citation-library
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: citation-library
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - network-read
+permissions:
+  network: read
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: scientific-research
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - api-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - clean these citations
+      - deduplicate references
+      - validate bibliography entries
+    zh-CN:
+      - 整理引用
+      - 去重参考文献
+      - 验证书目条目
+  negativeTriggers:
+    en:
+      - write the literature review
+      - fabricate a DOI
+    zh-CN:
+      - 撰写文献综述
+      - 编造DOI
+  confusableWith:
+    - atom-find-research-sources
+    - atom-review-literature
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

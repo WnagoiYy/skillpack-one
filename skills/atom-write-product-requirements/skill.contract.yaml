@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-write-product-requirements
+kind: atom
+version: 0.1.0
+name:
+  en: Write product requirements
+  zh-CN: 编写产品需求
+summary:
+  en: Define one product change through user problem, scope, stories, constraints,
+    acceptance criteria, metrics, and unresolved decisions.
+  zh-CN: 通过用户问题、范围、故事、约束、验收标准、指标与未决事项定义一个产品变更。
+outcomes:
+  - Testable product requirements
+artifacts:
+  - product-requirements
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: product-requirements
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: product-definition
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - write a PRD
+      - define product requirements
+      - create user stories and acceptance criteria
+    zh-CN:
+      - 编写PRD
+      - 定义产品需求
+      - 创建用户故事和验收标准
+  negativeTriggers:
+    en:
+      - design the system architecture
+      - implement the feature
+    zh-CN:
+      - 设计系统架构
+      - 实现功能
+  confusableWith:
+    - atom-design-software-architecture
+    - atom-plan-code-change
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

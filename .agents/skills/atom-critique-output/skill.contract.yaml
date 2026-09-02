@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-critique-output
+kind: atom
+version: 0.1.0
+name:
+  en: Critique an output
+  zh-CN: 评审产物
+summary:
+  en: Evaluate one artifact against an explicit rubric and return prioritized,
+    evidence-located improvement findings without rewriting it.
+  zh-CN: 依据明确量规评估一个产物，返回有证据定位和优先级的改进项，不直接重写。
+outcomes:
+  - Prioritized critique
+artifacts:
+  - critique-report
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: critique-report
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - none
+permissions:
+  network: none
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: decision-review
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - critique this output
+      - review against this rubric
+      - find weaknesses in this draft
+    zh-CN:
+      - 评审这个产物
+      - 按量规审查
+      - 找出草稿弱点
+  negativeTriggers:
+    en:
+      - rewrite the artifact
+      - security audit
+    zh-CN:
+      - 重写产物
+      - 安全审计
+  confusableWith:
+    - atom-review-code-quality
+    - atom-audit-source-security
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial
