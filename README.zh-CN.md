@@ -44,6 +44,7 @@ flowchart LR
 - **先需求、后工具。** 先判断目标结果、产物、操作和约束，再选择具体产品或协议。
 - **一个原子一个主要能力。** 稳定能力 ID，加上输入、输出、副作用、权限、非目标和测试，使重叠可计算、可审查。
 - **显式组合。** 多步骤请求只选择经过审查的能力包，把稳定 Skill 子集、数量、依赖顺序和验收测试编译成可解释 DAG。
+- **在安全范围内约束当前状态。** 长任务能力包可以按需声明经 Schema 验证的当前状态，同时把不可变审计历史留在活动提示之外；当历史无法安全投影为状态时，仍使用对话历史模式。
 - **渐进式读取。** Codex 先看到精简元数据，再命中分类索引，最后只加载完成任务所需的原子 Skill。
 - **插件式架构。** 仓库本身是一个插件包，包含清单、两种 Skill 投影、Schema、能力包和评估资产。
 - **证据门禁下的进化。** 元 Skill 可以修改自己，但不能在同一个提案中削弱自己的门禁；保留测试集、权限审批、追加式决策记录和回滚指针不受优化目标控制。
@@ -95,6 +96,7 @@ npm run skillpack -- route "请调研三家竞争对手并输出带引用的中�
 npm run skillpack -- compose "规划、实现并安全审查一个边界明确的代码修改"
 npm run skillpack -- catalog stats
 npm run skillpack -- packs
+npm run skillpack -- state init safe-skill-evolution
 npm run skillpack -- harness status
 npm run skillpack -- harness discover --adapter pi
 ```
@@ -111,6 +113,7 @@ skill-src/            分类、原子与元 Skill 的唯一源文件
 taxonomy/             分类标准与边界
 catalog/              有来源、未执行的上游元数据
 packs/                可组合能力包
+runtime/              能力包可选的专属状态 Schema 与初始状态
 schemas/              机器可读能力契约
 evals/                分集问题集、门槛与基线
 .skill-system/        进化提案与追加式决策记录
@@ -146,7 +149,7 @@ npm run skillpack -- catalog stats
 
 ## 论文依据与边界
 
-[Agent Skill 论文综述](docs/zh-CN/research/2026-09-02-agent-skill-literature.md)把 SkillsBench、Skill-Inject、组合路由、结构化组合、检索和自进化研究分别映射为“立即采纳、暂缓、明确不采纳”。研究可以改进检索、组合、验证与学习闭环，但不会替换 Category → Atom → Capability Pack → Meta 的项目底色。
+[Agent Skill 论文综述](docs/zh-CN/research/2026-09-02-agent-skill-literature.md)把 SkillsBench、Skill-Inject、组合路由、结构化组合、检索和自进化研究分别映射为“立即采纳、暂缓、明确不采纳”。专项的 [WikiSkill 与 SKILL.state 分析](docs/zh-CN/research/2026-09-02-wikiskill-skill-state.md)解释了为什么跨迭代持久知识属于元治理，而单次任务的有界当前状态属于能力包执行。研究可以改进检索、组合、验证、执行与学习闭环，但不会替换 Category → Atom → Capability Pack → Meta 的项目底色。
 
 ## 后续演进
 

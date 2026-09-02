@@ -44,6 +44,7 @@ Every category projection carries an English fallback `index.md` plus `index.en.
 - **Needs before tools.** Classify the requested outcome, artifact, operation, and constraints before selecting a product or protocol.
 - **One primary capability per atom.** Stable capability IDs and explicit inputs, outputs, side effects, permissions, non-goals, and tests make overlap measurable.
 - **Compose explicitly.** Multi-step requests select reviewed Capability Packs whose stable Skill subset, count, dependency order, and acceptance tests compile into an explainable DAG.
+- **Bound current state where safe.** Long-running packs may opt into a schema-validated current-state profile while keeping immutable audit history outside the active prompt. Transcript mode remains valid when history cannot be safely summarized as state.
 - **Progressive disclosure.** Codex sees compact Skill metadata first, then a category index, then only the necessary atomic instructions.
 - **Plugin architecture.** The repository is a plugin bundle with a manifest, generated `skills/` projection, project-native `.agents/skills/` projection, schemas, packs, and evaluation assets.
 - **Evidence-gated evolution.** A meta Skill may propose its own changes, but cannot weaken its gate in the same proposal. Held-out datasets, permission review, immutable decisions, and rollback pointers remain outside the optimization target.
@@ -95,6 +96,7 @@ npm run skillpack -- route "请调研三家竞争对手并输出带引用的中�
 npm run skillpack -- compose "Plan, implement, and security-review a bounded code change"
 npm run skillpack -- catalog stats
 npm run skillpack -- packs
+npm run skillpack -- state init safe-skill-evolution
 npm run skillpack -- harness status
 npm run skillpack -- harness discover --adapter pi
 ```
@@ -111,6 +113,7 @@ skill-src/            canonical category, atomic, and meta Skills
 taxonomy/             classification standard and boundaries
 catalog/              attributed, non-executed upstream metadata
 packs/                composable capability packages
+runtime/              optional pack-specific state schemas and initial states
 schemas/              machine-readable contracts
 evals/                split datasets, gates, and baselines
 .skill-system/        evolution proposals and immutable decisions
@@ -146,7 +149,7 @@ The machine-readable [`catalog/decomposition-map.yaml`](catalog/decomposition-ma
 
 ## Research basis and boundaries
 
-The [Agent Skill literature review](docs/research/2026-09-02-agent-skill-literature.md) maps evidence from SkillsBench, Skill-Inject, compositional routing, structured composition, retrieval, and self-evolving Skill work to adopted, deferred, and rejected changes. It is deliberately conservative: research may improve retrieval, composition, verification, and learning loops, but it does not replace the Category → Atom → Capability Pack → Meta architecture.
+The [Agent Skill literature review](docs/research/2026-09-02-agent-skill-literature.md) maps evidence from SkillsBench, Skill-Inject, compositional routing, structured composition, retrieval, and self-evolving Skill work to adopted, deferred, and rejected changes. The focused [WikiSkill and SKILL.state analysis](docs/research/2026-09-02-wikiskill-skill-state.md) explains why persistent cross-iteration knowledge belongs under Meta governance while bounded within-run state belongs to Capability Pack execution. Research may improve retrieval, composition, verification, execution, and learning loops, but it does not replace the Category → Atom → Capability Pack → Meta architecture.
 
 ## Roadmap
 

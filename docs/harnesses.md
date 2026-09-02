@@ -36,3 +36,7 @@ The DSH adapter is disabled until a compatible CLI release is explicitly pinned.
 Routing gates and task-completion gates are separate. A release may pass deterministic routing while remaining uncertified for live task completion. Public reports must show blocked runs, model/provider identity, rubric failures, cost, and latency rather than omitting unavailable evidence.
 
 Skill-effect claims additionally require paired runs with and without the candidate Skill under the same dataset and harness identity. Redirect each task result to JSON, then use `harness effect`; the comparison rejects synthetic evidence and unmatched runs.
+
+## Runtime-state profiles
+
+A Capability Pack may declare a portable runtime-state profile, but adapters do not implicitly execute it. `skillpack state` currently certifies initial-state and patch mechanics only. A future adapter claiming long-horizon improvements must implement the same schema/merge contract, keep full audit evidence outside active state, and report matched transcript-versus-state completion, token, latency, and recovery metrics. Until then, no paper-level efficiency result is attributed to Pi, Codex, or DSH.

@@ -97,7 +97,7 @@ describe("public schemas", () => {
 
   it.each([
     ["taxonomy", { schemaVersion: 1, version: "0.2.0", maxDepth: 3, nodes: [{ id: "software-engineering", label: { en: "Software engineering" }, includes: ["software artifacts"], excludes: ["general research"] }] }],
-    ["capability-pack", { schemaVersion: 1, id: "software-delivery", version: "0.1.0", name: { en: "Software delivery" }, atoms: ["atom-plan-change"], optionalMcps: [], acceptanceTests: ["software-delivery-smoke"] }],
+    ["capability-pack", { schemaVersion: 1, id: "software-delivery", version: "0.1.0", name: { en: "Software delivery" }, atoms: ["atom-plan-change"], optionalMcps: [], acceptanceTests: ["software-delivery-smoke"], runtimeState: { stateSchema: "runtime/schemas/software-delivery.state.schema.json", initialState: "runtime/initial/software-delivery.state.json", patchSemantics: "json-merge-patch", historyPolicy: "external-audit-log" } }],
     ["eval-dataset", { schemaVersion: 1, id: "routing-bootstrap", split: "dev", locale: "en", examples: [{ id: "route-1", prompt: "Plan a code change", expectedCategory: "software-engineering", expectedAtoms: ["atom-plan-change"], mustNotRoute: [] }] }],
     ["eval-run", { schemaVersion: 1, id: "run-20260902", dataset: "routing-bootstrap", datasetDigest: "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", harness: { name: "mock", version: "0.1.0" }, startedAt: "2026-09-02T00:00:00Z", completedAt: "2026-09-02T00:00:01Z", metrics: { categoryHit1: 1, atomHit1: 1 }, passed: true }]
     ,

@@ -5,14 +5,16 @@ Scope: Agent Skill structure, retrieval, composition, evaluation, security, and 
 
 This note records evidence used to evolve SkillPack One. It is not a claim that every cited method generalizes to every agent harness. Peer-reviewed work, accepted papers, preprints, and project results are identified by their source rather than blended into one confidence level.
 
-## Source limitation
+## Requested article sources
 
-The requested [WeChat article](https://mp.weixin.qq.com/s/nV1RC5LmEo0Ubmi9alWVfQ) could not be read by the available web extractor, search index, or permitted browser path. No article-specific claim is inferred from its URL. Once the article text or an exported PDF is available, its claims should be appended to the matrix below and checked against the same invariants.
+The WeChat page itself was inaccessible, but the user clarified that it discusses [WikiSkill](https://arxiv.org/pdf/2608.27454) and [SKILL.state](https://arxiv.org/pdf/2608.26263). Both official arXiv PDFs were read in full and checked through their architecture figures, result tables, ablations, appendices, prompts, and limitations. Their detailed mapping is recorded in [WikiSkill and SKILL.state: implications for SkillPack One](2026-09-02-wikiskill-skill-state.md).
 
 ## Evidence-to-decision matrix
 
 | Evidence | What it supports | SkillPack One decision |
 | --- | --- | --- |
+| [WikiSkill](https://arxiv.org/pdf/2608.27454) separates immutable traces, persistent consolidated patterns and impact logs, and reversible active Skills. Its ablation favors giving the proposer—but not ordinary inference—access to the wiki. | Experience should compound across iterations without becoming hidden task-solving context or directly activating generated Skills. | Add non-executable Evolution Knowledge with scoped evidence, search, supersession, and proposal references. Preserve rejected interventions as evidence and keep the layer out of ordinary task execution. |
+| [SKILL.state](https://arxiv.org/pdf/2608.26263) executes long procedures from an immutable specification, bounded current state, and latest observation, validating each state patch while keeping history out of the active prompt. | Long tasks need an explicit current-state contract; arbitrary transcript truncation is not a safe substitute. | Add optional pack-specific runtime-state profiles with JSON Schema, validated JSON Merge Patch, and a separate audit-log policy. Do not force state mode when history is itself the task or the sufficient-state assumption fails. |
 | [SkillsBench](https://arxiv.org/abs/2602.12670) evaluates tasks with no Skills, curated Skills, and self-generated Skills. Its first release reports strong average lift from curated Skills, negative deltas on some tasks, negligible average benefit from self-generated Skills, and better results from focused packages than comprehensive documentation. | Existence, routing accuracy, or fluent generation does not prove that a Skill helps. | Add paired without-Skill/with-Skill effect results. Synthetic runs may test the protocol but cannot certify lift. Preserve small Atomic Skills and require a positive completion or rubric lift for admission evidence. |
 | [Skill-Inject](https://arxiv.org/abs/2602.20156) treats Skill files as an agent supply-chain attack surface and reports high attack success in its benchmark. | Community text and scripts are untrusted even when a package appears useful. Simple filtering or stronger models are not an authorization boundary. | Keep catalog entries non-executable; review prompt injection, provenance, scripts, and permission envelopes before activation; separate the generating identity from the approver. |
 | [Compositional Skill Routing](https://arxiv.org/abs/2606.18051) frames complex requests as decompose → retrieve → compose and finds decomposition granularity to be a major bottleneck over a large MCP-derived library. | Top-1 Skill retrieval is insufficient for multi-step tasks. Decomposition must know the available atomic boundaries. | Compile existing Capability Packs into dependency-aware stages and recommend them from multiple routed Atom/Meta signals. Do not invent a new monolithic Skill or free-form execution graph. |
@@ -28,6 +30,8 @@ The requested [WeChat article](https://mp.weixin.qq.com/s/nV1RC5LmEo0Ubmi9alWVfQ
 2. `skillpack harness effect <without.json> <with.json>` measures paired Skill lift under the same dataset and harness identity. Synthetic evidence is explicitly non-certifying.
 3. New evolution proposals record `human`, `model-assisted`, or `model-generated` authorship. Human-only proposals require a reviewer other than the author; model-assisted/generated proposals cannot be approved by the generating model.
 4. Community intake explicitly treats all upstream instructions, resources, and scripts as untrusted data until provenance, injection, permission, and execution review pass.
+5. Evolution Knowledge separates raw runs, consolidated cross-iteration patterns, and active Skills; proposals may cite pattern IDs, but normal inference cannot read the pattern layer.
+6. Capability Packs may opt into a validated current-state profile while retaining full audit history out of band.
 
 ## Defer behind evidence
 
@@ -35,6 +39,7 @@ The requested [WeChat article](https://mp.weixin.qq.com/s/nV1RC5LmEo0Ubmi9alWVfQ
 - Iterative skill-aware decomposition: add after a protected compositional dataset exists; do not optimize against its test split.
 - Automatic trace-to-Skill generation: keep proposals quarantined until an independent verifier and live task baselines exist.
 - Model-weight reinforcement learning: useful in research such as skill-augmented RL, but outside the portable package core.
+- Autonomous trace consolidation and proposal generation, live state-loop harness integration, multi-agent state merge, and constrained decoding: defer until protected long-horizon suites and live evidence exist.
 
 ## Reject as a change of project identity
 

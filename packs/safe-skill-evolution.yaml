@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: safe-skill-evolution
-version: 0.1.0
+version: 0.2.0
 name:
   en: Safe Skill evolution
   zh-CN: 安全 Skill 进化
@@ -13,3 +13,8 @@ optionalMcps: []
 ordering:
   - { before: atom-classify-capability, after: meta-skill-governor }
 acceptanceTests: [safe-skill-evolution-protected]
+runtimeState:
+  stateSchema: runtime/schemas/safe-skill-evolution.state.schema.json
+  initialState: runtime/initial/safe-skill-evolution.state.json
+  patchSemantics: json-merge-patch
+  historyPolicy: external-audit-log

@@ -34,3 +34,7 @@ Mock 在无网络、无 API Key 条件下验证协议、数据集、路由指标
 路由门禁与任务完成门禁彼此独立。确定性路由通过，并不代表真实模型任务已经认证。公开报告必须保留阻塞、模型/Provider、Rubric 失败、成本和延迟，不能省略缺失证据。
 
 Skill 效果还要求在相同数据集和 Harness 身份下，分别提供无候选 Skill 与启用候选 Skill 的成对运行。把两次任务结果保存为 JSON 后运行 `harness effect`；不匹配运行和 Synthetic 证据都会被拒绝认证。
+
+## Runtime-state profile
+
+能力包可以声明可移植 runtime-state profile，但适配器不会自动执行它。当前 `skillpack state` 只认证初始状态和补丁机制。未来若某适配器声明长任务收益，就必须实现相同 Schema/合并契约，把完整审计证据保留在活动状态之外，并成对报告对话历史模式与状态模式的完成率、token、延迟和恢复指标。在此之前，不能把论文中的效率收益归因于 Pi、Codex 或 DSH。

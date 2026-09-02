@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "pack": "safe-skill-evolution",
+  "phase": "classify",
+  "status": "pending",
+  "evidenceRefs": [],
+  "checks": {
+    "provenance": "pending",
+    "permissions": "pending",
+    "protectedMetrics": "pending",
+    "independentReview": "pending"
+  },
+  "blockers": []
+}

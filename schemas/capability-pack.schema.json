@@ -56,9 +56,21 @@
       "minItems": 1,
       "uniqueItems": true,
       "items": { "$ref": "#/$defs/id" }
+    },
+    "runtimeState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stateSchema", "initialState", "patchSemantics", "historyPolicy"],
+      "properties": {
+        "stateSchema": { "$ref": "#/$defs/runtimePath" },
+        "initialState": { "$ref": "#/$defs/runtimePath" },
+        "patchSemantics": { "const": "json-merge-patch" },
+        "historyPolicy": { "const": "external-audit-log" }
+      }
     }
   },
   "$defs": {
-    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "runtimePath": { "type": "string", "pattern": "^runtime/[a-zA-Z0-9._/-]+$" }
   }
 }

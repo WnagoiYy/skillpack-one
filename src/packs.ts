@@ -56,6 +56,21 @@ export function validatePack(pack: CapabilityPack, contracts: SkillContract[]): 
   };
   for (const id of members) visit(id, []);
 
+  if (pack.runtimeState) {
+    for (const [field, value] of [
+      ["stateSchema", pack.runtimeState.stateSchema],
+      ["initialState", pack.runtimeState.initialState]
+    ] as const) {
+      const normalized = path.posix.normalize(value.replaceAll("\\", "/"));
+      if (
+        path.posix.isAbsolute(normalized) ||
+        normalized === ".." ||
+        normalized.startsWith("../") ||
+        !normalized.startsWith("runtime/")
+      ) errors.push(`runtimeState.${field} must be a repository-relative path under runtime/`);
+    }
+  }
+
   return [...new Set(errors)].sort();
 }
 
@@ -92,7 +107,8 @@ export function compilePackPlan(pack: CapabilityPack, contracts: SkillContract[]
     name: pack.name,
     skills: members,
     stages,
-    acceptanceTests: pack.acceptanceTests
+    acceptanceTests: pack.acceptanceTests,
+    ...(pack.runtimeState ? { runtimeState: pack.runtimeState } : {})
   };
 }
 

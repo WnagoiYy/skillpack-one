@@ -9,6 +9,7 @@ import {
   renderEvolutionKnowledgeIndex,
   validateEvolutionKnowledgeGraph
 } from "./train/knowledge.js";
+import { validatePackRuntimeStateProfile } from "./runtime/state.js";
 import type { Taxonomy } from "./types.js";
 
 const require = createRequire(import.meta.url);
@@ -170,6 +171,12 @@ export async function validateRepository(root: string): Promise<ValidationReport
     new Set(contracts.map((contract) => contract.id)),
     new Set(packs.map((pack) => pack.id))
   ));
+  for (const pack of packs) {
+    if (pack.runtimeState) {
+      checked.push(pack.runtimeState.stateSchema, pack.runtimeState.initialState);
+      errors.push(...await validatePackRuntimeStateProfile(root, pack));
+    }
+  }
   const knowledgeIndex = ".skill-system/knowledge/index.md";
   checked.push(knowledgeIndex);
   try {

@@ -8,6 +8,8 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 
 - A persistent, non-executable Evolution Knowledge layer with scoped evidence records, deterministic indexing, search, validation, supersession checks, and proposal references.
 - Meta Skill guidance that keeps accumulated governance knowledge out of ordinary task execution context.
+- Optional Capability Pack runtime-state profiles with schema-valid initial state, validated JSON Merge Patch transitions, external audit-history policy, and a `skillpack state` CLI.
+- Full English and Chinese evidence-to-decision analysis of WikiSkill and SKILL.state.
 
 ## [0.1.0-alpha.8] - 2026-09-02
 

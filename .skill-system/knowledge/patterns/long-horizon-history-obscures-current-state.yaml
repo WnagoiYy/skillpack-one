@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: long-horizon-history-obscures-current-state
+status: active
+summary: Append-only conversational history makes long procedural execution costly and allows obsolete observations to compete with the current world state.
+problem: Long-running capability packs repeatedly reconstruct current facts from growing transcripts, which increases tokens and can delay recovery after environment changes.
+rootCause: Future decisions are conditioned on accumulated textual history instead of a validated, bounded representation of only the state needed for the next action.
+response: Offer opt-in, pack-specific runtime-state profiles with deterministic JSON Merge Patch semantics, schema validation before commit, and an external immutable audit log. Use them only when the state can be a sufficient statistic; retain history-based execution for audit, provenance, or dynamically discovered state tasks.
+confidence: observed
+scope:
+  skills: [meta-skill-governor]
+  packs: [safe-skill-evolution]
+  harnesses: []
+evidence:
+  - kind: paper
+    ref: https://arxiv.org/pdf/2608.26263
+    locator: Sections 3 and 5, Tables 1 and 4, and Limitations
+    digest: sha256:5cb417429cb711fb9f4ff01556ab9fc6e82e1d16bec95da604d6e8447994604e
+    note: SKILL.state reports bounded per-step prompt footprints and lower cumulative token use on controlled and public interactive benchmarks, while stating that fixed sufficient-state schemas do not fit every task.
+supersedes: []
+createdAt: 2026-09-02T00:00:00Z
+updatedAt: 2026-09-02T00:00:00Z

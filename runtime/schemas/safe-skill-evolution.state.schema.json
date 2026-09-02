@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/runtime/schemas/safe-skill-evolution.state.schema.json",
+  "title": "Safe Skill evolution current execution state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "pack", "phase", "status", "evidenceRefs", "checks", "blockers"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "pack": { "const": "safe-skill-evolution" },
+    "phase": { "enum": ["classify", "propose", "evaluate", "review", "canary", "promote", "rollback", "complete"] },
+    "status": { "enum": ["pending", "running", "blocked", "passed", "failed", "rolled-back"] },
+    "targetSkill": { "$ref": "#/$defs/id" },
+    "currentProposal": { "$ref": "#/$defs/id" },
+    "revisions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "base": { "$ref": "#/$defs/revision" },
+        "candidate": { "$ref": "#/$defs/revision" },
+        "rollback": { "$ref": "#/$defs/revision" }
+      }
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provenance", "permissions", "protectedMetrics", "independentReview"],
+      "properties": {
+        "provenance": { "$ref": "#/$defs/check" },
+        "permissions": { "$ref": "#/$defs/check" },
+        "protectedMetrics": { "$ref": "#/$defs/check" },
+        "independentReview": { "$ref": "#/$defs/check" }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "revision": { "type": "string", "pattern": "^[0-9a-f]{40,64}$" },
+    "check": { "enum": ["pending", "passed", "failed", "not-applicable"] }
+  }
+}

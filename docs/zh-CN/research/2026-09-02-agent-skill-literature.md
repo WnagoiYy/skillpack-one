@@ -5,14 +5,16 @@
 
 本文记录 SkillPack One 本轮演进采用的证据。不同论文的场景、成熟度和 Harness 并不相同，因此不能把某一项实验结果直接当作普遍规律。
 
-## 来源限制
+## 指定文章的论文来源
 
-当前网页提取、搜索索引和允许使用的浏览器路径都无法读取指定的[微信文章](https://mp.weixin.qq.com/s/nV1RC5LmEo0Ubmi9alWVfQ)。本轮没有根据 URL 猜测文章观点。获得正文或导出的 PDF 后，应把文章主张补入下表，并用同一组项目不变量审查。
+微信页面本身无法访问，但用户已明确文章讨论 [WikiSkill](https://arxiv.org/pdf/2608.27454) 与 [SKILL.state](https://arxiv.org/pdf/2608.26263)。本轮已完整阅读两份 arXiv 官方 PDF，并核对架构图、结果表、消融、附录、提示词与局限。详细映射见[WikiSkill 与 SKILL.state：对 SkillPack One 的启发](2026-09-02-wikiskill-skill-state.md)。
 
 ## 证据—启发—取舍
 
 | 证据 | 启发 | SkillPack One 的取舍 |
 | --- | --- | --- |
+| [WikiSkill](https://arxiv.org/pdf/2608.27454) 将不可变轨迹、持久沉淀模式与影响日志、可回滚活动 Skill 分开；消融支持让 Proposer 访问 Wiki，但不让普通推理访问。 | 经验应跨迭代积累，但不能成为隐藏解题上下文，也不能直接激活生成 Skill。 | 增加不可执行 Evolution Knowledge，包含范围、证据、检索、取代和提案引用；被拒绝干预仍保留为证据，普通任务不读取该层。 |
+| [SKILL.state](https://arxiv.org/pdf/2608.26263) 以不可变规范、有界当前状态和最新观察执行长流程，每步验证状态补丁，并把历史移出活动提示。 | 长任务需要显式当前状态契约；任意截断历史不是安全替代。 | 增加能力包可选的专属 runtime-state profile，使用 JSON Schema、经验证的 JSON Merge Patch 和独立审计日志；历史本身是目标或充分状态假设不成立时不强制启用。 |
 | [SkillsBench](https://arxiv.org/abs/2602.12670) 对比无 Skill、精选 Skill 和模型自生成 Skill；首版结果显示精选 Skill 平均有效，但部分任务出现负增益，自生成 Skill 平均帮助很小，聚焦的小模块优于大而全说明。 | “存在、命中、生成流畅”都不能证明 Skill 有帮助。 | 新增 with-Skill/no-Skill 成对效果记录；Synthetic 只能验证管线，不能认证增益；继续保持 Atom 小而聚焦。 |
 | [Skill-Inject](https://arxiv.org/abs/2602.20156) 把 Skill 文件视为 Agent 供应链攻击面，并在基准中观察到很高的攻击成功率。 | 社区文本和脚本即使看起来有用，也仍是不可信输入；简单过滤和更强模型不是授权边界。 | 上游目录继续保持不可执行；激活前检查来源、提示注入、脚本和权限包络；生成身份与批准身份分离。 |
 | [Compositional Skill Routing](https://arxiv.org/abs/2606.18051) 将复杂请求形式化为“分解→检索→组合”，并指出任务分解粒度是大型技能库的主要瓶颈。 | 多步骤任务不能只做 Top-1 Skill 检索。 | 从多个 Atom/Meta 路由信号推荐已有能力包，并把声明的依赖编译成执行阶段；不自由生成巨型 Skill 或无约束执行图。 |
@@ -28,6 +30,8 @@
 2. `skillpack harness effect <without.json> <with.json>` 在相同数据集和 Harness 下测量 Skill Lift；Synthetic 证据明确不可认证。
 3. 新提案记录 `human`、`model-assisted` 或 `model-generated`。纯人工提案不能由作者本人批准；模型辅助或生成提案不能由生成模型批准。
 4. 社区 Skill 的指令、资源和脚本在来源、注入、权限与执行审查通过前一律视为不可信数据。
+5. Evolution Knowledge 分离原始运行、跨迭代模式和活动 Skill；提案可以引用模式 ID，但普通推理不能读取模式层。
+6. 能力包可以按需声明通过验证的当前状态 profile，同时在活动上下文之外保留完整审计历史。
 
 ## 暂缓
 
@@ -35,6 +39,7 @@
 - Skill-aware 迭代分解：先建设受保护的组合问题集，再进行优化。
 - 轨迹自动生成 Skill：在具备独立验证器与真实任务基线前只能进入隔离提案。
 - 模型权重强化学习：属于重要研究方向，但不进入可移植 Skill 包核心。
+- 自治轨迹沉淀与提案生成、真实 Harness 状态循环、多 Agent 状态合并和约束解码：在具备受保护长任务套件与真实证据前暂缓。
 
 ## 明确不采纳
 

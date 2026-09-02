@@ -48,6 +48,19 @@ describe("capability packs", () => {
     ]);
   });
 
+  it("exposes an opt-in runtime-state contract without turning it into a Skill", async () => {
+    const [packs, contracts] = await Promise.all([loadPacks(root), loadContracts(root)]);
+    const safeEvolution = packs.find((pack) => pack.id === "safe-skill-evolution");
+    expect(safeEvolution).toBeTruthy();
+    const plan = compilePackPlan(safeEvolution!, contracts);
+    expect(plan.runtimeState).toEqual({
+      stateSchema: "runtime/schemas/safe-skill-evolution.state.schema.json",
+      initialState: "runtime/initial/safe-skill-evolution.state.json",
+      patchSemantics: "json-merge-patch",
+      historyPolicy: "external-audit-log"
+    });
+  });
+
   it("recommends a governed pack from multi-Skill route evidence", async () => {
     const [packs, contracts, taxonomy] = await Promise.all([loadPacks(root), loadContracts(root), loadTaxonomy(root)]);
     const trace = routeRequest("Plan, implement, and security-review a bounded code change", taxonomy, contracts);

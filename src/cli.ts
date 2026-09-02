@@ -28,6 +28,13 @@ import {
   searchEvolutionPatterns,
   writeEvolutionKnowledgeIndex
 } from "./train/knowledge.js";
+import {
+  applyValidatedPackStatePatch,
+  initializePackState,
+  validatePackRuntimeStateProfile,
+  validatePackState
+} from "./runtime/state.js";
+import type { JsonValue } from "./runtime/state.js";
 
 export function buildProgram(): Command {
   const program = new Command()
@@ -246,6 +253,52 @@ export function buildProgram(): Command {
       if (report.errors.length > 0) process.exitCode = 1;
     });
 
+  const state = program.command("state").description("Inspect and validate opt-in capability-pack execution state");
+  const packById = async (root: string, id: string) => {
+    const pack = (await loadPacks(root)).find((candidate) => candidate.id === id);
+    if (!pack) throw new Error(`Unknown capability pack: ${id}`);
+    if (!pack.runtimeState) throw new Error(`Capability pack ${id} has no runtime state profile`);
+    return pack;
+  };
+  state
+    .command("init")
+    .argument("<pack>", "capability pack id")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (packId: string, options: { root: string }) => {
+      const root = path.resolve(options.root);
+      const pack = await packById(root, packId);
+      process.stdout.write(`${JSON.stringify(await initializePackState(root, pack), null, 2)}\n`);
+    });
+  state
+    .command("validate")
+    .argument("<pack>", "capability pack id")
+    .argument("<state>", "current state JSON path")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (packId: string, statePath: string, options: { root: string }) => {
+      const root = path.resolve(options.root);
+      const pack = await packById(root, packId);
+      const value = JSON.parse(await readFile(path.resolve(statePath), "utf8")) as JsonValue;
+      const errors = await validatePackState(root, pack, value);
+      process.stdout.write(`${JSON.stringify({ passed: errors.length === 0, errors }, null, 2)}\n`);
+      if (errors.length > 0) process.exitCode = 1;
+    });
+  state
+    .command("apply")
+    .argument("<pack>", "capability pack id")
+    .argument("<state>", "current state JSON path")
+    .argument("<patch>", "JSON Merge Patch path")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (packId: string, statePath: string, patchPath: string, options: { root: string }) => {
+      const root = path.resolve(options.root);
+      const pack = await packById(root, packId);
+      const [current, patchDocument] = await Promise.all([
+        readFile(path.resolve(statePath), "utf8").then((value) => JSON.parse(value) as JsonValue),
+        readFile(path.resolve(patchPath), "utf8").then((value) => JSON.parse(value) as JsonValue)
+      ]);
+      const next = await applyValidatedPackStatePatch(root, pack, current, patchDocument);
+      process.stdout.write(`${JSON.stringify(next, null, 2)}\n`);
+    });
+
   const train = program.command("train").description("Validate and govern bounded Skill evolution proposals");
   const evaluateProposal = async (root: string, proposal: EvolutionProposal, proposalPath?: string) => {
     const [datasets, taxonomyDocument, contracts, gate, knowledgePatterns] = await Promise.all([
@@ -400,7 +453,9 @@ export function buildProgram(): Command {
     .action(async (options: { root: string }) => {
       const root = path.resolve(options.root);
       const [packs, contracts] = await Promise.all([loadPacks(root), loadContracts(root)]);
-      const errors = packs.flatMap((pack) => validatePack(pack, contracts).map((error) => `${pack.id}: ${error}`));
+      const structuralErrors = packs.flatMap((pack) => validatePack(pack, contracts).map((error) => `${pack.id}: ${error}`));
+      const runtimeErrors = (await Promise.all(packs.map((pack) => validatePackRuntimeStateProfile(root, pack)))).flat();
+      const errors = [...structuralErrors, ...runtimeErrors].sort();
       process.stdout.write(`${JSON.stringify({ packs: packs.length, errors }, null, 2)}\n`);
       if (errors.length > 0) process.exitCode = 1;
     });

@@ -20,6 +20,7 @@
     "catalog",
     "taxonomy",
     "packs",
+    "runtime",
     "evals",
     "schemas",
     "docs",

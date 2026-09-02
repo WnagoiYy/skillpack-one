@@ -119,6 +119,14 @@ export interface CapabilityPack {
   specialSkills?: string[];
   ordering?: Array<{ before: string; after: string }>;
   acceptanceTests: string[];
+  runtimeState?: CapabilityPackRuntimeState;
+}
+
+export interface CapabilityPackRuntimeState {
+  stateSchema: string;
+  initialState: string;
+  patchSemantics: "json-merge-patch";
+  historyPolicy: "external-audit-log";
 }
 
 export interface CapabilityPackPlan {
@@ -127,6 +135,7 @@ export interface CapabilityPackPlan {
   skills: string[];
   stages: string[][];
   acceptanceTests: string[];
+  runtimeState?: CapabilityPackRuntimeState;
 }
 
 export interface PackRecommendation {
