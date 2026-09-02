@@ -1,0 +1,66 @@
+schemaVersion: 1
+id: proposal-validated-pack-runtime-state
+createdAt: 2026-09-02T04:25:53.837Z
+targetSkill: category-skill-agent-governance
+baseRevision: 9225767e45e571e963fed1fd689e346159f0a607
+candidateRevision: fb2aba42b9028c7c23012b5d78b37a163e2b7b98
+rollbackRevision: 9225767e45e571e963fed1fd689e346159f0a607
+observation: SKILL.state shows that long procedural execution can avoid
+  append-only context growth when future decisions use a bounded, validated
+  current state, while its limitations require opt-in schemas and separate audit
+  history rather than universal transcript deletion.
+authorship:
+  mode: model-assisted
+  author: WnagoiYy
+  generator: Codex
+knowledgePatterns:
+  - long-horizon-history-obscures-current-state
+allowedFiles: &a1
+  - .skill-system/knowledge/index.md
+  - .skill-system/knowledge/patterns/long-horizon-history-obscures-current-state.yaml
+  - CHANGELOG.md
+  - README.md
+  - README.zh-CN.md
+  - SECURITY.md
+  - docs/harnesses.md
+  - docs/plans/2026-09-02-wikiskill-skill-state-integration.md
+  - docs/research/2026-09-02-agent-skill-literature.md
+  - docs/research/2026-09-02-wikiskill-skill-state.md
+  - docs/runtime-state.md
+  - docs/zh-CN/harnesses.md
+  - docs/zh-CN/research/2026-09-02-agent-skill-literature.md
+  - docs/zh-CN/research/2026-09-02-wikiskill-skill-state.md
+  - docs/zh-CN/runtime-state.md
+  - package.json
+  - packs/safe-skill-evolution.yaml
+  - runtime/initial/safe-skill-evolution.state.json
+  - runtime/schemas/safe-skill-evolution.state.schema.json
+  - schemas/capability-pack.schema.json
+  - src/cli.ts
+  - src/packs.ts
+  - src/runtime/state.ts
+  - src/types.ts
+  - src/validation.ts
+  - tests/packs.test.ts
+  - tests/runtime-state.test.ts
+  - tests/schemas.test.ts
+changedFiles: *a1
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+approvals: []
