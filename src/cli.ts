@@ -24,7 +24,7 @@ import type { EvolutionAttempt } from "./train/types.js";
 import { recordPromotion, recordRollback, validateProposal } from "./train/governance.js";
 import { evaluateEvolutionAttempt } from "./train/attempts.js";
 import { buildProposalDraft, writeProposalDraft } from "./train/propose.js";
-import { currentRevision, parentRevision, revisionChangedFiles, validateProposalRevisionEvidence } from "./train/revisions.js";
+import { currentRevision, parentRevision, resolveRevision, revisionChangedFiles, validateProposalRevisionEvidence } from "./train/revisions.js";
 import {
   loadEvolutionPatterns,
   searchEvolutionPatterns,
@@ -407,8 +407,8 @@ export function buildProgram(): Command {
       if (options.authorship === "human" && options.generator) {
         throw new Error("Human-authored proposal must not declare --generator");
       }
-      const candidate = options.candidate ?? await currentRevision(root);
-      const base = options.base ?? await parentRevision(root, candidate);
+      const candidate = await resolveRevision(root, options.candidate ?? await currentRevision(root));
+      const base = await resolveRevision(root, options.base ?? await parentRevision(root, candidate));
       const changedFiles = await revisionChangedFiles(root, base, candidate);
       if (changedFiles.length === 0) throw new Error("Candidate revision has no canonical changed files");
       const [contracts, knowledgePatterns] = await Promise.all([loadContracts(root), loadEvolutionPatterns(root)]);

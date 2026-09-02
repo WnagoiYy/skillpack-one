@@ -7,7 +7,7 @@ import type { EvolutionProposal } from "../src/train/types.js";
 import { protectedRegressionFailures, recordPromotion, validateProposal } from "../src/train/governance.js";
 import type { RoutingEvaluationResult } from "../src/types.js";
 import { buildProposalDraft } from "../src/train/propose.js";
-import { canonicalRevisionDiffFailures } from "../src/train/revisions.js";
+import { canonicalRevisionDiffFailures, resolveRevision } from "../src/train/revisions.js";
 import { buildProgram } from "../src/cli.js";
 
 function proposal(overrides: Partial<EvolutionProposal> = {}): EvolutionProposal {
@@ -89,6 +89,12 @@ describe("governed Skill evolution", () => {
     )).toEqual([]);
     expect(canonicalRevisionDiffFailures(["src/router.ts"], ["src/router.ts", "tests/router.test.ts"]))
       .toContain("candidate Git diff is missing from changedFiles: tests/router.test.ts");
+  });
+
+  it("resolves symbolic and abbreviated Git revisions before recording evidence", async () => {
+    const full = await resolveRevision(process.cwd(), "HEAD");
+    expect(full).toMatch(/^[0-9a-f]{40}$/u);
+    await expect(resolveRevision(process.cwd(), full.slice(0, 7))).resolves.toBe(full);
   });
 
   it("protects held-out data, bounded diffs, permissions, and the meta gate", () => {
