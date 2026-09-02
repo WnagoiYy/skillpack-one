@@ -30,12 +30,27 @@ function rank(ids: string[], expected: string[]): number | undefined {
   return ranks.length > 0 ? Math.min(...ranks) : undefined;
 }
 
+function acceptableAtomGroups(example: EvalDataset["examples"][number]): string[][] {
+  return example.acceptableAtomGroups?.length
+    ? example.acceptableAtomGroups
+    : example.expectedAtoms.map((id) => [id]);
+}
+
+function groupCoverage(ids: string[], groups: string[][], limit: number): { recall: number; complete: number } {
+  if (groups.length === 0) return { recall: 1, complete: 1 };
+  const selected = new Set(ids.slice(0, limit));
+  const covered = groups.filter((group) => group.some((id) => selected.has(id))).length;
+  return { recall: covered / groups.length, complete: covered === groups.length ? 1 : 0 };
+}
+
 export function evaluateRoutingTraces(dataset: EvalDataset, traces: RouteTrace[]): RoutingEvaluationResult {
   if (dataset.examples.length !== traces.length) {
     throw new Error(`Dataset ${dataset.id} has ${dataset.examples.length} examples but ${traces.length} traces`);
   }
   const categoryRanks: number[] = [];
   const atomRanks: number[] = [];
+  const atomRecall3: number[] = [];
+  const atomFullCoverage3: number[] = [];
   const nonInvocation: number[] = [];
   const safety: number[] = [];
   const failures: RoutingEvaluationResult["failures"] = [];
@@ -56,9 +71,20 @@ export function evaluateRoutingTraces(dataset: EvalDataset, traces: RouteTrace[]
     }
 
     if (example.expectedAtoms.length > 0) {
-      const atomRank = rank(atomIds, example.expectedAtoms);
+      const groups = acceptableAtomGroups(example);
+      const acceptedAtoms = [...new Set(groups.flat())];
+      const atomRank = rank(atomIds, acceptedAtoms);
       atomRanks.push(atomRank ?? Number.POSITIVE_INFINITY);
       if (atomRank !== 1) failures.push({ exampleId: example.id, reason: `atom rank ${atomRank ?? "missing"}` });
+      const coverage = groupCoverage(atomIds, groups, 3);
+      atomRecall3.push(coverage.recall);
+      atomFullCoverage3.push(coverage.complete);
+      if (coverage.complete === 0) {
+        failures.push({
+          exampleId: example.id,
+          reason: `atom full coverage at 3 is ${(coverage.recall * groups.length).toFixed(0)}/${groups.length}`
+        });
+      }
     } else {
       const highest = Math.max(trace.atoms[0]?.score ?? 0, trace.special[0]?.score ?? 0);
       const abstained = highest < ATOM_INVOCATION_THRESHOLD;
@@ -82,6 +108,8 @@ export function evaluateRoutingTraces(dataset: EvalDataset, traces: RouteTrace[]
     atomHit1: round(average(atomRanks.map((value) => (value === 1 ? 1 : 0)))),
     atomHit3: round(average(atomRanks.map((value) => (value <= 3 ? 1 : 0)))),
     atomMrr: round(average(atomRanks.map((value) => (Number.isFinite(value) ? 1 / value : 0)))),
+    atomRecall3: round(average(atomRecall3)),
+    atomFullCoverage3: round(average(atomFullCoverage3)),
     nonInvocationAccuracy: round(average(nonInvocation)),
     safetyPassRate: round(average(safety))
   };

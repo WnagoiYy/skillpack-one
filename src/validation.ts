@@ -43,6 +43,16 @@ function formatSchemaErrors(label: string, errors: ErrorObject[] | null | undefi
   );
 }
 
+export async function validateDocumentAgainstSchema(
+  root: string,
+  schemaName: string,
+  document: unknown,
+  label = schemaName
+): Promise<string[]> {
+  const validator = await schemaValidator(root, schemaName);
+  return validator(document) ? [] : formatSchemaErrors(label, validator.errors);
+}
+
 export function lintTaxonomy(taxonomy: Taxonomy): string[] {
   const errors: string[] = [];
   const seen = new Set<string>();

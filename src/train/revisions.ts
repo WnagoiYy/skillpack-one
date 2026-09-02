@@ -33,7 +33,11 @@ export function canonicalRevisionDiffFailures(declaredFiles: string[], gitDiffFi
 }
 
 export async function currentRevision(root: string): Promise<string> {
-  return git(root, ["rev-parse", "HEAD^{commit}"]);
+  return resolveRevision(root, "HEAD");
+}
+
+export async function resolveRevision(root: string, revision: string): Promise<string> {
+  return git(root, ["rev-parse", `${revision}^{commit}`]);
 }
 
 export async function parentRevision(root: string, revision: string): Promise<string> {

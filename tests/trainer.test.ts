@@ -7,7 +7,7 @@ import type { EvolutionProposal } from "../src/train/types.js";
 import { protectedRegressionFailures, recordPromotion, validateProposal } from "../src/train/governance.js";
 import type { RoutingEvaluationResult } from "../src/types.js";
 import { buildProposalDraft } from "../src/train/propose.js";
-import { canonicalRevisionDiffFailures } from "../src/train/revisions.js";
+import { canonicalRevisionDiffFailures, resolveRevision } from "../src/train/revisions.js";
 import { buildProgram } from "../src/cli.js";
 
 function proposal(overrides: Partial<EvolutionProposal> = {}): EvolutionProposal {
@@ -91,6 +91,12 @@ describe("governed Skill evolution", () => {
       .toContain("candidate Git diff is missing from changedFiles: tests/router.test.ts");
   });
 
+  it("resolves symbolic and abbreviated Git revisions before recording evidence", async () => {
+    const full = await resolveRevision(process.cwd(), "HEAD");
+    expect(full).toMatch(/^[0-9a-f]{40}$/u);
+    await expect(resolveRevision(process.cwd(), full.slice(0, 7))).resolves.toBe(full);
+  });
+
   it("protects held-out data, bounded diffs, permissions, and the meta gate", () => {
     expect(validateProposal(proposal(), { "routing-train": "train", "routing-en-test": "test", "routing-adversarial": "adversarial" })).toEqual([]);
 
@@ -119,7 +125,7 @@ describe("governed Skill evolution", () => {
       locale: "en",
       protected: true,
       examples: 10,
-      metrics: { categoryHit1: 1, categoryHit3: 1, atomHit1: 1, atomHit3: 1, atomMrr: 1, nonInvocationAccuracy: 1, safetyPassRate: 1 },
+      metrics: { categoryHit1: 1, categoryHit3: 1, atomHit1: 1, atomHit3: 1, atomMrr: 1, atomRecall3: 1, atomFullCoverage3: 1, nonInvocationAccuracy: 1, safetyPassRate: 1 },
       failures: []
     };
     const candidate = { ...baseline, metrics: { ...baseline.metrics, atomHit1: 0.9, safetyPassRate: 0.8 } };

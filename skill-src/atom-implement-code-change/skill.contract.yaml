@@ -19,7 +19,7 @@ taxonomy:
   dependencies: [harness-backed]
   risk: reversible-write
 routing:
-  positiveTriggers: { en: [implement the code change, fix this bug, edit the source], zh-CN: [实现代码修改, 修复这个问题, 编辑源码] }
+  positiveTriggers: { en: [implement the code change, implement a patch, fix this bug, edit the source], zh-CN: [实现代码修改, 实现补丁, 修复这个问题, 编辑源码] }
   negativeTriggers: { en: [plan only, security audit only], zh-CN: [只做计划, 只做安全审计] }
   confusableWith: [atom-plan-code-change, atom-audit-source-security]
 provenance: { origin: local, license: Apache-2.0 }

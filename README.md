@@ -46,8 +46,10 @@ Every category projection carries an English fallback `index.md` plus `index.en.
 - **Compose explicitly.** Multi-step requests select reviewed Capability Packs whose stable Skill subset, count, dependency order, and acceptance tests compile into an explainable DAG.
 - **Bound current state where safe.** Long-running packs may opt into a schema-validated current-state profile while keeping immutable audit history outside the active prompt. Transcript mode remains valid when history cannot be safely summarized as state.
 - **Progressive disclosure.** Codex sees compact Skill metadata first, then a category index, then only the necessary atomic instructions.
+- **Typed relations, not an ungoverned graph.** Reviewed contracts and packs materialize `confusable-with`, `compose-with`, `depends-on`, and `packaged-in` edges. Similarity may suggest review, but cannot authorize installation, merging, execution, or deletion.
 - **Plugin architecture.** The repository is a plugin bundle with a manifest, generated `skills/` projection, project-native `.agents/skills/` projection, schemas, packs, and evaluation assets.
 - **Evidence-gated evolution.** A meta Skill may propose its own changes, but cannot weaken its gate in the same proposal. Held-out datasets, permission review, immutable decisions, and rollback pointers remain outside the optimization target.
+- **Lifecycle security.** Authoring, storage, retrieval, selection, execution, and evolution are separate trust boundaries. Passing one stage never substitutes for evidence at another.
 - **Persistent evolution knowledge.** Raw runs, consolidated patterns, and active Skills remain separate. Meta governance may reuse indexed evidence across iterations, while normal task execution sees only promoted Skills.
 - **Catalog is not trust.** Collection never executes upstream code. Unknown-license entries are metadata only; installation requires a separate security review.
 - **Skill lift, not Skill presence.** A Skill is useful only when a matched with-Skill run improves over the no-Skill baseline without protected regressions; synthetic protocol tests cannot certify that claim.
@@ -96,7 +98,10 @@ npm run skillpack -- route "请调研三家竞争对手并输出带引用的中�
 npm run skillpack -- compose "Plan, implement, and security-review a bounded code change"
 npm run skillpack -- catalog stats
 npm run skillpack -- packs
+npm run skillpack -- relations
 npm run skillpack -- state init safe-skill-evolution
+npm run skillpack -- security check path/to/lifecycle-review.yaml
+npm run skillpack -- train attempt path/to/evolution-attempt.yaml
 npm run skillpack -- harness status
 npm run skillpack -- harness discover --adapter pi
 ```
@@ -116,6 +121,7 @@ packs/                composable capability packages
 runtime/              optional pack-specific state schemas and initial states
 schemas/              machine-readable contracts
 evals/                split datasets, gates, and baselines
+paper/                English paper draft, Chinese extended abstract, bibliography
 .skill-system/        evolution proposals and immutable decisions
   knowledge/          non-executable, indexed evolution patterns
 src/                  router, validator, catalog, evaluator, trainer, harnesses
@@ -123,11 +129,11 @@ src/                  router, validator, catalog, evaluator, trainer, harnesses
 
 ## Evaluation and real evolution evidence
 
-`npm run skillpack -- gate` evaluates routing without collapsing metrics: category hit@1/@3, atom hit@1/@3, atom MRR, non-invocation accuracy, and safety pass rate. English, Chinese, and adversarial suites are separate. Task completion uses a different rubric and cannot be inferred from routing accuracy. `skillpack harness effect <without.json> <with.json>` then measures paired completion/rubric lift under the same dataset and harness identity.
+`npm run skillpack -- gate` evaluates routing without collapsing metrics: category hit@1/@3, atom hit@1/@3, atom MRR, equivalence-aware atom Recall@3 and Full Coverage@3, non-invocation accuracy, and safety pass rate. Multi-Atom requests pass Full Coverage only when every required capability group appears. English, Chinese, adversarial, and same-domain hard-distractor suites are separate. The current 35 authored examples all pass; this verifies repository conformance, not general model utility. Task completion uses a different rubric and cannot be inferred from routing accuracy. `skillpack harness effect <without.json> <with.json>` then measures paired completion/rubric lift under the same dataset and harness identity.
 
 The repository includes one real governed evolution record: `proposal-generic-zh-fallback`. The candidate added `index.zh.md`, passed isolated development plus untouched English, Chinese, and adversarial suites, and produced an append-only promotion decision with a rollback revision.
 
-New candidates can be bound to their exact canonical Git diff with `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence> --author <identity> --authorship <human|model-assisted|model-generated> [--generator <model>]`, then evaluated and independently promoted through the immutable decision log. Protected datasets, baselines, and the release gate cannot certify a candidate that changes them.
+New candidates can be bound to their exact canonical Git diff with `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence> --author <identity> --authorship <human|model-assisted|model-generated> [--generator <model>]`, then evaluated and independently promoted through the immutable decision log. Individual optimizer steps can be recorded with bounded `add`, `delete`, or `replace` edits; ties, protected regressions, over-budget attempts, and declared decisions inconsistent with measurements fail closed. Protected datasets, baselines, and the release gate cannot certify a candidate that changes them.
 
 Pi 0.84.4 is pinned and its real `loadSkillsFromDir` implementation discovers all 22 Skills. Model-backed task completion remains explicitly **uncertified** until Pi provider credentials are configured. The deterministic Mock adapter tests protocol plumbing only and is always marked `synthetic: true`; the optional DeepSeek Harness adapter stays disabled until a compatible CLI release is pinned.
 
@@ -149,11 +155,14 @@ The machine-readable [`catalog/decomposition-map.yaml`](catalog/decomposition-ma
 
 ## Research basis and boundaries
 
-The [Agent Skill literature review](docs/research/2026-09-02-agent-skill-literature.md) maps evidence from SkillsBench, Skill-Inject, compositional routing, structured composition, retrieval, and self-evolving Skill work to adopted, deferred, and rejected changes. The focused [WikiSkill and SKILL.state analysis](docs/research/2026-09-02-wikiskill-skill-state.md) explains why persistent cross-iteration knowledge belongs under Meta governance while bounded within-run state belongs to Capability Pack execution. Research may improve retrieval, composition, verification, execution, and learning loops, but it does not replace the Category → Atom → Capability Pack → Meta architecture.
+The [Agent Skill literature review](docs/research/2026-09-02-agent-skill-literature.md) maps evidence from SkillsBench, Skill-Inject, compositional routing, structured composition, retrieval, and self-evolving Skill work to adopted, deferred, and rejected changes. The focused [WikiSkill and SKILL.state analysis](docs/research/2026-09-02-wikiskill-skill-state.md) explains why persistent cross-iteration knowledge belongs under Meta governance while bounded within-run state belongs to Capability Pack execution. The subsequent [retrieval, security, and optimization synthesis](docs/research/2026-09-02-retrieval-security-optimization.md) maps SkillRet, SkillRouter, realistic Skill-use evaluation, Agent Skill Security, SkillNet, and SkillOpt into implemented controls and deferred experiments. Research may improve retrieval, composition, verification, execution, and learning loops, but it does not replace the Category → Atom → Capability Pack → Meta architecture.
+
+The resulting system argument is available as the conference-style paper draft [SkillPack One: A Portable Control Plane for Self-Organizing, Composable, and Governed Agent Skills](paper/skillpack-one.md), with a [Chinese extended abstract](paper/skillpack-one.zh-CN.md) and [BibTeX bibliography](paper/references.bib). Numerical results in the draft are deliberately limited to reproducible repository conformance; the model-backed experiments are presented as future protocol, not completed evidence.
 
 ## Roadmap
 
 - Grow held-out multilingual routing and executable task suites from real failures.
+- Compare deterministic, sparse/dense hybrid, distilled-metadata, and body-aware retrieval without changing the portable control-plane contract.
 - Build protected compositional datasets and certify paired live Skill lift across pinned harness/model pairs.
 - Add semantic duplicate review without turning similarity into automatic deletion.
 - Certify live Pi task-completion baselines across pinned model/provider pairs.

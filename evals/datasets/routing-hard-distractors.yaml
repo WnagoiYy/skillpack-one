@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: routing-hard-distractors
+split: dev
+locale: en
+examples:
+  - id: review-security-without-remediation
+    prompt: Review this implementation for SQL injection vulnerabilities and report evidence, but do not edit or remediate the source.
+    expectedCategory: security-trust
+    expectedAtoms: [atom-audit-source-security]
+    mustNotRoute: [atom-implement-code-change]
+    tags: [hard-distractor, same-domain]
+  - id: implement-remediation-not-audit
+    prompt: Implement and test the patch already specified in the security report; do not perform another security audit.
+    expectedCategory: software-engineering
+    expectedAtoms: [atom-implement-code-change]
+    mustNotRoute: [atom-audit-source-security]
+    tags: [hard-distractor, same-domain]
+  - id: sources-not-market-analysis
+    prompt: Find primary research sources about market-sizing methodology, without analyzing a particular market or competitor.
+    expectedCategory: research-knowledge
+    expectedAtoms: [atom-find-research-sources]
+    mustNotRoute: [atom-analyze-market]
+    tags: [hard-distractor, adjacent-domain]
+  - id: market-analysis-not-source-list
+    prompt: Analyze this market and its competitors using current evidence; the deliverable is a decision-relevant analysis, not a generic bibliography.
+    expectedCategory: business-growth
+    expectedAtoms: [atom-analyze-market]
+    mustNotRoute: [atom-find-research-sources]
+    tags: [hard-distractor, adjacent-domain]

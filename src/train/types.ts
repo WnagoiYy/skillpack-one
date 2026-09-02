@@ -75,3 +75,33 @@ export interface EvolutionEvaluation {
   passed: boolean;
   failures: string[];
 }
+
+export interface EvolutionEdit {
+  operation: "add" | "delete" | "replace";
+  path: string;
+  before?: string;
+  after?: string;
+  rationale: string;
+}
+
+export interface EvolutionAttempt {
+  schemaVersion: 1;
+  id: string;
+  proposal: string;
+  createdAt: string;
+  baseRevision: string;
+  candidateRevision: string;
+  editBudget: number;
+  edits: EvolutionEdit[];
+  acceptanceRule: "strict-improvement";
+  selection: {
+    dataset: string;
+    before: number;
+    after: number;
+  };
+  protectedRegressions: string[];
+  decision: {
+    status: "accepted" | "rejected";
+    reasons: string[];
+  };
+}

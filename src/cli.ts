@@ -5,7 +5,7 @@ import { pathToFileURL } from "node:url";
 import { Command } from "commander";
 import { loadContracts, loadTaxonomy } from "./registry.js";
 import { routeRequest } from "./router.js";
-import { lintTaxonomy, validateRepository } from "./validation.js";
+import { lintTaxonomy, validateDocumentAgainstSchema, validateRepository } from "./validation.js";
 import { catalogStats, collectCatalog, loadCatalog } from "./catalog/catalog.js";
 import { writeDuplicateClusters } from "./deduplicate.js";
 import { loadPacks, recommendPacks, validatePack } from "./packs.js";
@@ -20,9 +20,11 @@ import { DshHarnessAdapter } from "./harness/dsh.js";
 import { CodexHarnessAdapter } from "./harness/codex.js";
 import type { HarnessAdapter } from "./harness/types.js";
 import type { EvolutionProposal } from "./train/types.js";
+import type { EvolutionAttempt } from "./train/types.js";
 import { recordPromotion, recordRollback, validateProposal } from "./train/governance.js";
+import { evaluateEvolutionAttempt } from "./train/attempts.js";
 import { buildProposalDraft, writeProposalDraft } from "./train/propose.js";
-import { currentRevision, parentRevision, revisionChangedFiles, validateProposalRevisionEvidence } from "./train/revisions.js";
+import { currentRevision, parentRevision, resolveRevision, revisionChangedFiles, validateProposalRevisionEvidence } from "./train/revisions.js";
 import {
   loadEvolutionPatterns,
   searchEvolutionPatterns,
@@ -35,6 +37,8 @@ import {
   validatePackState
 } from "./runtime/state.js";
 import type { JsonValue } from "./runtime/state.js";
+import { buildSkillRelationGraph, validateSkillRelationGraph } from "./relations.js";
+import { evaluateLifecycleSecurityReview, type LifecycleSecurityReview } from "./security/lifecycle.js";
 
 export function buildProgram(): Command {
   const program = new Command()
@@ -83,6 +87,42 @@ export function buildProgram(): Command {
       const report = await validateRepository(path.resolve(options.root));
       process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
       if (report.errors.length > 0) process.exitCode = 1;
+    });
+
+  program
+    .command("relations")
+    .description("Build the reviewed typed relation graph from Skill contracts and Capability Packs")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (options: { root: string }) => {
+      const root = path.resolve(options.root);
+      const [contracts, packs] = await Promise.all([loadContracts(root), loadPacks(root)]);
+      const graph = buildSkillRelationGraph(contracts, packs);
+      const failures = validateSkillRelationGraph(graph);
+      process.stdout.write(`${JSON.stringify({ passed: failures.length === 0, failures, graph }, null, 2)}\n`);
+      if (failures.length > 0) process.exitCode = 1;
+    });
+
+  const security = program.command("security").description("Validate lifecycle security review artifacts");
+  security
+    .command("check")
+    .argument("<review>", "lifecycle security review YAML path")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (reviewPath: string, options: { root: string }) => {
+      const review = await readYaml<LifecycleSecurityReview>(path.resolve(reviewPath));
+      const schemaFailures = await validateDocumentAgainstSchema(
+        path.resolve(options.root),
+        "lifecycle-security-review",
+        review,
+        reviewPath
+      );
+      if (schemaFailures.length > 0) {
+        process.stdout.write(`${JSON.stringify({ passed: false, failures: schemaFailures }, null, 2)}\n`);
+        process.exitCode = 1;
+        return;
+      }
+      const result = evaluateLifecycleSecurityReview(review);
+      process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
+      if (!result.passed) process.exitCode = 1;
     });
 
   const taxonomy = program.command("taxonomy").description("Inspect and validate the taxonomy");
@@ -300,6 +340,28 @@ export function buildProgram(): Command {
     });
 
   const train = program.command("train").description("Validate and govern bounded Skill evolution proposals");
+  train
+    .command("attempt")
+    .description("Validate one append-only bounded evolution attempt")
+    .argument("<attempt>", "evolution attempt YAML path")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (attemptPath: string, options: { root: string }) => {
+      const attempt = await readYaml<EvolutionAttempt>(path.resolve(attemptPath));
+      const schemaFailures = await validateDocumentAgainstSchema(
+        path.resolve(options.root),
+        "evolution-attempt",
+        attempt,
+        attemptPath
+      );
+      if (schemaFailures.length > 0) {
+        process.stdout.write(`${JSON.stringify({ accepted: false, failures: schemaFailures }, null, 2)}\n`);
+        process.exitCode = 1;
+        return;
+      }
+      const result = evaluateEvolutionAttempt(attempt);
+      process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
+      if (!result.accepted) process.exitCode = 1;
+    });
   const evaluateProposal = async (root: string, proposal: EvolutionProposal, proposalPath?: string) => {
     const [datasets, taxonomyDocument, contracts, gate, knowledgePatterns] = await Promise.all([
       loadEvalDatasets(root),
@@ -345,8 +407,8 @@ export function buildProgram(): Command {
       if (options.authorship === "human" && options.generator) {
         throw new Error("Human-authored proposal must not declare --generator");
       }
-      const candidate = options.candidate ?? await currentRevision(root);
-      const base = options.base ?? await parentRevision(root, candidate);
+      const candidate = await resolveRevision(root, options.candidate ?? await currentRevision(root));
+      const base = await resolveRevision(root, options.base ?? await parentRevision(root, candidate));
       const changedFiles = await revisionChangedFiles(root, base, candidate);
       if (changedFiles.length === 0) throw new Error("Candidate revision has no canonical changed files");
       const [contracts, knowledgePatterns] = await Promise.all([loadContracts(root), loadEvolutionPatterns(root)]);
