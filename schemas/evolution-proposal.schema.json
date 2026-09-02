@@ -15,6 +15,7 @@
     "rollbackRevision": { "$ref": "#/$defs/revision" },
     "observation": { "type": "string", "minLength": 1 },
     "authorship": { "$ref": "#/$defs/authorship" },
+    "knowledgePatterns": { "$ref": "#/$defs/ids" },
     "allowedFiles": { "$ref": "#/$defs/files" },
     "changedFiles": { "$ref": "#/$defs/files" },
     "generationDatasets": { "$ref": "#/$defs/ids" },

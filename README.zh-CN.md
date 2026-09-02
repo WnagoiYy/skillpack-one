@@ -47,6 +47,7 @@ flowchart LR
 - **渐进式读取。** Codex 先看到精简元数据，再命中分类索引，最后只加载完成任务所需的原子 Skill。
 - **插件式架构。** 仓库本身是一个插件包，包含清单、两种 Skill 投影、Schema、能力包和评估资产。
 - **证据门禁下的进化。** 元 Skill 可以修改自己，但不能在同一个提案中削弱自己的门禁；保留测试集、权限审批、追加式决策记录和回滚指针不受优化目标控制。
+- **持久化进化知识。** 原始运行、已沉淀模式和活动 Skill 相互分离；元治理可以跨迭代复用索引证据，普通任务只看到已晋级 Skill。
 - **被收录不等于可信。** 采集过程不执行上游代码；许可未知的条目只保存元数据，安装前必须另行安全审查。
 - **看 Skill Lift，不看“有没有 Skill”。** 只有在相同任务上优于无 Skill 基线且受保护指标不退化，才能证明 Skill 有用；Synthetic 协议测试不能认证该结论。
 
@@ -113,6 +114,7 @@ packs/                可组合能力包
 schemas/              机器可读能力契约
 evals/                分集问题集、门槛与基线
 .skill-system/        进化提案与追加式决策记录
+  knowledge/          不可执行、可索引的进化模式
 src/                  路由、校验、采集、评估、训练和 Harness
 ```
 
@@ -127,6 +129,8 @@ src/                  路由、校验、采集、评估、训练和 Harness
 Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 22 个 Skill。由于本机尚未配置 Pi 模型提供商凭证，模型驱动的任务完成率仍明确标记为**未认证**。Mock 只验证协议管线，结果始终带 `synthetic: true`；DeepSeek Harness 需等兼容 CLI 版本固定后才启用。
 
 详细说明见[评估流程](docs/zh-CN/evaluation.md)、[Harness 适配](docs/zh-CN/harnesses.md)和[进化策略](docs/zh-CN/evolution-policy.md)。
+
+[进化知识策略](docs/zh-CN/evolution-knowledge.md)说明如何把重复成功、失败、被拒绝提案和研究证据沉淀为有范围、可追溯的模式，同时避免它们成为隐藏任务指令。
 
 ## 刷新 300+ 来源目录
 

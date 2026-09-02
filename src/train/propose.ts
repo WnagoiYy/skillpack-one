@@ -18,6 +18,7 @@ export interface ProposalDraftInput {
   targetSkill: string;
   observation: string;
   authorship?: EvolutionAuthorship;
+  knowledgePatterns?: string[];
   baseRevision: string;
   candidateRevision: string;
   changedFiles: string[];
@@ -40,6 +41,7 @@ export function buildProposalDraft(input: ProposalDraftInput): EvolutionProposal
     rollbackRevision: input.baseRevision,
     observation: input.observation,
     ...(input.authorship ? { authorship: input.authorship } : {}),
+    ...(input.knowledgePatterns?.length ? { knowledgePatterns: [...new Set(input.knowledgePatterns)].sort() } : {}),
     allowedFiles: changedFiles,
     changedFiles,
     generationDatasets: input.generationDatasets ?? ["routing-bootstrap"],

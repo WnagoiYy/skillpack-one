@@ -46,7 +46,8 @@ describe("governed Skill evolution", () => {
       baseRevision: "1111111111111111111111111111111111111111",
       candidateRevision: "2222222222222222222222222222222222222222",
       changedFiles: ["tests/router.test.ts", "skill-src/atom-plan-code-change/SKILL.md"],
-      authorship: { mode: "model-assisted", author: "maintainer", generator: "codex" }
+      authorship: { mode: "model-assisted", author: "maintainer", generator: "codex" },
+      knowledgePatterns: ["repeated-boundary-failure"]
     });
     expect(draft.allowedFiles).toEqual([
       "skill-src/atom-plan-code-change/SKILL.md",
@@ -55,6 +56,7 @@ describe("governed Skill evolution", () => {
     expect(draft.permissionAfter).toEqual(draft.permissionBefore);
     expect(draft.rollbackRevision).toBe(draft.baseRevision);
     expect(draft.authorship).toEqual({ mode: "model-assisted", author: "maintainer", generator: "codex" });
+    expect(draft.knowledgePatterns).toEqual(["repeated-boundary-failure"]);
   });
 
   it("preserves an existing target permission envelope in a proposal draft", () => {
@@ -104,6 +106,10 @@ describe("governed Skill evolution", () => {
       .toContain("proposal must not change protected evaluation dataset: routing-adversarial");
     expect(validateProposal(proposal({ allowedFiles: ["evals/gates.yaml"], changedFiles: ["evals/gates.yaml"] }), { "routing-train": "train" }))
       .toContain("proposal must not change its release gate");
+    expect(validateProposal(proposal({ knowledgePatterns: ["missing-pattern"] }), { "routing-train": "train" }, new Set()))
+      .toContain("proposal references unknown evolution pattern: missing-pattern");
+    expect(validateProposal(proposal({ knowledgePatterns: ["known-pattern"] }), { "routing-train": "train" }, new Set(["known-pattern"])))
+      .toEqual([]);
   });
 
   it("rejects any protected metric regression independently", () => {

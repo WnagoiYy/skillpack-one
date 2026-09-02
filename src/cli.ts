@@ -23,6 +23,11 @@ import type { EvolutionProposal } from "./train/types.js";
 import { recordPromotion, recordRollback, validateProposal } from "./train/governance.js";
 import { buildProposalDraft, writeProposalDraft } from "./train/propose.js";
 import { currentRevision, parentRevision, revisionChangedFiles, validateProposalRevisionEvidence } from "./train/revisions.js";
+import {
+  loadEvolutionPatterns,
+  searchEvolutionPatterns,
+  writeEvolutionKnowledgeIndex
+} from "./train/knowledge.js";
 
 export function buildProgram(): Command {
   const program = new Command()
@@ -206,17 +211,53 @@ export function buildProgram(): Command {
       if (!result.passed) process.exitCode = 1;
     });
 
+  const knowledge = program.command("knowledge").description("Inspect persistent, non-executable Skill evolution knowledge");
+  knowledge
+    .command("list")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (options: { root: string }) => {
+      const patterns = await loadEvolutionPatterns(path.resolve(options.root));
+      process.stdout.write(`${JSON.stringify(patterns, null, 2)}\n`);
+    });
+  knowledge
+    .command("search")
+    .argument("<query>", "failure, strategy, Skill, pack, or harness terms")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (query: string, options: { root: string }) => {
+      const patterns = await loadEvolutionPatterns(path.resolve(options.root));
+      process.stdout.write(`${JSON.stringify(searchEvolutionPatterns(query, patterns), null, 2)}\n`);
+    });
+  knowledge
+    .command("build")
+    .description("Regenerate the compact Evolution Knowledge index from versioned pattern records")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (options: { root: string }) => {
+      const root = path.resolve(options.root);
+      const output = await writeEvolutionKnowledgeIndex(root, await loadEvolutionPatterns(root));
+      process.stdout.write(`${JSON.stringify({ index: output }, null, 2)}\n`);
+    });
+  knowledge
+    .command("validate")
+    .description("Validate Evolution Knowledge schemas, scopes, supersession, and generated index")
+    .option("--root <path>", "repository root", process.cwd())
+    .action(async (options: { root: string }) => {
+      const report = await validateRepository(path.resolve(options.root));
+      process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
+      if (report.errors.length > 0) process.exitCode = 1;
+    });
+
   const train = program.command("train").description("Validate and govern bounded Skill evolution proposals");
   const evaluateProposal = async (root: string, proposal: EvolutionProposal, proposalPath?: string) => {
-    const [datasets, taxonomyDocument, contracts, gate] = await Promise.all([
+    const [datasets, taxonomyDocument, contracts, gate, knowledgePatterns] = await Promise.all([
       loadEvalDatasets(root),
       loadTaxonomy(root),
       loadContracts(root),
-      readYaml<{ minimum: Partial<RoutingMetrics> }>(path.join(root, "evals", "gates.yaml"))
+      readYaml<{ minimum: Partial<RoutingMetrics> }>(path.join(root, "evals", "gates.yaml")),
+      loadEvolutionPatterns(root)
     ]);
     const splitMap = Object.fromEntries(datasets.map((dataset) => [dataset.id, dataset.split]));
     const validationFailures = [
-      ...validateProposal(proposal, splitMap),
+      ...validateProposal(proposal, splitMap, new Set(knowledgePatterns.map((pattern) => pattern.id))),
       ...(await validateProposalRevisionEvidence(root, proposal, proposalPath))
     ];
     const routing = await evaluateAllRoutingDatasets(root, taxonomyDocument, contracts);
@@ -236,10 +277,11 @@ export function buildProgram(): Command {
     .requiredOption("--author <identity>", "person or model responsible for the candidate")
     .requiredOption("--authorship <mode>", "human, model-assisted, or model-generated")
     .option("--generator <identity>", "generating model identity for model-assisted or model-generated candidates")
+    .option("--pattern <id...>", "Evolution Knowledge pattern IDs that motivate the proposal")
     .option("--base <revision>", "base Git commit; defaults to the candidate parent")
     .option("--candidate <revision>", "candidate Git commit; defaults to HEAD")
     .option("--root <path>", "repository root", process.cwd())
-    .action(async (options: { id: string; target: string; observation: string; author: string; authorship: string; generator?: string; base?: string; candidate?: string; root: string }) => {
+    .action(async (options: { id: string; target: string; observation: string; author: string; authorship: string; generator?: string; pattern?: string[]; base?: string; candidate?: string; root: string }) => {
       const root = path.resolve(options.root);
       if (!(["human", "model-assisted", "model-generated"] as string[]).includes(options.authorship)) {
         throw new Error("Authorship must be human, model-assisted, or model-generated");
@@ -254,7 +296,7 @@ export function buildProgram(): Command {
       const base = options.base ?? await parentRevision(root, candidate);
       const changedFiles = await revisionChangedFiles(root, base, candidate);
       if (changedFiles.length === 0) throw new Error("Candidate revision has no canonical changed files");
-      const contracts = await loadContracts(root);
+      const [contracts, knowledgePatterns] = await Promise.all([loadContracts(root), loadEvolutionPatterns(root)]);
       const targetContract = contracts.find((contract) => contract.id === options.target);
       const proposal = buildProposalDraft({
         id: options.id,
@@ -266,6 +308,7 @@ export function buildProgram(): Command {
           author: options.author,
           ...(options.generator ? { generator: options.generator } : {})
         },
+        ...(options.pattern?.length ? { knowledgePatterns: options.pattern } : {}),
         baseRevision: base,
         candidateRevision: candidate,
         changedFiles,
@@ -275,12 +318,17 @@ export function buildProgram(): Command {
         } : {})
       });
       const datasets = await loadEvalDatasets(root);
-      const failures = validateProposal(proposal, Object.fromEntries(datasets.map((dataset) => [dataset.id, dataset.split])));
+      const failures = validateProposal(
+        proposal,
+        Object.fromEntries(datasets.map((dataset) => [dataset.id, dataset.split])),
+        new Set(knowledgePatterns.map((pattern) => pattern.id))
+      );
       if (failures.length > 0) throw new Error(`Proposal draft violates governance: ${failures.join("; ")}`);
       const output = await writeProposalDraft(root, proposal);
       process.stdout.write(`${JSON.stringify({
         proposal: output,
         changedFiles,
+        knowledgePatterns: proposal.knowledgePatterns ?? [],
         permissionSource: targetContract ? "target-contract" : "least-authority-default"
       }, null, 2)}\n`);
     });

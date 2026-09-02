@@ -10,7 +10,7 @@ summary:
   zh-CN: 提议、评测、发布、弃用和回滚受治理的 Skill 变更。
 outcomes:
   - Auditable Skill lifecycle decision
-artifacts: [change-proposal, evaluation-record, release-decision, rollback-pointer]
+artifacts: [evolution-pattern, change-proposal, evaluation-record, release-decision, rollback-pointer]
 inputs:
   - name: observation
     type: evidence

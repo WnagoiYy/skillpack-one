@@ -4,6 +4,11 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 
 ## [Unreleased]
 
+### Added
+
+- A persistent, non-executable Evolution Knowledge layer with scoped evidence records, deterministic indexing, search, validation, supersession checks, and proposal references.
+- Meta Skill guidance that keeps accumulated governance knowledge out of ordinary task execution context.
+
 ## [0.1.0-alpha.8] - 2026-09-02
 
 ### Added

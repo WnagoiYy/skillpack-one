@@ -33,7 +33,8 @@ function permissionExpansions(before: PermissionEnvelope, after: PermissionEnvel
 
 export function validateProposal(
   proposal: EvolutionProposal,
-  datasetSplits: Record<string, EvalDataset["split"]>
+  datasetSplits: Record<string, EvalDataset["split"]>,
+  knownKnowledgePatterns: ReadonlySet<string> = new Set()
 ): string[] {
   const errors: string[] = [];
   if (proposal.authorship) {
@@ -44,6 +45,9 @@ export function validateProposal(
     if (proposal.authorship.mode !== "human" && !proposal.authorship.generator?.trim()) {
       errors.push(`${proposal.authorship.mode} proposal requires a generator identity`);
     }
+  }
+  for (const pattern of proposal.knowledgePatterns ?? []) {
+    if (!knownKnowledgePatterns.has(pattern)) errors.push(`proposal references unknown evolution pattern: ${pattern}`);
   }
   const allowed = new Set(proposal.allowedFiles.map(normalizedRelative).filter((file): file is string => Boolean(file)));
   for (const file of proposal.changedFiles) {
@@ -153,6 +157,7 @@ export async function recordPromotion(
     action: "promote",
     proposal: proposal.id,
     proposalDigest: `sha256:${proposalDigest}`,
+    knowledgePatterns: proposal.knowledgePatterns ?? [],
     baseRevision: proposal.baseRevision,
     candidateRevision: proposal.candidateRevision,
     rollbackRevision: proposal.rollbackRevision,

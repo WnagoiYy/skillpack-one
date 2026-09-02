@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: experience-insights-fragment-across-iterations
+status: active
+summary: Skill evolution repeats mistakes when trace insights and rejected interventions remain scattered across iteration artifacts.
+problem: Later Skill proposals cannot reliably reuse recurring success and failure patterns or distinguish them from one-off observations.
+rootCause: Raw traces, proposal diffs, and promotion outcomes preserve evidence but do not provide a separately indexed, consolidated knowledge representation.
+response: Maintain a non-executable Evolution Knowledge layer with scoped patterns, immutable evidence references, supersession instead of silent deletion, and explicit proposal links. Keep this layer available to Meta governance but out of normal task execution context.
+confidence: observed
+scope:
+  skills: [meta-skill-governor]
+  packs: [safe-skill-evolution]
+  harnesses: []
+evidence:
+  - kind: paper
+    ref: https://arxiv.org/pdf/2608.27454
+    locator: Sections 3.1-3.2, Table 3, and Limitations
+    digest: sha256:65afc6e12f6f707483fe1b79a97ab67c03abf4b4992f82fde03eb7b8d9ad4a69
+    note: WikiSkill separates immutable traces, persistent patterns and impact logs, and reversible active Skills; its ablation reports better evolution when the proposer, but not the inference agent, accesses the wiki.
+supersedes: []
+createdAt: 2026-09-02T00:00:00Z
+updatedAt: 2026-09-02T00:00:00Z

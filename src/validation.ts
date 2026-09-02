@@ -3,6 +3,12 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import type { ErrorObject, ValidateFunction } from "ajv";
 import { loadContracts, loadTaxonomy } from "./registry.js";
+import { loadPacks } from "./packs.js";
+import {
+  loadEvolutionPatternDocuments,
+  renderEvolutionKnowledgeIndex,
+  validateEvolutionKnowledgeGraph
+} from "./train/knowledge.js";
 import type { Taxonomy } from "./types.js";
 
 const require = createRequire(import.meta.url);
@@ -145,6 +151,34 @@ export async function validateRepository(root: string): Promise<ValidationReport
     if (!contractIds.has(`category-${node.id}`)) {
       errors.push(`taxonomy node ${node.id} has no matching Category Skill contract`);
     }
+  }
+
+  const [patternDocuments, packs] = await Promise.all([
+    loadEvolutionPatternDocuments(root),
+    loadPacks(root)
+  ]);
+  const patternValidator = await schemaValidator(root, "evolution-pattern");
+  const validPatternDocuments: typeof patternDocuments = [];
+  for (const document of patternDocuments) {
+    checked.push(document.file);
+    if (!patternValidator(document.pattern)) {
+      errors.push(...formatSchemaErrors(document.file, patternValidator.errors));
+    } else validPatternDocuments.push(document);
+  }
+  errors.push(...validateEvolutionKnowledgeGraph(
+    validPatternDocuments,
+    new Set(contracts.map((contract) => contract.id)),
+    new Set(packs.map((pack) => pack.id))
+  ));
+  const knowledgeIndex = ".skill-system/knowledge/index.md";
+  checked.push(knowledgeIndex);
+  try {
+    const actualIndex = await readFile(path.join(root, knowledgeIndex), "utf8");
+    const expectedIndex = renderEvolutionKnowledgeIndex(validPatternDocuments.map((document) => document.pattern));
+    if (actualIndex !== expectedIndex) errors.push(`${knowledgeIndex}: generated index is stale`);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") errors.push(`${knowledgeIndex}: missing generated index`);
+    else throw error;
   }
 
   return { checked, errors: [...new Set(errors)].sort() };

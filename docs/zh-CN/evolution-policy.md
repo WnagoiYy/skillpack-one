@@ -4,6 +4,8 @@
 
 每个新提案都必须声明目标、作者模式、责任作者、适用时的生成模型、基础 revision、候选 revision、回滚 revision、观察到的失败、允许文件、实际变更文件、生成数据集、评测数据集、前后权限包络和批准记录。历史追加式记录保持有效，不追溯改写。生成的 `skills/` 与 `.agents/skills/` 投影绝不能直接修改。
 
+如果提案由重复出现的进化知识模式驱动，就必须记录稳定模式 ID。无论候选晋级还是被拒绝，模式层都独立保留，但绝不能注入普通任务推理。详见[持久化进化知识](evolution-knowledge.md)。
+
 `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence> --author <identity> --authorship <human|model-assisted|model-generated> [--generator <model>]` 会依据精确的 `HEAD^..HEAD` 规范 Git 差异生成提案。评估要求 `HEAD` 等于 `candidateRevision`，要求 `changedFiles` 与 Git 差异一致，并拒绝已跟踪文件漂移或意外的未跟踪文件。生成投影是可复现产物，不计入规范差异。
 
 ## 硬性不变量

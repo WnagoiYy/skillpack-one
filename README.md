@@ -47,6 +47,7 @@ Every category projection carries an English fallback `index.md` plus `index.en.
 - **Progressive disclosure.** Codex sees compact Skill metadata first, then a category index, then only the necessary atomic instructions.
 - **Plugin architecture.** The repository is a plugin bundle with a manifest, generated `skills/` projection, project-native `.agents/skills/` projection, schemas, packs, and evaluation assets.
 - **Evidence-gated evolution.** A meta Skill may propose its own changes, but cannot weaken its gate in the same proposal. Held-out datasets, permission review, immutable decisions, and rollback pointers remain outside the optimization target.
+- **Persistent evolution knowledge.** Raw runs, consolidated patterns, and active Skills remain separate. Meta governance may reuse indexed evidence across iterations, while normal task execution sees only promoted Skills.
 - **Catalog is not trust.** Collection never executes upstream code. Unknown-license entries are metadata only; installation requires a separate security review.
 - **Skill lift, not Skill presence.** A Skill is useful only when a matched with-Skill run improves over the no-Skill baseline without protected regressions; synthetic protocol tests cannot certify that claim.
 
@@ -113,6 +114,7 @@ packs/                composable capability packages
 schemas/              machine-readable contracts
 evals/                split datasets, gates, and baselines
 .skill-system/        evolution proposals and immutable decisions
+  knowledge/          non-executable, indexed evolution patterns
 src/                  router, validator, catalog, evaluator, trainer, harnesses
 ```
 
@@ -127,6 +129,8 @@ New candidates can be bound to their exact canonical Git diff with `npm run skil
 Pi 0.84.4 is pinned and its real `loadSkillsFromDir` implementation discovers all 22 Skills. Model-backed task completion remains explicitly **uncertified** until Pi provider credentials are configured. The deterministic Mock adapter tests protocol plumbing only and is always marked `synthetic: true`; the optional DeepSeek Harness adapter stays disabled until a compatible CLI release is pinned.
 
 See [evaluation](docs/evaluation.md), [harnesses](docs/harnesses.md), and the [evolution policy](docs/evolution-policy.md).
+
+The [Evolution Knowledge policy](docs/evolution-knowledge.md) explains how recurring successes, failures, rejected proposals, and research evidence become scoped, traceable patterns without becoming hidden task instructions.
 
 ## Refreshing the research catalog
 

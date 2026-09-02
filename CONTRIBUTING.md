@@ -33,6 +33,7 @@ Every first-party Skill type must include both a portable `SKILL.md` and a valid
 6. Prefer improving or composing existing atoms when the proposal has no independently useful outcome or failure boundary.
 7. Compare matched no-Skill and with-Skill task runs. Reject negative lift; do not use synthetic evidence to certify quality.
 8. Regenerate indexes and projections, run isolated development and protected suites, then record promotion or rollback through the append-only governance log.
+9. If recurring evidence already has an Evolution Knowledge pattern, cite it in the proposal; if not, create a narrow evidence-backed pattern instead of copying raw traces into a Skill.
 
 Reviews must report whether the proposal was accepted as a new Atom, merged into an existing Atom, composed as a pack, returned for evidence, rejected, or marked for deprecation. Similarity alone never authorizes deletion.
 
