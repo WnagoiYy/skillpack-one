@@ -1,0 +1,79 @@
+name: Publish npm package
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: npm-publish-${{ github.event.release.tag_name }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: npm
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out the released revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/tags/${{ github.event.release.tag_name }}
+          fetch-depth: 0
+
+      - name: Require the released revision to belong to main
+        shell: bash
+        run: |
+          git fetch --no-tags origin main:refs/remotes/origin/main
+          git merge-base --is-ancestor HEAD origin/main || {
+            echo "Release revision is not reachable from origin/main" >&2
+            exit 1
+          }
+
+      - name: Set up Node.js and the npm registry
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org/
+          package-manager-cache: false
+
+      - name: Pin an OIDC-capable npm CLI
+        run: npm install --global npm@11.19.1
+
+      - name: Install without dependency lifecycle scripts
+        run: npm ci --ignore-scripts
+
+      - name: Run the complete release gate
+        run: npm run ci
+
+      - name: Validate release identity and select the npm dist-tag
+        id: release
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_PRERELEASE: ${{ github.event.release.prerelease }}
+        run: npm run release:plan -- "$RELEASE_TAG" "$RELEASE_PRERELEASE"
+
+      - name: Inspect the package payload
+        run: npm pack --dry-run
+
+      - name: Reject a version that is already immutable in npm
+        env:
+          PACKAGE_NAME: ${{ steps.release.outputs.package-name }}
+          PACKAGE_VERSION: ${{ steps.release.outputs.version }}
+        shell: bash
+        run: |
+          if npm view "$PACKAGE_NAME@$PACKAGE_VERSION" version --json 2>/dev/null | grep -Fq "$PACKAGE_VERSION"; then
+            echo "$PACKAGE_NAME@$PACKAGE_VERSION is already published and cannot be overwritten" >&2
+            exit 1
+          fi
+
+      - name: Publish through npm Trusted Publishing
+        env:
+          NPM_TAG: ${{ steps.release.outputs.npm-tag }}
+        run: npm publish --access public --tag "$NPM_TAG"

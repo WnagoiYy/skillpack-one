@@ -108,6 +108,10 @@ npm run skillpack -- harness discover --adapter pi
 
 For a Codex project-native installation, copy the reviewed directories under `.agents/skills/` into the target repository's `.agents/skills/`. The same generated Skills are available under `skills/` for the plugin bundle and compatible harnesses. Canonical sources live in `skill-src/`; do not edit either projection directly.
 
+## npm releases
+
+Permanent releases use GitHub Actions and npm Trusted Publishing (OIDC), without a long-lived repository write token. Exact tag/version matching, `main` ancestry, the complete CI gate, an `npm` deployment Environment, package inspection, and `next`/`latest` separation are enforced before publication. Because npm requires a package to exist before OIDC trust can be configured, maintainers must perform one 2FA-authenticated bootstrap publish first. Follow the complete [npm release and rollback guide](docs/npm-release.md).
+
 ## Repository map
 
 ```text

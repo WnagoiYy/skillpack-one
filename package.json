@@ -1,15 +1,35 @@
 {
   "name": "skillpack-one",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.10",
   "description": "Install one pack. Let it find, combine, and improve the skills you need.",
   "type": "module",
+  "packageManager": "npm@11.19.1",
   "private": false,
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WnagoiYy/skillpack-one.git"
+  },
+  "homepage": "https://github.com/WnagoiYy/skillpack-one#readme",
+  "bugs": {
+    "url": "https://github.com/WnagoiYy/skillpack-one/issues"
+  },
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "mcp",
+    "skill-routing",
+    "self-improving-agents"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "engines": {
     "node": ">=24.0.0"
   },
   "bin": {
-    "skillpack": "./dist/src/cli.js"
+    "skillpack": "dist/src/cli.js"
   },
   "files": [
     ".agents/skills",
@@ -25,7 +45,8 @@
     "schemas",
     "docs",
     "paper",
-    "dist",
+    "dist/src",
+    "dist/scripts",
     "README.md",
     "README.zh-CN.md",
     "CONTRIBUTING.md",
@@ -42,6 +63,7 @@
     "skills:check": "tsx scripts/generate-skill-projections.ts --check",
     "check": "npm run typecheck && npm run skills:check && npm test",
     "ci": "npm run check && npm run build && npm run skillpack -- gate",
+    "release:plan": "tsx scripts/prepare-npm-release.ts",
     "skillpack": "tsx src/cli.ts"
   },
   "dependencies": {

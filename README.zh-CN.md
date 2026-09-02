@@ -108,6 +108,10 @@ npm run skillpack -- harness discover --adapter pi
 
 若要以 Codex 项目级 Skill 使用，请把本仓库 `.agents/skills/` 下经过审查的目录复制到目标仓库的 `.agents/skills/`。插件包和兼容 Harness 使用 `skills/`。二者都由 `skill-src/` 生成，请勿直接编辑投影目录。
 
+## npm 发布
+
+长期发布流程使用 GitHub Actions 与 npm Trusted Publishing（OIDC），仓库中不保存长期写入 Token。流程会强制校验标签与版本严格一致、发布提交属于 `main`、完整 CI、`npm` Environment 审批、包内容，以及 `next`/`latest` 隔离。由于 npm 只允许已经存在的包绑定 OIDC，维护者需要先进行一次带 2FA 的首次发布。完整步骤与回滚方式见 [npm 发布指南](docs/zh-CN/npm-release.md)。
+
 ## 目录结构
 
 ```text
