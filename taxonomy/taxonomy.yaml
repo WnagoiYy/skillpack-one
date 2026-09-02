@@ -19,8 +19,8 @@ nodes:
     boundaryExamples:
       - A security review routes to security-trust first even when the artifact is code.
     keywords:
-      en: [code, software, bug, test, refactor, repository, api, application]
-      zh-CN: [代码, 代码修改, 软件, 修复, 测试, 重构, 仓库, 接口, 应用]
+      en: [code, software, bug, test, refactor, repository, api, application, implement, patch]
+      zh-CN: [代码, 代码修改, 软件, 修复, 测试, 重构, 仓库, 接口, 应用, 实现, 补丁]
   - id: research-knowledge
     label:
       en: Research and knowledge
@@ -35,6 +35,7 @@ nodes:
     excludes:
       - implementing source code as the primary outcome
       - producing a polished business document without research
+      - vulnerability review
     boundaryExamples:
       - A researched report routes here for evidence gathering, then to documents for production.
     keywords:

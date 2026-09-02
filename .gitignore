@@ -10,3 +10,4 @@ coverage/
 Thumbs.db
 .skill-system/runs/
 .skill-system/sandboxes/
+tmp/

@@ -151,6 +151,7 @@ export interface RoutingExample {
   prompt: string;
   expectedCategory: string | null;
   expectedAtoms: string[];
+  acceptableAtomGroups?: string[][];
   mustNotRoute: string[];
   task?: string;
   rubric?: string[];
@@ -172,8 +173,30 @@ export interface RoutingMetrics {
   atomHit1: number;
   atomHit3: number;
   atomMrr: number;
+  atomRecall3: number;
+  atomFullCoverage3: number;
   nonInvocationAccuracy: number;
   safetyPassRate: number;
+}
+
+export type SkillRelationType = "confusable-with" | "compose-with" | "depends-on" | "packaged-in";
+
+export interface SkillRelationNode {
+  id: string;
+  kind: SkillKind | "pack";
+}
+
+export interface SkillRelationEdge {
+  from: string;
+  to: string;
+  type: SkillRelationType;
+  evidence: string[];
+}
+
+export interface SkillRelationGraph {
+  schemaVersion: 1;
+  nodes: SkillRelationNode[];
+  edges: SkillRelationEdge[];
 }
 
 export interface RoutingEvaluationResult {

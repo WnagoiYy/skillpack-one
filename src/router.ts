@@ -39,9 +39,17 @@ function tokens(value: string): Set<string> {
 
 function explicitlyNegated(prompt: string, phrase: string): boolean {
   const index = prompt.indexOf(normalize(phrase));
-  if (index < 0) return false;
-  const prefix = prompt.slice(Math.max(0, index - 24), index);
-  return /(?:\bdo\s+not\s+|\bdon't\s+|\bnot\s+|不要|不|仅)(?:\w+\s+){0,2}$/u.test(prefix);
+  if (index >= 0) {
+    const prefix = prompt.slice(Math.max(0, index - 32), index);
+    if (/(?:\bdo\s+not\s+|\bdon't\s+|\bnot\s+|不要|不|仅)(?:\w+\s+){0,3}$/u.test(prefix)) return true;
+  }
+  const phraseTokens = [...tokens(phrase)];
+  if (phraseTokens.length === 0) return false;
+  return prompt.split(/[,.!?;，。！？；]/u).some((clause) => {
+    if (!/(?:\bdo\s+not\b|\bdon't\b|\bnot\b|不要|不)/u.test(clause)) return false;
+    const clauseTokens = tokens(clause);
+    return phraseTokens.every((token) => clauseTokens.has(token));
+  });
 }
 
 function localeChain(locale: string): string[] {
@@ -99,7 +107,7 @@ function scoreCategory(prompt: string, promptTokens: Set<string>, node: Taxonomy
   const keywords = localizedValues(node.keywords, locale).flat();
 
   for (const keyword of keywords) {
-    if (phraseMatches(prompt, promptTokens, keyword)) {
+    if (phraseMatches(prompt, promptTokens, keyword) && !explicitlyNegated(prompt, keyword)) {
       score += 3;
       matched.push(`keyword:${keyword}`);
     }
@@ -132,7 +140,7 @@ function scoreContract(
   for (const triggerList of localizedValues(contract.routing.positiveTriggers, locale)) {
     for (const trigger of triggerList) {
       const triggerScore = positiveTriggerScore(prompt, promptTokens, trigger);
-      if (triggerScore > 0) {
+      if (triggerScore > 0 && !explicitlyNegated(prompt, trigger)) {
         score += triggerScore;
         matched.push(`positive:${trigger}`);
       }

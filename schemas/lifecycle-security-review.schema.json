@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/schemas/lifecycle-security-review.schema.json",
+  "title": "Lifecycle security review for reusable agent capabilities",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "subject", "reviewedAt", "reviewer", "stages"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": { "$ref": "#/$defs/id" },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "version"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "type": { "enum": ["skill", "mcp-server", "plugin", "harness"] },
+        "version": { "type": "string", "minLength": 1 },
+        "revision": { "type": "string", "minLength": 1 }
+      }
+    },
+    "reviewedAt": { "type": "string", "format": "date-time" },
+    "reviewer": { "type": "string", "minLength": 1 },
+    "stages": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["stage", "status", "threats", "evidence", "residualRisk"],
+        "properties": {
+          "stage": { "enum": ["authoring", "storage", "retrieval", "selection", "execution", "evolution"] },
+          "status": { "enum": ["pass", "fail", "not-applicable"] },
+          "threats": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "evidence": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "residualRisk": { "type": "string", "minLength": 1 },
+          "rationale": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+  }
+}

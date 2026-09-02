@@ -4,6 +4,19 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 
 ## [Unreleased]
 
+### Added
+
+- Equivalence-aware multi-Atom Recall@3 and Full Coverage@3, plus a same-domain hard-distractor routing suite.
+- Six-stage lifecycle security reviews covering authoring, storage, retrieval, selection, execution, and evolution.
+- Typed Skill relation graphs for reviewed confusion, composition, dependency, and pack-membership evidence.
+- Bounded `add`/`delete`/`replace` evolution-attempt records with strict-improvement and protected-regression gates.
+- An English system-paper draft, Chinese extended abstract, BibTeX bibliography, and evidence-to-design research synthesis.
+
+### Changed
+
+- Routing now suppresses explicitly negated positive signals and uses narrower outcome boundaries for code implementation and security review.
+- Meta Skill evolution keeps rejected attempt evidence, rejects ties, and separates optimizer-only memory from shipped Atomic Skill context.
+
 ## [0.1.0-alpha.9] - 2026-09-02
 
 ### Added

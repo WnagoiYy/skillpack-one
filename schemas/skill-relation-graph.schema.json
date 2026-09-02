@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/schemas/skill-relation-graph.schema.json",
+  "title": "Reviewed Skill relation graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "nodes", "edges"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "kind": { "enum": ["atom", "category", "meta", "pack"] }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "to", "type", "evidence"],
+        "properties": {
+          "from": { "$ref": "#/$defs/id" },
+          "to": { "$ref": "#/$defs/id" },
+          "type": { "enum": ["confusable-with", "compose-with", "depends-on", "packaged-in"] },
+          "evidence": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+  }
+}

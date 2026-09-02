@@ -20,7 +20,7 @@ taxonomy:
   dependencies: [cli-backed]
   risk: read-only
 routing:
-  positiveTriggers: { en: [audit source code for vulnerabilities, security review, trace attacker input], zh-CN: [审计代码漏洞, 安全审查, 跟踪攻击者输入] }
+  positiveTriggers: { en: [audit source code for vulnerabilities, security review, vulnerability review, trace attacker input], zh-CN: [审计代码漏洞, 安全审查, 漏洞审查, 跟踪攻击者输入] }
   negativeTriggers: { en: [fix a normal bug, implement remediation], zh-CN: [修复普通问题, 实现修复] }
   confusableWith: [atom-implement-code-change]
 provenance: { origin: local, license: Apache-2.0 }

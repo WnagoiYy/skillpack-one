@@ -47,8 +47,53 @@ describe("evaluation engine", () => {
     expect(result.metrics.atomHit1).toBe(0);
     expect(result.metrics.atomHit3).toBe(1);
     expect(result.metrics.atomMrr).toBe(0.5);
+    expect(result.metrics.atomRecall3).toBe(1);
+    expect(result.metrics.atomFullCoverage3).toBe(1);
     expect(result.metrics.nonInvocationAccuracy).toBe(1);
     expect(result.metrics.safetyPassRate).toBe(1);
+  });
+
+  it("measures complete multi-Atom recovery and accepts reviewed functional alternatives", async () => {
+    const dataset: EvalDataset = {
+      schemaVersion: 1,
+      id: "multi-atom-fixture",
+      split: "dev",
+      locale: "en",
+      examples: [
+        {
+          id: "multi",
+          prompt: "research and translate",
+          expectedCategory: "research",
+          expectedAtoms: ["atom-find", "atom-translate"],
+          acceptableAtomGroups: [["atom-find", "atom-search-equivalent"], ["atom-translate"]],
+          mustNotRoute: []
+        }
+      ]
+    };
+    const traces: RouteTrace[] = [{
+      prompt: "research and translate",
+      locale: "en",
+      categories: [{ id: "research", score: 4, matched: [], penalties: [] }],
+      atoms: [
+        { id: "atom-search-equivalent", score: 5, matched: [], penalties: [] },
+        { id: "atom-unrelated", score: 4, matched: [], penalties: [] },
+        { id: "atom-translate", score: 3, matched: [], penalties: [] }
+      ],
+      special: [],
+      ambiguous: false
+    }];
+    const { evaluateRoutingTraces } = await import("../src/eval/evaluate.js");
+    const result = evaluateRoutingTraces(dataset, traces);
+    expect(result.metrics.atomHit1).toBe(1);
+    expect(result.metrics.atomRecall3).toBe(1);
+    expect(result.metrics.atomFullCoverage3).toBe(1);
+
+    const partial = evaluateRoutingTraces(dataset, [{
+      ...traces[0]!,
+      atoms: traces[0]!.atoms.slice(0, 2)
+    }]);
+    expect(partial.metrics.atomRecall3).toBe(0.5);
+    expect(partial.metrics.atomFullCoverage3).toBe(0);
   });
 
   it("evaluates independent English, Chinese, and adversarial suites", async () => {
@@ -58,18 +103,20 @@ describe("evaluation engine", () => {
       "routing-adversarial",
       "routing-bootstrap",
       "routing-en-test",
+      "routing-hard-distractors",
       "routing-zh-cn-test"
     ]);
     for (const result of results) {
       expect(result.metrics.categoryHit1).toBeGreaterThanOrEqual(0.9);
       expect(result.metrics.atomHit1).toBeGreaterThanOrEqual(0.8);
+      expect(result.metrics.atomFullCoverage3).toBeGreaterThanOrEqual(0.8);
       expect(result.metrics.safetyPassRate).toBe(1);
     }
   });
 
   it("reports every failed gate instead of hiding regressions in an aggregate", () => {
     const failures = metricGate(
-      { categoryHit1: 0.95, categoryHit3: 1, atomHit1: 0.75, atomHit3: 1, atomMrr: 0.9, nonInvocationAccuracy: 1, safetyPassRate: 0.5 },
+      { categoryHit1: 0.95, categoryHit3: 1, atomHit1: 0.75, atomHit3: 1, atomMrr: 0.9, atomRecall3: 1, atomFullCoverage3: 1, nonInvocationAccuracy: 1, safetyPassRate: 0.5 },
       { categoryHit1: 0.9, atomHit1: 0.8, safetyPassRate: 1 }
     );
     expect(failures).toEqual([
