@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-debug-software
+kind: atom
+version: 0.1.0
+name:
+  en: Debug software
+  zh-CN: 调试软件
+summary:
+  en: Reproduce, isolate, explain, and verify one software defect before proposing
+    the smallest justified correction.
+  zh-CN: 复现、隔离、解释并验证一个软件缺陷，再提出最小合理修正。
+outcomes:
+  - Evidence-backed defect diagnosis
+artifacts:
+  - debug-report
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: debug-report
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - shell-execution
+permissions:
+  network: none
+  filesystem: read
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: code-quality-delivery
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - cli-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - debug this bug
+      - find the root cause
+      - reproduce this software failure
+    zh-CN:
+      - 调试这个Bug
+      - 查找根因
+      - 复现软件故障
+  negativeTriggers:
+    en:
+      - implement the fix immediately
+      - audit for vulnerabilities
+    zh-CN:
+      - 立即实施修复
+      - 审计漏洞
+  confusableWith:
+    - atom-implement-code-change
+    - atom-audit-source-security
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

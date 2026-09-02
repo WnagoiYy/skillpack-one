@@ -8,6 +8,7 @@ import { loadContracts, loadTaxonomy } from "./registry.js";
 import { routeRequest } from "./router.js";
 import { lintTaxonomy, validateDocumentAgainstSchema, validateRepository } from "./validation.js";
 import { catalogStats, collectCatalog, loadCatalog } from "./catalog/catalog.js";
+import { collectUpstreamInventory, upstreamInventoryStats } from "./catalog/upstream.js";
 import { writeDuplicateClusters } from "./deduplicate.js";
 import { loadPacks, recommendPacks, validatePack } from "./packs.js";
 import { evaluateAllRoutingDatasets, loadEvalDatasets, metricGate } from "./eval/evaluate.js";
@@ -40,20 +41,27 @@ import {
 import type { JsonValue } from "./runtime/state.js";
 import { buildSkillRelationGraph, validateSkillRelationGraph } from "./relations.js";
 import { evaluateLifecycleSecurityReview, type LifecycleSecurityReview } from "./security/lifecycle.js";
+import { installSkillPack } from "./install.js";
 
-function installedPackageVersion(): string {
+function installedPackageRoot(): string {
   const moduleDirectory = path.dirname(fileURLToPath(import.meta.url));
   const candidates = [
-    path.resolve(moduleDirectory, "..", "package.json"),
-    path.resolve(moduleDirectory, "..", "..", "package.json")
+    path.resolve(moduleDirectory, ".."),
+    path.resolve(moduleDirectory, "..", "..")
   ];
-  for (const candidate of candidates) {
-    if (!existsSync(candidate)) continue;
-    const document = JSON.parse(readFileSync(candidate, "utf8")) as { version?: unknown };
-    if (typeof document.version === "string" && document.version.length > 0) return document.version;
-    throw new Error(`${candidate} does not declare a package version`);
-  }
+  for (const candidate of candidates) if (existsSync(path.join(candidate, "package.json"))) return candidate;
   throw new Error("skillpack-one package.json could not be located");
+}
+
+function installedPackageVersion(): string {
+  const candidate = path.join(installedPackageRoot(), "package.json");
+  const document = JSON.parse(readFileSync(candidate, "utf8")) as { version?: unknown };
+  if (typeof document.version === "string" && document.version.length > 0) return document.version;
+  throw new Error(`${candidate} does not declare a package version`);
+}
+
+function defaultRoot(): string {
+  return existsSync(path.join(process.cwd(), "taxonomy", "taxonomy.yaml")) ? process.cwd() : installedPackageRoot();
 }
 
 export function buildProgram(): Command {
@@ -63,11 +71,22 @@ export function buildProgram(): Command {
     .version(installedPackageVersion());
 
   program
+    .command("install")
+    .description("Install the complete reviewed SkillPack One projection into a Codex project")
+    .option("--target <path>", "target Skill directory", path.join(process.cwd(), ".agents", "skills"))
+    .option("--force", "replace only conflicting Skill directories with the packaged versions", false)
+    .action(async (options: { target: string; force: boolean }) => {
+      const result = await installSkillPack(installedPackageRoot(), options.target, options.force);
+      process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
+      if (result.conflicts.length > 0) process.exitCode = 2;
+    });
+
+  program
     .command("route")
     .description("Explain the category and atomic Skill candidates for a request")
     .argument("<prompt>", "user request to classify")
     .option("--locale <locale>", "locale such as en or zh-CN")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .action(async (prompt: string, options: { locale?: string; root: string }) => {
       const root = path.resolve(options.root);
       const [taxonomy, contracts] = await Promise.all([loadTaxonomy(root), loadContracts(root)]);
@@ -81,7 +100,7 @@ export function buildProgram(): Command {
     .description("Recommend a governed capability pack and compile its dependency-aware execution stages")
     .argument("<prompt>", "user request that may require multiple Skills")
     .option("--locale <locale>", "locale such as en or zh-CN")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .action(async (prompt: string, options: { locale?: string; root: string }) => {
       const root = path.resolve(options.root);
       const [taxonomyDocument, contracts, packs] = await Promise.all([
@@ -98,7 +117,7 @@ export function buildProgram(): Command {
   program
     .command("validate")
     .description("Validate taxonomy and capability contracts")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .action(async (options: { root: string }) => {
       const report = await validateRepository(path.resolve(options.root));
       process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
@@ -108,7 +127,7 @@ export function buildProgram(): Command {
   program
     .command("relations")
     .description("Build the reviewed typed relation graph from Skill contracts and Capability Packs")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .action(async (options: { root: string }) => {
       const root = path.resolve(options.root);
       const [contracts, packs] = await Promise.all([loadContracts(root), loadPacks(root)]);
@@ -144,7 +163,7 @@ export function buildProgram(): Command {
   const taxonomy = program.command("taxonomy").description("Inspect and validate the taxonomy");
   taxonomy
     .command("lint")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .action(async (options: { root: string }) => {
       const document = await loadTaxonomy(path.resolve(options.root));
       const errors = lintTaxonomy(document);
@@ -155,7 +174,7 @@ export function buildProgram(): Command {
   program
     .command("eval")
     .description("Evaluate routing across independent datasets")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .action(async (options: { root: string }) => {
       const root = path.resolve(options.root);
       const [taxonomyDocument, contracts] = await Promise.all([loadTaxonomy(root), loadContracts(root)]);
@@ -166,7 +185,7 @@ export function buildProgram(): Command {
   program
     .command("gate")
     .description("Apply release thresholds without collapsing protected metrics")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .action(async (options: { root: string }) => {
       const root = path.resolve(options.root);
       const [taxonomyDocument, contracts, gate] = await Promise.all([
@@ -185,7 +204,7 @@ export function buildProgram(): Command {
   const harness = program.command("harness").description("Inspect and run agent harness adapters");
   harness
     .command("status")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .action(async (options: { root: string }) => {
       const root = path.resolve(options.root);
       const adapters: HarnessAdapter[] = [
@@ -200,7 +219,7 @@ export function buildProgram(): Command {
   harness
     .command("discover")
     .description("Run real Skill discovery through a pinned harness adapter")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .option("--adapter <name>", "pi, dsh, or codex", "pi")
     .action(async (options: { root: string; adapter: string }) => {
       const root = path.resolve(options.root);
@@ -510,7 +529,7 @@ export function buildProgram(): Command {
     });
   catalog
     .command("stats")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .action(async (options: { root: string }) => {
       const entries = await loadCatalog(path.resolve(options.root));
       process.stdout.write(`${JSON.stringify(catalogStats(entries), null, 2)}\n`);
@@ -523,11 +542,20 @@ export function buildProgram(): Command {
       const clusters = await writeDuplicateClusters(path.resolve(options.root), Number(options.threshold));
       process.stdout.write(`${JSON.stringify({ clusters: clusters.length }, null, 2)}\n`);
     });
+  catalog
+    .command("mirror-skills")
+    .description("Download or reuse GitHub Skill sources and build a non-executing classified inventory")
+    .option("--root <path>", "repository root", process.cwd())
+    .option("--refresh", "fetch current upstream revisions without executing upstream code", false)
+    .action(async (options: { root: string; refresh: boolean }) => {
+      const inventory = await collectUpstreamInventory(path.resolve(options.root), { refresh: options.refresh });
+      process.stdout.write(`${JSON.stringify(upstreamInventoryStats(inventory), null, 2)}\n`);
+    });
 
   program
     .command("packs")
     .description("Validate composable capability packs")
-    .option("--root <path>", "repository root", process.cwd())
+    .option("--root <path>", "repository root", defaultRoot())
     .action(async (options: { root: string }) => {
       const root = path.resolve(options.root);
       const [packs, contracts] = await Promise.all([loadPacks(root), loadContracts(root)]);

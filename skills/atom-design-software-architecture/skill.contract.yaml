@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-design-software-architecture
+kind: atom
+version: 0.1.0
+name:
+  en: Design software architecture
+  zh-CN: 设计软件架构
+summary:
+  en: Produce one system design with components, responsibilities, data flow,
+    quality attributes, trade-offs, failure modes, and migration path.
+  zh-CN: 生成含组件、职责、数据流、质量属性、权衡、故障模式与迁移路径的系统设计。
+outcomes:
+  - Reviewable architecture specification
+artifacts:
+  - architecture-spec
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: architecture-spec
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: software-design
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - design software architecture
+      - create a system design
+      - define component boundaries
+    zh-CN:
+      - 设计软件架构
+      - 创建设计方案
+      - 定义组件边界
+  negativeTriggers:
+    en:
+      - write product requirements
+      - implement the architecture
+    zh-CN:
+      - 编写产品需求
+      - 实现架构
+  confusableWith:
+    - atom-design-api-contract
+    - atom-write-product-requirements
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

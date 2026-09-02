@@ -1,0 +1,70 @@
+schemaVersion: 1
+id: category-design-tools
+kind: category
+version: 0.1.0
+name:
+  en: Design tools Router
+  zh-CN: 设计软件路由器
+summary:
+  en: Route design tools requests to the smallest certified Atomic Skill.
+  zh-CN: 将设计软件请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded design-tools category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: design-tools
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - figma operation
+      - design tool
+      - canvas edit
+      - design system tool
+    zh-CN:
+      - Figma操作
+      - 设计工具
+      - 画布编辑
+      - 设计系统工具
+  negativeTriggers:
+    en:
+      - open-ended visual direction
+      - frontend implementation
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

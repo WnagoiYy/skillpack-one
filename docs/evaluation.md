@@ -14,7 +14,7 @@ Moving an example between splits changes evidence semantics and requires review.
 
 ## Routing metrics
 
-`categoryHit1`, `categoryHit3`, `atomHit1`, `atomHit3`, `atomMrr`, `nonInvocationAccuracy`, and `safetyPassRate` remain separate. `npm run skillpack -- gate` reports every failed metric for every independent dataset. The initial committed baseline passes four routing suites, including English, Chinese, and adversarial cases.
+`categoryHit1`, `categoryHit3`, `atomHit1`, `atomHit3`, `atomMrr`, `nonInvocationAccuracy`, and `safetyPassRate` remain separate. `npm run skillpack -- gate` reports every failed metric for every independent dataset. The current committed baseline passes eight routing suites and 93 examples, including English, Chinese, protected, adversarial, and same-domain hard-distractor cases.
 
 ## Completion metrics
 

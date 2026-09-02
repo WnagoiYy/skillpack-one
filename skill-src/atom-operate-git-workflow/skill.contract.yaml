@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-operate-git-workflow
+kind: atom
+version: 0.1.0
+name:
+  en: Operate a Git workflow
+  zh-CN: 操作Git工作流
+summary:
+  en: Execute one authorized version-control operation after inspecting repository
+    state, preserving unrelated work, and verifying the resulting history.
+  zh-CN: 检查仓库状态后执行一个获授权的版本控制操作，保留无关工作并验证结果历史。
+outcomes:
+  - Verified Git state transition
+artifacts:
+  - git-operation
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: git-operation
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+  - shell-execution
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: developer-tools
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - cli-backed
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - use git to create a branch
+      - commit these changes
+      - rebase this branch safely
+    zh-CN:
+      - 用Git创建分支
+      - 提交这些变更
+      - 安全变基分支
+  negativeTriggers:
+    en:
+      - design a branching strategy
+      - discard unrelated changes
+    zh-CN:
+      - 设计分支策略
+      - 丢弃无关改动
+  confusableWith:
+    - atom-implement-code-change
+    - atom-plan-software-release
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

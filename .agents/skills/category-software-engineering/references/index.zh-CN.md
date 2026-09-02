@@ -2,6 +2,12 @@
 
 创建、修改、验证、发布或运行可执行的软件产物。
 
+## 子分类
+
+- `category-code-quality-delivery` — **代码质量与交付**: 通过明确证据调试、测试、评审、优化并发布软件。
+- `category-product-definition` — **产品定义**: 在软件设计前定义用户问题、需求、验收标准与产品范围。
+- `category-software-design` — **软件设计**: 在实现前设计系统结构与接口契约。
+
 ## 原子 Skill
 
 - `atom-audit-source-security` — **审计源码安全**: 对边界明确的代码范围返回有证据的漏洞发现

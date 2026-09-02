@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Operate Knowledge Vault
+  short_description: Route and apply Atom Operate Knowledge Vault
+  default_prompt: Use $atom-operate-knowledge-vault to handle this request within
+    its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

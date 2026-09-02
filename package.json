@@ -1,6 +1,6 @@
 {
   "name": "skillpack-one",
-  "version": "0.1.0-alpha.11",
+  "version": "0.1.0-alpha.12",
   "description": "Install one pack. Let it find, combine, and improve the skills you need.",
   "type": "module",
   "packageManager": "npm@11.19.1",
@@ -60,6 +60,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "skills:generate": "tsx scripts/generate-skill-projections.ts",
+    "library:generate": "tsx scripts/generate-expanded-library.ts && npm run skills:generate",
+    "evidence:generate": "tsx scripts/generate-decomposition-map.ts",
     "skills:check": "tsx scripts/generate-skill-projections.ts --check",
     "check": "npm run typecheck && npm run skills:check && npm test",
     "ci": "npm run check && npm run build && npm run skillpack -- gate",

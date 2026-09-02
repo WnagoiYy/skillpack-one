@@ -17,7 +17,7 @@ flowchart LR
     R[User request] --> C[Category Skill]
     C --> A[Smallest atomic Skills]
     A --> P[Capability pack / task]
-    U[658-entry upstream catalog] -. evidence only .-> C
+    U[1,061-Skill mirror + 658-record catalog] -. evidence only .-> C
     M[Meta Skill governor] --> C
     M --> A
     M --> P
@@ -30,11 +30,12 @@ The project does **not** install every discovered capability. The upstream catal
 
 | Layer | Current snapshot | Purpose |
 | --- | ---: | --- |
-| Category Skills | 10 | First-stage, needs-driven routing and boundary decisions |
-| Atomic Skills | 11 | Small, independently testable capability contracts |
-| Meta Skills | 1 | Proposal, evaluation, promotion, deprecation, and rollback governance |
+| Category Skills | 22 | Open, hierarchical, needs-driven routing and boundary decisions |
+| Atomic Skills | 35 | Small, independently testable capability contracts |
+| Meta Skills | 2 | Upstream curation plus proposal, evaluation, promotion, deprecation, and rollback governance |
 | Capability packs | 4 | Validated compositions without merging atomic contracts |
-| Upstream records | 658 | 388 Agent Skills + 270 official MCP Registry servers |
+| Downloaded Skill inventory | 1,061 | 1,055 unique contents from 21 non-empty repositories; 6 exact duplicates are marked |
+| General upstream catalog | 658 | 388 Agent Skills + 270 official MCP Registry servers |
 | Candidate duplicate clusters | 8 | Human-review queue; originals remain intact |
 
 Every category projection carries an English fallback `index.md` plus `index.en.md`, `index.zh-CN.md`, and generic `index.zh.md` variants. English `SKILL.md` remains the portable discovery contract, while localized indexes preserve language-specific terminology and routing habits.
@@ -64,7 +65,7 @@ SkillPack One is a reference implementation of a general design philosophy. An i
 2. **Categories index Skills progressively.** A request first selects a Category Skill, then reads that category's `index.md` or locale-specific index, and only then loads the selected Atom. Category trees should stay shallow: no more than three Category levels is recommended—broad domain → subdomain → specific category → Atomic Skill. The Atom is the leaf and is not counted as a Category level. This implementation keeps executable Skill directories flat for Codex discovery while representing hierarchy through taxonomy parents and generated indexes; another host may use physical nested directories.
 3. **Every Skill may be generated, trained, and evolved.** A Skill may be authored by a person, recorded from a workflow, or drafted with `@skill-creator` in ChatGPT and `$skill-creator` in Codex. Here, "training" means improving descriptions, contracts, instructions, and compositions against versioned routing and task suites—not silently changing model weights. Meta Skills govern proposals, evaluation, promotion, deprecation, and rollback. They may govern the whole pack, one Category subtree, or one specific Skill, including themselves under the same gate.
 4. **Atoms have explicit responsibility boundaries.** An Atomic Skill owns one primary outcome, one dominant artifact or state transition, one permission envelope, one focused rubric, and an independently useful failure boundary. Broad end-to-end workflows belong in capability packs that compose atoms without merging them.
-5. **The foundation is shared; the taxonomy is not universal.** Different maintainers may split industries, functions, modalities, and risk domains differently. Conformance comes from portable descriptions, explicit boundaries, progressive indexes, evidence, and governed evolution—not from copying this repository's ten top-level categories.
+5. **The foundation is shared; the taxonomy is open.** Problem solving, scientific research, software development, and software use are seed examples, not an exhaustive four-way split. This reference implementation also retains business, data, documents, design/media, automation/operations, personal productivity, security/trust, and Skill/Agent governance. Different maintainers may add or split industries, functions, modalities, and risk domains. Conformance comes from portable descriptions, explicit boundaries, progressive indexes, evidence, and governed evolution—not from copying one fixed category list.
 
 See the [classification standard](taxonomy/classification-standard.md), [evaluation policy](docs/evaluation.md), and [evolution policy](docs/evolution-policy.md) for this implementation's concrete profile.
 
@@ -82,7 +83,18 @@ This keeps community growth additive in useful capability rather than additive i
 
 ## Quick start
 
-Requirements: Node.js 24 or newer and Git.
+Requirements: Node.js 24 or newer and Git. To install the published prerelease and project-native Codex Skills:
+
+```sh
+npm install --global skillpack-one@next
+cd your-codex-project
+skillpack install
+skillpack route "Design a reproducible scientific study"
+```
+
+`skillpack install` copies the complete reviewed projection into the current project's `.agents/skills/`. It is idempotent and refuses to overwrite conflicting user-owned Skill directories unless `--force` is explicit.
+
+For repository development:
 
 ```sh
 git clone https://github.com/WnagoiYy/skillpack-one.git
@@ -133,27 +145,28 @@ src/                  router, validator, catalog, evaluator, trainer, harnesses
 
 ## Evaluation and real evolution evidence
 
-`npm run skillpack -- gate` evaluates routing without collapsing metrics: category hit@1/@3, atom hit@1/@3, atom MRR, equivalence-aware atom Recall@3 and Full Coverage@3, non-invocation accuracy, and safety pass rate. Multi-Atom requests pass Full Coverage only when every required capability group appears. English, Chinese, adversarial, and same-domain hard-distractor suites are separate. The current 35 authored examples all pass; this verifies repository conformance, not general model utility. Task completion uses a different rubric and cannot be inferred from routing accuracy. `skillpack harness effect <without.json> <with.json>` then measures paired completion/rubric lift under the same dataset and harness identity.
+`npm run skillpack -- gate` evaluates routing without collapsing metrics: category hit@1/@3, atom hit@1/@3, atom MRR, equivalence-aware atom Recall@3 and Full Coverage@3, non-invocation accuracy, and safety pass rate. Multi-Atom requests pass Full Coverage only when every required capability group appears. English, Chinese, adversarial, and same-domain hard-distractor suites are separate. The current 93 authored examples all pass; this verifies repository conformance, not general model utility. Task completion uses a different rubric and cannot be inferred from routing accuracy. `skillpack harness effect <without.json> <with.json>` then measures paired completion/rubric lift under the same dataset and harness identity.
 
 The repository includes one real governed evolution record: `proposal-generic-zh-fallback`. The candidate added `index.zh.md`, passed isolated development plus untouched English, Chinese, and adversarial suites, and produced an append-only promotion decision with a rollback revision.
 
 New candidates can be bound to their exact canonical Git diff with `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence> --author <identity> --authorship <human|model-assisted|model-generated> [--generator <model>]`, then evaluated and independently promoted through the immutable decision log. Individual optimizer steps can be recorded with bounded `add`, `delete`, or `replace` edits; ties, protected regressions, over-budget attempts, and declared decisions inconsistent with measurements fail closed. Protected datasets, baselines, and the release gate cannot certify a candidate that changes them.
 
-Pi 0.84.4 is pinned and its real `loadSkillsFromDir` implementation discovers all 22 Skills. Model-backed task completion remains explicitly **uncertified** until Pi provider credentials are configured. The deterministic Mock adapter tests protocol plumbing only and is always marked `synthetic: true`; the optional DeepSeek Harness adapter stays disabled until a compatible CLI release is pinned.
+Pi 0.84.4 is pinned and its real `loadSkillsFromDir` implementation discovers all 59 Skills. The repository now carries 93 routing examples across original, English, Chinese, same-domain distractor, and adversarial suites; all pass the deterministic routing gate. Model-backed task completion remains explicitly **uncertified** until Pi provider credentials are configured. The deterministic Mock adapter tests protocol plumbing only and is always marked `synthetic: true`; the optional DeepSeek Harness adapter stays disabled until a compatible CLI release is pinned.
 
 See [evaluation](docs/evaluation.md), [harnesses](docs/harnesses.md), and the [evolution policy](docs/evolution-policy.md).
 
 The [Evolution Knowledge policy](docs/evolution-knowledge.md) explains how recurring successes, failures, rejected proposals, and research evidence become scoped, traceable patterns without becoming hidden task instructions.
 
-## Refreshing the research catalog
+## Refreshing the open research catalog
 
 ```sh
 npm run skillpack -- catalog collect
+npm run skillpack -- catalog mirror-skills --refresh
 npm run skillpack -- catalog deduplicate
 npm run skillpack -- catalog stats
 ```
 
-Collection uses fixed Git revisions and the read-only official MCP Registry endpoint, records attribution and fingerprints, and does not execute packages, hooks, endpoints, or Skill instructions. Review [catalog methodology](docs/catalog-methodology.md) and [third-party notices](THIRD_PARTY.md) before changing sources.
+`catalog mirror-skills` shallow-downloads declared Git repositories into ignored local cache, reads `SKILL.md` metadata through Git objects, fingerprints exact content, marks duplicates, applies an extensible first-pass taxonomy, and writes the committed inventory. It never executes upstream packages, hooks, scripts, endpoints, or Skill instructions. Unknown-license material remains design evidence only. The current automatic families are not a closed ontology: unmatched capabilities enter a manual-review queue, and maintainers may add new taxonomy nodes under the same contract and evaluation rules. Review [catalog methodology](docs/catalog-methodology.md) and [third-party notices](THIRD_PARTY.md) before changing sources.
 
 The machine-readable [`catalog/decomposition-map.yaml`](catalog/decomposition-map.yaml) shows how representative upstream patterns informed each local Atom, the Meta Skill, and all four packs without copying or activating upstream implementations.
 

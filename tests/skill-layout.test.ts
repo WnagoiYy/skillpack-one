@@ -16,14 +16,15 @@ function frontmatter(markdown: string): Record<string, unknown> {
 }
 
 describe("Skill source and projections", () => {
-  it("contains ten category Skills, representative atoms, and one meta Skill", async () => {
+  it("contains a hierarchical category library, representative atoms, and lifecycle meta Skills", async () => {
     const directories = (await readdir(sourceRoot, { withFileTypes: true }))
       .filter((entry) => entry.isDirectory())
       .map((entry) => entry.name);
 
-    expect(directories.filter((name) => name.startsWith("category-"))).toHaveLength(10);
-    expect(directories.filter((name) => name.startsWith("atom-")).length).toBeGreaterThanOrEqual(10);
+    expect(directories.filter((name) => name.startsWith("category-")).length).toBeGreaterThanOrEqual(20);
+    expect(directories.filter((name) => name.startsWith("atom-")).length).toBeGreaterThanOrEqual(30);
     expect(directories.filter((name) => name === "meta-skill-governor")).toHaveLength(1);
+    expect(directories.filter((name) => name === "meta-upstream-skill-curator")).toHaveLength(1);
   });
 
   it("uses valid discriminating frontmatter and shared contracts for every Skill", async () => {

@@ -1,0 +1,246 @@
+schemaVersion: 1
+id: routing-library-zh-cn
+split: dev
+locale: zh-CN
+protected: false
+examples:
+  - id: zh-01-frame-problem
+    prompt: 定义这个问题. 仅返回该请求所描述的有界结果。
+    expectedCategory: problem-framing
+    expectedAtoms:
+      - atom-frame-problem
+    mustNotRoute:
+      - atom-brainstorm-options
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-02-brainstorm-options
+    prompt: 头脑风暴方案. 仅返回该请求所描述的有界结果。
+    expectedCategory: ideation-planning
+    expectedAtoms:
+      - atom-brainstorm-options
+    mustNotRoute:
+      - atom-compare-decisions
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-03-build-action-plan
+    prompt: 制定行动计划. 仅返回该请求所描述的有界结果。
+    expectedCategory: ideation-planning
+    expectedAtoms:
+      - atom-build-action-plan
+    mustNotRoute:
+      - atom-plan-code-change
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-04-compare-decisions
+    prompt: 比较这些方案. 仅返回该请求所描述的有界结果。
+    expectedCategory: decision-review
+    expectedAtoms:
+      - atom-compare-decisions
+    mustNotRoute:
+      - atom-brainstorm-options
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-05-critique-output
+    prompt: 评审这个产物. 仅返回该请求所描述的有界结果。
+    expectedCategory: decision-review
+    expectedAtoms:
+      - atom-critique-output
+    mustNotRoute:
+      - atom-review-code-quality
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-06-review-literature
+    prompt: 综述科学文献. 仅返回该请求所描述的有界结果。
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-review-literature
+    mustNotRoute:
+      - atom-find-research-sources
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-07-design-research-study
+    prompt: 设计研究. 仅返回该请求所描述的有界结果。
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-design-research-study
+    mustNotRoute:
+      - atom-analyze-experimental-results
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-08-analyze-experimental-results
+    prompt: 分析实验结果. 仅返回该请求所描述的有界结果。
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-analyze-experimental-results
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-09-write-scientific-manuscript
+    prompt: 撰写科学论文. 仅返回该请求所描述的有界结果。
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-write-scientific-manuscript
+    mustNotRoute:
+      - atom-review-literature
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-10-manage-research-citations
+    prompt: 整理引用. 仅返回该请求所描述的有界结果。
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-manage-research-citations
+    mustNotRoute:
+      - atom-find-research-sources
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-11-write-product-requirements
+    prompt: 编写PRD. 仅返回该请求所描述的有界结果。
+    expectedCategory: product-definition
+    expectedAtoms:
+      - atom-write-product-requirements
+    mustNotRoute:
+      - atom-design-software-architecture
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-12-design-software-architecture
+    prompt: 设计软件架构. 仅返回该请求所描述的有界结果。
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-design-software-architecture
+    mustNotRoute:
+      - atom-design-api-contract
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-13-design-api-contract
+    prompt: 设计API契约. 仅返回该请求所描述的有界结果。
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-design-api-contract
+    mustNotRoute:
+      - atom-design-software-architecture
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-14-debug-software
+    prompt: 调试这个Bug. 仅返回该请求所描述的有界结果。
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-debug-software
+    mustNotRoute:
+      - atom-implement-code-change
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-15-write-automated-tests
+    prompt: 编写自动测试. 仅返回该请求所描述的有界结果。
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-write-automated-tests
+    mustNotRoute:
+      - atom-implement-code-change
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-16-review-code-quality
+    prompt: 评审代码变更. 仅返回该请求所描述的有界结果。
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-review-code-quality
+    mustNotRoute:
+      - atom-audit-source-security
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-17-optimize-code-performance
+    prompt: 优化这个瓶颈. 仅返回该请求所描述的有界结果。
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-optimize-code-performance
+    mustNotRoute:
+      - atom-implement-code-change
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-18-plan-software-release
+    prompt: 规划软件发布. 仅返回该请求所描述的有界结果。
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-plan-software-release
+    mustNotRoute:
+      - atom-plan-code-change
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-19-operate-git-workflow
+    prompt: 用Git创建分支. 仅返回该请求所描述的有界结果。
+    expectedCategory: developer-tools
+    expectedAtoms:
+      - atom-operate-git-workflow
+    mustNotRoute:
+      - atom-implement-code-change
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-20-operate-terminal-cli
+    prompt: 运行CLI命令. 仅返回该请求所描述的有界结果。
+    expectedCategory: developer-tools
+    expectedAtoms:
+      - atom-operate-terminal-cli
+    mustNotRoute:
+      - atom-implement-code-change
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-21-operate-browser-workflow
+    prompt: 操作这个网站. 仅返回该请求所描述的有界结果。
+    expectedCategory: developer-tools
+    expectedAtoms:
+      - atom-operate-browser-workflow
+    mustNotRoute:
+      - atom-design-automation-workflow
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-22-operate-spreadsheet
+    prompt: 编辑电子表格. 仅返回该请求所描述的有界结果。
+    expectedCategory: productivity-tools
+    expectedAtoms:
+      - atom-operate-spreadsheet
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-23-operate-knowledge-vault
+    prompt: 整理Obsidian知识库. 仅返回该请求所描述的有界结果。
+    expectedCategory: productivity-tools
+    expectedAtoms:
+      - atom-operate-knowledge-vault
+    mustNotRoute:
+      - atom-organize-personal-tasks
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-24-operate-design-tool
+    prompt: 在Figma中应用设计. 仅返回该请求所描述的有界结果。
+    expectedCategory: design-tools
+    expectedAtoms:
+      - atom-operate-design-tool
+    mustNotRoute:
+      - atom-design-interface-spec
+    tags:
+      - expanded-library
+      - zh-CN

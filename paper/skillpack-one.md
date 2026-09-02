@@ -4,7 +4,7 @@
 
 ## Abstract
 
-Reusable Agent Skills package procedural knowledge as discoverable files, but a growing ecosystem creates four systems problems: large catalogs become difficult to route, overlapping capabilities become difficult to compose, community artifacts cross several trust boundaries, and self-modification can silently optimize against its own evidence. This paper presents **SkillPack One**, a portable control plane for self-organizing Agent Skills. The design separates Category Skills for progressive routing, Atomic Skills with explicit responsibility and permission boundaries, Capability Packs that compile reviewed partial orders into executable plans, and Meta Skills that govern proposal, evaluation, promotion, rollback, and learning. All first-party capabilities share a machine-readable contract; locale-specific indexes preserve language-specific routing while stable identifiers remain portable. The system keeps immutable traces, persistent evolution knowledge, active Skills, and bounded within-run state as distinct artifacts. Recent retrieval, realistic-use, security, relation-graph, and text-optimization research is incorporated through equivalence-aware multi-Skill metrics, same-domain hard distractors, six-stage lifecycle security reviews, reviewed typed relations, and strictly improving bounded evolution attempts. The reference implementation contains 22 Skill contracts, four Capability Packs, and a non-executed catalog of 658 upstream Skill and Model Context Protocol records. Thirty-five deterministic conformance examples pass the current routing gate, including multilingual, adversarial, and hard-distractor suites. These results validate implementation invariants, not general model utility; the paper therefore specifies a separate model-backed experimental protocol based on paired no-Skill/with-Skill task effect. SkillPack One's central contribution is an interchangeable governance contract: learned routers and optimizers may evolve, while authorization, evidence separation, and rollback remain stable.
+Reusable Agent Skills package procedural knowledge as discoverable files, but a growing ecosystem creates four systems problems: large catalogs become difficult to route, overlapping capabilities become difficult to compose, community artifacts cross several trust boundaries, and self-modification can silently optimize against its own evidence. This paper presents **SkillPack One**, a portable control plane for self-organizing Agent Skills. The design separates Category Skills for progressive routing, Atomic Skills with explicit responsibility and permission boundaries, Capability Packs that compile reviewed partial orders into executable plans, and Meta Skills that govern proposal, evaluation, promotion, rollback, and learning. All first-party capabilities share a machine-readable contract; locale-specific indexes preserve language-specific routing while stable identifiers remain portable. The system keeps immutable traces, persistent evolution knowledge, active Skills, and bounded within-run state as distinct artifacts. Recent retrieval, realistic-use, security, relation-graph, and text-optimization research is incorporated through equivalence-aware multi-Skill metrics, same-domain hard distractors, six-stage lifecycle security reviews, reviewed typed relations, and strictly improving bounded evolution attempts. The reference implementation contains 59 Skill contracts, four Capability Packs, a non-executed catalog of 658 Skill/MCP records, and a broader fingerprinted inventory of 1,061 downloaded Skill records. Ninety-three deterministic conformance examples pass the current routing gate, including multilingual, adversarial, and hard-distractor suites. These results validate implementation invariants, not general model utility; the paper therefore specifies a separate model-backed experimental protocol based on paired no-Skill/with-Skill task effect. SkillPack One's central contribution is an interchangeable governance contract: learned routers and optimizers may evolve, while authorization, evidence separation, and rollback remain stable.
 
 **Keywords:** Agent Skills, capability routing, skill composition, self-improving agents, lifecycle security, progressive disclosure, agent governance
 
@@ -149,14 +149,15 @@ The current snapshot contains:
 
 | Artifact | Count | Role |
 | --- | ---: | --- |
-| Category Skills | 10 | first-stage needs and boundary routing |
-| Atomic Skills | 11 | independently testable capability contracts |
-| Meta Skills | 1 | governed lifecycle change |
+| Category Skills | 22 | open hierarchical needs and boundary routing |
+| Atomic Skills | 35 | independently testable capability contracts |
+| Meta Skills | 2 | upstream curation and governed lifecycle change |
 | Capability Packs | 4 | reviewed composition and ordering |
 | Upstream catalog records | 658 | attributed, non-executed classification evidence |
-| Typed relation nodes / edges | 26 / 49 | reviewed confusion, composition, dependency, packaging |
+| Downloaded Skill records / unique contents | 1,061 / 1,055 | fingerprinted, non-executed design evidence |
+| Typed relation nodes / edges | 63 / 98 | reviewed confusion, composition, dependency, packaging |
 
-Of the 658 upstream records, 388 are Agent Skills and 270 are official MCP Registry server records. Unknown or detected license status remains metadata; collection does not authorize execution.
+Of the 658 normalized upstream records, 388 are Agent Skills and 270 are official MCP Registry server records. The broader inventory spans 22 declared repositories, flags six exact-content duplicates, and leaves unmatched records in a manual-review family. Problem solving, scientific research, software development, and software use are seed examples within an open taxonomy rather than an exhaustive partition. Unknown or detected license status remains metadata; collection does not authorize execution.
 
 ## 6. Evaluation
 
@@ -174,7 +175,7 @@ Task utility is a different experiment. Matched no-Skill and with-Skill runs com
 
 ### 6.2 Deterministic conformance result
 
-The candidate was evaluated on 35 authored examples:
+The candidate was evaluated on 93 authored examples:
 
 | Suite | Split | Locale | Examples | Category H@1 | Atom H@1 | Recall@3 | Full Coverage@3 | Safety |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -182,6 +183,9 @@ The candidate was evaluated on 35 authored examples:
 | routing-bootstrap | development | en | 3 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
 | routing-en-test | test | en | 10 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
 | routing-hard-distractors | development | en | 4 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| routing-library-adversarial | development, adversarial cases | en | 10 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| routing-library-en | development, candidate-authored | en | 24 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| routing-library-zh-cn | development, candidate-authored | zh-CN | 24 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
 | routing-zh-cn-test | test | zh-CN | 10 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
 
 The hard-distractor development suite initially exposed a practical failure: negated phrases such as “do not edit the source” could still score as positive edit signals, while generic words such as “evidence” could dominate a security request. Before correction, the four-example suite produced 0.50 Category Hit@1, 0.50 Atom Hit@1, and 0.50 safety pass rate. Adding negation-aware positive matching and narrower outcome boundaries raised all three to 1.00 on that development suite. This is a test-driven debugging observation, not held-out evidence of generalization.
@@ -269,4 +273,3 @@ The intended future is not one universal taxonomy or one permanent router. It is
 [17] C. Wang et al., “SkillX: Automatically Constructing Skill Knowledge Bases for Agents,” arXiv:2604.04804, 2026.
 
 [18] G. Wang et al., “Voyager: An Open-Ended Embodied Agent with Large Language Models,” arXiv:2305.16291, 2023.
-

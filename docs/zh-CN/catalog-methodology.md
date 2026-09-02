@@ -2,7 +2,7 @@
 
 这个目录为分类、拆分和组合提供证据，不是安装清单。
 
-`catalog/decomposition-map.yaml` 补齐“采集到本地设计”的闭环：每个非分类本地能力和每个能力包都映射到代表性的目录条目 ID，记录综合时采用的设计贡献，并绑定目录快照摘要。所有映射均为 `design-evidence-only`，不会复制、安装、执行或晋级上游内容。
+`catalog/decomposition-map.yaml` 补齐“采集到本地设计”的闭环：每个非分类本地能力和每个能力包都映射到代表性的通用目录或下载清单条目 ID，记录综合时采用的设计贡献，并绑定两类快照摘要。所有映射均为 `design-evidence-only`，不会复制、安装、执行或晋级上游内容。
 
 ## 当前快照
 
@@ -15,11 +15,15 @@
 
 精确数量、revision 与聚合摘要记录在 `catalog/snapshots/manifest.yaml`。
 
+独立的下载清单包含来自 22 个已声明仓库的 1,061 条 `SKILL.md` 记录，其中 21 个仓库当前含有匹配文件。内容指纹识别出 1,055 份独立指令正文与 6 个完全重复项。该清单有意比规范化通用目录更广，保存在 `catalog/upstream-skill-inventory.yaml`。
+
 ## 采集规则
 
 ### Agent Skill
 
 采集器使用浅层、blob 过滤且不 checkout 的只读 Git 克隆，只列出 `HEAD` 中受版本控制的 `SKILL.md` 路径。它记录固定 commit、仓库、路径、作者命名空间、检测到的仓库许可证和新鲜度；不会运行 hook、包管理器、脚本或 Skill 指令。
+
+`catalog mirror-skills` 维护一个被 Git 忽略的本地对象缓存，只提取 frontmatter 元数据，计算精确内容指纹、标记重复项，并执行可扩展的第一轮分类。问题研究、科学研究、软件开发和软件使用只是种子分类，不是穷尽本体；系统同时保留其他类别与人工审查队列。
 
 ### MCP Server
 
@@ -43,4 +47,4 @@
 
 ## 可复现性
 
-运行 `npm run skillpack -- catalog collect` 可按 `catalog/sources.yaml` 刷新。配置的 `verifiedAt`、固定 revision、逐项指纹和快照摘要使变更可审查。CI 只校验提交的快照，不需要实时联网。
+运行 `npm run skillpack -- catalog collect` 刷新规范化通用目录；运行 `npm run skillpack -- catalog mirror-skills --refresh` 刷新更广的下载清单。配置的 `verifiedAt`、固定 revision、逐项指纹和快照摘要使变更可审查。CI 只校验已提交快照，不需要实时联网。

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/WnagoiYy/skillpack-one/schemas/upstream-skill-inventory.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "policy", "sourceCount", "recordCount", "uniqueContentCount", "digest", "records"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "policy": { "type": "string", "minLength": 20 },
+    "sourceCount": { "type": "integer", "minimum": 1 },
+    "recordCount": { "type": "integer", "minimum": 100 },
+    "uniqueContentCount": { "type": "integer", "minimum": 100 },
+    "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "records": {
+      "type": "array",
+      "minItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "source", "repository", "revision", "path", "name", "description", "family", "specialty", "trust", "license", "contentFingerprint"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^upstream-[a-z0-9-]+$" },
+          "source": { "type": "string", "minLength": 1 },
+          "repository": { "type": "string", "format": "uri" },
+          "revision": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+          "path": { "type": "string", "pattern": "SKILL\\.md$" },
+          "name": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "family": { "type": "string", "minLength": 1 },
+          "specialty": { "type": "string", "minLength": 1 },
+          "trust": { "type": "string", "minLength": 1 },
+          "license": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["status"],
+            "properties": {
+              "status": { "enum": ["detected", "unknown"] },
+              "spdx": { "type": "string", "minLength": 1 }
+            }
+          },
+          "contentFingerprint": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+          "duplicateOf": { "type": "string", "pattern": "^upstream-[a-z0-9-]+$" }
+        }
+      }
+    }
+  }
+}

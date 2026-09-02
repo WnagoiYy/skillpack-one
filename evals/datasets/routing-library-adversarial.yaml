@@ -1,0 +1,86 @@
+schemaVersion: 1
+id: routing-library-adversarial
+split: dev
+locale: en
+protected: false
+examples:
+  - id: adv-frame-not-brainstorm
+    prompt: Define the real problem, constraints, and success criteria; do not
+      generate solutions yet.
+    expectedCategory: problem-framing
+    expectedAtoms:
+      - atom-frame-problem
+    mustNotRoute:
+      - atom-brainstorm-options
+  - id: adv-brainstorm-not-decide
+    prompt: Generate alternative ideas with materially different premises; do not
+      score or choose a winner.
+    expectedCategory: ideation-planning
+    expectedAtoms:
+      - atom-brainstorm-options
+    mustNotRoute:
+      - atom-compare-decisions
+  - id: adv-literature-not-links
+    prompt: Synthesize these papers into agreements, conflicts, and research gaps; I
+      already have the sources.
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-review-literature
+    mustNotRoute:
+      - atom-find-research-sources
+  - id: adv-find-not-review
+    prompt: Find authoritative sources as scientific paper links with relevance
+      notes only; do not synthesize a literature review.
+    expectedCategory: research-knowledge
+    expectedAtoms:
+      - atom-find-research-sources
+    mustNotRoute:
+      - atom-review-literature
+  - id: adv-prd-not-architecture
+    prompt: Define product requirements, user stories, and acceptance criteria;
+      leave system architecture undecided.
+    expectedCategory: product-definition
+    expectedAtoms:
+      - atom-write-product-requirements
+    mustNotRoute:
+      - atom-design-software-architecture
+  - id: adv-architecture-not-code
+    prompt: Create a system design with component boundaries and data flow; do not
+      implement code.
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-design-software-architecture
+    mustNotRoute:
+      - atom-implement-code-change
+  - id: adv-debug-not-fix
+    prompt: Reproduce this software failure and find the root cause; diagnose only
+      and do not edit files.
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-debug-software
+    mustNotRoute:
+      - atom-implement-code-change
+  - id: adv-code-review-not-security
+    prompt: Review this code change for correctness, tests, and regressions; do not
+      perform a security review.
+    expectedCategory: code-quality-delivery
+    expectedAtoms:
+      - atom-review-code-quality
+    mustNotRoute:
+      - atom-audit-source-security
+  - id: adv-spreadsheet-edit-not-analysis
+    prompt: Edit these workbook cells and preserve formulas and formatting; do not
+      interpret the metrics.
+    expectedCategory: productivity-tools
+    expectedAtoms:
+      - atom-operate-spreadsheet
+    mustNotRoute:
+      - atom-analyze-tabular-data
+  - id: adv-design-tool-not-design
+    prompt: Apply this design in Figma from the approved specification and preserve
+      components; do not invent a new visual direction.
+    expectedCategory: design-tools
+    expectedAtoms:
+      - atom-operate-design-tool
+    mustNotRoute:
+      - atom-design-interface-spec

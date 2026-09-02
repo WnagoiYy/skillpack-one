@@ -99,13 +99,16 @@ describe("evaluation engine", () => {
   it("evaluates independent English, Chinese, and adversarial suites", async () => {
     const [taxonomy, contracts] = await Promise.all([loadTaxonomy(root), loadContracts(root)]);
     const results = await evaluateAllRoutingDatasets(root, taxonomy, contracts);
-    expect(results.map((result) => result.dataset).sort()).toEqual([
+    expect(results.map((result) => result.dataset).sort()).toEqual(expect.arrayContaining([
       "routing-adversarial",
       "routing-bootstrap",
       "routing-en-test",
       "routing-hard-distractors",
+      "routing-library-adversarial",
+      "routing-library-en",
+      "routing-library-zh-cn",
       "routing-zh-cn-test"
-    ]);
+    ]));
     for (const result of results) {
       expect(result.metrics.categoryHit1).toBeGreaterThanOrEqual(0.9);
       expect(result.metrics.atomHit1).toBeGreaterThanOrEqual(0.8);

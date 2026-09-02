@@ -1,5 +1,5 @@
 schemaVersion: 1
-verifiedAt: 2026-09-02T02:18:00Z
+verifiedAt: 2026-09-02T17:33:03Z
 sources:
   - id: official-mcp-registry
     kind: mcp-registry
@@ -45,4 +45,52 @@ sources:
   - id: hypergiant-agent-skills
     kind: github-skills
     repository: https://github.com/gohypergiant/agent-skills
+    trust: verified-community
+  - id: openai-skills
+    kind: github-skills
+    repository: https://github.com/openai/skills
+    trust: official-publisher
+  - id: vercel-labs-agent-skills
+    kind: github-skills
+    repository: https://github.com/vercel-labs/agent-skills
+    trust: official-publisher
+  - id: firebase-agent-skills
+    kind: github-skills
+    repository: https://github.com/firebase/agent-skills
+    trust: official-publisher
+  - id: github-awesome-copilot
+    kind: github-skills
+    repository: https://github.com/github/awesome-copilot
+    trust: official-publisher
+  - id: obsidian-skills
+    kind: github-skills
+    repository: https://github.com/kepano/obsidian-skills
+    trust: verified-community
+  - id: ui-ux-pro-max-skill
+    kind: github-skills
+    repository: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+    trust: popular-community
+  - id: n8n-skills
+    kind: github-skills
+    repository: https://github.com/czlonkowski/n8n-skills
+    trust: verified-community
+  - id: baoyu-skills
+    kind: github-skills
+    repository: https://github.com/JimLiu/baoyu-skills
+    trust: verified-community
+  - id: marketing-skills
+    kind: github-skills
+    repository: https://github.com/coreyhaines31/marketingskills
+    trust: popular-community
+  - id: planning-with-files
+    kind: github-skills
+    repository: https://github.com/OthmanAdi/planning-with-files
+    trust: popular-community
+  - id: rust-skills
+    kind: github-skills
+    repository: https://github.com/ZhangHanDong/rust-skills
+    trust: verified-community
+  - id: makepad-skills
+    kind: github-skills
+    repository: https://github.com/ZhangHanDong/makepad-skills
     trust: verified-community

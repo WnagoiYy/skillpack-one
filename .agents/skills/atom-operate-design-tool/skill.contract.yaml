@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-operate-design-tool
+kind: atom
+version: 0.1.0
+name:
+  en: Operate a design tool
+  zh-CN: 操作设计工具
+summary:
+  en: Apply an approved visual specification in a named design application while
+    preserving components, constraints, accessibility, and editability.
+  zh-CN: 在指定设计应用中应用已批准视觉规范，并保留组件、约束、无障碍与可编辑性。
+outcomes:
+  - Verified editable design artifact
+artifacts:
+  - design-tool-change
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: design-tool-change
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - network-read
+  - network-write
+permissions:
+  network: write
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: draft
+taxonomy:
+  primaryCategory: design-tools
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - apply this design in Figma
+      - edit this design-system file
+      - operate the design canvas
+    zh-CN:
+      - 在Figma中应用设计
+      - 编辑设计系统文件
+      - 操作设计画布
+  negativeTriggers:
+    en:
+      - invent the visual direction
+      - implement frontend code
+    zh-CN:
+      - 创造视觉方向
+      - 实现前端代码
+  confusableWith:
+    - atom-design-interface-spec
+    - atom-implement-code-change
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

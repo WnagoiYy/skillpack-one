@@ -193,3 +193,121 @@ nodes:
     keywords:
       en: [skill, agent, mcp, harness, routing, evaluation, taxonomy, self-improving]
       zh-CN: [技能, 智能体, MCP, Harness, 路由, 评测, 分类, 自优化]
+  - id: problem-solving
+    label: { en: Problem solving, zh-CN: 问题研究 }
+    description: { en: "Frame ambiguous problems and turn them into options, decisions, plans, or critiques.", zh-CN: "将模糊问题转化为问题框架、备选方案、决策、计划或评审。" }
+    includes: [problem framing, brainstorming, general action planning, decision comparison, output critique]
+    excludes: [domain execution that already has a specialized category, source-code implementation]
+    boundaryExamples: [A general plan routes here; a repository implementation plan routes to software engineering.]
+    keywords:
+      en: [problem, brainstorm, ideate, plan, decision, compare, critique, review]
+      zh-CN: [问题, 头脑风暴, 创意, 计划, 决策, 比较, 批判, 评审]
+  - id: problem-framing
+    parent: problem-solving
+    label: { en: Problem framing, zh-CN: 问题定义 }
+    description: { en: "Clarify goals, constraints, stakeholders, assumptions, and success criteria before solving.", zh-CN: "在求解前澄清目标、约束、相关方、假设与成功标准。" }
+    includes: [problem statements, scope clarification, assumption mapping]
+    excludes: [generating solution options, executing a domain task]
+    boundaryExamples: [Use this when the question itself is unclear; use ideation when the question is clear but options are needed.]
+    keywords:
+      en: [frame problem, define problem, clarify scope, assumptions, constraints]
+      zh-CN: [定义问题, 澄清范围, 假设, 约束, 成功标准]
+  - id: ideation-planning
+    parent: problem-solving
+    label: { en: Ideation and planning, zh-CN: 构思与计划 }
+    description: { en: Generate distinct options and convert a selected direction into an executable plan., zh-CN: 生成差异化方案并将选定方向转化为可执行计划。 }
+    includes: [brainstorming, option generation, action plans]
+    excludes: [formal decision scoring, implementation itself]
+    boundaryExamples: [Brainstorm before selecting; plan only after a direction and constraints are known.]
+    keywords:
+      en: [brainstorm, generate options, action plan, roadmap, steps]
+      zh-CN: [头脑风暴, 生成方案, 行动计划, 路线图, 步骤]
+  - id: decision-review
+    parent: problem-solving
+    label: { en: Decision and review, zh-CN: 决策与评审 }
+    description: { en: Compare options against criteria or critique an artifact against an explicit rubric., zh-CN: 按标准比较方案，或依据明确量规评审产物。 }
+    includes: [decision matrices, trade-off analysis, rubric-based critique]
+    excludes: [open-ended ideation, security-specific audits]
+    boundaryExamples: [A security review remains in security and trust even when it uses a rubric.]
+    keywords:
+      en: [compare options, decision matrix, tradeoff, critique, evaluate output]
+      zh-CN: [比较方案, 决策矩阵, 权衡, 批判, 评估产物]
+  - id: scientific-research
+    parent: research-knowledge
+    label: { en: Scientific research, zh-CN: 科学研究 }
+    description: { en: "Review scholarship, design studies, analyze experimental results, and prepare traceable manuscripts.", zh-CN: "综述学术证据、设计研究、分析实验结果并形成可追溯论文。" }
+    includes: [literature review, research design, experimental analysis, scholarly manuscripts, citation management]
+    excludes: [generic web research, unsupported medical decisions]
+    boundaryExamples: [Finding papers may use source discovery; synthesizing them into a literature review routes here.]
+    keywords:
+      en: [scientific, literature review, experiment, study design, manuscript, citation]
+      zh-CN: [科学研究, 文献综述, 实验, 研究设计, 论文, 引用]
+  - id: product-definition
+    parent: software-engineering
+    label: { en: Product definition, zh-CN: 产品定义 }
+    description: { en: "Define user problems, requirements, acceptance criteria, and product scope before software design.", zh-CN: "在软件设计前定义用户问题、需求、验收标准与产品范围。" }
+    includes: [product requirements, user stories, acceptance criteria]
+    excludes: [system architecture, coding]
+    boundaryExamples: [Define what and why here; decide technical structure in software design.]
+    keywords:
+      en: [product requirements, prd, user story, acceptance criteria, product scope]
+      zh-CN: [产品需求, 需求文档, 用户故事, 验收标准, 产品范围]
+  - id: software-design
+    parent: software-engineering
+    label: { en: Software design, zh-CN: 软件设计 }
+    description: { en: Design system structures and interface contracts before implementation., zh-CN: 在实现前设计系统结构与接口契约。 }
+    includes: [software architecture, API contracts, component boundaries]
+    excludes: [product requirements, code mutation]
+    boundaryExamples: [An API schema belongs here; implementing its handlers belongs to software engineering execution.]
+    keywords:
+      en: [software architecture, system design, api contract, component boundary]
+      zh-CN: [软件架构, 系统设计, API契约, 组件边界]
+  - id: code-quality-delivery
+    parent: software-engineering
+    label: { en: Code quality and delivery, zh-CN: 代码质量与交付 }
+    description: { en: "Debug, test, review, optimize, and release software with explicit evidence.", zh-CN: "通过明确证据调试、测试、评审、优化并发布软件。" }
+    includes: [debugging, automated testing, code review, performance optimization, release planning]
+    excludes: [security audits, initial product definition]
+    boundaryExamples: [Ordinary defects route here; exploitable vulnerabilities route to security and trust.]
+    keywords:
+      en: [debug, automated test, code review, performance, release plan]
+      zh-CN: [调试, 自动测试, 代码评审, 性能, 发布计划]
+  - id: software-use
+    label: { en: Software use, zh-CN: 软件使用 }
+    description: { en: "Operate named software tools through bounded, reviewable procedures without redefining their domain logic.", zh-CN: "通过有边界、可审查的流程操作指定软件工具，而不重新定义其领域逻辑。" }
+    includes: [developer tool operation, productivity software operation, design tool operation]
+    excludes: [building the software itself, silently performing external side effects]
+    boundaryExamples: [Using Git routes here; changing Git's implementation routes to software engineering.]
+    keywords:
+      en: [use software, operate tool, cli, browser, spreadsheet, obsidian, figma]
+      zh-CN: [使用软件, 操作工具, 命令行, 浏览器, 表格, Obsidian, Figma]
+  - id: developer-tools
+    parent: software-use
+    label: { en: Developer tools, zh-CN: 开发工具 }
+    description: { en: "Operate version control, terminals, browsers, and developer consoles safely.", zh-CN: "安全操作版本控制、终端、浏览器与开发者控制台。" }
+    includes: [Git workflows, terminal commands, browser developer workflows]
+    excludes: [writing product code, general office software]
+    boundaryExamples: [A Git rebase operation routes here; designing a branching policy may route to software engineering.]
+    keywords:
+      en: [git workflow, terminal, cli, browser workflow, devtools]
+      zh-CN: [Git工作流, 终端, 命令行, 浏览器工作流, 开发者工具]
+  - id: productivity-tools
+    parent: software-use
+    label: { en: Productivity tools, zh-CN: 效率软件 }
+    description: { en: Operate spreadsheets and knowledge tools while preserving structure and user control., zh-CN: 在保留结构和用户控制的前提下操作表格与知识工具。 }
+    includes: [spreadsheet operation, knowledge vault operation, structured note tools]
+    excludes: [statistical conclusions, personal task prioritization]
+    boundaryExamples: [Editing cells routes here; interpreting the resulting metrics routes to data and analytics.]
+    keywords:
+      en: [spreadsheet operation, excel, knowledge vault, obsidian, notes tool]
+      zh-CN: [操作表格, Excel, 知识库, Obsidian, 笔记工具]
+  - id: design-tools
+    parent: software-use
+    label: { en: Design tools, zh-CN: 设计软件 }
+    description: { en: Operate design applications from an explicit artifact specification., zh-CN: 根据明确的产物规格操作设计应用。 }
+    includes: [Figma operation, canvas editing, design-system tooling]
+    excludes: [open-ended visual direction, frontend implementation]
+    boundaryExamples: [Creating the visual spec routes to design and media; applying it in Figma routes here.]
+    keywords:
+      en: [figma operation, design tool, canvas edit, design system tool]
+      zh-CN: [Figma操作, 设计工具, 画布编辑, 设计系统工具]

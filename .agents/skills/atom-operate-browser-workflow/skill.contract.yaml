@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-operate-browser-workflow
+kind: atom
+version: 0.1.0
+name:
+  en: Operate a browser workflow
+  zh-CN: 操作浏览器工作流
+summary:
+  en: Complete one bounded browser procedure from observed page state with
+    explicit confirmation before consequential submission or communication.
+  zh-CN: 从已观察页面状态完成一个有限浏览器流程，并在重要提交或通信前明确确认。
+outcomes:
+  - Verified browser-state transition
+artifacts:
+  - browser-workflow
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: browser-workflow
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - network-read
+  - network-write
+permissions:
+  network: write
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: draft
+taxonomy:
+  primaryCategory: developer-tools
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - operate this website
+      - complete this browser workflow
+      - use browser devtools
+    zh-CN:
+      - 操作这个网站
+      - 完成浏览器流程
+      - 使用浏览器开发者工具
+  negativeTriggers:
+    en:
+      - build a website
+      - send without authorization
+    zh-CN:
+      - 构建网站
+      - 未经授权发送
+  confusableWith:
+    - atom-design-automation-workflow
+    - atom-implement-code-change
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

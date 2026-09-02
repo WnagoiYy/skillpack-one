@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-operate-knowledge-vault
+kind: atom
+version: 0.1.0
+name:
+  en: Operate a knowledge vault
+  zh-CN: 操作知识库
+summary:
+  en: Create or reorganize one bounded set of notes while preserving links,
+    metadata, naming conventions, and user-owned knowledge.
+  zh-CN: 创建或整理一组有限笔记，同时保留链接、元数据、命名规范与用户知识。
+outcomes:
+  - Verified knowledge-vault change
+artifacts:
+  - knowledge-vault-change
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: knowledge-vault-change
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: productivity-tools
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - organize this Obsidian vault
+      - update linked notes
+      - create structured knowledge notes
+    zh-CN:
+      - 整理Obsidian知识库
+      - 更新双链笔记
+      - 创建结构化知识笔记
+  negativeTriggers:
+    en:
+      - research new facts
+      - delete notes silently
+    zh-CN:
+      - 研究新事实
+      - 静默删除笔记
+  confusableWith:
+    - atom-organize-personal-tasks
+    - atom-review-literature
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

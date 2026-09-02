@@ -1,0 +1,144 @@
+schemaVersion: 1
+id: proposal-expanded-open-skill-library
+createdAt: 2026-09-02T18:09:34.142Z
+targetSkill: meta-upstream-skill-curator
+baseRevision: f7ae9c913f333410fa3f5e7e02af51e25c727563
+candidateRevision: b60175796f12f2db104c3aa84c0949073b3f1015
+rollbackRevision: f7ae9c913f333410fa3f5e7e02af51e25c727563
+observation: The installable package needed a broad non-executed upstream
+  inventory, an open hierarchical taxonomy, bounded reusable atoms, multilingual
+  evaluations, and a one-command Codex installer.
+authorship:
+  mode: model-generated
+  author: OpenAI-Codex
+  generator: gpt-5.6
+allowedFiles: &a1
+  - .codex-plugin/plugin.json
+  - .gitignore
+  - README.md
+  - README.zh-CN.md
+  - THIRD_PARTY.md
+  - catalog/decomposition-map.yaml
+  - catalog/local-capability-blueprint.yaml
+  - catalog/sources.yaml
+  - catalog/upstream-skill-inventory.yaml
+  - docs/catalog-methodology.md
+  - docs/evaluation.md
+  - docs/zh-CN/catalog-methodology.md
+  - docs/zh-CN/evaluation.md
+  - evals/datasets/routing-library-adversarial.yaml
+  - evals/datasets/routing-library-en.yaml
+  - evals/datasets/routing-library-zh-CN.yaml
+  - evals/datasets/task-completion-library.yaml
+  - package-lock.json
+  - package.json
+  - paper/skillpack-one.md
+  - paper/skillpack-one.zh-CN.md
+  - schemas/decomposition-map.schema.json
+  - schemas/upstream-skill-inventory.schema.json
+  - scripts/generate-decomposition-map.ts
+  - scripts/generate-expanded-library.ts
+  - skill-src/atom-analyze-experimental-results/SKILL.md
+  - skill-src/atom-analyze-experimental-results/skill.contract.yaml
+  - skill-src/atom-brainstorm-options/SKILL.md
+  - skill-src/atom-brainstorm-options/skill.contract.yaml
+  - skill-src/atom-build-action-plan/SKILL.md
+  - skill-src/atom-build-action-plan/skill.contract.yaml
+  - skill-src/atom-compare-decisions/SKILL.md
+  - skill-src/atom-compare-decisions/skill.contract.yaml
+  - skill-src/atom-critique-output/SKILL.md
+  - skill-src/atom-critique-output/skill.contract.yaml
+  - skill-src/atom-debug-software/SKILL.md
+  - skill-src/atom-debug-software/skill.contract.yaml
+  - skill-src/atom-design-api-contract/SKILL.md
+  - skill-src/atom-design-api-contract/skill.contract.yaml
+  - skill-src/atom-design-research-study/SKILL.md
+  - skill-src/atom-design-research-study/skill.contract.yaml
+  - skill-src/atom-design-software-architecture/SKILL.md
+  - skill-src/atom-design-software-architecture/skill.contract.yaml
+  - skill-src/atom-frame-problem/SKILL.md
+  - skill-src/atom-frame-problem/skill.contract.yaml
+  - skill-src/atom-manage-research-citations/SKILL.md
+  - skill-src/atom-manage-research-citations/skill.contract.yaml
+  - skill-src/atom-operate-browser-workflow/SKILL.md
+  - skill-src/atom-operate-browser-workflow/skill.contract.yaml
+  - skill-src/atom-operate-design-tool/SKILL.md
+  - skill-src/atom-operate-design-tool/skill.contract.yaml
+  - skill-src/atom-operate-git-workflow/SKILL.md
+  - skill-src/atom-operate-git-workflow/skill.contract.yaml
+  - skill-src/atom-operate-knowledge-vault/SKILL.md
+  - skill-src/atom-operate-knowledge-vault/skill.contract.yaml
+  - skill-src/atom-operate-spreadsheet/SKILL.md
+  - skill-src/atom-operate-spreadsheet/skill.contract.yaml
+  - skill-src/atom-operate-terminal-cli/SKILL.md
+  - skill-src/atom-operate-terminal-cli/skill.contract.yaml
+  - skill-src/atom-optimize-code-performance/SKILL.md
+  - skill-src/atom-optimize-code-performance/skill.contract.yaml
+  - skill-src/atom-plan-software-release/SKILL.md
+  - skill-src/atom-plan-software-release/skill.contract.yaml
+  - skill-src/atom-review-code-quality/SKILL.md
+  - skill-src/atom-review-code-quality/skill.contract.yaml
+  - skill-src/atom-review-literature/SKILL.md
+  - skill-src/atom-review-literature/skill.contract.yaml
+  - skill-src/atom-write-automated-tests/SKILL.md
+  - skill-src/atom-write-automated-tests/skill.contract.yaml
+  - skill-src/atom-write-product-requirements/SKILL.md
+  - skill-src/atom-write-product-requirements/skill.contract.yaml
+  - skill-src/atom-write-scientific-manuscript/SKILL.md
+  - skill-src/atom-write-scientific-manuscript/skill.contract.yaml
+  - skill-src/category-code-quality-delivery/SKILL.md
+  - skill-src/category-code-quality-delivery/skill.contract.yaml
+  - skill-src/category-decision-review/SKILL.md
+  - skill-src/category-decision-review/skill.contract.yaml
+  - skill-src/category-design-tools/SKILL.md
+  - skill-src/category-design-tools/skill.contract.yaml
+  - skill-src/category-developer-tools/SKILL.md
+  - skill-src/category-developer-tools/skill.contract.yaml
+  - skill-src/category-ideation-planning/SKILL.md
+  - skill-src/category-ideation-planning/skill.contract.yaml
+  - skill-src/category-problem-framing/SKILL.md
+  - skill-src/category-problem-framing/skill.contract.yaml
+  - skill-src/category-problem-solving/SKILL.md
+  - skill-src/category-problem-solving/skill.contract.yaml
+  - skill-src/category-product-definition/SKILL.md
+  - skill-src/category-product-definition/skill.contract.yaml
+  - skill-src/category-productivity-tools/SKILL.md
+  - skill-src/category-productivity-tools/skill.contract.yaml
+  - skill-src/category-scientific-research/SKILL.md
+  - skill-src/category-scientific-research/skill.contract.yaml
+  - skill-src/category-software-design/SKILL.md
+  - skill-src/category-software-design/skill.contract.yaml
+  - skill-src/category-software-use/SKILL.md
+  - skill-src/category-software-use/skill.contract.yaml
+  - skill-src/meta-upstream-skill-curator/SKILL.md
+  - skill-src/meta-upstream-skill-curator/skill.contract.yaml
+  - src/catalog/upstream.ts
+  - src/cli.ts
+  - src/install.ts
+  - src/router.ts
+  - taxonomy/taxonomy.yaml
+  - tests/catalog.test.ts
+  - tests/eval.test.ts
+  - tests/install.test.ts
+  - tests/skill-layout.test.ts
+  - tests/upstream-inventory.test.ts
+changedFiles: *a1
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+approvals: []

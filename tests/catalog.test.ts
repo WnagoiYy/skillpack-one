@@ -48,26 +48,31 @@ describe("upstream capability catalog", () => {
   });
 
   it("maps every local Atom, Meta Skill, and pack to non-executed upstream design evidence", async () => {
-    const [records, contracts, packs, mapText, manifestText, schemaText] = await Promise.all([
+    const [records, contracts, packs, mapText, manifestText, inventoryText, schemaText] = await Promise.all([
       entries(),
       loadContracts(root),
       loadPacks(root),
       readFile(path.join(root, "catalog", "decomposition-map.yaml"), "utf8"),
       readFile(path.join(root, "catalog", "snapshots", "manifest.yaml"), "utf8"),
+      readFile(path.join(root, "catalog", "upstream-skill-inventory.yaml"), "utf8"),
       readFile(path.join(root, "schemas", "decomposition-map.schema.json"), "utf8")
     ]);
     const map = parse(mapText) as {
       snapshotDigest: string;
-      capabilityMappings: Array<{ capability: string; evidence: Array<{ catalogEntry: string; usage: string }> }>;
+      inventoryDigest: string;
+      capabilityMappings: Array<{ capability: string; evidence: Array<{ catalogEntry?: string; inventoryEntry?: string; usage: string }> }>;
       packMappings: Array<{ pack: string; evidence: string[] }>;
     };
     const manifest = parse(manifestText) as { digest: string };
+    const inventory = parse(inventoryText, { maxAliasCount: -1 }) as { digest: string; records: Array<{ id: string; duplicateOf?: string }> };
     const ajv = new Ajv2020({ allErrors: true, strict: true });
     const validate = ajv.compile(JSON.parse(schemaText) as object);
     expect(validate(map), JSON.stringify(validate.errors)).toBe(true);
     expect(map.snapshotDigest).toBe(manifest.digest);
+    expect(map.inventoryDigest).toBe(inventory.digest);
 
     const recordsById = new Map(records.map((record) => [record.id, record]));
+    const inventoryById = new Map(inventory.records.map((record) => [record.id, record]));
     const expectedCapabilities = contracts.filter((contract) => contract.kind !== "category").map((contract) => contract.id).sort();
     expect(map.capabilityMappings.map((mapping) => mapping.capability).sort()).toEqual(expectedCapabilities);
     expect(map.packMappings.map((mapping) => mapping.pack).sort()).toEqual(packs.map((pack) => pack.id).sort());
@@ -75,9 +80,11 @@ describe("upstream capability catalog", () => {
     for (const mapping of map.capabilityMappings) {
       expect(mapping.evidence.length).toBeGreaterThanOrEqual(2);
       for (const evidence of mapping.evidence) {
-        const record = recordsById.get(evidence.catalogEntry);
-        expect(record, `${mapping.capability}: ${evidence.catalogEntry}`).toBeDefined();
-        expect(record?.security.executesUpstreamCode).toBe(false);
+        const record = evidence.catalogEntry ? recordsById.get(evidence.catalogEntry) : undefined;
+        const inventoryRecord = evidence.inventoryEntry ? inventoryById.get(evidence.inventoryEntry) : undefined;
+        expect(record ?? inventoryRecord, `${mapping.capability}: ${evidence.catalogEntry ?? evidence.inventoryEntry}`).toBeDefined();
+        if (record) expect(record.security.executesUpstreamCode).toBe(false);
+        if (inventoryRecord) expect(inventoryRecord.duplicateOf).toBeUndefined();
         expect(evidence.usage).toBe("design-evidence-only");
       }
     }

@@ -1,0 +1,74 @@
+schemaVersion: 1
+id: category-problem-solving
+kind: category
+version: 0.1.0
+name:
+  en: Problem solving Router
+  zh-CN: 问题研究路由器
+summary:
+  en: Route problem solving requests to the smallest certified Atomic Skill.
+  zh-CN: 将问题研究请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded problem-solving category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: problem-solving
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - problem
+      - brainstorm
+      - ideate
+      - plan
+      - decision
+      - compare
+    zh-CN:
+      - 问题
+      - 头脑风暴
+      - 创意
+      - 计划
+      - 决策
+      - 比较
+  negativeTriggers:
+    en:
+      - domain execution that already has a specialized category
+      - source-code implementation
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

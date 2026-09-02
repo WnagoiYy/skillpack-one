@@ -2,6 +2,10 @@
 
 Discover, synthesize, cite, or maintain knowledge and evidence.
 
+## Subcategories
+
+- `category-scientific-research` — **Scientific research**: Review scholarship, design studies, analyze experimental results, and prepare traceable manuscripts.
+
 ## Atomic Skills
 
 - `atom-analyze-market` — **Analyze a market**: Produce evidence-backed findings for one commercial market question

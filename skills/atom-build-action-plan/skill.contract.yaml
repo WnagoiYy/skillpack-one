@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-build-action-plan
+kind: atom
+version: 0.1.0
+name:
+  en: Build an action plan
+  zh-CN: 制定行动计划
+summary:
+  en: Convert one selected direction into sequenced actions, owners, dependencies,
+    checkpoints, risks, and completion criteria.
+  zh-CN: 将一个选定方向转化为含顺序、负责人、依赖、检查点、风险和完成标准的行动计划。
+outcomes:
+  - Executable action plan
+artifacts:
+  - action-plan
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: action-plan
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - none
+permissions:
+  network: none
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: ideation-planning
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - make an action plan
+      - break this goal into steps
+      - create a roadmap
+    zh-CN:
+      - 制定行动计划
+      - 把目标拆成步骤
+      - 创建路线图
+  negativeTriggers:
+    en:
+      - implement code now
+      - brainstorm more ideas
+    zh-CN:
+      - 立即实现代码
+      - 继续头脑风暴
+  confusableWith:
+    - atom-plan-code-change
+    - atom-brainstorm-options
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

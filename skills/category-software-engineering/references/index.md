@@ -2,6 +2,12 @@
 
 Create, change, verify, ship, or operate executable software artifacts.
 
+## Subcategories
+
+- `category-code-quality-delivery` — **Code quality and delivery**: Debug, test, review, optimize, and release software with explicit evidence.
+- `category-product-definition` — **Product definition**: Define user problems, requirements, acceptance criteria, and product scope before software design.
+- `category-software-design` — **Software design**: Design system structures and interface contracts before implementation.
+
 ## Atomic Skills
 
 - `atom-audit-source-security` — **Audit source security**: Return evidence-backed vulnerability findings for a bounded code surface

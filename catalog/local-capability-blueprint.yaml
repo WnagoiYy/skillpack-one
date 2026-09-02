@@ -1,0 +1,281 @@
+schemaVersion: 1
+categories:
+  - problem-solving
+  - problem-framing
+  - ideation-planning
+  - decision-review
+  - scientific-research
+  - product-definition
+  - software-design
+  - code-quality-delivery
+  - software-use
+  - developer-tools
+  - productivity-tools
+  - design-tools
+atoms:
+  - id: atom-frame-problem
+    category: problem-framing
+    name: { en: Frame a problem, zh-CN: 定义问题 }
+    summary: { en: "Turn one ambiguous request into a bounded problem statement with goals, constraints, assumptions, stakeholders, and success criteria.", zh-CN: "将一个模糊请求转化为含目标、约束、假设、相关方与成功标准的有界问题陈述。" }
+    outcome: Bounded problem statement
+    artifact: problem-frame
+    positive: { en: [frame this problem, define the real problem, clarify scope and assumptions], zh-CN: [定义这个问题, 澄清真正问题, 明确范围和假设] }
+    negative: { en: [brainstorm solutions, implement the solution], zh-CN: [头脑风暴方案, 实施解决方案] }
+    confusableWith: [atom-brainstorm-options, atom-build-action-plan]
+    steps: [Restate the observed situation without assuming a solution., Separate desired outcomes from proposed means., List stakeholders constraints assumptions unknowns and non-goals., Define observable success and the next question that must be answered.]
+  - id: atom-brainstorm-options
+    category: ideation-planning
+    name: { en: Brainstorm options, zh-CN: 头脑风暴方案 }
+    summary: { en: "Generate a deliberately varied set of options for one framed problem without prematurely selecting or implementing one.", zh-CN: "针对一个已定义问题生成刻意多样的方案，不提前选择或实施。" }
+    outcome: Diverse option set
+    artifact: option-set
+    positive: { en: [brainstorm options, generate alternative ideas, explore possible approaches], zh-CN: [头脑风暴方案, 生成不同想法, 探索可选路径] }
+    negative: { en: [choose the best option, create the implementation plan], zh-CN: [选择最佳方案, 制定实施计划] }
+    confusableWith: [atom-compare-decisions, atom-build-action-plan]
+    steps: [Confirm the problem frame and constraints., Generate options from materially different mechanisms or perspectives., Include conservative ambitious and hybrid options., Remove duplicates and state the distinctive premise of each option.]
+  - id: atom-build-action-plan
+    category: ideation-planning
+    name: { en: Build an action plan, zh-CN: 制定行动计划 }
+    summary: { en: "Convert one selected direction into sequenced actions, owners, dependencies, checkpoints, risks, and completion criteria.", zh-CN: "将一个选定方向转化为含顺序、负责人、依赖、检查点、风险和完成标准的行动计划。" }
+    outcome: Executable action plan
+    artifact: action-plan
+    positive: { en: [make an action plan, break this goal into steps, create a roadmap], zh-CN: [制定行动计划, 把目标拆成步骤, 创建路线图] }
+    negative: { en: [implement code now, brainstorm more ideas], zh-CN: [立即实现代码, 继续头脑风暴] }
+    confusableWith: [atom-plan-code-change, atom-brainstorm-options]
+    steps: [Confirm the chosen outcome and deadline., Decompose work into independently verifiable milestones., Assign dependencies owners and decision checkpoints., Add risks rollback or recovery actions and a definition of done.]
+  - id: atom-compare-decisions
+    category: decision-review
+    name: { en: Compare decisions, zh-CN: 比较决策方案 }
+    summary: { en: "Compare a bounded option set against explicit weighted criteria, uncertainty, reversibility, and decision-sensitive trade-offs.", zh-CN: "根据明确的加权标准、不确定性、可逆性和决策敏感权衡比较有限方案。" }
+    outcome: Traceable option comparison
+    artifact: decision-matrix
+    positive: { en: [compare these options, create a decision matrix, analyze tradeoffs], zh-CN: [比较这些方案, 创建决策矩阵, 分析权衡] }
+    negative: { en: [invent more options, execute the decision], zh-CN: [再生成方案, 执行决策] }
+    confusableWith: [atom-brainstorm-options, atom-critique-output]
+    steps: [Confirm mutually exclusive options and decision owner., Define criteria weights evidence and uncertainty., Score consistently and test sensitivity to changed weights., Recommend conditionally and state what new evidence could change the result.]
+  - id: atom-critique-output
+    category: decision-review
+    name: { en: Critique an output, zh-CN: 评审产物 }
+    summary: { en: "Evaluate one artifact against an explicit rubric and return prioritized, evidence-located improvement findings without rewriting it.", zh-CN: "依据明确量规评估一个产物，返回有证据定位和优先级的改进项，不直接重写。" }
+    outcome: Prioritized critique
+    artifact: critique-report
+    positive: { en: [critique this output, review against this rubric, find weaknesses in this draft], zh-CN: [评审这个产物, 按量规审查, 找出草稿弱点] }
+    negative: { en: [rewrite the artifact, security audit], zh-CN: [重写产物, 安全审计] }
+    confusableWith: [atom-review-code-quality, atom-audit-source-security]
+    steps: [Confirm artifact scope rubric and severity scale., Cite exact evidence for each finding., Separate correctness gaps from preferences., Rank fixes by impact and effort and note rubric items that already pass.]
+  - id: atom-review-literature
+    category: scientific-research
+    name: { en: Review scientific literature, zh-CN: 科学文献综述 }
+    summary: { en: "Synthesize a bounded body of scholarly evidence into themes, agreements, conflicts, gaps, and traceable conclusions.", zh-CN: "将有限的学术证据综合为主题、共识、冲突、空白与可追溯结论。" }
+    outcome: Traceable literature synthesis
+    artifact: literature-review
+    positive: { en: [review the scientific literature, synthesize these papers, identify research gaps], zh-CN: [综述科学文献, 综合这些论文, 识别研究空白] }
+    negative: { en: [only find paper links, fabricate citations], zh-CN: [只查找论文链接, 编造引用] }
+    confusableWith: [atom-find-research-sources, atom-write-scientific-manuscript]
+    permissions: research
+    steps: [State the review question inclusion criteria and search cutoff., Group evidence by method population and claim rather than paper order., Compare strength limitations conflicts and publication bias., Link every conclusion to sources and identify unresolved gaps.]
+  - id: atom-design-research-study
+    category: scientific-research
+    name: { en: Design a research study, zh-CN: 设计研究方案 }
+    summary: { en: "Produce a study protocol with hypothesis, variables, sampling, controls, analysis plan, ethics, and validity threats.", zh-CN: "生成含假设、变量、抽样、对照、分析计划、伦理与效度威胁的研究方案。" }
+    outcome: Reviewable study protocol
+    artifact: study-protocol
+    positive: { en: [design a research study, create an experiment protocol, plan a scientific investigation], zh-CN: [设计研究, 制定实验方案, 规划科学调查] }
+    negative: { en: [analyze completed results, make a clinical decision], zh-CN: [分析已完成结果, 做临床决策] }
+    confusableWith: [atom-analyze-experimental-results, atom-build-action-plan]
+    steps: [Define the research question hypothesis and estimand., Specify population sampling variables controls and measurement validity., Predeclare analysis missing-data and stopping rules., Record ethics safety reproducibility and internal and external validity threats.]
+  - id: atom-analyze-experimental-results
+    category: scientific-research
+    name: { en: Analyze experimental results, zh-CN: 分析实验结果 }
+    summary: { en: "Analyze one experimental dataset against a declared protocol with reproducible calculations, uncertainty, diagnostics, and bounded claims.", zh-CN: "按既定方案分析一个实验数据集，提供可复现计算、不确定性、诊断与有限结论。" }
+    outcome: Reproducible experimental analysis
+    artifact: experiment-analysis
+    positive: { en: [analyze experiment results, test this scientific hypothesis, interpret this study dataset], zh-CN: [分析实验结果, 检验科学假设, 解读研究数据] }
+    negative: { en: [design the experiment, edit the spreadsheet only], zh-CN: [设计实验, 只编辑表格] }
+    confusableWith: [atom-analyze-tabular-data, atom-design-research-study]
+    permissions: file-read
+    steps: [Verify data lineage protocol and exclusions., Reproduce descriptive and inferential calculations with assumptions., Quantify uncertainty effect sizes and sensitivity analyses., Separate observed results from interpretation and unsupported causal claims.]
+  - id: atom-write-scientific-manuscript
+    category: scientific-research
+    name: { en: Write a scientific manuscript, zh-CN: 撰写科学论文 }
+    summary: { en: "Turn verified study evidence into a structured scholarly manuscript while preserving claim-to-source and result-to-analysis traceability.", zh-CN: "将已验证研究证据写成结构化学术论文，并保持论断到来源、结果到分析的可追溯性。" }
+    outcome: Traceable manuscript draft
+    artifact: scientific-manuscript
+    positive: { en: [write a scientific manuscript, draft a research paper, structure the methods and results], zh-CN: [撰写科学论文, 起草研究文章, 编写方法与结果] }
+    negative: { en: [invent missing results, submit the paper externally], zh-CN: [编造缺失结果, 对外投稿] }
+    confusableWith: [atom-review-literature, atom-translate-document]
+    permissions: workspace
+    steps: [Confirm target venue audience and reporting standard., Build the manuscript around verified methods results and source-linked claims., Distinguish results interpretation limitations and future work., Run consistency checks across abstract figures tables citations and conclusions.]
+  - id: atom-manage-research-citations
+    category: scientific-research
+    name: { en: Manage research citations, zh-CN: 管理研究引用 }
+    summary: { en: "Normalize, validate, deduplicate, and map scholarly references to claims without inventing identifiers or bibliographic facts.", zh-CN: "规范化、验证、去重并将学术参考文献映射到论断，不编造标识符或书目信息。" }
+    outcome: Validated citation set
+    artifact: citation-library
+    positive: { en: [clean these citations, deduplicate references, validate bibliography entries], zh-CN: [整理引用, 去重参考文献, 验证书目条目] }
+    negative: { en: [write the literature review, fabricate a DOI], zh-CN: [撰写文献综述, 编造DOI] }
+    confusableWith: [atom-find-research-sources, atom-review-literature]
+    permissions: research
+    steps: [Parse each reference and preserve the original string., Resolve identifiers against authoritative metadata when authorized., Deduplicate conservatively and flag conflicts rather than guessing., Emit the requested citation style plus claim-to-reference mapping and unresolved items.]
+  - id: atom-write-product-requirements
+    category: product-definition
+    name: { en: Write product requirements, zh-CN: 编写产品需求 }
+    summary: { en: "Define one product change through user problem, scope, stories, constraints, acceptance criteria, metrics, and unresolved decisions.", zh-CN: "通过用户问题、范围、故事、约束、验收标准、指标与未决事项定义一个产品变更。" }
+    outcome: Testable product requirements
+    artifact: product-requirements
+    positive: { en: [write a PRD, define product requirements, create user stories and acceptance criteria], zh-CN: [编写PRD, 定义产品需求, 创建用户故事和验收标准] }
+    negative: { en: [design the system architecture, implement the feature], zh-CN: [设计系统架构, 实现功能] }
+    confusableWith: [atom-design-software-architecture, atom-plan-code-change]
+    permissions: workspace
+    steps: [State the user problem evidence and intended outcome., Define in-scope and out-of-scope behaviors and constraints., Write testable stories acceptance criteria and success metrics., Record dependencies risks open questions and decision owners.]
+  - id: atom-design-software-architecture
+    category: software-design
+    name: { en: Design software architecture, zh-CN: 设计软件架构 }
+    summary: { en: "Produce one system design with components, responsibilities, data flow, quality attributes, trade-offs, failure modes, and migration path.", zh-CN: "生成含组件、职责、数据流、质量属性、权衡、故障模式与迁移路径的系统设计。" }
+    outcome: Reviewable architecture specification
+    artifact: architecture-spec
+    positive: { en: [design software architecture, create a system design, define component boundaries], zh-CN: [设计软件架构, 创建设计方案, 定义组件边界] }
+    negative: { en: [write product requirements, implement the architecture], zh-CN: [编写产品需求, 实现架构] }
+    confusableWith: [atom-design-api-contract, atom-write-product-requirements]
+    permissions: workspace
+    steps: [Confirm functional scope and measurable quality attributes., Define components ownership interfaces and data flow., Analyze scale security reliability observability and failure recovery., Record alternatives trade-offs migration stages and architecture decisions.]
+  - id: atom-design-api-contract
+    category: software-design
+    name: { en: Design an API contract, zh-CN: 设计API契约 }
+    summary: { en: "Specify one API surface with operations, schemas, errors, compatibility, authorization, idempotency, and examples without implementing it.", zh-CN: "定义一个API的操作、模式、错误、兼容性、授权、幂等性与示例，不实施代码。" }
+    outcome: Implementable API contract
+    artifact: api-contract
+    positive: { en: [design an API contract, specify endpoints and schemas, define an interface protocol], zh-CN: [设计API契约, 定义端点和模式, 定义接口协议] }
+    negative: { en: [implement API handlers, design the whole system], zh-CN: [实现API处理器, 设计整个系统] }
+    confusableWith: [atom-design-software-architecture, atom-implement-code-change]
+    permissions: workspace
+    steps: [Identify consumers use cases and compatibility constraints., Specify operations schemas validation errors and pagination., Define authentication authorization idempotency rate and retry behavior., Add canonical examples versioning rules and contract-level acceptance tests.]
+  - id: atom-debug-software
+    category: code-quality-delivery
+    name: { en: Debug software, zh-CN: 调试软件 }
+    summary: { en: "Reproduce, isolate, explain, and verify one software defect before proposing the smallest justified correction.", zh-CN: "复现、隔离、解释并验证一个软件缺陷，再提出最小合理修正。" }
+    outcome: Evidence-backed defect diagnosis
+    artifact: debug-report
+    positive: { en: [debug this bug, find the root cause, reproduce this software failure], zh-CN: [调试这个Bug, 查找根因, 复现软件故障] }
+    negative: { en: [implement the fix immediately, audit for vulnerabilities], zh-CN: [立即实施修复, 审计漏洞] }
+    confusableWith: [atom-implement-code-change, atom-audit-source-security]
+    permissions: shell-read
+    steps: [Capture expected versus actual behavior and a minimal reproduction., Gather logs state transitions and relevant code paths., Test competing hypotheses and identify the earliest causal divergence., Document root cause confidence blast radius and a verification test for the future fix.]
+  - id: atom-write-automated-tests
+    category: code-quality-delivery
+    name: { en: Write automated tests, zh-CN: 编写自动化测试 }
+    summary: { en: "Add one bounded automated test surface that proves specified behavior and fails for the intended defect without changing product behavior.", zh-CN: "添加一个有界自动测试面，证明指定行为并能针对目标缺陷失败，不改变产品行为。" }
+    outcome: Verified automated test change
+    artifact: test-change
+    positive: { en: [write automated tests, add regression coverage, create unit or integration tests], zh-CN: [编写自动测试, 添加回归覆盖, 创建单元或集成测试] }
+    negative: { en: [implement product behavior, only describe a test plan], zh-CN: [实现产品行为, 只描述测试计划] }
+    confusableWith: [atom-implement-code-change, atom-plan-code-change]
+    permissions: code-write
+    steps: [Identify the smallest observable behavior and correct test level., Add deterministic fixtures and assertions that fail for the intended reason., Run the focused test and relevant surrounding suite., Report coverage limits flaky risks and exact verification commands.]
+  - id: atom-review-code-quality
+    category: code-quality-delivery
+    name: { en: Review code quality, zh-CN: 评审代码质量 }
+    summary: { en: "Review a bounded code change for correctness, maintainability, tests, and regressions with line-located prioritized findings and no edits.", zh-CN: "对有限代码变更进行正确性、可维护性、测试与回归评审，给出定位和优先级，不修改代码。" }
+    outcome: Prioritized code-review findings
+    artifact: code-review
+    positive: { en: [review this code change, inspect this pull request for bugs, assess code quality], zh-CN: [评审代码变更, 检查PR中的Bug, 评估代码质量] }
+    negative: { en: [fix the code, perform a security audit], zh-CN: [修复代码, 进行安全审计] }
+    confusableWith: [atom-audit-source-security, atom-critique-output]
+    permissions: file-read
+    steps: [Determine intended behavior and inspect the changed execution paths., Validate correctness edge cases error handling and compatibility., Assess tests maintainability and likely regressions., Return only actionable evidence-backed findings ordered by severity plus residual uncertainty.]
+  - id: atom-optimize-code-performance
+    category: code-quality-delivery
+    name: { en: Optimize code performance, zh-CN: 优化代码性能 }
+    summary: { en: "Improve one measured software bottleneck under an explicit performance budget while preserving behavior and verifying before-and-after results.", zh-CN: "在明确性能预算下改进一个已测量的软件瓶颈，保持行为并验证前后结果。" }
+    outcome: Measured performance improvement
+    artifact: performance-change
+    positive: { en: [optimize this bottleneck, improve measured code performance, reduce this latency or memory use], zh-CN: [优化这个瓶颈, 改进已测量性能, 降低延迟或内存] }
+    negative: { en: [guess performance changes without profiling, redesign the entire product], zh-CN: [未经分析猜测优化, 重新设计整个产品] }
+    confusableWith: [atom-implement-code-change, atom-debug-software]
+    permissions: code-write
+    steps: [Define the workload metric baseline and correctness invariant., Profile to locate the causal bottleneck., Apply the smallest justified optimization., Re-run correctness and performance measurements and report variance trade-offs and rollback.]
+  - id: atom-plan-software-release
+    category: code-quality-delivery
+    name: { en: Plan a software release, zh-CN: 规划软件发布 }
+    summary: { en: "Produce a release plan with versioning, compatibility, migration, staged rollout, observability, rollback, and communication checkpoints.", zh-CN: "制定含版本、兼容性、迁移、分阶段上线、可观测性、回滚与沟通检查点的软件发布计划。" }
+    outcome: Reversible software release plan
+    artifact: release-plan
+    positive: { en: [plan a software release, create a rollout and rollback plan, prepare version migration], zh-CN: [规划软件发布, 制定上线回滚计划, 准备版本迁移] }
+    negative: { en: [publish the release now, plan a code implementation], zh-CN: [立即发布, 规划代码实现] }
+    confusableWith: [atom-plan-code-change, atom-design-automation-workflow]
+    steps: [Inventory artifacts dependencies consumers and compatibility promises., Select versioning migration and staged rollout strategy., Define preflight canary health metrics stop conditions and rollback., Assign approvals communication checkpoints and post-release verification.]
+  - id: atom-operate-git-workflow
+    category: developer-tools
+    name: { en: Operate a Git workflow, zh-CN: 操作Git工作流 }
+    summary: { en: "Execute one authorized version-control operation after inspecting repository state, preserving unrelated work, and verifying the resulting history.", zh-CN: "检查仓库状态后执行一个获授权的版本控制操作，保留无关工作并验证结果历史。" }
+    outcome: Verified Git state transition
+    artifact: git-operation
+    positive: { en: [use git to create a branch, commit these changes, rebase this branch safely], zh-CN: [用Git创建分支, 提交这些变更, 安全变基分支] }
+    negative: { en: [design a branching strategy, discard unrelated changes], zh-CN: [设计分支策略, 丢弃无关改动] }
+    confusableWith: [atom-implement-code-change, atom-plan-software-release]
+    permissions: git-write
+    steps: [Inspect status branches remotes and the exact requested target., Explain or avoid destructive effects and preserve unrelated changes., Run the narrow non-interactive Git operation., Verify status diff and history and report any remaining user-owned changes.]
+  - id: atom-operate-terminal-cli
+    category: developer-tools
+    name: { en: Operate a terminal CLI, zh-CN: 操作终端CLI }
+    summary: { en: "Run one bounded command-line workflow with explicit working directory, arguments, side-effect review, captured output, and verification.", zh-CN: "以明确工作目录、参数、副作用审查、输出捕获和验证运行一个有限命令行流程。" }
+    outcome: Verified CLI operation
+    artifact: cli-run
+    positive: { en: [run this CLI command, operate this terminal tool, execute a command-line workflow], zh-CN: [运行CLI命令, 操作终端工具, 执行命令行流程] }
+    negative: { en: [write a new CLI application, run an untrusted installer], zh-CN: [编写新的CLI应用, 运行不可信安装器] }
+    confusableWith: [atom-implement-code-change, atom-operate-git-workflow]
+    permissions: shell-read
+    steps: [Resolve the executable working directory and required inputs., Inspect help or dry-run output when available., Run the minimum command with bounded output and no implicit shell composition., Verify exit status artifacts and state changes before reporting completion.]
+  - id: atom-operate-browser-workflow
+    category: developer-tools
+    name: { en: Operate a browser workflow, zh-CN: 操作浏览器工作流 }
+    summary: { en: "Complete one bounded browser procedure from observed page state with explicit confirmation before consequential submission or communication.", zh-CN: "从已观察页面状态完成一个有限浏览器流程，并在重要提交或通信前明确确认。" }
+    outcome: Verified browser-state transition
+    artifact: browser-workflow
+    positive: { en: [operate this website, complete this browser workflow, use browser devtools], zh-CN: [操作这个网站, 完成浏览器流程, 使用浏览器开发者工具] }
+    negative: { en: [build a website, send without authorization], zh-CN: [构建网站, 未经授权发送] }
+    confusableWith: [atom-design-automation-workflow, atom-implement-code-change]
+    permissions: browser
+    steps: [Observe the current page URL identity and relevant state., Identify navigation inputs and consequential actions., Perform reversible steps and pause before external submission when authority is absent., Verify the final page state and record failures without guessing.]
+  - id: atom-operate-spreadsheet
+    category: productivity-tools
+    name: { en: Operate a spreadsheet, zh-CN: 操作电子表格 }
+    summary: { en: "Apply one bounded spreadsheet edit while preserving formulas, formats, sheet structure, and a verifiable before-and-after state.", zh-CN: "执行一个有限表格编辑，同时保留公式、格式、工作表结构及可验证的前后状态。" }
+    outcome: Verified spreadsheet edit
+    artifact: spreadsheet-change
+    positive: { en: [edit this spreadsheet, add formulas and formatting, update these workbook cells], zh-CN: [编辑电子表格, 添加公式和格式, 更新工作簿单元格] }
+    negative: { en: [interpret business metrics, perform statistical analysis], zh-CN: [解读业务指标, 进行统计分析] }
+    confusableWith: [atom-analyze-tabular-data]
+    permissions: workspace
+    steps: [Inspect workbook sheets ranges formulas formats and merged structures., Confirm the exact cells or tables to change., Apply minimal edits without replacing unrelated content., Recalculate inspect errors and visually or structurally verify the saved workbook.]
+  - id: atom-operate-knowledge-vault
+    category: productivity-tools
+    name: { en: Operate a knowledge vault, zh-CN: 操作知识库 }
+    summary: { en: "Create or reorganize one bounded set of notes while preserving links, metadata, naming conventions, and user-owned knowledge.", zh-CN: "创建或整理一组有限笔记，同时保留链接、元数据、命名规范与用户知识。" }
+    outcome: Verified knowledge-vault change
+    artifact: knowledge-vault-change
+    positive: { en: [organize this Obsidian vault, update linked notes, create structured knowledge notes], zh-CN: [整理Obsidian知识库, 更新双链笔记, 创建结构化知识笔记] }
+    negative: { en: [research new facts, delete notes silently], zh-CN: [研究新事实, 静默删除笔记] }
+    confusableWith: [atom-organize-personal-tasks, atom-review-literature]
+    permissions: workspace
+    steps: [Inspect vault conventions metadata links and the bounded note set., Propose names locations and link changes before broad reorganization., Apply additive or reversible edits and preserve unknown metadata., Validate links paths frontmatter and the final change summary.]
+  - id: atom-operate-design-tool
+    category: design-tools
+    name: { en: Operate a design tool, zh-CN: 操作设计工具 }
+    summary: { en: "Apply an approved visual specification in a named design application while preserving components, constraints, accessibility, and editability.", zh-CN: "在指定设计应用中应用已批准视觉规范，并保留组件、约束、无障碍与可编辑性。" }
+    outcome: Verified editable design artifact
+    artifact: design-tool-change
+    positive: { en: [apply this design in Figma, edit this design-system file, operate the design canvas], zh-CN: [在Figma中应用设计, 编辑设计系统文件, 操作设计画布] }
+    negative: { en: [invent the visual direction, implement frontend code], zh-CN: [创造视觉方向, 实现前端代码] }
+    confusableWith: [atom-design-interface-spec, atom-implement-code-change]
+    permissions: browser
+    steps: [Inspect the target file components styles constraints and approved specification., Map changes to reusable components and tokens., Apply bounded edits while preserving editability and accessibility., Verify key states layouts naming and the saved artifact.]
+meta:
+  id: meta-upstream-skill-curator
+  category: skill-agent-governance
+  name: { en: Upstream Skill Curator, zh-CN: 上游Skill策展器 }
+  summary: { en: "Discover, mirror, fingerprint, license-check, classify, deduplicate, synthesize, evaluate, and admit external Skills without executing or blindly copying them.", zh-CN: "在不执行或盲目复制外部Skill的前提下，发现、镜像、指纹、许可证检查、分类、去重、综合、评测并准入。" }
+  positive: { en: [collect upstream skills, curate a skill library, deduplicate and synthesize external skills], zh-CN: [收集上游Skill, 策展Skill库, 去重并综合外部Skill] }
+  negative: { en: [install unreviewed skill code, copy unknown-license instructions], zh-CN: [安装未审查Skill代码, 复制未知许可证指令] }
+  confusableWith: [meta-skill-governor, atom-classify-capability]
+  steps: [Declare sources trust tiers snapshot time and collection scope., Mirror metadata and Git objects without executing upstream code., Parse descriptions compute fingerprints classify boundaries and quarantine unknown licenses., Cluster overlaps and synthesize the smallest local contracts from multiple design-evidence records., Generate routing and task evaluations then submit the candidate through the Meta Skill Governor., Admit only reviewed changes and retain provenance rejection reasons version and rollback pointers.]

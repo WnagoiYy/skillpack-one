@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-plan-software-release
+kind: atom
+version: 0.1.0
+name:
+  en: Plan a software release
+  zh-CN: 规划软件发布
+summary:
+  en: Produce a release plan with versioning, compatibility, migration, staged
+    rollout, observability, rollback, and communication checkpoints.
+  zh-CN: 制定含版本、兼容性、迁移、分阶段上线、可观测性、回滚与沟通检查点的软件发布计划。
+outcomes:
+  - Reversible software release plan
+artifacts:
+  - release-plan
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: release-plan
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - none
+permissions:
+  network: none
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: code-quality-delivery
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - plan a software release
+      - create a rollout and rollback plan
+      - prepare version migration
+    zh-CN:
+      - 规划软件发布
+      - 制定上线回滚计划
+      - 准备版本迁移
+  negativeTriggers:
+    en:
+      - publish the release now
+      - plan a code implementation
+    zh-CN:
+      - 立即发布
+      - 规划代码实现
+  confusableWith:
+    - atom-plan-code-change
+    - atom-design-automation-workflow
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-compare-decisions
+kind: atom
+version: 0.1.0
+name:
+  en: Compare decisions
+  zh-CN: 比较决策方案
+summary:
+  en: Compare a bounded option set against explicit weighted criteria,
+    uncertainty, reversibility, and decision-sensitive trade-offs.
+  zh-CN: 根据明确的加权标准、不确定性、可逆性和决策敏感权衡比较有限方案。
+outcomes:
+  - Traceable option comparison
+artifacts:
+  - decision-matrix
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: decision-matrix
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - none
+permissions:
+  network: none
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: decision-review
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - compare these options
+      - create a decision matrix
+      - analyze tradeoffs
+    zh-CN:
+      - 比较这些方案
+      - 创建决策矩阵
+      - 分析权衡
+  negativeTriggers:
+    en:
+      - invent more options
+      - execute the decision
+    zh-CN:
+      - 再生成方案
+      - 执行决策
+  confusableWith:
+    - atom-brainstorm-options
+    - atom-critique-output
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

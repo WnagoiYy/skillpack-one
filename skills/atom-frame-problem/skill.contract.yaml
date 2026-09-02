@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-frame-problem
+kind: atom
+version: 0.1.0
+name:
+  en: Frame a problem
+  zh-CN: 定义问题
+summary:
+  en: Turn one ambiguous request into a bounded problem statement with goals,
+    constraints, assumptions, stakeholders, and success criteria.
+  zh-CN: 将一个模糊请求转化为含目标、约束、假设、相关方与成功标准的有界问题陈述。
+outcomes:
+  - Bounded problem statement
+artifacts:
+  - problem-frame
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: problem-frame
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - none
+permissions:
+  network: none
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: problem-framing
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - frame this problem
+      - define the real problem
+      - clarify scope and assumptions
+    zh-CN:
+      - 定义这个问题
+      - 澄清真正问题
+      - 明确范围和假设
+  negativeTriggers:
+    en:
+      - brainstorm solutions
+      - implement the solution
+    zh-CN:
+      - 头脑风暴方案
+      - 实施解决方案
+  confusableWith:
+    - atom-brainstorm-options
+    - atom-build-action-plan
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

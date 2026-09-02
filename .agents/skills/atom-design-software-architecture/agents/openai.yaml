@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Design Software Architecture
+  short_description: Route and apply Atom Design Software Architecture
+  default_prompt: Use $atom-design-software-architecture to handle this request
+    within its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

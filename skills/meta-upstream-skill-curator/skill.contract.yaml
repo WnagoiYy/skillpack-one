@@ -1,0 +1,87 @@
+schemaVersion: 1
+id: meta-upstream-skill-curator
+kind: meta
+version: 0.1.0
+name:
+  en: Upstream Skill Curator
+  zh-CN: 上游Skill策展器
+summary:
+  en: Discover, mirror, fingerprint, license-check, classify, deduplicate,
+    synthesize, evaluate, and admit external Skills without executing or blindly
+    copying them.
+  zh-CN: 在不执行或盲目复制外部Skill的前提下，发现、镜像、指纹、许可证检查、分类、去重、综合、评测并准入。
+outcomes:
+  - Auditable upstream Skill admission decision
+artifacts:
+  - upstream-inventory
+  - classification-report
+  - deduplication-report
+  - admission-proposal
+inputs:
+  - name: sources
+    type: source-list
+    required: true
+outputs:
+  - name: proposal
+    type: governed-change-proposal
+    required: true
+preconditions:
+  - Source scope, trust tier, and collection time are declared
+failures:
+  - Upstream code would need to execute
+  - License or provenance is insufficient for the proposed use
+  - Protected evaluations regress
+sideEffects:
+  - network-read
+  - filesystem-read
+  - filesystem-write
+  - shell-execution
+permissions:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: skill-agent-governance
+  lifecycle:
+    - discover
+    - analyze
+    - govern
+  modalities:
+    - text
+    - structured-data
+    - system-state
+  dependencies:
+    - cli-backed
+    - harness-backed
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - collect upstream skills
+      - curate a skill library
+      - deduplicate and synthesize external skills
+    zh-CN:
+      - 收集上游Skill
+      - 策展Skill库
+      - 去重并综合外部Skill
+  negativeTriggers:
+    en:
+      - install unreviewed skill code
+      - copy unknown-license instructions
+    zh-CN:
+      - 安装未审查Skill代码
+      - 复制未知许可证指令
+  confusableWith:
+    - meta-skill-governor
+    - atom-classify-capability
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - governance-protected

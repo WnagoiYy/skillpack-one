@@ -1,0 +1,72 @@
+schemaVersion: 1
+id: category-product-definition
+kind: category
+version: 0.1.0
+name:
+  en: Product definition Router
+  zh-CN: 产品定义路由器
+summary:
+  en: Route product definition requests to the smallest certified Atomic Skill.
+  zh-CN: 将产品定义请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded product-definition category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: product-definition
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - product requirements
+      - prd
+      - user story
+      - acceptance criteria
+      - product scope
+    zh-CN:
+      - 产品需求
+      - 需求文档
+      - 用户故事
+      - 验收标准
+      - 产品范围
+  negativeTriggers:
+    en:
+      - system architecture
+      - coding
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
