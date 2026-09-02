@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Write Marketing Copy
+  short_description: Route and apply Atom Write Marketing Copy
+  default_prompt: Use $atom-write-marketing-copy to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

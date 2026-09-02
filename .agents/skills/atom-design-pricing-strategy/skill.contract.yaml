@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-design-pricing-strategy
+kind: atom
+version: 0.1.0
+name:
+  en: Design a pricing strategy
+  zh-CN: 设计定价策略
+summary:
+  en: Design one pricing and packaging recommendation from value,
+    willingness-to-pay, costs, alternatives, constraints, and testable
+    assumptions.
+  zh-CN: 基于价值、支付意愿、成本、替代方案、约束与可检验假设设计一套定价和包装建议。
+outcomes:
+  - Testable pricing recommendation
+artifacts:
+  - pricing-strategy
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: pricing-strategy
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - network-read
+permissions:
+  network: read
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: business-growth
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - api-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - design a pricing strategy
+      - choose pricing tiers
+      - evaluate packaging and price
+    zh-CN:
+      - 设计定价策略
+      - 选择定价档位
+      - 评估包装和价格
+  negativeTriggers:
+    en:
+      - forecast the full company finances
+      - publish prices immediately
+    zh-CN:
+      - 预测完整公司财务
+      - 立即公布价格
+  confusableWith:
+    - atom-model-business-financials
+    - atom-compare-decisions
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

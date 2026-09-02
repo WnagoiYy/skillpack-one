@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Plan Product Launch
+  short_description: Route and apply Atom Plan Product Launch
+  default_prompt: Use $atom-plan-product-launch to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

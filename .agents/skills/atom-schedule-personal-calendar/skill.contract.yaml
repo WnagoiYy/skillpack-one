@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-schedule-personal-calendar
+kind: atom
+version: 0.1.0
+name:
+  en: Schedule a personal calendar
+  zh-CN: 安排个人日历
+summary:
+  en: Turn one person's approved commitments into a conflict-aware calendar plan
+    and create events only with explicit authority and confirmation of material
+    details.
+  zh-CN: 将个人已批准事项转为避冲突日历计划，仅在明确授权并确认关键细节后创建事件。
+outcomes:
+  - Confirmed personal-calendar schedule
+artifacts:
+  - calendar-schedule
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: calendar-schedule
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - network-read
+  - network-write
+permissions:
+  network: write
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: draft
+taxonomy:
+  primaryCategory: personal-productivity
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - schedule these tasks on my calendar
+      - create a calendar event
+      - find time for these commitments
+    zh-CN:
+      - 把任务安排到日历
+      - 创建日历事件
+      - 为这些事项找时间
+  negativeTriggers:
+    en:
+      - organize tasks without dates
+      - schedule an organization-wide workflow
+    zh-CN:
+      - 整理无日期任务
+      - 安排组织级工作流
+  confusableWith:
+    - atom-organize-personal-tasks
+    - atom-design-automation-workflow
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

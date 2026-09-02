@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-plan-database-migration
+kind: atom
+version: 0.1.0
+name:
+  en: Plan a database migration
+  zh-CN: 规划数据库迁移
+summary:
+  en: Create a reversible migration plan for one schema or data change with
+    compatibility, backfill, validation, cutover, and rollback stages.
+  zh-CN: 为一次模式或数据变更制定可回退迁移计划，包含兼容、回填、验证、切换和回滚阶段。
+outcomes:
+  - Reversible database migration plan
+artifacts:
+  - database-migration-plan
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: database-migration-plan
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: software-design
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - plan a database migration
+      - migrate this schema safely
+      - design a data backfill and cutover
+    zh-CN:
+      - 规划数据库迁移
+      - 安全迁移模式
+      - 设计数据回填和切换
+  negativeTriggers:
+    en:
+      - execute the migration now
+      - design a brand-new schema
+    zh-CN:
+      - 立即执行迁移
+      - 设计全新模式
+  confusableWith:
+    - atom-design-database-schema
+    - atom-plan-software-release
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-summarize-document
+kind: atom
+version: 0.1.0
+name:
+  en: Summarize a document
+  zh-CN: 总结文档
+summary:
+  en: Condense one supplied document into a faithful audience-specific summary
+    while preserving decisions, qualifications, and unresolved points.
+  zh-CN: 将一份给定文档压缩为忠实且面向特定读者的摘要，保留决策、限定条件和未决事项。
+outcomes:
+  - Faithful document summary
+artifacts:
+  - document-summary
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: document-summary
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: documents-communication
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - summarize this document
+      - create an executive summary
+      - condense this report
+    zh-CN:
+      - 总结这份文档
+      - 编写执行摘要
+      - 压缩这份报告
+  negativeTriggers:
+    en:
+      - translate the document
+      - research missing facts
+    zh-CN:
+      - 翻译文档
+      - 调研缺失事实
+  confusableWith:
+    - atom-translate-document
+    - atom-review-literature
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

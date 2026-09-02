@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-extract-document-data
+kind: atom
+version: 0.1.0
+name:
+  en: Extract document data
+  zh-CN: 提取文档数据
+summary:
+  en: Extract requested fields, tables, entities, and passages from one document
+    into a structured result with page or section provenance.
+  zh-CN: 从一份文档中提取指定字段、表格、实体和段落，形成带页码或章节来源的结构化结果。
+outcomes:
+  - Traceable structured extraction
+artifacts:
+  - document-extraction
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: document-extraction
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: documents-communication
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - extract fields from this document
+      - pull tables from this PDF
+      - capture named entities and passages
+    zh-CN:
+      - 从文档提取字段
+      - 提取PDF表格
+      - 抽取实体和段落
+  negativeTriggers:
+    en:
+      - summarize the whole document
+      - infer missing values
+    zh-CN:
+      - 总结整份文档
+      - 推断缺失数值
+  confusableWith:
+    - atom-summarize-document
+    - atom-analyze-tabular-data
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

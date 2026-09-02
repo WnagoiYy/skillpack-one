@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-validate-data-pipeline
+kind: atom
+version: 0.1.0
+name:
+  en: Validate a data pipeline
+  zh-CN: 验证数据管道
+summary:
+  en: Assess one data pipeline for lineage, schema contracts, freshness,
+    completeness, correctness, and reproducibility without changing production
+    state.
+  zh-CN: 评估一条数据管道的血缘、模式契约、时效、完整性、正确性与可复现性，不改变生产状态。
+outcomes:
+  - Evidence-backed data-pipeline validation
+artifacts:
+  - data-pipeline-validation
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: data-pipeline-validation
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - shell-execution
+permissions:
+  network: none
+  filesystem: read
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: data-analytics
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - cli-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - validate this data pipeline
+      - check ETL correctness
+      - audit data freshness and lineage
+    zh-CN:
+      - 验证数据管道
+      - 检查ETL正确性
+      - 审计数据时效和血缘
+  negativeTriggers:
+    en:
+      - deploy pipeline changes
+      - analyze one finished table
+    zh-CN:
+      - 部署管道变更
+      - 分析一张成品表
+  confusableWith:
+    - atom-analyze-tabular-data
+    - atom-design-automation-workflow
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-edit-prose
+kind: atom
+version: 0.1.0
+name:
+  en: Edit prose
+  zh-CN: 编辑文字
+summary:
+  en: Improve one bounded text for clarity, structure, tone, and correctness
+    without changing its supported meaning or inventing facts.
+  zh-CN: 改进一段有限文本的清晰度、结构、语气和正确性，不改变其有依据的含义或编造事实。
+outcomes:
+  - Meaning-preserving edited prose
+artifacts:
+  - edited-prose
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: edited-prose
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: documents-communication
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - edit this prose
+      - improve the clarity of this text
+      - rewrite this draft without changing meaning
+    zh-CN:
+      - 编辑这段文字
+      - 提升文本清晰度
+      - 保持原意改写草稿
+  negativeTriggers:
+    en:
+      - translate into another language
+      - add new research
+    zh-CN:
+      - 翻译成另一种语言
+      - 添加新的调研
+  confusableWith:
+    - atom-translate-document
+    - atom-write-marketing-copy
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

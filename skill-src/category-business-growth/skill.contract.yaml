@@ -2,25 +2,73 @@ schemaVersion: 1
 id: category-business-growth
 kind: category
 version: 0.1.0
-name: { en: Business and Growth Router, zh-CN: 商业与增长路由器 }
-summary: { en: Route commercial decisions to bounded market and growth atoms., zh-CN: 将商业决策路由到有边界的市场与增长原子能力。 }
-outcomes: [Bounded business-growth category decision]
-artifacts: [category-route, localized-index]
-inputs: [{ name: request, type: user-prompt, required: true }]
-outputs: [{ name: candidates, type: category-and-atom-candidates, required: true }]
-preconditions: [The versioned taxonomy and localized index are available]
-failures: [No business decision or commercial outcome can be identified]
-sideEffects: [filesystem-read]
-permissions: { network: none, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+name:
+  en: Business and growth Router
+  zh-CN: 商业与增长路由器
+summary:
+  en: Route business and growth requests to the smallest certified Atomic Skill.
+  zh-CN: 将商业与增长请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded business-growth category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
 taxonomy:
   primaryCategory: business-growth
-  lifecycle: [analyze]
-  modalities: [text, structured-data]
-  dependencies: [tool-agnostic]
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
   risk: read-only
 routing:
-  positiveTriggers: { en: [analyze a market, plan marketing, assess sales, evaluate growth], zh-CN: [分析市场, 规划营销, 评估销售, 评估增长] }
-  negativeTriggers: { en: [generic research, personal task tracking], zh-CN: [通用研究, 个人任务管理] }
-  confusableWith: [category-research-knowledge, category-data-analytics]
-provenance: { origin: local, license: Apache-2.0 }
-evaluations: [routing-bootstrap, routing-en-test, routing-zh-cn-test, routing-adversarial]
+  positiveTriggers:
+    en:
+      - business
+      - market
+      - sales
+      - marketing
+      - seo
+      - customer
+    zh-CN:
+      - 商业
+      - 市场
+      - 销售
+      - 营销
+      - 客户
+      - 投资
+  negativeTriggers:
+    en:
+      - generic evidence research with no business decision
+      - personal task tracking
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

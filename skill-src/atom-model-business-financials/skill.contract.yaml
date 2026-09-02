@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-model-business-financials
+kind: atom
+version: 0.1.0
+name:
+  en: Model business financials
+  zh-CN: 建模业务财务
+summary:
+  en: Build one transparent business financial model with explicit drivers,
+    scenarios, unit economics, cash implications, and sensitivity checks.
+  zh-CN: 构建一个透明业务财务模型，明确驱动因素、情景、单位经济、现金影响与敏感性检查。
+outcomes:
+  - Auditable business financial model
+artifacts:
+  - business-financial-model
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: business-financial-model
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: business-growth
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - build a business financial model
+      - model unit economics
+      - forecast revenue costs and cash
+    zh-CN:
+      - 构建业务财务模型
+      - 建模单位经济
+      - 预测收入成本和现金
+  negativeTriggers:
+    en:
+      - give personalized investment advice
+      - set product prices alone
+    zh-CN:
+      - 提供个性化投资建议
+      - 单独设定产品价格
+  confusableWith:
+    - atom-analyze-tabular-data
+    - atom-design-pricing-strategy
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

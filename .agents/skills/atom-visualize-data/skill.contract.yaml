@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-visualize-data
+kind: atom
+version: 0.1.0
+name:
+  en: Visualize data
+  zh-CN: 可视化数据
+summary:
+  en: Create one truthful chart or compact analytical view matched to the
+    question, data types, units, uncertainty, and accessibility needs.
+  zh-CN: 依据问题、数据类型、单位、不确定性与无障碍需求创建一个真实准确的图表或紧凑分析视图。
+outcomes:
+  - Question-matched data visualization
+artifacts:
+  - data-visualization
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: data-visualization
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: data-analytics
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - visualize this data
+      - create a chart for these metrics
+      - plot this dataset
+    zh-CN:
+      - 可视化这些数据
+      - 为指标创建图表
+      - 绘制数据集
+  negativeTriggers:
+    en:
+      - create a decorative illustration
+      - analyze without a chart
+    zh-CN:
+      - 创建装饰插画
+      - 只分析不制图
+  confusableWith:
+    - atom-analyze-tabular-data
+    - atom-create-technical-diagram
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

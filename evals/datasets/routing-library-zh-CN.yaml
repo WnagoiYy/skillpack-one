@@ -244,3 +244,413 @@ examples:
     tags:
       - expanded-library
       - zh-CN
+  - id: zh-25-summarize-document
+    prompt: 总结这份文档. 仅返回该请求所描述的有界结果。
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-summarize-document
+    mustNotRoute:
+      - atom-translate-document
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-26-edit-prose
+    prompt: 编辑这段文字. 仅返回该请求所描述的有界结果。
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-edit-prose
+    mustNotRoute:
+      - atom-translate-document
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-27-write-structured-report
+    prompt: 编写结构化报告. 仅返回该请求所描述的有界结果。
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-write-structured-report
+    mustNotRoute:
+      - atom-find-research-sources
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-28-create-presentation
+    prompt: 创建演示文稿. 仅返回该请求所描述的有界结果。
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-create-presentation
+    mustNotRoute:
+      - atom-write-structured-report
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-29-extract-document-data
+    prompt: 从文档提取字段. 仅返回该请求所描述的有界结果。
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-extract-document-data
+    mustNotRoute:
+      - atom-summarize-document
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-30-draft-external-message
+    prompt: 起草邮件. 仅返回该请求所描述的有界结果。
+    expectedCategory: documents-communication
+    expectedAtoms:
+      - atom-draft-external-message
+    mustNotRoute:
+      - atom-write-structured-report
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-31-clean-tabular-data
+    prompt: 清洗数据集. 仅返回该请求所描述的有界结果。
+    expectedCategory: data-analytics
+    expectedAtoms:
+      - atom-clean-tabular-data
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-32-visualize-data
+    prompt: 可视化这些数据. 仅返回该请求所描述的有界结果。
+    expectedCategory: data-analytics
+    expectedAtoms:
+      - atom-visualize-data
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-33-write-sql-query
+    prompt: 编写SQL查询. 仅返回该请求所描述的有界结果。
+    expectedCategory: data-analytics
+    expectedAtoms:
+      - atom-write-sql-query
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-34-design-database-schema
+    prompt: 设计数据库模式. 仅返回该请求所描述的有界结果。
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-design-database-schema
+    mustNotRoute:
+      - atom-plan-database-migration
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-35-plan-database-migration
+    prompt: 规划数据库迁移. 仅返回该请求所描述的有界结果。
+    expectedCategory: software-design
+    expectedAtoms:
+      - atom-plan-database-migration
+    mustNotRoute:
+      - atom-design-database-schema
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-36-validate-data-pipeline
+    prompt: 验证数据管道. 仅返回该请求所描述的有界结果。
+    expectedCategory: data-analytics
+    expectedAtoms:
+      - atom-validate-data-pipeline
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-37-synthesize-user-research
+    prompt: 综合用户访谈. 仅返回该请求所描述的有界结果。
+    expectedCategory: product-definition
+    expectedAtoms:
+      - atom-synthesize-user-research
+    mustNotRoute:
+      - atom-design-research-study
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-38-prioritize-product-roadmap
+    prompt: 排定产品路线图. 仅返回该请求所描述的有界结果。
+    expectedCategory: product-definition
+    expectedAtoms:
+      - atom-prioritize-product-roadmap
+    mustNotRoute:
+      - atom-write-product-requirements
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-39-plan-product-launch
+    prompt: 规划产品发布. 仅返回该请求所描述的有界结果。
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-plan-product-launch
+    mustNotRoute:
+      - atom-plan-software-release
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-40-analyze-customer-segments
+    prompt: 分析客户细分. 仅返回该请求所描述的有界结果。
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-analyze-customer-segments
+    mustNotRoute:
+      - atom-analyze-market
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-41-design-pricing-strategy
+    prompt: 设计定价策略. 仅返回该请求所描述的有界结果。
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-design-pricing-strategy
+    mustNotRoute:
+      - atom-model-business-financials
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-42-write-marketing-copy
+    prompt: 撰写落地页文案. 仅返回该请求所描述的有界结果。
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-write-marketing-copy
+    mustNotRoute:
+      - atom-draft-external-message
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-43-audit-seo
+    prompt: 审计网站SEO. 仅返回该请求所描述的有界结果。
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-audit-seo
+    mustNotRoute:
+      - atom-review-code-quality
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-44-plan-content-strategy
+    prompt: 规划内容策略. 仅返回该请求所描述的有界结果。
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-plan-content-strategy
+    mustNotRoute:
+      - atom-write-marketing-copy
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-45-model-business-financials
+    prompt: 构建业务财务模型. 仅返回该请求所描述的有界结果。
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-model-business-financials
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-46-create-threat-model
+    prompt: 创建威胁模型. 仅返回该请求所描述的有界结果。
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-create-threat-model
+    mustNotRoute:
+      - atom-audit-source-security
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-47-audit-dependencies
+    prompt: 审计软件依赖. 仅返回该请求所描述的有界结果。
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-audit-dependencies
+    mustNotRoute:
+      - atom-audit-source-security
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-48-scan-secrets
+    prompt: 扫描仓库密钥. 仅返回该请求所描述的有界结果。
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-scan-secrets
+    mustNotRoute:
+      - atom-audit-source-security
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-49-plan-incident-response
+    prompt: 规划事件响应. 仅返回该请求所描述的有界结果。
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-plan-incident-response
+    mustNotRoute:
+      - atom-triage-production-incident
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-50-review-privacy-risk
+    prompt: 评审隐私风险. 仅返回该请求所描述的有界结果。
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-review-privacy-risk
+    mustNotRoute:
+      - atom-assess-compliance-controls
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-51-assess-compliance-controls
+    prompt: 评估合规控制. 仅返回该请求所描述的有界结果。
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-assess-compliance-controls
+    mustNotRoute:
+      - atom-review-privacy-risk
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-52-design-observability
+    prompt: 设计可观测性. 仅返回该请求所描述的有界结果。
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-design-observability
+    mustNotRoute:
+      - atom-triage-production-incident
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-53-create-ci-pipeline
+    prompt: 创建CI管道. 仅返回该请求所描述的有界结果。
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-create-ci-pipeline
+    mustNotRoute:
+      - atom-design-automation-workflow
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-54-plan-cloud-deployment
+    prompt: 规划云部署. 仅返回该请求所描述的有界结果。
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-plan-cloud-deployment
+    mustNotRoute:
+      - atom-design-software-architecture
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-55-write-operational-runbook
+    prompt: 编写运维手册. 仅返回该请求所描述的有界结果。
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-write-operational-runbook
+    mustNotRoute:
+      - atom-triage-production-incident
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-56-triage-production-incident
+    prompt: 分诊生产故障. 仅返回该请求所描述的有界结果。
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-triage-production-incident
+    mustNotRoute:
+      - atom-debug-software
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-57-create-technical-diagram
+    prompt: 创建系统图. 仅返回该请求所描述的有界结果。
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-create-technical-diagram
+    mustNotRoute:
+      - atom-design-software-architecture
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-58-generate-image
+    prompt: 生成图像. 仅返回该请求所描述的有界结果。
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-generate-image
+    mustNotRoute:
+      - atom-edit-image
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-59-edit-image
+    prompt: 编辑图像. 仅返回该请求所描述的有界结果。
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-edit-image
+    mustNotRoute:
+      - atom-generate-image
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-60-plan-video-production
+    prompt: 规划视频制作. 仅返回该请求所描述的有界结果。
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-plan-video-production
+    mustNotRoute:
+      - atom-create-presentation
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-61-design-presentation-visuals
+    prompt: 设计演示视觉. 仅返回该请求所描述的有界结果。
+    expectedCategory: design-media
+    expectedAtoms:
+      - atom-design-presentation-visuals
+    mustNotRoute:
+      - atom-create-presentation
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-62-schedule-personal-calendar
+    prompt: 把任务安排到日历. 仅返回该请求所描述的有界结果。
+    expectedCategory: personal-productivity
+    expectedAtoms:
+      - atom-schedule-personal-calendar
+    mustNotRoute:
+      - atom-organize-personal-tasks
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-63-capture-structured-notes
+    prompt: 转换成结构化笔记. 仅返回该请求所描述的有界结果。
+    expectedCategory: personal-productivity
+    expectedAtoms:
+      - atom-capture-structured-notes
+    mustNotRoute:
+      - atom-operate-knowledge-vault
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-64-plan-learning-path
+    prompt: 规划学习路径. 仅返回该请求所描述的有界结果。
+    expectedCategory: personal-productivity
+    expectedAtoms:
+      - atom-plan-learning-path
+    mustNotRoute:
+      - atom-build-action-plan
+    tags:
+      - expanded-library
+      - zh-CN
+  - id: zh-65-peer-review-manuscript
+    prompt: 同行评审论文. 仅返回该请求所描述的有界结果。
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-peer-review-manuscript
+    mustNotRoute:
+      - atom-review-literature
+    tags:
+      - expanded-library
+      - zh-CN

@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-audit-dependencies
+kind: atom
+version: 0.1.0
+name:
+  en: Audit software dependencies
+  zh-CN: 审计软件依赖
+summary:
+  en: Audit one bounded dependency graph for known vulnerabilities, provenance,
+    maintenance, licensing, reachability, and upgrade risk without changing
+    packages.
+  zh-CN: 审计一个有限依赖图的已知漏洞、来源、维护、许可、可达性与升级风险，不修改软件包。
+outcomes:
+  - Prioritized dependency-risk audit
+artifacts:
+  - dependency-audit
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: dependency-audit
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - shell-execution
+permissions:
+  network: none
+  filesystem: read
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: security-trust
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - cli-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - audit these dependencies
+      - review supply chain risk
+      - check vulnerable packages
+    zh-CN:
+      - 审计软件依赖
+      - 检查供应链风险
+      - 查找易受攻击软件包
+  negativeTriggers:
+    en:
+      - upgrade packages now
+      - audit application logic
+    zh-CN:
+      - 立即升级软件包
+      - 审计应用逻辑
+  confusableWith:
+    - atom-audit-source-security
+    - atom-plan-software-release
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

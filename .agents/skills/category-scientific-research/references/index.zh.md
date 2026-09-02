@@ -13,6 +13,9 @@
 - `atom-manage-research-citations` — **管理研究引用**: 规范化、验证、去重并将学术参考文献映射到论断，不编造标识符或书目信息。
   - 风险: `read-only`
   - 生命周期: analyze, verify
+- `atom-peer-review-manuscript` — **同行评审论文**: 评审一篇学术论文的论断依据、方法、分析、创新背景、可复现性、伦理与报告质量，不代写或替编辑决策。
+  - 风险: `read-only`
+  - 生命周期: analyze, verify
 - `atom-review-literature` — **科学文献综述**: 将有限的学术证据综合为主题、共识、冲突、空白与可追溯结论。
   - 风险: `read-only`
   - 生命周期: analyze, verify

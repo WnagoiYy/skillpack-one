@@ -2,25 +2,74 @@ schemaVersion: 1
 id: category-automation-operations
 kind: category
 version: 0.1.0
-name: { en: Automation and Operations Router, zh-CN: 自动化与运营路由器 }
-summary: { en: Route repeatable system operation and integration work to focused atoms., zh-CN: 将可重复的系统运行与集成工作路由到聚焦原子能力。 }
-outcomes: [Bounded automation-operations category decision]
-artifacts: [category-route, localized-index]
-inputs: [{ name: request, type: user-prompt, required: true }]
-outputs: [{ name: candidates, type: category-and-atom-candidates, required: true }]
-preconditions: [The versioned taxonomy and localized index are available]
-failures: [The operational trigger or system boundary is unclear]
-sideEffects: [filesystem-read]
-permissions: { network: none, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+name:
+  en: Automation and operations Router
+  zh-CN: 自动化与运营路由器
+summary:
+  en: Route automation and operations requests to the smallest certified Atomic
+    Skill.
+  zh-CN: 将自动化与运营请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded automation-operations category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
 taxonomy:
   primaryCategory: automation-operations
-  lifecycle: [analyze]
-  modalities: [text, structured-data]
-  dependencies: [tool-agnostic]
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
   risk: read-only
 routing:
-  positiveTriggers: { en: [design automation, schedule a workflow, deploy a service, monitor operations], zh-CN: [设计自动化, 调度工作流, 部署服务, 监控运维] }
-  negativeTriggers: { en: [one-off code change, personal reminder], zh-CN: [一次性代码修改, 个人提醒] }
-  confusableWith: [category-software-engineering, category-personal-productivity]
-provenance: { origin: local, license: Apache-2.0 }
-evaluations: [routing-bootstrap, routing-en-test, routing-zh-cn-test, routing-adversarial]
+  positiveTriggers:
+    en:
+      - automation
+      - workflow
+      - deploy
+      - operations
+      - monitor
+      - schedule
+    zh-CN:
+      - 自动化
+      - 工作流
+      - 部署
+      - 运维
+      - 监控
+      - 定时
+  negativeTriggers:
+    en:
+      - one-off code implementation without an operational outcome
+      - personal reminders with no system integration
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

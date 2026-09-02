@@ -15,7 +15,7 @@ The 2026-09-02 snapshot contains 658 normalized records:
 
 Exact counts, revisions, and the aggregate digest are recorded in `catalog/snapshots/manifest.yaml`.
 
-The separate downloaded inventory contains 1,061 `SKILL.md` records from 22 declared repositories, of which 21 currently contain matching files. Content fingerprints identify 1,055 unique instruction bodies and 6 exact duplicates. The inventory is intentionally broader than the normalized catalog and is stored in `catalog/upstream-skill-inventory.yaml`.
+The separate downloaded inventory contains 3,998 `SKILL.md` records from 41 declared repositories, of which 40 currently contain matching files. Content fingerprints identify 3,973 unique instruction bodies and 25 exact duplicates. The inventory is intentionally broader than the normalized catalog and is stored in `catalog/upstream-skill-inventory.yaml`.
 
 ## Collection rules
 

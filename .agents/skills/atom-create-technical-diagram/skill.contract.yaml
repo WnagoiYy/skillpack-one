@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-create-technical-diagram
+kind: atom
+version: 0.1.0
+name:
+  en: Create a technical diagram
+  zh-CN: 创建技术图
+summary:
+  en: Create one accurate, editable technical diagram from verified components and
+    relationships with a clear viewpoint, legend, scope, and accessible labels.
+  zh-CN: 依据已验证组件和关系创建一份准确可编辑技术图，明确视角、图例、范围与无障碍标签。
+outcomes:
+  - Editable technical diagram
+artifacts:
+  - technical-diagram
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: technical-diagram
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: design-media
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - create a system diagram
+      - draw this architecture
+      - make a sequence diagram
+    zh-CN:
+      - 创建系统图
+      - 绘制架构图
+      - 制作时序图
+  negativeTriggers:
+    en:
+      - invent the architecture
+      - chart numerical data
+    zh-CN:
+      - 创造架构
+      - 绘制数值数据图表
+  confusableWith:
+    - atom-design-software-architecture
+    - atom-visualize-data
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

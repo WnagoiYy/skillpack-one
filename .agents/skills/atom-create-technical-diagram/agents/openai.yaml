@@ -1,0 +1,7 @@
+interface:
+  display_name: Atom Create Technical Diagram
+  short_description: Route and apply Atom Create Technical Diagram
+  default_prompt: Use $atom-create-technical-diagram to handle this request within
+    its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

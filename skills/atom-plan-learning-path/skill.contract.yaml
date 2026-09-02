@@ -1,0 +1,75 @@
+schemaVersion: 1
+id: atom-plan-learning-path
+kind: atom
+version: 0.1.0
+name:
+  en: Plan a learning path
+  zh-CN: 规划学习路径
+summary:
+  en: Create one adaptive learning path from a learner's goal, baseline,
+    constraints, resources, practice sequence, assessments, and review cadence.
+  zh-CN: 依据学习目标、基础、约束、资源、练习顺序、评估与复盘节奏创建一条自适应学习路径。
+outcomes:
+  - Measurable personal learning path
+artifacts:
+  - learning-path
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: learning-path
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - network-read
+permissions:
+  network: read
+  filesystem: none
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: personal-productivity
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - api-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - plan a learning path
+      - create a study roadmap
+      - design a self-study curriculum
+    zh-CN:
+      - 规划学习路径
+      - 创建学习路线图
+      - 设计自学课程
+  negativeTriggers:
+    en:
+      - do the homework for me
+      - write a generic action plan
+    zh-CN:
+      - 替我完成作业
+      - 编写通用行动计划
+  confusableWith:
+    - atom-build-action-plan
+    - atom-find-research-sources
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

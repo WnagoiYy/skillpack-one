@@ -2,25 +2,73 @@ schemaVersion: 1
 id: category-data-analytics
 kind: category
 version: 0.1.0
-name: { en: Data and Analytics Router, zh-CN: 数据与分析路由器 }
-summary: { en: Route structured-data questions to reproducible analysis atoms., zh-CN: 将结构化数据问题路由到可复现的分析原子能力。 }
-outcomes: [Bounded data-analytics category decision]
-artifacts: [category-route, localized-index]
-inputs: [{ name: request, type: user-prompt, required: true }]
-outputs: [{ name: candidates, type: category-and-atom-candidates, required: true }]
-preconditions: [The versioned taxonomy and localized index are available]
-failures: [The data shape or analytical outcome cannot be inferred]
-sideEffects: [filesystem-read]
-permissions: { network: none, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+name:
+  en: Data and analytics Router
+  zh-CN: 数据与分析路由器
+summary:
+  en: Route data and analytics requests to the smallest certified Atomic Skill.
+  zh-CN: 将数据与分析请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded data-analytics category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
 taxonomy:
   primaryCategory: data-analytics
-  lifecycle: [analyze]
-  modalities: [text, structured-data]
-  dependencies: [tool-agnostic]
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
   risk: read-only
 routing:
-  positiveTriggers: { en: [analyze a table, query data, calculate metrics, build a statistical model], zh-CN: [分析表格, 查询数据, 计算指标, 建立统计模型] }
-  negativeTriggers: { en: [prose-only research, operate a production service], zh-CN: [纯文字研究, 运行生产服务] }
-  confusableWith: [category-research-knowledge, category-design-media]
-provenance: { origin: local, license: Apache-2.0 }
-evaluations: [routing-bootstrap, routing-en-test, routing-zh-cn-test, routing-adversarial]
+  positiveTriggers:
+    en:
+      - data
+      - spreadsheet
+      - database
+      - sql
+      - statistics
+      - chart
+    zh-CN:
+      - 数据
+      - 表格
+      - 数据库
+      - 统计
+      - 图表
+      - 指标
+  negativeTriggers:
+    en:
+      - prose-only research synthesis
+      - operating a production data service
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

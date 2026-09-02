@@ -2,25 +2,73 @@ schemaVersion: 1
 id: category-personal-productivity
 kind: category
 version: 0.1.0
-name: { en: Personal Productivity Router, zh-CN: 个人效率路由器 }
-summary: { en: Route personal planning and knowledge routines to narrow atoms., zh-CN: 将个人规划与知识流程路由到窄范围原子能力。 }
-outcomes: [Bounded personal-productivity category decision]
-artifacts: [category-route, localized-index]
-inputs: [{ name: request, type: user-prompt, required: true }]
-outputs: [{ name: candidates, type: category-and-atom-candidates, required: true }]
-preconditions: [The versioned taxonomy and localized index are available]
-failures: [The request does not have an individual planning or knowledge owner]
-sideEffects: [filesystem-read]
-permissions: { network: none, filesystem: read, shell: none, secrets: none, externalCommunication: none }
+name:
+  en: Personal productivity Router
+  zh-CN: 个人效率路由器
+summary:
+  en: Route personal productivity requests to the smallest certified Atomic Skill.
+  zh-CN: 将个人效率请求路由到最小的已认证原子 Skill。
+outcomes:
+  - Bounded personal-productivity category decision
+artifacts:
+  - category-route
+  - localized-index
+inputs:
+  - name: request
+    type: user-prompt
+    required: true
+outputs:
+  - name: candidates
+    type: category-and-atom-candidates
+    required: true
+preconditions:
+  - The versioned taxonomy and localized index are available
+failures:
+  - The requested outcome does not fit the declared category boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
 taxonomy:
   primaryCategory: personal-productivity
-  lifecycle: [analyze]
-  modalities: [text, structured-data]
-  dependencies: [tool-agnostic]
+  lifecycle:
+    - analyze
+  modalities:
+    - text
+    - structured-data
+  dependencies:
+    - tool-agnostic
   risk: read-only
 routing:
-  positiveTriggers: { en: [organize my tasks, plan my calendar, manage my notes, review personal commitments], zh-CN: [整理我的任务, 规划我的日历, 管理我的笔记, 检查个人承诺] }
-  negativeTriggers: { en: [organization-wide automation, shared operations], zh-CN: [组织级自动化, 共享运维] }
-  confusableWith: [category-automation-operations, category-research-knowledge]
-provenance: { origin: local, license: Apache-2.0 }
-evaluations: [routing-bootstrap, routing-en-test, routing-zh-cn-test, routing-adversarial]
+  positiveTriggers:
+    en:
+      - task
+      - todo
+      - calendar
+      - reminder
+      - notes
+      - memory
+    zh-CN:
+      - 任务
+      - 待办
+      - 日历
+      - 提醒
+      - 笔记
+      - 记忆
+  negativeTriggers:
+    en:
+      - organization-wide workflow automation
+      - shared knowledge governance
+    zh-CN:
+      - 超出该分类边界的请求
+  confusableWith: []
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn

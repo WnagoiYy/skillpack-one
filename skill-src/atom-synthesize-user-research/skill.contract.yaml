@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-synthesize-user-research
+kind: atom
+version: 0.1.0
+name:
+  en: Synthesize user research
+  zh-CN: 综合用户研究
+summary:
+  en: Synthesize one bounded set of interviews, observations, or feedback into
+    traceable needs, patterns, tensions, and product implications without
+    inventing user evidence.
+  zh-CN: 将一组有限访谈、观察或反馈综合为可追溯需求、模式、矛盾与产品启示，不虚构用户证据。
+outcomes:
+  - Traceable user-research synthesis
+artifacts:
+  - user-research-synthesis
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: user-research-synthesis
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+permissions:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: product-definition
+  lifecycle:
+    - analyze
+    - verify
+  modalities:
+    - text
+  dependencies:
+    - tool-agnostic
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - synthesize these user interviews
+      - identify patterns in customer feedback
+      - summarize user research findings
+    zh-CN:
+      - 综合用户访谈
+      - 识别客户反馈模式
+      - 总结用户研究发现
+  negativeTriggers:
+    en:
+      - design a research study
+      - prioritize the roadmap
+    zh-CN:
+      - 设计研究方案
+      - 排定产品路线图
+  confusableWith:
+    - atom-design-research-study
+    - atom-prioritize-product-roadmap
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

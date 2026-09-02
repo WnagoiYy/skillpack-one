@@ -1,0 +1,76 @@
+schemaVersion: 1
+id: atom-create-presentation
+kind: atom
+version: 0.1.0
+name:
+  en: Create a presentation
+  zh-CN: 创建演示文稿
+summary:
+  en: Convert approved content into a coherent slide deck with one narrative,
+    concise slide purposes, speaker context, and verifiable structure.
+  zh-CN: 将已批准内容转换为连贯演示文稿，形成统一叙事、简洁页面目的、讲者上下文和可验证结构。
+outcomes:
+  - Coherent presentation deck
+artifacts:
+  - presentation-deck
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: presentation-deck
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: documents-communication
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - create a presentation
+      - turn this report into slides
+      - build a slide deck
+    zh-CN:
+      - 创建演示文稿
+      - 将报告转成幻灯片
+      - 制作幻灯片组
+  negativeTriggers:
+    en:
+      - invent missing evidence
+      - only choose visual styling
+    zh-CN:
+      - 编造缺失证据
+      - 只选择视觉样式
+  confusableWith:
+    - atom-write-structured-report
+    - atom-design-presentation-visuals
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

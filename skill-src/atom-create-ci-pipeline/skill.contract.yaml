@@ -1,0 +1,78 @@
+schemaVersion: 1
+id: atom-create-ci-pipeline
+kind: atom
+version: 0.1.0
+name:
+  en: Create a CI pipeline
+  zh-CN: 创建持续集成管道
+summary:
+  en: Create one repository-scoped continuous-integration pipeline with
+    reproducible checks, least privilege, caching, artifacts, failure
+    diagnostics, and verification.
+  zh-CN: 创建一条仓库范围持续集成管道，包含可复现检查、最小权限、缓存、产物、失败诊断与验证。
+outcomes:
+  - Verified CI pipeline change
+artifacts:
+  - ci-pipeline-change
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: ci-pipeline-change
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+  - shell-execution
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: automation-operations
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - cli-backed
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - create a CI pipeline
+      - add GitHub Actions checks
+      - automate repository tests
+    zh-CN:
+      - 创建CI管道
+      - 添加GitHub Actions检查
+      - 自动化仓库测试
+  negativeTriggers:
+    en:
+      - deploy production infrastructure
+      - only design a workflow diagram
+    zh-CN:
+      - 部署生产基础设施
+      - 只设计流程图
+  confusableWith:
+    - atom-design-automation-workflow
+    - atom-plan-cloud-deployment
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial

@@ -60,3 +60,89 @@ examples:
       - Preserves unrelated changes
       - Uses a bounded operation
       - Verifies resulting history
+  - id: task-data-cleaning
+    prompt: Clean this customer table reproducibly.
+    expectedCategory: data-analytics
+    expectedAtoms:
+      - atom-clean-tabular-data
+    mustNotRoute:
+      - atom-analyze-tabular-data
+    task: Profile quality, define normalization rules, preserve raw inputs, apply
+      reproducible transformations, and validate keys, types, row counts, and
+      anomalies.
+    rubric:
+      - Profiles data quality
+      - Declares transformation rules
+      - Preserves source lineage
+      - Validates the cleaned result
+  - id: task-threat-model
+    prompt: Create a threat model for this service.
+    expectedCategory: security-trust
+    expectedAtoms:
+      - atom-create-threat-model
+    mustNotRoute:
+      - atom-audit-source-security
+    task: Map assets, actors, flows, entry points, trust boundaries, abuse cases,
+      controls, residual risk, and prioritized verification.
+    rubric:
+      - Defines assets and objectives
+      - Maps trust boundaries
+      - Prioritizes realistic abuse paths
+      - Links mitigations to verification
+  - id: task-launch-plan
+    prompt: Plan this product launch.
+    expectedCategory: business-growth
+    expectedAtoms:
+      - atom-plan-product-launch
+    mustNotRoute:
+      - atom-plan-software-release
+    task: Create a launch plan with audience, positioning, channels, readiness
+      gates, owners, metrics, risks, and fallback actions.
+    rubric:
+      - Defines audience and positioning
+      - Assigns readiness ownership
+      - Specifies measurable outcomes
+      - Includes risks and fallback actions
+  - id: task-observability
+    prompt: Design observability for this service.
+    expectedCategory: automation-operations
+    expectedAtoms:
+      - atom-design-observability
+    mustNotRoute:
+      - atom-triage-production-incident
+    task: Define user journeys, SLIs, SLOs, telemetry, dashboards, actionable
+      alerts, ownership, retention, cost, and review cadence.
+    rubric:
+      - Connects signals to user outcomes
+      - Defines SLOs and telemetry
+      - Makes alerts actionable
+      - Addresses ownership and cost
+  - id: task-learning-path
+    prompt: Plan a measurable learning path for this goal.
+    expectedCategory: personal-productivity
+    expectedAtoms:
+      - atom-plan-learning-path
+    mustNotRoute:
+      - atom-build-action-plan
+    task: Assess baseline, decompose prerequisites, sequence resources and practice,
+      and define feedback, spaced review, checkpoints, and adaptation rules.
+    rubric:
+      - Uses learner baseline and constraints
+      - Sequences prerequisites and practice
+      - Includes feedback and retrieval
+      - Defines adaptive checkpoints
+  - id: task-peer-review
+    prompt: Peer review this scientific manuscript.
+    expectedCategory: scientific-research
+    expectedAtoms:
+      - atom-peer-review-manuscript
+    mustNotRoute:
+      - atom-edit-prose
+    task: Summarize claims and methods, identify evidence-located major and minor
+      issues, assess reproducibility and ethics, and ask constructive questions
+      without an editorial verdict.
+    rubric:
+      - Accurately frames claims and methods
+      - Locates and prioritizes findings
+      - Checks reproducibility and ethics
+      - Avoids rewriting or editorial verdicts

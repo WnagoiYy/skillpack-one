@@ -1,0 +1,77 @@
+schemaVersion: 1
+id: atom-plan-product-launch
+kind: atom
+version: 0.1.0
+name:
+  en: Plan a product launch
+  zh-CN: 规划产品发布
+summary:
+  en: Create one cross-functional go-to-market launch plan with audience,
+    positioning, channels, readiness gates, metrics, owners, and fallback
+    actions.
+  zh-CN: 创建一份跨职能产品上市计划，包含受众、定位、渠道、就绪门槛、指标、负责人和回退措施。
+outcomes:
+  - Reviewable product-launch plan
+artifacts:
+  - product-launch-plan
+inputs:
+  - name: request
+    type: bounded-task
+    required: true
+outputs:
+  - name: result
+    type: product-launch-plan
+    required: true
+preconditions:
+  - The target, scope, constraints, and authority are known
+failures:
+  - Required evidence or authority is unavailable
+  - The request crosses this Atomic Skill boundary
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: business-growth
+  lifecycle:
+    - analyze
+    - transform
+  modalities:
+    - text
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - plan this product launch
+      - create a go-to-market launch plan
+      - coordinate launch readiness
+    zh-CN:
+      - 规划产品发布
+      - 制定上市计划
+      - 协调发布就绪
+  negativeTriggers:
+    en:
+      - deploy software to production
+      - write only ad copy
+    zh-CN:
+      - 部署软件到生产
+      - 只写广告文案
+  confusableWith:
+    - atom-plan-software-release
+    - atom-plan-content-strategy
+provenance:
+  origin: local-synthesis-from-upstream-inventory
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-library-en
+  - routing-library-zh-cn
+  - routing-library-adversarial
