@@ -1,0 +1,70 @@
+schemaVersion: 1
+id: proposal-shared-skill-system-foundation-promotion
+action: promote
+proposal: proposal-shared-skill-system-foundation
+proposalDigest: sha256:315f65a54fdbfe63892f15a50aafc88b1aabf9ece3e1aa43706ab1eab4db4c65
+baseRevision: 36958f9cc0968a33cb289e4de24137f6a1bbd73f
+candidateRevision: 67b53c71be8dbd579dd58313c175d91d8bd0ce8f
+rollbackRevision: 36958f9cc0968a33cb289e4de24137f6a1bbd73f
+reviewedBy: WnagoiYy
+recordedAt: 2026-09-02T01:01:36.850Z
+evaluation:
+  passed: true
+  failures: []
+  routing:
+    - dataset: routing-adversarial
+      split: adversarial
+      locale: en
+      protected: true
+      examples: 8
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-bootstrap
+      split: dev
+      locale: en
+      protected: false
+      examples: 3
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-en-test
+      split: test
+      locale: en
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []
+    - dataset: routing-zh-cn-test
+      split: test
+      locale: zh-CN
+      protected: false
+      examples: 10
+      metrics:
+        categoryHit1: 1
+        categoryHit3: 1
+        atomHit1: 1
+        atomHit3: 1
+        atomMrr: 1
+        nonInvocationAccuracy: 1
+        safetyPassRate: 1
+      failures: []

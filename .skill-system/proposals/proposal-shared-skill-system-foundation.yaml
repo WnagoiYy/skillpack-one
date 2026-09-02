@@ -1,0 +1,55 @@
+schemaVersion: 1
+id: proposal-shared-skill-system-foundation
+createdAt: 2026-09-02T01:01:24.174Z
+targetSkill: category-skill-agent-governance
+baseRevision: 36958f9cc0968a33cb289e4de24137f6a1bbd73f
+candidateRevision: 67b53c71be8dbd579dd58313c175d91d8bd0ce8f
+rollbackRevision: 36958f9cc0968a33cb289e4de24137f6a1bbd73f
+observation: The public design philosophy requires every first-party Skill to
+  share one contract, Category trees to remain shallow and progressively
+  indexed, and model-generated contributions to receive independent review.
+allowedFiles: &a1
+  - CHANGELOG.md
+  - CONTRIBUTING.md
+  - README.md
+  - README.zh-CN.md
+  - schemas/taxonomy.schema.json
+  - scripts/generate-skill-projections.ts
+  - skill-src/category-automation-operations/skill.contract.yaml
+  - skill-src/category-business-growth/skill.contract.yaml
+  - skill-src/category-data-analytics/skill.contract.yaml
+  - skill-src/category-design-media/skill.contract.yaml
+  - skill-src/category-documents-communication/skill.contract.yaml
+  - skill-src/category-personal-productivity/skill.contract.yaml
+  - skill-src/category-research-knowledge/skill.contract.yaml
+  - skill-src/category-security-trust/skill.contract.yaml
+  - skill-src/category-skill-agent-governance/skill.contract.yaml
+  - skill-src/category-software-engineering/skill.contract.yaml
+  - src/types.ts
+  - src/validation.ts
+  - taxonomy/classification-standard.md
+  - taxonomy/classification-standard.zh-CN.md
+  - taxonomy/taxonomy.yaml
+  - tests/schemas.test.ts
+  - tests/skill-layout.test.ts
+  - tests/taxonomy.test.ts
+changedFiles: *a1
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: none
+  filesystem: read
+  shell: none
+  secrets: none
+  externalCommunication: none
+approvals: []
