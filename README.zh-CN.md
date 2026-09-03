@@ -83,16 +83,47 @@ SkillPack One 是一套通用设计哲学的参考实现。个人、社区和组
 
 ## 快速开始
 
-需要 Node.js 24 或更新版本，以及 Git。安装已发布的预览版并一次性装入当前 Codex 项目：
+需要 Node.js 24 或更新版本。只有参与仓库开发时才需要 Git。
+
+### 使用 npm 安装
+
+全局安装当前公开预览版，并验证 CLI：
 
 ```sh
 npm install --global skillpack-one@next
+skillpack --version
+```
+
+进入任意 Codex 项目根目录，安装已审查的 Skills 并体验路由：
+
+```sh
 cd 你的-codex-项目
 skillpack install
 skillpack route "设计一个可复现的科学研究"
+skillpack compose "规划、实现并安全审查一个边界明确的代码修改"
 ```
 
 `skillpack install` 会把完整的已审查投影复制到当前项目 `.agents/skills/`。重复执行不会产生变化；发现用户已有的同名不同内容 Skill 时会拒绝静默覆盖，只有显式传入 `--force` 才会替换。
+
+如果不想全局安装，也可以通过 npm 临时运行同一个 CLI：
+
+```sh
+npm exec --yes --package=skillpack-one@next -- skillpack --version
+npm exec --yes --package=skillpack-one@next -- skillpack install
+```
+
+常用安装选项与维护命令：
+
+```sh
+skillpack install --target path/to/.agents/skills
+skillpack install --force
+npm update --global skillpack-one@next
+npm uninstall --global skillpack-one
+```
+
+`@next` 跟随研究阶段预发布版本。稳定版本发布后，希望保持稳定通道的用户可以改用 `skillpack-one@latest`。
+
+### 参与仓库开发
 
 若要参与仓库开发：
 
