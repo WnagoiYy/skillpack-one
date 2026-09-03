@@ -1,5 +1,7 @@
 # Single-scroll Skill Browser and npm usage design
 
+> Superseded on desktop by [Viewport-height Skill Browser workspace design](./2026-09-03-viewport-browser-workspace-design.md). The npm usage guidance remains current.
+
 ## Goal
 
 Remove the competing page and detail-pane vertical scrollbars while preserving fast navigation through the 106-Skill catalog. Make npm installation understandable without requiring readers to infer the difference between the prerelease channel, the CLI package, and project-local Skill installation.
