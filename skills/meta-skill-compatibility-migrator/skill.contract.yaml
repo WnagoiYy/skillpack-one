@@ -1,0 +1,90 @@
+schemaVersion: 1
+id: meta-skill-compatibility-migrator
+kind: meta
+version: 0.1.0
+name:
+  en: Skill Compatibility Migrator
+  zh-CN: Skill 兼容迁移器
+summary:
+  en: Translate one reviewed Skill between supported agent hosts while preserving
+    its semantic contract, authority, provenance, resources, and evaluation
+    intent.
+  zh-CN: 在受支持的 Agent 宿主之间迁移一个已审查 Skill，同时保留其语义合同、权限、来源、资源与评测意图。
+outcomes:
+  - Semantically equivalent host-compatible Skill candidate
+artifacts:
+  - compatibility-map
+  - migrated-skill
+  - migration-report
+  - validation-results
+inputs:
+  - name: migration-scope
+    type: reviewed-skill-and-host-pair
+    required: true
+outputs:
+  - name: migrated-candidate
+    type: host-compatible-skill-candidate
+    required: true
+preconditions:
+  - The source revision source and target host specifications and
+    unsupported-feature policy are fixed
+  - The source Skill has passed quality review
+failures:
+  - A source feature has no safe target equivalent
+  - Migration would silently broaden authority or triggering
+  - Generated artifacts cannot be validated on the target host
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+  - shell-execution
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: skill-agent-governance
+  lifecycle:
+    - analyze
+    - transform
+    - verify
+  modalities:
+    - text
+    - structured-data
+    - system-state
+  dependencies:
+    - cli-backed
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - migrate this skill to Codex
+      - make this reviewed skill compatible with another agent host
+      - convert a skill layout without changing behavior
+    zh-CN:
+      - 把这个 Skill 迁移到 Codex
+      - 让已审查 Skill 兼容另一 Agent 宿主
+      - 不改变行为地转换 Skill 布局
+  negativeTriggers:
+    en:
+      - install the migrated skill globally
+      - redesign its capability
+      - migrate an entire unrelated project
+    zh-CN:
+      - 全局安装迁移后的 Skill
+      - 重新设计其能力
+      - 迁移整个无关项目
+  confusableWith:
+    - meta-skill-author
+    - meta-skill-quality-auditor
+    - atom-plan-code-change
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-meta-library-en
+  - routing-meta-library-zh-cn
+  - governance-protected

@@ -32,7 +32,7 @@ flowchart LR
 | --- | ---: | --- |
 | 分类 Skills | 22 | 开放、分层地按真实需求分类，并处理领域边界 |
 | 原子 Skills | 76 | 小而独立、可测试、可替换的能力契约 |
-| 元 Skills | 2 | 分别管理上游策展，以及提案、评估、晋级、弃用与回滚 |
+| 元 Skills | 8 | 分离上游策展、创作、审计、评测、优化、迁移、组合与生命周期治理 |
 | 能力包 | 4 | 不合并原子的前提下，组成端到端任务 |
 | 已下载 Skill 清单 | 3,998 | 来自 40 个非空仓库的 3,973 份独立内容；明确标出 25 个完全重复项 |
 | 通用上游目录 | 658 | 388 个 Agent Skills + 270 个官方 MCP Registry 服务 |
@@ -63,7 +63,7 @@ SkillPack One 是一套通用设计哲学的参考实现。个人、社区和组
 
 1. **所有 Skill 使用同一套描述规范。** 每个 Skill 都是一个目录，并包含可移植的 `SKILL.md`，其中 `name` 与 `description` 必须能准确区分触发范围。本仓库进一步要求每个第一方分类、原子和元 Skill 使用同一份机器可读 `skill.contract.yaml`，声明输入、输出、结果、产物、边界、权限、副作用、来源、路由信号和评测。
 2. **分类 Skill 负责渐进式索引。** 请求先命中分类 Skill，再读取该层级的 `index.md` 或对应语言索引，最后才加载选中的原子 Skill。分类树建议最多三层：行业或领域大类 → 细分领域 → 具体分类 → 原子 Skill；原子 Skill 是叶节点，不计入分类层数。本实现为了兼容 Codex 发现机制，保持可执行 Skill 目录扁平，通过 taxonomy 的父子关系和生成索引表达逻辑层级；其他宿主也可以采用物理嵌套目录。
-3. **所有 Skill 都可以生成、训练和进化。** Skill 可以由人编写、从工作流录制，或在 ChatGPT 中通过 `@skill-creator`、在 Codex 中通过 `$skill-creator` 生成草案。这里的“训练”是依据版本化路由题集和任务题集，持续优化描述、契约、指令与组合，不是静默修改模型权重。元 Skill 负责提案、评测、晋级、弃用和回滚；它既可以管理整个包，也可以只管理某个分类子树或单个 Skill，并以同一门禁约束自身。
+3. **所有 Skill 都可以生成、训练和进化。** Skill 可以由人编写、从工作流录制，或在 ChatGPT 中通过 `@skill-creator`、在 Codex 中通过 `$skill-creator` 生成草案。这里的“训练”是依据版本化路由题集和任务题集，持续优化描述、契约、指令与组合，不是静默修改模型权重。8 个边界明确的元 Skill 分别负责上游策展、创作、只读审计、行为评测、有界优化、宿主迁移、能力包组合与最终生命周期治理；它们既可以管理整个包，也可以只管理某个分类子树或单个 Skill，并以同一门禁约束自身。
 4. **原子 Skill 的职责边界必须明确。** 一个原子 Skill 只拥有一个主要结果、一个主导产物或状态变化、一个权限包络、一个聚焦评分标准和一个可独立复用的失败边界。端到端流程应通过能力包组合原子能力，而不是重新把多个原子揉成巨型 Skill。
 5. **基础规范通用，分类体系开放。** 问题研究、科学研究、软件开发和软件使用只是种子示例，并不是封闭的四分法。本参考实现同时保留商业增长、数据分析、文档沟通、设计媒体、自动化运维、个人效率、安全信任、Skill/Agent 治理等大类。维护者还可以按行业、职能、模态或风险继续增加或拆分类别。是否符合这套哲学，取决于描述可移植、边界明确、索引渐进、证据可查和进化受治理，而不是照搬固定分类清单。
 
@@ -155,13 +155,13 @@ web/                  浅色静态 Skill Browser 源码
 
 ## 测试与真实进化证据
 
-`npm run skillpack -- gate` 分别评估分类 Hit@1/@3、原子 Hit@1/@3、MRR、等价能力感知的原子 Recall@3 与 Full Coverage@3、不调用准确率和安全通过率，不用一个总分掩盖短板。多原子请求只有在每个必需能力组都出现时才通过 Full Coverage。英文、中文、对抗和同领域硬干扰问题集彼此独立；当前 186 条路由样例全部通过，这只验证仓库工程一致性，不代表真实模型通用能力。任务完成率另行评估，不能用路由正确率代替。`skillpack harness effect <without.json> <with.json>` 会在相同数据集与 Harness 下计算成对完成率和 Rubric 增益。
+`npm run skillpack -- gate` 分别评估分类 Hit@1/@3、原子 Hit@1/@3、MRR、等价能力感知的原子 Recall@3 与 Full Coverage@3、特殊元 Skill Hit@1/@3 与 MRR、不调用准确率和安全通过率，不用一个总分掩盖短板。多原子请求只有在每个必需能力组都出现时才通过 Full Coverage。英文、中文、元 Skill、对抗和同领域硬干扰问题集彼此独立；当前 202 条路由样例全部通过，这只验证仓库工程一致性，不代表真实模型通用能力。任务完成率另行评估，不能用路由正确率代替。`skillpack harness effect <without.json> <with.json>` 会在相同数据集与 Harness 下计算成对完成率和 Rubric 增益。
 
 仓库已经保存一次真实的受治理进化：`proposal-generic-zh-fallback`。该候选增加了 `index.zh.md`，依次通过开发集、未参与生成的英文/中文测试集和对抗集，并写入带回滚版本的不可覆盖晋级记录。
 
 新候选可以通过 `npm run skillpack -- train propose --id <id> --target <skill-id> --observation <evidence> --author <identity> --authorship <human|model-assisted|model-generated> [--generator <model>]` 与规范 Git 差异精确绑定，再进入评估和独立晋级决策记录。单个优化步骤可以记录有预算的 `add`、`delete`、`replace` 编辑；分数持平、受保护指标回退、超预算或声明决策与测量不一致都会失败关闭。受保护数据集、基线和发布门槛不能为同时修改它们的候选背书。
 
-Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 100 个 Skill。仓库当前包含 186 条路由样例，覆盖原有集、英文集、中文集、同领域干扰集和对抗集，并全部通过确定性路由门禁。由于本机尚未配置 Pi 模型提供商凭证，模型驱动的任务完成率仍明确标记为**未认证**。Mock 只验证协议管线，结果始终带 `synthetic: true`；DeepSeek Harness 需等兼容 CLI 版本固定后才启用。
+Pi 0.84.4 已固定版本，并通过其真实 `loadSkillsFromDir` 发现全部 106 个 Skill。仓库当前包含 202 条路由样例，覆盖原有集、英文集、中文集、元 Skill 集、同领域干扰集和对抗集，并全部通过确定性路由门禁。由于本机尚未配置 Pi 模型提供商凭证，模型驱动的任务完成率仍明确标记为**未认证**。Mock 只验证协议管线，结果始终带 `synthetic: true`；DeepSeek Harness 需等兼容 CLI 版本固定后才启用。
 
 详细说明见[评估流程](docs/zh-CN/evaluation.md)、[Harness 适配](docs/zh-CN/harnesses.md)和[进化策略](docs/zh-CN/evolution-policy.md)。
 
@@ -182,7 +182,7 @@ npm run skillpack -- catalog stats
 
 ## 论文依据与边界
 
-[Agent Skill 论文综述](docs/zh-CN/research/2026-09-02-agent-skill-literature.md)把 SkillsBench、Skill-Inject、组合路由、结构化组合、检索和自进化研究分别映射为“立即采纳、暂缓、明确不采纳”。专项的 [WikiSkill 与 SKILL.state 分析](docs/zh-CN/research/2026-09-02-wikiskill-skill-state.md)解释了为什么跨迭代持久知识属于元治理，而单次任务的有界当前状态属于能力包执行。后续的[检索、安全与优化综合分析](docs/zh-CN/research/2026-09-02-retrieval-security-optimization.md)把 SkillRet、SkillRouter、真实场景 Skill 使用评测、Agent Skill Security、SkillNet 和 SkillOpt 映射为已实现控制与暂缓实验。研究可以改进检索、组合、验证、执行与学习闭环，但不会替换 Category → Atom → Capability Pack → Meta 的项目底色。
+[Agent Skill 论文综述](docs/zh-CN/research/2026-09-02-agent-skill-literature.md)把 SkillsBench、Skill-Inject、组合路由、结构化组合、检索和自进化研究分别映射为“立即采纳、暂缓、明确不采纳”。专项的 [WikiSkill 与 SKILL.state 分析](docs/zh-CN/research/2026-09-02-wikiskill-skill-state.md)解释了为什么跨迭代持久知识属于元治理，而单次任务的有界当前状态属于能力包执行。后续的[检索、安全与优化综合分析](docs/zh-CN/research/2026-09-02-retrieval-security-optimization.md)把 SkillRet、SkillRouter、真实场景 Skill 使用评测、Agent Skill Security、SkillNet 和 SkillOpt 映射为已实现控制与暂缓实验。[Skill Creator 生态分析](docs/zh-CN/research/2026-09-03-meta-skill-creator-landscape.md)进一步解释为什么创作、审计、评测、优化、迁移、组合、策展与最终治理必须是 8 个互相制衡的元职责。研究可以改进检索、组合、验证、执行与学习闭环，但不会替换 Category → Atom → Capability Pack → Meta 的项目底色。
 
 本项目思想已经形成会议论文风格草稿：[SkillPack One：面向自组织、可组合和受治理 Agent Skill 的可移植控制平面](paper/skillpack-one.md)，并提供[中文扩展摘要](paper/skillpack-one.zh-CN.md)和 [BibTeX 参考文献](paper/references.bib)。论文中的当前数字仅限可复现的仓库一致性结果；真实模型实验作为后续协议提出，没有伪装成已完成证据。
 

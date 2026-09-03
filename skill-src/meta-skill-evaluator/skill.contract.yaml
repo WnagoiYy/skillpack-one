@@ -1,0 +1,88 @@
+schemaVersion: 1
+id: meta-skill-evaluator
+kind: meta
+version: 0.1.0
+name:
+  en: Skill Evaluator
+  zh-CN: Skill 评测器
+summary:
+  en: Design and run reproducible routing, non-invocation, adversarial,
+    task-effect, cost, and latency evaluations for one Skill or capability pack.
+  zh-CN: 为一个 Skill 或能力包设计并运行可复现的路由、不命中、对抗、任务效果、成本与延迟评测。
+outcomes:
+  - Reproducible Skill evaluation report
+artifacts:
+  - evaluation-dataset
+  - run-manifest
+  - scored-results
+  - release-recommendation
+inputs:
+  - name: evaluation-target
+    type: immutable-skill-or-pack-candidate
+    required: true
+outputs:
+  - name: evaluation-report
+    type: reproducible-evaluation-evidence
+    required: true
+preconditions:
+  - The candidate revision decision question and success thresholds are fixed
+  - Train development test and protected evidence boundaries are declared
+failures:
+  - The candidate or protected cases change during a run
+  - Results cannot be reproduced
+  - Grading uncertainty is hidden or the baseline is not comparable
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+  - shell-execution
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: skill-agent-governance
+  lifecycle:
+    - analyze
+    - verify
+    - govern
+  modalities:
+    - text
+    - structured-data
+    - system-state
+  dependencies:
+    - cli-backed
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - evaluate this skill
+      - benchmark skill triggering and task completion
+      - build a skill test set
+    zh-CN:
+      - 评测这个 Skill
+      - 对 Skill 命中与任务完成做基准测试
+      - 构建 Skill 问题集
+  negativeTriggers:
+    en:
+      - write the skill instructions
+      - silently tune the candidate on test cases
+      - approve the release
+    zh-CN:
+      - 编写 Skill 说明
+      - 用测试集静默调优候选项
+      - 批准发布
+  confusableWith:
+    - meta-skill-author
+    - meta-skill-optimizer
+    - meta-skill-governor
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-meta-library-en
+  - routing-meta-library-zh-cn
+  - governance-protected

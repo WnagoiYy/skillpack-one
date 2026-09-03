@@ -1,0 +1,7 @@
+interface:
+  display_name: Meta Skill Compatibility Migrator
+  short_description: Route and apply Meta Skill Compatibility Migrator
+  default_prompt: Use $meta-skill-compatibility-migrator to handle this request
+    within its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

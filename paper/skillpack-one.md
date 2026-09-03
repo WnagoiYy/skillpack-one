@@ -1,10 +1,10 @@
 # SkillPack One: A Portable Control Plane for Self-Organizing, Composable, and Governed Agent Skills
 
-**Anonymous system paper draft — 2026-09-02**
+**Anonymous system paper draft — revised 2026-09-03**
 
 ## Abstract
 
-Reusable Agent Skills package procedural knowledge as discoverable files, but a growing ecosystem creates four systems problems: large catalogs become difficult to route, overlapping capabilities become difficult to compose, community artifacts cross several trust boundaries, and self-modification can silently optimize against its own evidence. This paper presents **SkillPack One**, a portable control plane for self-organizing Agent Skills. The design separates Category Skills for progressive routing, Atomic Skills with explicit responsibility and permission boundaries, Capability Packs that compile reviewed partial orders into executable plans, and Meta Skills that govern proposal, evaluation, promotion, rollback, and learning. All first-party capabilities share a machine-readable contract; locale-specific indexes preserve language-specific routing while stable identifiers remain portable. The system keeps immutable traces, persistent evolution knowledge, active Skills, and bounded within-run state as distinct artifacts. Recent retrieval, realistic-use, security, relation-graph, and text-optimization research is incorporated through equivalence-aware multi-Skill metrics, same-domain hard distractors, six-stage lifecycle security reviews, reviewed typed relations, and strictly improving bounded evolution attempts. The reference implementation contains 100 Skill contracts, four Capability Packs, a non-executed catalog of 658 Skill/MCP records, and a broader fingerprinted inventory of 3,998 downloaded Skill records. One hundred eighty-six deterministic routing examples pass the current gate, including multilingual, adversarial, and hard-distractor suites. These results validate implementation invariants, not general model utility; the paper therefore specifies a separate model-backed experimental protocol based on paired no-Skill/with-Skill task effect. SkillPack One's central contribution is an interchangeable governance contract: learned routers and optimizers may evolve, while authorization, evidence separation, and rollback remain stable.
+Reusable Agent Skills package procedural knowledge as discoverable files, but a growing ecosystem creates four systems problems: large catalogs become difficult to route, overlapping capabilities become difficult to compose, community artifacts cross several trust boundaries, and self-modification can silently optimize against its own evidence. This paper presents **SkillPack One**, a portable control plane for self-organizing Agent Skills. The design separates Category Skills for progressive routing, Atomic Skills with explicit responsibility and permission boundaries, Capability Packs that compile reviewed partial orders into executable plans, and Meta Skills with non-overlapping curation, authoring, audit, evaluation, optimization, migration, composition, and lifecycle-governance responsibilities. All first-party capabilities share a machine-readable contract; locale-specific indexes preserve language-specific routing while stable identifiers remain portable. The system keeps immutable traces, persistent evolution knowledge, active Skills, and bounded within-run state as distinct artifacts. Recent retrieval, realistic-use, security, relation-graph, text-optimization, and Skill-authoring practice is incorporated through equivalence-aware multi-Skill metrics, explicit Meta routing metrics, same-domain hard distractors, six-stage lifecycle security reviews, reviewed typed relations, and strictly improving bounded evolution attempts. The reference implementation contains 106 Skill contracts, four Capability Packs, a non-executed catalog of 658 Skill/MCP records, and a broader fingerprinted inventory of 3,998 downloaded Skill records. Two hundred two deterministic routing examples pass the current gate, including multilingual, Meta, adversarial, and hard-distractor suites. These results validate implementation invariants, not general model utility; the paper therefore specifies a separate model-backed experimental protocol based on paired no-Skill/with-Skill task effect. SkillPack One's central contribution is an interchangeable governance contract: learned routers and optimizers may evolve, while authorization, evidence separation, and rollback remain stable.
 
 **Keywords:** Agent Skills, capability routing, skill composition, self-improving agents, lifecycle security, progressive disclosure, agent governance
 
@@ -126,6 +126,8 @@ Each stage records reviewed threats, evidence, status, and residual risk. An app
 
 ### 4.5 Governed evolution
 
+Meta work is decomposed so that no role writes, grades, and approves the same change. The Upstream Curator acquires fixed-revision external evidence; the Skill Author creates one candidate; the Quality Auditor performs read-only structural, boundary, provenance, permission, portability, and security review; the Evaluator owns reproducible routing and task-effect measurement; the Optimizer makes bounded changes from non-protected evidence; the Compatibility Migrator changes host representation without changing the semantic contract; the Composer links certified members through artifacts and dependencies; and the Governor alone decides promotion, deprecation, or rollback. This is a separation-of-duties rule rather than a fixed implementation topology.
+
 Evolution has four distinct stores:
 
 1. immutable task traces and run artifacts;
@@ -151,11 +153,11 @@ The current snapshot contains:
 | --- | ---: | --- |
 | Category Skills | 22 | open hierarchical needs and boundary routing |
 | Atomic Skills | 76 | independently testable capability contracts |
-| Meta Skills | 2 | upstream curation and governed lifecycle change |
+| Meta Skills | 8 | separated curation, authoring, audit, evaluation, optimization, migration, composition, and governance |
 | Capability Packs | 4 | reviewed composition and ordering |
 | Upstream catalog records | 658 | attributed, non-executed classification evidence |
 | Downloaded Skill records / unique contents | 3,998 / 3,973 | fingerprinted, non-executed design evidence |
-| Typed relation nodes / edges | 104 / 166 | reviewed confusion, composition, dependency, packaging |
+| Typed relation nodes / edges | 110 / 185 | reviewed confusion, composition, dependency, packaging |
 
 Of the 658 normalized upstream records, 388 are Agent Skills and 270 are official MCP Registry server records. The broader inventory spans 41 declared repositories, flags 25 exact-content duplicates, and leaves unmatched records in a manual-review family. Problem solving, scientific research, software development, and software use are seed examples within an open taxonomy rather than an exhaustive partition. Unknown or detected license status remains metadata; collection does not authorize execution.
 
@@ -169,13 +171,13 @@ The current engineering evaluation asks:
 - **Q2:** Does the deterministic baseline preserve Category and Atom boundaries across English, Chinese, adversarial, and hard-distractor requests?
 - **Q3:** Do the new control-plane gates reject incomplete multi-Atom recovery, malformed lifecycle reviews, dependency cycles, and unsafe evolution attempts?
 
-Routing metrics are reported separately: Category Hit@1/3, Atom Hit@1/3, Atom MRR, Atom Recall@3, Atom Full Coverage@3, non-invocation accuracy, and safety pass rate. For a multi-Atom query, Recall@3 measures the fraction of required capability groups represented in the top three; Full Coverage@3 is one only when every group is represented. Reviewed functional alternatives may inhabit the same group.
+Routing metrics are reported separately: Category Hit@1/3, Atom Hit@1/3, Atom MRR, Atom Recall@3, Atom Full Coverage@3, special Meta Skill Hit@1/3 and MRR, non-invocation accuracy, and safety pass rate. For a multi-Atom query, Recall@3 measures the fraction of required capability groups represented in the top three; Full Coverage@3 is one only when every group is represented. Reviewed functional alternatives may inhabit the same group. `expectedAtoms` and `expectedSpecial` remain distinct because Meta selection is not executable domain work.
 
 Task utility is a different experiment. Matched no-Skill and with-Skill runs compare completion, rubric pass, blocking, latency, and cost under the same dataset, harness, and model. Synthetic Mock runs test protocol plumbing and are non-certifying.
 
 ### 6.2 Deterministic conformance result
 
-The candidate was evaluated on 186 routing examples:
+The candidate was evaluated on 202 routing examples:
 
 | Suite | Split | Locale | Examples | Category H@1 | Atom H@1 | Recall@3 | Full Coverage@3 | Safety |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -186,6 +188,8 @@ The candidate was evaluated on 186 routing examples:
 | routing-library-adversarial | development, adversarial cases | en | 21 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
 | routing-library-en | development, candidate-authored | en | 65 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
 | routing-library-zh-cn | development, candidate-authored | zh-CN | 65 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| routing-meta-library-en | development, Meta boundaries | en | 8 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| routing-meta-library-zh-cn | development, Meta boundaries | zh-CN | 8 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
 | routing-zh-cn-test | test | zh-CN | 10 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
 
 The hard-distractor development suite initially exposed a practical failure: negated phrases such as “do not edit the source” could still score as positive edit signals, while generic words such as “evidence” could dominate a security request. A later expansion test exposed the related elliptical forms “do not translate it” and “do not generate a new scene.” Negation-aware action matching, narrower outcome boundaries, and added conversational triggers raised all current development-suite metrics to 1.00. This is a test-driven debugging observation, not held-out evidence of generalization.

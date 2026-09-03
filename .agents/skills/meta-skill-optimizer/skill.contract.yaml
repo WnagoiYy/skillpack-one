@@ -1,0 +1,89 @@
+schemaVersion: 1
+id: meta-skill-optimizer
+kind: meta
+version: 0.1.0
+name:
+  en: Skill Optimizer
+  zh-CN: Skill 优化器
+summary:
+  en: Iteratively improve one existing Skill from explicit train or development
+    evidence under edit, permission, convergence, and rollback limits.
+  zh-CN: 依据明确的训练或开发证据，在编辑、权限、收敛与回滚限制内迭代改进一个现有 Skill。
+outcomes:
+  - Bounded evidence-backed Skill improvement candidate
+artifacts:
+  - improvement-ledger
+  - candidate-patch
+  - regression-results
+  - rollback-pointer
+inputs:
+  - name: optimization-brief
+    type: approved-skill-and-development-evidence
+    required: true
+outputs:
+  - name: optimized-candidate
+    type: bounded-skill-change-proposal
+    required: true
+preconditions:
+  - The baseline revision editable files train or development evidence budget
+    and stop conditions are fixed
+  - Protected evaluations are inaccessible to the optimization loop
+failures:
+  - Findings recur without convergence
+  - The edit crosses the allowed scope or permission envelope
+  - Improvement requires changing protected evidence or hiding a regression
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+  - shell-execution
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: skill-agent-governance
+  lifecycle:
+    - analyze
+    - transform
+    - verify
+  modalities:
+    - text
+    - structured-data
+    - system-state
+  dependencies:
+    - cli-backed
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - optimize this skill from eval failures
+      - improve a skill until development gates pass
+      - tune a skill description from trigger errors
+    zh-CN:
+      - 依据评测失败优化 Skill
+      - 改进 Skill 直到通过开发门禁
+      - 根据触发错误调整 Skill 描述
+  negativeTriggers:
+    en:
+      - draft a new skill from scratch
+      - run final protected certification
+      - self-approve the optimized skill
+    zh-CN:
+      - 从零起草新 Skill
+      - 运行最终受保护认证
+      - 自行批准优化后的 Skill
+  confusableWith:
+    - meta-skill-author
+    - meta-skill-evaluator
+    - meta-skill-governor
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-meta-library-en
+  - routing-meta-library-zh-cn
+  - governance-protected

@@ -51,6 +51,7 @@ export function evaluateRoutingTraces(dataset: EvalDataset, traces: RouteTrace[]
   const atomRanks: number[] = [];
   const atomRecall3: number[] = [];
   const atomFullCoverage3: number[] = [];
+  const specialRanks: number[] = [];
   const nonInvocation: number[] = [];
   const safety: number[] = [];
   const failures: RoutingEvaluationResult["failures"] = [];
@@ -59,6 +60,7 @@ export function evaluateRoutingTraces(dataset: EvalDataset, traces: RouteTrace[]
     const trace = traces[index]!;
     const categoryIds = trace.categories.map((candidate) => candidate.id);
     const atomIds = trace.atoms.map((candidate) => candidate.id);
+    const specialIds = trace.special.map((candidate) => candidate.id);
 
     if (example.expectedCategory) {
       const categoryRank = categoryIds.indexOf(example.expectedCategory) + 1;
@@ -85,17 +87,26 @@ export function evaluateRoutingTraces(dataset: EvalDataset, traces: RouteTrace[]
           reason: `atom full coverage at 3 is ${(coverage.recall * groups.length).toFixed(0)}/${groups.length}`
         });
       }
-    } else {
-      const highest = Math.max(trace.atoms[0]?.score ?? 0, trace.special[0]?.score ?? 0);
+    } else if (!(example.expectedSpecial?.length)) {
+      const invocableSpecial = trace.special.find((candidate) => candidate.matched.length > 0)?.score ?? 0;
+      const highest = Math.max(trace.atoms[0]?.score ?? 0, invocableSpecial);
       const abstained = highest < ATOM_INVOCATION_THRESHOLD;
       nonInvocation.push(abstained ? 1 : 0);
       if (!abstained) failures.push({ exampleId: example.id, reason: "capability should abstain" });
     }
 
+    if (example.expectedSpecial?.length) {
+      const specialRank = rank(specialIds, example.expectedSpecial);
+      specialRanks.push(specialRank ?? Number.POSITIVE_INFINITY);
+      if (specialRank !== 1) failures.push({ exampleId: example.id, reason: `special rank ${specialRank ?? "missing"}` });
+    }
+
     const selected = [
       (trace.categories[0]?.score ?? 0) > 0 ? trace.categories[0]?.id : undefined,
       (trace.atoms[0]?.score ?? 0) >= ATOM_INVOCATION_THRESHOLD ? trace.atoms[0]?.id : undefined,
-      (trace.special[0]?.score ?? 0) >= ATOM_INVOCATION_THRESHOLD ? trace.special[0]?.id : undefined
+      (trace.special[0]?.score ?? 0) >= ATOM_INVOCATION_THRESHOLD && (trace.special[0]?.matched.length ?? 0) > 0
+        ? trace.special[0]?.id
+        : undefined
     ].filter((id): id is string => Boolean(id));
     const forbidden = selected.filter((id) => example.mustNotRoute.includes(id));
     safety.push(forbidden.length === 0 ? 1 : 0);
@@ -110,6 +121,9 @@ export function evaluateRoutingTraces(dataset: EvalDataset, traces: RouteTrace[]
     atomMrr: round(average(atomRanks.map((value) => (Number.isFinite(value) ? 1 / value : 0)))),
     atomRecall3: round(average(atomRecall3)),
     atomFullCoverage3: round(average(atomFullCoverage3)),
+    specialHit1: round(average(specialRanks.map((value) => (value === 1 ? 1 : 0)))),
+    specialHit3: round(average(specialRanks.map((value) => (value <= 3 ? 1 : 0)))),
+    specialMrr: round(average(specialRanks.map((value) => (Number.isFinite(value) ? 1 / value : 0)))),
     nonInvocationAccuracy: round(average(nonInvocation)),
     safetyPassRate: round(average(safety))
   };

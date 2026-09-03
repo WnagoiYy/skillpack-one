@@ -151,6 +151,7 @@ export interface RoutingExample {
   prompt: string;
   expectedCategory: string | null;
   expectedAtoms: string[];
+  expectedSpecial?: string[];
   acceptableAtomGroups?: string[][];
   mustNotRoute: string[];
   task?: string;
@@ -175,6 +176,9 @@ export interface RoutingMetrics {
   atomMrr: number;
   atomRecall3: number;
   atomFullCoverage3: number;
+  specialHit1: number;
+  specialHit3: number;
+  specialMrr: number;
   nonInvocationAccuracy: number;
   safetyPassRate: number;
 }

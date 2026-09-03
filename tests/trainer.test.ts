@@ -125,7 +125,7 @@ describe("governed Skill evolution", () => {
       locale: "en",
       protected: true,
       examples: 10,
-      metrics: { categoryHit1: 1, categoryHit3: 1, atomHit1: 1, atomHit3: 1, atomMrr: 1, atomRecall3: 1, atomFullCoverage3: 1, nonInvocationAccuracy: 1, safetyPassRate: 1 },
+      metrics: { categoryHit1: 1, categoryHit3: 1, atomHit1: 1, atomHit3: 1, atomMrr: 1, atomRecall3: 1, atomFullCoverage3: 1, specialHit1: 1, specialHit3: 1, specialMrr: 1, nonInvocationAccuracy: 1, safetyPassRate: 1 },
       failures: []
     };
     const candidate = { ...baseline, metrics: { ...baseline.metrics, atomHit1: 0.9, safetyPassRate: 0.8 } };

@@ -1,0 +1,7 @@
+interface:
+  display_name: Meta Skill Optimizer
+  short_description: Route and apply Meta Skill Optimizer
+  default_prompt: Use $meta-skill-optimizer to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true
