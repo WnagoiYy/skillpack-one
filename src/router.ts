@@ -203,23 +203,26 @@ export function routeRequest(
       .map((contract) => scoreContract(prompt, promptTokens, contract, locale, categoryScores))
   );
   const strongestAtom = allAtoms[0];
-  const strongestContract = strongestAtom && strongestAtom.score >= 2
-    ? contracts.find((contract) => contract.id === strongestAtom.id)
-    : undefined;
-  const allCategories = sortCandidates(lexicalCategories.map((candidate) => {
-    if (candidate.id !== strongestContract?.taxonomy.primaryCategory) return candidate;
-    return {
-      ...candidate,
-      score: Number((candidate.score + Math.max(10, strongestAtom?.score ?? 0)).toFixed(4)),
-      matched: [...candidate.matched, `atom-affinity:${strongestContract.id}`]
-    };
-  }));
   const special = sortCandidates(
     contracts
       .filter((contract) => contract.kind === "meta")
       .map((contract) => scoreContract(prompt, promptTokens, contract, locale, categoryScores))
   );
-
+  const strongestSpecial = special.find((candidate) => candidate.matched.length > 0 && candidate.score >= 2);
+  const strongestCapability = (strongestSpecial?.score ?? Number.NEGATIVE_INFINITY) > (strongestAtom?.score ?? Number.NEGATIVE_INFINITY)
+    ? strongestSpecial
+    : strongestAtom;
+  const strongestContract = strongestCapability && strongestCapability.score >= 2
+    ? contracts.find((contract) => contract.id === strongestCapability.id)
+    : undefined;
+  const allCategories = sortCandidates(lexicalCategories.map((candidate) => {
+    if (candidate.id !== strongestContract?.taxonomy.primaryCategory) return candidate;
+    return {
+      ...candidate,
+      score: Number((candidate.score + Math.max(10, strongestCapability?.score ?? 0)).toFixed(4)),
+      matched: [...candidate.matched, `capability-affinity:${strongestContract.id}`]
+    };
+  }));
   const first = allCategories[0];
   const second = allCategories[1];
   const ambiguous =

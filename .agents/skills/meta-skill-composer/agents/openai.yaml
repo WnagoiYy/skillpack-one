@@ -1,0 +1,7 @@
+interface:
+  display_name: Meta Skill Composer
+  short_description: Route and apply Meta Skill Composer
+  default_prompt: Use $meta-skill-composer to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

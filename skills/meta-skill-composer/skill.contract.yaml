@@ -1,0 +1,88 @@
+schemaVersion: 1
+id: meta-skill-composer
+kind: meta
+version: 0.1.0
+name:
+  en: Skill Composer
+  zh-CN: Skill 组合器
+summary:
+  en: Compose existing certified Atomic and special Skills into a declarative
+    capability pack with explicit dependencies, artifact flow, authority, state,
+    and acceptance tests.
+  zh-CN: 将现有已认证原子与特殊 Skill 组合为声明式能力包，明确依赖、产物流、权限、状态与验收测试。
+outcomes:
+  - Review-ready declarative capability pack
+artifacts:
+  - pack-contract
+  - dependency-dag
+  - artifact-flow
+  - pack-evaluations
+inputs:
+  - name: composition-brief
+    type: multi-outcome-task-and-certified-skills
+    required: true
+outputs:
+  - name: capability-pack
+    type: review-ready-pack-candidate
+    required: true
+preconditions:
+  - Every independently useful outcome and reusable member Skill is identified
+  - Member contracts versions permissions and artifacts are available
+failures:
+  - A required outcome has no bounded member Skill
+  - The dependency graph cycles or artifacts do not connect
+  - Composition would merge instructions or exceed authorized permissions
+sideEffects:
+  - filesystem-read
+  - filesystem-write
+permissions:
+  network: none
+  filesystem: workspace-write
+  shell: none
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: skill-agent-governance
+  lifecycle:
+    - plan
+    - create
+    - verify
+  modalities:
+    - text
+    - structured-data
+    - system-state
+  dependencies:
+    - product-specific
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - compose skills into a capability pack
+      - build a reusable multi-skill workflow
+      - define a skill dependency graph
+    zh-CN:
+      - 把 Skill 组合成能力包
+      - 构建可复用多 Skill 工作流
+      - 定义 Skill 依赖图
+  negativeTriggers:
+    en:
+      - write a missing atomic skill
+      - execute a one-off workflow
+      - approve pack release
+    zh-CN:
+      - 编写缺失的原子 Skill
+      - 执行一次性工作流
+      - 批准能力包发布
+  confusableWith:
+    - meta-skill-author
+    - atom-design-automation-workflow
+    - meta-skill-governor
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-meta-library-en
+  - routing-meta-library-zh-cn
+  - governance-protected

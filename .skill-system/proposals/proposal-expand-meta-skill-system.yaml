@@ -1,0 +1,73 @@
+schemaVersion: 1
+id: proposal-expand-meta-skill-system
+createdAt: 2026-09-03T00:40:00.373Z
+targetSkill: meta-skill-author
+baseRevision: e3af158274b829340d7cacb6241967974b9e2716
+candidateRevision: ea3bb2c75a40da66fae883045ebecf1f4c3d5c08
+rollbackRevision: e3af158274b829340d7cacb6241967974b9e2716
+observation: Compared current Skill creator, writer, evaluator, improver,
+  migration, security-audit, registry, and composition patterns; separated six
+  new Meta responsibilities, added independent special routing metrics and
+  bilingual suites, and preserved Governor-only promotion authority.
+authorship:
+  mode: model-generated
+  author: OpenAI-Codex
+  generator: gpt-5.6
+allowedFiles: &a1
+  - README.md
+  - README.zh-CN.md
+  - catalog/decomposition-map.yaml
+  - catalog/local-capability-blueprint.yaml
+  - docs/evaluation.md
+  - docs/research/2026-09-03-meta-skill-creator-landscape.md
+  - docs/zh-CN/evaluation.md
+  - docs/zh-CN/research/2026-09-03-meta-skill-creator-landscape.md
+  - evals/datasets/routing-meta-library-en.yaml
+  - evals/datasets/routing-meta-library-zh-CN.yaml
+  - paper/skillpack-one.md
+  - paper/skillpack-one.zh-CN.md
+  - schemas/eval-dataset.schema.json
+  - scripts/generate-decomposition-map.ts
+  - scripts/generate-expanded-library.ts
+  - scripts/generate-skill-projections.ts
+  - skill-src/meta-skill-author/SKILL.md
+  - skill-src/meta-skill-author/skill.contract.yaml
+  - skill-src/meta-skill-compatibility-migrator/SKILL.md
+  - skill-src/meta-skill-compatibility-migrator/skill.contract.yaml
+  - skill-src/meta-skill-composer/SKILL.md
+  - skill-src/meta-skill-composer/skill.contract.yaml
+  - skill-src/meta-skill-evaluator/SKILL.md
+  - skill-src/meta-skill-evaluator/skill.contract.yaml
+  - skill-src/meta-skill-optimizer/SKILL.md
+  - skill-src/meta-skill-optimizer/skill.contract.yaml
+  - skill-src/meta-skill-quality-auditor/SKILL.md
+  - skill-src/meta-skill-quality-auditor/skill.contract.yaml
+  - skill-src/meta-upstream-skill-curator/SKILL.md
+  - skill-src/meta-upstream-skill-curator/skill.contract.yaml
+  - src/eval/evaluate.ts
+  - src/router.ts
+  - src/types.ts
+  - tests/eval.test.ts
+  - tests/schemas.test.ts
+  - tests/skill-layout.test.ts
+  - tests/trainer.test.ts
+changedFiles: *a1
+generationDatasets:
+  - routing-bootstrap
+evaluationDatasets:
+  - routing-en-test
+  - routing-zh-cn-test
+  - routing-adversarial
+permissionBefore:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+permissionAfter:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+approvals: []

@@ -1,0 +1,102 @@
+schemaVersion: 1
+id: routing-meta-library-en
+split: dev
+locale: en
+protected: false
+examples:
+  - id: meta-en-01-upstream-skill-curator
+    prompt: collect upstream skills. Return only the bounded reviewable artifact for
+      that role.
+    expectedCategory: skill-agent-governance
+    expectedAtoms: []
+    expectedSpecial:
+      - meta-upstream-skill-curator
+    mustNotRoute:
+      - meta-skill-author
+    tags:
+      - meta-library
+      - en
+  - id: meta-en-02-skill-author
+    prompt: create a governed skill. Return only the bounded reviewable artifact for
+      that role.
+    expectedCategory: skill-agent-governance
+    expectedAtoms: []
+    expectedSpecial:
+      - meta-skill-author
+    mustNotRoute:
+      - meta-skill-quality-auditor
+    tags:
+      - meta-library
+      - en
+  - id: meta-en-03-skill-quality-auditor
+    prompt: audit this skill. Return only the bounded reviewable artifact for that
+      role.
+    expectedCategory: skill-agent-governance
+    expectedAtoms: []
+    expectedSpecial:
+      - meta-skill-quality-auditor
+    mustNotRoute:
+      - meta-skill-author
+    tags:
+      - meta-library
+      - en
+  - id: meta-en-04-skill-evaluator
+    prompt: evaluate this skill. Return only the bounded reviewable artifact for
+      that role.
+    expectedCategory: skill-agent-governance
+    expectedAtoms: []
+    expectedSpecial:
+      - meta-skill-evaluator
+    mustNotRoute:
+      - meta-skill-author
+    tags:
+      - meta-library
+      - en
+  - id: meta-en-05-skill-optimizer
+    prompt: optimize this skill from eval failures. Return only the bounded
+      reviewable artifact for that role.
+    expectedCategory: skill-agent-governance
+    expectedAtoms: []
+    expectedSpecial:
+      - meta-skill-optimizer
+    mustNotRoute:
+      - meta-skill-author
+    tags:
+      - meta-library
+      - en
+  - id: meta-en-06-skill-compatibility-migrator
+    prompt: migrate this skill to Codex. Return only the bounded reviewable artifact
+      for that role.
+    expectedCategory: skill-agent-governance
+    expectedAtoms: []
+    expectedSpecial:
+      - meta-skill-compatibility-migrator
+    mustNotRoute:
+      - meta-skill-author
+    tags:
+      - meta-library
+      - en
+  - id: meta-en-07-skill-composer
+    prompt: compose skills into a capability pack. Return only the bounded
+      reviewable artifact for that role.
+    expectedCategory: skill-agent-governance
+    expectedAtoms: []
+    expectedSpecial:
+      - meta-skill-composer
+    mustNotRoute:
+      - meta-skill-author
+    tags:
+      - meta-library
+      - en
+  - id: meta-en-governor
+    prompt: Roll back a skill after its completed change proposal fails protected
+      release gates. Return the auditable lifecycle decision.
+    expectedCategory: skill-agent-governance
+    expectedAtoms: []
+    expectedSpecial:
+      - meta-skill-governor
+    mustNotRoute:
+      - meta-skill-author
+    tags:
+      - meta-library
+      - en

@@ -1,0 +1,93 @@
+schemaVersion: 1
+id: meta-skill-author
+kind: meta
+version: 0.1.0
+name:
+  en: Skill Author
+  zh-CN: Skill 创作器
+summary:
+  en: Turn one approved reusable capability need and its evidence into a minimal
+    candidate Skill contract, instructions, resources, and starter evaluations.
+  zh-CN: 将一个已批准的可复用能力需求及其证据转化为最小候选 Skill 合同、说明、资源和初始评测。
+outcomes:
+  - Review-ready candidate Skill
+artifacts:
+  - skill-contract
+  - skill-instructions
+  - routed-resources
+  - starter-evaluations
+inputs:
+  - name: authoring-brief
+    type: approved-capability-brief
+    required: true
+outputs:
+  - name: candidate-skill
+    type: review-ready-skill-candidate
+    required: true
+preconditions:
+  - The reusable outcome boundary examples target hosts and evidence are known
+  - Duplicate and primitive-choice checks have been completed
+failures:
+  - The need belongs in an existing Skill reference script prompt agent or plugin
+  - The proposed boundary overlaps an existing Skill without a justified
+    replacement
+  - Required evidence or authority is missing
+sideEffects:
+  - network-read
+  - filesystem-read
+  - filesystem-write
+  - shell-execution
+permissions:
+  network: read
+  filesystem: workspace-write
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: skill-agent-governance
+  lifecycle:
+    - plan
+    - create
+    - verify
+  modalities:
+    - text
+    - structured-data
+    - system-state
+  dependencies:
+    - cli-backed
+    - harness-backed
+  risk: reversible-write
+routing:
+  positiveTriggers:
+    en:
+      - create a governed skill
+      - scaffold a new atomic skill
+      - synthesize evidence into a candidate skill
+    zh-CN:
+      - 创建受治理的 Skill
+      - 搭建新的原子 Skill
+      - 将证据综合成候选 Skill
+  negativeTriggers:
+    en:
+      - review an already written skill only
+      - benchmark an existing skill
+      - install this skill without review
+      - approve the candidate
+    zh-CN:
+      - 只审查已写好的 Skill
+      - 对现有 Skill 做基准测试
+      - 未经审查安装 Skill
+      - 批准候选项
+  confusableWith:
+    - meta-skill-quality-auditor
+    - meta-skill-evaluator
+    - meta-skill-governor
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-meta-library-en
+  - routing-meta-library-zh-cn
+  - governance-protected

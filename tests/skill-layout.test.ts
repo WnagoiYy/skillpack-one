@@ -23,8 +23,17 @@ describe("Skill source and projections", () => {
 
     expect(directories.filter((name) => name.startsWith("category-")).length).toBeGreaterThanOrEqual(20);
     expect(directories.filter((name) => name.startsWith("atom-")).length).toBeGreaterThanOrEqual(30);
-    expect(directories.filter((name) => name === "meta-skill-governor")).toHaveLength(1);
-    expect(directories.filter((name) => name === "meta-upstream-skill-curator")).toHaveLength(1);
+    expect(directories.filter((name) => name.startsWith("meta-"))).toHaveLength(8);
+    expect(directories).toEqual(expect.arrayContaining([
+      "meta-skill-governor",
+      "meta-upstream-skill-curator",
+      "meta-skill-author",
+      "meta-skill-quality-auditor",
+      "meta-skill-evaluator",
+      "meta-skill-optimizer",
+      "meta-skill-compatibility-migrator",
+      "meta-skill-composer"
+    ]));
   });
 
   it("uses valid discriminating frontmatter and shared contracts for every Skill", async () => {

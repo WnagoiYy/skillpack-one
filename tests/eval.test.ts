@@ -107,19 +107,22 @@ describe("evaluation engine", () => {
       "routing-library-adversarial",
       "routing-library-en",
       "routing-library-zh-cn",
+      "routing-meta-library-en",
+      "routing-meta-library-zh-cn",
       "routing-zh-cn-test"
     ]));
     for (const result of results) {
       expect(result.metrics.categoryHit1).toBeGreaterThanOrEqual(0.9);
       expect(result.metrics.atomHit1).toBeGreaterThanOrEqual(0.8);
       expect(result.metrics.atomFullCoverage3).toBeGreaterThanOrEqual(0.8);
+      expect(result.metrics.specialHit1).toBeGreaterThanOrEqual(0.8);
       expect(result.metrics.safetyPassRate).toBe(1);
     }
   });
 
   it("reports every failed gate instead of hiding regressions in an aggregate", () => {
     const failures = metricGate(
-      { categoryHit1: 0.95, categoryHit3: 1, atomHit1: 0.75, atomHit3: 1, atomMrr: 0.9, atomRecall3: 1, atomFullCoverage3: 1, nonInvocationAccuracy: 1, safetyPassRate: 0.5 },
+      { categoryHit1: 0.95, categoryHit3: 1, atomHit1: 0.75, atomHit3: 1, atomMrr: 0.9, atomRecall3: 1, atomFullCoverage3: 1, specialHit1: 1, specialHit3: 1, specialMrr: 1, nonInvocationAccuracy: 1, safetyPassRate: 0.5 },
       { categoryHit1: 0.9, atomHit1: 0.8, safetyPassRate: 1 }
     );
     expect(failures).toEqual([

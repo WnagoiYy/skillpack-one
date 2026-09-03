@@ -110,10 +110,29 @@ export function renderIndex(
     }
     lines.push("");
   }
+  const special = contracts.filter(
+    (contract) =>
+      contract.kind === "meta" &&
+      (contract.taxonomy.primaryCategory === node.id || contract.taxonomy.secondaryCategories?.includes(node.id))
+  );
+  if (special.length > 0) {
+    lines.push(`## ${locale === "zh-CN" ? "元 Skill" : "Meta Skills"}`, "");
+    for (const contract of special) {
+      const text = localized(contract, locale);
+      lines.push(`- \`${contract.id}\` — **${text.name}**: ${text.summary}`);
+      lines.push(`  - ${locale === "zh-CN" ? "风险" : "Risk"}: \`${contract.taxonomy.risk}\``);
+      lines.push(`  - ${locale === "zh-CN" ? "生命周期" : "Lifecycle"}: ${contract.taxonomy.lifecycle.join(", ")}`);
+    }
+    lines.push("");
+  }
   lines.push(
-    locale === "zh-CN"
-      ? "只读取最终选中的原子 Skill；若请求包含多个独立结果，请改用能力包。"
-      : "Read only the selected Atomic Skill. Use a capability pack when the request has independently useful outcomes.",
+    special.length > 0
+      ? locale === "zh-CN"
+        ? "只读取最终选中的原子或元 Skill；若请求包含多个独立结果，请改用能力包。"
+        : "Read only the selected Atomic or Meta Skill. Use a capability pack when the request has independently useful outcomes."
+      : locale === "zh-CN"
+        ? "只读取最终选中的原子 Skill；若请求包含多个独立结果，请改用能力包。"
+        : "Read only the selected Atomic Skill. Use a capability pack when the request has independently useful outcomes.",
     ""
   );
   return lines.join("\n");

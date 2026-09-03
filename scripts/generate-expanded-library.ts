@@ -24,17 +24,26 @@ interface MetaBlueprint {
   category: string;
   name: { en: string; "zh-CN": string };
   summary: { en: string; "zh-CN": string };
+  outcome: string;
+  artifacts: string[];
+  input: { name: string; type: string };
+  output: { name: string; type: string };
+  preconditions: string[];
+  failures: string[];
+  permissions: string;
+  lifecycle: string[];
   positive: { en: string[]; "zh-CN": string[] };
   negative: { en: string[]; "zh-CN": string[] };
   confusableWith: string[];
   steps: string[];
+  boundary: string;
 }
 
 interface Blueprint {
   schemaVersion: 1;
   categories: string[];
   atoms: AtomBlueprint[];
-  meta: MetaBlueprint;
+  metas: MetaBlueprint[];
 }
 
 const PERMISSIONS: Record<string, { envelope: PermissionEnvelope; sideEffects: string[]; risk: Risk; dependencies: string[] }> = {
@@ -45,6 +54,7 @@ const PERMISSIONS: Record<string, { envelope: PermissionEnvelope; sideEffects: s
   "shell-read": { envelope: { network: "none", filesystem: "read", shell: "allowlisted", secrets: "none", externalCommunication: "none" }, sideEffects: ["filesystem-read", "shell-execution"], risk: "read-only", dependencies: ["cli-backed"] },
   "code-write": { envelope: { network: "none", filesystem: "workspace-write", shell: "allowlisted", secrets: "none", externalCommunication: "none" }, sideEffects: ["filesystem-read", "filesystem-write", "shell-execution"], risk: "reversible-write", dependencies: ["cli-backed"] },
   "git-write": { envelope: { network: "none", filesystem: "workspace-write", shell: "allowlisted", secrets: "none", externalCommunication: "none" }, sideEffects: ["filesystem-read", "filesystem-write", "shell-execution"], risk: "reversible-write", dependencies: ["cli-backed"] },
+  "meta-write": { envelope: { network: "read", filesystem: "workspace-write", shell: "allowlisted", secrets: "none", externalCommunication: "none" }, sideEffects: ["network-read", "filesystem-read", "filesystem-write", "shell-execution"], risk: "reversible-write", dependencies: ["cli-backed", "harness-backed"] },
   browser: { envelope: { network: "write", filesystem: "none", shell: "none", secrets: "none", externalCommunication: "draft" }, sideEffects: ["network-read", "network-write"], risk: "reversible-write", dependencies: ["product-specific"] }
 };
 
@@ -101,6 +111,8 @@ function atomContract(atom: AtomBlueprint): SkillContract {
 }
 
 function metaContract(meta: MetaBlueprint): SkillContract {
+  const permission = PERMISSIONS[meta.permissions];
+  if (!permission) throw new Error(`Unknown permission preset ${meta.permissions} for ${meta.id}`);
   return {
     schemaVersion: 1,
     id: meta.id,
@@ -108,18 +120,18 @@ function metaContract(meta: MetaBlueprint): SkillContract {
     version: "0.1.0",
     name: meta.name,
     summary: meta.summary,
-    outcomes: ["Auditable upstream Skill admission decision"],
-    artifacts: ["upstream-inventory", "classification-report", "deduplication-report", "admission-proposal"],
-    inputs: [{ name: "sources", type: "source-list", required: true }],
-    outputs: [{ name: "proposal", type: "governed-change-proposal", required: true }],
-    preconditions: ["Source scope, trust tier, and collection time are declared"],
-    failures: ["Upstream code would need to execute", "License or provenance is insufficient for the proposed use", "Protected evaluations regress"],
-    sideEffects: ["network-read", "filesystem-read", "filesystem-write", "shell-execution"],
-    permissions: { network: "read", filesystem: "workspace-write", shell: "allowlisted", secrets: "none", externalCommunication: "none" },
-    taxonomy: { primaryCategory: meta.category, lifecycle: ["discover", "analyze", "govern"], modalities: ["text", "structured-data", "system-state"], dependencies: ["cli-backed", "harness-backed"], risk: "reversible-write" },
+    outcomes: [meta.outcome],
+    artifacts: meta.artifacts,
+    inputs: [{ ...meta.input, required: true }],
+    outputs: [{ ...meta.output, required: true }],
+    preconditions: meta.preconditions,
+    failures: meta.failures,
+    sideEffects: permission.sideEffects,
+    permissions: permission.envelope,
+    taxonomy: { primaryCategory: meta.category, lifecycle: meta.lifecycle, modalities: ["text", "structured-data", "system-state"], dependencies: permission.dependencies, risk: permission.risk },
     routing: { positiveTriggers: meta.positive, negativeTriggers: meta.negative, confusableWith: meta.confusableWith },
     provenance: { origin: "local-synthesis", license: "Apache-2.0", derivedFrom: ["catalog/upstream-skill-inventory.yaml"] },
-    evaluations: ["routing-library-en", "routing-library-zh-cn", "governance-protected"]
+    evaluations: ["routing-meta-library-en", "routing-meta-library-zh-cn", "governance-protected"]
   };
 }
 
@@ -150,9 +162,10 @@ export async function generateExpandedLibrary(root: string): Promise<void> {
     const contract = atomContract(atom);
     await writeSkill(root, contract, renderSkill(atom.id, `${atom.summary.en} Use when ${atom.positive.en.join(", ")}; do not use when ${atom.negative.en.join(", ")}.`, atom.name.en, atom.steps, `One request, one independently useful outcome: ${atom.outcome}. Do not absorb work owned by ${atom.confusableWith.join(", ")}.`));
   }
-  const meta = blueprint.meta;
-  const contract = metaContract(meta);
-  await writeSkill(root, contract, renderSkill(meta.id, `${meta.summary.en} Use for governed upstream collection and admission, not normal domain work or direct installation.`, meta.name.en, meta.steps, "This curator may propose changes but cannot approve its own proposal. Promotion, protected evaluation, and rollback remain controlled by meta-skill-governor and an independent reviewer."));
+  for (const meta of blueprint.metas) {
+    const contract = metaContract(meta);
+    await writeSkill(root, contract, renderSkill(meta.id, `${meta.summary.en} Use for requests that ask to ${meta.positive.en.join("; ")}. Do not use for ${meta.negative.en.join("; ")}.`, meta.name.en, meta.steps, meta.boundary));
+  }
 
   const routingDataset = (locale: "en" | "zh-CN", id: string) => ({
     schemaVersion: 1,
@@ -173,6 +186,37 @@ export async function generateExpandedLibrary(root: string): Promise<void> {
   });
   await writeFile(path.join(root, "evals", "datasets", "routing-library-en.yaml"), stringify(routingDataset("en", "routing-library-en")), "utf8");
   await writeFile(path.join(root, "evals", "datasets", "routing-library-zh-CN.yaml"), stringify(routingDataset("zh-CN", "routing-library-zh-cn")), "utf8");
+  const metaRoutingDataset = (locale: "en" | "zh-CN", id: string) => ({
+    schemaVersion: 1,
+    id,
+    split: "dev",
+    locale,
+    protected: false,
+    examples: [
+      ...blueprint.metas.map((meta, index) => ({
+        id: `${locale === "en" ? "meta-en" : "meta-zh"}-${String(index + 1).padStart(2, "0")}-${meta.id.slice(5)}`,
+        prompt: `${meta.positive[locale][0]}. ${locale === "en" ? "Return only the bounded reviewable artifact for that role." : "仅返回该角色边界内可审查的产物。"}`,
+        expectedCategory: meta.category,
+        expectedAtoms: [],
+        expectedSpecial: [meta.id],
+        mustNotRoute: meta.confusableWith.slice(0, 1),
+        tags: ["meta-library", locale]
+      })),
+      {
+        id: locale === "en" ? "meta-en-governor" : "meta-zh-governor",
+        prompt: locale === "en"
+          ? "Roll back a skill after its completed change proposal fails protected release gates. Return the auditable lifecycle decision."
+          : "在已完成的 Skill 变更提案未通过受保护发布门禁后，回滚 Skill。返回可审计的生命周期决策。",
+        expectedCategory: "skill-agent-governance",
+        expectedAtoms: [],
+        expectedSpecial: ["meta-skill-governor"],
+        mustNotRoute: ["meta-skill-author"],
+        tags: ["meta-library", locale]
+      }
+    ]
+  });
+  await writeFile(path.join(root, "evals", "datasets", "routing-meta-library-en.yaml"), stringify(metaRoutingDataset("en", "routing-meta-library-en")), "utf8");
+  await writeFile(path.join(root, "evals", "datasets", "routing-meta-library-zh-CN.yaml"), stringify(metaRoutingDataset("zh-CN", "routing-meta-library-zh-cn")), "utf8");
   await writeFile(path.join(root, "evals", "datasets", "routing-library-adversarial.yaml"), stringify({
     schemaVersion: 1,
     id: "routing-library-adversarial",

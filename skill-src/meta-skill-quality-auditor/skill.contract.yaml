@@ -1,0 +1,89 @@
+schemaVersion: 1
+id: meta-skill-quality-auditor
+kind: meta
+version: 0.1.0
+name:
+  en: Skill Quality Auditor
+  zh-CN: Skill 质量审计器
+summary:
+  en: Perform a read-only structural, boundary, provenance, portability,
+    permission, and security review of one Skill candidate or installed Skill.
+  zh-CN: 对一个候选或已安装 Skill 执行只读的结构、边界、来源、可移植性、权限与安全审查。
+outcomes:
+  - Evidence-located Skill quality audit
+artifacts:
+  - quality-findings
+  - overlap-findings
+  - security-findings
+  - audit-verdict
+inputs:
+  - name: skill-target
+    type: skill-candidate-or-installed-skill
+    required: true
+outputs:
+  - name: audit
+    type: prioritized-skill-audit
+    required: true
+preconditions:
+  - The exact Skill version files and declared contract are available
+  - The audit rubric and host assumptions are declared
+failures:
+  - The target changes during review
+  - Executing untrusted bundled code would be required
+  - A finding cannot be tied to a file rule or contract boundary
+sideEffects:
+  - filesystem-read
+  - shell-execution
+permissions:
+  network: none
+  filesystem: read
+  shell: allowlisted
+  secrets: none
+  externalCommunication: none
+taxonomy:
+  primaryCategory: skill-agent-governance
+  lifecycle:
+    - analyze
+    - verify
+    - govern
+  modalities:
+    - text
+    - structured-data
+    - system-state
+  dependencies:
+    - cli-backed
+  risk: read-only
+routing:
+  positiveTriggers:
+    en:
+      - audit this skill
+      - review skill quality and security
+      - check this skill against the standard
+    zh-CN:
+      - 审计这个 Skill
+      - 审查 Skill 质量和安全
+      - 按规范检查 Skill
+  negativeTriggers:
+    en:
+      - fix every finding automatically
+      - run behavioral benchmarks
+      - delete all skills
+      - approve publication
+    zh-CN:
+      - 自动修复所有发现
+      - 运行行为基准测试
+      - 删除所有 Skill
+      - 批准发布
+  confusableWith:
+    - meta-skill-author
+    - meta-skill-evaluator
+    - atom-audit-source-security
+provenance:
+  origin: local-synthesis
+  license: Apache-2.0
+  derivedFrom:
+    - catalog/upstream-skill-inventory.yaml
+evaluations:
+  - routing-meta-library-en
+  - routing-meta-library-zh-cn
+  - governance-protected

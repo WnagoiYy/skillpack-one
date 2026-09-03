@@ -1038,6 +1038,63 @@ capabilityMappings:
         contribution: prompt-optimizer contributes independently fingerprinted boundary
           and workflow design evidence.
         usage: design-evidence-only
+  - capability: meta-skill-author
+    synthesis: Turn one approved reusable capability need and its evidence into a
+      minimal candidate Skill contract, instructions, resources, and starter
+      evaluations. The local contract narrows multiple upstream patterns to one
+      outcome and keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-openai-skills-skills-system-skill-creator-skill-md-4505f516
+        contribution: skill-creator contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-sentry-skills-skills-skill-writer-skill-md-6e3f3296
+        contribution: skill-writer contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+  - capability: meta-skill-compatibility-migrator
+    synthesis: Translate one reviewed Skill between supported agent hosts while
+      preserving its semantic contract, authority, provenance, resources, and
+      evaluation intent. The local contract narrows multiple upstream patterns
+      to one outcome and keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-openai-skills-skills-curated-migrate-to-codex-skill-md-a60f3e9a
+        contribution: migrate-to-codex contributes independently fingerprinted boundary
+          and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-sentry-skills-skills-skill-writer-skill-md-6e3f3296
+        contribution: skill-writer contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+  - capability: meta-skill-composer
+    synthesis: Compose existing certified Atomic and special Skills into a
+      declarative capability pack with explicit dependencies, artifact flow,
+      authority, state, and acceptance tests. The local contract narrows
+      multiple upstream patterns to one outcome and keeps their instruction
+      bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-alirezarezvani-claude-skills-engineering-workflow-builder-skills-workflow-builder-skill-md-5b977a62
+        contribution: workflow-builder contributes independently fingerprinted boundary
+          and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-wshobson-agent-skills-plugins-agent-teams-skills-team-composition-patterns-skill-md-5112e480
+        contribution: team-composition-patterns contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: meta-skill-evaluator
+    synthesis: Design and run reproducible routing, non-invocation, adversarial,
+      task-effect, cost, and latency evaluations for one Skill or capability
+      pack. The local contract narrows multiple upstream patterns to one outcome
+      and keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-microsoft-cat-agent-skills-submissions-agent-evaluation-designer-skill-md-5ac29c6e
+        contribution: agent-evaluation-designer contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-context-engineering-skills-skills-evaluation-skill-md-b187fe25
+        contribution: evaluation contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
   - capability: meta-skill-governor
     synthesis: Convert Skill maintenance into a versioned proposal, protected
       evaluation, approval, promotion, deprecation, and rollback lifecycle that
@@ -1049,20 +1106,47 @@ capabilityMappings:
       - catalogEntry: skill-gohypergiant-agent-skills-accelint-skill-manager-7a32f482
         contribution: Skill lifecycle management pattern.
         usage: design-evidence-only
-  - capability: meta-upstream-skill-curator
-    synthesis: Discover, mirror, fingerprint, license-check, classify, deduplicate,
-      synthesize, evaluate, and admit external Skills without executing or
-      blindly copying them. The local contract narrows multiple upstream
-      patterns to one outcome and keeps their instruction bodies out of the
-      package.
+  - capability: meta-skill-optimizer
+    synthesis: Iteratively improve one existing Skill from explicit train or
+      development evidence under edit, permission, convergence, and rollback
+      limits. The local contract narrows multiple upstream patterns to one
+      outcome and keeps their instruction bodies out of the package.
     evidence:
-      - inventoryEntry: upstream-hypergiant-agent-skills-skills-constraints-extractor-skill-md-be15e450
-        contribution: constraints-extractor contributes independently fingerprinted
+      - inventoryEntry: upstream-trailofbits-skills-plugins-code-improver-skills-skill-improver-skill-md-1d2d8d1b
+        contribution: skill-improver contributes independently fingerprinted boundary
+          and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-anthropic-skills-skills-skill-creator-skill-md-c08c99c4
+        contribution: skill-creator contributes independently fingerprinted boundary and
+          workflow design evidence.
+        usage: design-evidence-only
+  - capability: meta-skill-quality-auditor
+    synthesis: Perform a read-only structural, boundary, provenance, portability,
+      permission, and security review of one Skill candidate or installed Skill.
+      The local contract narrows multiple upstream patterns to one outcome and
+      keeps their instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-alirezarezvani-claude-skills-engineering-skills-skill-security-auditor-skill-md-e0bd2e04
+        contribution: skill-security-auditor contributes independently fingerprinted
           boundary and workflow design evidence.
         usage: design-evidence-only
-      - inventoryEntry: upstream-scientific-skills-skills-arbor-skill-md-7199ed60
-        contribution: arbor contributes independently fingerprinted boundary and
-          workflow design evidence.
+      - inventoryEntry: upstream-microsoft-cat-agent-skills-submissions-skill-authoring-coach-skill-md-72167435
+        contribution: skill-authoring-coach contributes independently fingerprinted
+          boundary and workflow design evidence.
+        usage: design-evidence-only
+  - capability: meta-upstream-skill-curator
+    synthesis: Discover, mirror, fingerprint, license-check, classify, and
+      deduplicate external Skills as untrusted design evidence. The local
+      contract narrows multiple upstream patterns to one outcome and keeps their
+      instruction bodies out of the package.
+    evidence:
+      - inventoryEntry: upstream-google-skills-skills-cloud-agent-platform-skill-registry-skill-md-98b7657f
+        contribution: agent-platform-skill-registry contributes independently
+          fingerprinted boundary and workflow design evidence.
+        usage: design-evidence-only
+      - inventoryEntry: upstream-hypergiant-agent-skills-skills-accelint-skill-manager-skill-md-ca7e0845
+        contribution: accelint-skill-manager contributes independently fingerprinted
+          boundary and workflow design evidence.
         usage: design-evidence-only
 packMappings:
   - pack: software-delivery

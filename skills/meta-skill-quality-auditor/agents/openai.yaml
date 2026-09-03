@@ -1,0 +1,7 @@
+interface:
+  display_name: Meta Skill Quality Auditor
+  short_description: Route and apply Meta Skill Quality Auditor
+  default_prompt: Use $meta-skill-quality-auditor to handle this request within
+    its declared capability boundary.
+policy:
+  allow_implicit_invocation: true

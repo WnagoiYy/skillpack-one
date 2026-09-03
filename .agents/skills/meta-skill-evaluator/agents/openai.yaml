@@ -1,0 +1,7 @@
+interface:
+  display_name: Meta Skill Evaluator
+  short_description: Route and apply Meta Skill Evaluator
+  default_prompt: Use $meta-skill-evaluator to handle this request within its
+    declared capability boundary.
+policy:
+  allow_implicit_invocation: true

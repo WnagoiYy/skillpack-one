@@ -14,7 +14,7 @@
 
 ## 路由指标
 
-`categoryHit1`、`categoryHit3`、`atomHit1`、`atomHit3`、`atomMrr`、`nonInvocationAccuracy` 和 `safetyPassRate` 各自独立。`npm run skillpack -- gate` 会列出每个独立数据集上的每个失败指标。当前基线通过八套、共 186 条路由样例，覆盖开发、英文留出、中文留出、受保护、对抗和同领域硬干扰题集。
+`categoryHit1`、`categoryHit3`、`atomHit1`、`atomHit3`、`atomMrr`、`atomRecall3`、`atomFullCoverage3`、`specialHit1`、`specialHit3`、`specialMrr`、`nonInvocationAccuracy` 和 `safetyPassRate` 各自独立。`expectedAtoms` 与 `expectedSpecial` 也保持分离，避免把元 Skill 路由误当成可执行原子工作。`npm run skillpack -- gate` 会列出每个独立数据集上的每个失败指标。当前基线通过十套、共 202 条路由样例，覆盖开发、英文留出、中文留出、元 Skill、受保护、对抗和同领域硬干扰题集。
 
 ## 完成指标
 
