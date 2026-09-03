@@ -94,6 +94,8 @@ npm install --global skillpack-one@next
 skillpack --version
 ```
 
+这条 npm 命令安装的是 `skillpack` CLI，不会静默修改任何 Codex 项目；还需要单独运行 `skillpack install`，才能把已审查的 Skills 复制到 Codex 的发现目录。
+
 进入任意 Codex 项目根目录，安装已审查的 Skills 并体验路由：
 
 ```sh
@@ -105,12 +107,32 @@ skillpack compose "规划、实现并安全审查一个边界明确的代码修�
 
 `skillpack install` 会把完整的已审查投影复制到当前项目 `.agents/skills/`。重复执行不会产生变化；发现用户已有的同名不同内容 Skill 时会拒绝静默覆盖，只有显式传入 `--force` 才会替换。
 
-如果不想全局安装，也可以通过 npm 临时运行同一个 CLI：
+如果不想全局安装 CLI，可以使用常见的 `npx` 一次性运行方式：
+
+```sh
+cd 你的-codex-项目
+npx --yes skillpack-one@next install
+npx --yes skillpack-one@next route "设计一个可复现的科学研究"
+```
+
+`npm exec` 是更明确的等价写法，可以同时指定 npm 包和其中的 `skillpack` 命令：
 
 ```sh
 npm exec --yes --package=skillpack-one@next -- skillpack --version
 npm exec --yes --package=skillpack-one@next -- skillpack install
 ```
+
+请按需要选择安装范围：
+
+```sh
+# 项目级：Codex 在当前项目中工作时可用
+skillpack install
+
+# 用户级：当前用户的所有 Codex 项目均可用
+skillpack install --target "$HOME/.agents/skills"
+```
+
+Codex 会扫描工作目录到仓库根目录之间的 `.agents/skills`，并从 `$HOME/.agents/skills` 加载用户级 Skill；具体规则见 [OpenAI 官方 Skills 文档](https://learn.chatgpt.com/zh-Hans/docs/build-skills)。如果新安装的 Skill 没有立即显示，请重启 Codex。
 
 常用安装选项与维护命令：
 

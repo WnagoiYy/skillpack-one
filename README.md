@@ -94,6 +94,8 @@ npm install --global skillpack-one@next
 skillpack --version
 ```
 
+This npm command installs the `skillpack` CLI. It does not silently change any Codex project; run `skillpack install` separately to copy the reviewed Skills into a Codex discovery directory.
+
 From the root of any Codex project, install the reviewed Skills and try the router:
 
 ```sh
@@ -105,12 +107,32 @@ skillpack compose "Plan, implement, and security-review a bounded code change"
 
 `skillpack install` copies the complete reviewed projection into the current project's `.agents/skills/`. It is idempotent and refuses to overwrite conflicting user-owned Skill directories unless `--force` is explicit.
 
-If you do not want a global installation, run the same CLI temporarily through npm:
+For a one-time installation without a global CLI, use the common `npx` form:
+
+```sh
+cd your-codex-project
+npx --yes skillpack-one@next install
+npx --yes skillpack-one@next route "Design a reproducible scientific study"
+```
+
+`npm exec` is the explicit equivalent when you want to name both the package and its `skillpack` binary:
 
 ```sh
 npm exec --yes --package=skillpack-one@next -- skillpack --version
 npm exec --yes --package=skillpack-one@next -- skillpack install
 ```
+
+Choose the installation scope intentionally:
+
+```sh
+# Repository scope: available when Codex works in this project
+skillpack install
+
+# User scope: available across the current user's Codex projects
+skillpack install --target "$HOME/.agents/skills"
+```
+
+Codex discovers repository Skills from `.agents/skills` between the working directory and repository root, and user Skills from `$HOME/.agents/skills`, as documented in the [official OpenAI Skills guide](https://learn.chatgpt.com/docs/build-skills). Restart Codex if newly installed Skills do not appear immediately.
 
 Useful installation options and lifecycle commands:
 
