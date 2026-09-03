@@ -4,6 +4,20 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 
 ## [Unreleased]
 
+## [0.1.0-alpha.14] - 2026-09-03
+
+### Added
+
+- Six bounded Meta Skills for authoring, quality audit, behavioral evaluation, optimization, compatibility migration, and declarative Skill composition.
+- English and Chinese Meta routing suites with explicit `expectedSpecial` targets and separate Special Hit@1, Hit@3, and MRR metrics.
+- An evidence-backed Skill Creator landscape review covering authoring, evaluation, optimization, migration, security review, and composition patterns.
+
+### Changed
+
+- Expanded the reviewed installable library from 100 to 106 Skills and the Meta layer from two to eight separated responsibilities.
+- Category routing and generated localized indexes now surface the strongest applicable Meta Skill without treating it as executable Atomic work.
+- Narrowed the upstream curator to evidence acquisition and normalization; authoring, certification, promotion, and installation remain independent responsibilities.
+
 ## [0.1.0-alpha.11] - 2026-09-03
 
 ### Changed
@@ -98,6 +112,7 @@ All notable changes are recorded here. The format follows Keep a Changelog and v
 [0.1.0-alpha.5]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.5
 [0.1.0-alpha.6]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.6
 [0.1.0-alpha.7]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.7
+[0.1.0-alpha.14]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.14
 [0.1.0-alpha.8]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.8
 [0.1.0-alpha.9]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.9
 [0.1.0-alpha.10]: https://github.com/WnagoiYy/skillpack-one/releases/tag/v0.1.0-alpha.10
