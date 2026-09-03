@@ -234,6 +234,10 @@ function selectSkill(id, updateUrl = false) {
     card.classList.toggle("active", active);
     card.setAttribute("aria-selected", String(active));
   });
+  if (updateUrl) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    requestAnimationFrame(() => elements.detail.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" }));
+  }
 }
 
 function render() {

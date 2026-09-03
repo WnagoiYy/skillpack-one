@@ -83,16 +83,47 @@ This keeps community growth additive in useful capability rather than additive i
 
 ## Quick start
 
-Requirements: Node.js 24 or newer and Git. To install the published prerelease and project-native Codex Skills:
+Requirements: Node.js 24 or newer. Git is only required for repository development.
+
+### Install with npm
+
+Install the current public prerelease globally, then verify the CLI:
 
 ```sh
 npm install --global skillpack-one@next
+skillpack --version
+```
+
+From the root of any Codex project, install the reviewed Skills and try the router:
+
+```sh
 cd your-codex-project
 skillpack install
 skillpack route "Design a reproducible scientific study"
+skillpack compose "Plan, implement, and security-review a bounded code change"
 ```
 
 `skillpack install` copies the complete reviewed projection into the current project's `.agents/skills/`. It is idempotent and refuses to overwrite conflicting user-owned Skill directories unless `--force` is explicit.
+
+If you do not want a global installation, run the same CLI temporarily through npm:
+
+```sh
+npm exec --yes --package=skillpack-one@next -- skillpack --version
+npm exec --yes --package=skillpack-one@next -- skillpack install
+```
+
+Useful installation options and lifecycle commands:
+
+```sh
+skillpack install --target path/to/.agents/skills
+skillpack install --force
+npm update --global skillpack-one@next
+npm uninstall --global skillpack-one
+```
+
+`@next` tracks research-grade prereleases. Once a stable release exists, users who prefer the stable channel can install `skillpack-one@latest` instead.
+
+### Develop the repository
 
 For repository development:
 
