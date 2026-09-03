@@ -236,7 +236,11 @@ function selectSkill(id, updateUrl = false) {
   });
   if (updateUrl) {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    requestAnimationFrame(() => elements.detail.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" }));
+    const mobileLayout = window.matchMedia("(max-width: 980px)").matches;
+    requestAnimationFrame(() => {
+      if (mobileLayout) elements.detail.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+      else elements.detail.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+    });
   }
 }
 
